@@ -21,6 +21,7 @@
 		B5F1AEED160388C700D28C1C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AED2160388C600D28C1C /* CoreData.framework */; };
 		B5F1AEF5160388C700D28C1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5F1AEF3160388C700D28C1C /* InfoPlist.strings */; };
 		B5F1AEF8160388C700D28C1C /* prophets_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F1AEF7160388C700D28C1C /* prophets_iosTests.m */; };
+		B5F1AF02160388E500D28C1C /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		B5F1AEF4160388C700D28C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5F1AEF6160388C700D28C1C /* prophets_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prophets_iosTests.h; sourceTree = "<group>"; };
 		B5F1AEF7160388C700D28C1C /* prophets_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = prophets_iosTests.m; sourceTree = "<group>"; };
+		B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				B5F1AEDD160388C600D28C1C /* AppDelegate.h */,
 				B5F1AEDE160388C600D28C1C /* AppDelegate.m */,
 				B5F1AEE0160388C600D28C1C /* prophets_ios.xcdatamodeld */,
+				B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */,
 				B5F1AED5160388C600D28C1C /* Supporting Files */,
 			);
 			path = "prophets-ios";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F1AED9160388C600D28C1C /* InfoPlist.strings in Resources */,
+				B5F1AF02160388E500D28C1C /* Storyboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
