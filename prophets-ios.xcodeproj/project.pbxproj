@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		B56F40B5160A4D35007D445F /* FFMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40B4160A4D35007D445F /* FFMappingProvider.m */; };
 		B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* ApplicationConstants.m */; };
+		B56F40D3160A7829007D445F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D2160A7828007D445F /* User.m */; };
+		B56F40D7160A78F3007D445F /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D6160A78F3007D445F /* League.m */; };
+		B56F40DA160A7914007D445F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D9160A7914007D445F /* Question.m */; };
+		B56F40DD160A7939007D445F /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40DC160A7939007D445F /* Answer.m */; };
+		B56F40E0160A7949007D445F /* Bet.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40DF160A7949007D445F /* Bet.m */; };
+		B56F40E3160A795B007D445F /* Membership.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40E2160A795A007D445F /* Membership.m */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
 		B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECE160388C600D28C1C /* Foundation.framework */; };
 		B5F1AED1160388C600D28C1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AED0160388C600D28C1C /* CoreGraphics.framework */; };
@@ -90,6 +96,18 @@
 		B56F40B4160A4D35007D445F /* FFMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMappingProvider.m; sourceTree = "<group>"; };
 		B56F40BF160A52AC007D445F /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
 		B56F40C0160A52AC007D445F /* ApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConstants.m; sourceTree = "<group>"; };
+		B56F40D1160A7828007D445F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B56F40D2160A7828007D445F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		B56F40D5160A78F3007D445F /* League.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = League.h; sourceTree = "<group>"; };
+		B56F40D6160A78F3007D445F /* League.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = League.m; sourceTree = "<group>"; };
+		B56F40D8160A7913007D445F /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		B56F40D9160A7914007D445F /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		B56F40DB160A7939007D445F /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
+		B56F40DC160A7939007D445F /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
+		B56F40DE160A7948007D445F /* Bet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bet.h; sourceTree = "<group>"; };
+		B56F40DF160A7949007D445F /* Bet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bet.m; sourceTree = "<group>"; };
+		B56F40E1160A795A007D445F /* Membership.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Membership.h; sourceTree = "<group>"; };
+		B56F40E2160A795A007D445F /* Membership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Membership.m; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5F1AECE160388C600D28C1C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -169,6 +187,25 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		B56F40D4160A7833007D445F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B56F40D1160A7828007D445F /* User.h */,
+				B56F40D2160A7828007D445F /* User.m */,
+				B56F40D5160A78F3007D445F /* League.h */,
+				B56F40D6160A78F3007D445F /* League.m */,
+				B56F40D8160A7913007D445F /* Question.h */,
+				B56F40D9160A7914007D445F /* Question.m */,
+				B56F40DB160A7939007D445F /* Answer.h */,
+				B56F40DC160A7939007D445F /* Answer.m */,
+				B56F40DE160A7948007D445F /* Bet.h */,
+				B56F40DF160A7949007D445F /* Bet.m */,
+				B56F40E1160A795A007D445F /* Membership.h */,
+				B56F40E2160A795A007D445F /* Membership.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		B5F1AEBD160388C600D28C1C = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +248,7 @@
 		B5F1AED4160388C600D28C1C /* prophets-ios */ = {
 			isa = PBXGroup;
 			children = (
+				B56F40D4160A7833007D445F /* Models */,
 				B56F40B3160A4D35007D445F /* FFMappingProvider.h */,
 				B56F40B4160A4D35007D445F /* FFMappingProvider.m */,
 				B56F40BF160A52AC007D445F /* ApplicationConstants.h */,
@@ -421,6 +459,12 @@
 				B5F1AEE2160388C600D28C1C /* prophets_ios.xcdatamodeld in Sources */,
 				B56F40B5160A4D35007D445F /* FFMappingProvider.m in Sources */,
 				B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */,
+				B56F40D3160A7829007D445F /* User.m in Sources */,
+				B56F40D7160A78F3007D445F /* League.m in Sources */,
+				B56F40DA160A7914007D445F /* Question.m in Sources */,
+				B56F40DD160A7939007D445F /* Answer.m in Sources */,
+				B56F40E0160A7949007D445F /* Bet.m in Sources */,
+				B56F40E3160A795B007D445F /* Membership.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
