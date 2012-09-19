@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B56F40B5160A4D35007D445F /* FFMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40B4160A4D35007D445F /* FFMappingProvider.m */; };
+		B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* ApplicationConstants.m */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
 		B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECE160388C600D28C1C /* Foundation.framework */; };
 		B5F1AED1160388C600D28C1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AED0160388C600D28C1C /* CoreGraphics.framework */; };
@@ -22,6 +24,13 @@
 		B5F1AEF5160388C700D28C1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5F1AEF3160388C700D28C1C /* InfoPlist.strings */; };
 		B5F1AEF8160388C700D28C1C /* prophets_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F1AEF7160388C700D28C1C /* prophets_iosTests.m */; };
 		B5F1AF02160388E500D28C1C /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */; };
+		B5F1AF1A1603B81F00D28C1C /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF0F1603B07100D28C1C /* libRestKit.a */; };
+		B5F1AF1D1603B87600D28C1C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF1C1603B87600D28C1C /* CFNetwork.framework */; };
+		B5F1AF1F1603B89500D28C1C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF1E1603B89500D28C1C /* MobileCoreServices.framework */; };
+		B5F1AF211603B89D00D28C1C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
+		B5F1AF231603B8A600D28C1C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF221603B8A600D28C1C /* SystemConfiguration.framework */; };
+		B5F1AF251603B8B000D28C1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF241603B8B000D28C1C /* QuartzCore.framework */; };
+		B5F1AF271603B8BF00D28C1C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF261603B8BF00D28C1C /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +41,55 @@
 			remoteGlobalIDString = B5F1AEC7160388C600D28C1C;
 			remoteInfo = "prophets-ios";
 		};
+		B5F1AF0E1603B07100D28C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		B5F1AF101603B07100D28C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		B5F1AF121603B07100D28C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		B5F1AF141603B07100D28C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		B5F1AF161603B07100D28C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 259C301615128079003066A2;
+			remoteInfo = RestKitResources;
+		};
+		B5F1AF181603B7CF00D28C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B56F40B3160A4D35007D445F /* FFMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMappingProvider.h; sourceTree = "<group>"; };
+		B56F40B4160A4D35007D445F /* FFMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMappingProvider.m; sourceTree = "<group>"; };
+		B56F40BF160A52AC007D445F /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
+		B56F40C0160A52AC007D445F /* ApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConstants.m; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5F1AECE160388C600D28C1C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,7 +108,14 @@
 		B5F1AEF4160388C700D28C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5F1AEF6160388C700D28C1C /* prophets_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prophets_iosTests.h; sourceTree = "<group>"; };
 		B5F1AEF7160388C700D28C1C /* prophets_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = prophets_iosTests.m; sourceTree = "<group>"; };
-		B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
+		B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard_iPhone.storyboard; path = "prophets-ios/Storyboard_iPhone.storyboard"; sourceTree = "<group>"; };
+		B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		B5F1AF1C1603B87600D28C1C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B5F1AF1E1603B89500D28C1C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B5F1AF201603B89D00D28C1C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B5F1AF221603B8A600D28C1C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B5F1AF241603B8B000D28C1C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B5F1AF261603B8BF00D28C1C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +123,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F1AF271603B8BF00D28C1C /* libxml2.dylib in Frameworks */,
+				B5F1AF251603B8B000D28C1C /* QuartzCore.framework in Frameworks */,
+				B5F1AF231603B8A600D28C1C /* SystemConfiguration.framework in Frameworks */,
+				B5F1AF211603B89D00D28C1C /* Security.framework in Frameworks */,
+				B5F1AF1F1603B89500D28C1C /* MobileCoreServices.framework in Frameworks */,
+				B5F1AF1D1603B87600D28C1C /* CFNetwork.framework in Frameworks */,
+				B5F1AF1A1603B81F00D28C1C /* libRestKit.a in Frameworks */,
 				B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */,
 				B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */,
 				B5F1AED1160388C600D28C1C /* CoreGraphics.framework in Frameworks */,
@@ -82,11 +151,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B56F40B2160A3B5C007D445F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		B56F40B6160A4D4C007D445F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5F1AEE0160388C600D28C1C /* prophets_ios.xcdatamodeld */,
+				B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */,
+				B5F1AED5160388C600D28C1C /* Supporting Files */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		B5F1AEBD160388C600D28C1C = {
 			isa = PBXGroup;
 			children = (
 				B5F1AED4160388C600D28C1C /* prophets-ios */,
+				B56F40B6160A4D4C007D445F /* Resources */,
 				B5F1AEF0160388C700D28C1C /* prophets-iosTests */,
+				B56F40B2160A3B5C007D445F /* Libraries */,
 				B5F1AECB160388C600D28C1C /* Frameworks */,
 				B5F1AEC9160388C600D28C1C /* Products */,
 			);
@@ -104,6 +193,12 @@
 		B5F1AECB160388C600D28C1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5F1AF261603B8BF00D28C1C /* libxml2.dylib */,
+				B5F1AF241603B8B000D28C1C /* QuartzCore.framework */,
+				B5F1AF221603B8A600D28C1C /* SystemConfiguration.framework */,
+				B5F1AF201603B89D00D28C1C /* Security.framework */,
+				B5F1AF1E1603B89500D28C1C /* MobileCoreServices.framework */,
+				B5F1AF1C1603B87600D28C1C /* CFNetwork.framework */,
 				B5F1AECC160388C600D28C1C /* UIKit.framework */,
 				B5F1AECE160388C600D28C1C /* Foundation.framework */,
 				B5F1AED0160388C600D28C1C /* CoreGraphics.framework */,
@@ -116,11 +211,13 @@
 		B5F1AED4160388C600D28C1C /* prophets-ios */ = {
 			isa = PBXGroup;
 			children = (
+				B56F40B3160A4D35007D445F /* FFMappingProvider.h */,
+				B56F40B4160A4D35007D445F /* FFMappingProvider.m */,
+				B56F40BF160A52AC007D445F /* ApplicationConstants.h */,
+				B56F40C0160A52AC007D445F /* ApplicationConstants.m */,
 				B5F1AEDD160388C600D28C1C /* AppDelegate.h */,
 				B5F1AEDE160388C600D28C1C /* AppDelegate.m */,
-				B5F1AEE0160388C600D28C1C /* prophets_ios.xcdatamodeld */,
-				B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */,
-				B5F1AED5160388C600D28C1C /* Supporting Files */,
+				B5F1AEDC160388C600D28C1C /* prophets-ios-Prefix.pch */,
 			);
 			path = "prophets-ios";
 			sourceTree = "<group>";
@@ -131,9 +228,9 @@
 				B5F1AED6160388C600D28C1C /* prophets-ios-Info.plist */,
 				B5F1AED7160388C600D28C1C /* InfoPlist.strings */,
 				B5F1AEDA160388C600D28C1C /* main.m */,
-				B5F1AEDC160388C600D28C1C /* prophets-ios-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = "prophets-ios";
 			sourceTree = "<group>";
 		};
 		B5F1AEF0160388C700D28C1C /* prophets-iosTests */ = {
@@ -155,6 +252,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B5F1AF041603B07100D28C1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5F1AF0F1603B07100D28C1C /* libRestKit.a */,
+				B5F1AF111603B07100D28C1C /* RestKitTests.octest */,
+				B5F1AF131603B07100D28C1C /* RestKit.framework */,
+				B5F1AF151603B07100D28C1C /* RestKitFrameworkTests.octest */,
+				B5F1AF171603B07100D28C1C /* RestKitResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,6 +278,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B5F1AF191603B7CF00D28C1C /* PBXTargetDependency */,
 			);
 			name = "prophets-ios";
 			productName = "prophets-ios";
@@ -213,6 +323,12 @@
 			mainGroup = B5F1AEBD160388C600D28C1C;
 			productRefGroup = B5F1AEC9160388C600D28C1C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B5F1AF041603B07100D28C1C /* Products */;
+					ProjectRef = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B5F1AEC7160388C600D28C1C /* prophets-ios */,
@@ -220,6 +336,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B5F1AF0F1603B07100D28C1C /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = B5F1AF0E1603B07100D28C1C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5F1AF111603B07100D28C1C /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = B5F1AF101603B07100D28C1C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5F1AF131603B07100D28C1C /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = B5F1AF121603B07100D28C1C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5F1AF151603B07100D28C1C /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = B5F1AF141603B07100D28C1C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5F1AF171603B07100D28C1C /* RestKitResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitResources.bundle;
+			remoteRef = B5F1AF161603B07100D28C1C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B5F1AEC6160388C600D28C1C /* Resources */ = {
@@ -265,6 +419,8 @@
 				B5F1AEDB160388C600D28C1C /* main.m in Sources */,
 				B5F1AEDF160388C600D28C1C /* AppDelegate.m in Sources */,
 				B5F1AEE2160388C600D28C1C /* prophets_ios.xcdatamodeld in Sources */,
+				B56F40B5160A4D35007D445F /* FFMappingProvider.m in Sources */,
+				B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +439,11 @@
 			isa = PBXTargetDependency;
 			target = B5F1AEC7160388C600D28C1C /* prophets-ios */;
 			targetProxy = B5F1AEEE160388C700D28C1C /* PBXContainerItemProxy */;
+		};
+		B5F1AF191603B7CF00D28C1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = B5F1AF181603B7CF00D28C1C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -362,7 +523,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -373,7 +539,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -432,6 +603,7 @@
 				B5F1AEFD160388C700D28C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5F1AEFE160388C700D28C1C /* Build configuration list for PBXNativeTarget "prophets-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +612,7 @@
 				B5F1AF00160388C700D28C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -450,7 +623,8 @@
 				B5F1AEE1160388C600D28C1C /* prophets_ios.xcdatamodel */,
 			);
 			currentVersion = B5F1AEE1160388C600D28C1C /* prophets_ios.xcdatamodel */;
-			path = prophets_ios.xcdatamodeld;
+			name = prophets_ios.xcdatamodeld;
+			path = "prophets-ios/prophets_ios.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
