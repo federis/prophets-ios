@@ -1,4 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12B19" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Answer" syncable="YES">
+        <attribute name="answerId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="betTotal" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="correct" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="currentProbability" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="initialProbability" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="judgedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="bets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bet" inverseName="answer" inverseEntity="Bet" syncable="YES"/>
+        <relationship name="judge" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="judged_answers" inverseEntity="User" syncable="YES"/>
+        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="answers" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Bet" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="betId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="bonus" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="probability" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="answer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Answer" inverseName="bets" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="bets" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="League" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="initialBalance" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="maxBet" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priv" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="memberships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Membership" inverseName="league" inverseEntity="Membership" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="league" inverseEntity="Question" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="created_leagues" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Membership" syncable="YES">
+        <attribute name="balance" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="membershipId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="memberships" inverseEntity="League" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="memberships" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Question" syncable="YES">
+        <attribute name="approvedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="questionId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="question" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="approver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="approved_questions" inverseEntity="User" syncable="YES"/>
+        <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="questions" inverseEntity="League" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="questions" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="user" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="approved_questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="approver" inverseEntity="Question" syncable="YES"/>
+        <relationship name="bets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bet" inverseName="user" inverseEntity="Bet" syncable="YES"/>
+        <relationship name="created_leagues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="League" inverseName="user" inverseEntity="League" syncable="YES"/>
+        <relationship name="judged_answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="judge" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="memberships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Membership" inverseName="user" inverseEntity="Membership" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="user" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="League" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Question" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Answer" positionX="160" positionY="192" width="128" height="240"/>
+        <element name="Bet" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="Membership" positionX="160" positionY="192" width="128" height="150"/>
+    </elements>
 </model>
