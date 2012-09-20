@@ -206,6 +206,28 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		B56F40E4160A87CC007D445F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		B56F40E5160A87D4007D445F /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				B56F40E6160A87D8007D445F /* Models */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		B56F40E6160A87D8007D445F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		B5F1AEBD160388C600D28C1C = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +296,8 @@
 		B5F1AEF0160388C700D28C1C /* prophets-iosTests */ = {
 			isa = PBXGroup;
 			children = (
+				B56F40E5160A87D4007D445F /* Logic */,
+				B56F40E4160A87CC007D445F /* Application */,
 				B5F1AEF6160388C700D28C1C /* prophets_iosTests.h */,
 				B5F1AEF7160388C700D28C1C /* prophets_iosTests.m */,
 				B5F1AEF1160388C700D28C1C /* Supporting Files */,

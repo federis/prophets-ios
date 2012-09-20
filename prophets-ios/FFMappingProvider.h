@@ -13,7 +13,14 @@
 
 @property (nonatomic, strong) RKManagedObjectStore *objectStore;
 
-+ (id)mappingProviderWithObjectStore:(RKManagedObjectStore *)objectStore;
-- (id)initWithObjectStore:(RKManagedObjectStore *)objectStore;
++(id)mappingProviderWithObjectStore:(RKManagedObjectStore *)objectStore;
+-(id)initWithObjectStore:(RKManagedObjectStore *)objectStore;
+
+-(RKManagedObjectMapping *)userObjectMapping;
+-(RKManagedObjectMapping *)leagueObjectMapping;
+-(RKManagedObjectMapping *)questionObjectMapping;
+-(RKManagedObjectMapping *)answerObjectMapping;
+-(RKManagedObjectMapping *)betObjectMapping;
+-(RKManagedObjectMapping *)membershipObjectMapping;
 
 @end
