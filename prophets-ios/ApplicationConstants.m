@@ -8,12 +8,12 @@
 
 #import "ApplicationConstants.h"
 
-#ifdef APPLICATION_ENV == 1
+#ifdef DEV
 NSString * const FFBaseUrl = @"http://55prophets.dev:3000";
-#elif APPLICATION_ENV == 2
+#elif TEST
 //test
-#elif APPLICATION_ENV == 3
+#elif STAGING
 //staging
-#elif APPLICATION_ENV == 4
+#elif PRODUCTION
 //prod
 #endif

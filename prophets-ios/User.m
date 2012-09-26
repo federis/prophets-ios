@@ -8,8 +8,11 @@
 
 #import "User.h"
 
-
 @implementation User
+
+static User  *currentUser = nil;
+
+@synthesize password = _password;
 
 @dynamic userId;
 @dynamic email;
@@ -17,11 +20,35 @@
 @dynamic createdAt;
 @dynamic updatedAt;
 @dynamic answers;
-@dynamic judged_answers;
+@dynamic judgedAnswers;
 @dynamic bets;
-@dynamic created_leagues;
+@dynamic createdLeagues;
 @dynamic memberships;
 @dynamic questions;
-@dynamic approved_questions;
+@dynamic approvedQuestions;
+
++(User *)currentUser{
+    return currentUser;
+}
+
++(void)setCurrentUser:(User *)user{
+    currentUser = user;
+}
+
+-(NSString *)authenticationToken{
+    if(!_authenticationToken){
+        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"prophets-ios" accessGroup:nil];
+        _authenticationToken = [keychain objectForKey:(__bridge id)kSecValueData];
+    }
+    return _authenticationToken;
+}
+
+-(void)setAuthenticationToken:(NSString *)token{
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"prophets-ios" accessGroup:nil];
+    [keychain setObject:token forKey:(__bridge id)kSecValueData];
+    _authenticationToken = token;
+}
+
+
 
 @end

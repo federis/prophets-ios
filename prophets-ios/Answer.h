@@ -28,11 +28,3 @@
 @property (nonatomic, strong) NSSet *bets;
 @end
 
-@interface Answer (CoreDataGeneratedAccessors)
-
-- (void)addBetsObject:(NSManagedObject *)value;
-- (void)removeBetsObject:(NSManagedObject *)value;
-- (void)addBets:(NSSet *)values;
-- (void)removeBets:(NSSet *)values;
-
-@end

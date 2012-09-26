@@ -24,12 +24,3 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *approver;
 @end
-
-@interface Question (CoreDataGeneratedAccessors)
-
-- (void)addAnswersObject:(NSManagedObject *)value;
-- (void)removeAnswersObject:(NSManagedObject *)value;
-- (void)addAnswers:(NSSet *)values;
-- (void)removeAnswers:(NSSet *)values;
-
-@end

@@ -7,6 +7,7 @@
 //
 
 #import "FFMappingProvider.h"
+#import "User.h"
 
 @implementation FFMappingProvider
 
@@ -20,6 +21,8 @@
     self = [super init];
     if (self) {
         self.objectStore = os;
+        
+        [self registerObjectMapping:[self userObjectMapping] withRootKeyPath:@"user"];
     }
     
     return self;

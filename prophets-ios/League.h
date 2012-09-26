@@ -24,17 +24,3 @@
 @property (nonatomic, strong) NSSet *memberships;
 @property (nonatomic, strong) NSSet *questions;
 @end
-
-@interface League (CoreDataGeneratedAccessors)
-
-- (void)addMembershipsObject:(NSManagedObject *)value;
-- (void)removeMembershipsObject:(NSManagedObject *)value;
-- (void)addMemberships:(NSSet *)values;
-- (void)removeMemberships:(NSSet *)values;
-
-- (void)addQuestionsObject:(NSManagedObject *)value;
-- (void)removeQuestionsObject:(NSManagedObject *)value;
-- (void)addQuestions:(NSSet *)values;
-- (void)removeQuestions:(NSSet *)values;
-
-@end

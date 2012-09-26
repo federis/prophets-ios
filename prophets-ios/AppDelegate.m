@@ -10,6 +10,7 @@
 
 #import "AppDelegate.h"
 #import "FFMappingProvider.h"
+#import "User.h"
 
 @implementation AppDelegate
 
