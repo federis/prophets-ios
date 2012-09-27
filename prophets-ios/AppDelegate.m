@@ -16,6 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
     RKObjectManager* objectManager = [RKObjectManager managerWithBaseURLString:FFBaseUrl];
     RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"prophets-ios.sqlite"];
     objectManager.objectStore = objectStore;

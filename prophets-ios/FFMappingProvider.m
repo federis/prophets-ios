@@ -35,6 +35,7 @@
     [mapping mapAttributes:@"email", @"name", nil];
     [mapping mapKeyPathsToAttributes:
      @"id", @"userId",
+     @"authentication_token", @"authenticationToken",
      @"updated_at", @"updatedAt",
      @"created_at", @"createdAt",
      nil];
