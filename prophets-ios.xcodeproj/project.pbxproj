@@ -19,6 +19,8 @@
 		B57D0941160D24710060A11E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B57D0940160D24700060A11E /* Default-568h@2x.png */; };
 		B57D0944160D250C0060A11E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D0943160D250B0060A11E /* KeychainItemWrapper.m */; };
 		B5956AF91613D77200C0A87E /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = B5956AF81613D77200C0A87E /* user.json */; };
+		B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */; };
+		B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */; };
 		B5EF1AFF1614A31700268EC4 /* FFObjectLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
 		B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECE160388C600D28C1C /* Foundation.framework */; };
@@ -118,6 +120,10 @@
 		B57D0942160D250B0060A11E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = "prophets-ios/KeychainItemWrapper.h"; sourceTree = "<group>"; };
 		B57D0943160D250B0060A11E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = "prophets-ios/KeychainItemWrapper.m"; sourceTree = "<group>"; };
 		B5956AF81613D77200C0A87E /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
+		B5D33D6E161613F40043A0E8 /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
+		B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
+		B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
+		B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Additions.m"; sourceTree = "<group>"; };
 		B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFObjectLoaderTests.m; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -258,6 +264,17 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
+		B5D33D6D161613990043A0E8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B5D33D6E161613F40043A0E8 /* NSManagedObjectContext+Additions.h */,
+				B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */,
+				B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */,
+				B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		B5F1AEBD160388C600D28C1C = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				B56F40B2160A3B5C007D445F /* Libraries */,
+				B5D33D6D161613990043A0E8 /* Categories */,
 				B57D0925160BE4AB0060A11E /* Controllers */,
 				B56F40D4160A7833007D445F /* Models */,
 				B56F40B3160A4D35007D445F /* FFMappingProvider.h */,
@@ -524,6 +542,8 @@
 				B56F40E3160A795B007D445F /* Membership.m in Sources */,
 				B57D092D160CFB4F0060A11E /* LoginViewController.m in Sources */,
 				B57D0944160D250C0060A11E /* KeychainItemWrapper.m in Sources */,
+				B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */,
+				B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

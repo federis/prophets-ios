@@ -19,4 +19,6 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import "ApplicationConstants.h"
+    #import "NSManagedObjectContext+Additions.h"
+    #import "NSManagedObject+Additions.h"
 #endif

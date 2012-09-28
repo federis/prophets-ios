@@ -27,8 +27,7 @@
     [super viewDidLoad];
 
     self.tableController = [[RKObjectManager sharedManager] tableControllerForTableViewController:self];
-    
-    User *user = [User object];
+    User *user = [User tempObject];
     RKForm *form = [RKForm formForObject:user usingBlock:^(RKForm *form) {
         [form addSectionUsingBlock:^(RKFormSection *section) {
             
@@ -73,7 +72,7 @@
                 loader.method = RKRequestMethodPOST;
                 loader.serializationMIMEType = RKMIMETypeJSON; // We want to send this request as JSON
                 [loader.serializationMapping mapAttributes:@"password", nil];
-                //loader.targetObject = nil;  // Map the results back onto a new object instead of self
+                loader.targetObject = nil;  // Map the results back onto a new object instead of self
                 // Set up a custom serialization mapping to handle this request
                 //loader.serializationMapping = [RKObjectMapping serializationMappingUsingBlock:^(RKObjectMapping *mapping) {
                 //    [mapping mapAttributes:@"password", nil];
@@ -87,7 +86,9 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     User *user = [objects objectAtIndex:0];
+    
     [User setCurrentUser:user];
+    [[RKObjectManager sharedManager].objectStore save:nil];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
