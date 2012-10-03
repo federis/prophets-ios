@@ -21,4 +21,6 @@
     #import "ApplicationConstants.h"
     #import "NSManagedObjectContext+Additions.h"
     #import "NSManagedObject+Additions.h"
+    #import "NSDecimalNumber+Additions.h"
+    #import "NSNumber+Additions.h"
 #endif

@@ -89,6 +89,10 @@
     
     [User setCurrentUser:user];
     [[RKObjectManager sharedManager].objectStore save:nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogInNotification object:user];
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {

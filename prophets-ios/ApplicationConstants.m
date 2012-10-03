@@ -17,3 +17,7 @@ NSString * const FFBaseUrl = @"http://55prophets.dev:3000";
 #elif PRODUCTION
 //prod
 #endif
+
+//Login notifications
+NSString * const FFUserDidLogInNotification = @"FFUserDidLogInNotification";
+NSString * const FFUserDidLogOutNotification = @"FFUserDidLogOutNotification";

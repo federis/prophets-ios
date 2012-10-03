@@ -7,3 +7,7 @@
 //
 
 extern NSString * const FFBaseUrl;
+
+//Login notifications
+extern NSString * const FFUserDidLogInNotification;
+extern NSString * const FFUserDidLogOutNotification;

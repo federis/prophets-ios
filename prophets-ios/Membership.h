@@ -21,4 +21,6 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) League *league;
 
+-(NSString *)balanceString;
+
 @end

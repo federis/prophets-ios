@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */; };
+		B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F423161CC87500A33A8E /* NSNumber+Additions.m */; };
 		B56F40B5160A4D35007D445F /* FFMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40B4160A4D35007D445F /* FFMappingProvider.m */; };
 		B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* ApplicationConstants.m */; };
 		B56F40D3160A7829007D445F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D2160A7828007D445F /* User.m */; };
@@ -21,6 +23,9 @@
 		B5956AF91613D77200C0A87E /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = B5956AF81613D77200C0A87E /* user.json */; };
 		B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */; };
 		B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */; };
+		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
+		B5D33D801618C4900043A0E8 /* MembershipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7F1618C4900043A0E8 /* MembershipCell.m */; };
+		B5D33D821618C9450043A0E8 /* MembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D33D811618C9450043A0E8 /* MembershipCell.xib */; };
 		B5EF1AFF1614A31700268EC4 /* FFObjectLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
 		B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECE160388C600D28C1C /* Foundation.framework */; };
@@ -98,6 +103,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B556F41F161CC83300A33A8E /* NSDecimalNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Additions.h"; sourceTree = "<group>"; };
+		B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Additions.m"; sourceTree = "<group>"; };
+		B556F422161CC87500A33A8E /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
+		B556F423161CC87500A33A8E /* NSNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Additions.m"; sourceTree = "<group>"; };
 		B56F40B3160A4D35007D445F /* FFMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMappingProvider.h; sourceTree = "<group>"; };
 		B56F40B4160A4D35007D445F /* FFMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMappingProvider.m; sourceTree = "<group>"; };
 		B56F40BF160A52AC007D445F /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
@@ -124,6 +133,11 @@
 		B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
 		B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
 		B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Additions.m"; sourceTree = "<group>"; };
+		B5D33D7A161652590043A0E8 /* MembershipsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MembershipsViewController.m; sourceTree = "<group>"; };
+		B5D33D7C161654BA0043A0E8 /* MembershipsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MembershipsViewController.h; sourceTree = "<group>"; };
+		B5D33D7E1618C4900043A0E8 /* MembershipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MembershipCell.h; sourceTree = "<group>"; };
+		B5D33D7F1618C4900043A0E8 /* MembershipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MembershipCell.m; sourceTree = "<group>"; };
+		B5D33D811618C9450043A0E8 /* MembershipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MembershipCell.xib; sourceTree = "<group>"; };
 		B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFObjectLoaderTests.m; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -252,6 +266,8 @@
 			children = (
 				B57D092B160CFB4F0060A11E /* LoginViewController.h */,
 				B57D092C160CFB4F0060A11E /* LoginViewController.m */,
+				B5D33D7C161654BA0043A0E8 /* MembershipsViewController.h */,
+				B5D33D7A161652590043A0E8 /* MembershipsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -271,8 +287,22 @@
 				B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */,
 				B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */,
 				B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */,
+				B556F41F161CC83300A33A8E /* NSDecimalNumber+Additions.h */,
+				B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */,
+				B556F422161CC87500A33A8E /* NSNumber+Additions.h */,
+				B556F423161CC87500A33A8E /* NSNumber+Additions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		B5D33D7D1618C4700043A0E8 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				B5D33D7E1618C4900043A0E8 /* MembershipCell.h */,
+				B5D33D7F1618C4900043A0E8 /* MembershipCell.m */,
+				B5D33D811618C9450043A0E8 /* MembershipCell.xib */,
+			);
+			name = VIews;
 			sourceTree = "<group>";
 		};
 		B5F1AEBD160388C600D28C1C = {
@@ -319,6 +349,7 @@
 			children = (
 				B56F40B2160A3B5C007D445F /* Libraries */,
 				B5D33D6D161613990043A0E8 /* Categories */,
+				B5D33D7D1618C4700043A0E8 /* VIews */,
 				B57D0925160BE4AB0060A11E /* Controllers */,
 				B56F40D4160A7833007D445F /* Models */,
 				B56F40B3160A4D35007D445F /* FFMappingProvider.h */,
@@ -494,6 +525,7 @@
 				B5F1AED9160388C600D28C1C /* InfoPlist.strings in Resources */,
 				B5F1AF02160388E500D28C1C /* Storyboard_iPhone.storyboard in Resources */,
 				B57D0941160D24710060A11E /* Default-568h@2x.png in Resources */,
+				B5D33D821618C9450043A0E8 /* MembershipCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +576,10 @@
 				B57D0944160D250C0060A11E /* KeychainItemWrapper.m in Sources */,
 				B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */,
 				B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */,
+				B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */,
+				B5D33D801618C4900043A0E8 /* MembershipCell.m in Sources */,
+				B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */,
+				B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "FFMappingProvider.h"
 #import "User.h"
+#import "Membership.h"
 
 @implementation FFMappingProvider
 
@@ -23,6 +24,11 @@
         self.objectStore = os;
         
         [self registerObjectMapping:[self userObjectMapping] withRootKeyPath:@"user"];
+        [self setObjectMapping:[self membershipObjectMapping] forResourcePathPattern:@"/memberships" withFetchRequestBlock:^NSFetchRequest *(NSString *resourcePath) {
+            NSFetchRequest *fetchRequest = [Membership fetchRequest];
+            fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES]];
+            return fetchRequest;
+        }];
     }
     
     return self;
@@ -31,6 +37,7 @@
 -(RKManagedObjectMapping *)userObjectMapping{
     RKManagedObjectMapping *mapping =  [RKManagedObjectMapping mappingForEntityWithName:@"User"
                                                                    inManagedObjectStore:self.objectStore];
+    mapping.rootKeyPath = @"user";
     mapping.primaryKeyAttribute = @"userId";
     [mapping mapAttributes:@"email", @"name", nil];
     [mapping mapKeyPathsToAttributes:
@@ -109,6 +116,8 @@
 -(RKManagedObjectMapping *)membershipObjectMapping{
     RKManagedObjectMapping *mapping =  [RKManagedObjectMapping mappingForEntityWithName:@"Membership"
                                                                    inManagedObjectStore:self.objectStore];
+    
+    mapping.rootKeyPath = @"membership";
     mapping.primaryKeyAttribute = @"membershipId";
     [mapping mapAttributes:@"balance", @"role", nil];
     [mapping mapKeyPathsToAttributes:
@@ -116,6 +125,8 @@
      @"updated_at", @"updatedAt",
      @"created_at", @"createdAt",
      nil];
+    
+    [mapping mapKeyPath:@"league" toRelationship:@"league" withMapping:[self leagueObjectMapping]];
     
     return mapping;
 }

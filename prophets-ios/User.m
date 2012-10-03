@@ -28,11 +28,19 @@ static User  *currentUser = nil;
 @dynamic approvedQuestions;
 
 +(User *)currentUser{
+    if(!currentUser){
+        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"prophets-ios" accessGroup:nil];
+        NSNumber *userId = [keychain objectForKey:(__bridge id)kSecAttrAccount];
+        currentUser = [User findByPrimaryKey:userId];
+    }
+    
     return currentUser;
 }
 
 +(void)setCurrentUser:(User *)user{
     currentUser = user;
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"prophets-ios" accessGroup:nil];
+    [keychain setObject:user.userId forKey:(__bridge id)kSecAttrAccount];
 }
 
 -(NSString *)authenticationToken{
