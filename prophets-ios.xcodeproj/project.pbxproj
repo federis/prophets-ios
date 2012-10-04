@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */; };
 		B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F423161CC87500A33A8E /* NSNumber+Additions.m */; };
+		B556F42A161CCDEF00A33A8E /* memberships.json in Resources */ = {isa = PBXBuildFile; fileRef = B556F429161CCDEF00A33A8E /* memberships.json */; };
 		B56F40B5160A4D35007D445F /* FFMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40B4160A4D35007D445F /* FFMappingProvider.m */; };
 		B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* ApplicationConstants.m */; };
 		B56F40D3160A7829007D445F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D2160A7828007D445F /* User.m */; };
@@ -26,6 +27,7 @@
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
 		B5D33D801618C4900043A0E8 /* MembershipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7F1618C4900043A0E8 /* MembershipCell.m */; };
 		B5D33D821618C9450043A0E8 /* MembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D33D811618C9450043A0E8 /* MembershipCell.xib */; };
+		B5EA1262161D091800C774F3 /* LeagueTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1261161D091800C774F3 /* LeagueTest.m */; };
 		B5EF1AFF1614A31700268EC4 /* FFObjectLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
 		B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECE160388C600D28C1C /* Foundation.framework */; };
@@ -107,6 +109,7 @@
 		B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Additions.m"; sourceTree = "<group>"; };
 		B556F422161CC87500A33A8E /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
 		B556F423161CC87500A33A8E /* NSNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Additions.m"; sourceTree = "<group>"; };
+		B556F429161CCDEF00A33A8E /* memberships.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = memberships.json; path = Fixtures/memberships.json; sourceTree = "<group>"; };
 		B56F40B3160A4D35007D445F /* FFMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMappingProvider.h; sourceTree = "<group>"; };
 		B56F40B4160A4D35007D445F /* FFMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMappingProvider.m; sourceTree = "<group>"; };
 		B56F40BF160A52AC007D445F /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 		B5D33D7E1618C4900043A0E8 /* MembershipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MembershipCell.h; sourceTree = "<group>"; };
 		B5D33D7F1618C4900043A0E8 /* MembershipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MembershipCell.m; sourceTree = "<group>"; };
 		B5D33D811618C9450043A0E8 /* MembershipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MembershipCell.xib; sourceTree = "<group>"; };
+		B5EA1261161D091800C774F3 /* LeagueTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueTest.m; sourceTree = "<group>"; };
 		B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFObjectLoaderTests.m; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -257,6 +261,7 @@
 		B56F40E6160A87D8007D445F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B5EA1261161D091800C774F3 /* LeagueTest.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				B5956AF81613D77200C0A87E /* user.json */,
+				B556F429161CCDEF00A33A8E /* memberships.json */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 			files = (
 				B5F1AEF5160388C700D28C1C /* InfoPlist.strings in Resources */,
 				B5956AF91613D77200C0A87E /* user.json in Resources */,
+				B556F42A161CCDEF00A33A8E /* memberships.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5EF1AFF1614A31700268EC4 /* FFObjectLoaderTests.m in Sources */,
+				B5EA1262161D091800C774F3 /* LeagueTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

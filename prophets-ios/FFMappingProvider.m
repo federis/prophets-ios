@@ -54,11 +54,12 @@
     RKManagedObjectMapping *mapping =  [RKManagedObjectMapping mappingForEntityWithName:@"League"
                                                                    inManagedObjectStore:self.objectStore];
     mapping.primaryKeyAttribute = @"leagueId";
-    [mapping mapAttributes:@"name", @"priv", nil];
+    [mapping mapAttributes:@"name", nil];
     [mapping mapKeyPathsToAttributes:
      @"id", @"leagueId",
-     @"initialBalance", @"initialBalance",
+     @"initial_balance", @"initialBalance",
      @"max_bet", @"maxBet",
+     @"priv", @"isPrivate",
      @"updated_at", @"updatedAt",
      @"created_at", @"createdAt",
      nil];
@@ -85,12 +86,13 @@
     RKManagedObjectMapping *mapping =  [RKManagedObjectMapping mappingForEntityWithName:@"Answer"
                                                                    inManagedObjectStore:self.objectStore];
     mapping.primaryKeyAttribute = @"answerId";
-    [mapping mapAttributes:@"content", @"correct", nil];
+    [mapping mapAttributes:@"content",  nil];
     [mapping mapKeyPathsToAttributes:
      @"id", @"answerId",
      @"bet_total", @"betTotal",
      @"current_probability", @"currentProbability",
      @"initial_probability", @"initialProbability",
+     @"correct", @"isCorrect",
      @"judged_at", @"judgedAt",
      @"updated_at", @"updatedAt",
      @"created_at", @"createdAt",

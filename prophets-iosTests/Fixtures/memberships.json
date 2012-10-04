@@ -1,0 +1,62 @@
+[
+  {
+    "membership" : {
+      "league" : {
+        "id" : 1,
+        "priv" : true,
+        "created_at" : "2012-10-01T01:32:30Z",
+        "user_id" : 2,
+        "max_bet" : 1000,
+        "updated_at" : "2012-10-01T01:32:30Z",
+        "name" : "the league 1",
+        "initial_balance" : 10000
+      },
+      "id" : 1,
+      "role" : 1,
+      "created_at" : "2012-10-01T01:32:30Z",
+      "user_id" : 1,
+      "updated_at" : "2012-10-01T01:32:30Z",
+      "balance" : 10000
+    }
+  },
+  {
+    "membership" : {
+      "league" : {
+        "id" : 2,
+        "priv" : false,
+        "created_at" : "2012-10-01T01:32:36Z",
+        "user_id" : 2,
+        "max_bet" : 500,
+        "updated_at" : "2012-10-01T01:32:36Z",
+        "name" : "the league 2",
+        "initial_balance" : 5000
+      },
+      "id" : 2,
+      "role" : 2,
+      "created_at" : "2012-10-01T01:32:36Z",
+      "user_id" : 1,
+      "updated_at" : "2012-10-01T01:32:36Z",
+      "balance" : 4200
+    }
+  },
+  {
+    "membership" : {
+      "league" : {
+        "id" : 3,
+        "priv" : false,
+        "created_at" : "2012-10-03T17:23:28Z",
+        "user_id" : 2,
+        "max_bet" : 100,
+        "updated_at" : "2012-10-03T17:23:28Z",
+        "name" : "the league 3",
+        "initial_balance" : 100000
+      },
+      "id" : 3,
+      "role" : 2,
+      "created_at" : "2012-10-03T17:23:28Z",
+      "user_id" : 1,
+      "updated_at" : "2012-10-03T17:23:28Z",
+      "balance" : 10000
+    }
+  }
+]

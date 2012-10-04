@@ -26,5 +26,9 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *judge;
 @property (nonatomic, strong) NSSet *bets;
+
+-(BOOL)isCorrect;
+-(void)setIsCorrect:(BOOL)isCorrect;
+
 @end
 

@@ -27,4 +27,12 @@
 @dynamic judge;
 @dynamic bets;
 
+-(BOOL)isCorrect{
+    return self.correct.boolValue;
+}
+
+-(void)setIsCorrect:(BOOL)isCorrect{
+    self.correct = [NSNumber numberWithBool:isCorrect];
+}
+
 @end

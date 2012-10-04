@@ -23,4 +23,12 @@
 @dynamic memberships;
 @dynamic questions;
 
+-(BOOL)isPrivate{
+    return self.priv.boolValue;
+}
+
+-(void)setIsPrivate:(BOOL)isPrivate{
+    self.priv = [NSNumber numberWithBool:isPrivate];
+}
+
 @end

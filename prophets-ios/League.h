@@ -23,4 +23,8 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) NSSet *memberships;
 @property (nonatomic, strong) NSSet *questions;
+
+-(BOOL)isPrivate;
+-(void)setIsPrivate:(BOOL)isPrivate;
+
 @end
