@@ -13,11 +13,11 @@
 
 #import "Answer.h"
 
-@interface AnswerTest : SenTestCase
+@interface AnswerTests : SenTestCase
 
 @end
 
-@implementation AnswerTest
+@implementation AnswerTests
 
 - (void)setUp
 {

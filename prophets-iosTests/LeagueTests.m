@@ -13,12 +13,12 @@
 
 #import "League.h"
 
-@interface LeagueTest : SenTestCase
+@interface LeagueTests : SenTestCase
 
 @end
 
 
-@implementation LeagueTest
+@implementation LeagueTests
 
 - (void)setUp
 {
