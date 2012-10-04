@@ -7,7 +7,14 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData.h>
+#import <RestKit/Testing.h>
 
-@interface FFBaseTestCase : SenTestCase
+#import "KeychainItemWrapper.h"
+
+@interface FFBaseTestCase : SenTestCase{
+    KeychainItemWrapper *keychain;
+}
 
 @end

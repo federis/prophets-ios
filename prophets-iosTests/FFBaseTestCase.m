@@ -6,10 +6,6 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import <RestKit/RestKit.h>
-#import <RestKit/CoreData.h>
-#import <RestKit/Testing.h>
-
 #import "FFBaseTestCase.h"
 
 @implementation FFBaseTestCase
@@ -17,11 +13,14 @@
 - (void)setUp
 {
     [RKTestFactory setUp];
+    keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
 }
 
 - (void)tearDown
 {
     [RKTestFactory tearDown];
+    [keychain resetKeychainItem];
+    keychain = nil;
 }
 
 @end

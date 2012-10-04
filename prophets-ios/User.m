@@ -7,11 +7,11 @@
 //
 
 #import "User.h"
+#import "KeychainItemWrapper.h"
 
 @implementation User
 
 static User *currentUser = nil;
-static NSString *keychainIdentifier = @"prophets-ios";
 
 @synthesize password = _password;
 
@@ -30,7 +30,7 @@ static NSString *keychainIdentifier = @"prophets-ios";
 
 +(User *)currentUser{
     if(!currentUser){
-        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:keychainIdentifier accessGroup:nil];
+        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
         NSNumber *userId = [keychain objectForKey:(__bridge id)kSecAttrAccount];
         currentUser = [User findByPrimaryKey:userId];
     }
@@ -40,7 +40,7 @@ static NSString *keychainIdentifier = @"prophets-ios";
 
 +(void)setCurrentUser:(User *)user{
     currentUser = user;
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:keychainIdentifier accessGroup:nil];
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
     if(!user)
         [keychain resetKeychainItem];
     else
@@ -49,14 +49,14 @@ static NSString *keychainIdentifier = @"prophets-ios";
 
 -(NSString *)authenticationToken{
     if(!_authenticationToken){
-        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:keychainIdentifier accessGroup:nil];
+        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
         _authenticationToken = [keychain objectForKey:(__bridge id)kSecValueData];
     }
     return _authenticationToken;
 }
 
 -(void)setAuthenticationToken:(NSString *)token{
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:keychainIdentifier accessGroup:nil];
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
     [keychain setObject:token forKey:(__bridge id)kSecValueData];
     _authenticationToken = token;
 }

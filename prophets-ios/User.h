@@ -10,9 +10,6 @@
 #import <CoreData/CoreData.h>
 #import <RestKit/RestKit.h>
 
-#import "KeychainItemWrapper.h"
-
-
 @interface User : NSManagedObject{
     NSString *_authenticationToken;
 }
