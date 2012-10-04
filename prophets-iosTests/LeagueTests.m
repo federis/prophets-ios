@@ -6,14 +6,10 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-#import <RestKit/RestKit.h>
-#import <RestKit/CoreData.h>
-#import <RestKit/Testing.h>
-
+#import "FFBaseTestCase.h"
 #import "League.h"
 
-@interface LeagueTests : SenTestCase
+@interface LeagueTests : FFBaseTestCase
 
 @end
 
@@ -22,12 +18,12 @@
 
 - (void)setUp
 {
-    [RKTestFactory setUp];
+    [super setUp];
 }
 
 - (void)tearDown
 {
-    [RKTestFactory tearDown];
+    [super tearDown];
 }
 
 -(void)testIsPrivateSetter{

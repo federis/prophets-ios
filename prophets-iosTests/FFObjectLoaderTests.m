@@ -11,12 +11,13 @@
 #import <RestKit/CoreData.h>
 #import <RestKit/Testing.h>
 
+#import "FFBaseTestCase.h"
 #import "FFMappingProvider.h"
 #import "User.h"
 #import "Membership.h"
 #import "League.h"
 
-@interface FFObjectLoaderTests : SenTestCase{
+@interface FFObjectLoaderTests : FFBaseTestCase{
     RKObjectManager *manager;
     FFMappingProvider *mappingProvider;
     RKTestResponseLoader *responseLoader;
@@ -29,7 +30,7 @@
 @implementation FFObjectLoaderTests
 
 - (void)setUp{
-    [RKTestFactory setUp];
+    [super setUp];
     
     manager = [RKTestFactory objectManager];
     manager.objectStore = [RKTestFactory managedObjectStore];
@@ -45,7 +46,7 @@
 }
 
 - (void)tearDown{
-    [RKTestFactory tearDown];
+    [super tearDown];
     mappingProvider = nil;
     responseLoader = nil;
     dateFormatter = nil;

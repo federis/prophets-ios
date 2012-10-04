@@ -11,9 +11,10 @@
 #import <RestKit/CoreData.h>
 #import <RestKit/Testing.h>
 
+#import "FFBaseTestCase.h"
 #import "User.h"
 
-@interface UserTests : SenTestCase
+@interface UserTests : FFBaseTestCase
 
 @end
 
@@ -22,12 +23,12 @@
 
 - (void)setUp
 {
-    [RKTestFactory setUp];
+    [super setUp];
 }
 
 - (void)tearDown
 {
-    [RKTestFactory tearDown];
+    [super tearDown];
 }
 
 -(void)testCurrentUserGetter{

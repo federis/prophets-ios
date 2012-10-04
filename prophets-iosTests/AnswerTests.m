@@ -11,9 +11,10 @@
 #import <RestKit/CoreData.h>
 #import <RestKit/Testing.h>
 
+#import "FFBaseTestCase.h"
 #import "Answer.h"
 
-@interface AnswerTests : SenTestCase
+@interface AnswerTests : FFBaseTestCase
 
 @end
 
@@ -21,12 +22,12 @@
 
 - (void)setUp
 {
-    [RKTestFactory setUp];
+    [super setUp];
 }
 
 - (void)tearDown
 {
-    [RKTestFactory tearDown];
+    [super tearDown];
 }
 
 -(void)testIsCorrectSetter{

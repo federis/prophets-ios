@@ -8,7 +8,9 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface LoginTests : SenTestCase
+#import "FFBaseTestCase.h"
+
+@interface LoginTests : FFBaseTestCase
 
 @end
 
