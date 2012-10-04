@@ -53,7 +53,7 @@
 }
 
 -(void)testUserTokenLoader{
-    User *user = [User object];
+    User *user = [User createEntity];
     user.email = @"test@example.com";
     user.password = @"password";
     [manager sendObject:user toResourcePath:@"/tokens" usingBlock:^(RKObjectLoader *loader) {

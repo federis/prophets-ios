@@ -28,6 +28,7 @@
 		B5D33D801618C4900043A0E8 /* MembershipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7F1618C4900043A0E8 /* MembershipCell.m */; };
 		B5D33D821618C9450043A0E8 /* MembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D33D811618C9450043A0E8 /* MembershipCell.xib */; };
 		B5EA1262161D091800C774F3 /* LeagueTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1261161D091800C774F3 /* LeagueTest.m */; };
+		B5EA1367161D195500C774F3 /* AnswerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1366161D195500C774F3 /* AnswerTest.m */; };
 		B5EF1AFF1614A31700268EC4 /* FFObjectLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
 		B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECE160388C600D28C1C /* Foundation.framework */; };
@@ -142,6 +143,7 @@
 		B5D33D7F1618C4900043A0E8 /* MembershipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MembershipCell.m; sourceTree = "<group>"; };
 		B5D33D811618C9450043A0E8 /* MembershipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MembershipCell.xib; sourceTree = "<group>"; };
 		B5EA1261161D091800C774F3 /* LeagueTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueTest.m; sourceTree = "<group>"; };
+		B5EA1366161D195500C774F3 /* AnswerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTest.m; sourceTree = "<group>"; };
 		B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFObjectLoaderTests.m; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				B5EA1261161D091800C774F3 /* LeagueTest.m */,
+				B5EA1366161D195500C774F3 /* AnswerTest.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 			files = (
 				B5EF1AFF1614A31700268EC4 /* FFObjectLoaderTests.m in Sources */,
 				B5EA1262161D091800C774F3 /* LeagueTest.m in Sources */,
+				B5EA1367161D195500C774F3 /* AnswerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,52 @@
+//
+//  AnswerTest.m
+//  prophets-ios
+//
+//  Created by Benjamin Roesch on 10/3/12.
+//  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
+//
+
+#import <SenTestingKit/SenTestingKit.h>
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData.h>
+#import <RestKit/Testing.h>
+
+#import "Answer.h"
+
+@interface AnswerTest : SenTestCase
+
+@end
+
+@implementation AnswerTest
+
+- (void)setUp
+{
+    [RKTestFactory setUp];
+}
+
+- (void)tearDown
+{
+    [RKTestFactory tearDown];
+}
+
+-(void)testIsCorrectSetter{
+    [RKTestFactory managedObjectStore];
+    Answer *answer = [Answer createEntity];
+    
+    answer.isCorrect = YES;
+    STAssertTrue([answer.correct intValue] == 1, @"Answer isCorrect setter did not correctly set true value");
+    answer.isCorrect = NO;
+    STAssertTrue([answer.correct intValue] == 0, @"Answer isCorrect setter did not correctly set false value");
+}
+
+-(void)testIsCorrectGetter{
+    [RKTestFactory managedObjectStore];
+    Answer *answer = [Answer createEntity];
+    
+    answer.correct = [NSNumber numberWithBool:YES];
+    STAssertTrue(answer.isCorrect, @"Answer isCorrect getter did not correctly get true value");
+    answer.correct = [NSNumber numberWithBool:NO];
+    STAssertTrue([answer.correct intValue] == 0, @"Answer isCorrect getter did not correctly get false value");
+}
+
+@end
