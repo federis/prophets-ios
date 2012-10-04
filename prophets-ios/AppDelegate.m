@@ -16,12 +16,12 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+{        
     //RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
     //RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/UI", RKLogLevelTrace);
     RKObjectManager* objectManager = [RKObjectManager managerWithBaseURLString:FFBaseUrl];
-    RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"prophets-ios.sqlite"];
+    RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:FFObjectStoreName];
     objectManager.objectStore = objectStore;
     objectManager.mappingProvider = [FFMappingProvider mappingProviderWithObjectStore:objectStore];
     

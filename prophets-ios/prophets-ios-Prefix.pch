@@ -14,6 +14,11 @@
 #define DLog( s, ... )
 #endif
 
+#define DEV 1
+#define TEST 2
+#define STAGING 3
+#define PROD 4
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>

@@ -20,4 +20,18 @@
 
 @implementation UserTests
 
+- (void)setUp
+{
+    [RKTestFactory setUp];
+}
+
+- (void)tearDown
+{
+    [RKTestFactory tearDown];
+}
+
+-(void)testCurrentUserGetter{
+
+}
+
 @end

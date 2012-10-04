@@ -7,6 +7,8 @@
 //
 
 extern NSString * const FFBaseUrl;
+extern NSString * const FFKeychainIdentifier;
+extern NSString * const FFObjectStoreName;
 
 //Login notifications
 extern NSString * const FFUserDidLogInNotification;

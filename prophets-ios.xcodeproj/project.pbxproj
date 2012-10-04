@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B516A020161DCA4900736C70 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B516A018161DCA4900736C70 /* libOCMock.a */; };
+		B516A047161E000200736C70 /* FFBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B516A046161E000200736C70 /* FFBaseTestCase.m */; };
 		B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */; };
 		B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F423161CC87500A33A8E /* NSNumber+Additions.m */; };
 		B556F42A161CCDEF00A33A8E /* memberships.json in Resources */ = {isa = PBXBuildFile; fileRef = B556F429161CCDEF00A33A8E /* memberships.json */; };
@@ -31,6 +33,7 @@
 		B5EA1367161D195500C774F3 /* AnswerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1366161D195500C774F3 /* AnswerTests.m */; };
 		B5EA136A161D201A00C774F3 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1369161D201A00C774F3 /* LoginTests.m */; };
 		B5EA136D161D205800C774F3 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA136C161D205800C774F3 /* UserTests.m */; };
+		B5EA136E161D232000C774F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
 		B5EF1AFF1614A31700268EC4 /* FFObjectLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
 		B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECE160388C600D28C1C /* Foundation.framework */; };
@@ -108,6 +111,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B516A018161DCA4900736C70 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		B516A01A161DCA4900736C70 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		B516A01B161DCA4900736C70 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		B516A01C161DCA4900736C70 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		B516A01D161DCA4900736C70 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		B516A01E161DCA4900736C70 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		B516A01F161DCA4900736C70 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		B516A045161E000200736C70 /* FFBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTestCase.h; sourceTree = "<group>"; };
+		B516A046161E000200736C70 /* FFBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTestCase.m; sourceTree = "<group>"; };
 		B556F41F161CC83300A33A8E /* NSDecimalNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Additions.h"; sourceTree = "<group>"; };
 		B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Additions.m"; sourceTree = "<group>"; };
 		B556F422161CC87500A33A8E /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
@@ -198,16 +210,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5EA136E161D232000C774F3 /* Security.framework in Frameworks */,
 				B5F1AEEA160388C700D28C1C /* SenTestingKit.framework in Frameworks */,
 				B5F1AEEB160388C700D28C1C /* UIKit.framework in Frameworks */,
 				B5F1AEEC160388C700D28C1C /* Foundation.framework in Frameworks */,
 				B5F1AEED160388C700D28C1C /* CoreData.framework in Frameworks */,
+				B516A020161DCA4900736C70 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B516A019161DCA4900736C70 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				B516A01A161DCA4900736C70 /* NSNotificationCenter+OCMAdditions.h */,
+				B516A01B161DCA4900736C70 /* OCMArg.h */,
+				B516A01C161DCA4900736C70 /* OCMConstraint.h */,
+				B516A01D161DCA4900736C70 /* OCMock.h */,
+				B516A01E161DCA4900736C70 /* OCMockObject.h */,
+				B516A01F161DCA4900736C70 /* OCMockRecorder.h */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
 		B56F40B2160A3B5C007D445F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +423,8 @@
 				B56F40E5160A87D4007D445F /* Logic */,
 				B56F40E4160A87CC007D445F /* Application */,
 				B5F1AEF1160388C700D28C1C /* Supporting Files */,
+				B516A045161E000200736C70 /* FFBaseTestCase.h */,
+				B516A046161E000200736C70 /* FFBaseTestCase.m */,
 			);
 			path = "prophets-iosTests";
 			sourceTree = "<group>";
@@ -403,6 +432,8 @@
 		B5F1AEF1160388C700D28C1C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B516A018161DCA4900736C70 /* libOCMock.a */,
+				B516A019161DCA4900736C70 /* OCMock */,
 				B5F1AEF2160388C700D28C1C /* prophets-iosTests-Info.plist */,
 				B5F1AEF3160388C700D28C1C /* InfoPlist.strings */,
 			);
@@ -608,6 +639,7 @@
 				B5EA1367161D195500C774F3 /* AnswerTests.m in Sources */,
 				B5EA136A161D201A00C774F3 /* LoginTests.m in Sources */,
 				B5EA136D161D205800C774F3 /* UserTests.m in Sources */,
+				B516A047161E000200736C70 /* FFBaseTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +678,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B5F1AEF9160388C700D28C1C /* Debug */ = {
+		B516A03F161DF73E00736C70 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"PRODUCTION=1",
+					"APP_ENV=STAGING",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
+		};
+		B516A040161DF73E00736C70 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Staging;
+		};
+		B516A041161DF73E00736C70 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/prophets-ios.app/prophets-ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+					"$(SRCROOT)/prophets-iosTests/OCMock",
+				);
+				INFOPLIST_FILE = "prophets-iosTests/prophets-iosTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/prophets-iosTests\"",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/prophets-iosTests/libOCMock.a\"",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Staging;
+		};
+		B516A042161DF74200736C70 /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -662,7 +769,84 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
-					"DEV=1",
+					"APP_ENV=TEST",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Test;
+		};
+		B516A043161DF74200736C70 /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Test;
+		};
+		B516A044161DF74200736C70 /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/prophets-ios.app/prophets-ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+					"$(SRCROOT)/prophets-iosTests/OCMock",
+				);
+				INFOPLIST_FILE = "prophets-iosTests/prophets-iosTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/prophets-iosTests\"",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/prophets-iosTests/libOCMock.a\"",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Test;
+		};
+		B5F1AEF9160388C700D28C1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"APP_ENV=DEV",
+					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -686,7 +870,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCTION=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"PRODUCTION=1",
+					"APP_ENV=PROD",
+				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -704,6 +891,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
 				OTHER_LDFLAGS = (
@@ -720,6 +908,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
 				OTHER_LDFLAGS = (
@@ -741,8 +930,21 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+					"$(SRCROOT)/prophets-iosTests/OCMock",
+				);
 				INFOPLIST_FILE = "prophets-iosTests/prophets-iosTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/prophets-iosTests\"",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/prophets-iosTests/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -759,8 +961,21 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+					"$(SRCROOT)/prophets-iosTests/OCMock",
+				);
 				INFOPLIST_FILE = "prophets-iosTests/prophets-iosTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/prophets-iosTests\"",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/prophets-iosTests/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -774,7 +989,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5F1AEF9160388C700D28C1C /* Debug */,
+				B516A042161DF74200736C70 /* Test */,
 				B5F1AEFA160388C700D28C1C /* Release */,
+				B516A03F161DF73E00736C70 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -783,7 +1000,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5F1AEFC160388C700D28C1C /* Debug */,
+				B516A043161DF74200736C70 /* Test */,
 				B5F1AEFD160388C700D28C1C /* Release */,
+				B516A040161DF73E00736C70 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -792,7 +1011,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5F1AEFF160388C700D28C1C /* Debug */,
+				B516A044161DF74200736C70 /* Test */,
 				B5F1AF00160388C700D28C1C /* Release */,
+				B516A041161DF73E00736C70 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
