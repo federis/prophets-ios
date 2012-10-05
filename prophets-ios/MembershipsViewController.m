@@ -12,6 +12,7 @@
 #import "MembershipsViewController.h"
 #import "MembershipCell.h"
 #import "Membership.h"
+#import "User.h"
 
 @interface MembershipsViewController ()
 @property (nonatomic, strong) RKFetchedResultsTableController *tableController;
@@ -46,7 +47,8 @@
 {
     [super viewWillAppear:animated];
     
-    [self.tableController loadTable];
+    if ([User currentUser])
+        [self.tableController loadTable];
 }
 
 @end

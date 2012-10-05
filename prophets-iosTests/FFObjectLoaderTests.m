@@ -6,11 +6,6 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-#import <RestKit/RestKit.h>
-#import <RestKit/CoreData.h>
-#import <RestKit/Testing.h>
-
 #import "FFBaseTestCase.h"
 #import "FFMappingProvider.h"
 #import "User.h"
@@ -18,8 +13,6 @@
 #import "League.h"
 
 @interface FFObjectLoaderTests : FFBaseTestCase{
-    RKObjectManager *manager;
-    FFMappingProvider *mappingProvider;
     RKTestResponseLoader *responseLoader;
     NSDateFormatter *dateFormatter;
 }
@@ -32,12 +25,6 @@
 - (void)setUp{
     [super setUp];
     
-    manager = [RKTestFactory objectManager];
-    manager.objectStore = [RKTestFactory managedObjectStore];
-    
-    mappingProvider = [FFMappingProvider mappingProviderWithObjectStore:manager.objectStore];
-    manager.mappingProvider = mappingProvider;
-    
     responseLoader = [RKTestResponseLoader responseLoader];
     
     dateFormatter = [[NSDateFormatter alloc] init];
@@ -47,17 +34,15 @@
 
 - (void)tearDown{
     [super tearDown];
-    mappingProvider = nil;
     responseLoader = nil;
     dateFormatter = nil;
-    manager = nil;
 }
 
 -(void)testUserTokenLoader{
     User *user = [User createEntity];
     user.email = @"test@example.com";
     user.password = @"password";
-    [manager sendObject:user toResourcePath:@"/tokens" usingBlock:^(RKObjectLoader *loader) {
+    [[RKObjectManager sharedManager] sendObject:user toResourcePath:@"/tokens" usingBlock:^(RKObjectLoader *loader) {
         loader.delegate = responseLoader;
         loader.method = RKRequestMethodPOST;
         loader.serializationMIMEType = RKMIMETypeJSON;
@@ -80,7 +65,7 @@
 }
 
 -(void)testMembershipLoader{
-    [manager loadObjectsAtResourcePath:@"/memberships" delegate:responseLoader];
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/memberships" delegate:responseLoader];
     [responseLoader waitForResponse];
     
     STAssertTrue(responseLoader.objects.count == 3, @"Should have loaded 3 memberships");

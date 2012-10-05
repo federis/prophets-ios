@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-
 #import "FFBaseTestCase.h"
 
 @interface LoginTests : FFBaseTestCase
