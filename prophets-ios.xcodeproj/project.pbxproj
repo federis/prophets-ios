@@ -115,6 +115,8 @@
 		B516A046161E000200736C70 /* FFBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTestCase.m; sourceTree = "<group>"; };
 		B533238F161F4BA30094D2DF /* Factories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factories.h; sourceTree = "<group>"; };
 		B5332390161F4BA30094D2DF /* Factories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factories.m; sourceTree = "<group>"; };
+		B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevConfig.xcconfig; sourceTree = "<group>"; };
+		B5332393161F5CC90094D2DF /* ProdConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProdConfig.xcconfig; sourceTree = "<group>"; };
 		B556F41F161CC83300A33A8E /* NSDecimalNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Additions.h"; sourceTree = "<group>"; };
 		B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Additions.m"; sourceTree = "<group>"; };
 		B556F422161CC87500A33A8E /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
@@ -392,6 +394,8 @@
 				B5F1AED6160388C600D28C1C /* prophets-ios-Info.plist */,
 				B5F1AED7160388C600D28C1C /* InfoPlist.strings */,
 				B5F1AEDA160388C600D28C1C /* main.m */,
+				B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */,
+				B5332393161F5CC90094D2DF /* ProdConfig.xcconfig */,
 			);
 			name = "Supporting Files";
 			path = "prophets-ios";
@@ -662,6 +666,7 @@
 /* Begin XCBuildConfiguration section */
 		B516A03F161DF73E00736C70 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -689,6 +694,7 @@
 		};
 		B516A040161DF73E00736C70 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
@@ -706,6 +712,7 @@
 		};
 		B516A041161DF73E00736C70 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/prophets-ios.app/prophets-ios";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -730,6 +737,7 @@
 		};
 		B516A042161DF74200736C70 /* Test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -759,6 +767,7 @@
 		};
 		B516A043161DF74200736C70 /* Test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
@@ -776,6 +785,7 @@
 		};
 		B516A044161DF74200736C70 /* Test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/prophets-ios.app/prophets-ios";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -800,6 +810,7 @@
 		};
 		B5F1AEF9160388C700D28C1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -829,6 +840,7 @@
 		};
 		B5F1AEFA160388C700D28C1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332393161F5CC90094D2DF /* ProdConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -856,6 +868,7 @@
 		};
 		B5F1AEFC160388C700D28C1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
@@ -873,6 +886,7 @@
 		};
 		B5F1AEFD160388C700D28C1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332393161F5CC90094D2DF /* ProdConfig.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
@@ -890,6 +904,7 @@
 		};
 		B5F1AEFF160388C700D28C1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/prophets-ios.app/prophets-ios";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -914,6 +929,7 @@
 		};
 		B5F1AF00160388C700D28C1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/prophets-ios.app/prophets-ios";
 				FRAMEWORK_SEARCH_PATHS = (

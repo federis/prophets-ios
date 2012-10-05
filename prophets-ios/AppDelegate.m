@@ -15,8 +15,7 @@
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{        
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     //RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
     //RKLogConfigureByName("RestKit/UI", RKLogLevelTrace);
