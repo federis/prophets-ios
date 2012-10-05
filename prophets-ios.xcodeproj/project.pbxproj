@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B516A047161E000200736C70 /* FFBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B516A046161E000200736C70 /* FFBaseTestCase.m */; };
+		B5332391161F4BA30094D2DF /* Factories.m in Sources */ = {isa = PBXBuildFile; fileRef = B5332390161F4BA30094D2DF /* Factories.m */; };
 		B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */; };
 		B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F423161CC87500A33A8E /* NSNumber+Additions.m */; };
 		B556F42A161CCDEF00A33A8E /* memberships.json in Resources */ = {isa = PBXBuildFile; fileRef = B556F429161CCDEF00A33A8E /* memberships.json */; };
@@ -112,6 +113,8 @@
 /* Begin PBXFileReference section */
 		B516A045161E000200736C70 /* FFBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTestCase.h; sourceTree = "<group>"; };
 		B516A046161E000200736C70 /* FFBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTestCase.m; sourceTree = "<group>"; };
+		B533238F161F4BA30094D2DF /* Factories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factories.h; sourceTree = "<group>"; };
+		B5332390161F4BA30094D2DF /* Factories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factories.m; sourceTree = "<group>"; };
 		B556F41F161CC83300A33A8E /* NSDecimalNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Additions.h"; sourceTree = "<group>"; };
 		B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Additions.m"; sourceTree = "<group>"; };
 		B556F422161CC87500A33A8E /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
@@ -412,6 +415,8 @@
 			children = (
 				B5F1AEF2160388C700D28C1C /* prophets-iosTests-Info.plist */,
 				B5F1AEF3160388C700D28C1C /* InfoPlist.strings */,
+				B533238F161F4BA30094D2DF /* Factories.h */,
+				B5332390161F4BA30094D2DF /* Factories.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -616,6 +621,7 @@
 				B5EA136A161D201A00C774F3 /* LoginTests.m in Sources */,
 				B5EA136D161D205800C774F3 /* UserTests.m in Sources */,
 				B516A047161E000200736C70 /* FFBaseTestCase.m in Sources */,
+				B5332391161F4BA30094D2DF /* Factories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

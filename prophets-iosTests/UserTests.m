@@ -6,11 +6,6 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-#import <RestKit/RestKit.h>
-#import <RestKit/CoreData.h>
-#import <RestKit/Testing.h>
-
 #import "FFBaseTestCase.h"
 #import "User.h"
 
@@ -32,7 +27,34 @@
 }
 
 -(void)testCurrentUserGetter{
+    
+    User *user = [User currentUser];
+    STAssertNil(user, @"Current user should be nil");
+    
+    user = [Factories userFactory];
+    [keychain setObject:user.userId forKey:(__bridge id)kSecAttrAccount];
+    
+    User *currentUser = [User currentUser];
+    STAssertNotNil(currentUser, @"Current user should not be nil");
+    STAssertEqualObjects(currentUser.email, user.email, @"User email is incorrect");
+}
 
+-(void)testCurrentUserSetter{
+    User *currentUser = [User currentUser];
+    STAssertNil(currentUser, @"Current user should be nil");
+    
+    User *newUser = [Factories userFactory];
+    [User setCurrentUser:newUser];
+    
+    //need a fresh kc instance for some reason, otherwise we don't get the change set in setCurrentUser
+    KeychainItemWrapper* kc = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
+    NSNumber *userId = [kc objectForKey:(__bridge id)kSecAttrAccount];
+    STAssertEqualObjects(userId, newUser.userId, @"User id not set properly in the keychain");
+    
+    User *foundUser = [User findByPrimaryKey:userId];
+    STAssertEqualObjects(foundUser, newUser, @"Current User object not found properly");
+    
+    STAssertEqualObjects([User currentUser], foundUser, @"Current user not set properly");
 }
 
 @end

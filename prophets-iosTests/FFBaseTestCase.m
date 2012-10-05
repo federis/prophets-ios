@@ -8,11 +8,11 @@
 
 #import "FFBaseTestCase.h"
 #import "FFMappingProvider.h"
+#import "User.h"
 
 @implementation FFBaseTestCase
 
-- (void)setUp
-{
+- (void)setUp{
     [RKTestFactory setUp];
     [RKTestFactory clearCacheDirectory];
     
@@ -27,6 +27,8 @@
 {
     [RKTestFactory tearDown];
     [RKTestFactory clearCacheDirectory];
+    
+    [User setCurrentUser:nil];
     
     [keychain resetKeychainItem];
     keychain = nil;

@@ -11,6 +11,7 @@
 #import <RestKit/CoreData.h>
 #import <RestKit/Testing.h>
 
+#import "Factories.h"
 #import "KeychainItemWrapper.h"
 
 @interface FFBaseTestCase : SenTestCase{
