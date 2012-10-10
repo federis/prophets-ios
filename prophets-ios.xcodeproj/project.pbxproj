@@ -11,6 +11,7 @@
 		B5094EF41625E6C000947FAC /* FFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5094EF31625E6C000947FAC /* FFBaseViewController.m */; };
 		B5094EF71625E7F500947FAC /* FFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */; };
 		B5094EF91625EB9F00947FAC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = B5094EF81625EB9F00947FAC /* background.png */; };
+		B5094F081626040300947FAC /* FFBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5094F071626040300947FAC /* FFBaseCell.m */; };
 		B516A047161E000200736C70 /* FFBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B516A046161E000200736C70 /* FFBaseTestCase.m */; };
 		B5332391161F4BA30094D2DF /* Factories.m in Sources */ = {isa = PBXBuildFile; fileRef = B5332390161F4BA30094D2DF /* Factories.m */; };
 		B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */; };
@@ -123,6 +124,8 @@
 		B5094EF51625E7F500947FAC /* FFBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTableViewController.h; sourceTree = "<group>"; };
 		B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableViewController.m; sourceTree = "<group>"; };
 		B5094EF81625EB9F00947FAC /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		B5094F061626040300947FAC /* FFBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseCell.h; sourceTree = "<group>"; };
+		B5094F071626040300947FAC /* FFBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseCell.m; sourceTree = "<group>"; };
 		B516A045161E000200736C70 /* FFBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTestCase.h; sourceTree = "<group>"; };
 		B516A046161E000200736C70 /* FFBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTestCase.m; sourceTree = "<group>"; };
 		B533238F161F4BA30094D2DF /* Factories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factories.h; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 		B5D33D7D1618C4700043A0E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5094F061626040300947FAC /* FFBaseCell.h */,
+				B5094F071626040300947FAC /* FFBaseCell.m */,
 				B5D33D7E1618C4900043A0E8 /* MembershipCell.h */,
 				B5D33D7F1618C4900043A0E8 /* MembershipCell.m */,
 				B5D33D811618C9450043A0E8 /* MembershipCell.xib */,
@@ -653,6 +658,7 @@
 				B56056A016226BEA004470DC /* LaunchViewController.m in Sources */,
 				B5094EF41625E6C000947FAC /* FFBaseViewController.m in Sources */,
 				B5094EF71625E7F500947FAC /* FFBaseTableViewController.m in Sources */,
+				B5094F081626040300947FAC /* FFBaseCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

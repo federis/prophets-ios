@@ -29,28 +29,87 @@
                             <outlet property="delegate" destination="gQJ-kX-Ovg" id="Fll-XT-UiN"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="MQv-ZY-ci2"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbK-ce-CNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="-1205"/>
+            <point key="canvasLocation" x="644" y="-1227"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kms-Dw-Inh">
+            <objects>
+                <navigationController storyboardIdentifier="LaunchNavController" definesPresentationContext="YES" navigationBarHidden="YES" id="NBe-OX-dVd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AqR-9l-5xZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qCv-96-wvh" kind="relationship" relationship="rootViewController" id="y79-4V-WQc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVX-9N-lKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-424" y="-930"/>
         </scene>
         <!--Launch View Controller-->
         <scene sceneID="iKZ-dH-ozc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AoD-65-W0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qCv-96-wvh" customClass="LaunchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5KT-A5-3PT">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wq-1l-w0V">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nS-Hs-y1b">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kaT-yI-mMK" kind="push" identifier="ShowLogin" id="Uyt-0m-Ush"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYN-qb-grj">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gQJ-kX-Ovg" kind="push" identifier="ShowRegistration" id="8EV-Xq-VDY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5nS-Hs-y1b" secondAttribute="trailing" constant="66" id="2Dg-tk-ZLn"/>
+                            <constraint firstItem="8wq-1l-w0V" firstAttribute="top" secondItem="5KT-A5-3PT" secondAttribute="top" constant="208" id="GVD-E7-DPv"/>
+                            <constraint firstItem="5nS-Hs-y1b" firstAttribute="baseline" secondItem="8wq-1l-w0V" secondAttribute="baseline" type="default" id="cSM-ro-0GP"/>
+                            <constraint firstItem="8wq-1l-w0V" firstAttribute="leading" secondItem="5KT-A5-3PT" secondAttribute="leading" constant="60" id="mLq-Sg-OLJ"/>
+                            <constraint firstItem="yYN-qb-grj" firstAttribute="baseline" secondItem="8wq-1l-w0V" secondAttribute="baseline" type="default" id="peq-ry-GLd"/>
+                            <constraint firstItem="yYN-qb-grj" firstAttribute="leading" secondItem="8wq-1l-w0V" secondAttribute="leading" type="default" id="qnu-2r-BWP"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <segue destination="gQJ-kX-Ovg" kind="modal" identifier="ShowRegistration" id="mNM-kH-Tlj"/>
-                        <segue destination="kaT-yI-mMK" kind="modal" identifier="ShowLogin" id="9bF-ee-aJz"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="KBT-VE-dy7"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AoD-65-W0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-424" y="-908"/>
+            <point key="canvasLocation" x="83" y="-930"/>
         </scene>
         <!--Login View Controller - Login-->
         <scene sceneID="8yE-HU-P9p">
@@ -87,7 +146,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCQ-f4-nHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="-578"/>
+            <point key="canvasLocation" x="644" y="-600"/>
         </scene>
         <!--Memberships View Controller - Leagues-->
         <scene sceneID="pUK-aq-7W8">
@@ -136,19 +195,25 @@
         </scene>
     </scenes>
     <classes>
-        <class className="LaunchViewController" superclassName="UIViewController">
+        <class className="FFBaseTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseTableViewController.h"/>
+        </class>
+        <class className="FFBaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseViewController.h"/>
+        </class>
+        <class className="LaunchViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LaunchViewController.h"/>
         </class>
-        <class className="LoginViewController" superclassName="UITableViewController">
+        <class className="LoginViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
         </class>
-        <class className="MembershipsViewController" superclassName="UITableViewController">
+        <class className="MembershipsViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MembershipsViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="RegistrationViewController" superclassName="UITableViewController">
+        <class className="RegistrationViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
         </class>
     </classes>

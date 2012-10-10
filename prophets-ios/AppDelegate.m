@@ -45,7 +45,7 @@
 
 -(void)showLogin{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle: nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LaunchNavController"];
     [self.window.rootViewController presentViewController:loginViewController animated:NO completion:^{}];
 }
 
