@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
+#import "FFBaseTableViewController.h"
 
-@interface LoginViewController : UITableViewController<RKObjectLoaderDelegate>
+@interface LoginViewController : FFBaseTableViewController<RKObjectLoaderDelegate>
 
 @end

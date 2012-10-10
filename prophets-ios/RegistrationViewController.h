@@ -1,14 +1,14 @@
 //
-//  LeagueMembershipsViewController.h
+//  RegistrationViewController.h
 //  prophets-ios
 //
-//  Created by Benjamin Roesch on 9/28/12.
+//  Created by Benjamin Roesch on 10/7/12.
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "FFBaseTableViewController.h"
 
-@interface MembershipsViewController : FFBaseTableViewController
+@interface RegistrationViewController : FFBaseTableViewController
 
 @end

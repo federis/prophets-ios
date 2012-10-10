@@ -41,6 +41,11 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MembershipCell class]) bundle:nil]
          forCellReuseIdentifier:NSStringFromClass([MembershipCell class])];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self.tableController
+                                             selector:@selector(loadTable)
+                                                 name:FFUserDidLogInNotification
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated

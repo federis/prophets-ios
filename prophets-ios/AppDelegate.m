@@ -46,7 +46,7 @@
 -(void)showLogin{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle: nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
-    [self.window.rootViewController presentModalViewController:loginViewController animated:NO];
+    [self.window.rootViewController presentViewController:loginViewController animated:NO completion:^{}];
 }
 
 -(void)setupAuthTokenHeader{
