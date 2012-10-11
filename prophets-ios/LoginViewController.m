@@ -7,25 +7,19 @@
 //
 
 #import <RestKit/RestKit.h>
-#import <RestKit/UI.h>
 
 #import "LoginViewController.h"
 #import "User.h"
 
 @interface LoginViewController ()
-
-@property (nonatomic, strong) RKTableController *tableController;
-
 @end
 
 @implementation LoginViewController
 
-@synthesize tableController;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    /* revisit
     self.tableController = [[RKObjectManager sharedManager] tableControllerForTableViewController:self];
     User *user = [User tempObject];
     RKForm *form = [RKForm formForObject:user usingBlock:^(RKForm *form) {
@@ -82,8 +76,9 @@
     }];
     
     [self.tableController loadForm:form];
+     */
 }
-
+/*
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     User *user = [objects objectAtIndex:0];
     
@@ -98,6 +93,44 @@
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
     NSLog(@"Encountered an error: %@", error);
 }
+*/
 
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+}
 
 @end

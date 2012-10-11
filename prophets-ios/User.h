@@ -34,5 +34,7 @@
 +(User *)currentUser;
 +(void)setCurrentUser:(User *)user;
 
++(RKEntityMapping *)entityMapping;
+
 @end
 

@@ -14,6 +14,4 @@
 @property (nonatomic, weak) IBOutlet UILabel *leagueNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *balanceLabel;
 
-+(RKTableViewCellMapping *)mappingForCell;
-
 @end

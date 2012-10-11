@@ -19,7 +19,12 @@
 		B556F42A161CCDEF00A33A8E /* memberships.json in Resources */ = {isa = PBXBuildFile; fileRef = B556F429161CCDEF00A33A8E /* memberships.json */; };
 		B560569D16226B82004470DC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B560569C16226B82004470DC /* RegistrationViewController.m */; };
 		B56056A016226BEA004470DC /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B560569F16226BEA004470DC /* LaunchViewController.m */; };
-		B56F40B5160A4D35007D445F /* FFMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40B4160A4D35007D445F /* FFMappingProvider.m */; };
+		B56E8F461626526B006DB56B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F451626526B006DB56B /* SystemConfiguration.framework */; };
+		B56E8F4816265271006DB56B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F4716265271006DB56B /* MobileCoreServices.framework */; };
+		B56E8F49162652CA006DB56B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F4716265271006DB56B /* MobileCoreServices.framework */; };
+		B56E8F4A162652D0006DB56B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F451626526B006DB56B /* SystemConfiguration.framework */; };
+		B56E8F8C16272552006DB56B /* FFObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8F8B16272551006DB56B /* FFObjectManager.m */; };
+		B56E8F90162739E4006DB56B /* FFRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8F8F162739E4006DB56B /* FFRouter.m */; };
 		B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* ApplicationConstants.m */; };
 		B56F40D3160A7829007D445F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D2160A7828007D445F /* User.m */; };
 		B56F40D7160A78F3007D445F /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D6160A78F3007D445F /* League.m */; };
@@ -56,13 +61,11 @@
 		B5F1AEED160388C700D28C1C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AED2160388C600D28C1C /* CoreData.framework */; };
 		B5F1AEF5160388C700D28C1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5F1AEF3160388C700D28C1C /* InfoPlist.strings */; };
 		B5F1AF02160388E500D28C1C /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */; };
-		B5F1AF1A1603B81F00D28C1C /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF0F1603B07100D28C1C /* libRestKit.a */; };
 		B5F1AF1D1603B87600D28C1C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF1C1603B87600D28C1C /* CFNetwork.framework */; };
-		B5F1AF1F1603B89500D28C1C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF1E1603B89500D28C1C /* MobileCoreServices.framework */; };
 		B5F1AF211603B89D00D28C1C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
-		B5F1AF231603B8A600D28C1C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF221603B8A600D28C1C /* SystemConfiguration.framework */; };
 		B5F1AF251603B8B000D28C1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF241603B8B000D28C1C /* QuartzCore.framework */; };
 		B5F1AF271603B8BF00D28C1C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF261603B8BF00D28C1C /* libxml2.dylib */; };
+		CCAD6CC9904141B2A8651A20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B080843E1DFF40039890AE89 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,51 +76,11 @@
 			remoteGlobalIDString = B5F1AEC7160388C600D28C1C;
 			remoteInfo = "prophets-ios";
 		};
-		B5F1AF0E1603B07100D28C1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160D1614564E810060A5C5;
-			remoteInfo = RestKit;
-		};
-		B5F1AF101603B07100D28C1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160D2614564E820060A5C5;
-			remoteInfo = RestKitTests;
-		};
-		B5F1AF121603B07100D28C1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160E62145651060060A5C5;
-			remoteInfo = RestKitFramework;
-		};
-		B5F1AF141603B07100D28C1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160E78145651060060A5C5;
-			remoteInfo = RestKitFrameworkTests;
-		};
-		B5F1AF161603B07100D28C1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 259C301615128079003066A2;
-			remoteInfo = RestKitResources;
-		};
-		B5F1AF181603B7CF00D28C1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 25160D1514564E810060A5C5;
-			remoteInfo = RestKit;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62B3D712213645408B3D1811 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		B080843E1DFF40039890AE89 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5094EF01625C6E300947FAC /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		B5094EF21625E6C000947FAC /* FFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseViewController.h; sourceTree = "<group>"; };
 		B5094EF31625E6C000947FAC /* FFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseViewController.m; sourceTree = "<group>"; };
@@ -141,8 +104,12 @@
 		B560569C16226B82004470DC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		B560569E16226BEA004470DC /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
 		B560569F16226BEA004470DC /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
-		B56F40B3160A4D35007D445F /* FFMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMappingProvider.h; sourceTree = "<group>"; };
-		B56F40B4160A4D35007D445F /* FFMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMappingProvider.m; sourceTree = "<group>"; };
+		B56E8F451626526B006DB56B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B56E8F4716265271006DB56B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B56E8F8A16272551006DB56B /* FFObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFObjectManager.h; sourceTree = "<group>"; };
+		B56E8F8B16272551006DB56B /* FFObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFObjectManager.m; sourceTree = "<group>"; };
+		B56E8F8E162739E4006DB56B /* FFRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRouter.h; sourceTree = "<group>"; };
+		B56E8F8F162739E4006DB56B /* FFRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRouter.m; sourceTree = "<group>"; };
 		B56F40BF160A52AC007D445F /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
 		B56F40C0160A52AC007D445F /* ApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConstants.m; sourceTree = "<group>"; };
 		B56F40D1160A7828007D445F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -178,10 +145,10 @@
 		B5EA136C161D205800C774F3 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
 		B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFObjectLoaderTests.m; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B5F1AECE160388C600D28C1C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B5F1AED0160388C600D28C1C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B5F1AED2160388C600D28C1C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B5F1AECE160388C600D28C1C /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B5F1AED0160388C600D28C1C /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B5F1AED2160388C600D28C1C /* CoreData.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B5F1AED6160388C600D28C1C /* prophets-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "prophets-ios-Info.plist"; sourceTree = "<group>"; };
 		B5F1AED8160388C600D28C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5F1AEDA160388C600D28C1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -194,13 +161,10 @@
 		B5F1AEF2160388C700D28C1C /* prophets-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "prophets-iosTests-Info.plist"; sourceTree = "<group>"; };
 		B5F1AEF4160388C700D28C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard_iPhone.storyboard; path = "prophets-ios/Storyboard_iPhone.storyboard"; sourceTree = "<group>"; };
-		B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
-		B5F1AF1C1603B87600D28C1C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		B5F1AF1E1603B89500D28C1C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		B5F1AF201603B89D00D28C1C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		B5F1AF221603B8A600D28C1C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B5F1AF241603B8B000D28C1C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B5F1AF261603B8BF00D28C1C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B5F1AF1C1603B87600D28C1C /* CFNetwork.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B5F1AF201603B89D00D28C1C /* Security.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B5F1AF241603B8B000D28C1C /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B5F1AF261603B8BF00D28C1C /* libxml2.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,17 +172,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56E8F4816265271006DB56B /* MobileCoreServices.framework in Frameworks */,
+				B56E8F461626526B006DB56B /* SystemConfiguration.framework in Frameworks */,
 				B5F1AF271603B8BF00D28C1C /* libxml2.dylib in Frameworks */,
 				B5F1AF251603B8B000D28C1C /* QuartzCore.framework in Frameworks */,
-				B5F1AF231603B8A600D28C1C /* SystemConfiguration.framework in Frameworks */,
 				B5F1AF211603B89D00D28C1C /* Security.framework in Frameworks */,
-				B5F1AF1F1603B89500D28C1C /* MobileCoreServices.framework in Frameworks */,
 				B5F1AF1D1603B87600D28C1C /* CFNetwork.framework in Frameworks */,
-				B5F1AF1A1603B81F00D28C1C /* libRestKit.a in Frameworks */,
 				B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */,
 				B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */,
 				B5F1AED1160388C600D28C1C /* CoreGraphics.framework in Frameworks */,
 				B5F1AED3160388C600D28C1C /* CoreData.framework in Frameworks */,
+				CCAD6CC9904141B2A8651A20 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +190,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56E8F4A162652D0006DB56B /* SystemConfiguration.framework in Frameworks */,
+				B56E8F49162652CA006DB56B /* MobileCoreServices.framework in Frameworks */,
 				B5EA136E161D232000C774F3 /* Security.framework in Frameworks */,
 				B5F1AEEA160388C700D28C1C /* SenTestingKit.framework in Frameworks */,
 				B5F1AEEB160388C700D28C1C /* UIKit.framework in Frameworks */,
@@ -250,7 +216,6 @@
 		B56F40B2160A3B5C007D445F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */,
 				B57D0942160D250B0060A11E /* KeychainItemWrapper.h */,
 				B57D0943160D250B0060A11E /* KeychainItemWrapper.m */,
 			);
@@ -379,6 +344,7 @@
 				B5F1AEF0160388C700D28C1C /* prophets-iosTests */,
 				B5F1AECB160388C600D28C1C /* Frameworks */,
 				B5F1AEC9160388C600D28C1C /* Products */,
+				62B3D712213645408B3D1811 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -395,16 +361,17 @@
 			isa = PBXGroup;
 			children = (
 				B5F1AF261603B8BF00D28C1C /* libxml2.dylib */,
+				B56E8F4716265271006DB56B /* MobileCoreServices.framework */,
+				B56E8F451626526B006DB56B /* SystemConfiguration.framework */,
 				B5F1AF241603B8B000D28C1C /* QuartzCore.framework */,
-				B5F1AF221603B8A600D28C1C /* SystemConfiguration.framework */,
 				B5F1AF201603B89D00D28C1C /* Security.framework */,
-				B5F1AF1E1603B89500D28C1C /* MobileCoreServices.framework */,
 				B5F1AF1C1603B87600D28C1C /* CFNetwork.framework */,
 				B5F1AECC160388C600D28C1C /* UIKit.framework */,
 				B5F1AECE160388C600D28C1C /* Foundation.framework */,
 				B5F1AED0160388C600D28C1C /* CoreGraphics.framework */,
 				B5F1AED2160388C600D28C1C /* CoreData.framework */,
 				B5F1AEE9160388C700D28C1C /* SenTestingKit.framework */,
+				B080843E1DFF40039890AE89 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -417,13 +384,15 @@
 				B5D33D7D1618C4700043A0E8 /* Views */,
 				B57D0925160BE4AB0060A11E /* Controllers */,
 				B56F40D4160A7833007D445F /* Models */,
-				B56F40B3160A4D35007D445F /* FFMappingProvider.h */,
-				B56F40B4160A4D35007D445F /* FFMappingProvider.m */,
 				B56F40BF160A52AC007D445F /* ApplicationConstants.h */,
 				B56F40C0160A52AC007D445F /* ApplicationConstants.m */,
 				B5F1AEDD160388C600D28C1C /* AppDelegate.h */,
 				B5F1AEDE160388C600D28C1C /* AppDelegate.m */,
 				B5F1AEDC160388C600D28C1C /* prophets-ios-Prefix.pch */,
+				B56E8F8A16272551006DB56B /* FFObjectManager.h */,
+				B56E8F8B16272551006DB56B /* FFObjectManager.m */,
+				B56E8F8E162739E4006DB56B /* FFRouter.h */,
+				B56E8F8F162739E4006DB56B /* FFRouter.m */,
 			);
 			path = "prophets-ios";
 			sourceTree = "<group>";
@@ -465,18 +434,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B5F1AF041603B07100D28C1C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B5F1AF0F1603B07100D28C1C /* libRestKit.a */,
-				B5F1AF111603B07100D28C1C /* RestKitTests.octest */,
-				B5F1AF131603B07100D28C1C /* RestKit.framework */,
-				B5F1AF151603B07100D28C1C /* RestKitFrameworkTests.octest */,
-				B5F1AF171603B07100D28C1C /* RestKitResources.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -487,11 +444,11 @@
 				B5F1AEC4160388C600D28C1C /* Sources */,
 				B5F1AEC5160388C600D28C1C /* Frameworks */,
 				B5F1AEC6160388C600D28C1C /* Resources */,
+				0CFCCFE62D4F4A33B6CB45AE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B5F1AF191603B7CF00D28C1C /* PBXTargetDependency */,
 			);
 			name = "prophets-ios";
 			productName = "prophets-ios";
@@ -536,12 +493,6 @@
 			mainGroup = B5F1AEBD160388C600D28C1C;
 			productRefGroup = B5F1AEC9160388C600D28C1C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B5F1AF041603B07100D28C1C /* Products */;
-					ProjectRef = B5F1AF031603B07100D28C1C /* RestKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				B5F1AEC7160388C600D28C1C /* prophets-ios */,
@@ -549,44 +500,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B5F1AF0F1603B07100D28C1C /* libRestKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKit.a;
-			remoteRef = B5F1AF0E1603B07100D28C1C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B5F1AF111603B07100D28C1C /* RestKitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RestKitTests.octest;
-			remoteRef = B5F1AF101603B07100D28C1C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B5F1AF131603B07100D28C1C /* RestKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RestKit.framework;
-			remoteRef = B5F1AF121603B07100D28C1C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B5F1AF151603B07100D28C1C /* RestKitFrameworkTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RestKitFrameworkTests.octest;
-			remoteRef = B5F1AF141603B07100D28C1C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B5F1AF171603B07100D28C1C /* RestKitResources.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RestKitResources.bundle;
-			remoteRef = B5F1AF161603B07100D28C1C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B5F1AEC6160388C600D28C1C /* Resources */ = {
@@ -615,6 +528,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0CFCCFE62D4F4A33B6CB45AE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		B5F1AEE6160388C700D28C1C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -638,7 +565,6 @@
 				B5F1AEDB160388C600D28C1C /* main.m in Sources */,
 				B5F1AEDF160388C600D28C1C /* AppDelegate.m in Sources */,
 				B5F1AEE2160388C600D28C1C /* prophets_ios.xcdatamodeld in Sources */,
-				B56F40B5160A4D35007D445F /* FFMappingProvider.m in Sources */,
 				B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */,
 				B56F40D3160A7829007D445F /* User.m in Sources */,
 				B56F40D7160A78F3007D445F /* League.m in Sources */,
@@ -659,6 +585,8 @@
 				B5094EF41625E6C000947FAC /* FFBaseViewController.m in Sources */,
 				B5094EF71625E7F500947FAC /* FFBaseTableViewController.m in Sources */,
 				B5094F081626040300947FAC /* FFBaseCell.m in Sources */,
+				B56E8F8C16272552006DB56B /* FFObjectManager.m in Sources */,
+				B56E8F90162739E4006DB56B /* FFRouter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,11 +611,6 @@
 			isa = PBXTargetDependency;
 			target = B5F1AEC7160388C600D28C1C /* prophets-ios */;
 			targetProxy = B5F1AEEE160388C700D28C1C /* PBXContainerItemProxy */;
-		};
-		B5F1AF191603B7CF00D28C1C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RestKit;
-			targetProxy = B5F1AF181603B7CF00D28C1C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -741,16 +664,16 @@
 		};
 		B516A040161DF73E00736C70 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
+			baseConfigurationReference = 62B3D712213645408B3D1811 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
 				OTHER_LDFLAGS = (
-					"-ObjC",
 					"-all_load",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -814,16 +737,16 @@
 		};
 		B516A043161DF74200736C70 /* Test */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
+			baseConfigurationReference = 62B3D712213645408B3D1811 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
 				OTHER_LDFLAGS = (
-					"-ObjC",
 					"-all_load",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -915,16 +838,16 @@
 		};
 		B5F1AEFC160388C700D28C1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */;
+			baseConfigurationReference = 62B3D712213645408B3D1811 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
 				OTHER_LDFLAGS = (
-					"-ObjC",
 					"-all_load",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -933,16 +856,16 @@
 		};
 		B5F1AEFD160388C700D28C1C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5332393161F5CC90094D2DF /* ProdConfig.xcconfig */;
+			baseConfigurationReference = 62B3D712213645408B3D1811 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prophets-ios/prophets-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "prophets-ios/prophets-ios-Info.plist";
 				OTHER_LDFLAGS = (
-					"-ObjC",
 					"-all_load",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

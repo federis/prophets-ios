@@ -24,4 +24,20 @@
 @dynamic user;
 @dynamic approver;
 
++(RKEntityMapping *)entityMapping{
+    RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
+                                                   inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
+    
+    [mapping addAttributeMappingsFromArray:@[@"content", @"desc"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"questionId",
+     @"approved_at" : @"approvedAt",
+     @"updated_at" : @"updatedAt",
+     @"created_at" : @"createdAt"
+     }];
+    
+    
+    return mapping;
+}
+
 @end

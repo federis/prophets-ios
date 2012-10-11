@@ -21,4 +21,22 @@
 @dynamic user;
 @dynamic league;
 
++(RKEntityMapping *)entityMapping{
+    RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
+                                                   inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
+    
+    [mapping addAttributeMappingsFromArray:@[@"balance", @"role"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"membershipId",
+     @"updated_at" : @"updatedAt",
+     @"created_at" : @"createdAt"
+     }];
+    
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"league"
+                                                                            toKeyPath:@"league"
+                                                                          withMapping:[League entityMapping]]];
+    
+    return mapping;
+}
+
 @end

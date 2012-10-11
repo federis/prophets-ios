@@ -35,4 +35,23 @@
     self.correct = [NSNumber numberWithBool:isCorrect];
 }
 
++(RKEntityMapping *)entityMapping{
+    RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
+                                                   inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
+    
+    [mapping addAttributeMappingsFromArray:@[@"content"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"answerId",
+     @"bet_total" : @"betTotal",
+     @"current_probability" : @"currentProbability",
+     @"initial_probability" : @"initialProbability",
+     @"correct" : @"isCorrect",
+     @"judged_at" : @"judgedAt",
+     @"updated_at" : @"updatedAt",
+     @"created_at" : @"createdAt"
+     }];    
+    
+    return mapping;
+}
+
 @end

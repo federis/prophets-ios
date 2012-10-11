@@ -32,7 +32,7 @@ static User *currentUser = nil;
     if(!currentUser){
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
         NSNumber *userId = [keychain objectForKey:(__bridge id)kSecAttrAccount];
-        currentUser = [User findByPrimaryKey:userId];
+        currentUser = [[User MR_findByAttribute:@"userId" withValue:userId] lastObject];
     }
     
     return currentUser;
@@ -59,6 +59,21 @@ static User *currentUser = nil;
     KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
     [keychain setObject:token forKey:(__bridge id)kSecValueData];
     _authenticationToken = token;
+}
+
++(RKEntityMapping *)entityMapping{
+    RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
+                                                   inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
+    
+    [mapping addAttributeMappingsFromArray:@[@"email", @"name"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+        @"id" : @"userId",
+        @"authentication_token" : @"authenticationToken",
+        @"updated_at" : @"updatedAt",
+        @"created_at" : @"createdAt"
+     }];
+    
+    return mapping;
 }
 
 

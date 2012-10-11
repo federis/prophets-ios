@@ -9,9 +9,9 @@
 #import <RestKit/RestKit.h>
 
 #import "AppDelegate.h"
-#import "FFMappingProvider.h"
 #import "LoginViewController.h"
 #import "User.h"
+#import "FFObjectManager.h"
 
 @implementation AppDelegate
 
@@ -21,12 +21,16 @@
     //RKLogConfigureByName("RestKit/UI", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/Testing", RKLogLevelTrace);
     
-    RKObjectManager* objectManager = [RKObjectManager managerWithBaseURLString:FFBaseUrl];
-    RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:FFObjectStoreName];
-    objectManager.objectStore = objectStore;
-    objectManager.mappingProvider = [FFMappingProvider mappingProviderWithObjectStore:objectStore];
+    NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+    NSString *path = [RKApplicationDataDirectory() stringByAppendingPathComponent:FFObjectStoreName];
+    [managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil error:nil];
+    [managedObjectStore createManagedObjectContexts];
     
-    [RKClient sharedClient].cachePolicy = RKRequestCachePolicyNone;
+    FFObjectManager* objectManager = [FFObjectManager managerWithBaseURL:[NSURL URLWithString:FFBaseUrl]];
+    objectManager.managedObjectStore = managedObjectStore;
+    [objectManager setupRequestDescriptors];
+    [objectManager setupResponseDescriptors];
     
     [self.window makeKeyAndVisible];
     
@@ -50,18 +54,17 @@
 }
 
 -(void)setupAuthTokenHeader{
-    RKClient *client = [RKObjectManager sharedManager].client;
-    [client.HTTPHeaders setObject:[NSString stringWithFormat:@"Token token=\"%@\"", [User currentUser].authenticationToken]
-                           forKey:@"Authorization"];
+    [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization"
+                                                           value:[NSString stringWithFormat:@"Token token=\"%@\"", [User currentUser].authenticationToken]];
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    NSError *error = nil;
-    if (! [[RKObjectManager sharedManager].objectStore save:&error]) {
+    /*NSError *error = nil;
+    if (! [[RKObjectManager sharedManager].managedObjectStore. save:&error]) {
         RKLogError(@"Failed to save RestKit managed object store: %@", error);
-    }
+    }*/
 }
 
 @end

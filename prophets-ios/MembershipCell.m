@@ -7,12 +7,11 @@
 //
 
 #import <RestKit/RestKit.h>
-#import <RestKit/UI.h>
 
 #import "MembershipCell.h"
 
 @implementation MembershipCell
-
+/* revisit
 +(RKTableViewCellMapping *)mappingForCell{
     RKTableViewCellMapping *cellMapping = [RKTableViewCellMapping cellMapping];
     cellMapping.cellClassName = NSStringFromClass([self class]);
@@ -22,5 +21,6 @@
     [cellMapping mapKeyPath:@"balance.currencyValue" toAttribute:@"balanceLabel.text"];
     return cellMapping;
 }
+ */
 
 @end

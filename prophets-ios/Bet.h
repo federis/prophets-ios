@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <RestKit/RestKit.h>
 
 @class Answer, User;
 
@@ -21,5 +22,7 @@
 @property (nonatomic, strong) NSDate * updatedAt;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Answer *answer;
+
++(RKEntityMapping *)entityMapping;
 
 @end

@@ -31,4 +31,21 @@
     self.priv = [NSNumber numberWithBool:isPrivate];
 }
 
++(RKEntityMapping *)entityMapping{
+    RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
+                                                   inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
+    
+    [mapping addAttributeMappingsFromArray:@[@"name"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+         @"id" : @"leagueId",
+         @"initial_balance" : @"initialBalance",
+         @"max_bet" : @"maxBet",
+         @"priv" : @"isPrivate",
+         @"updated_at" : @"updatedAt",
+         @"created_at" : @"createdAt"
+     }];
+    
+    return mapping;
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <RestKit/RestKit.h>
 
 @class League, User;
 
@@ -22,5 +23,7 @@
 @property (nonatomic, strong) League *league;
 
 -(NSString *)balanceString;
+
++(RKEntityMapping *)entityMapping;
 
 @end

@@ -28,4 +28,10 @@
     #import "NSManagedObject+Additions.h"
     #import "NSDecimalNumber+Additions.h"
     #import "NSNumber+Additions.h"
+    #import "CoreData+MagicalRecord.h"
+
+    // These two headers need to be imported bc of an issue with cocoapods.
+    // See https://github.com/AFNetworking/AFNetworking/pull/560
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
 #endif

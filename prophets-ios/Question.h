@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <RestKit/RestKit.h>
 
 @class League, User;
 
@@ -23,4 +24,7 @@
 @property (nonatomic, strong) League *league;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *approver;
+
++(RKEntityMapping *)entityMapping;
+
 @end

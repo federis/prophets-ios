@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <RestKit/RestKit.h>
 
 @class Question, User;
 
@@ -29,6 +30,8 @@
 
 -(BOOL)isCorrect;
 -(void)setIsCorrect:(BOOL)isCorrect;
+
++(RKEntityMapping *)entityMapping;
 
 @end
 

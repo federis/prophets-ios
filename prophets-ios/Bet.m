@@ -22,4 +22,18 @@
 @dynamic user;
 @dynamic answer;
 
++(RKEntityMapping *)entityMapping{
+    RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
+                                                   inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
+    
+    [mapping addAttributeMappingsFromArray:@[@"amount", @"bonus", @"probability"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"answerId",
+     @"updated_at" : @"updatedAt",
+     @"created_at" : @"createdAt",
+     }];
+    
+    return mapping;
+}
+
 @end

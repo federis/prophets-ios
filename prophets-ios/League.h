@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <RestKit/RestKit.h>
 
 @class User;
 
@@ -26,5 +27,7 @@
 
 -(BOOL)isPrivate;
 -(void)setIsPrivate:(BOOL)isPrivate;
+
++(RKEntityMapping *)entityMapping;
 
 @end
