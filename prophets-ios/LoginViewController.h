@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FFBaseTableViewController.h"
+#import "FFFormViewController.h"
 
-@interface LoginViewController : FFBaseTableViewController
+@interface LoginViewController : FFFormViewController
 
 @end

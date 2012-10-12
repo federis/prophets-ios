@@ -10,19 +10,68 @@
 
 @interface FFBaseTableViewController ()
 
+@property (nonatomic) BOOL reloading;
+
 @end
 
 @implementation FFBaseTableViewController
 
-- (void)viewDidLoad{
-    [super viewDidLoad];
-
-    //UIImage *bgImage = [[UIImage imageNamed:@"background.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 0, 100, 0)];
-    UIImage *bgImage = [UIImage imageNamed:@"background.png"];
-    UIImageView *bgView = [[UIImageView alloc] initWithImage:bgImage];
-    self.tableView.backgroundView = bgView;
+-(void)setShowsPullToRefresh:(BOOL)showsPullToRefresh{
+    if(showsPullToRefresh){
+        [self addPullToRefreshHeader];
+    }
+    else{
+        [self removePullToRefreshHeader];
+    }
+    
+    _showsPullToRefresh = showsPullToRefresh;
 }
 
+-(void)addPullToRefreshHeader{
+    self.pullToRefreshHeader = [FFPullToRefreshHeader pullToRefreshHeaderForTableView:self.tableView];
+    
+    self.pullToRefreshHeader.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
+    //self.pullToRefreshHeader.bottomBorderThickness = 1.0;
+    [self.tableView addSubview:self.pullToRefreshHeader];
+    self.tableView.showsVerticalScrollIndicator = YES;
+}
+
+-(void)removePullToRefreshHeader{
+    [self.pullToRefreshHeader removeFromSuperview];
+    self.pullToRefreshHeader = nil;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+	if (!self.showsPullToRefresh) return;
+    
+	if (scrollView.isDragging) {
+		if (_pullToRefreshHeader.isPulling &&
+            scrollView.contentOffset.y > -_pullToRefreshHeader.height &&
+            scrollView.contentOffset.y < 0.0f &&
+            !_reloading) {
+            
+			[_pullToRefreshHeader setState:FFPullToRefreshNormal];
+            
+		}
+        else if (_pullToRefreshHeader.isNormal && scrollView.contentOffset.y < -_pullToRefreshHeader.height && !_reloading) {
+			[_pullToRefreshHeader setState:FFPullToRefreshPulling];
+		}
+	}
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	if (!self.showsPullToRefresh) return;
+    
+	if (scrollView.contentOffset.y <= -_pullToRefreshHeader.height && !_reloading) {
+		_reloading = YES;
+		//[self reloadTableViewDataSource];
+		[_pullToRefreshHeader setState:FFPullToRefreshLoading];
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.2];
+		self.tableView.contentInset = UIEdgeInsetsMake(_pullToRefreshHeader.height, 0.0f, 0.0f, 0.0f);
+		[UIView commitAnimations];
+	}
+}
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

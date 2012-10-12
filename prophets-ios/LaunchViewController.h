@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FFBaseViewController.h"
 
-@interface LaunchViewController : FFBaseViewController
+@interface LaunchViewController : UIViewController
 
 @end

@@ -12,6 +12,7 @@
 #import "User.h"
 
 @interface LoginViewController ()
+
 @end
 
 @implementation LoginViewController
@@ -19,9 +20,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    /* revisit
-    self.tableController = [[RKObjectManager sharedManager] tableControllerForTableViewController:self];
+    self.showsPullToRefresh = YES;
+    /*
+    self.tableController = [RKTableController tableControllerForTableViewController:self];
     User *user = [User tempObject];
+    
+    [self.tableController loadTableItems:@[]];
+    
+    
     RKForm *form = [RKForm formForObject:user usingBlock:^(RKForm *form) {
         [form addSectionUsingBlock:^(RKFormSection *section) {
             
@@ -74,9 +80,7 @@
             }];
         };
     }];
-    
-    [self.tableController loadForm:form];
-     */
+    [self.tableController loadForm:form];*/
 }
 /*
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
@@ -93,27 +97,20 @@
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
     NSLog(@"Encountered an error: %@", error);
 }
-*/
+ */
 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
     
     // Configure the cell...
     
@@ -132,5 +129,6 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
 
 @end

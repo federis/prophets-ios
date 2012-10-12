@@ -10,20 +10,13 @@
 
 @implementation FFBaseCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    
+    self.backgroundColor = [UIColor colorWithRed:252.0/255.0
+                                           green:249.0/255.0
+                                            blue:228.0/255.0
+                                           alpha:1.0];
 }
 
 @end

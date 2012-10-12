@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B5094EF11625C6E300947FAC /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5094EF01625C6E300947FAC /* background@2x.png */; };
-		B5094EF41625E6C000947FAC /* FFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5094EF31625E6C000947FAC /* FFBaseViewController.m */; };
 		B5094EF71625E7F500947FAC /* FFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */; };
 		B5094EF91625EB9F00947FAC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = B5094EF81625EB9F00947FAC /* background.png */; };
 		B5094F081626040300947FAC /* FFBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5094F071626040300947FAC /* FFBaseCell.m */; };
@@ -25,6 +24,12 @@
 		B56E8F4A162652D0006DB56B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F451626526B006DB56B /* SystemConfiguration.framework */; };
 		B56E8F8C16272552006DB56B /* FFObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8F8B16272551006DB56B /* FFObjectManager.m */; };
 		B56E8F90162739E4006DB56B /* FFRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8F8F162739E4006DB56B /* FFRouter.m */; };
+		B56E8F98162746E4006DB56B /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8F96162746E4006DB56B /* TextFieldCell.m */; };
+		B56E8F99162746E4006DB56B /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56E8F97162746E4006DB56B /* TextFieldCell.xib */; };
+		B56E8FE9162778BE006DB56B /* FFPullToRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8FE8162778BE006DB56B /* FFPullToRefreshHeader.m */; };
+		B56E8FFA16278A43006DB56B /* FFFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8FF916278A43006DB56B /* FFFormViewController.m */; };
+		B56E8FFC1627BB5C006DB56B /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E8FFB1627BB5C006DB56B /* blueArrow.png */; };
+		B56E900016289CFC006DB56B /* FFBaseTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56E8FFF16289CFC006DB56B /* FFBaseTableViewController.xib */; };
 		B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* ApplicationConstants.m */; };
 		B56F40D3160A7829007D445F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D2160A7828007D445F /* User.m */; };
 		B56F40D7160A78F3007D445F /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D6160A78F3007D445F /* League.m */; };
@@ -82,8 +87,6 @@
 		62B3D712213645408B3D1811 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		B080843E1DFF40039890AE89 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5094EF01625C6E300947FAC /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
-		B5094EF21625E6C000947FAC /* FFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseViewController.h; sourceTree = "<group>"; };
-		B5094EF31625E6C000947FAC /* FFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseViewController.m; sourceTree = "<group>"; };
 		B5094EF51625E7F500947FAC /* FFBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTableViewController.h; sourceTree = "<group>"; };
 		B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableViewController.m; sourceTree = "<group>"; };
 		B5094EF81625EB9F00947FAC /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -110,6 +113,15 @@
 		B56E8F8B16272551006DB56B /* FFObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFObjectManager.m; sourceTree = "<group>"; };
 		B56E8F8E162739E4006DB56B /* FFRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRouter.h; sourceTree = "<group>"; };
 		B56E8F8F162739E4006DB56B /* FFRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRouter.m; sourceTree = "<group>"; };
+		B56E8F95162746E4006DB56B /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
+		B56E8F96162746E4006DB56B /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		B56E8F97162746E4006DB56B /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		B56E8FE7162778BE006DB56B /* FFPullToRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPullToRefreshHeader.h; sourceTree = "<group>"; };
+		B56E8FE8162778BE006DB56B /* FFPullToRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFPullToRefreshHeader.m; sourceTree = "<group>"; };
+		B56E8FF816278A43006DB56B /* FFFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormViewController.h; sourceTree = "<group>"; };
+		B56E8FF916278A43006DB56B /* FFFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormViewController.m; sourceTree = "<group>"; };
+		B56E8FFB1627BB5C006DB56B /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		B56E8FFF16289CFC006DB56B /* FFBaseTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFBaseTableViewController.xib; sourceTree = "<group>"; };
 		B56F40BF160A52AC007D445F /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
 		B56F40C0160A52AC007D445F /* ApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConstants.m; sourceTree = "<group>"; };
 		B56F40D1160A7828007D445F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -206,11 +218,38 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B56E8FFB1627BB5C006DB56B /* blueArrow.png */,
 				B5094EF81625EB9F00947FAC /* background.png */,
 				B5094EF01625C6E300947FAC /* background@2x.png */,
 			);
 			name = images;
 			path = "prophets-ios/images";
+			sourceTree = "<group>";
+		};
+		B56E8F9A162746ED006DB56B /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				B56E8F95162746E4006DB56B /* TextFieldCell.h */,
+				B56E8F96162746E4006DB56B /* TextFieldCell.m */,
+				B56E8F97162746E4006DB56B /* TextFieldCell.xib */,
+				B5094F061626040300947FAC /* FFBaseCell.h */,
+				B5094F071626040300947FAC /* FFBaseCell.m */,
+				B5D33D7E1618C4900043A0E8 /* MembershipCell.h */,
+				B5D33D7F1618C4900043A0E8 /* MembershipCell.m */,
+				B5D33D811618C9450043A0E8 /* MembershipCell.xib */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
+		B56E8FF616278A18006DB56B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B5094EF51625E7F500947FAC /* FFBaseTableViewController.h */,
+				B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */,
+				B56E8FF816278A43006DB56B /* FFFormViewController.h */,
+				B56E8FF916278A43006DB56B /* FFFormViewController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		B56F40B2160A3B5C007D445F /* Libraries */ = {
@@ -230,6 +269,7 @@
 				B5F1AEE0160388C600D28C1C /* prophets_ios.xcdatamodeld */,
 				B5F1AF01160388E500D28C1C /* Storyboard_iPhone.storyboard */,
 				B5F1AED5160388C600D28C1C /* Supporting Files */,
+				B56E8FFF16289CFC006DB56B /* FFBaseTableViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -283,10 +323,7 @@
 		B57D0925160BE4AB0060A11E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B5094EF51625E7F500947FAC /* FFBaseTableViewController.h */,
-				B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */,
-				B5094EF21625E6C000947FAC /* FFBaseViewController.h */,
-				B5094EF31625E6C000947FAC /* FFBaseViewController.m */,
+				B56E8FF616278A18006DB56B /* Base */,
 				B57D092B160CFB4F0060A11E /* LoginViewController.h */,
 				B57D092C160CFB4F0060A11E /* LoginViewController.m */,
 				B5D33D7C161654BA0043A0E8 /* MembershipsViewController.h */,
@@ -326,11 +363,9 @@
 		B5D33D7D1618C4700043A0E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B5094F061626040300947FAC /* FFBaseCell.h */,
-				B5094F071626040300947FAC /* FFBaseCell.m */,
-				B5D33D7E1618C4900043A0E8 /* MembershipCell.h */,
-				B5D33D7F1618C4900043A0E8 /* MembershipCell.m */,
-				B5D33D811618C9450043A0E8 /* MembershipCell.xib */,
+				B56E8FE7162778BE006DB56B /* FFPullToRefreshHeader.h */,
+				B56E8FE8162778BE006DB56B /* FFPullToRefreshHeader.m */,
+				B56E8F9A162746ED006DB56B /* TableCells */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -512,6 +547,9 @@
 				B5D33D821618C9450043A0E8 /* MembershipCell.xib in Resources */,
 				B5094EF11625C6E300947FAC /* background@2x.png in Resources */,
 				B5094EF91625EB9F00947FAC /* background.png in Resources */,
+				B56E8F99162746E4006DB56B /* TextFieldCell.xib in Resources */,
+				B56E8FFC1627BB5C006DB56B /* blueArrow.png in Resources */,
+				B56E900016289CFC006DB56B /* FFBaseTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,11 +620,13 @@
 				B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */,
 				B560569D16226B82004470DC /* RegistrationViewController.m in Sources */,
 				B56056A016226BEA004470DC /* LaunchViewController.m in Sources */,
-				B5094EF41625E6C000947FAC /* FFBaseViewController.m in Sources */,
 				B5094EF71625E7F500947FAC /* FFBaseTableViewController.m in Sources */,
 				B5094F081626040300947FAC /* FFBaseCell.m in Sources */,
 				B56E8F8C16272552006DB56B /* FFObjectManager.m in Sources */,
 				B56E8F90162739E4006DB56B /* FFRouter.m in Sources */,
+				B56E8F98162746E4006DB56B /* TextFieldCell.m in Sources */,
+				B56E8FE9162778BE006DB56B /* FFPullToRefreshHeader.m in Sources */,
+				B56E8FFA16278A43006DB56B /* FFFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

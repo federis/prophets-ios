@@ -32,6 +32,10 @@
     [objectManager setupRequestDescriptors];
     [objectManager setupResponseDescriptors];
     
+    [MagicalRecord setupCoreDataStackWithStoreNamed:FFObjectStoreName];
+    
+    [self setupAppearances];
+    
     [self.window makeKeyAndVisible];
     
     if ([User currentUser])
@@ -56,6 +60,14 @@
 -(void)setupAuthTokenHeader{
     [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization"
                                                            value:[NSString stringWithFormat:@"Token token=\"%@\"", [User currentUser].authenticationToken]];
+}
+
+-(void)setupAppearances{
+    UIColor *separatorColor = [UIColor colorWithRed:191.0/255.0
+                                              green:187.0/255.0
+                                               blue:165.0/255.0
+                                              alpha:1.0];
+    [[UITableView appearance] setSeparatorColor:separatorColor];
 }
 
 
