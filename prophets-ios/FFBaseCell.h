@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum{
+    FFCellTop = 1,
+    FFCellMiddle,
+    FFCellBottom,
+    FFCellSingle,
+} FFCellLocationInSection;
+
 @interface FFBaseCell : UITableViewCell
+
+-(FFCellLocationInSection)locationInSection;
+-(void)setShadows;
 
 @end
