@@ -9,9 +9,12 @@
 #import <RestKit/RestKit.h>
 
 #import "LoginViewController.h"
+#import "TableFooterButtonView.h"
 #import "User.h"
 
 @interface LoginViewController ()
+
+@property (nonatomic, strong) TableFooterButtonView *footerView;
 
 @end
 
@@ -99,7 +102,10 @@
 }
  */
 
-
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    [self.tableView sendSubviewToBack:self.footerView];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -115,6 +121,15 @@
     // Configure the cell...
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 50;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    self.footerView = [TableFooterButtonView footerButtonViewForTable:tableView withText:@"Sign in"];
+    return self.footerView;
 }
 
 #pragma mark - Table view delegate

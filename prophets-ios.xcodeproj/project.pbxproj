@@ -12,7 +12,11 @@
 		B5094EF91625EB9F00947FAC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = B5094EF81625EB9F00947FAC /* background.png */; };
 		B5094F081626040300947FAC /* FFBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5094F071626040300947FAC /* FFBaseCell.m */; };
 		B516A047161E000200736C70 /* FFBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B516A046161E000200736C70 /* FFBaseTestCase.m */; };
+		B521AC07162B64500009A8E4 /* TableFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B521AC06162B64500009A8E4 /* TableFooterButtonView.m */; };
 		B5332391161F4BA30094D2DF /* Factories.m in Sources */ = {isa = PBXBuildFile; fileRef = B5332390161F4BA30094D2DF /* Factories.m */; };
+		B5544CAB162E342100431B54 /* red_footer_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B5544CA9162E342100431B54 /* red_footer_button.png */; };
+		B5544CAC162E342100431B54 /* red_footer_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5544CAA162E342100431B54 /* red_footer_button@2x.png */; };
+		B5544CB2162EE13300431B54 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5544CB1162EE13300431B54 /* UIColor+Additions.m */; };
 		B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */; };
 		B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F423161CC87500A33A8E /* NSNumber+Additions.m */; };
 		B556F42A161CCDEF00A33A8E /* memberships.json in Resources */ = {isa = PBXBuildFile; fileRef = B556F429161CCDEF00A33A8E /* memberships.json */; };
@@ -94,10 +98,16 @@
 		B5094F071626040300947FAC /* FFBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseCell.m; sourceTree = "<group>"; };
 		B516A045161E000200736C70 /* FFBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTestCase.h; sourceTree = "<group>"; };
 		B516A046161E000200736C70 /* FFBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTestCase.m; sourceTree = "<group>"; };
+		B521AC05162B64500009A8E4 /* TableFooterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableFooterButtonView.h; sourceTree = "<group>"; };
+		B521AC06162B64500009A8E4 /* TableFooterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableFooterButtonView.m; sourceTree = "<group>"; };
 		B533238F161F4BA30094D2DF /* Factories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factories.h; sourceTree = "<group>"; };
 		B5332390161F4BA30094D2DF /* Factories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factories.m; sourceTree = "<group>"; };
 		B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevConfig.xcconfig; sourceTree = "<group>"; };
 		B5332393161F5CC90094D2DF /* ProdConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProdConfig.xcconfig; sourceTree = "<group>"; };
+		B5544CA9162E342100431B54 /* red_footer_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_footer_button.png; sourceTree = "<group>"; };
+		B5544CAA162E342100431B54 /* red_footer_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_footer_button@2x.png"; sourceTree = "<group>"; };
+		B5544CB0162EE13300431B54 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		B5544CB1162EE13300431B54 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		B556F41F161CC83300A33A8E /* NSDecimalNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Additions.h"; sourceTree = "<group>"; };
 		B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Additions.m"; sourceTree = "<group>"; };
 		B556F422161CC87500A33A8E /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
@@ -218,6 +228,8 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B5544CA9162E342100431B54 /* red_footer_button.png */,
+				B5544CAA162E342100431B54 /* red_footer_button@2x.png */,
 				B56E8FFB1627BB5C006DB56B /* blueArrow.png */,
 				B5094EF81625EB9F00947FAC /* background.png */,
 				B5094EF01625C6E300947FAC /* background@2x.png */,
@@ -356,6 +368,8 @@
 				B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */,
 				B556F422161CC87500A33A8E /* NSNumber+Additions.h */,
 				B556F423161CC87500A33A8E /* NSNumber+Additions.m */,
+				B5544CB0162EE13300431B54 /* UIColor+Additions.h */,
+				B5544CB1162EE13300431B54 /* UIColor+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -365,6 +379,8 @@
 			children = (
 				B56E8FE7162778BE006DB56B /* FFPullToRefreshHeader.h */,
 				B56E8FE8162778BE006DB56B /* FFPullToRefreshHeader.m */,
+				B521AC05162B64500009A8E4 /* TableFooterButtonView.h */,
+				B521AC06162B64500009A8E4 /* TableFooterButtonView.m */,
 				B56E8F9A162746ED006DB56B /* TableCells */,
 			);
 			name = Views;
@@ -550,6 +566,8 @@
 				B56E8F99162746E4006DB56B /* TextFieldCell.xib in Resources */,
 				B56E8FFC1627BB5C006DB56B /* blueArrow.png in Resources */,
 				B56E900016289CFC006DB56B /* FFBaseTableViewController.xib in Resources */,
+				B5544CAB162E342100431B54 /* red_footer_button.png in Resources */,
+				B5544CAC162E342100431B54 /* red_footer_button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +645,8 @@
 				B56E8F98162746E4006DB56B /* TextFieldCell.m in Sources */,
 				B56E8FE9162778BE006DB56B /* FFPullToRefreshHeader.m in Sources */,
 				B56E8FFA16278A43006DB56B /* FFFormViewController.m in Sources */,
+				B521AC07162B64500009A8E4 /* TableFooterButtonView.m in Sources */,
+				B5544CB2162EE13300431B54 /* UIColor+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,12 +20,9 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
     
-    self.backgroundColor = [UIColor colorWithRed:252.0/255.0
-                                           green:249.0/255.0
-                                            blue:228.0/255.0
-                                           alpha:1.0];
+    self.backgroundColor = [UIColor creamColor];
     
-    [self.layer setShadowOffset:CGSizeMake(0, 1)];
+    [self.layer setShadowOffset:CGSizeMake(1, 1)];
     [self.layer setShadowOpacity:0.8];
     [self.layer setShadowRadius:3];
     [self.layer setShadowColor:[[UIColor blackColor] CGColor]];
