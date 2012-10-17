@@ -16,10 +16,7 @@
 
 -(id)initWithTableView:(UITableView *)tableView{
     float height = 65.0f;
-    CGRect frame = CGRectMake(tableView.frame.origin.x,
-                                    tableView.frame.origin.x - height,
-                                    tableView.frame.size.width,
-                                    height);
+    CGRect frame = CGRectMake(0, -height, tableView.frame.size.width, height);
     
     self = [super initWithFrame:frame];
     if (self) {
