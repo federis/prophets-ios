@@ -10,6 +10,8 @@
 #import <CoreData/CoreData.h>
 #import <RestKit/RestKit.h>
 
+#import "NSManagedObject+Additions.h"
+
 @class Answer, User;
 
 @interface Bet : NSManagedObject

@@ -11,7 +11,6 @@
 #import <RestKit/CoreData.h>
 #import <RestKit/Testing.h>
 
-#import "CoreData+MagicalRecord.h"
 #import "Factories.h"
 #import "KeychainItemWrapper.h"
 #import "ApplicationConstants.h"

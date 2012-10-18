@@ -14,7 +14,6 @@
 #import "FFObjectManager.h"
 #import "FFRouter.h"
 #import "ApplicationConstants.h"
-#import "CoreData+MagicalRecord.h"
 
 @implementation AppDelegate
 
@@ -42,8 +41,6 @@
     
     [objectManager setupRequestDescriptors];
     [objectManager setupResponseDescriptors];
-    
-    [MagicalRecord setupCoreDataStackWithStoreNamed:FFObjectStoreName];
     
     [self setupAppearances];
     

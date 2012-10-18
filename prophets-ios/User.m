@@ -9,7 +9,6 @@
 #import "User.h"
 #import "KeychainItemWrapper.h"
 #import "ApplicationConstants.h"
-#import "CoreData+MagicalRecord.h"
 
 @implementation User
 
@@ -34,7 +33,7 @@ static User *currentUser = nil;
     if(!currentUser){
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
         NSNumber *userId = [keychain objectForKey:(__bridge id)kSecAttrAccount];
-        currentUser = [[User MR_findByAttribute:@"userId" withValue:userId] lastObject];
+        currentUser = [[User findByAttribute:@"userId" withValue:userId] lastObject];
     }
     
     return currentUser;

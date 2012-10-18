@@ -11,5 +11,7 @@
 @interface NSManagedObject (Additions)
 
 +(id)tempObject;
++(id)object;
++(NSArray *)findByAttribute:(NSString *)attribute withValue:(id)value;
 
 @end

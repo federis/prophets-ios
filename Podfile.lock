@@ -1,7 +1,6 @@
 
 PODS:
 - AFNetworking (1.0)
-- MagicalRecord (2.0.7)
 - RestKit (0.20.0dev):
   - RestKit/Core (= 0.20.0dev)
 - RestKit/Core (0.20.0dev):
@@ -20,7 +19,6 @@ PODS:
 - SOCKit (1.0)
 
 DEPENDENCIES:
-- MagicalRecord (= 2.0.7)
 - RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
 - RestKit/Testing (from `https://github.com/RestKit/RestKit.git', branch `development')
 
@@ -34,7 +32,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 758a1cb1ab5a0d22795ba1c44abb9cad395bc126
-  MagicalRecord: f392c9e288e50653b3e7fbb6e797e0eba07344e7
   RestKit: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   RestKit/Core: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   RestKit/CoreData: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff

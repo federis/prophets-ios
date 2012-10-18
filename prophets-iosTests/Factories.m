@@ -10,13 +10,12 @@
 #import <RestKit/CoreData.h>
 
 #import "Factories.h"
-#import "CoreData+MagicalRecord.h"
 #import "User.h"
 
 @implementation Factories
 
 +(User *)userFactory{
-    User *user = [User MR_createEntity];
+    User *user = [User object];
     user.userId = [NSNumber numberWithInt:1];
     user.email = @"bcroesch@gmail.com";
     
