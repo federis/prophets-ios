@@ -63,7 +63,7 @@ static User *currentUser = nil;
     _authenticationToken = token;
 }
 
-+(RKEntityMapping *)entityMapping{
++(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
     
@@ -78,6 +78,15 @@ static User *currentUser = nil;
     return mapping;
 }
 
++(RKMapping *)requestMapping{
+    RKObjectMapping *mapping = [RKObjectMapping requestMapping];
+    
+    [mapping addAttributeMappingsFromArray:@[@"email", @"name", @"password"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"userId" : @"id"
+     }];
+    return mapping;
+}
 
 
 @end

@@ -12,5 +12,8 @@
 
 @property (nonatomic, strong) id formObject;
 @property (nonatomic, strong) NSArray *formFields;
+@property (nonatomic, strong) NSString *submitButtonText;
+
+-(void)submit;
 
 @end

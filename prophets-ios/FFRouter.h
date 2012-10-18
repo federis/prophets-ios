@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
+#import <RestKit/RestKit.h>
+
 #import "RKRouter.h"
 
 @interface FFRouter : RKRouter

@@ -22,27 +22,27 @@
 -(id)initWithFrame:(CGRect)frame text:(NSString *)text{
     self = [super initWithFrame:frame];
     if(self){
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
         UIEdgeInsets insets = UIEdgeInsetsMake(14, 5, 14, 5);
         UIImage *buttonImage = [[UIImage imageNamed:@"red_footer_button.png"] resizableImageWithCapInsets:insets];
         
-        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-        [button setTitle:text forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor creamColor] forState:UIControlStateNormal];
-        [button setTitleShadowColor:[UIColor colorWithRed:93.0/255.0 green:33.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateNormal];
-        button.titleLabel.shadowOffset = CGSizeMake(0, -1);
-        button.titleLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:14];
+        [self.button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.button setTitle:text forState:UIControlStateNormal];
+        [self.button setTitleColor:[UIColor creamColor] forState:UIControlStateNormal];
+        [self.button setTitleShadowColor:[UIColor colorWithRed:93.0/255.0 green:33.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+        self.button.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        self.button.titleLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:14];
         
-        CGSize buttonSize = [text sizeWithFont:button.titleLabel.font];
+        CGSize buttonSize = [text sizeWithFont:self.button.titleLabel.font];
         buttonSize.width += 50; // add padding
-        button.frame = CGRectMake(frame.size.width - buttonSize.width - 25, 0, buttonSize.width, 28);
+        self.button.frame = CGRectMake(frame.size.width - buttonSize.width - 25, 0, buttonSize.width, 28);
         
-        [button.layer setShadowOffset:CGSizeMake(1, 1)];
-        [button.layer setShadowOpacity:0.5];
-        [button.layer setShadowRadius:2];
-        [button.layer setShadowColor:[[UIColor blackColor] CGColor]];
+        [self.button.layer setShadowOffset:CGSizeMake(1, 1)];
+        [self.button.layer setShadowOpacity:0.5];
+        [self.button.layer setShadowRadius:2];
+        [self.button.layer setShadowColor:[[UIColor blackColor] CGColor]];
         
-        [self addSubview:button];
+        [self addSubview:self.button];
     }
     return self;
 }

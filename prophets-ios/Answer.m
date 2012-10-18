@@ -35,7 +35,7 @@
     self.correct = [NSNumber numberWithBool:isCorrect];
 }
 
-+(RKEntityMapping *)entityMapping{
++(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
     
@@ -52,6 +52,10 @@
      }];    
     
     return mapping;
+}
+
++(RKEntityMapping *)requestMapping{
+    
 }
 
 @end

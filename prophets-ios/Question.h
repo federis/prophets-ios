@@ -25,6 +25,7 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *approver;
 
-+(RKEntityMapping *)entityMapping;
++(RKEntityMapping *)responseMapping;
++(RKEntityMapping *)requestMapping;
 
 @end

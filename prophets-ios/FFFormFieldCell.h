@@ -17,4 +17,6 @@
 
 +(NSString *)cellReuseIdentifierForFormField:(FFFormField *)field;
 
+-(id)formFieldCurrentValue;
+
 @end

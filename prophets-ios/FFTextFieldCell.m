@@ -15,4 +15,8 @@
     self.textField.secureTextEntry = formField.secure;
 }
 
+-(id)formFieldCurrentValue{
+  return self.textField.text;
+}
+
 @end

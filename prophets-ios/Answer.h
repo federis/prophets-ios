@@ -31,7 +31,8 @@
 -(BOOL)isCorrect;
 -(void)setIsCorrect:(BOOL)isCorrect;
 
-+(RKEntityMapping *)entityMapping;
++(RKEntityMapping *)responseMapping;
++(RKEntityMapping *)requestMapping;
 
 @end
 

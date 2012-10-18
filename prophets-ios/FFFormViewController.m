@@ -7,6 +7,7 @@
 //
 
 #import "FFFormViewController.h"
+#import "FFTableFooterButtonView.h"
 #import "FFFormFieldCell.h"
 #import "FFFormField.h"
 #import "Utilities.h"
@@ -24,6 +25,8 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FFTextFieldCell" bundle:nil]
          forCellReuseIdentifier:@"FFTextFieldCell"];
+    
+    if(!self.submitButtonText) self.submitButtonText = @"Submit";
 }
 
 -(NSArray *)formFields{
@@ -54,5 +57,36 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 50;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    FFTableFooterButtonView *footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:self.submitButtonText];
+    [footerView.button addTarget:self action:@selector(submitTouched) forControlEvents:UIControlEventTouchUpInside];
+    return footerView;
+}
+
+-(void)submitTouched{
+    [self serializeFormFieldsIntoObject];
+    [self submit];
+}
+
+-(void)serializeFormFieldsIntoObject{
+    for (int section = 0; section < [self.tableView numberOfSections]; section++) {
+        for (int row = 0; row < [self.tableView numberOfRowsInSection:section]; row++) {
+            NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:section];
+            FFFormFieldCell* cell = (FFFormFieldCell *)[self.tableView cellForRowAtIndexPath:cellPath];
+            FFFormField *field = [self.formFields objectAtIndex:row];
+            
+            id value = [cell formFieldCurrentValue];
+            [self.formObject setValue:value forKey:field.attributeName];
+        }
+    }
+}
+
+-(void)submit{
+    //Empty implementation to be overridden by subclasses
+}
 
 @end

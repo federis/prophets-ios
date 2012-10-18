@@ -12,12 +12,17 @@
 #import "LoginViewController.h"
 #import "User.h"
 #import "FFObjectManager.h"
+#import "FFRouter.h"
 #import "ApplicationConstants.h"
 #import "CoreData+MagicalRecord.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+#ifdef DEBUG
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+#endif
+    
     //RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
     //RKLogConfigureByName("RestKit/UI", RKLogLevelTrace);
@@ -31,6 +36,10 @@
     
     FFObjectManager* objectManager = [FFObjectManager managerWithBaseURL:[NSURL URLWithString:FFBaseUrl]];
     objectManager.managedObjectStore = managedObjectStore;
+    
+    FFRouter *router = [[FFRouter alloc] initWithBaseURL:objectManager.baseURL];
+    objectManager.router = router;
+    
     [objectManager setupRequestDescriptors];
     [objectManager setupResponseDescriptors];
     
@@ -79,6 +88,12 @@
     if (! [[RKObjectManager sharedManager].managedObjectStore. save:&error]) {
         RKLogError(@"Failed to save RestKit managed object store: %@", error);
     }*/
+}
+
+void uncaughtExceptionHandler(NSException *exception) {
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+    // Internal error reporting
 }
 
 @end

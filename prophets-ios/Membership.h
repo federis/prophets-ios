@@ -24,6 +24,7 @@
 
 -(NSString *)balanceString;
 
-+(RKEntityMapping *)entityMapping;
++(RKEntityMapping *)responseMapping;
++(RKEntityMapping *)requestMapping;
 
 @end

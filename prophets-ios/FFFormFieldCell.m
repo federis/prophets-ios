@@ -18,4 +18,11 @@
     return @"FFTextFieldCell";
 }
 
+-(id)formFieldCurrentValue{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"Invalid method call"
+                                           "formFieldCurrentValue should only be invoke on subclasses of FFFormFieldCell"]
+                                 userInfo:nil];
+}
+
 @end

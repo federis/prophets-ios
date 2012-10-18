@@ -7,20 +7,21 @@
 //
 
 #import "FFObjectManager.h"
+#import "User.h"
 
 @implementation FFObjectManager
 
 -(void)setupRequestDescriptors{
-/*    [self registerObjectMapping:[self userObjectMapping] withRootKeyPath:@"user"];
-    [self setObjectMapping:[self membershipObjectMapping] forResourcePathPattern:@"/memberships" withFetchRequestBlock:^NSFetchRequest *(NSString *resourcePath) {
-        NSFetchRequest *fetchRequest = [Membership fetchRequest];
-        fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES]];
-        return fetchRequest;
-    }];*/
+    [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[User requestMapping]
+                                                                     objectClass:[User class]
+                                                                     rootKeyPath:@"user"]];
 }
 
 -(void)setupResponseDescriptors{
-    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[User responseMapping]
+                                                                        pathPattern:nil
+                                                                            keyPath:@"user"
+                                                                        statusCodes:[NSIndexSet indexSetWithIndex:200]]];
 }
 
 @end

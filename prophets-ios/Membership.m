@@ -21,7 +21,7 @@
 @dynamic user;
 @dynamic league;
 
-+(RKEntityMapping *)entityMapping{
++(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
     
@@ -34,9 +34,13 @@
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"league"
                                                                             toKeyPath:@"league"
-                                                                          withMapping:[League entityMapping]]];
+                                                                          withMapping:[League responseMapping]]];
     
     return mapping;
+}
+
++(RKEntityMapping *)requestMapping{
+    
 }
 
 @end

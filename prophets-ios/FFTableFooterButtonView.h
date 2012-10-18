@@ -10,6 +10,8 @@
 
 @interface FFTableFooterButtonView : UIView
 
+@property (nonatomic, strong) UIButton *button;
+
 +(FFTableFooterButtonView *)footerButtonViewForTable:(UITableView *)tableView withText:(NSString *)text;
 
 -(id)initWithFrame:(CGRect)frame text:(NSString *)text;
