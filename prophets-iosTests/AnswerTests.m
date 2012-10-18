@@ -27,7 +27,7 @@
 
 -(void)testIsCorrectSetter{
     [RKTestFactory managedObjectStore];
-    Answer *answer = [Answer createEntity];
+    Answer *answer = [Answer MR_createEntity];
     
     answer.isCorrect = YES;
     STAssertTrue([answer.correct intValue] == 1, @"Answer isCorrect setter did not correctly set true value");
@@ -37,7 +37,7 @@
 
 -(void)testIsCorrectGetter{
     [RKTestFactory managedObjectStore];
-    Answer *answer = [Answer createEntity];
+    Answer *answer = [Answer MR_createEntity];
     
     answer.correct = [NSNumber numberWithBool:YES];
     STAssertTrue(answer.isCorrect, @"Answer isCorrect getter did not correctly get true value");

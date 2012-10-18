@@ -9,24 +9,36 @@
 #import <RestKit/RestKit.h>
 
 #import "LoginViewController.h"
-#import "TableFooterButtonView.h"
+#import "FFTableFooterButtonView.h"
+#import "FFFormField.h"
 #import "User.h"
+#import "NSManagedObject+Additions.h"
 
 @interface LoginViewController ()
-
-@property (nonatomic, strong) TableFooterButtonView *footerView;
 
 @end
 
 @implementation LoginViewController
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.showsPullToRefresh = YES;
+    
+    User *user = [User tempObject];
+    self.formObject = user;
+    self.formFields = @[
+        [FFFormField formFieldWithAttributeName:@"email" type:FFFormFieldTypeTextField secure:NO],
+        [FFFormField formFieldWithAttributeName:@"password" type:FFFormFieldTypeTextField secure:YES]
+    ];
+    
     /*
     self.tableController = [RKTableController tableControllerForTableViewController:self];
-    User *user = [User tempObject];
+    
     
     [self.tableController loadTableItems:@[]];
     
@@ -102,34 +114,12 @@
 }
  */
 
--(void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    [self.tableView sendSubviewToBack:self.footerView];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 50;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    self.footerView = [TableFooterButtonView footerButtonViewForTable:tableView withText:@"Sign in"];
-    return self.footerView;
+    return [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:@"Sign in"];
 }
 
 #pragma mark - Table view delegate

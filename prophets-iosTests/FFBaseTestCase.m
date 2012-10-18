@@ -7,18 +7,15 @@
 //
 
 #import "FFBaseTestCase.h"
-#import "FFMappingProvider.h"
 #import "User.h"
 
 @implementation FFBaseTestCase
 
 - (void)setUp{
     [RKTestFactory setUp];
-    [RKTestFactory clearCacheDirectory];
     
     RKObjectManager *manager = [RKTestFactory objectManager];
-    manager.objectStore = [RKTestFactory managedObjectStore];
-    manager.mappingProvider = [FFMappingProvider mappingProviderWithObjectStore:manager.objectStore];
+    manager.managedObjectStore = [RKTestFactory managedObjectStore];
     
     keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
 }
@@ -26,7 +23,6 @@
 - (void)tearDown
 {
     [RKTestFactory tearDown];
-    [RKTestFactory clearCacheDirectory];
     
     [User setCurrentUser:nil];
     

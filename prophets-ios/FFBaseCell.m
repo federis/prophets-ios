@@ -6,8 +6,10 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFBaseCell.h"
 #import <QuartzCore/QuartzCore.h>
+
+#import "FFBaseCell.h"
+#import "UIColor+Additions.h"
 
 @interface FFBaseCell ()
 

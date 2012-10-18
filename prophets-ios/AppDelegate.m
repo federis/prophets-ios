@@ -12,6 +12,8 @@
 #import "LoginViewController.h"
 #import "User.h"
 #import "FFObjectManager.h"
+#import "ApplicationConstants.h"
+#import "CoreData+MagicalRecord.h"
 
 @implementation AppDelegate
 

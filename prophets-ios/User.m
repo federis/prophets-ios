@@ -8,6 +8,8 @@
 
 #import "User.h"
 #import "KeychainItemWrapper.h"
+#import "ApplicationConstants.h"
+#import "CoreData+MagicalRecord.h"
 
 @implementation User
 

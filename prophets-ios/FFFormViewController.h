@@ -10,6 +10,7 @@
 
 @interface FFFormViewController : FFBaseTableViewController
 
-//@property (nonatomic, strong) id *formObject;
+@property (nonatomic, strong) id formObject;
+@property (nonatomic, strong) NSArray *formFields;
 
 @end

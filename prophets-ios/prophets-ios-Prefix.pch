@@ -23,13 +23,6 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
-    #import "ApplicationConstants.h"
-    #import "NSManagedObjectContext+Additions.h"
-    #import "NSManagedObject+Additions.h"
-    #import "NSDecimalNumber+Additions.h"
-    #import "NSNumber+Additions.h"
-    #import "UIColor+Additions.h"
-    #import "CoreData+MagicalRecord.h"
 
     // These two headers need to be imported bc of an issue with cocoapods.
     // See https://github.com/AFNetworking/AFNetworking/pull/560

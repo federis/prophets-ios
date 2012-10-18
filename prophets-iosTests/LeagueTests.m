@@ -26,7 +26,7 @@
 
 -(void)testIsPrivateSetter{
     [RKTestFactory managedObjectStore];
-    League *league = [League createEntity];
+    League *league = [League MR_createEntity];
     
     league.isPrivate = YES;
     STAssertTrue([league.priv intValue] == 1, @"League isPrivate setter did not correctly set true value");
@@ -36,7 +36,7 @@
 
 -(void)testIsPrivateGetter{
     [RKTestFactory managedObjectStore];
-    League *league = [League createEntity];
+    League *league = [League MR_createEntity];
     
     league.priv = [NSNumber numberWithBool:YES];
     STAssertTrue(league.isPrivate, @"League isPrivate getter did not correctly get true value");
