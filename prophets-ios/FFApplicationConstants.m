@@ -1,12 +1,12 @@
 //
-//  ApplicationConstants.m
+//  FFApplicationConstants.m
 //  prophets-ios
 //
 //  Created by Benjamin Roesch on 9/19/12.
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "ApplicationConstants.h"
+#import "FFApplicationConstants.h"
 
 #if APP_ENV == DEV
 NSString * const FFBaseUrl = @"http://55prophets.dev:3000";

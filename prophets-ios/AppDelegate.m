@@ -13,24 +13,25 @@
 #import "User.h"
 #import "FFObjectManager.h"
 #import "FFRouter.h"
-#import "ApplicationConstants.h"
+#import "FFApplicationConstants.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
 #ifdef DEBUG
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-#endif
     
-    //RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
-    //RKLogConfigureByName("RestKit/UI", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/Testing", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/CoreData", RKLogLevelTrace);
+#endif
     
     NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
     RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
     NSString *path = [RKApplicationDataDirectory() stringByAppendingPathComponent:FFObjectStoreName];
-    [managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil error:nil];
+    NSError *error = nil;
+    [managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil error:&error];
     [managedObjectStore createManagedObjectContexts];
     
     FFObjectManager* objectManager = [FFObjectManager managerWithBaseURL:[NSURL URLWithString:FFBaseUrl]];
@@ -52,7 +53,7 @@
         [self showLogin];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(setupAuthTokenHeader)
+                                             selector:@selector(userLoggedIn)
                                                  name:FFUserDidLogInNotification
                                                object:nil];
     
@@ -68,6 +69,11 @@
 -(void)setupAuthTokenHeader{
     [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization"
                                                            value:[NSString stringWithFormat:@"Token token=\"%@\"", [User currentUser].authenticationToken]];
+}
+
+-(void)userLoggedIn{
+    [self setupAuthTokenHeader];
+    [self.window.rootViewController dismissViewControllerAnimated:YES completion:^{}];
 }
 
 -(void)setupAppearances{

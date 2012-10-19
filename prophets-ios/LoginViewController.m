@@ -12,6 +12,7 @@
 #import "FFFormField.h"
 #import "User.h"
 #import "NSManagedObject+Additions.h"
+#import "FFApplicationConstants.h"
 
 @interface LoginViewController ()
 
@@ -19,15 +20,11 @@
 
 @implementation LoginViewController
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    
-}
-
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.showsPullToRefresh = YES;
     
-    User *user = [User tempObject];
+    User *user = [User object];
     self.formObject = user;
     self.formFields = @[
         [FFFormField formFieldWithAttributeName:@"email" type:FFFormFieldTypeTextField secure:NO],
@@ -41,12 +38,13 @@
     [[RKObjectManager sharedManager] postObject:self.formObject path:@"/tokens" parameters:nil
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         DLog(@"result was %@", mappingResult);
+        User *user = (User *)self.formObject;
+        [User setCurrentUser:user];
+        [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogInNotification object:user];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error){
         DLog(@"%@", error);
     }];
-    
-    
 }
 
 @end

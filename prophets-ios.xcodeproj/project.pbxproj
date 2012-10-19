@@ -39,7 +39,7 @@
 		B56E8FE9162778BE006DB56B /* FFPullToRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8FE8162778BE006DB56B /* FFPullToRefreshHeader.m */; };
 		B56E8FFA16278A43006DB56B /* FFFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8FF916278A43006DB56B /* FFFormViewController.m */; };
 		B56E8FFC1627BB5C006DB56B /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E8FFB1627BB5C006DB56B /* blueArrow.png */; };
-		B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* ApplicationConstants.m */; };
+		B56F40C1160A52AD007D445F /* FFApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* FFApplicationConstants.m */; };
 		B56F40D3160A7829007D445F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D2160A7828007D445F /* User.m */; };
 		B56F40D7160A78F3007D445F /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D6160A78F3007D445F /* League.m */; };
 		B56F40DA160A7914007D445F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D9160A7914007D445F /* Question.m */; };
@@ -148,8 +148,8 @@
 		B56E8FF816278A43006DB56B /* FFFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormViewController.h; sourceTree = "<group>"; };
 		B56E8FF916278A43006DB56B /* FFFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormViewController.m; sourceTree = "<group>"; };
 		B56E8FFB1627BB5C006DB56B /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
-		B56F40BF160A52AC007D445F /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
-		B56F40C0160A52AC007D445F /* ApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConstants.m; sourceTree = "<group>"; };
+		B56F40BF160A52AC007D445F /* FFApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFApplicationConstants.h; sourceTree = "<group>"; };
+		B56F40C0160A52AC007D445F /* FFApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFApplicationConstants.m; sourceTree = "<group>"; };
 		B56F40D1160A7828007D445F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		B56F40D2160A7828007D445F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		B56F40D5160A78F3007D445F /* League.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = League.h; sourceTree = "<group>"; };
@@ -394,12 +394,12 @@
 			children = (
 				B57D092B160CFB4F0060A11E /* LoginViewController.h */,
 				B57D092C160CFB4F0060A11E /* LoginViewController.m */,
-				B5D33D7C161654BA0043A0E8 /* MembershipsViewController.h */,
-				B5D33D7A161652590043A0E8 /* MembershipsViewController.m */,
 				B560569B16226B82004470DC /* RegistrationViewController.h */,
 				B560569C16226B82004470DC /* RegistrationViewController.m */,
 				B560569E16226BEA004470DC /* LaunchViewController.h */,
 				B560569F16226BEA004470DC /* LaunchViewController.m */,
+				B5D33D7C161654BA0043A0E8 /* MembershipsViewController.h */,
+				B5D33D7A161652590043A0E8 /* MembershipsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -490,8 +490,8 @@
 				B5D33D7D1618C4700043A0E8 /* Views */,
 				B57D0925160BE4AB0060A11E /* Controllers */,
 				B56F40D4160A7833007D445F /* Models */,
-				B56F40BF160A52AC007D445F /* ApplicationConstants.h */,
-				B56F40C0160A52AC007D445F /* ApplicationConstants.m */,
+				B56F40BF160A52AC007D445F /* FFApplicationConstants.h */,
+				B56F40C0160A52AC007D445F /* FFApplicationConstants.m */,
 				B5F1AEDD160388C600D28C1C /* AppDelegate.h */,
 				B5F1AEDE160388C600D28C1C /* AppDelegate.m */,
 				B56E8F8A16272551006DB56B /* FFObjectManager.h */,
@@ -678,7 +678,7 @@
 				B5F1AEDB160388C600D28C1C /* main.m in Sources */,
 				B5F1AEDF160388C600D28C1C /* AppDelegate.m in Sources */,
 				B5F1AEE2160388C600D28C1C /* prophets_ios.xcdatamodeld in Sources */,
-				B56F40C1160A52AD007D445F /* ApplicationConstants.m in Sources */,
+				B56F40C1160A52AD007D445F /* FFApplicationConstants.m in Sources */,
 				B56F40D3160A7829007D445F /* User.m in Sources */,
 				B56F40D7160A78F3007D445F /* League.m in Sources */,
 				B56F40DA160A7914007D445F /* Question.m in Sources */,

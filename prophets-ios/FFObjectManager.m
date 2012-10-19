@@ -21,7 +21,7 @@
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[User responseMapping]
                                                                         pathPattern:nil
                                                                             keyPath:@"user"
-                                                                        statusCodes:[NSIndexSet indexSetWithIndex:200]]];
+                                                                        statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]]];
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import "User.h"
 #import "KeychainItemWrapper.h"
-#import "ApplicationConstants.h"
+#import "FFApplicationConstants.h"
 
 @implementation User
 

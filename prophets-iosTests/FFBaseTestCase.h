@@ -13,7 +13,7 @@
 
 #import "Factories.h"
 #import "KeychainItemWrapper.h"
-#import "ApplicationConstants.h"
+#import "FFApplicationConstants.h"
 
 @interface FFBaseTestCase : SenTestCase{
     KeychainItemWrapper *keychain;

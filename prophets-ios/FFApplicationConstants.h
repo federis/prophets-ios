@@ -1,5 +1,5 @@
 //
-//  ApplicationConstants.h
+//  FFApplicationConstants.h
 //  prophets-ios
 //
 //  Created by Benjamin Roesch on 9/19/12.
