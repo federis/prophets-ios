@@ -13,32 +13,16 @@
 
 @implementation Resource
 
--(BOOL)validateValue:(id *)value forKey:(NSString *)key error:(NSError **)error{
-    NSString *idName = [NSString stringWithFormat:@"%@Id", [NSStringFromClass([self class]) lowercaseString]];
-    if([key isEqualToString:idName]){
-        
-    }
-    
-    return YES;
-}
+@dynamic remoteId;
 
 +(id)object{
     return [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([self class])
                                          inManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext];
 }
 
-+(NSArray *)findByAttribute:(NSString *)attribute withValue:(id)value{
++(id)findById:(NSNumber *)remoteId{
     NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([self class])
-                                              inManagedObjectContext:context];
-    [request setEntity:entity];
-    
-    [request setPredicate:[NSPredicate predicateWithFormat:@"%@ == %@", attribute, value]];
-    
-    NSError *error;
-    return [context executeFetchRequest:request error:&error];
+    return [context fetchObjectForEntityForName:NSStringFromClass(self) withValueForPrimaryKeyAttribute:remoteId];
 }
 
 @end

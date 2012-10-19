@@ -51,7 +51,7 @@
     User *u = [responseLoader.objects objectAtIndex:0];
     STAssertNotNil(u, @"Expected issue not to be nil");
     STAssertEqualObjects(u.name, @"Ben Roesch", @"User's name is incorrect");
-    STAssertEqualObjects(u.userId, [NSNumber numberWithInt:1], @"User's id is incorrect");
+    STAssertEqualObjects(u.remoteId, [NSNumber numberWithInt:1], @"User's id is incorrect");
     STAssertEqualObjects(u.email, @"bcroesch@gmail.com", @"User's email is incorrect");
     STAssertEqualObjects(u.authenticationToken, @"fAcHvsHHwo13kxFYeFLL", @"User's auth token is incorrect");
     

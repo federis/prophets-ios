@@ -13,7 +13,6 @@
 
 @implementation Membership
 
-@dynamic membershipId;
 @dynamic role;
 @dynamic balance;
 @dynamic createdAt;
@@ -27,7 +26,7 @@
     
     [mapping addAttributeMappingsFromArray:@[@"balance", @"role"]];
     [mapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"membershipId",
+     @"id" : @"remoteId",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
      }];

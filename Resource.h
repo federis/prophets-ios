@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "NSManagedObject+Additions.h"
 
 @interface Resource : NSManagedObject
 
+@property (nonatomic, strong) NSNumber * remoteId;
+
++(id)object;
++(id)findById:(NSNumber *)remoteId;
 
 @end

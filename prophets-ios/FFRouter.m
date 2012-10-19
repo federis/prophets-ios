@@ -36,7 +36,7 @@
 }
 
 -(void)setupRoutes{
-    //[self.routeSet addRoute:[RKRoute routeWithClass:[User class] pathPattern:@"/users/:userId" method:RKRequestMethodGET]];
+    //[self.routeSet addRoute:[RKRoute routeWithClass:[User class] pathPattern:@"/users/:remoteId" method:RKRequestMethodGET]];
     //[self.routeSet addRoute:[RKRoute routeWithClass:[User class] pathPattern:@"/users" method:RKRequestMethodPOST]];
 }
 

@@ -11,13 +11,11 @@
 #import <RestKit/RestKit.h>
 
 #import "Resource.h"
-#import "NSManagedObject+Additions.h"
 
 @class Question, User;
 
 @interface Answer : Resource
 
-@property (nonatomic, strong) NSNumber * answerId;
 @property (nonatomic, strong) NSString * content;
 @property (nonatomic, strong) NSDecimalNumber * initialProbability;
 @property (nonatomic, strong) NSDecimalNumber * currentProbability;

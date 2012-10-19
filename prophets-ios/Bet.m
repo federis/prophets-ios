@@ -13,7 +13,6 @@
 
 @implementation Bet
 
-@dynamic betId;
 @dynamic amount;
 @dynamic probability;
 @dynamic bonus;
@@ -28,7 +27,7 @@
     
     [mapping addAttributeMappingsFromArray:@[@"amount", @"bonus", @"probability"]];
     [mapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"answerId",
+     @"id" : @"remoteId",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt",
      }];

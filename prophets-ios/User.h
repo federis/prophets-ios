@@ -11,13 +11,11 @@
 #import <RestKit/RestKit.h>
 
 #import "Resource.h"
-#import "NSManagedObject+Additions.h"
 
 @interface User : Resource{
     NSString *_authenticationToken;
 }
 
-@property (nonatomic, strong) NSNumber * userId;
 @property (nonatomic, strong) NSString * email;
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSDate * createdAt;

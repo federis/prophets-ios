@@ -11,13 +11,11 @@
 #import <RestKit/RestKit.h>
 
 #import "Resource.h"
-#import "NSManagedObject+Additions.h"
 
 @class Answer, User;
 
 @interface Bet : Resource
 
-@property (nonatomic, strong) NSNumber * betId;
 @property (nonatomic, strong) NSDecimalNumber * amount;
 @property (nonatomic, strong) NSDecimalNumber * probability;
 @property (nonatomic, strong) NSDecimalNumber * bonus;

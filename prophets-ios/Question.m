@@ -13,7 +13,6 @@
 
 @implementation Question
 
-@dynamic questionId;
 @dynamic content;
 @dynamic desc;
 @dynamic approvedAt;
@@ -30,7 +29,7 @@
     
     [mapping addAttributeMappingsFromArray:@[@"content", @"desc"]];
     [mapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"questionId",
+     @"id" : @"remoteId",
      @"approved_at" : @"approvedAt",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"

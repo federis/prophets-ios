@@ -13,7 +13,6 @@
 
 @implementation Answer
 
-@dynamic answerId;
 @dynamic content;
 @dynamic initialProbability;
 @dynamic currentProbability;
@@ -41,7 +40,7 @@
     
     [mapping addAttributeMappingsFromArray:@[@"content"]];
     [mapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"answerId",
+     @"id" : @"remoteId",
      @"bet_total" : @"betTotal",
      @"current_probability" : @"currentProbability",
      @"initial_probability" : @"initialProbability",

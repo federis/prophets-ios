@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Answer" representedClassName="Answer" parentEntity="Resource" syncable="YES">
-        <attribute name="answerId" attributeType="Integer 32" syncable="YES"/>
         <attribute name="betTotal" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="correct" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -15,12 +14,11 @@
         <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="answers" inverseEntity="User" syncable="YES"/>
         <userInfo>
-            <entry key="primaryKeyAttribute" value="answerId"/>
+            <entry key="primaryKeyAttribute" value="remoteId"/>
         </userInfo>
     </entity>
     <entity name="Bet" representedClassName="Bet" parentEntity="Resource" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Decimal" syncable="YES"/>
-        <attribute name="betId" attributeType="Integer 32" syncable="YES"/>
         <attribute name="bonus" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="probability" optional="YES" attributeType="Decimal" syncable="YES"/>
@@ -28,13 +26,12 @@
         <relationship name="answer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Answer" inverseName="bets" inverseEntity="Answer" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="bets" inverseEntity="User" syncable="YES"/>
         <userInfo>
-            <entry key="primaryKeyAttribute" value="betId"/>
+            <entry key="primaryKeyAttribute" value="remoteId"/>
         </userInfo>
     </entity>
     <entity name="League" representedClassName="League" parentEntity="Resource" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="initialBalance" optional="YES" attributeType="Decimal" syncable="YES"/>
-        <attribute name="leagueId" attributeType="Integer 32" syncable="YES"/>
         <attribute name="maxBet" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priv" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -43,19 +40,18 @@
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="league" inverseEntity="Question" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="createdLeagues" inverseEntity="User" syncable="YES"/>
         <userInfo>
-            <entry key="primaryKeyAttribute" value="leagueId"/>
+            <entry key="primaryKeyAttribute" value="remoteId"/>
         </userInfo>
     </entity>
     <entity name="Membership" representedClassName="Membership" parentEntity="Resource" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="membershipId" attributeType="Integer 32" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="memberships" inverseEntity="League" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="memberships" inverseEntity="User" syncable="YES"/>
         <userInfo>
-            <entry key="primaryKeyAttribute" value="membershipId"/>
+            <entry key="primaryKeyAttribute" value="remoteId"/>
         </userInfo>
     </entity>
     <entity name="Question" representedClassName="Question" parentEntity="Resource" syncable="YES">
@@ -63,23 +59,23 @@
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="questionId" attributeType="Integer 32" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="question" inverseEntity="Answer" syncable="YES"/>
         <relationship name="approver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="approvedQuestions" inverseEntity="User" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="questions" inverseEntity="League" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="questions" inverseEntity="User" syncable="YES"/>
         <userInfo>
-            <entry key="primaryKeyAttribute" value="questionId"/>
+            <entry key="primaryKeyAttribute" value="remoteId"/>
         </userInfo>
     </entity>
-    <entity name="Resource" representedClassName="Resource" isAbstract="YES" syncable="YES"/>
+    <entity name="Resource" representedClassName="Resource" isAbstract="YES" syncable="YES">
+        <attribute name="remoteId" attributeType="Integer 32" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" parentEntity="Resource" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="userId" attributeType="Integer 32" syncable="YES"/>
         <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="user" inverseEntity="Answer" syncable="YES"/>
         <relationship name="approvedQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="approver" inverseEntity="Question" syncable="YES"/>
         <relationship name="bets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bet" inverseName="user" inverseEntity="Bet" syncable="YES"/>
@@ -88,16 +84,16 @@
         <relationship name="memberships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Membership" inverseName="user" inverseEntity="Membership" syncable="YES"/>
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="user" inverseEntity="Question" syncable="YES"/>
         <userInfo>
-            <entry key="primaryKeyAttribute" value="userId"/>
+            <entry key="primaryKeyAttribute" value="remoteId"/>
         </userInfo>
     </entity>
     <elements>
-        <element name="Answer" positionX="0" positionY="0" width="128" height="240"/>
-        <element name="Bet" positionX="0" positionY="0" width="128" height="165"/>
-        <element name="League" positionX="0" positionY="0" width="128" height="195"/>
-        <element name="Membership" positionX="0" positionY="0" width="128" height="150"/>
-        <element name="Question" positionX="0" positionY="0" width="128" height="195"/>
-        <element name="Resource" positionX="0" positionY="0" width="128" height="45"/>
-        <element name="User" positionX="0" positionY="0" width="128" height="225"/>
+        <element name="Answer" positionX="0" positionY="0" width="128" height="225"/>
+        <element name="Bet" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="League" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="Membership" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="Question" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="Resource" positionX="0" positionY="0" width="128" height="60"/>
+        <element name="User" positionX="0" positionY="0" width="128" height="210"/>
     </elements>
 </model>

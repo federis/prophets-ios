@@ -32,7 +32,7 @@
     STAssertNil(user, @"Current user should be nil");
     
     user = [Factories userFactory];
-    [keychain setObject:user.userId forKey:(__bridge id)kSecAttrAccount];
+    [keychain setObject:user.remoteId forKey:(__bridge id)kSecAttrAccount];
     
     User *currentUser = [User currentUser];
     STAssertNotNil(currentUser, @"Current user should not be nil");
@@ -49,9 +49,9 @@
     //need a fresh kc instance for some reason, otherwise we don't get the change set in setCurrentUser
     KeychainItemWrapper* kc = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
     NSNumber *userId = [kc objectForKey:(__bridge id)kSecAttrAccount];
-    STAssertEqualObjects(userId, newUser.userId, @"User id not set properly in the keychain");
+    STAssertEqualObjects(userId, newUser.remoteId, @"User id not set properly in the keychain");
     
-    User *foundUser = [[User findByAttribute:@"userId" withValue:userId] lastObject];
+    User *foundUser = [[User findByAttribute:@"remoteId" withValue:userId] lastObject];
     STAssertEqualObjects(foundUser, newUser, @"Current User object not found properly");
     
     STAssertEqualObjects([User currentUser], foundUser, @"Current user not set properly");

@@ -12,7 +12,6 @@
 
 @implementation League
 
-@dynamic leagueId;
 @dynamic name;
 @dynamic priv;
 @dynamic maxBet;
@@ -37,7 +36,7 @@
     
     [mapping addAttributeMappingsFromArray:@[@"name"]];
     [mapping addAttributeMappingsFromDictionary:@{
-         @"id" : @"leagueId",
+         @"id" : @"remoteId",
          @"initial_balance" : @"initialBalance",
          @"max_bet" : @"maxBet",
          @"priv" : @"isPrivate",

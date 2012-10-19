@@ -16,7 +16,7 @@
 
 +(User *)userFactory{
     User *user = [User object];
-    user.userId = [NSNumber numberWithInt:1];
+    user.remoteId = [NSNumber numberWithInt:1];
     user.email = @"bcroesch@gmail.com";
     
     return user;

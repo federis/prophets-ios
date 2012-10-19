@@ -16,7 +16,6 @@ static User *currentUser = nil;
 
 @synthesize password = _password;
 
-@dynamic userId;
 @dynamic email;
 @dynamic name;
 @dynamic createdAt;
@@ -32,8 +31,8 @@ static User *currentUser = nil;
 +(User *)currentUser{
     if(!currentUser){
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
-        NSNumber *userId = [keychain objectForKey:(__bridge id)kSecAttrAccount];
-        currentUser = [[User findByAttribute:@"userId" withValue:userId] lastObject];
+        NSNumber *remoteId = [keychain objectForKey:(__bridge id)kSecAttrAccount];
+        currentUser = [User findById:remoteId];
     }
     
     return currentUser;
@@ -45,7 +44,7 @@ static User *currentUser = nil;
     if(!user)
         [keychain resetKeychainItem];
     else
-        [keychain setObject:user.userId forKey:(__bridge id)kSecAttrAccount];
+        [keychain setObject:user.remoteId forKey:(__bridge id)kSecAttrAccount];
 }
 
 -(NSString *)authenticationToken{
@@ -68,7 +67,7 @@ static User *currentUser = nil;
     
     [mapping addAttributeMappingsFromArray:@[@"email", @"name"]];
     [mapping addAttributeMappingsFromDictionary:@{
-        @"id" : @"userId",
+        @"id" : @"remoteId",
         @"authentication_token" : @"authenticationToken",
         @"updated_at" : @"updatedAt",
         @"created_at" : @"createdAt"
@@ -82,7 +81,7 @@ static User *currentUser = nil;
     
     [mapping addAttributeMappingsFromArray:@[@"email", @"name", @"password"]];
     [mapping addAttributeMappingsFromDictionary:@{
-     @"userId" : @"id"
+     @"remoteId" : @"id"
      }];
     return mapping;
 }

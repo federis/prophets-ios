@@ -11,13 +11,11 @@
 #import <RestKit/RestKit.h>
 
 #import "Resource.h"
-#import "NSManagedObject+Additions.h"
 
 @class League, User;
 
 @interface Membership : Resource
 
-@property (nonatomic, strong) NSNumber * membershipId;
 @property (nonatomic, strong) NSNumber * role;
 @property (nonatomic, strong) NSDecimalNumber * balance;
 @property (nonatomic, strong) NSDate * createdAt;
