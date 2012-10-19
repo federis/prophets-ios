@@ -10,11 +10,12 @@
 #import <CoreData/CoreData.h>
 #import <RestKit/RestKit.h>
 
+#import "Resource.h"
 #import "NSManagedObject+Additions.h"
 
 @class League, User;
 
-@interface Question : NSManagedObject
+@interface Question : Resource
 
 @property (nonatomic, strong) NSNumber * questionId;
 @property (nonatomic, strong) NSString * content;

@@ -10,11 +10,12 @@
 #import <CoreData/CoreData.h>
 #import <RestKit/RestKit.h>
 
+#import "Resource.h"
 #import "NSManagedObject+Additions.h"
 
 @class Answer, User;
 
-@interface Bet : NSManagedObject
+@interface Bet : Resource
 
 @property (nonatomic, strong) NSNumber * betId;
 @property (nonatomic, strong) NSDecimalNumber * amount;

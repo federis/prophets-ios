@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Answer" representedClassName="Answer" syncable="YES">
+    <entity name="Answer" representedClassName="Answer" parentEntity="Resource" syncable="YES">
         <attribute name="answerId" attributeType="Integer 32" syncable="YES"/>
         <attribute name="betTotal" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,7 +18,7 @@
             <entry key="primaryKeyAttribute" value="answerId"/>
         </userInfo>
     </entity>
-    <entity name="Bet" representedClassName="Bet" syncable="YES">
+    <entity name="Bet" representedClassName="Bet" parentEntity="Resource" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="betId" attributeType="Integer 32" syncable="YES"/>
         <attribute name="bonus" optional="YES" attributeType="Decimal" syncable="YES"/>
@@ -31,7 +31,7 @@
             <entry key="primaryKeyAttribute" value="betId"/>
         </userInfo>
     </entity>
-    <entity name="League" representedClassName="League" syncable="YES">
+    <entity name="League" representedClassName="League" parentEntity="Resource" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="initialBalance" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="leagueId" attributeType="Integer 32" syncable="YES"/>
@@ -46,7 +46,7 @@
             <entry key="primaryKeyAttribute" value="leagueId"/>
         </userInfo>
     </entity>
-    <entity name="Membership" representedClassName="Membership" syncable="YES">
+    <entity name="Membership" representedClassName="Membership" parentEntity="Resource" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="membershipId" attributeType="Integer 32" syncable="YES"/>
@@ -58,7 +58,7 @@
             <entry key="primaryKeyAttribute" value="membershipId"/>
         </userInfo>
     </entity>
-    <entity name="Question" representedClassName="Question" syncable="YES">
+    <entity name="Question" representedClassName="Question" parentEntity="Resource" syncable="YES">
         <attribute name="approvedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
@@ -73,7 +73,8 @@
             <entry key="primaryKeyAttribute" value="questionId"/>
         </userInfo>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES">
+    <entity name="Resource" representedClassName="Resource" isAbstract="YES" syncable="YES"/>
+    <entity name="User" representedClassName="User" parentEntity="Resource" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -96,6 +97,7 @@
         <element name="League" positionX="0" positionY="0" width="128" height="195"/>
         <element name="Membership" positionX="0" positionY="0" width="128" height="150"/>
         <element name="Question" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="Resource" positionX="0" positionY="0" width="128" height="45"/>
         <element name="User" positionX="0" positionY="0" width="128" height="225"/>
     </elements>
 </model>

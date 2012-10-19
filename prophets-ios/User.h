@@ -10,9 +10,10 @@
 #import <CoreData/CoreData.h>
 #import <RestKit/RestKit.h>
 
+#import "Resource.h"
 #import "NSManagedObject+Additions.h"
 
-@interface User : NSManagedObject{
+@interface User : Resource{
     NSString *_authenticationToken;
 }
 

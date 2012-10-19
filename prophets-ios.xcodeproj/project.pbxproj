@@ -51,6 +51,7 @@
 		B57D092D160CFB4F0060A11E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D092C160CFB4F0060A11E /* LoginViewController.m */; };
 		B57D0944160D250C0060A11E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D0943160D250B0060A11E /* KeychainItemWrapper.m */; };
 		B5956AF91613D77200C0A87E /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = B5956AF81613D77200C0A87E /* user.json */; };
+		B5B147051631D55D005F1B5A /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B147041631D55D005F1B5A /* Resource.m */; };
 		B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */; };
 		B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */; };
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
@@ -168,6 +169,8 @@
 		B57D0942160D250B0060A11E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = "prophets-ios/KeychainItemWrapper.h"; sourceTree = "<group>"; };
 		B57D0943160D250B0060A11E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = "prophets-ios/KeychainItemWrapper.m"; sourceTree = "<group>"; };
 		B5956AF81613D77200C0A87E /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
+		B5B147031631D55D005F1B5A /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = ../Resource.h; sourceTree = "<group>"; };
+		B5B147041631D55D005F1B5A /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = ../Resource.m; sourceTree = "<group>"; };
 		B5D33D6E161613F40043A0E8 /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
 		B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
@@ -341,6 +344,8 @@
 		B56F40D4160A7833007D445F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B5B147031631D55D005F1B5A /* Resource.h */,
+				B5B147041631D55D005F1B5A /* Resource.m */,
 				B56F40D1160A7828007D445F /* User.h */,
 				B56F40D2160A7828007D445F /* User.m */,
 				B56F40D5160A78F3007D445F /* League.h */,
@@ -703,6 +708,7 @@
 				B54AA105162F34A600F2A3CB /* NSString+Additions.m in Sources */,
 				B54AA108162F369500F2A3CB /* FFFormFieldCell.m in Sources */,
 				B54AA10E162F428000F2A3CB /* FFFormField.m in Sources */,
+				B5B147051631D55D005F1B5A /* Resource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
