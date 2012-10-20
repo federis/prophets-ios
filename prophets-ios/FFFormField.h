@@ -8,18 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum{
-    FFFormFieldTypeTextField = 1,
-} FFFormFieldType;
-
 @interface FFFormField : NSObject
 
 @property (nonatomic, strong) NSString *attributeName;
-@property (nonatomic) FFFormFieldType type;
 @property (nonatomic, strong) NSString *labelName;
-@property (nonatomic) BOOL secure;
 
-+(FFFormField *)formFieldWithAttributeName:(NSString *)attributeName type:(FFFormFieldType)type labelName:(NSString *)labelName secure:(BOOL)secure;
-+(FFFormField *)formFieldWithAttributeName:(NSString *)attributeName type:(FFFormFieldType)type secure:(BOOL)secure;
++(id)formFieldWithAttributeName:(NSString *)attributeName labelName:(NSString *)labelName;
++(id)formFieldWithAttributeName:(NSString *)attributeName;
+
+-(id)initWithAttributeName:(NSString *)attributeName labelName:(NSString *)labelName;
+
+-(NSString *)cellReuseIdentifier;
 
 @end

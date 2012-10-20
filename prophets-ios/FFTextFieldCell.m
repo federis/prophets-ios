@@ -7,12 +7,17 @@
 //
 
 #import "FFTextFieldCell.h"
+#import "FFFormTextField.h"
 
 @implementation FFTextFieldCell
 
 -(void)setFormField:(FFFormField *)formField{
-    self.textField.placeholder = formField.labelName;
-    self.textField.secureTextEntry = formField.secure;
+    FFFormTextField *field = (FFFormTextField *)formField;
+    self.textField.placeholder = field.labelName;
+    self.textField.secureTextEntry = field.secure;
+    self.textField.returnKeyType = field.returnKeyType;
+    
+    [super setFormField:formField];
 }
 
 -(id)formFieldCurrentValue{

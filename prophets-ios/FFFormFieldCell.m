@@ -10,18 +10,10 @@
 
 @implementation FFFormFieldCell
 
-+(NSString *)cellReuseIdentifierForFormField:(FFFormField *)field{
-    if(field.type == FFFormFieldTypeTextField){
-        return @"FFTextFieldCell";
-    }
-    
-    return @"FFTextFieldCell";
-}
-
 -(id)formFieldCurrentValue{
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"Invalid method call"
-                                           "formFieldCurrentValue should only be invoke on subclasses of FFFormFieldCell"]
+                                           "formFieldCurrentValue should only be invoked on subclasses of FFFormFieldCell"]
                                  userInfo:nil];
 }
 

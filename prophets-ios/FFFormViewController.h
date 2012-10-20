@@ -8,10 +8,11 @@
 
 #import "FFBaseTableViewController.h"
 
-@interface FFFormViewController : FFBaseTableViewController
+@interface FFFormViewController : FFBaseTableViewController<UITextFieldDelegate>
 
 @property (nonatomic, strong) id formObject;
 @property (nonatomic, strong) NSArray *formFields;
+@property (nonatomic, strong) NSMutableArray *errors;
 @property (nonatomic, strong) NSString *submitButtonText;
 
 -(void)submit;

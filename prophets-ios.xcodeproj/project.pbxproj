@@ -52,6 +52,7 @@
 		B57D0944160D250C0060A11E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D0943160D250B0060A11E /* KeychainItemWrapper.m */; };
 		B5956AF91613D77200C0A87E /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = B5956AF81613D77200C0A87E /* user.json */; };
 		B5B147051631D55D005F1B5A /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B147041631D55D005F1B5A /* Resource.m */; };
+		B5B1470816320215005F1B5A /* FFFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B1470716320215005F1B5A /* FFFormTextField.m */; };
 		B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */; };
 		B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */; };
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
@@ -171,6 +172,8 @@
 		B5956AF81613D77200C0A87E /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
 		B5B147031631D55D005F1B5A /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = ../Resource.h; sourceTree = "<group>"; };
 		B5B147041631D55D005F1B5A /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = ../Resource.m; sourceTree = "<group>"; };
+		B5B1470616320215005F1B5A /* FFFormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextField.h; sourceTree = "<group>"; };
+		B5B1470716320215005F1B5A /* FFFormTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormTextField.m; sourceTree = "<group>"; };
 		B5D33D6E161613F40043A0E8 /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
 		B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
@@ -302,8 +305,7 @@
 			children = (
 				B56E8FF816278A43006DB56B /* FFFormViewController.h */,
 				B56E8FF916278A43006DB56B /* FFFormViewController.m */,
-				B54AA10C162F428000F2A3CB /* FFFormField.h */,
-				B54AA10D162F428000F2A3CB /* FFFormField.m */,
+				B5B147091632021A005F1B5A /* FormFields */,
 				B54AA109162F36D000F2A3CB /* FormCells */,
 			);
 			name = FFForm;
@@ -411,6 +413,17 @@
 				B556F429161CCDEF00A33A8E /* memberships.json */,
 			);
 			name = Fixtures;
+			sourceTree = "<group>";
+		};
+		B5B147091632021A005F1B5A /* FormFields */ = {
+			isa = PBXGroup;
+			children = (
+				B54AA10C162F428000F2A3CB /* FFFormField.h */,
+				B54AA10D162F428000F2A3CB /* FFFormField.m */,
+				B5B1470616320215005F1B5A /* FFFormTextField.h */,
+				B5B1470716320215005F1B5A /* FFFormTextField.m */,
+			);
+			name = FormFields;
 			sourceTree = "<group>";
 		};
 		B5D33D6D161613990043A0E8 /* Categories */ = {
@@ -709,6 +722,7 @@
 				B54AA108162F369500F2A3CB /* FFFormFieldCell.m in Sources */,
 				B54AA10E162F428000F2A3CB /* FFFormField.m in Sources */,
 				B5B147051631D55D005F1B5A /* Resource.m in Sources */,
+				B5B1470816320215005F1B5A /* FFFormTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

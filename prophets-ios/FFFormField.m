@@ -11,18 +11,29 @@
 
 @implementation FFFormField
 
-+(FFFormField *)formFieldWithAttributeName:(NSString *)attributeName type:(FFFormFieldType)type labelName:(NSString *)labelName secure:(BOOL)secure{
-    FFFormField *field = [[FFFormField alloc] init];
-    field.attributeName = attributeName;
-    field.type = type;
-    field.labelName = labelName;
-    field.secure = secure;
-    
-    return field;
++(id)formFieldWithAttributeName:(NSString *)attributeName labelName:(NSString *)labelName{
+    return [[self alloc] initWithAttributeName:attributeName labelName:labelName];
 }
 
-+(FFFormField *)formFieldWithAttributeName:(NSString *)attributeName type:(FFFormFieldType)type secure:(BOOL)secure{
-    return [self formFieldWithAttributeName:attributeName type:type labelName:[attributeName humanized] secure:secure];
++(id)formFieldWithAttributeName:(NSString *)attributeName{
+    return [self formFieldWithAttributeName:attributeName labelName:[attributeName humanized]];
+}
+
+-(id)initWithAttributeName:(NSString *)attributeName labelName:(NSString *)labelName{
+    self = [super init];
+    if(self){
+        self.attributeName = attributeName;
+        self.labelName = labelName;
+    }
+    
+    return self;
+}
+
+-(NSString *)cellReuseIdentifier{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"Invalid method call"
+                                           "cellReuseIdentifier should only be invoked on subclasses of FFFormFieldCell"]
+                                 userInfo:nil];
 }
 
 @end

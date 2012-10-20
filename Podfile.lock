@@ -17,10 +17,12 @@ PODS:
 - RestKit/Support (0.20.0dev)
 - RestKit/Testing (0.20.0dev)
 - SOCKit (1.0)
+- SVProgressHUD (0.8)
 
 DEPENDENCIES:
 - RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
 - RestKit/Testing (from `https://github.com/RestKit/RestKit.git', branch `development')
+- SVProgressHUD (from `https://github.com/samvermette/SVProgressHUD.git')
 
 EXTERNAL SOURCES:
   RestKit:
@@ -29,6 +31,8 @@ EXTERNAL SOURCES:
   RestKit/Testing:
     :git: https://github.com/RestKit/RestKit.git
     :branch: development
+  SVProgressHUD:
+    :git: https://github.com/samvermette/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   AFNetworking: 758a1cb1ab5a0d22795ba1c44abb9cad395bc126
@@ -40,5 +44,6 @@ SPEC CHECKSUMS:
   RestKit/Support: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   RestKit/Testing: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   SOCKit: 9d71b00c699cf5aa2989d6aa12f3392b048123db
+  SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
 
 COCOAPODS: 0.15.1

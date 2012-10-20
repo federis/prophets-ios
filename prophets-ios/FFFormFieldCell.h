@@ -15,8 +15,6 @@
 
 @property (nonatomic, strong) FFFormField *formField;
 
-+(NSString *)cellReuseIdentifierForFormField:(FFFormField *)field;
-
 -(id)formFieldCurrentValue;
 
 @end
