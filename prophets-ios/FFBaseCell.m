@@ -34,6 +34,15 @@
     self.layer.mask = self.mask;
 }
 
+-(void)setShowsAccessoryView:(BOOL)val{
+    _showsAccessoryView = val;
+    
+    if(val)
+        self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_cell_arrow.png"]];
+    else
+        self.accessoryView = nil;
+}
+
 - (void) drawRect:(CGRect)initialRect {
     [super drawRect:initialRect];
     [self setShadows];

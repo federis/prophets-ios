@@ -17,6 +17,8 @@ typedef enum{
 
 @interface FFBaseCell : UITableViewCell
 
+@property (nonatomic) BOOL showsAccessoryView;
+
 -(FFCellLocationInSection)locationInSection;
 -(void)setShadows;
 

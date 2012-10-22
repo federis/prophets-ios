@@ -10,4 +10,7 @@
 
 @interface LaunchViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+
 @end

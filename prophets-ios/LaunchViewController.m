@@ -14,16 +14,13 @@
 
 @implementation LaunchViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad{
+    [super viewDidLoad]; 
+    UIEdgeInsets insets = UIEdgeInsetsMake(14, 5, 14, 5);
+    UIImage *buttonImage = [[UIImage imageNamed:@"clear_button.png"] resizableImageWithCapInsets:insets];
+    
+    [self.loginButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.registerButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
 }
 
 @end

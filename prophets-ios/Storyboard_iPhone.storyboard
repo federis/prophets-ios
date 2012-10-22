@@ -31,11 +31,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5nS-Hs-y1b">
-                                <rect key="frame" x="180" y="208" width="74" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5nS-Hs-y1b">
+                                <rect key="frame" x="175" y="296" width="85" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sign In">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.98823529409999999" green="0.97647058819999999" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -45,11 +46,12 @@
                                     <segue destination="H5I-lR-fj0" kind="push" identifier="ShowLogin" id="1xq-jG-0Ey"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yYN-qb-grj">
-                                <rect key="frame" x="75" y="208" width="85" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yYN-qb-grj">
+                                <rect key="frame" x="60" y="296" width="85" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Register">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.98823529409999999" green="0.97647058819999999" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -59,10 +61,36 @@
                                     <segue destination="bVC-9A-LD0" kind="push" identifier="ShowRegistration" id="B0d-tc-t2p"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Some kickass tagline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8fW-Jv-e3E">
+                                <rect key="frame" x="80" y="242" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.67450980392156867" green="0.74509803921568629" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo_prophets.png" id="rjc-D4-GDy">
+                                <rect key="frame" x="85" y="21" width="150" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="chicago_flag.png" id="mUe-DK-3uz">
+                                <rect key="frame" x="148" y="396" width="25" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Designed and Built in Chicago, Illinois USA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jGy-2V-yfc">
+                                <rect key="frame" x="55" y="369" width="210" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" red="0.9137254901960784" green="0.89803921568627454" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KBT-VE-dy7"/>
+                    <connections>
+                        <outlet property="loginButton" destination="5nS-Hs-y1b" id="lIN-YC-oTc"/>
+                        <outlet property="registerButton" destination="yYN-qb-grj" id="7Do-qS-hPS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoD-65-W0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,6 +146,11 @@
                                 <rect key="frame" x="10" y="10" width="299" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="P1s-7I-X3U">
+                                    <rect key="frame" x="0.0" y="0.0" width="299" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="bVC-9A-LD0" id="C0Z-NL-JJ7"/>
                                     <outlet property="delegate" destination="bVC-9A-LD0" id="o1z-Ua-T6B"/>
@@ -186,31 +219,10 @@
     </scenes>
     <resources>
         <image name="background.png" width="320" height="480"/>
+        <image name="chicago_flag.png" width="40" height="29"/>
         <image name="logo_p.png" width="148" height="158"/>
+        <image name="logo_prophets.png" width="150" height="190"/>
     </resources>
-    <classes>
-        <class className="FFBaseTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="FFFormViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFFormViewController.h"/>
-        </class>
-        <class className="LaunchViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LaunchViewController.h"/>
-        </class>
-        <class className="LoginViewController" superclassName="FFFormViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-        </class>
-        <class className="MembershipsViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MembershipsViewController.h"/>
-        </class>
-        <class className="RegistrationViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
