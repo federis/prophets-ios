@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FFBaseTableViewController.h"
+#import "FFFetchedResultsViewController.h"
 
-@interface MembershipsViewController : FFBaseTableViewController
+@interface MembershipsViewController : FFFetchedResultsViewController
 
 @end

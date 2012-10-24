@@ -22,26 +22,39 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    //self.showsPullToRefresh = YES;
+    
     self.navigationItem.leftItemsSupplementBackButton = YES;
     UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:nil action:nil];
     
     self.navigationItem.leftBarButtonItems = @[item];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"TmpCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    [self.tableView registerNib:[UINib nibWithNibName:@"MembershipCell" bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:@"MembershipCell"];
+    
+    NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"memberships" ofObject:[User currentUser] method:RKRequestMethodGET];
+    self.fetchRequest = RKFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url);
+    self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+    
+    NSError *error;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+    
+    [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"memberships" ofObject:[User currentUser] parameters:nil
+     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+         DLog(@"Result is %@", mappingResult);
+     }
+     failure:^(RKObjectRequestOperation *operation, NSError *error){
+         DLog(@"Error is %@", error);
+     }];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MembershipCell *cell = (MembershipCell *)[tableView dequeueReusableCellWithIdentifier:@"MembershipCell" forIndexPath:indexPath];
+    
+    Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.membership = membership;
     
     return cell;
 }

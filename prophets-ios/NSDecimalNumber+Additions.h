@@ -10,6 +10,6 @@
 
 @interface NSDecimalNumber (Additions)
 
--(NSString *)currencyValue;
+-(NSString *)currencyString;
 
 @end

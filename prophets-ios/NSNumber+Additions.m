@@ -10,7 +10,7 @@
 
 @implementation NSNumber (Additions)
 
--(NSString *)currencyValue{
+-(NSString *)currencyString{
     return [NSString stringWithFormat:@"$%@", self];
 }
 

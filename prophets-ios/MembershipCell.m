@@ -9,18 +9,15 @@
 #import <RestKit/RestKit.h>
 
 #import "MembershipCell.h"
+#import "League.h"
+#import "NSDecimalNumber+Additions.h"
 
 @implementation MembershipCell
-/* revisit
-+(RKTableViewCellMapping *)mappingForCell{
-    RKTableViewCellMapping *cellMapping = [RKTableViewCellMapping cellMapping];
-    cellMapping.cellClassName = NSStringFromClass([self class]);
-    cellMapping.reuseIdentifier = NSStringFromClass([self class]);
-    cellMapping.rowHeight = 65.0;
-    [cellMapping mapKeyPath:@"league.name" toAttribute:@"leagueNameLabel.text"];
-    [cellMapping mapKeyPath:@"balance.currencyValue" toAttribute:@"balanceLabel.text"];
-    return cellMapping;
+
+-(void)setMembership:(Membership *)membership{
+    _membership = membership;
+    self.leagueNameLabel.text = membership.league.name;
+    self.balanceLabel.text = membership.balance.currencyString;
 }
- */
 
 @end

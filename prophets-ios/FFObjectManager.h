@@ -12,5 +12,6 @@
 
 -(void)setupRequestDescriptors;
 -(void)setupResponseDescriptors;
+-(void)setupFetchRequestBlocks;
 
 @end

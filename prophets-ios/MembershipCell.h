@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "FFBaseCell.h"
+#import "Membership.h"
 
 @interface MembershipCell : FFBaseCell
+
+@property (nonatomic, strong) Membership *membership;
 
 @property (nonatomic, weak) IBOutlet UILabel *leagueNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *balanceLabel;

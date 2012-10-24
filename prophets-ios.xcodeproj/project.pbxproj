@@ -54,6 +54,7 @@
 		B5956AF91613D77200C0A87E /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = B5956AF81613D77200C0A87E /* user.json */; };
 		B5A2F35316376D5700034319 /* FFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F35216376D5600034319 /* FFBaseViewController.m */; };
 		B5A2F356163776B200034319 /* UIBarButtonItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F355163776B200034319 /* UIBarButtonItem+Additions.m */; };
+		B5A2F35E163844FA00034319 /* FFFetchedResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F35D163844FA00034319 /* FFFetchedResultsViewController.m */; };
 		B5B147051631D55D005F1B5A /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B147041631D55D005F1B5A /* Resource.m */; };
 		B5B1470816320215005F1B5A /* FFFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B1470716320215005F1B5A /* FFFormTextField.m */; };
 		B5B14721163354A7005F1B5A /* chicago_flag.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B1471B163354A7005F1B5A /* chicago_flag.png */; };
@@ -203,6 +204,8 @@
 		B5A2F35216376D5600034319 /* FFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseViewController.m; sourceTree = "<group>"; };
 		B5A2F354163776B200034319 /* UIBarButtonItem+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Additions.h"; sourceTree = "<group>"; };
 		B5A2F355163776B200034319 /* UIBarButtonItem+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Additions.m"; sourceTree = "<group>"; };
+		B5A2F35C163844FA00034319 /* FFFetchedResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFetchedResultsViewController.h; sourceTree = "<group>"; };
+		B5A2F35D163844FA00034319 /* FFFetchedResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFetchedResultsViewController.m; sourceTree = "<group>"; };
 		B5B147031631D55D005F1B5A /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = ../Resource.h; sourceTree = "<group>"; };
 		B5B147041631D55D005F1B5A /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = ../Resource.m; sourceTree = "<group>"; };
 		B5B1470616320215005F1B5A /* FFFormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextField.h; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 			children = (
 				B5094EF51625E7F500947FAC /* FFBaseTableViewController.h */,
 				B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */,
+				B5A2F35C163844FA00034319 /* FFFetchedResultsViewController.h */,
+				B5A2F35D163844FA00034319 /* FFFetchedResultsViewController.m */,
 				B5094F061626040300947FAC /* FFBaseCell.h */,
 				B5094F071626040300947FAC /* FFBaseCell.m */,
 				B56E8FE7162778BE006DB56B /* FFPullToRefreshHeader.h */,
@@ -475,18 +480,13 @@
 		B57D0925160BE4AB0060A11E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B5A2F35716377E5B00034319 /* Logged Out */,
 				B5A2F35116376D5600034319 /* FFBaseViewController.h */,
 				B5A2F35216376D5600034319 /* FFBaseViewController.m */,
-				B57D092B160CFB4F0060A11E /* LoginViewController.h */,
-				B57D092C160CFB4F0060A11E /* LoginViewController.m */,
-				B560569B16226B82004470DC /* RegistrationViewController.h */,
-				B560569C16226B82004470DC /* RegistrationViewController.m */,
-				B560569E16226BEA004470DC /* LaunchViewController.h */,
-				B560569F16226BEA004470DC /* LaunchViewController.m */,
-				B5D33D7C161654BA0043A0E8 /* MembershipsViewController.h */,
-				B5D33D7A161652590043A0E8 /* MembershipsViewController.m */,
 				B5B1472C1634DE08005F1B5A /* HomeViewController.h */,
 				B5B1472D1634DE09005F1B5A /* HomeViewController.m */,
+				B5D33D7C161654BA0043A0E8 /* MembershipsViewController.h */,
+				B5D33D7A161652590043A0E8 /* MembershipsViewController.m */,
 				B5FB94AE1636251A00471515 /* LeagueTabBarController.h */,
 				B5FB94AF1636251A00471515 /* LeagueTabBarController.m */,
 				B58B5F411636D9FD0082640B /* QuestionsViewController.h */,
@@ -502,6 +502,19 @@
 				B556F429161CCDEF00A33A8E /* memberships.json */,
 			);
 			name = Fixtures;
+			sourceTree = "<group>";
+		};
+		B5A2F35716377E5B00034319 /* Logged Out */ = {
+			isa = PBXGroup;
+			children = (
+				B57D092B160CFB4F0060A11E /* LoginViewController.h */,
+				B57D092C160CFB4F0060A11E /* LoginViewController.m */,
+				B560569B16226B82004470DC /* RegistrationViewController.h */,
+				B560569C16226B82004470DC /* RegistrationViewController.m */,
+				B560569E16226BEA004470DC /* LaunchViewController.h */,
+				B560569F16226BEA004470DC /* LaunchViewController.m */,
+			);
+			name = "Logged Out";
 			sourceTree = "<group>";
 		};
 		B5B147091632021A005F1B5A /* FormFields */ = {
@@ -841,6 +854,7 @@
 				B58B5F431636D9FD0082640B /* QuestionsViewController.m in Sources */,
 				B5A2F35316376D5700034319 /* FFBaseViewController.m in Sources */,
 				B5A2F356163776B200034319 /* UIBarButtonItem+Additions.m in Sources */,
+				B5A2F35E163844FA00034319 /* FFFetchedResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,45 +96,12 @@
             </objects>
             <point key="canvasLocation" x="83" y="-930"/>
         </scene>
-        <!--Memberships View Controller - Leagues-->
-        <scene sceneID="pUK-aq-7W8">
-            <objects>
-                <tableViewController id="HEo-zu-gcL" customClass="MembershipsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="d79-wT-YHW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TmpCell" id="1L8-Vv-H0F">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <connections>
-                                    <segue destination="ncp-4I-Wwd" kind="push" id="PLS-J6-5ro"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="HEo-zu-gcL" id="O6z-8Z-khU"/>
-                            <outlet property="delegate" destination="HEo-zu-gcL" id="0DP-79-Fcd"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Leagues" id="Lun-NR-Zvb"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ma0-wA-Wi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="539" y="92"/>
-        </scene>
         <!--View Controller - Item 2-->
         <scene sceneID="2cq-4r-04c">
             <objects>
                 <viewController id="AN7-3u-b3Y" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FiB-9S-7Qx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -149,7 +116,7 @@
             <objects>
                 <viewController id="xHr-02-fmA" customClass="QuestionsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vsj-N6-p9q">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -177,7 +144,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hux-6X-sRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="94"/>
+            <point key="canvasLocation" x="1008" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VSR-AC-GPm">
@@ -193,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="HEo-zu-gcL" kind="relationship" relationship="rootViewController" id="wFv-6J-Tf0"/>
+                        <segue destination="Pog-5J-M72" kind="relationship" relationship="rootViewController" id="c4a-CA-7x1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytL-Mt-dgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -390,6 +357,39 @@
             </objects>
             <point key="canvasLocation" x="-424" y="296"/>
         </scene>
+        <!--Memberships View Controller-->
+        <scene sceneID="zte-aW-O8Y">
+            <objects>
+                <viewController id="Pog-5J-M72" customClass="MembershipsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V8l-5g-Pdo">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="09E-BB-0A4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OYr-9b-BQ7">
+                                <rect key="frame" x="10" y="10" width="299" height="396"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pog-5J-M72" id="Rr2-5M-4ox"/>
+                                    <outlet property="delegate" destination="Pog-5J-M72" id="Xvu-JD-q5b"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="50g-x9-8pP"/>
+                    <connections>
+                        <outlet property="tableView" destination="OYr-9b-BQ7" id="BUK-W1-eRQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qkY-Jd-c3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="547" y="92"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background.png" width="320" height="480"/>
@@ -403,19 +403,22 @@
         <image name="settings_button.png" width="115" height="115"/>
     </resources>
     <classes>
-        <class className="FFBaseTableViewController" superclassName="UIViewController">
+        <class className="FFBaseTableViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseTableViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="FFBaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseViewController.h"/>
+        </class>
         <class className="FFFormViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FFFormViewController.h"/>
         </class>
-        <class className="HomeViewController" superclassName="UIViewController">
+        <class className="HomeViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
         </class>
-        <class className="LaunchViewController" superclassName="UIViewController">
+        <class className="LaunchViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LaunchViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>

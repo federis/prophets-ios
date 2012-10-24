@@ -42,6 +42,7 @@
     
     [objectManager setupRequestDescriptors];
     [objectManager setupResponseDescriptors];
+    [objectManager setupFetchRequestBlocks];
     
     [self setupAppearances];
     
