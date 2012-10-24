@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSNumber * priv;
 @property (nonatomic, strong) NSDecimalNumber * maxBet;
 @property (nonatomic, strong) NSDecimalNumber * initialBalance;
+@property (nonatomic, strong) NSDecimalNumber * membershipsCount;
 @property (nonatomic, strong) NSDate * createdAt;
 @property (nonatomic, strong) NSDate * updatedAt;
 @property (nonatomic, strong) User *user;

@@ -16,6 +16,7 @@
 @dynamic priv;
 @dynamic maxBet;
 @dynamic initialBalance;
+@dynamic membershipsCount;
 @dynamic createdAt;
 @dynamic updatedAt;
 @dynamic user;
@@ -39,6 +40,7 @@
          @"id" : @"remoteId",
          @"initial_balance" : @"initialBalance",
          @"max_bet" : @"maxBet",
+         @"memberships_count" : @"membershipsCount",
          @"priv" : @"isPrivate",
          @"updated_at" : @"updatedAt",
          @"created_at" : @"createdAt"

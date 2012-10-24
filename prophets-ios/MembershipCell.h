@@ -16,6 +16,8 @@
 @property (nonatomic, strong) Membership *membership;
 
 @property (nonatomic, weak) IBOutlet UILabel *leagueNameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *balanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *memberCountLabel;
+
+-(CGFloat)heightForCellWithMembership:(Membership *)membership;
 
 @end

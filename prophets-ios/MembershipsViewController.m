@@ -32,6 +32,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"MembershipCell" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"MembershipCell"];
     
+    self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:@"MembershipCell"];
+    
     NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"memberships" ofObject:[User currentUser] method:RKRequestMethodGET];
     self.fetchRequest = RKFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url);
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
@@ -50,6 +52,13 @@
      }];
 }
 
+#pragma mark - Table view delegate
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    return [self.measuringCell heightForCellWithMembership:membership];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MembershipCell *cell = (MembershipCell *)[tableView dequeueReusableCellWithIdentifier:@"MembershipCell" forIndexPath:indexPath];
     
@@ -58,8 +67,6 @@
     
     return cell;
 }
-
-#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

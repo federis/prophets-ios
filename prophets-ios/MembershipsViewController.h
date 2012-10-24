@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "FFFetchedResultsViewController.h"
 
+@class MembershipCell;
+
 @interface MembershipsViewController : FFFetchedResultsViewController
+
+@property (nonatomic, strong) MembershipCell *measuringCell;
 
 @end

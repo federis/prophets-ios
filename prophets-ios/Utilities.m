@@ -12,6 +12,16 @@
 
 @implementation Utilities
 
++(CGFloat)heightForString:(NSString *)str withFont:(UIFont *)font width:(CGFloat)width{
+    CGSize constraintSize = CGSizeMake(width, MAXFLOAT);
+    CGSize labelSize = [str sizeWithFont:font constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    return labelSize.height;
+}
+
++(NSString *)pluralize:(NSNumber *)num singular:(NSString *)singular plural:(NSString *)plural{
+    return ([num intValue] == 1) ? singular : plural;
+}
+
 //This gives a dictionary containing the properties of a class, as well as their types
 //Used to dynamically create or parse from XML for subclasses of Resource
 + (NSDictionary *)classPropsFor:(Class)klass{
