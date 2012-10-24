@@ -25,7 +25,7 @@
     //self.showsPullToRefresh = YES;
     
     self.navigationItem.leftItemsSupplementBackButton = YES;
-    UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:nil action:nil];
+    UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
     
     self.navigationItem.leftBarButtonItems = @[item];
     
@@ -50,6 +50,11 @@
      failure:^(RKObjectRequestOperation *operation, NSError *error){
          DLog(@"Error is %@", error);
      }];
+}
+
+
+-(void)homeTouched{
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 #pragma mark - Table view delegate

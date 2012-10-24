@@ -19,9 +19,13 @@
     [super viewDidLoad];
     
     self.navigationItem.leftItemsSupplementBackButton = YES;
-    UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:nil action:nil];
+    UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
     
     [self.navigationItem setLeftBarButtonItems:@[item] animated:YES];
+}
+
+-(void)homeTouched{
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)didReceiveMemoryWarning
