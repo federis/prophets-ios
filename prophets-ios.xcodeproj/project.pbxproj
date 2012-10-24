@@ -50,7 +50,10 @@
 		B570C334162F6D8900F14C2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B570C333162F6D8900F14C2C /* Default-568h@2x.png */; };
 		B57D092D160CFB4F0060A11E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D092C160CFB4F0060A11E /* LoginViewController.m */; };
 		B57D0944160D250C0060A11E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D0943160D250B0060A11E /* KeychainItemWrapper.m */; };
+		B58B5F431636D9FD0082640B /* QuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B5F421636D9FD0082640B /* QuestionsViewController.m */; };
 		B5956AF91613D77200C0A87E /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = B5956AF81613D77200C0A87E /* user.json */; };
+		B5A2F35316376D5700034319 /* FFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F35216376D5600034319 /* FFBaseViewController.m */; };
+		B5A2F356163776B200034319 /* UIBarButtonItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F355163776B200034319 /* UIBarButtonItem+Additions.m */; };
 		B5B147051631D55D005F1B5A /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B147041631D55D005F1B5A /* Resource.m */; };
 		B5B1470816320215005F1B5A /* FFFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B1470716320215005F1B5A /* FFFormTextField.m */; };
 		B5B14721163354A7005F1B5A /* chicago_flag.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B1471B163354A7005F1B5A /* chicago_flag.png */; };
@@ -72,6 +75,8 @@
 		B5B147401634E046005F1B5A /* logo_p_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147361634E045005F1B5A /* logo_p_small@2x.png */; };
 		B5B147411634E046005F1B5A /* settings_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147371634E045005F1B5A /* settings_button.png */; };
 		B5B147421634E046005F1B5A /* settings_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147381634E045005F1B5A /* settings_button@2x.png */; };
+		B5B147451634EF4D005F1B5A /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147431634EF4D005F1B5A /* home.png */; };
+		B5B147461634EF4D005F1B5A /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147441634EF4D005F1B5A /* home@2x.png */; };
 		B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */; };
 		B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */; };
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
@@ -101,6 +106,9 @@
 		B5F1AF211603B89D00D28C1C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
 		B5F1AF251603B8B000D28C1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF241603B8B000D28C1C /* QuartzCore.framework */; };
 		B5F1AF271603B8BF00D28C1C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF261603B8BF00D28C1C /* libxml2.dylib */; };
+		B5FB94B01636251A00471515 /* LeagueTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB94AF1636251A00471515 /* LeagueTabBarController.m */; };
+		B5FB94B41636272300471515 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FB94B21636272300471515 /* back_arrow.png */; };
+		B5FB94B51636272300471515 /* back_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FB94B31636272300471515 /* back_arrow@2x.png */; };
 		CCAD6CC9904141B2A8651A20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B080843E1DFF40039890AE89 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -188,7 +196,13 @@
 		B57D092C160CFB4F0060A11E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B57D0942160D250B0060A11E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = "prophets-ios/KeychainItemWrapper.h"; sourceTree = "<group>"; };
 		B57D0943160D250B0060A11E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = "prophets-ios/KeychainItemWrapper.m"; sourceTree = "<group>"; };
+		B58B5F411636D9FD0082640B /* QuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsViewController.h; sourceTree = "<group>"; };
+		B58B5F421636D9FD0082640B /* QuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsViewController.m; sourceTree = "<group>"; };
 		B5956AF81613D77200C0A87E /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
+		B5A2F35116376D5600034319 /* FFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseViewController.h; sourceTree = "<group>"; };
+		B5A2F35216376D5600034319 /* FFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseViewController.m; sourceTree = "<group>"; };
+		B5A2F354163776B200034319 /* UIBarButtonItem+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Additions.h"; sourceTree = "<group>"; };
+		B5A2F355163776B200034319 /* UIBarButtonItem+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Additions.m"; sourceTree = "<group>"; };
 		B5B147031631D55D005F1B5A /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = ../Resource.h; sourceTree = "<group>"; };
 		B5B147041631D55D005F1B5A /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = ../Resource.m; sourceTree = "<group>"; };
 		B5B1470616320215005F1B5A /* FFFormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextField.h; sourceTree = "<group>"; };
@@ -213,6 +227,8 @@
 		B5B147361634E045005F1B5A /* logo_p_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_p_small@2x.png"; sourceTree = "<group>"; };
 		B5B147371634E045005F1B5A /* settings_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_button.png; sourceTree = "<group>"; };
 		B5B147381634E045005F1B5A /* settings_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_button@2x.png"; sourceTree = "<group>"; };
+		B5B147431634EF4D005F1B5A /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		B5B147441634EF4D005F1B5A /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		B5D33D6E161613F40043A0E8 /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
 		B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
@@ -248,6 +264,10 @@
 		B5F1AF201603B89D00D28C1C /* Security.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B5F1AF241603B8B000D28C1C /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B5F1AF261603B8BF00D28C1C /* libxml2.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B5FB94AE1636251A00471515 /* LeagueTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueTabBarController.h; sourceTree = "<group>"; };
+		B5FB94AF1636251A00471515 /* LeagueTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueTabBarController.m; sourceTree = "<group>"; };
+		B5FB94B21636272300471515 /* back_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_arrow.png; sourceTree = "<group>"; };
+		B5FB94B31636272300471515 /* back_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_arrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +309,10 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B5FB94B21636272300471515 /* back_arrow.png */,
+				B5FB94B31636272300471515 /* back_arrow@2x.png */,
+				B5B147431634EF4D005F1B5A /* home.png */,
+				B5B147441634EF4D005F1B5A /* home@2x.png */,
 				B5B1472F1634E044005F1B5A /* create_league_button.png */,
 				B5B147301634E044005F1B5A /* create_league_button@2x.png */,
 				B5B147311634E044005F1B5A /* current_leagues_button.png */,
@@ -451,6 +475,8 @@
 		B57D0925160BE4AB0060A11E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B5A2F35116376D5600034319 /* FFBaseViewController.h */,
+				B5A2F35216376D5600034319 /* FFBaseViewController.m */,
 				B57D092B160CFB4F0060A11E /* LoginViewController.h */,
 				B57D092C160CFB4F0060A11E /* LoginViewController.m */,
 				B560569B16226B82004470DC /* RegistrationViewController.h */,
@@ -461,6 +487,10 @@
 				B5D33D7A161652590043A0E8 /* MembershipsViewController.m */,
 				B5B1472C1634DE08005F1B5A /* HomeViewController.h */,
 				B5B1472D1634DE09005F1B5A /* HomeViewController.m */,
+				B5FB94AE1636251A00471515 /* LeagueTabBarController.h */,
+				B5FB94AF1636251A00471515 /* LeagueTabBarController.m */,
+				B58B5F411636D9FD0082640B /* QuestionsViewController.h */,
+				B58B5F421636D9FD0082640B /* QuestionsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -500,6 +530,8 @@
 				B5544CB1162EE13300431B54 /* UIColor+Additions.m */,
 				B54AA103162F34A600F2A3CB /* NSString+Additions.h */,
 				B54AA104162F34A600F2A3CB /* NSString+Additions.m */,
+				B5A2F354163776B200034319 /* UIBarButtonItem+Additions.h */,
+				B5A2F355163776B200034319 /* UIBarButtonItem+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -715,6 +747,10 @@
 				B5B147401634E046005F1B5A /* logo_p_small@2x.png in Resources */,
 				B5B147411634E046005F1B5A /* settings_button.png in Resources */,
 				B5B147421634E046005F1B5A /* settings_button@2x.png in Resources */,
+				B5B147451634EF4D005F1B5A /* home.png in Resources */,
+				B5B147461634EF4D005F1B5A /* home@2x.png in Resources */,
+				B5FB94B41636272300471515 /* back_arrow.png in Resources */,
+				B5FB94B51636272300471515 /* back_arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,6 +837,10 @@
 				B5B147051631D55D005F1B5A /* Resource.m in Sources */,
 				B5B1470816320215005F1B5A /* FFFormTextField.m in Sources */,
 				B5B1472E1634DE09005F1B5A /* HomeViewController.m in Sources */,
+				B5FB94B01636251A00471515 /* LeagueTabBarController.m in Sources */,
+				B58B5F431636D9FD0082640B /* QuestionsViewController.m in Sources */,
+				B5A2F35316376D5700034319 /* FFBaseViewController.m in Sources */,
+				B5A2F356163776B200034319 /* UIBarButtonItem+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

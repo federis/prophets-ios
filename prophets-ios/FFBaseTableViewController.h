@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FFBaseViewController.h"
 #import "FFPullToRefreshHeader.h"
 
-@interface FFBaseTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface FFBaseTableViewController : FFBaseViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic) BOOL showsPullToRefresh;

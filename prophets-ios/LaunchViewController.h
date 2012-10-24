@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LaunchViewController : UIViewController
+#import "FFBaseViewController.h"
+
+@interface LaunchViewController : FFBaseViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;

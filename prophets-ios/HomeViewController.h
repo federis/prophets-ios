@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
+#import "FFBaseViewController.h"
+
+@interface HomeViewController : FFBaseViewController
 
 @end

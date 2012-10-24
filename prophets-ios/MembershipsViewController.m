@@ -12,6 +12,7 @@
 #import "MembershipCell.h"
 #import "Membership.h"
 #import "User.h"
+#import "UIBarButtonItem+Additions.h"
 
 @interface MembershipsViewController ()
 @end
@@ -20,59 +21,24 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    /* revisit
-    self.tableController = [[RKObjectManager sharedManager] fetchedResultsTableControllerForTableViewController:self];
-    self.tableController.autoRefreshFromNetwork = YES;
-    self.tableController.pullToRefreshEnabled = YES;
-    self.tableController.resourcePath = @"/memberships";
-    self.tableController.variableHeightRows = YES;
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO];
-    self.tableController.sortDescriptors = [NSArray arrayWithObject:descriptor];
     
-    NSBundle *restKitResources = [NSBundle restKitResourcesBundle];
-    UIImage *arrowImage = [restKitResources imageWithContentsOfResource:@"blueArrow" withExtension:@"png"];
-    [[RKRefreshTriggerView appearance] setTitleFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:13]];
-    [[RKRefreshTriggerView appearance] setLastUpdatedFont:[UIFont fontWithName:@"HelveticaNeue" size:11]];
-    [[RKRefreshTriggerView appearance] setArrowImage:arrowImage];
+    self.navigationItem.leftItemsSupplementBackButton = YES;
+    UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:nil action:nil];
     
-    [self.tableController mapObjectsWithClass:[Membership class] toTableCellsWithMapping:[MembershipCell mappingForCell]];
-    
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MembershipCell class]) bundle:nil]
-         forCellReuseIdentifier:NSStringFromClass([MembershipCell class])];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self.tableController
-                                             selector:@selector(loadTable)
-                                                 name:FFUserDidLogInNotification
-                                               object:nil];
-     */
+    self.navigationItem.leftBarButtonItems = @[item];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    /*
-    if ([User currentUser])
-        [self.tableController loadTable];*/
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"TmpCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...

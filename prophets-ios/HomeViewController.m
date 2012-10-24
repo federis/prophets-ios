@@ -14,8 +14,4 @@
 
 @implementation HomeViewController
 
--(void)viewDidLoad{
-    
-}
-
 @end
