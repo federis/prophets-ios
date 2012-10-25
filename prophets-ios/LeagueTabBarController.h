@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class League;
+
 @interface LeagueTabBarController : UITabBarController
+
+@property (nonatomic, strong) League *league;
 
 @end

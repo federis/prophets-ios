@@ -10,9 +10,10 @@
 
 #import "MembershipsViewController.h"
 #import "MembershipCell.h"
+#import "UIBarButtonItem+Additions.h"
+#import "LeagueTabBarController.h"
 #import "Membership.h"
 #import "User.h"
-#import "UIBarButtonItem+Additions.h"
 
 @interface MembershipsViewController ()
 @end
@@ -57,6 +58,14 @@
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ShowLeague"] && [sender isKindOfClass:[Membership class]]) {
+        Membership *membership = (Membership *)sender;
+        LeagueTabBarController *leagueTBC = (LeagueTabBarController *)[segue destinationViewController];
+        leagueTBC.league = membership.league;
+    }
+}
+
 #pragma mark - Table view delegate
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -73,15 +82,9 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"ShowLeague" sender:membership];
 }
 
 @end

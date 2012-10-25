@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFBaseTableViewController.h"
+#import "FFFetchedResultsViewController.h"
 
-@interface QuestionsViewController : FFBaseTableViewController
+@interface QuestionsViewController : FFFetchedResultsViewController
 
 @end

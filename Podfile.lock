@@ -1,6 +1,8 @@
 
 PODS:
 - AFNetworking (1.0)
+- RKTableController (0.5.0):
+  - RestKit (>= 0.20.0)
 - RestKit (0.20.0dev):
   - RestKit/Core (= 0.20.0dev)
 - RestKit/Core (0.20.0dev):
@@ -16,15 +18,18 @@ PODS:
 - RestKit/ObjectMapping (0.20.0dev)
 - RestKit/Support (0.20.0dev)
 - RestKit/Testing (0.20.0dev)
-- SOCKit (1.0)
+- SOCKit (1.1)
 - SVProgressHUD (0.8)
 
 DEPENDENCIES:
+- RKTableController (from `https://github.com/RestKit/RKTableController.git')
 - RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
 - RestKit/Testing (from `https://github.com/RestKit/RestKit.git', branch `development')
 - SVProgressHUD (from `https://github.com/samvermette/SVProgressHUD.git')
 
 EXTERNAL SOURCES:
+  RKTableController:
+    :git: https://github.com/RestKit/RKTableController.git
   RestKit:
     :git: https://github.com/RestKit/RestKit.git
     :branch: development
@@ -36,6 +41,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 758a1cb1ab5a0d22795ba1c44abb9cad395bc126
+  RKTableController: 718a33a0dc1e7f1474f4b86027447484b6089e9f
   RestKit: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   RestKit/Core: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   RestKit/CoreData: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
@@ -43,7 +49,7 @@ SPEC CHECKSUMS:
   RestKit/ObjectMapping: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   RestKit/Support: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   RestKit/Testing: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
-  SOCKit: 9d71b00c699cf5aa2989d6aa12f3392b048123db
+  SOCKit: 179515c1a621dd5652a60e9be02ea4adcd25bc9b
   SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
 
 COCOAPODS: 0.15.1
