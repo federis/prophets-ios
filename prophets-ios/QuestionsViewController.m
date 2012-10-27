@@ -10,8 +10,10 @@
 
 #import "QuestionsViewController.h"
 #import "UIBarButtonItem+Additions.h"
+#import "QuestionCell.h"
 #import "User.h"
 #import "League.h"
+#import "Question.h"
 
 @interface QuestionsViewController ()
 
@@ -29,11 +31,11 @@
     
     self.navigationItem.leftBarButtonItems = @[item];
     
-    /*[self.tableView registerNib:[UINib nibWithNibName:@"MembershipCell" bundle:[NSBundle mainBundle]]
-         forCellReuseIdentifier:@"MembershipCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:@"QuestionCell"];
     
-    self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:@"MembershipCell"];
-    */
+    self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:@"QuestionCell"];
+    
     NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"questions" ofObject:self.league method:RKRequestMethodGET];
     self.fetchRequest = RKFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url);
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
@@ -68,21 +70,20 @@
 }
 
 #pragma mark - Table view delegate
-/*
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    return [self.measuringCell heightForCellWithMembership:membership];
+    Question *question = (Question *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    return [self.measuringCell heightForCellWithQuestion:question];
 }
- */
+ 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    /*MembershipCell *cell = (MembershipCell *)[tableView dequeueReusableCellWithIdentifier:@"MembershipCell" forIndexPath:indexPath];
+    QuestionCell *cell = (QuestionCell *)[tableView dequeueReusableCellWithIdentifier:@"QuestionCell" forIndexPath:indexPath];
     
-    Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.membership = membership;
+    Question *question = (Question *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.question = question;
     
-    return cell;*/
-    return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tmp"];
+    return cell;
 }
  
 
