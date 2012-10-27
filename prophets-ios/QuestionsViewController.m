@@ -11,6 +11,7 @@
 #import "QuestionsViewController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "User.h"
+#import "League.h"
 
 @interface QuestionsViewController ()
 
@@ -33,7 +34,7 @@
     
     self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:@"MembershipCell"];
     */
-    NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"memberships" ofObject:[User currentUser] method:RKRequestMethodGET];
+    NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"questions" ofObject:self.league method:RKRequestMethodGET];
     self.fetchRequest = RKFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url);
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
     
@@ -42,14 +43,13 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
-    /*[[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"memberships" ofObject:[User currentUser] parameters:nil
+    [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"questions" ofObject:self.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
          DLog(@"Result is %@", mappingResult);
      }
      failure:^(RKObjectRequestOperation *operation, NSError *error){
          DLog(@"Error is %@", error);
      }];
-     */
 }
 
 

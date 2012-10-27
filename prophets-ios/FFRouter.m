@@ -9,6 +9,7 @@
 #import "FFRouter.h"
 
 #import "User.h"
+#import "League.h"
 
 @interface FFRouter()
 
@@ -40,6 +41,8 @@
     //[self.routeSet addRoute:[RKRoute routeWithClass:[User class] pathPattern:@"/users" method:RKRequestMethodPOST]];
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"memberships" objectClass:[User class] pathPattern:@"/memberships" method:RKRequestMethodGET]];
+    
+    [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"questions" objectClass:[League class] pathPattern:@"/leagues/:remoteId/questions" method:RKRequestMethodGET]];
 }
 
 @end

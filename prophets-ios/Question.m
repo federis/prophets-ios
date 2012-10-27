@@ -19,6 +19,7 @@
 @dynamic createdAt;
 @dynamic updatedAt;
 @dynamic answers;
+@dynamic leagueId;
 @dynamic league;
 @dynamic user;
 @dynamic approver;
@@ -30,11 +31,16 @@
     [mapping addAttributeMappingsFromArray:@[@"content", @"desc"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"id" : @"remoteId",
+     @"league_id" : @"leagueId",
      @"approved_at" : @"approvedAt",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
      }];
     
+    [mapping addConnectionMappingForRelationshipForName:@"league"
+                                      fromSourceKeyPath:@"leagueId"
+                                              toKeyPath:@"remoteId"
+                                                matcher:nil];
     
     return mapping;
 }

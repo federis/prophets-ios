@@ -14,6 +14,12 @@
     return [[self replaceCapsWith:@" "] capitalizedString];
 }
 
+-(NSNumber *)numberValue{
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    return [f numberFromString:self];
+}
+
 -(NSString *)replaceCapsWith:(NSString *)replacement{
     NSScanner *scanner = [[NSScanner alloc] initWithString:self];
     scanner.caseSensitive = YES;

@@ -2,7 +2,7 @@
 PODS:
 - AFNetworking (1.0)
 - RKTableController (0.5.0):
-  - RestKit (>= 0.20.0)
+  - RestKit (>= 0.20.0dev)
 - RestKit (0.20.0dev):
   - RestKit/Core (= 0.20.0dev)
 - RestKit/Core (0.20.0dev):
@@ -41,7 +41,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 758a1cb1ab5a0d22795ba1c44abb9cad395bc126
-  RKTableController: 718a33a0dc1e7f1474f4b86027447484b6089e9f
+  RKTableController: 130ffbd5fc1cd90d8a9ff42162a50ec084498848
   RestKit: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   RestKit/Core: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff
   RestKit/CoreData: 99ffc129fb9eb0c7472ed6230b2c2df81ddb0eff

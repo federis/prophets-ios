@@ -7,8 +7,10 @@
 //
 
 #import "FFObjectManager.h"
+#import "NSString+Additions.h"
 #import "User.h"
 #import "Membership.h"
+#import "Question.h"
 
 @implementation FFObjectManager
 
@@ -28,6 +30,12 @@
                                                                         pathPattern:nil
                                                                             keyPath:@"membership"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Question responseMapping]
+                                                                        pathPattern:nil
+                                                                            keyPath:@"question"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
 }
 
 -(void)setupFetchRequestBlocks{
@@ -37,6 +45,22 @@
         
         if (match) {
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Membership"];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:YES]];
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/leagues/:leagueId/questions"];
+        
+        NSDictionary *argsDict = nil;
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        if (match) {
+            NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Question"];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:YES]];
             return fetchRequest;
         }

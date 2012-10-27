@@ -26,6 +26,12 @@
     [self.navigationItem setLeftBarButtonItems:@[item] animated:YES];
     
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"leaguemenu_bgnd.png"]];
+    
+    for(UIViewController *vc in self.viewControllers){
+        if([vc respondsToSelector:@selector(setLeague:)]){
+            [vc performSelector:@selector(setLeague:) withObject:self.league];
+        }
+    }
 }
 
 -(void)homeTouched{

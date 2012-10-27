@@ -11,5 +11,6 @@
 @interface NSString (Additions)
 
 -(NSString *)humanized;
+-(NSNumber *)numberValue;
 
 @end

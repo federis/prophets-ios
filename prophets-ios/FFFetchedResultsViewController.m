@@ -26,7 +26,7 @@
                                                                             sectionNameKeyPath:nil
                                                                                      cacheName:self.cacheName];
     self.fetchedResultsController = frc;
-    self.fetchedResultsController.delegate = self;
+    _fetchedResultsController.delegate = self;
     
     return _fetchedResultsController;
     

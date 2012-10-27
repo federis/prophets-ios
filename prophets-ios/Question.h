@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSDate * createdAt;
 @property (nonatomic, strong) NSDate * updatedAt;
 @property (nonatomic, strong) NSSet *answers;
+@property (nonatomic, strong) NSNumber * leagueId;
 @property (nonatomic, strong) League *league;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *approver;
