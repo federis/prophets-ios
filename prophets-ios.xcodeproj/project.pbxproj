@@ -65,6 +65,9 @@
 		B5A2F3A71638BE4400034319 /* leaguemenu_allquestions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A2F3A61638BE4400034319 /* leaguemenu_allquestions@2x.png */; };
 		B5A2F3BF163B6B7A00034319 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F3BE163B6B7A00034319 /* QuestionCell.m */; };
 		B5A2F3C2163B6B9900034319 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A2F3C1163B6B9800034319 /* QuestionCell.xib */; };
+		B5A2F3C6163C5F2C00034319 /* MembershipRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F3C5163C5F2C00034319 /* MembershipRequestTests.m */; };
+		B5A2F3C9163C5F9700034319 /* FFRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F3C8163C5F9700034319 /* FFRequestTest.m */; };
+		B5A2F3CC163CAA3900034319 /* UserRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F3CB163CAA3800034319 /* UserRequestTests.m */; };
 		B5B147051631D55D005F1B5A /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B147041631D55D005F1B5A /* Resource.m */; };
 		B5B1470816320215005F1B5A /* FFFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B1470716320215005F1B5A /* FFFormTextField.m */; };
 		B5B14721163354A7005F1B5A /* chicago_flag.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B1471B163354A7005F1B5A /* chicago_flag.png */; };
@@ -227,6 +230,10 @@
 		B5A2F3BD163B6B7A00034319 /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
 		B5A2F3BE163B6B7A00034319 /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		B5A2F3C1163B6B9800034319 /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		B5A2F3C5163C5F2C00034319 /* MembershipRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MembershipRequestTests.m; sourceTree = "<group>"; };
+		B5A2F3C7163C5F9700034319 /* FFRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRequestTest.h; sourceTree = "<group>"; };
+		B5A2F3C8163C5F9700034319 /* FFRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRequestTest.m; sourceTree = "<group>"; };
+		B5A2F3CB163CAA3800034319 /* UserRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRequestTests.m; sourceTree = "<group>"; };
 		B5B147031631D55D005F1B5A /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = ../Resource.h; sourceTree = "<group>"; };
 		B5B147041631D55D005F1B5A /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = ../Resource.m; sourceTree = "<group>"; };
 		B5B1470616320215005F1B5A /* FFFormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextField.h; sourceTree = "<group>"; };
@@ -486,6 +493,7 @@
 		B56F40E5160A87D4007D445F /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				B5A2F3C3163C5EEF00034319 /* Requests */,
 				B56F40E6160A87D8007D445F /* Models */,
 				B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */,
 			);
@@ -555,6 +563,17 @@
 				B5A2F39B1638BBD900034319 /* leaguemenu_stats@2x.png */,
 			);
 			name = tabs;
+			sourceTree = "<group>";
+		};
+		B5A2F3C3163C5EEF00034319 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				B5A2F3C7163C5F9700034319 /* FFRequestTest.h */,
+				B5A2F3C8163C5F9700034319 /* FFRequestTest.m */,
+				B5A2F3C5163C5F2C00034319 /* MembershipRequestTests.m */,
+				B5A2F3CB163CAA3800034319 /* UserRequestTests.m */,
+			);
+			name = Requests;
 			sourceTree = "<group>";
 		};
 		B5B147091632021A005F1B5A /* FormFields */ = {
@@ -919,6 +938,9 @@
 				B5EA136D161D205800C774F3 /* UserTests.m in Sources */,
 				B516A047161E000200736C70 /* FFBaseTestCase.m in Sources */,
 				B5332391161F4BA30094D2DF /* Factories.m in Sources */,
+				B5A2F3C6163C5F2C00034319 /* MembershipRequestTests.m in Sources */,
+				B5A2F3C9163C5F9700034319 /* FFRequestTest.m in Sources */,
+				B5A2F3CC163CAA3900034319 /* UserRequestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

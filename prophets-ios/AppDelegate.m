@@ -27,22 +27,7 @@
     RKLogConfigureByName("RestKit/CoreData", RKLogLevelTrace);
 #endif
     
-    NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
-    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
-    NSString *path = [RKApplicationDataDirectory() stringByAppendingPathComponent:FFObjectStoreName];
-    NSError *error = nil;
-    [managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil error:&error];
-    [managedObjectStore createManagedObjectContexts];
-    
-    FFObjectManager* objectManager = [FFObjectManager managerWithBaseURL:[NSURL URLWithString:FFBaseUrl]];
-    objectManager.managedObjectStore = managedObjectStore;
-    
-    FFRouter *router = [[FFRouter alloc] initWithBaseURL:objectManager.baseURL];
-    objectManager.router = router;
-    
-    [objectManager setupRequestDescriptors];
-    [objectManager setupResponseDescriptors];
-    [objectManager setupFetchRequestBlocks];
+    [FFObjectManager setupObjectManager];
     
     [self setupAppearances];
     

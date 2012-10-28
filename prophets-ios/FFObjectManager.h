@@ -10,6 +10,8 @@
 
 @interface FFObjectManager : RKObjectManager
 
++(void)setupObjectManager;
+
 -(void)setupRequestDescriptors;
 -(void)setupResponseDescriptors;
 -(void)setupFetchRequestBlocks;

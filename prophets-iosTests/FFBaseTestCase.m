@@ -7,6 +7,7 @@
 //
 
 #import "FFBaseTestCase.h"
+#import "FFObjectManager.h"
 #import "User.h"
 
 @implementation FFBaseTestCase
@@ -14,8 +15,7 @@
 - (void)setUp{
     [RKTestFactory setUp];
     
-    RKObjectManager *manager = [RKTestFactory objectManager];
-    manager.managedObjectStore = [RKTestFactory managedObjectStore];
+    [FFObjectManager setupObjectManager];
     
     keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
 }

@@ -51,7 +51,7 @@
     NSNumber *userId = [kc objectForKey:(__bridge id)kSecAttrAccount];
     STAssertEqualObjects(userId, newUser.remoteId, @"User id not set properly in the keychain");
     
-    User *foundUser = [[User findByAttribute:@"remoteId" withValue:userId] lastObject];
+    User *foundUser = [User findById:userId];
     STAssertEqualObjects(foundUser, newUser, @"Current User object not found properly");
     
     STAssertEqualObjects([User currentUser], foundUser, @"Current user not set properly");

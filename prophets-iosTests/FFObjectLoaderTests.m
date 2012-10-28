@@ -12,7 +12,7 @@
 #import "League.h"
 
 @interface FFObjectLoaderTests : FFBaseTestCase{
-    NSDateFormatter *dateFormatter;
+    
 }
 
 @end
@@ -20,18 +20,6 @@
 
 @implementation FFObjectLoaderTests
 
-- (void)setUp{
-    [super setUp];
-    
-    dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
-    dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
-}
-
-- (void)tearDown{
-    [super tearDown];
-    dateFormatter = nil;
-}
 /*
 -(void)testUserTokenLoader{
     User *user = [User createEntity];
