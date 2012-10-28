@@ -47,7 +47,7 @@
     STAssertEqualObjects(membership.balance, [NSDecimalNumber numberWithInt:10000], @"Membership balance is incorrect");
     
     STAssertEqualObjects([self.dateFormatter stringFromDate:membership.createdAt], @"2012-10-01T01:32:30Z", @"Membership createdAt is incorrect");
-    STAssertEqualObjects([self.dateFormatter stringFromDate:membership.updatedAt], @"2012-10-01T01:32:30Z", @"Membership createdAt is incorrect");
+    STAssertEqualObjects([self.dateFormatter stringFromDate:membership.updatedAt], @"2012-10-01T01:32:30Z", @"Membership updatedAt is incorrect");
     
     League *league = membership.league;
     STAssertEqualObjects(league.remoteId, [NSNumber numberWithInt:1], @"League id is incorrect");

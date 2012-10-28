@@ -11,6 +11,7 @@
 
 #import "Factories.h"
 #import "User.h"
+#import "League.h"
 
 @implementation Factories
 
@@ -20,6 +21,13 @@
     user.email = @"bcroesch@gmail.com";
     
     return user;
+}
+
++(League *)leagueFactory{
+    League *league = [League object];
+    league.remoteId = [NSNumber numberWithInt:1];
+    
+    return league;
 }
 
 

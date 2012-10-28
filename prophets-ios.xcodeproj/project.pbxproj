@@ -68,6 +68,8 @@
 		B5A2F3C6163C5F2C00034319 /* MembershipRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F3C5163C5F2C00034319 /* MembershipRequestTests.m */; };
 		B5A2F3C9163C5F9700034319 /* FFRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F3C8163C5F9700034319 /* FFRequestTest.m */; };
 		B5A2F3CC163CAA3900034319 /* UserRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F3CB163CAA3800034319 /* UserRequestTests.m */; };
+		B5A2F3CF163D822B00034319 /* QuestionRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F3CE163D822A00034319 /* QuestionRequestTests.m */; };
+		B5A2F3D3163DC7AF00034319 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = B5A2F3D2163DC7AF00034319 /* questions.json */; };
 		B5B147051631D55D005F1B5A /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B147041631D55D005F1B5A /* Resource.m */; };
 		B5B1470816320215005F1B5A /* FFFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B1470716320215005F1B5A /* FFFormTextField.m */; };
 		B5B14721163354A7005F1B5A /* chicago_flag.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B1471B163354A7005F1B5A /* chicago_flag.png */; };
@@ -101,7 +103,6 @@
 		B5EA136A161D201A00C774F3 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1369161D201A00C774F3 /* LoginTests.m */; };
 		B5EA136D161D205800C774F3 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA136C161D205800C774F3 /* UserTests.m */; };
 		B5EA136E161D232000C774F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
-		B5EF1AFF1614A31700268EC4 /* FFObjectLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
 		B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECE160388C600D28C1C /* Foundation.framework */; };
 		B5F1AED1160388C600D28C1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AED0160388C600D28C1C /* CoreGraphics.framework */; };
@@ -234,6 +235,8 @@
 		B5A2F3C7163C5F9700034319 /* FFRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRequestTest.h; sourceTree = "<group>"; };
 		B5A2F3C8163C5F9700034319 /* FFRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRequestTest.m; sourceTree = "<group>"; };
 		B5A2F3CB163CAA3800034319 /* UserRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRequestTests.m; sourceTree = "<group>"; };
+		B5A2F3CE163D822A00034319 /* QuestionRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionRequestTests.m; sourceTree = "<group>"; };
+		B5A2F3D2163DC7AF00034319 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = questions.json; path = Fixtures/questions.json; sourceTree = "<group>"; };
 		B5B147031631D55D005F1B5A /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = ../Resource.h; sourceTree = "<group>"; };
 		B5B147041631D55D005F1B5A /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = ../Resource.m; sourceTree = "<group>"; };
 		B5B1470616320215005F1B5A /* FFFormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextField.h; sourceTree = "<group>"; };
@@ -273,7 +276,6 @@
 		B5EA1366161D195500C774F3 /* AnswerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTests.m; sourceTree = "<group>"; };
 		B5EA1369161D201A00C774F3 /* LoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
 		B5EA136C161D205800C774F3 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
-		B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFObjectLoaderTests.m; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5F1AECE160388C600D28C1C /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -495,7 +497,6 @@
 			children = (
 				B5A2F3C3163C5EEF00034319 /* Requests */,
 				B56F40E6160A87D8007D445F /* Models */,
-				B5EF1AFE1614A31700268EC4 /* FFObjectLoaderTests.m */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -531,6 +532,7 @@
 		B5956AF51613CFE500C0A87E /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				B5A2F3D2163DC7AF00034319 /* questions.json */,
 				B5956AF81613D77200C0A87E /* user.json */,
 				B556F429161CCDEF00A33A8E /* memberships.json */,
 			);
@@ -572,6 +574,7 @@
 				B5A2F3C8163C5F9700034319 /* FFRequestTest.m */,
 				B5A2F3C5163C5F2C00034319 /* MembershipRequestTests.m */,
 				B5A2F3CB163CAA3800034319 /* UserRequestTests.m */,
+				B5A2F3CE163D822A00034319 /* QuestionRequestTests.m */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				B5F1AEF5160388C700D28C1C /* InfoPlist.strings in Resources */,
 				B5956AF91613D77200C0A87E /* user.json in Resources */,
 				B556F42A161CCDEF00A33A8E /* memberships.json in Resources */,
+				B5A2F3D3163DC7AF00034319 /* questions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,7 +935,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5EF1AFF1614A31700268EC4 /* FFObjectLoaderTests.m in Sources */,
 				B5EA1262161D091800C774F3 /* LeagueTests.m in Sources */,
 				B5EA1367161D195500C774F3 /* AnswerTests.m in Sources */,
 				B5EA136A161D201A00C774F3 /* LoginTests.m in Sources */,
@@ -941,6 +944,7 @@
 				B5A2F3C6163C5F2C00034319 /* MembershipRequestTests.m in Sources */,
 				B5A2F3C9163C5F9700034319 /* FFRequestTest.m in Sources */,
 				B5A2F3CC163CAA3900034319 /* UserRequestTests.m in Sources */,
+				B5A2F3CF163D822B00034319 /* QuestionRequestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,6 @@ get '/error' do
   "{f36a311cba6c29ba4c54f0b8c76e6cb733c01e65quot;errorf36a311cba6c29ba4c54f0b8c76e6cb733c01e65quot;: f36a311cba6c29ba4c54f0b8c76e6cb733c01e65quot;An error occurred!!f36a311cba6c29ba4c54f0b8c76e6cb733c01e65quot;}"
 end
 
-get '/:resource' do
+get '*/:resource' do
   render_fixture("#{params[:resource]}.json")
 end

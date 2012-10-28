@@ -15,7 +15,7 @@
 
 @implementation UserRequestTests
 
--(void)testUserTokenLoader{
+-(void)testPostUserToken{
     User *user = [User object];
     user.email = @"test@example.com";
     user.password = @"password";
