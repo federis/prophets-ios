@@ -63,6 +63,8 @@
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUINumberOfLines">0</int>
+								<int key="IBUILineBreakMode">0</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<string key="name">AvenirNext-DemiBold</string>
 									<string key="family">Avenir Next</string>
@@ -75,6 +77,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+								<double key="preferredMaxLayoutWidth">300</double>
 							</object>
 							<object class="IBUILabel" id="441513311">
 								<reference key="NSNextResponder" ref="949206739"/>
@@ -82,7 +85,6 @@
 								<string key="NSFrame">{{10, 26}, {300, 21}}</string>
 								<reference key="NSSuperview" ref="949206739"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>

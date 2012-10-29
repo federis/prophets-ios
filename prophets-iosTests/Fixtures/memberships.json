@@ -9,7 +9,9 @@
         "max_bet" : 1000,
         "updated_at" : "2012-10-01T01:32:30Z",
         "name" : "the league 1",
-        "initial_balance" : 10000
+        "initial_balance" : 10000,
+        "memberships_count" : 2,
+        "questions_count" : 5
       },
       "id" : 1,
       "role" : 1,
@@ -29,7 +31,9 @@
         "max_bet" : 500,
         "updated_at" : "2012-10-01T01:32:36Z",
         "name" : "the league 2",
-        "initial_balance" : 5000
+        "initial_balance" : 5000,
+        "memberships_count" : 1,
+        "questions_count" : 0
       },
       "id" : 2,
       "role" : 2,
@@ -49,7 +53,9 @@
         "max_bet" : 100,
         "updated_at" : "2012-10-03T17:23:28Z",
         "name" : "the league 3",
-        "initial_balance" : 100000
+        "initial_balance" : 100000,
+        "memberships_count" : 4,
+        "questions_count" : 3
       },
       "id" : 3,
       "role" : 2,

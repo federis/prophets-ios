@@ -14,6 +14,7 @@
 #import "User.h"
 #import "League.h"
 #import "Question.h"
+#import "Utilities.h"
 
 @interface QuestionsViewController ()
 
@@ -25,6 +26,8 @@
     [super viewDidLoad];
     
     //self.showsPullToRefresh = YES;
+    
+    [self setupHeaderView];
     
     self.navigationItem.leftItemsSupplementBackButton = YES;
     UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
@@ -52,6 +55,36 @@
      failure:^(RKObjectRequestOperation *operation, NSError *error){
          DLog(@"Error is %@", error);
      }];
+}
+
+-(void)setupHeaderView{
+    self.memberCountLabel.text = [NSString stringWithFormat:@"%@ %@", self.league.membershipsCount,
+                                  [Utilities pluralize:self.league.membershipsCount
+                                              singular:@"member"
+                                                plural:@"members"]];
+    
+    self.questionCountLabel.text = [NSString stringWithFormat:@"%@ %@", self.league.questionsCount,
+                                    [Utilities pluralize:self.league.questionsCount
+                                                singular:@"question"
+                                                  plural:@"questions"]];
+    
+    self.headerBackgroundView.layer.cornerRadius = 5.0;
+    
+    CGFloat leagueNameHeight = [Utilities heightForString:self.league.name
+                                                 withFont:self.leagueNameLabel.font
+                                                    width:self.leagueNameLabel.frame.size.width];
+    
+    self.headerBackgroundView.frame = CGRectMake(self.headerBackgroundView.frame.origin.x,
+                                                 self.headerBackgroundView.frame.origin.y,
+                                                 self.headerBackgroundView.frame.size.width,
+                                                 leagueNameHeight + 50);
+    
+    self.leagueNameLabel.frame = CGRectMake(self.leagueNameLabel.frame.origin.x,
+                                            self.leagueNameLabel.frame.origin.y,
+                                            self.leagueNameLabel.frame.size.width,
+                                            leagueNameHeight);
+    
+    self.leagueNameLabel.text = self.league.name;
 }
 
 

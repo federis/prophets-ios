@@ -55,6 +55,8 @@
     STAssertEqualObjects(league.maxBet, [NSNumber numberWithInt:1000], @"League max bet is incorrect");
     STAssertEqualObjects(league.initialBalance, [NSNumber numberWithInt:10000], @"League initial balance is incorrect");
     STAssertEqualObjects(league.name, @"the league 1", @"League name is incorrect");
+    STAssertEqualObjects(league.membershipsCount, [NSNumber numberWithInt:2], @"League memberships count is incorrect");
+    STAssertEqualObjects(league.questionsCount, [NSNumber numberWithInt:5], @"League questions count is incorrect");
     
     STAssertEqualObjects([self.dateFormatter stringFromDate:league.createdAt], @"2012-10-01T01:32:30Z", @"Membership createdAt is incorrect");
     STAssertEqualObjects([self.dateFormatter stringFromDate:league.updatedAt], @"2012-10-01T01:32:30Z", @"Membership createdAt is incorrect");

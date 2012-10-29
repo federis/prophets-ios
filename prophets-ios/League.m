@@ -41,6 +41,7 @@
          @"initial_balance" : @"initialBalance",
          @"max_bet" : @"maxBet",
          @"memberships_count" : @"membershipsCount",
+         @"questions_count" : @"questionsCount",
          @"priv" : @"isPrivate",
          @"updated_at" : @"updatedAt",
          @"created_at" : @"createdAt"

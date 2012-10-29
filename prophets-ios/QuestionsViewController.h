@@ -15,4 +15,9 @@
 @property (nonatomic, strong) League *league;
 @property (nonatomic, strong) QuestionCell *measuringCell;
 
+@property (weak, nonatomic) IBOutlet UILabel *leagueNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *memberCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionCountLabel;
+@property (weak, nonatomic) IBOutlet UIView *headerBackgroundView;
+
 @end

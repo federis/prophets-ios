@@ -33,9 +33,10 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="initialBalance" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="maxBet" optional="YES" attributeType="Decimal" syncable="YES"/>
-        <attribute name="membershipsCount" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="membershipsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priv" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="questionsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="memberships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Membership" inverseName="league" inverseEntity="Membership" syncable="YES"/>
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="league" inverseEntity="Question" syncable="YES"/>
@@ -92,7 +93,7 @@
     <elements>
         <element name="Answer" positionX="0" positionY="0" width="128" height="225"/>
         <element name="Bet" positionX="0" positionY="0" width="128" height="150"/>
-        <element name="League" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="League" positionX="0" positionY="0" width="128" height="210"/>
         <element name="Membership" positionX="0" positionY="0" width="128" height="135"/>
         <element name="Question" positionX="0" positionY="0" width="128" height="195"/>
         <element name="Resource" positionX="0" positionY="0" width="128" height="60"/>
