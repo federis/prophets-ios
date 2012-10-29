@@ -165,11 +165,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="skv-Ly-hvr">
-                                <rect key="frame" x="10" y="10" width="299" height="440"/>
+                                <rect key="frame" x="7" y="10" width="303" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="P1s-7I-X3U">
-                                    <rect key="frame" x="0.0" y="0.0" width="299" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="303" height="80"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
@@ -205,15 +205,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="RKx-p4-Xsl">
-                                <rect key="frame" x="10" y="10" width="299" height="440"/>
+                                <rect key="frame" x="7" y="10" width="303" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="5Yf-Wj-utb">
-                                    <rect key="frame" x="0.0" y="0.0" width="299" height="180"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="303" height="180"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo_p.png" id="15h-FV-36F">
-                                            <rect key="frame" x="75" y="15" width="148" height="158"/>
+                                            <rect key="frame" x="75" y="15" width="152" height="158"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                     </subviews>
