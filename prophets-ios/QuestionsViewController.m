@@ -10,6 +10,7 @@
 
 #import "QuestionsViewController.h"
 #import "UIBarButtonItem+Additions.h"
+#import "UIColor+Additions.h"
 #import "QuestionCell.h"
 #import "User.h"
 #import "League.h"
@@ -117,6 +118,19 @@
     cell.question = question;
     
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 20;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 108, 20)];
+    headerLabel.text = @"    OPEN QUESTIONS";
+    headerLabel.font = [UIFont fontWithName:@"Avenir Next" size:12];
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor creamColor];
+    return headerLabel;
 }
  
 

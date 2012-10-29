@@ -96,21 +96,6 @@
             </objects>
             <point key="canvasLocation" x="83" y="-930"/>
         </scene>
-        <!--View Controller - Item 2-->
-        <scene sceneID="2cq-4r-04c">
-            <objects>
-                <viewController id="AN7-3u-b3Y" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FiB-9S-7Qx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="k6w-OW-Q6P"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TJ7-5K-f4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1665" y="492"/>
-        </scene>
         <!--League Tab Bar Controller - League-->
         <scene sceneID="3lb-NN-hid">
             <objects>
@@ -124,7 +109,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="xOH-Rw-2TB" kind="relationship" relationship="viewControllers" id="6qI-gm-kNo"/>
-                        <segue destination="AN7-3u-b3Y" kind="relationship" relationship="viewControllers" id="HTU-1D-jMN"/>
+                        <segue destination="ggc-wD-Esb" kind="relationship" relationship="viewControllers" id="K8J-RB-tKM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hux-6X-sRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -460,6 +445,39 @@
             </objects>
             <point key="canvasLocation" x="1665" y="-178"/>
         </scene>
+        <!--Bet List View Controller - My Bets-->
+        <scene sceneID="Yfn-jb-CAK">
+            <objects>
+                <viewController id="ggc-wD-Esb" customClass="BetListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="euD-g7-1WO">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="W2z-Fd-DZm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="e6H-Po-rxx">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ggc-wD-Esb" id="z26-WU-Al5"/>
+                                    <outlet property="delegate" destination="ggc-wD-Esb" id="5zD-6I-Npg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Bets" id="o5Q-5b-p3P"/>
+                    <connections>
+                        <outlet property="tableView" destination="e6H-Po-rxx" id="mHW-4l-dor"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwT-2K-Slx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1665" y="444"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background.png" width="320" height="480"/>
@@ -474,6 +492,9 @@
         <image name="settings_button.png" width="115" height="115"/>
     </resources>
     <classes>
+        <class className="BetListViewController" superclassName="FFBaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetListViewController.h"/>
+        </class>
         <class className="FFBaseTableViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseTableViewController.h"/>
             <relationships>

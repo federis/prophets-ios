@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50653F6163EEDC1006DECF8 /* BetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50653F5163EEDC1006DECF8 /* BetListViewController.m */; };
 		B5094EF11625C6E300947FAC /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5094EF01625C6E300947FAC /* background@2x.png */; };
 		B5094EF71625E7F500947FAC /* FFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */; };
 		B5094EF91625EB9F00947FAC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = B5094EF81625EB9F00947FAC /* background.png */; };
@@ -140,6 +141,8 @@
 /* Begin PBXFileReference section */
 		62B3D712213645408B3D1811 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		B080843E1DFF40039890AE89 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50653F4163EEDC1006DECF8 /* BetListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetListViewController.h; sourceTree = "<group>"; };
+		B50653F5163EEDC1006DECF8 /* BetListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetListViewController.m; sourceTree = "<group>"; };
 		B5094EF01625C6E300947FAC /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		B5094EF51625E7F500947FAC /* FFBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTableViewController.h; sourceTree = "<group>"; };
 		B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableViewController.m; sourceTree = "<group>"; };
@@ -339,6 +342,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B50653F2163EED4E006DECF8 /* League Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5FB94AE1636251A00471515 /* LeagueTabBarController.h */,
+				B5FB94AF1636251A00471515 /* LeagueTabBarController.m */,
+				B58B5F411636D9FD0082640B /* QuestionsViewController.h */,
+				B58B5F421636D9FD0082640B /* QuestionsViewController.m */,
+				B50653F4163EEDC1006DECF8 /* BetListViewController.h */,
+				B50653F5163EEDC1006DECF8 /* BetListViewController.m */,
+			);
+			name = "League Controllers";
+			sourceTree = "<group>";
+		};
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,17 +530,14 @@
 		B57D0925160BE4AB0060A11E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B5A2F35716377E5B00034319 /* Logged Out */,
+				B5A2F35716377E5B00034319 /* Login and Registration Controllers */,
+				B50653F2163EED4E006DECF8 /* League Controllers */,
 				B5A2F35116376D5600034319 /* FFBaseViewController.h */,
 				B5A2F35216376D5600034319 /* FFBaseViewController.m */,
 				B5B1472C1634DE08005F1B5A /* HomeViewController.h */,
 				B5B1472D1634DE09005F1B5A /* HomeViewController.m */,
 				B5D33D7C161654BA0043A0E8 /* MembershipsViewController.h */,
 				B5D33D7A161652590043A0E8 /* MembershipsViewController.m */,
-				B5FB94AE1636251A00471515 /* LeagueTabBarController.h */,
-				B5FB94AF1636251A00471515 /* LeagueTabBarController.m */,
-				B58B5F411636D9FD0082640B /* QuestionsViewController.h */,
-				B58B5F421636D9FD0082640B /* QuestionsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -539,7 +552,7 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
-		B5A2F35716377E5B00034319 /* Logged Out */ = {
+		B5A2F35716377E5B00034319 /* Login and Registration Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B57D092B160CFB4F0060A11E /* LoginViewController.h */,
@@ -549,7 +562,7 @@
 				B560569E16226BEA004470DC /* LaunchViewController.h */,
 				B560569F16226BEA004470DC /* LaunchViewController.m */,
 			);
-			name = "Logged Out";
+			name = "Login and Registration Controllers";
 			sourceTree = "<group>";
 		};
 		B5A2F3A816396F6200034319 /* tabs */ = {
@@ -928,6 +941,7 @@
 				B5A2F356163776B200034319 /* UIBarButtonItem+Additions.m in Sources */,
 				B5A2F35E163844FA00034319 /* FFFetchedResultsViewController.m in Sources */,
 				B5A2F3BF163B6B7A00034319 /* QuestionCell.m in Sources */,
+				B50653F6163EEDC1006DECF8 /* BetListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
