@@ -34,6 +34,16 @@
     self.correct = [NSNumber numberWithBool:isCorrect];
 }
 
+- (void)setNilValueForKey:(NSString *)key {
+    if ([key isEqualToString:@"isCorrect"]) {
+        self.correct = nil;
+    }
+    else {
+        [super setNilValueForKey:key];
+    }
+}
+
+
 +(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
@@ -48,8 +58,18 @@
      @"judged_at" : @"judgedAt",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
-     }];    
+     }];
+        
+    return mapping;
+}
+
++(RKEntityMapping *)responseMappingWithParentRelationships{
+    RKEntityMapping *mapping = [self responseMapping];
     
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"question"
+                                                                            toKeyPath:@"question"
+                                                                          withMapping:[Question responseMapping]]];
+
     return mapping;
 }
 

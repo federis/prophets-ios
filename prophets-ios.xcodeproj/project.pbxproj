@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B50653F6163EEDC1006DECF8 /* BetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50653F5163EEDC1006DECF8 /* BetListViewController.m */; };
+		B50653F9163EF59C006DECF8 /* BetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B50653F8163EF59C006DECF8 /* BetCell.m */; };
+		B50653FD163EF5C4006DECF8 /* BetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50653FC163EF5C4006DECF8 /* BetCell.xib */; };
 		B5094EF11625C6E300947FAC /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5094EF01625C6E300947FAC /* background@2x.png */; };
 		B5094EF71625E7F500947FAC /* FFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */; };
 		B5094EF91625EB9F00947FAC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = B5094EF81625EB9F00947FAC /* background.png */; };
@@ -143,6 +145,9 @@
 		B080843E1DFF40039890AE89 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50653F4163EEDC1006DECF8 /* BetListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetListViewController.h; sourceTree = "<group>"; };
 		B50653F5163EEDC1006DECF8 /* BetListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetListViewController.m; sourceTree = "<group>"; };
+		B50653F7163EF59C006DECF8 /* BetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetCell.h; sourceTree = "<group>"; };
+		B50653F8163EF59C006DECF8 /* BetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetCell.m; sourceTree = "<group>"; };
+		B50653FC163EF5C4006DECF8 /* BetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetCell.xib; sourceTree = "<group>"; };
 		B5094EF01625C6E300947FAC /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		B5094EF51625E7F500947FAC /* FFBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTableViewController.h; sourceTree = "<group>"; };
 		B5094EF61625E7F500947FAC /* FFBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableViewController.m; sourceTree = "<group>"; };
@@ -453,6 +458,9 @@
 				B5A2F3BD163B6B7A00034319 /* QuestionCell.h */,
 				B5A2F3BE163B6B7A00034319 /* QuestionCell.m */,
 				B5A2F3C1163B6B9800034319 /* QuestionCell.xib */,
+				B50653F7163EF59C006DECF8 /* BetCell.h */,
+				B50653F8163EF59C006DECF8 /* BetCell.m */,
+				B50653FC163EF5C4006DECF8 /* BetCell.xib */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -848,6 +856,7 @@
 				B5A2F3A51638BE3B00034319 /* leaguemenu_allquestions.png in Resources */,
 				B5A2F3A71638BE4400034319 /* leaguemenu_allquestions@2x.png in Resources */,
 				B5A2F3C2163B6B9900034319 /* QuestionCell.xib in Resources */,
+				B50653FD163EF5C4006DECF8 /* BetCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,6 +951,7 @@
 				B5A2F35E163844FA00034319 /* FFFetchedResultsViewController.m in Sources */,
 				B5A2F3BF163B6B7A00034319 /* QuestionCell.m in Sources */,
 				B50653F6163EEDC1006DECF8 /* BetListViewController.m in Sources */,
+				B50653F9163EF59C006DECF8 /* BetCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

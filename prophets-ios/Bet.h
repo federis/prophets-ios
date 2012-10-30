@@ -16,6 +16,7 @@
 
 @interface Bet : Resource
 
+@property (nonatomic, strong) NSNumber * leagueId;
 @property (nonatomic, strong) NSDecimalNumber * amount;
 @property (nonatomic, strong) NSDecimalNumber * probability;
 @property (nonatomic, strong) NSDecimalNumber * bonus;

@@ -16,6 +16,7 @@
 
 @interface Membership : Resource
 
+@property (nonatomic, strong) NSNumber * leagueId;
 @property (nonatomic, strong) NSNumber * role;
 @property (nonatomic, strong) NSDecimalNumber * balance;
 @property (nonatomic, strong) NSDate * createdAt;
@@ -25,7 +26,6 @@
 
 -(NSString *)balanceString;
 
-+(RKEntityMapping *)responseMapping;
 +(RKEntityMapping *)requestMapping;
 
 @end

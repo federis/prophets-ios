@@ -13,6 +13,7 @@
 #import "UIBarButtonItem+Additions.h"
 #import "LeagueTabBarController.h"
 #import "Membership.h"
+#import "League.h"
 #import "User.h"
 
 @interface MembershipsViewController ()
@@ -44,6 +45,8 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleObjectChangedNotification:) name:NSManagedObjectContextObjectsDidChangeNotification object:self.managedObjectContext];
+    
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"memberships" ofObject:[User currentUser] parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
          DLog(@"Result is %@", mappingResult);
@@ -53,6 +56,29 @@
      }];
 }
 
+-(void)handleObjectChangedNotification:(NSNotification *)note{
+    // This is a bit of a hack because fetchedResultsController only watches for changes to the main object
+    // which is the Membership in this case. We need to update cells when a membership's league changes as well
+    NSSet *changed = [note.userInfo objectForKey:NSUpdatedObjectsKey];
+    if(!changed) return;
+    
+    for (id obj in changed) {
+        if ([obj isKindOfClass:[League class]]) {
+            League *l = (League *)obj;
+            for (Membership *mem in self.fetchedResultsController.fetchedObjects) {
+                if(mem.leagueId == l.remoteId){
+                    [self.fetchedResultsController.delegate controller:self.fetchedResultsController
+                                                       didChangeObject:mem
+                                                           atIndexPath:[self.fetchedResultsController indexPathForObject:mem]
+                                                         forChangeType:NSFetchedResultsChangeUpdate
+                                                          newIndexPath:[self.fetchedResultsController indexPathForObject:mem]];
+                    break;
+                }
+            }
+        }
+    }
+    DLog(@"%@", note.userInfo);
+}
 
 -(void)homeTouched{
     [self dismissViewControllerAnimated:YES completion:^{}];

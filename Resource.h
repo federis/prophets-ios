@@ -15,6 +15,10 @@
 
 @property (nonatomic, strong) NSNumber * remoteId;
 
++(RKEntityMapping *)responseMapping;
++(RKEntityMapping *)responseMappingWithChildRelationships;
++(RKEntityMapping *)responseMappingWithParentRelationships;
+
 +(id)object;
 +(id)findById:(NSNumber *)remoteId;
 

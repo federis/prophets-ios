@@ -13,6 +13,7 @@
 
 @implementation Membership
 
+@dynamic leagueId;
 @dynamic role;
 @dynamic balance;
 @dynamic createdAt;
@@ -27,6 +28,7 @@
     [mapping addAttributeMappingsFromArray:@[@"balance", @"role"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"id" : @"remoteId",
+     @"league_id" : @"leagueId",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
      }];

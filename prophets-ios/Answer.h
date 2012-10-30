@@ -29,8 +29,7 @@
 @property (nonatomic, strong) User *judge;
 @property (nonatomic, strong) NSSet *bets;
 
--(BOOL)isCorrect;
--(void)setIsCorrect:(BOOL)isCorrect;
+@property (nonatomic) BOOL isCorrect;
 
 +(RKEntityMapping *)responseMapping;
 +(RKEntityMapping *)requestMapping;

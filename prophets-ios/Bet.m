@@ -13,6 +13,7 @@
 
 @implementation Bet
 
+@dynamic leagueId;
 @dynamic amount;
 @dynamic probability;
 @dynamic bonus;
@@ -28,11 +29,22 @@
     [mapping addAttributeMappingsFromArray:@[@"amount", @"bonus", @"probability"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"id" : @"remoteId",
+     @"league_id" : @"leagueId",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt",
      }];
     
     return mapping;
+}
+
++(RKEntityMapping *)responseMappingWithParentRelationships{
+    RKEntityMapping *mapping = [self responseMapping];
+    
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"answer"
+                                                                            toKeyPath:@"answer"
+                                                                          withMapping:[Answer responseMappingWithParentRelationships]]];
+    
+    return mapping;    
 }
 
 +(RKEntityMapping *)requestMapping{

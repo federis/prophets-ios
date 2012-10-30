@@ -9,7 +9,7 @@
 #import "Question.h"
 #import "League.h"
 #import "User.h"
-
+#import "Answer.h"
 
 @implementation Question
 
@@ -40,7 +40,17 @@
     [mapping addConnectionMappingForRelationshipForName:@"league"
                                       fromSourceKeyPath:@"leagueId"
                                               toKeyPath:@"remoteId"
-                                                matcher:nil];
+                                                matcher:nil];    
+    
+    return mapping;
+}
+
++(RKEntityMapping *)responseMappingWithChildRelationships{
+    RKEntityMapping *mapping = [self responseMapping];
+    
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"answers"
+                                                                            toKeyPath:@"answers"
+                                                                          withMapping:[Answer responseMapping]]];
     
     return mapping;
 }

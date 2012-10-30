@@ -6,8 +6,13 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFBaseTableViewController.h"
+#import "FFFetchedResultsViewController.h"
 
-@interface BetListViewController : FFBaseTableViewController
+@class League, BetCell;
+
+@interface BetListViewController : FFFetchedResultsViewController
+
+@property (nonatomic, strong) League *league;
+@property (nonatomic, strong) BetCell *measuringCell;
 
 @end

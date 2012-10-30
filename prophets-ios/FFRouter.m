@@ -36,13 +36,12 @@
                                  userInfo:nil];
 }
 
--(void)setupRoutes{
-    //[self.routeSet addRoute:[RKRoute routeWithClass:[User class] pathPattern:@"/users/:remoteId" method:RKRequestMethodGET]];
-    //[self.routeSet addRoute:[RKRoute routeWithClass:[User class] pathPattern:@"/users" method:RKRequestMethodPOST]];
-    
+-(void)setupRoutes{    
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"memberships" objectClass:[User class] pathPattern:@"/memberships" method:RKRequestMethodGET]];
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"questions" objectClass:[League class] pathPattern:@"/leagues/:remoteId/questions" method:RKRequestMethodGET]];
+    
+    [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"bets" objectClass:[League class] pathPattern:@"/leagues/:remoteId/bets" method:RKRequestMethodGET]];
 }
 
 @end
