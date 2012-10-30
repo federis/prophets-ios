@@ -25,7 +25,4 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Answer *answer;
 
-+(RKEntityMapping *)responseMapping;
-+(RKEntityMapping *)requestMapping;
-
 @end

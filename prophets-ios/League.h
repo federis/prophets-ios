@@ -31,7 +31,4 @@
 -(BOOL)isPrivate;
 -(void)setIsPrivate:(BOOL)isPrivate;
 
-+(RKEntityMapping *)responseMapping;
-+(RKEntityMapping *)requestMapping;
-
 @end

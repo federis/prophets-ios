@@ -18,6 +18,7 @@
 +(RKEntityMapping *)responseMapping;
 +(RKEntityMapping *)responseMappingWithChildRelationships;
 +(RKEntityMapping *)responseMappingWithParentRelationships;
++(RKEntityMapping *)requestMapping;
 
 +(id)object;
 +(id)findById:(NSNumber *)remoteId;

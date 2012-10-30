@@ -55,8 +55,4 @@
     return mapping;
 }
 
-+(RKEntityMapping *)requestMapping{
-    
-}
-
 @end

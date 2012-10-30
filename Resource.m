@@ -36,6 +36,13 @@
                                  userInfo:nil];
 }
 
++(RKEntityMapping *)requestMapping{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"Invalid method call"
+                                           "requestMapping is not implemented in this subclass"]
+                                 userInfo:nil];
+}
+
 +(id)object{
     return [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([self class])
                                          inManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext];

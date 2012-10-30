@@ -33,15 +33,17 @@
      @"created_at" : @"createdAt"
      }];
     
+    return mapping;
+}
+
++(RKEntityMapping *)responseMappingWithParentRelationships{
+    RKEntityMapping *mapping = [self responseMapping];
+    
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"league"
                                                                             toKeyPath:@"league"
                                                                           withMapping:[League responseMapping]]];
     
     return mapping;
-}
-
-+(RKEntityMapping *)requestMapping{
-    
 }
 
 @end

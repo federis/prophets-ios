@@ -50,7 +50,7 @@
                                                                             keyPath:@"user"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
-    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Membership responseMapping]
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Membership responseMappingWithParentRelationships]
                                                                         pathPattern:nil
                                                                             keyPath:@"membership"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
