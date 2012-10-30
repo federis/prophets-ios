@@ -1,0 +1,78 @@
+[
+  {
+    "bet" : {
+      "amount" : 5,
+      "bonus" : 0.1,
+      "answer" : {
+        "id" : 1,
+        "judged_at" : null,
+        "bet_total" : 8,
+        "created_at" : "2012-10-25T14:25:48Z",
+        "judge_id" : null,
+        "initial_probability" : 0.2,
+        "user_id" : 2,
+        "correct" : null,
+        "updated_at" : "2012-10-30T16:31:07Z",
+        "question" : {
+          "content" : "what is your question?",
+          "id" : 2,
+          "approver_id" : 2,
+          "created_at" : "2012-10-25T13:23:51Z",
+          "league_id" : 3,
+          "approved_at" : "2012-10-25T14:26:57Z",
+          "user_id" : 2,
+          "updated_at" : "2012-10-25T14:26:57Z",
+          "desc" : "this is my description"
+        },
+        "question_id" : 2,
+        "current_probability" : 0.20064,
+        "content" : "answer number 1"
+      },
+      "id" : 1,
+      "created_at" : "2012-10-30T16:30:36Z",
+      "probability" : 0.2,
+      "league_id" : 3,
+      "user_id" : 2,
+      "answer_id" : 1,
+      "updated_at" : "2012-10-30T16:35:36Z"
+    }
+  },
+  {
+    "bet" : {
+      "amount" : 3,
+      "bonus" : null,
+      "answer" : {
+        "id" : 1,
+        "judged_at" : null,
+        "bet_total" : 8,
+        "created_at" : "2012-10-25T14:25:48Z",
+        "judge_id" : null,
+        "initial_probability" : 0.2,
+        "user_id" : 2,
+        "correct" : null,
+        "updated_at" : "2012-10-30T16:31:07Z",
+        "question" : {
+          "content" : "what is your question?",
+          "id" : 2,
+          "approver_id" : 2,
+          "created_at" : "2012-10-25T13:23:51Z",
+          "league_id" : 3,
+          "approved_at" : "2012-10-25T14:26:57Z",
+          "user_id" : 2,
+          "updated_at" : "2012-10-25T14:26:57Z",
+          "desc" : "this is my description"
+        },
+        "question_id" : 2,
+        "current_probability" : 0.20064,
+        "content" : "answer number 1"
+      },
+      "id" : 2,
+      "created_at" : "2012-10-30T16:31:07Z",
+      "probability" : 0.2004,
+      "league_id" : 3,
+      "user_id" : 2,
+      "answer_id" : 1,
+      "updated_at" : "2012-10-30T16:31:07Z"
+    }
+  }
+]
