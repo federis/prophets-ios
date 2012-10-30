@@ -18,8 +18,6 @@
 
 @property (nonatomic, strong) NSString * email;
 @property (nonatomic, strong) NSString * name;
-@property (nonatomic, strong) NSDate * createdAt;
-@property (nonatomic, strong) NSDate * updatedAt;
 @property (nonatomic, strong) NSSet *answers;
 @property (nonatomic, strong) NSSet *judgedAnswers;
 @property (nonatomic, strong) NSSet *bets;

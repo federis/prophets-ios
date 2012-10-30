@@ -14,6 +14,8 @@
 @implementation Resource
 
 @dynamic remoteId;
+@dynamic createdAt;
+@dynamic updatedAt;
 
 +(RKEntityMapping *)responseMapping{
     @throw [NSException exceptionWithName:NSInternalInconsistencyException

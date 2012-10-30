@@ -18,8 +18,6 @@ static User *currentUser = nil;
 
 @dynamic email;
 @dynamic name;
-@dynamic createdAt;
-@dynamic updatedAt;
 @dynamic answers;
 @dynamic judgedAnswers;
 @dynamic bets;

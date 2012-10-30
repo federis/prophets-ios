@@ -22,8 +22,6 @@
 @property (nonatomic, strong) NSDecimalNumber * initialBalance;
 @property (nonatomic, strong) NSNumber * membershipsCount;
 @property (nonatomic, strong) NSNumber * questionsCount;
-@property (nonatomic, strong) NSDate * createdAt;
-@property (nonatomic, strong) NSDate * updatedAt;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) NSSet *memberships;
 @property (nonatomic, strong) NSSet *questions;

@@ -21,8 +21,6 @@
 @property (nonatomic, strong) NSDecimalNumber * currentProbability;
 @property (nonatomic, strong) NSDecimalNumber * betTotal;
 @property (nonatomic, strong) NSNumber * correct;
-@property (nonatomic, strong) NSDate * createdAt;
-@property (nonatomic, strong) NSDate * updatedAt;
 @property (nonatomic, strong) NSDate * judgedAt;
 @property (nonatomic, strong) Question *question;
 @property (nonatomic, strong) User *user;

@@ -20,8 +20,6 @@
 @property (nonatomic, strong) NSDecimalNumber * amount;
 @property (nonatomic, strong) NSDecimalNumber * probability;
 @property (nonatomic, strong) NSDecimalNumber * bonus;
-@property (nonatomic, strong) NSDate * createdAt;
-@property (nonatomic, strong) NSDate * updatedAt;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Answer *answer;
 

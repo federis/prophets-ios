@@ -17,8 +17,6 @@
 @dynamic amount;
 @dynamic probability;
 @dynamic bonus;
-@dynamic createdAt;
-@dynamic updatedAt;
 @dynamic user;
 @dynamic answer;
 

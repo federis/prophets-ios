@@ -16,8 +16,6 @@
 @dynamic content;
 @dynamic desc;
 @dynamic approvedAt;
-@dynamic createdAt;
-@dynamic updatedAt;
 @dynamic answers;
 @dynamic leagueId;
 @dynamic league;

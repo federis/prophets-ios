@@ -19,8 +19,6 @@
 @property (nonatomic, strong) NSString * content;
 @property (nonatomic, strong) NSString * desc;
 @property (nonatomic, strong) NSDate * approvedAt;
-@property (nonatomic, strong) NSDate * createdAt;
-@property (nonatomic, strong) NSDate * updatedAt;
 @property (nonatomic, strong) NSSet *answers;
 @property (nonatomic, strong) NSNumber * leagueId;
 @property (nonatomic, strong) League *league;

@@ -16,8 +16,6 @@
 @dynamic leagueId;
 @dynamic role;
 @dynamic balance;
-@dynamic createdAt;
-@dynamic updatedAt;
 @dynamic user;
 @dynamic league;
 

@@ -19,8 +19,6 @@
 @property (nonatomic, strong) NSNumber * leagueId;
 @property (nonatomic, strong) NSNumber * role;
 @property (nonatomic, strong) NSDecimalNumber * balance;
-@property (nonatomic, strong) NSDate * createdAt;
-@property (nonatomic, strong) NSDate * updatedAt;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) League *league;
 

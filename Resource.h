@@ -14,6 +14,8 @@
 @interface Resource : NSManagedObject
 
 @property (nonatomic, strong) NSNumber * remoteId;
+@property (nonatomic, strong) NSDate * createdAt;
+@property (nonatomic, strong) NSDate * updatedAt;
 
 +(RKEntityMapping *)responseMapping;
 +(RKEntityMapping *)responseMappingWithChildRelationships;

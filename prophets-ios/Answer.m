@@ -18,8 +18,6 @@
 @dynamic currentProbability;
 @dynamic betTotal;
 @dynamic correct;
-@dynamic createdAt;
-@dynamic updatedAt;
 @dynamic judgedAt;
 @dynamic question;
 @dynamic user;
