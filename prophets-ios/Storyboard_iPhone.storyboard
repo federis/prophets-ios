@@ -180,7 +180,7 @@
         <!--Login View Controller-->
         <scene sceneID="yCX-n2-CBg">
             <objects>
-                <viewController id="H5I-lR-fj0" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="H5I-lR-fj0" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="syw-iG-ciY">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -412,17 +412,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pNb-5c-lnX">
-                                        <rect key="frame" x="0.0" y="126" width="303" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="283" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="xOH-Rw-2TB" id="ZEj-Sb-JQc"/>
@@ -492,7 +481,7 @@
         <image name="settings_button.png" width="115" height="115"/>
     </resources>
     <classes>
-        <class className="BetListViewController" superclassName="FFBaseTableViewController">
+        <class className="BetListViewController" superclassName="FFFetchedResultsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BetListViewController.h"/>
         </class>
         <class className="FFBaseTableViewController" superclassName="FFBaseViewController">

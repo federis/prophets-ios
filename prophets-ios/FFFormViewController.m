@@ -31,6 +31,15 @@
          forCellReuseIdentifier:@"FFTextFieldCell"];
     
     if(!self.submitButtonText) self.submitButtonText = @"Submit";
+    
+    [self prepareForm];
+}
+
+-(void)prepareForm{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"Invalid method call"
+                                           "prepareForm must be implemented by subclasses of FFFormViewController"]
+                                 userInfo:nil];
 }
 
 -(NSArray *)formFields{
@@ -109,9 +118,11 @@
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    FFTableFooterButtonView *footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:self.submitButtonText];
-    [footerView.button addTarget:self action:@selector(serializeAndSubmit) forControlEvents:UIControlEventTouchUpInside];
-    return footerView;
+    if(self.footerView) return self.footerView;
+    
+    self.footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:self.submitButtonText];
+    [self.footerView.button addTarget:self action:@selector(serializeAndSubmit) forControlEvents:UIControlEventTouchUpInside];
+    return self.footerView;
 }
 
 

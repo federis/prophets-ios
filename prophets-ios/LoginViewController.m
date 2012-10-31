@@ -24,7 +24,9 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.showsPullToRefresh = YES;
-    
+}
+
+-(void)prepareForm{
     User *user = [User object];
     self.formObject = user;
     

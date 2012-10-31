@@ -7,6 +7,8 @@
 //
 
 #import "FFRequestTest.h"
+#import "User.h"
+#import "FFObjectManager.h"
 
 @implementation FFRequestTest
 
@@ -20,6 +22,7 @@
 
 - (void)tearDown{
     [super tearDown];
+    
     self.dateFormatter = nil;
 }
 

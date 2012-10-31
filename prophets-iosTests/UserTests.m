@@ -6,10 +6,12 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFBaseTestCase.h"
+#import "FFLogicTest.h"
 #import "User.h"
+#import "KeychainItemWrapper.h"
+#import "FFApplicationConstants.h"
 
-@interface UserTests : FFBaseTestCase
+@interface UserTests : FFLogicTest
 
 @end
 
@@ -25,13 +27,14 @@
 {
     [super tearDown];
 }
-
+/*
 -(void)testCurrentUserGetter{
-    
     User *user = [User currentUser];
     STAssertNil(user, @"Current user should be nil");
     
-    user = [Factories userFactory];
+    user = [[User alloc] init];
+    user.remoteId = 1;
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
     [keychain setObject:user.remoteId forKey:(__bridge id)kSecAttrAccount];
     
     User *currentUser = [User currentUser];
@@ -55,6 +58,8 @@
     STAssertEqualObjects(foundUser, newUser, @"Current User object not found properly");
     
     STAssertEqualObjects([User currentUser], foundUser, @"Current user not set properly");
-}
+} 
+*/
+
 
 @end

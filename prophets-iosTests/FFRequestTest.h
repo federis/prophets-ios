@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFBaseTestCase.h"
+#import "Factories.h"
+#import "FFBaseTest.h"
 
-@interface FFRequestTest : FFBaseTestCase
+@interface FFRequestTest : FFBaseTest
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 

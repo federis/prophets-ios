@@ -1,6 +1,5 @@
 platform :ios, '6.0'
 pod 'RestKit', :git => 'https://github.com/RestKit/RestKit.git', :branch => 'development'
-pod 'RKTableController', :git => "https://github.com/RestKit/RKTableController.git"
 pod 'SVProgressHUD', :git => 'https://github.com/samvermette/SVProgressHUD.git'
 
 # Testing and Search are optional components

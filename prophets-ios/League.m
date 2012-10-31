@@ -17,6 +17,7 @@
 @dynamic maxBet;
 @dynamic initialBalance;
 @dynamic membershipsCount;
+@dynamic questionsCount;
 @dynamic user;
 @dynamic memberships;
 @dynamic questions;

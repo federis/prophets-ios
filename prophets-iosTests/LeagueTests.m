@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFBaseTestCase.h"
+#import "FFLogicTest.h"
 #import "League.h"
 
-@interface LeagueTests : FFBaseTestCase
+@interface LeagueTests : FFLogicTest
 
 @end
 
@@ -25,8 +25,7 @@
 }
 
 -(void)testIsPrivateSetter{
-    [RKTestFactory managedObjectStore];
-    League *league = [League object];
+    League *league = [Factories leagueFactory];
     
     league.isPrivate = YES;
     STAssertTrue([league.priv intValue] == 1, @"League isPrivate setter did not correctly set true value");
@@ -35,8 +34,7 @@
 }
 
 -(void)testIsPrivateGetter{
-    [RKTestFactory managedObjectStore];
-    League *league = [League object];
+    League *league = [Factories leagueFactory];
     
     league.priv = [NSNumber numberWithBool:YES];
     STAssertTrue(league.isPrivate, @"League isPrivate getter did not correctly get true value");

@@ -7,11 +7,11 @@
 //
 
 #import <RestKit/RestKit.h>
-#import <RestKit/CoreData.h>
 
 #import "Factories.h"
 #import "User.h"
 #import "League.h"
+#import "Answer.h"
 
 @implementation Factories
 
@@ -28,6 +28,13 @@
     league.remoteId = [NSNumber numberWithInt:1];
     
     return league;
+}
+
++(Answer *)answerFactory{
+    Answer *answer = [Answer object];
+    answer.remoteId = [NSNumber numberWithInt:1];
+    
+    return answer;
 }
 
 

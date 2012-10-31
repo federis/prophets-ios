@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFBaseTestCase.h"
+#import "FFLogicTest.h"
 #import "Answer.h"
 
-@interface AnswerTests : FFBaseTestCase
+@interface AnswerTests : FFLogicTest
 
 @end
 
@@ -26,8 +26,7 @@
 }
 
 -(void)testIsCorrectSetter{
-    [RKTestFactory managedObjectStore];
-    Answer *answer = [Answer object];
+    Answer *answer = [Factories answerFactory];
     
     answer.isCorrect = YES;
     STAssertTrue([answer.correct intValue] == 1, @"Answer isCorrect setter did not correctly set true value");
@@ -36,8 +35,7 @@
 }
 
 -(void)testIsCorrectGetter{
-    [RKTestFactory managedObjectStore];
-    Answer *answer = [Answer object];
+    Answer *answer = [Factories answerFactory];
     
     answer.correct = [NSNumber numberWithBool:YES];
     STAssertTrue(answer.isCorrect, @"Answer isCorrect getter did not correctly get true value");

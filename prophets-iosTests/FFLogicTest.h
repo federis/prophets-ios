@@ -6,17 +6,12 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
 #import <RestKit/RestKit.h>
-#import <RestKit/CoreData.h>
 #import <RestKit/Testing.h>
 
 #import "Factories.h"
-#import "KeychainItemWrapper.h"
-#import "FFApplicationConstants.h"
+#import "FFBaseTest.h"
 
-@interface FFBaseTestCase : SenTestCase{
-    KeychainItemWrapper *keychain;
-}
+@interface FFLogicTest : FFBaseTest
 
 @end
