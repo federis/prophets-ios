@@ -8,11 +8,11 @@
 
 #import "FFFetchedResultsViewController.h"
 
-@class League, QuestionCell;
+@class Membership, QuestionCell;
 
 @interface QuestionsViewController : FFFetchedResultsViewController
 
-@property (nonatomic, strong) League *league;
+@property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) QuestionCell *measuringCell;
 
 @property (weak, nonatomic) IBOutlet UILabel *leagueNameLabel;

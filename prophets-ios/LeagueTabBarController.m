@@ -9,6 +9,7 @@
 #import "LeagueTabBarController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "League.h"
+#import "Membership.h"
 
 @interface LeagueTabBarController ()
 
@@ -19,7 +20,7 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    self.navigationItem.title = self.league.name;
+    self.navigationItem.title = self.membership.league.name;
     self.navigationItem.leftItemsSupplementBackButton = YES;
     UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
     
@@ -27,9 +28,9 @@
     
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"leaguemenu_bgnd.png"]];
     
-    for(UIViewController *vc in self.viewControllers){
-        if([vc respondsToSelector:@selector(setLeague:)]){
-            [vc performSelector:@selector(setLeague:) withObject:self.league];
+    for(UIViewController *vc in self.viewControllers){        
+        if([vc respondsToSelector:@selector(setMembership:)]){
+            [vc performSelector:@selector(setMembership:) withObject:self.membership];
         }
     }
 }

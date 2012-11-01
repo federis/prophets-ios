@@ -7,7 +7,6 @@
 //
 
 #import "BetCell.h"
-#import "NSDecimalNumber+Additions.h"
 #import "Bet.h"
 #import "Answer.h"
 #import "Question.h"

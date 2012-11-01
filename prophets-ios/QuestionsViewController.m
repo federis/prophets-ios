@@ -13,6 +13,7 @@
 #import "UIColor+Additions.h"
 #import "QuestionCell.h"
 #import "User.h"
+#import "Membership.h"
 #import "League.h"
 #import "Question.h"
 #import "Utilities.h"
@@ -40,7 +41,7 @@
     
     self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:@"QuestionCell"];
     
-    NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"questions" ofObject:self.league method:RKRequestMethodGET];
+    NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"questions" ofObject:self.membership.league method:RKRequestMethodGET];
     
     self.fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
@@ -50,7 +51,7 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
-    [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"questions" ofObject:self.league parameters:nil
+    [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"questions" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
          DLog(@"Result is %@", mappingResult);
      }
@@ -60,19 +61,19 @@
 }
 
 -(void)setupHeaderView{
-    self.memberCountLabel.text = [NSString stringWithFormat:@"%@ %@", self.league.membershipsCount,
-                                  [Utilities pluralize:self.league.membershipsCount
+    self.memberCountLabel.text = [NSString stringWithFormat:@"%@ %@", self.membership.league.membershipsCount,
+                                  [Utilities pluralize:self.membership.league.membershipsCount
                                               singular:@"member"
                                                 plural:@"members"]];
     
-    self.questionCountLabel.text = [NSString stringWithFormat:@"%@ %@", self.league.questionsCount,
-                                    [Utilities pluralize:self.league.questionsCount
+    self.questionCountLabel.text = [NSString stringWithFormat:@"%@ %@", self.membership.league.questionsCount,
+                                    [Utilities pluralize:self.membership.league.questionsCount
                                                 singular:@"question"
                                                   plural:@"questions"]];
     
     self.headerBackgroundView.layer.cornerRadius = 5.0;
     
-    CGFloat leagueNameHeight = [Utilities heightForString:self.league.name
+    CGFloat leagueNameHeight = [Utilities heightForString:self.membership.league.name
                                                  withFont:self.leagueNameLabel.font
                                                     width:self.leagueNameLabel.frame.size.width];
     
@@ -86,7 +87,7 @@
                                             self.leagueNameLabel.frame.size.width,
                                             leagueNameHeight);
     
-    self.leagueNameLabel.text = self.league.name;
+    self.leagueNameLabel.text = self.membership.league.name;
 }
 
 

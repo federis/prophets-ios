@@ -10,6 +10,8 @@
 #import <CoreData/CoreData.h>
 
 #import "NSManagedObject+Additions.h"
+#import "NSDecimalNumber+Additions.h"
+#import "NSNumber+Additions.h"
 
 @interface Resource : NSManagedObject
 

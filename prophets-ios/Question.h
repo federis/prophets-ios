@@ -12,7 +12,7 @@
 
 #import "Resource.h"
 
-@class League, User;
+@class League, User, Answer;
 
 @interface Question : Resource
 
@@ -24,5 +24,14 @@
 @property (nonatomic, strong) League *league;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *approver;
+
+@end
+
+@interface Question (CoreDataGeneratedAccessors)
+
+- (void)addAnswersObject:(Answer *)value;
+- (void)removeAnswersObject:(Answer *)value;
+- (void)addAnswers:(NSSet *)values;
+- (void)removeAnswers:(NSSet *)values;
 
 @end

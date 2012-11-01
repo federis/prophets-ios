@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
 @property (nonatomic, copy) NSString *cacheName;
+@property (nonatomic, copy) NSString *sectionNameKeyPath;
 
 @end

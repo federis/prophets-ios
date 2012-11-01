@@ -16,6 +16,7 @@
 @dynamic leagueId;
 @dynamic role;
 @dynamic balance;
+@dynamic outstandingBetsValue;
 @dynamic user;
 @dynamic league;
 
@@ -26,6 +27,7 @@
     [mapping addAttributeMappingsFromArray:@[@"balance", @"role"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"id" : @"remoteId",
+     @"outstanding_bets_value" : @"outstandingBetsValue",
      @"league_id" : @"leagueId",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"

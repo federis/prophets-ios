@@ -13,6 +13,7 @@
 #import "UIColor+Additions.h"
 #import "BetCell.h"
 #import "Bet.h"
+#import "Membership.h"
 
 @interface BetListViewController ()
 
@@ -34,16 +35,17 @@
     
     self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:@"BetCell"];
     
-    NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"bets" ofObject:self.league method:RKRequestMethodGET];
+    NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"bets" ofObject:self.membership.league method:RKRequestMethodGET];
     self.fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+    self.sectionNameKeyPath = @"remoteId";
     
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
-    [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"bets" ofObject:self.league parameters:nil
+    [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"bets" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
          DLog(@"Result is %@", mappingResult);
      }
@@ -52,18 +54,18 @@
      }];
 }
 
--(void)homeTouched{
-    [self dismissViewControllerAnimated:YES completion:^{}];
+-(void)prepareHeaderView{
+    UIEdgeInsets insets = UIEdgeInsetsMake(4, 5, 4, 5);
+    UIImage *buttonImage = [[UIImage imageNamed:@"clear_button_insets.png"] resizableImageWithCapInsets:insets];
+    
+    [self.timeSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.performanceSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    
+    self.availableBalanceLabel.text = self.membership.balance.currencyString;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    /*
-     if([segue.identifier isEqualToString:@"ShowLeague"] && [sender isKindOfClass:[Membership class]]) {
-     Membership *membership = (Membership *)sender;
-     LeagueTabBarController *leagueTBC = (LeagueTabBarController *)[segue destinationViewController];
-     leagueTBC.league = membership.league;
-     }
-     */
+-(void)homeTouched{
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 #pragma mark - Table view delegate
@@ -81,25 +83,6 @@
     cell.bet = bet;
     
     return cell;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 20;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 108, 20)];
-    headerLabel.text = @"    MY BETS";
-    headerLabel.font = [UIFont fontWithName:@"Avenir Next" size:12];
-    headerLabel.backgroundColor = [UIColor clearColor];
-    headerLabel.textColor = [UIColor creamColor];
-    return headerLabel;
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    /*Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-     [self performSegueWithIdentifier:@"ShowLeague" sender:membership];*/
 }
 
 @end

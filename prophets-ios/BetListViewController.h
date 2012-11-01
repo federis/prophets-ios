@@ -8,11 +8,18 @@
 
 #import "FFFetchedResultsViewController.h"
 
-@class League, BetCell;
+@class Membership, BetCell;
 
 @interface BetListViewController : FFFetchedResultsViewController
 
-@property (nonatomic, strong) League *league;
+@property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) BetCell *measuringCell;
+@property (weak, nonatomic) IBOutlet UILabel *availableBalanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commitedToBetsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalWorthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankOutOfLabel;
+@property (weak, nonatomic) IBOutlet UIButton *timeSortButton;
+@property (weak, nonatomic) IBOutlet UIButton *performanceSortButton;
 
 @end

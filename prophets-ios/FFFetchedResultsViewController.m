@@ -23,7 +23,7 @@
     
     NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:self.fetchRequest
                                                                           managedObjectContext:self.managedObjectContext
-                                                                            sectionNameKeyPath:nil
+                                                                            sectionNameKeyPath:self.sectionNameKeyPath
                                                                                      cacheName:self.cacheName];
     self.fetchedResultsController = frc;
     _fetchedResultsController.delegate = self;

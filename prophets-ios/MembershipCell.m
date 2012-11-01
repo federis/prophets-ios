@@ -11,7 +11,6 @@
 #import "MembershipCell.h"
 #import "League.h"
 #import "Utilities.h"
-#import "NSDecimalNumber+Additions.h"
 
 @implementation MembershipCell
 

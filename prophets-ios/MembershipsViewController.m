@@ -88,7 +88,7 @@
     if([segue.identifier isEqualToString:@"ShowLeague"] && [sender isKindOfClass:[Membership class]]) {
         Membership *membership = (Membership *)sender;
         LeagueTabBarController *leagueTBC = (LeagueTabBarController *)[segue destinationViewController];
-        leagueTBC.league = membership.league;
+        leagueTBC.membership = membership;
     }
 }
 
