@@ -20,6 +20,12 @@
 @dynamic user;
 @dynamic answer;
 
+-(NSString *)oddsString{
+    NSDecimalNumber *one = [NSDecimalNumber decimalNumberWithString:@"1"];
+    NSDecimalNumber *quotient = [one decimalNumberByDividingBy:self.probability];
+    return [NSString stringWithFormat:@"%@:1", [quotient decimalNumberBySubtracting:one]];
+}
+
 +(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];

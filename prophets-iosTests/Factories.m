@@ -12,6 +12,7 @@
 #import "User.h"
 #import "League.h"
 #import "Answer.h"
+#import "Bet.h"
 
 @implementation Factories
 
@@ -35,6 +36,13 @@
     answer.remoteId = [NSNumber numberWithInt:1];
     
     return answer;
+}
+
++(Bet *)betFactory{
+    Bet *bet = [Bet object];
+    bet.remoteId = [NSNumber numberWithInt:1];
+    
+    return bet;
 }
 
 
