@@ -17,6 +17,8 @@
 @dynamic desc;
 @dynamic approvedAt;
 @dynamic bettingClosesAt;
+@dynamic betCount;
+@dynamic commentCount;
 @dynamic answers;
 @dynamic leagueId;
 @dynamic league;
@@ -41,6 +43,8 @@
      @"league_id" : @"leagueId",
      @"approved_at" : @"approvedAt",
      @"betting_closes_at" : @"bettingClosesAt",
+     @"bet_count" : @"betCount",
+     @"comment_count" : @"commentCount",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
      }];

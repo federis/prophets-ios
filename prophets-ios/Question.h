@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSDate * approvedAt;
 @property (nonatomic, strong) NSDate * bettingClosesAt;
 @property (nonatomic, strong) NSSet *answers;
+@property (nonatomic, strong) NSNumber * betCount;
+@property (nonatomic, strong) NSNumber * commentCount;
 @property (nonatomic, strong) NSNumber * leagueId;
 @property (nonatomic, strong) League *league;
 @property (nonatomic, strong) User *user;

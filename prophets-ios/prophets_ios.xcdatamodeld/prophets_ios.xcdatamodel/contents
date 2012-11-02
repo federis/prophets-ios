@@ -68,7 +68,9 @@
     </entity>
     <entity name="Question" representedClassName="Question" parentEntity="Resource" syncable="YES">
         <attribute name="approvedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="betCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="bettingClosesAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="commentCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
@@ -105,7 +107,7 @@
         <element name="Bet" positionX="0" positionY="0" width="128" height="150"/>
         <element name="League" positionX="0" positionY="0" width="128" height="195"/>
         <element name="Membership" positionX="0" positionY="0" width="128" height="150"/>
-        <element name="Question" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="Question" positionX="0" positionY="0" width="128" height="225"/>
         <element name="Resource" positionX="0" positionY="0" width="128" height="90"/>
         <element name="User" positionX="0" positionY="0" width="128" height="180"/>
         <element name="Comment" positionX="160" positionY="192" width="128" height="135"/>
