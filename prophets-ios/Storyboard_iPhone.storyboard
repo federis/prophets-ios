@@ -110,6 +110,9 @@
                     <connections>
                         <segue destination="xOH-Rw-2TB" kind="relationship" relationship="viewControllers" id="6qI-gm-kNo"/>
                         <segue destination="ggc-wD-Esb" kind="relationship" relationship="viewControllers" id="K8J-RB-tKM"/>
+                        <segue destination="wR1-iK-SHo" kind="relationship" relationship="viewControllers" id="ORe-CP-AGm"/>
+                        <segue destination="XxI-mA-fNR" kind="relationship" relationship="viewControllers" id="zaj-dt-Qoa"/>
+                        <segue destination="vNA-fz-jKn" kind="relationship" relationship="viewControllers" id="kVh-tV-pI4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hux-6X-sRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -432,7 +435,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWC-Lm-dSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="-178"/>
+            <point key="canvasLocation" x="1712" y="-1110"/>
         </scene>
         <!--Bet List View Controller - My Bets-->
         <scene sceneID="Yfn-jb-CAK">
@@ -593,7 +596,106 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwT-2K-Slx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="444"/>
+            <point key="canvasLocation" x="1712" y="-504"/>
+        </scene>
+        <!--League Settings View Controller - Item-->
+        <scene sceneID="SMy-Y4-E27">
+            <objects>
+                <viewController id="wR1-iK-SHo" customClass="LeagueSettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uy0-KY-CqM">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="fz7-gI-kOs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="BCt-Cg-3oy">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wR1-iK-SHo" id="GlA-Oe-Kgc"/>
+                                    <outlet property="delegate" destination="wR1-iK-SHo" id="ozl-vV-KbL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="eeC-pa-Ymd"/>
+                    <connections>
+                        <outlet property="tableView" destination="BCt-Cg-3oy" id="Bv3-11-SXF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrs-u2-JVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712" y="92"/>
+        </scene>
+        <!--Chat View Controller - Item-->
+        <scene sceneID="cuR-bI-9pz">
+            <objects>
+                <viewController id="XxI-mA-fNR" customClass="ChatViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wjb-zV-OTy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="LM7-N2-Ffx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Kvx-C6-jXL">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XxI-mA-fNR" id="J78-S0-6eF"/>
+                                    <outlet property="delegate" destination="XxI-mA-fNR" id="WxS-pU-3sX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="bJi-UF-dAF"/>
+                    <connections>
+                        <outlet property="tableView" destination="Kvx-C6-jXL" id="qtk-2A-1q6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Okk-DW-12p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712" y="690"/>
+        </scene>
+        <!--League Settings View Controller - Item-->
+        <scene sceneID="eSU-en-Zi0">
+            <objects>
+                <viewController id="vNA-fz-jKn" customClass="LeagueSettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JGe-Xe-pld">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="UaS-Az-muZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Wvp-yS-shv">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vNA-fz-jKn" id="Ih7-Gp-mwX"/>
+                                    <outlet property="delegate" destination="vNA-fz-jKn" id="ALA-FV-lyb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="NuU-Ez-sDL"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wvp-yS-shv" id="x7i-lc-nT0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyS-Um-HtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712" y="1302"/>
         </scene>
     </scenes>
     <resources>
@@ -622,6 +724,9 @@
                 <relationship kind="outlet" name="totalWorthLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="ChatViewController" superclassName="FFBaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChatViewController.h"/>
+        </class>
         <class className="FFBaseTableViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseTableViewController.h"/>
             <relationships>
@@ -646,6 +751,9 @@
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
             </relationships>
+        </class>
+        <class className="LeagueSettingsViewController" superclassName="FFBaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueSettingsViewController.h"/>
         </class>
         <class className="LeagueTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueTabBarController.h"/>
