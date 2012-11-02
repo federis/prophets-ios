@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSDecimalNumber * betTotal;
 @property (nonatomic, strong) NSNumber * correct;
 @property (nonatomic, strong) NSDate * judgedAt;
+@property (nonatomic, strong) NSDate * correctnessKnownAt;
 @property (nonatomic, strong) Question *question;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *judge;
@@ -29,6 +30,10 @@
 
 -(BOOL)isCorrect;
 -(void)setIsCorrect:(BOOL)isCorrect;
+
+-(BOOL)hasBeenJudged;
+-(BOOL)isOpenForBetting;
+-(NSDate *)bettingEndedAt;
 
 @end
 

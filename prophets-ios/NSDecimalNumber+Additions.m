@@ -11,7 +11,9 @@
 @implementation NSDecimalNumber (Additions)
 
 -(NSString *)currencyString{
-    return [NSString stringWithFormat:@"$%@", self];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    return [numberFormatter stringFromNumber:self];
 }
 
 @end

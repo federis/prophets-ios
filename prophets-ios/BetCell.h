@@ -14,9 +14,20 @@
 
 @property (nonatomic, strong) Bet *bet;
 
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIView *statusDot;
+
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *answerLabel;
-@property (weak, nonatomic) IBOutlet UILabel *betAmountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *betInfoLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *payoutLabelBackground;
+@property (weak, nonatomic) IBOutlet UILabel *payoutLabel;
+@property (weak, nonatomic) IBOutlet UILabel *payoutSubtextLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *betSubmittedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bettingEndLabel;
+
 
 -(CGFloat)heightForCellWithBet:(Bet *)bet;
 

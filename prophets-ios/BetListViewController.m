@@ -26,6 +26,8 @@
     
     //self.showsPullToRefresh = YES;
     
+    [self prepareHeaderView];
+    
     self.navigationItem.leftItemsSupplementBackButton = YES;
     UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
     self.navigationItem.leftBarButtonItems = @[item];
@@ -62,6 +64,8 @@
     [self.performanceSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     
     self.availableBalanceLabel.text = self.membership.balance.currencyString;
+    self.commitedToBetsLabel.text = self.membership.outstandingBetsValue.currencyString;
+    self.totalWorthLabel.text = self.membership.totalWorth.currencyString;
 }
 
 -(void)homeTouched{

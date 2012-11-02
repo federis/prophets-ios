@@ -15,9 +15,9 @@
     
     self.storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle:nil];
     
-    NSBundle *testTargetBundle = [NSBundle bundleWithIdentifier:@"com.federisgroup.prophets-iosTests"];
+    /*NSBundle *testTargetBundle = [NSBundle bundleWithIdentifier:@"com.federisgroup.prophets-iosTests"];
     NSArray *bundles = [NSBundle allBundles];
-    [RKTestFixture setFixtureBundle:testTargetBundle];
+    [RKTestFixture setFixtureBundle:testTargetBundle];*/
 }
 
 -(void)tearDown{

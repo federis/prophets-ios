@@ -4,6 +4,7 @@
         <attribute name="betTotal" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="correct" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="correctnessKnownAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="currentProbability" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="initialProbability" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="judgedAt" optional="YES" attributeType="Date" syncable="YES"/>
@@ -18,7 +19,8 @@
     <entity name="Bet" representedClassName="Bet" parentEntity="Resource" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="bonus" optional="YES" attributeType="Decimal" syncable="YES"/>
-        <attribute name="leagueId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="payout" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="probability" optional="YES" attributeType="Decimal" syncable="YES"/>
         <relationship name="answer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Answer" inverseName="bets" inverseEntity="Answer" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="bets" inverseEntity="User" syncable="YES"/>
@@ -42,8 +44,8 @@
     </entity>
     <entity name="Membership" representedClassName="Membership" parentEntity="Resource" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Decimal" syncable="YES"/>
-        <attribute name="leagueId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="outstandingBetsValue" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="outstandingBetsValue" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="memberships" inverseEntity="League" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="memberships" inverseEntity="User" syncable="YES"/>
@@ -53,9 +55,10 @@
     </entity>
     <entity name="Question" representedClassName="Question" parentEntity="Resource" syncable="YES">
         <attribute name="approvedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="bettingClosesAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="leagueId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="question" inverseEntity="Answer" syncable="YES"/>
         <relationship name="approver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="approvedQuestions" inverseEntity="User" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="questions" inverseEntity="League" syncable="YES"/>
@@ -84,11 +87,11 @@
         </userInfo>
     </entity>
     <elements>
-        <element name="Answer" positionX="0" positionY="0" width="128" height="195"/>
-        <element name="Bet" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="Answer" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="Bet" positionX="0" positionY="0" width="128" height="150"/>
         <element name="League" positionX="0" positionY="0" width="128" height="180"/>
         <element name="Membership" positionX="0" positionY="0" width="128" height="135"/>
-        <element name="Question" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="Question" positionX="0" positionY="0" width="128" height="180"/>
         <element name="Resource" positionX="0" positionY="0" width="128" height="90"/>
         <element name="User" positionX="0" positionY="0" width="128" height="180"/>
     </elements>

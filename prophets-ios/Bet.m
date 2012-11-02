@@ -17,13 +17,29 @@
 @dynamic amount;
 @dynamic probability;
 @dynamic bonus;
+@dynamic payout;
 @dynamic user;
 @dynamic answer;
 
--(NSString *)oddsString{
+-(BOOL)hasBeenJudged{
+    return self.payout != nil;
+}
+
+-(NSDecimalNumber *)payoutMultipler{
+    //(1/probability - 1)
     NSDecimalNumber *one = [NSDecimalNumber decimalNumberWithString:@"1"];
     NSDecimalNumber *quotient = [one decimalNumberByDividingBy:self.probability];
-    return [NSString stringWithFormat:@"%@:1", [quotient decimalNumberBySubtracting:one]];
+    return [quotient decimalNumberBySubtracting:one];
+}
+
+-(NSString *)oddsString{
+    return [NSString stringWithFormat:@"%@:1", [self payoutMultipler]];
+}
+
+-(NSDecimalNumber *)potentialPayout{
+    //amount + amount * (1/probability - 1)
+    NSDecimalNumber *product = [self.amount decimalNumberByMultiplyingBy:[self payoutMultipler]];
+    return [self.amount decimalNumberByAdding:product];
 }
 
 +(RKEntityMapping *)responseMapping{

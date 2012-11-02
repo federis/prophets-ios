@@ -20,6 +20,10 @@
 @dynamic user;
 @dynamic league;
 
+-(NSDecimalNumber *)totalWorth{
+    return [self.balance decimalNumberByAdding:self.outstandingBetsValue];
+}
+
 +(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];

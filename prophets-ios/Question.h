@@ -19,11 +19,15 @@
 @property (nonatomic, strong) NSString * content;
 @property (nonatomic, strong) NSString * desc;
 @property (nonatomic, strong) NSDate * approvedAt;
+@property (nonatomic, strong) NSDate * bettingClosesAt;
 @property (nonatomic, strong) NSSet *answers;
 @property (nonatomic, strong) NSNumber * leagueId;
 @property (nonatomic, strong) League *league;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *approver;
+
+-(BOOL)isApproved;
+-(BOOL)isOpenForBetting;
 
 @end
 

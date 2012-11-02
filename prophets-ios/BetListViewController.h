@@ -22,4 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *timeSortButton;
 @property (weak, nonatomic) IBOutlet UIButton *performanceSortButton;
 
+-(NSDecimalNumber *)totalWorth;
+
 @end

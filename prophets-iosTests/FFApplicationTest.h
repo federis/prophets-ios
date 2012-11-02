@@ -7,6 +7,9 @@
 //
 
 #import "FFBaseTest.h"
+#import "Factories.h"
+
+#define DAY 86400
 
 @interface FFApplicationTest : FFBaseTest
 

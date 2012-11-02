@@ -20,9 +20,12 @@
 @property (nonatomic, strong) NSDecimalNumber * amount;
 @property (nonatomic, strong) NSDecimalNumber * probability;
 @property (nonatomic, strong) NSDecimalNumber * bonus;
+@property (nonatomic, strong) NSDecimalNumber * payout;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Answer *answer;
 
+-(BOOL)hasBeenJudged;
 -(NSString *)oddsString;
+-(NSDecimalNumber *)potentialPayout;
 
 @end

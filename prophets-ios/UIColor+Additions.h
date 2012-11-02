@@ -11,5 +11,8 @@
 @interface UIColor (Additions)
 
 +(UIColor *)creamColor;
++(UIColor *)ffGreenColor;
++(UIColor *)ffRedColor;
++(UIColor *)ffGrayColor;
 
 @end

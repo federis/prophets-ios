@@ -23,4 +23,6 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) League *league;
 
+-(NSDecimalNumber *)totalWorth;
+
 @end

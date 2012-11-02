@@ -16,11 +16,20 @@
 @dynamic content;
 @dynamic desc;
 @dynamic approvedAt;
+@dynamic bettingClosesAt;
 @dynamic answers;
 @dynamic leagueId;
 @dynamic league;
 @dynamic user;
 @dynamic approver;
+
+-(BOOL)isOpenForBetting{
+    return self.isApproved && [self.bettingClosesAt compare:[NSDate date]] == NSOrderedDescending;
+}
+
+-(BOOL)isApproved{
+    return self.approvedAt != nil;
+}
 
 +(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
@@ -31,6 +40,7 @@
      @"id" : @"remoteId",
      @"league_id" : @"leagueId",
      @"approved_at" : @"approvedAt",
+     @"betting_closes_at" : @"bettingClosesAt",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
      }];

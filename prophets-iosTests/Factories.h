@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class User, League, Answer, Bet;
+@class User, League, Question, Answer, Bet;
 
 @interface Factories : NSObject
 
 +(User *)userFactory;
 +(League *)leagueFactory;
++(Question *)questionFactory;
 +(Answer *)answerFactory;
 +(Bet *)betFactory;
 

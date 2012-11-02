@@ -22,4 +22,12 @@
     STAssertEqualObjects(bet.oddsString, @"4:1", @"Bet odds string is incorrect");
 }
 
+-(void)testPotentialPayout{
+    Bet *bet = [Factories betFactory];
+    bet.probability = [NSDecimalNumber decimalNumberWithString:@"0.2"];
+    bet.amount = [NSDecimalNumber decimalNumberWithString:@"2"];
+    
+    STAssertEqualObjects(bet.potentialPayout, [NSDecimalNumber decimalNumberWithString:@"10"], @"Bet potential payout is incorrect");
+}
+
 @end

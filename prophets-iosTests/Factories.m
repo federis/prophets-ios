@@ -11,6 +11,7 @@
 #import "Factories.h"
 #import "User.h"
 #import "League.h"
+#import "Question.h"
 #import "Answer.h"
 #import "Bet.h"
 
@@ -31,9 +32,20 @@
     return league;
 }
 
++(Question *)questionFactory{
+    Question *question = [Question object];
+    question.remoteId = [NSNumber numberWithInt:1];
+    question.approvedAt = [NSDate dateWithTimeIntervalSinceNow:-3600*24*10];
+    question.bettingClosesAt = [NSDate dateWithTimeIntervalSinceNow:3600*24*10]; // 10 days from now
+    question.content = @"Is this a question?";
+    
+    return question;
+}
+
 +(Answer *)answerFactory{
     Answer *answer = [Answer object];
     answer.remoteId = [NSNumber numberWithInt:1];
+    answer.content = @"Answer name";
     
     return answer;
 }
@@ -41,6 +53,8 @@
 +(Bet *)betFactory{
     Bet *bet = [Bet object];
     bet.remoteId = [NSNumber numberWithInt:1];
+    bet.amount = [NSDecimalNumber decimalNumberWithString:@"10"];
+    bet.probability = [NSDecimalNumber decimalNumberWithString:@"0.2"];
     
     return bet;
 }
