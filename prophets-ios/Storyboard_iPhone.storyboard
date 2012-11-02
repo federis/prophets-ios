@@ -598,7 +598,7 @@
             </objects>
             <point key="canvasLocation" x="1712" y="-504"/>
         </scene>
-        <!--League Settings View Controller - Item-->
+        <!--League Settings View Controller - League Stats-->
         <scene sceneID="SMy-Y4-E27">
             <objects>
                 <viewController id="wR1-iK-SHo" customClass="LeagueSettingsViewController" sceneMemberID="viewController">
@@ -622,7 +622,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="eeC-pa-Ymd"/>
+                    <tabBarItem key="tabBarItem" title="League Stats" image="leaguemenu_stats.png" id="eeC-pa-Ymd"/>
                     <connections>
                         <outlet property="tableView" destination="BCt-Cg-3oy" id="Bv3-11-SXF"/>
                     </connections>
@@ -631,10 +631,10 @@
             </objects>
             <point key="canvasLocation" x="1712" y="92"/>
         </scene>
-        <!--Chat View Controller - Item-->
+        <!--Comments View Controller - Club Room-->
         <scene sceneID="cuR-bI-9pz">
             <objects>
-                <viewController id="XxI-mA-fNR" customClass="ChatViewController" sceneMemberID="viewController">
+                <viewController id="XxI-mA-fNR" customClass="CommentsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wjb-zV-OTy">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -655,7 +655,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bJi-UF-dAF"/>
+                    <tabBarItem key="tabBarItem" title="Club Room" image="leaguemenu_clubroom.png" id="bJi-UF-dAF"/>
                     <connections>
                         <outlet property="tableView" destination="Kvx-C6-jXL" id="qtk-2A-1q6"/>
                     </connections>
@@ -664,7 +664,7 @@
             </objects>
             <point key="canvasLocation" x="1712" y="690"/>
         </scene>
-        <!--League Settings View Controller - Item-->
+        <!--League Settings View Controller - League Settings-->
         <scene sceneID="eSU-en-Zi0">
             <objects>
                 <viewController id="vNA-fz-jKn" customClass="LeagueSettingsViewController" sceneMemberID="viewController">
@@ -688,7 +688,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="NuU-Ez-sDL"/>
+                    <tabBarItem key="tabBarItem" title="League Settings" image="leaguemenu_settings.png" id="NuU-Ez-sDL"/>
                     <connections>
                         <outlet property="tableView" destination="Wvp-yS-shv" id="x7i-lc-nT0"/>
                     </connections>
@@ -705,6 +705,9 @@
         <image name="current_leagues_button.png" width="115" height="115"/>
         <image name="find_league_button.png" width="115" height="115"/>
         <image name="leaguemenu_allquestions.png" width="38" height="30"/>
+        <image name="leaguemenu_clubroom.png" width="38" height="30"/>
+        <image name="leaguemenu_settings.png" width="38" height="30"/>
+        <image name="leaguemenu_stats.png" width="38" height="30"/>
         <image name="logo_p.png" width="148" height="158"/>
         <image name="logo_p_small.png" width="30" height="32"/>
         <image name="logo_prophets.png" width="150" height="190"/>
@@ -724,8 +727,8 @@
                 <relationship kind="outlet" name="totalWorthLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="ChatViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChatViewController.h"/>
+        <class className="CommentsViewController" superclassName="FFFetchedResultsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsViewController.h"/>
         </class>
         <class className="FFBaseTableViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseTableViewController.h"/>

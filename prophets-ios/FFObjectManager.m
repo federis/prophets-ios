@@ -16,6 +16,7 @@
 #import "Membership.h"
 #import "Question.h"
 #import "Bet.h"
+#import "Comment.h"
 
 @implementation FFObjectManager
 
@@ -65,6 +66,12 @@
                                                                             keyPath:@"bet"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Comment responseMapping]
+                                                                        pathPattern:nil
+                                                                            keyPath:@"comment"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
 }
 
 -(void)setupFetchRequestBlocks{
@@ -108,6 +115,40 @@
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Bet"];
             fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:YES]];
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/leagues/:leagueId/comments"];
+        
+        NSDictionary *argsDict = nil;
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        if (match) {
+            NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Comment"];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/questions/:questionId/comments"];
+        
+        NSDictionary *argsDict = nil;
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        if (match) {
+            NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"questionId"] numberValue];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Comment"];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"questionId == %@", leagueId];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
             return fetchRequest;
         }
         

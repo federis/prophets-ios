@@ -59,7 +59,6 @@
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"answers"
                                                                             toKeyPath:@"answers"
                                                                           withMapping:[Answer responseMapping]]];
-    
     return mapping;
 }
 

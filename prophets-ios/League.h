@@ -6,10 +6,6 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-#import <RestKit/RestKit.h>
-
 #import "Resource.h"
 
 @class User;

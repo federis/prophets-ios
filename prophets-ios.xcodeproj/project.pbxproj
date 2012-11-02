@@ -44,8 +44,14 @@
 		B521AC07162B64500009A8E4 /* FFTableFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B521AC06162B64500009A8E4 /* FFTableFooterButtonView.m */; };
 		B53F585716433C6400AF2BA9 /* BetCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F585616433C6300AF2BA9 /* BetCellTests.m */; };
 		B53F585B1644167300AF2BA9 /* LeagueSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F585A1644167300AF2BA9 /* LeagueSettingsViewController.m */; };
-		B53F585E1644169400AF2BA9 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F585D1644169400AF2BA9 /* ChatViewController.m */; };
 		B53F5861164417B000AF2BA9 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F5860164417AF00AF2BA9 /* StatsViewController.m */; };
+		B53F586416444CCF00AF2BA9 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F586316444CCF00AF2BA9 /* Comment.m */; };
+		B53F586716444FE300AF2BA9 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F586616444FE200AF2BA9 /* CommentsViewController.m */; };
+		B53F586A164450C000AF2BA9 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F5869164450BF00AF2BA9 /* CommentCell.m */; };
+		B53F586C164450CB00AF2BA9 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53F586B164450CB00AF2BA9 /* CommentCell.xib */; };
+		B53F58701644582500AF2BA9 /* leaguemenu_clubroom.png in Resources */ = {isa = PBXBuildFile; fileRef = B53F586D1644582500AF2BA9 /* leaguemenu_clubroom.png */; };
+		B53F58711644582500AF2BA9 /* leaguemenu_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B53F586E1644582500AF2BA9 /* leaguemenu_settings.png */; };
+		B53F58721644582500AF2BA9 /* leaguemenu_stats.png in Resources */ = {isa = PBXBuildFile; fileRef = B53F586F1644582500AF2BA9 /* leaguemenu_stats.png */; };
 		B54AA0F5162EFDE100F2A3CB /* logo_p.png in Resources */ = {isa = PBXBuildFile; fileRef = B54AA0F3162EFDE100F2A3CB /* logo_p.png */; };
 		B54AA0F6162EFDE100F2A3CB /* logo_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B54AA0F4162EFDE100F2A3CB /* logo_p@2x.png */; };
 		B54AA0FE162F1E8C00F2A3CB /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B54AA0FD162F1E8C00F2A3CB /* Utilities.m */; };
@@ -212,10 +218,18 @@
 		B53F585616433C6300AF2BA9 /* BetCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetCellTests.m; sourceTree = "<group>"; };
 		B53F58591644167300AF2BA9 /* LeagueSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueSettingsViewController.h; sourceTree = "<group>"; };
 		B53F585A1644167300AF2BA9 /* LeagueSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueSettingsViewController.m; sourceTree = "<group>"; };
-		B53F585C1644169400AF2BA9 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		B53F585D1644169400AF2BA9 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		B53F585F164417AF00AF2BA9 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
 		B53F5860164417AF00AF2BA9 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
+		B53F586216444CCF00AF2BA9 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		B53F586316444CCF00AF2BA9 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		B53F586516444FE200AF2BA9 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		B53F586616444FE200AF2BA9 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		B53F5868164450BF00AF2BA9 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		B53F5869164450BF00AF2BA9 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		B53F586B164450CB00AF2BA9 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		B53F586D1644582500AF2BA9 /* leaguemenu_clubroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_clubroom.png; sourceTree = "<group>"; };
+		B53F586E1644582500AF2BA9 /* leaguemenu_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_settings.png; sourceTree = "<group>"; };
+		B53F586F1644582500AF2BA9 /* leaguemenu_stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_stats.png; sourceTree = "<group>"; };
 		B54AA0F3162EFDE100F2A3CB /* logo_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_p.png; sourceTree = "<group>"; };
 		B54AA0F4162EFDE100F2A3CB /* logo_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_p@2x.png"; sourceTree = "<group>"; };
 		B54AA0FC162F1E8C00F2A3CB /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -401,10 +415,10 @@
 				B50653F5163EEDC1006DECF8 /* BetListViewController.m */,
 				B53F58591644167300AF2BA9 /* LeagueSettingsViewController.h */,
 				B53F585A1644167300AF2BA9 /* LeagueSettingsViewController.m */,
-				B53F585C1644169400AF2BA9 /* ChatViewController.h */,
-				B53F585D1644169400AF2BA9 /* ChatViewController.m */,
 				B53F585F164417AF00AF2BA9 /* StatsViewController.h */,
 				B53F5860164417AF00AF2BA9 /* StatsViewController.m */,
+				B53F586516444FE200AF2BA9 /* CommentsViewController.h */,
+				B53F586616444FE200AF2BA9 /* CommentsViewController.m */,
 			);
 			name = "League Controllers";
 			sourceTree = "<group>";
@@ -563,6 +577,9 @@
 				B50653F7163EF59C006DECF8 /* BetCell.h */,
 				B50653F8163EF59C006DECF8 /* BetCell.m */,
 				B50653FC163EF5C4006DECF8 /* BetCell.xib */,
+				B53F5868164450BF00AF2BA9 /* CommentCell.h */,
+				B53F5869164450BF00AF2BA9 /* CommentCell.m */,
+				B53F586B164450CB00AF2BA9 /* CommentCell.xib */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -606,6 +623,8 @@
 				B56F40DF160A7949007D445F /* Bet.m */,
 				B56F40E1160A795A007D445F /* Membership.h */,
 				B56F40E2160A795A007D445F /* Membership.m */,
+				B53F586216444CCF00AF2BA9 /* Comment.h */,
+				B53F586316444CCF00AF2BA9 /* Comment.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -652,6 +671,9 @@
 		B5A2F3A816396F6200034319 /* tabs */ = {
 			isa = PBXGroup;
 			children = (
+				B53F586D1644582500AF2BA9 /* leaguemenu_clubroom.png */,
+				B53F586E1644582500AF2BA9 /* leaguemenu_settings.png */,
+				B53F586F1644582500AF2BA9 /* leaguemenu_stats.png */,
 				B50654D216420B13006DECF8 /* leaguemenu_bgnd.png */,
 				B5A2F3961638BBD900034319 /* leaguemenu_bgnd@2x.png */,
 				B5A2F3A61638BE4400034319 /* leaguemenu_allquestions@2x.png */,
@@ -928,6 +950,10 @@
 				B50654B81641A400006DECF8 /* clear_button_insets@2x.png in Resources */,
 				B50654D316420B13006DECF8 /* green_dot.png in Resources */,
 				B50654D416420B13006DECF8 /* leaguemenu_bgnd.png in Resources */,
+				B53F586C164450CB00AF2BA9 /* CommentCell.xib in Resources */,
+				B53F58701644582500AF2BA9 /* leaguemenu_clubroom.png in Resources */,
+				B53F58711644582500AF2BA9 /* leaguemenu_settings.png in Resources */,
+				B53F58721644582500AF2BA9 /* leaguemenu_stats.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1031,8 +1057,10 @@
 				B50653F6163EEDC1006DECF8 /* BetListViewController.m in Sources */,
 				B50653F9163EF59C006DECF8 /* BetCell.m in Sources */,
 				B53F585B1644167300AF2BA9 /* LeagueSettingsViewController.m in Sources */,
-				B53F585E1644169400AF2BA9 /* ChatViewController.m in Sources */,
 				B53F5861164417B000AF2BA9 /* StatsViewController.m in Sources */,
+				B53F586416444CCF00AF2BA9 /* Comment.m in Sources */,
+				B53F586716444FE300AF2BA9 /* CommentsViewController.m in Sources */,
+				B53F586A164450C000AF2BA9 /* CommentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
