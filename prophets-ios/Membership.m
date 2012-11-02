@@ -15,6 +15,7 @@
 
 @dynamic leagueId;
 @dynamic role;
+@dynamic rank;
 @dynamic balance;
 @dynamic outstandingBetsValue;
 @dynamic user;
@@ -28,7 +29,7 @@
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
     
-    [mapping addAttributeMappingsFromArray:@[@"balance", @"role"]];
+    [mapping addAttributeMappingsFromArray:@[@"balance", @"role", @"rank"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"id" : @"remoteId",
      @"outstanding_bets_value" : @"outstandingBetsValue",

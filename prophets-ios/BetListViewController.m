@@ -14,6 +14,7 @@
 #import "BetCell.h"
 #import "Bet.h"
 #import "Membership.h"
+#import "League.h"
 
 @interface BetListViewController ()
 
@@ -66,6 +67,10 @@
     self.availableBalanceLabel.text = self.membership.balance.currencyString;
     self.commitedToBetsLabel.text = self.membership.outstandingBetsValue.currencyString;
     self.totalWorthLabel.text = self.membership.totalWorth.currencyString;
+    
+    self.rankLabel.text = self.membership.rank.stringValue;
+    self.rankOutOfLabel.text = [NSString stringWithFormat:@"out of %@", self.membership.league.membershipsCount];
+    self.rankBackground.layer.cornerRadius = 3;
 }
 
 -(void)homeTouched{

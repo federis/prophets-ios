@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) NSNumber * leagueId;
 @property (nonatomic, strong) NSNumber * role;
+@property (nonatomic, strong) NSNumber * rank;
 @property (nonatomic, strong) NSDecimalNumber * balance;
 @property (nonatomic, strong) NSDecimalNumber * outstandingBetsValue;
 @property (nonatomic, strong) User *user;
