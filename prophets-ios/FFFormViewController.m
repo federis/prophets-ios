@@ -11,9 +11,7 @@
 #import "FFFormViewController.h"
 #import "FFTableFooterButtonView.h"
 #import "FFFormFieldCell.h"
-#import "FFTextFieldCell.h"
-#import "FFFormField.h"
-#import "FFFormTextField.h"
+#import "FFFormTextFieldCell.h"
 #import "Utilities.h"
 
 @interface FFFormViewController ()
@@ -27,8 +25,11 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"FFTextFieldCell" bundle:nil]
-         forCellReuseIdentifier:@"FFTextFieldCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FFFormTextFieldCell" bundle:nil]
+         forCellReuseIdentifier:@"FFFormTextFieldCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FFFormSwitchFieldCell" bundle:nil]
+         forCellReuseIdentifier:@"FFFormSwitchFieldCell"];
     
     if(!self.submitButtonText) self.submitButtonText = @"Submit";
     
@@ -106,8 +107,8 @@
                                                             forIndexPath:indexPath];
     cell.formField = field;
     
-    if ([cell isKindOfClass:[FFTextFieldCell class]]) {
-        ((FFTextFieldCell *)cell).textField.delegate = self;
+    if ([cell isKindOfClass:[FFFormTextFieldCell class]]) {
+        ((FFFormTextFieldCell *)cell).textField.delegate = self;
     }
     
     return cell;
@@ -129,8 +130,8 @@
 # pragma mark - UITextFieldDelegate methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if([[[textField superview] superview] isKindOfClass:[FFTextFieldCell class]]){
-        FFTextFieldCell *cell = (FFTextFieldCell *)[[textField superview] superview];
+    if([[[textField superview] superview] isKindOfClass:[FFFormTextFieldCell class]]){
+        FFFormTextFieldCell *cell = (FFFormTextFieldCell *)[[textField superview] superview];
         
         if(((FFFormTextField *)cell.formField).submitsOnReturn) {
             [self serializeAndSubmit];
@@ -140,11 +141,11 @@
         NSInteger numRows = [self.tableView numberOfRowsInSection:0];
         
         NSInteger i = indexPath.row + 1;
-        FFTextFieldCell *nextTextFieldCell = nil;
+        FFFormTextFieldCell *nextTextFieldCell = nil;
         while (!nextTextFieldCell && i < numRows) {
             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            if ([cell isKindOfClass:[FFTextFieldCell class]]) {
-                nextTextFieldCell = (FFTextFieldCell *)cell;
+            if ([cell isKindOfClass:[FFFormTextFieldCell class]]) {
+                nextTextFieldCell = (FFFormTextFieldCell *)cell;
             }
             i++;
         }

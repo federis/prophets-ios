@@ -30,10 +30,7 @@
 }
 
 -(NSString *)cellReuseIdentifier{
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"Invalid method call"
-                                           "cellReuseIdentifier should only be invoked on subclasses of FFFormFieldCell"]
-                                 userInfo:nil];
+    return [NSString stringWithFormat:@"%@Cell", NSStringFromClass([self class])];
 }
 
 @end

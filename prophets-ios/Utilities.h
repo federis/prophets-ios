@@ -10,6 +10,8 @@
 
 @interface Utilities : NSObject
 
++(void)showOkAlertWithError:(NSError *)error;
++(void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message;
 +(CGFloat)heightForString:(NSString *)str withFont:(UIFont *)font width:(CGFloat)width;
 +(NSString *)pluralize:(NSNumber *)num singular:(NSString *)singular plural:(NSString *)plural;
 + (NSDictionary *)classPropsFor:(Class)klass;

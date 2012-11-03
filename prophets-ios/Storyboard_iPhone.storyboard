@@ -302,6 +302,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <segue destination="aGh-1e-xyw" kind="modal" id="Bq1-Do-cw2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="r74-HZ-Z72">
                                 <rect key="frame" x="170" y="238" width="115" height="115"/>
@@ -697,6 +700,57 @@
             </objects>
             <point key="canvasLocation" x="1712" y="1302"/>
         </scene>
+        <!--League Form View Controller-->
+        <scene sceneID="fnX-Jd-WUZ">
+            <objects>
+                <viewController id="aGh-1e-xyw" customClass="LeagueFormViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hYp-Eg-6He">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="dYc-2q-hFd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Kwf-gz-r2O">
+                                <rect key="frame" x="7" y="10" width="303" height="440"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Ap7-yd-hgx">
+                                    <rect key="frame" x="0.0" y="0.0" width="303" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo_p_small.png" id="ayn-YS-m4F">
+                                            <rect key="frame" x="42" y="9" width="30" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Create a League" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="55Q-DS-OL5">
+                                            <rect key="frame" x="79" y="10" width="181" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                            <color key="textColor" red="0.67450980390000004" green="0.74509803919999995" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="aGh-1e-xyw" id="oub-4W-Doc"/>
+                                    <outlet property="delegate" destination="aGh-1e-xyw" id="qdt-Ki-aWV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yhO-kR-RDK"/>
+                    <connections>
+                        <outlet property="tableView" destination="Kwf-gz-r2O" id="LfM-Z9-9GF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7oX-hA-gIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="690"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background.png" width="320" height="480"/>
@@ -754,6 +808,9 @@
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
             </relationships>
+        </class>
+        <class className="LeagueFormViewController" superclassName="FFFormViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueFormViewController.h"/>
         </class>
         <class className="LeagueSettingsViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueSettingsViewController.h"/>

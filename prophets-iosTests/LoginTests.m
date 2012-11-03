@@ -9,7 +9,7 @@
 #import "FFApplicationTest.h"
 #import "LoginViewController.h"
 #import "FFFormTextField.h"
-#import "FFTextFieldCell.h"
+#import "FFFormTextFieldCell.h"
 #import "FFTableFooterButtonView.h"
 #import "User.h"
 

@@ -10,8 +10,4 @@
 
 @implementation FFFormTextField
 
--(NSString *)cellReuseIdentifier{
-    return @"FFTextFieldCell";
-}
-
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <RestKit/RestKit.h>
+#import <RKErrorMessage.h>
 
 #import "FFObjectManager.h"
 #import "FFRouter.h"
@@ -17,6 +18,7 @@
 #import "Question.h"
 #import "Bet.h"
 #import "Comment.h"
+#import "League.h"
 
 @implementation FFObjectManager
 
@@ -43,9 +45,23 @@
     [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[User requestMapping]
                                                                      objectClass:[User class]
                                                                      rootKeyPath:@"user"]];
+    
+    [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[League requestMapping]
+                                                                     objectClass:[League class]
+                                                                     rootKeyPath:@"league"]];
 }
 
 -(void)setupResponseDescriptors{
+    /*
+    RKObjectMapping *errorMapping = [RKObjectMapping mappingForClass:[RKErrorMessage class]];
+    [errorMapping addPropertyMapping:[RKAttributeMapping attributeMappingFromKeyPath:@"errors" toKeyPath:@"userInfo"]];
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:errorMapping
+                                                                        pathPattern:nil
+                                                                            keyPath:nil
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassClientError)]];
+     */
+    
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[User responseMapping]
                                                                         pathPattern:nil
                                                                             keyPath:@"user"
@@ -70,6 +86,12 @@
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Comment responseMapping]
                                                                         pathPattern:nil
                                                                             keyPath:@"comment"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[League responseMapping]
+                                                                        pathPattern:nil
+                                                                            keyPath:@"league"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
 }

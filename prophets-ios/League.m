@@ -49,4 +49,14 @@
     return mapping;
 }
 
++(RKMapping *)requestMapping{
+    RKObjectMapping *mapping = [RKObjectMapping requestMapping];
+    
+    [mapping addAttributeMappingsFromArray:@[@"name", @"priv"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"remoteId" : @"id"
+     }];
+    return mapping;
+}
+
 @end

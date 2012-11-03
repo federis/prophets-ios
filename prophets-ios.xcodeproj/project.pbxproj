@@ -52,6 +52,11 @@
 		B53F58701644582500AF2BA9 /* leaguemenu_clubroom.png in Resources */ = {isa = PBXBuildFile; fileRef = B53F586D1644582500AF2BA9 /* leaguemenu_clubroom.png */; };
 		B53F58711644582500AF2BA9 /* leaguemenu_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B53F586E1644582500AF2BA9 /* leaguemenu_settings.png */; };
 		B53F58721644582500AF2BA9 /* leaguemenu_stats.png in Resources */ = {isa = PBXBuildFile; fileRef = B53F586F1644582500AF2BA9 /* leaguemenu_stats.png */; };
+		B53F587516445F5E00AF2BA9 /* LeagueFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F587416445F5E00AF2BA9 /* LeagueFormViewController.m */; };
+		B53F587A1644620100AF2BA9 /* FFFormTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F58791644620100AF2BA9 /* FFFormTextFieldCell.m */; };
+		B53F58821644650700AF2BA9 /* FFFormSwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F58811644650700AF2BA9 /* FFFormSwitchField.m */; };
+		B53F58851644652500AF2BA9 /* FFFormSwitchFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F58841644652400AF2BA9 /* FFFormSwitchFieldCell.m */; };
+		B53F58871644653900AF2BA9 /* FFFormSwitchFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53F58861644653700AF2BA9 /* FFFormSwitchFieldCell.xib */; };
 		B54AA0F5162EFDE100F2A3CB /* logo_p.png in Resources */ = {isa = PBXBuildFile; fileRef = B54AA0F3162EFDE100F2A3CB /* logo_p.png */; };
 		B54AA0F6162EFDE100F2A3CB /* logo_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B54AA0F4162EFDE100F2A3CB /* logo_p@2x.png */; };
 		B54AA0FE162F1E8C00F2A3CB /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B54AA0FD162F1E8C00F2A3CB /* Utilities.m */; };
@@ -71,8 +76,7 @@
 		B56E8F4A162652D0006DB56B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F451626526B006DB56B /* SystemConfiguration.framework */; };
 		B56E8F8C16272552006DB56B /* FFObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8F8B16272551006DB56B /* FFObjectManager.m */; };
 		B56E8F90162739E4006DB56B /* FFRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8F8F162739E4006DB56B /* FFRouter.m */; };
-		B56E8F98162746E4006DB56B /* FFTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8F96162746E4006DB56B /* FFTextFieldCell.m */; };
-		B56E8F99162746E4006DB56B /* FFTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56E8F97162746E4006DB56B /* FFTextFieldCell.xib */; };
+		B56E8F99162746E4006DB56B /* FFFormTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56E8F97162746E4006DB56B /* FFFormTextFieldCell.xib */; };
 		B56E8FE9162778BE006DB56B /* FFPullToRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8FE8162778BE006DB56B /* FFPullToRefreshHeader.m */; };
 		B56E8FFA16278A43006DB56B /* FFFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8FF916278A43006DB56B /* FFFormViewController.m */; };
 		B56E8FFC1627BB5C006DB56B /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E8FFB1627BB5C006DB56B /* blueArrow.png */; };
@@ -230,6 +234,14 @@
 		B53F586D1644582500AF2BA9 /* leaguemenu_clubroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_clubroom.png; sourceTree = "<group>"; };
 		B53F586E1644582500AF2BA9 /* leaguemenu_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_settings.png; sourceTree = "<group>"; };
 		B53F586F1644582500AF2BA9 /* leaguemenu_stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_stats.png; sourceTree = "<group>"; };
+		B53F587316445F5D00AF2BA9 /* LeagueFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueFormViewController.h; sourceTree = "<group>"; };
+		B53F587416445F5E00AF2BA9 /* LeagueFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueFormViewController.m; sourceTree = "<group>"; };
+		B53F58791644620100AF2BA9 /* FFFormTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormTextFieldCell.m; sourceTree = "<group>"; };
+		B53F58801644650600AF2BA9 /* FFFormSwitchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormSwitchField.h; sourceTree = "<group>"; };
+		B53F58811644650700AF2BA9 /* FFFormSwitchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormSwitchField.m; sourceTree = "<group>"; };
+		B53F58831644652300AF2BA9 /* FFFormSwitchFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormSwitchFieldCell.h; sourceTree = "<group>"; };
+		B53F58841644652400AF2BA9 /* FFFormSwitchFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormSwitchFieldCell.m; sourceTree = "<group>"; };
+		B53F58861644653700AF2BA9 /* FFFormSwitchFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFFormSwitchFieldCell.xib; sourceTree = "<group>"; };
 		B54AA0F3162EFDE100F2A3CB /* logo_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_p.png; sourceTree = "<group>"; };
 		B54AA0F4162EFDE100F2A3CB /* logo_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_p@2x.png"; sourceTree = "<group>"; };
 		B54AA0FC162F1E8C00F2A3CB /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -258,9 +270,8 @@
 		B56E8F8B16272551006DB56B /* FFObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFObjectManager.m; sourceTree = "<group>"; };
 		B56E8F8E162739E4006DB56B /* FFRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRouter.h; sourceTree = "<group>"; };
 		B56E8F8F162739E4006DB56B /* FFRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRouter.m; sourceTree = "<group>"; };
-		B56E8F95162746E4006DB56B /* FFTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTextFieldCell.h; sourceTree = "<group>"; };
-		B56E8F96162746E4006DB56B /* FFTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTextFieldCell.m; sourceTree = "<group>"; };
-		B56E8F97162746E4006DB56B /* FFTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFTextFieldCell.xib; sourceTree = "<group>"; };
+		B56E8F95162746E4006DB56B /* FFFormTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextFieldCell.h; sourceTree = "<group>"; };
+		B56E8F97162746E4006DB56B /* FFFormTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFFormTextFieldCell.xib; sourceTree = "<group>"; };
 		B56E8FE7162778BE006DB56B /* FFPullToRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPullToRefreshHeader.h; sourceTree = "<group>"; };
 		B56E8FE8162778BE006DB56B /* FFPullToRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFPullToRefreshHeader.m; sourceTree = "<group>"; };
 		B56E8FF816278A43006DB56B /* FFFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormViewController.h; sourceTree = "<group>"; };
@@ -529,9 +540,12 @@
 			children = (
 				B54AA106162F369400F2A3CB /* FFFormFieldCell.h */,
 				B54AA107162F369400F2A3CB /* FFFormFieldCell.m */,
-				B56E8F95162746E4006DB56B /* FFTextFieldCell.h */,
-				B56E8F96162746E4006DB56B /* FFTextFieldCell.m */,
-				B56E8F97162746E4006DB56B /* FFTextFieldCell.xib */,
+				B56E8F95162746E4006DB56B /* FFFormTextFieldCell.h */,
+				B53F58791644620100AF2BA9 /* FFFormTextFieldCell.m */,
+				B56E8F97162746E4006DB56B /* FFFormTextFieldCell.xib */,
+				B53F58831644652300AF2BA9 /* FFFormSwitchFieldCell.h */,
+				B53F58841644652400AF2BA9 /* FFFormSwitchFieldCell.m */,
+				B53F58861644653700AF2BA9 /* FFFormSwitchFieldCell.xib */,
 			);
 			name = FormCells;
 			sourceTree = "<group>";
@@ -651,6 +665,8 @@
 				B5B1472D1634DE09005F1B5A /* HomeViewController.m */,
 				B5D33D7C161654BA0043A0E8 /* MembershipsViewController.h */,
 				B5D33D7A161652590043A0E8 /* MembershipsViewController.m */,
+				B53F587316445F5D00AF2BA9 /* LeagueFormViewController.h */,
+				B53F587416445F5E00AF2BA9 /* LeagueFormViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -694,6 +710,8 @@
 				B54AA10D162F428000F2A3CB /* FFFormField.m */,
 				B5B1470616320215005F1B5A /* FFFormTextField.h */,
 				B5B1470716320215005F1B5A /* FFFormTextField.m */,
+				B53F58801644650600AF2BA9 /* FFFormSwitchField.h */,
+				B53F58811644650700AF2BA9 /* FFFormSwitchField.m */,
 			);
 			name = FormFields;
 			sourceTree = "<group>";
@@ -906,7 +924,7 @@
 				B5D33D821618C9450043A0E8 /* MembershipCell.xib in Resources */,
 				B5094EF11625C6E300947FAC /* background@2x.png in Resources */,
 				B5094EF91625EB9F00947FAC /* background.png in Resources */,
-				B56E8F99162746E4006DB56B /* FFTextFieldCell.xib in Resources */,
+				B56E8F99162746E4006DB56B /* FFFormTextFieldCell.xib in Resources */,
 				B56E8FFC1627BB5C006DB56B /* blueArrow.png in Resources */,
 				B5544CAB162E342100431B54 /* red_footer_button.png in Resources */,
 				B5544CAC162E342100431B54 /* red_footer_button@2x.png in Resources */,
@@ -954,6 +972,7 @@
 				B53F58701644582500AF2BA9 /* leaguemenu_clubroom.png in Resources */,
 				B53F58711644582500AF2BA9 /* leaguemenu_settings.png in Resources */,
 				B53F58721644582500AF2BA9 /* leaguemenu_stats.png in Resources */,
+				B53F58871644653900AF2BA9 /* FFFormSwitchFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,7 +1055,6 @@
 				B5094F081626040300947FAC /* FFBaseCell.m in Sources */,
 				B56E8F8C16272552006DB56B /* FFObjectManager.m in Sources */,
 				B56E8F90162739E4006DB56B /* FFRouter.m in Sources */,
-				B56E8F98162746E4006DB56B /* FFTextFieldCell.m in Sources */,
 				B56E8FE9162778BE006DB56B /* FFPullToRefreshHeader.m in Sources */,
 				B56E8FFA16278A43006DB56B /* FFFormViewController.m in Sources */,
 				B521AC07162B64500009A8E4 /* FFTableFooterButtonView.m in Sources */,
@@ -1061,6 +1079,10 @@
 				B53F586416444CCF00AF2BA9 /* Comment.m in Sources */,
 				B53F586716444FE300AF2BA9 /* CommentsViewController.m in Sources */,
 				B53F586A164450C000AF2BA9 /* CommentCell.m in Sources */,
+				B53F587516445F5E00AF2BA9 /* LeagueFormViewController.m in Sources */,
+				B53F587A1644620100AF2BA9 /* FFFormTextFieldCell.m in Sources */,
+				B53F58821644650700AF2BA9 /* FFFormSwitchField.m in Sources */,
+				B53F58851644652500AF2BA9 /* FFFormSwitchFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

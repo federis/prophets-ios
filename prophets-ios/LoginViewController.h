@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "FFFormViewController.h"
 
 @interface LoginViewController : FFFormViewController

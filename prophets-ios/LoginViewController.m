@@ -10,7 +10,6 @@
 #import <SVProgressHUD.h>
 
 #import "LoginViewController.h"
-#import "FFFormTextField.h"
 #import "User.h"
 #import "NSManagedObject+Additions.h"
 #import "FFApplicationConstants.h"
@@ -20,11 +19,6 @@
 @end
 
 @implementation LoginViewController
-
-- (void)viewDidLoad{
-    [super viewDidLoad];
-    self.showsPullToRefresh = YES;
-}
 
 -(void)prepareForm{
     User *user = [User object];

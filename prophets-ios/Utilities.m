@@ -12,6 +12,20 @@
 
 @implementation Utilities
 
++(void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message{
+	UIAlertView * alert = [[UIAlertView alloc]
+                           initWithTitle:title
+                           message:message
+                           delegate:nil
+                           cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
+                           otherButtonTitles:nil];
+	[alert show];
+}
+
++(void)showOkAlertWithError:(NSError *)error{
+    
+}
+
 +(CGFloat)heightForString:(NSString *)str withFont:(UIFont *)font width:(CGFloat)width{
     CGSize constraintSize = CGSizeMake(width, MAXFLOAT);
     CGSize labelSize = [str sizeWithFont:font constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];

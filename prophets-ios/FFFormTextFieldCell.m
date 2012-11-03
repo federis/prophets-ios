@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "FFTextFieldCell.h"
+#import "FFFormTextFieldCell.h"
 #import "FFFormTextField.h"
 
-@implementation FFTextFieldCell
+@implementation FFFormTextFieldCell
 
 -(void)setFormField:(FFFormField *)formField{
     FFFormTextField *field = (FFFormTextField *)formField;

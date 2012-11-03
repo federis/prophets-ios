@@ -7,6 +7,9 @@
 //
 
 #import "FFBaseTableViewController.h"
+#import "FFFormField.h"
+#import "FFFormTextField.h"
+#import "FFFormSwitchField.h"
 
 @class FFTableFooterButtonView;
 
