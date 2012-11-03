@@ -130,6 +130,9 @@
 		B5B147461634EF4D005F1B5A /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147441634EF4D005F1B5A /* home@2x.png */; };
 		B5C527A616455BCA0093B8E3 /* LeaguePerformanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527A516455BCA0093B8E3 /* LeaguePerformanceView.m */; };
 		B5C527AB16455BFC0093B8E3 /* LeaguePerformanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C527AA16455BFC0093B8E3 /* LeaguePerformanceView.xib */; };
+		B5C527AE1645722F0093B8E3 /* AnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527AD1645722F0093B8E3 /* AnswersViewController.m */; };
+		B5C527B1164574560093B8E3 /* AnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527B0164574560093B8E3 /* AnswerCell.m */; };
+		B5C527B3164574740093B8E3 /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C527B2164574740093B8E3 /* AnswerCell.xib */; };
 		B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */; };
 		B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */; };
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
@@ -347,6 +350,11 @@
 		B5C527A416455BCA0093B8E3 /* LeaguePerformanceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaguePerformanceView.h; sourceTree = "<group>"; };
 		B5C527A516455BCA0093B8E3 /* LeaguePerformanceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaguePerformanceView.m; sourceTree = "<group>"; };
 		B5C527AA16455BFC0093B8E3 /* LeaguePerformanceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaguePerformanceView.xib; sourceTree = "<group>"; };
+		B5C527AC1645722F0093B8E3 /* AnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswersViewController.h; sourceTree = "<group>"; };
+		B5C527AD1645722F0093B8E3 /* AnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswersViewController.m; sourceTree = "<group>"; };
+		B5C527AF164574560093B8E3 /* AnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerCell.h; sourceTree = "<group>"; };
+		B5C527B0164574560093B8E3 /* AnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerCell.m; sourceTree = "<group>"; };
+		B5C527B2164574740093B8E3 /* AnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
 		B5D33D6E161613F40043A0E8 /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
 		B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
@@ -435,6 +443,8 @@
 				B53F5860164417AF00AF2BA9 /* StatsViewController.m */,
 				B53F586516444FE200AF2BA9 /* CommentsViewController.h */,
 				B53F586616444FE200AF2BA9 /* CommentsViewController.m */,
+				B5C527AC1645722F0093B8E3 /* AnswersViewController.h */,
+				B5C527AD1645722F0093B8E3 /* AnswersViewController.m */,
 			);
 			name = "League Controllers";
 			sourceTree = "<group>";
@@ -599,6 +609,9 @@
 				B53F5868164450BF00AF2BA9 /* CommentCell.h */,
 				B53F5869164450BF00AF2BA9 /* CommentCell.m */,
 				B53F586B164450CB00AF2BA9 /* CommentCell.xib */,
+				B5C527AF164574560093B8E3 /* AnswerCell.h */,
+				B5C527B0164574560093B8E3 /* AnswerCell.m */,
+				B5C527B2164574740093B8E3 /* AnswerCell.xib */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -982,6 +995,7 @@
 				B53F58721644582500AF2BA9 /* leaguemenu_stats.png in Resources */,
 				B53F58871644653900AF2BA9 /* FFFormSwitchFieldCell.xib in Resources */,
 				B5C527AB16455BFC0093B8E3 /* LeaguePerformanceView.xib in Resources */,
+				B5C527B3164574740093B8E3 /* AnswerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1093,6 +1107,8 @@
 				B53F58821644650700AF2BA9 /* FFFormSwitchField.m in Sources */,
 				B53F58851644652500AF2BA9 /* FFFormSwitchFieldCell.m in Sources */,
 				B5C527A616455BCA0093B8E3 /* LeaguePerformanceView.m in Sources */,
+				B5C527AE1645722F0093B8E3 /* AnswersViewController.m in Sources */,
+				B5C527B1164574560093B8E3 /* AnswerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

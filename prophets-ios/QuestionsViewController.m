@@ -9,6 +9,7 @@
 #import <RestKit/RestKit.h>
 
 #import "QuestionsViewController.h"
+#import "AnswersViewController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "UIColor+Additions.h"
 #import "QuestionCell.h"
@@ -96,13 +97,12 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    /*
-    if([segue.identifier isEqualToString:@"ShowLeague"] && [sender isKindOfClass:[Membership class]]) {
-        Membership *membership = (Membership *)sender;
-        LeagueTabBarController *leagueTBC = (LeagueTabBarController *)[segue destinationViewController];
-        leagueTBC.league = membership.league;
+    if([segue.identifier isEqualToString:@"ShowAnswers"] && [sender isKindOfClass:[Question class]]) {
+        Question *question = (Question *)sender;
+        AnswersViewController *answersVC = (AnswersViewController *)[segue destinationViewController];
+        answersVC.question = question;
+        answersVC.membership = self.membership;
     }
-     */
 }
 
 #pragma mark - Table view delegate
@@ -137,8 +137,8 @@
  
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    /*Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self performSegueWithIdentifier:@"ShowLeague" sender:membership];*/
+    Question *question = (Question *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"ShowAnswers" sender:question];
 }
 
 @end

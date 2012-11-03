@@ -434,6 +434,7 @@
                         <outlet property="memberCountLabel" destination="3b2-bY-Xe9" id="g69-0b-0l8"/>
                         <outlet property="questionCountLabel" destination="3u4-O6-bIU" id="gth-75-MRP"/>
                         <outlet property="tableView" destination="0DG-Jj-e09" id="qSI-UV-Vds"/>
+                        <segue destination="Sp0-0z-dkT" kind="push" identifier="ShowAnswers" id="77T-yR-Y4I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWC-Lm-dSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -663,6 +664,39 @@
             </objects>
             <point key="canvasLocation" x="94" y="690"/>
         </scene>
+        <!--Answers View Controller-->
+        <scene sceneID="pBf-ja-Zaj">
+            <objects>
+                <viewController id="Sp0-0z-dkT" customClass="AnswersViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ohd-Xr-WuB">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="Hdh-Du-UH2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JV6-wk-b5Q">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sp0-0z-dkT" id="03H-lc-0EQ"/>
+                                    <outlet property="delegate" destination="Sp0-0z-dkT" id="8c7-Ul-1HN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kc5-xl-575"/>
+                    <connections>
+                        <outlet property="tableView" destination="JV6-wk-b5Q" id="GNH-13-qLK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHx-Pr-0My" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2201" y="-1110"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background.png" width="320" height="480"/>
@@ -680,11 +714,13 @@
         <image name="settings_button.png" width="115" height="115"/>
     </resources>
     <classes>
+        <class className="AnswersViewController" superclassName="FFBaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnswersViewController.h"/>
+        </class>
         <class className="BetListViewController" superclassName="FFFetchedResultsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BetListViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="performanceSortButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="performanceView" candidateClass="LeaguePerformanceView"/>
                 <relationship kind="outlet" name="timeSortButton" candidateClass="UIButton"/>
             </relationships>
         </class>
@@ -718,17 +754,6 @@
         </class>
         <class className="LeagueFormViewController" superclassName="FFFormViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueFormViewController.h"/>
-        </class>
-        <class className="LeaguePerformanceView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeaguePerformanceView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="availableBalanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="commitedToBetsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rankBackground" candidateClass="UIView"/>
-                <relationship kind="outlet" name="rankLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rankOutOfLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalWorthLabel" candidateClass="UILabel"/>
-            </relationships>
         </class>
         <class className="LeagueSettingsViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueSettingsViewController.h"/>
