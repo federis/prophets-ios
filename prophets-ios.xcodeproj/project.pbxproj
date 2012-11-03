@@ -128,6 +128,8 @@
 		B5B147421634E046005F1B5A /* settings_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147381634E045005F1B5A /* settings_button@2x.png */; };
 		B5B147451634EF4D005F1B5A /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147431634EF4D005F1B5A /* home.png */; };
 		B5B147461634EF4D005F1B5A /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147441634EF4D005F1B5A /* home@2x.png */; };
+		B5C527A616455BCA0093B8E3 /* LeaguePerformanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527A516455BCA0093B8E3 /* LeaguePerformanceView.m */; };
+		B5C527AB16455BFC0093B8E3 /* LeaguePerformanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C527AA16455BFC0093B8E3 /* LeaguePerformanceView.xib */; };
 		B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */; };
 		B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */; };
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
@@ -342,6 +344,9 @@
 		B5B147381634E045005F1B5A /* settings_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_button@2x.png"; sourceTree = "<group>"; };
 		B5B147431634EF4D005F1B5A /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		B5B147441634EF4D005F1B5A /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		B5C527A416455BCA0093B8E3 /* LeaguePerformanceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaguePerformanceView.h; sourceTree = "<group>"; };
+		B5C527A516455BCA0093B8E3 /* LeaguePerformanceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaguePerformanceView.m; sourceTree = "<group>"; };
+		B5C527AA16455BFC0093B8E3 /* LeaguePerformanceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaguePerformanceView.xib; sourceTree = "<group>"; };
 		B5D33D6E161613F40043A0E8 /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
 		B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
@@ -740,6 +745,9 @@
 		B5D33D7D1618C4700043A0E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5C527A416455BCA0093B8E3 /* LeaguePerformanceView.h */,
+				B5C527A516455BCA0093B8E3 /* LeaguePerformanceView.m */,
+				B5C527AA16455BFC0093B8E3 /* LeaguePerformanceView.xib */,
 				B56E8F9A162746ED006DB56B /* TableCells */,
 			);
 			name = Views;
@@ -973,6 +981,7 @@
 				B53F58711644582500AF2BA9 /* leaguemenu_settings.png in Resources */,
 				B53F58721644582500AF2BA9 /* leaguemenu_stats.png in Resources */,
 				B53F58871644653900AF2BA9 /* FFFormSwitchFieldCell.xib in Resources */,
+				B5C527AB16455BFC0093B8E3 /* LeaguePerformanceView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1083,6 +1092,7 @@
 				B53F587A1644620100AF2BA9 /* FFFormTextFieldCell.m in Sources */,
 				B53F58821644650700AF2BA9 /* FFFormSwitchField.m in Sources */,
 				B53F58851644652500AF2BA9 /* FFFormSwitchFieldCell.m in Sources */,
+				B5C527A616455BCA0093B8E3 /* LeaguePerformanceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

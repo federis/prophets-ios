@@ -9,6 +9,7 @@
 #import <RestKit/RestKit.h>
 
 #import "BetListViewController.h"
+#import "LeaguePerformanceView.h"
 #import "UIBarButtonItem+Additions.h"
 #import "UIColor+Additions.h"
 #import "BetCell.h"
@@ -64,13 +65,9 @@
     [self.timeSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [self.performanceSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     
-    self.availableBalanceLabel.text = self.membership.balance.currencyString;
-    self.commitedToBetsLabel.text = self.membership.outstandingBetsValue.currencyString;
-    self.totalWorthLabel.text = self.membership.totalWorth.currencyString;
-    
-    self.rankLabel.text = self.membership.rank.stringValue;
-    self.rankOutOfLabel.text = [NSString stringWithFormat:@"out of %@", self.membership.league.membershipsCount];
-    self.rankBackground.layer.cornerRadius = 3;
+    LeaguePerformanceView *performanceView = [[LeaguePerformanceView alloc] init];
+    [performanceView setMembership:self.membership];
+    [self.tableView.tableHeaderView addSubview:performanceView];
 }
 
 -(void)homeTouched{
