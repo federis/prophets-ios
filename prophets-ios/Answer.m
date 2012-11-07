@@ -64,7 +64,11 @@
 }
 
 -(NSString *)currentOddsString{
-    return [NSString stringWithFormat:@"%.2f:1", [[self payoutMultipler] floatValue]];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:2];
+    [formatter setMinimumIntegerDigits:1];
+    [formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
+    return [NSString stringWithFormat:@"%@:1", [formatter stringFromNumber:[self payoutMultipler]]];
 }
 
 -(void)setIsCorrect:(BOOL)isCorrect{
