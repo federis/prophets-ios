@@ -18,6 +18,7 @@
     </entity>
     <entity name="Bet" representedClassName="Bet" parentEntity="Resource" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="answerId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="bonus" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="payout" optional="YES" attributeType="Decimal" syncable="YES"/>
@@ -104,12 +105,12 @@
     </entity>
     <elements>
         <element name="Answer" positionX="0" positionY="0" width="128" height="210"/>
-        <element name="Bet" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="Bet" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="Comment" positionX="160" positionY="192" width="128" height="135"/>
         <element name="League" positionX="0" positionY="0" width="128" height="195"/>
         <element name="Membership" positionX="0" positionY="0" width="128" height="150"/>
         <element name="Question" positionX="0" positionY="0" width="128" height="225"/>
         <element name="Resource" positionX="0" positionY="0" width="128" height="90"/>
         <element name="User" positionX="0" positionY="0" width="128" height="180"/>
-        <element name="Comment" positionX="160" positionY="192" width="128" height="135"/>
     </elements>
 </model>

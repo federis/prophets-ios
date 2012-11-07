@@ -691,11 +691,58 @@
                     <navigationItem key="navigationItem" id="Kc5-xl-575"/>
                     <connections>
                         <outlet property="tableView" destination="JV6-wk-b5Q" id="GNH-13-qLK"/>
+                        <segue destination="7OQ-AK-fpc" kind="push" identifier="ShowBetCreation" id="dYT-9G-wsH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHx-Pr-0My" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2201" y="-1110"/>
+        </scene>
+        <!--Bet View Controller-->
+        <scene sceneID="4fW-pK-dwW">
+            <objects>
+                <viewController id="7OQ-AK-fpc" customClass="BetViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DbP-3e-TzH">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="0cF-z9-doO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="opq-P0-r4I">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BlankCell" rowHeight="200" id="J0S-uy-86N">
+                                        <rect key="frame" x="0.0" y="46" width="303" height="202"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="283" height="199"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.98823529409999999" green="0.97647058819999999" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7OQ-AK-fpc" id="3HC-iI-4Dm"/>
+                                    <outlet property="delegate" destination="7OQ-AK-fpc" id="swB-ga-hPV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2S6-59-okF"/>
+                    <connections>
+                        <outlet property="tableView" destination="opq-P0-r4I" id="cHb-yD-kYz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qiq-9G-aBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2671" y="-1110"/>
         </scene>
     </scenes>
     <resources>
@@ -723,6 +770,9 @@
                 <relationship kind="outlet" name="performanceSortButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="timeSortButton" candidateClass="UIButton"/>
             </relationships>
+        </class>
+        <class className="BetViewController" superclassName="FFBaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetViewController.h"/>
         </class>
         <class className="CommentsViewController" superclassName="FFFetchedResultsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsViewController.h"/>

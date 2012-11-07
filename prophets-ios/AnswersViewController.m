@@ -7,6 +7,7 @@
 //
 
 #import "AnswersViewController.h"
+#import "BetViewController.h"
 #import "LeaguePerformanceView.h"
 #import "UIColor+Additions.h"
 #import "Utilities.h"
@@ -45,6 +46,15 @@
     return [Utilities heightForString:self.question.content
                       withFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:15]
                          width:300];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ShowBetCreation"] && [sender isKindOfClass:[Answer class]]) {
+        Answer *answer = (Answer *)sender;
+        BetViewController *betVC = (BetViewController *)[segue destinationViewController];
+        betVC.answer = answer;
+        betVC.membership = self.membership;
+    }
 }
 
 #pragma mark - Table view data source
@@ -106,15 +116,9 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Answer *answer = [self.answers objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"ShowBetCreation" sender:answer];
 }
 
 @end

@@ -133,6 +133,9 @@
 		B5C527AE1645722F0093B8E3 /* AnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527AD1645722F0093B8E3 /* AnswersViewController.m */; };
 		B5C527B1164574560093B8E3 /* AnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527B0164574560093B8E3 /* AnswerCell.m */; };
 		B5C527B3164574740093B8E3 /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C527B2164574740093B8E3 /* AnswerCell.xib */; };
+		B5C527B916458F650093B8E3 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527B816458F640093B8E3 /* BetViewController.m */; };
+		B5C527BC164590080093B8E3 /* CreateBetView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527BB164590080093B8E3 /* CreateBetView.m */; };
+		B5C527BE164592F20093B8E3 /* CreateBetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C527BD164592F20093B8E3 /* CreateBetView.xib */; };
 		B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */; };
 		B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */; };
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
@@ -355,6 +358,11 @@
 		B5C527AF164574560093B8E3 /* AnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerCell.h; sourceTree = "<group>"; };
 		B5C527B0164574560093B8E3 /* AnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerCell.m; sourceTree = "<group>"; };
 		B5C527B2164574740093B8E3 /* AnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
+		B5C527B716458F640093B8E3 /* BetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetViewController.h; sourceTree = "<group>"; };
+		B5C527B816458F640093B8E3 /* BetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetViewController.m; sourceTree = "<group>"; };
+		B5C527BA164590080093B8E3 /* CreateBetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBetView.h; sourceTree = "<group>"; };
+		B5C527BB164590080093B8E3 /* CreateBetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBetView.m; sourceTree = "<group>"; };
+		B5C527BD164592F20093B8E3 /* CreateBetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateBetView.xib; sourceTree = "<group>"; };
 		B5D33D6E161613F40043A0E8 /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
 		B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
@@ -445,6 +453,8 @@
 				B53F586616444FE200AF2BA9 /* CommentsViewController.m */,
 				B5C527AC1645722F0093B8E3 /* AnswersViewController.h */,
 				B5C527AD1645722F0093B8E3 /* AnswersViewController.m */,
+				B5C527B716458F640093B8E3 /* BetViewController.h */,
+				B5C527B816458F640093B8E3 /* BetViewController.m */,
 			);
 			name = "League Controllers";
 			sourceTree = "<group>";
@@ -758,6 +768,9 @@
 		B5D33D7D1618C4700043A0E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5C527BA164590080093B8E3 /* CreateBetView.h */,
+				B5C527BB164590080093B8E3 /* CreateBetView.m */,
+				B5C527BD164592F20093B8E3 /* CreateBetView.xib */,
 				B5C527A416455BCA0093B8E3 /* LeaguePerformanceView.h */,
 				B5C527A516455BCA0093B8E3 /* LeaguePerformanceView.m */,
 				B5C527AA16455BFC0093B8E3 /* LeaguePerformanceView.xib */,
@@ -996,6 +1009,7 @@
 				B53F58871644653900AF2BA9 /* FFFormSwitchFieldCell.xib in Resources */,
 				B5C527AB16455BFC0093B8E3 /* LeaguePerformanceView.xib in Resources */,
 				B5C527B3164574740093B8E3 /* AnswerCell.xib in Resources */,
+				B5C527BE164592F20093B8E3 /* CreateBetView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1109,6 +1123,8 @@
 				B5C527A616455BCA0093B8E3 /* LeaguePerformanceView.m in Sources */,
 				B5C527AE1645722F0093B8E3 /* AnswersViewController.m in Sources */,
 				B5C527B1164574560093B8E3 /* AnswerCell.m in Sources */,
+				B5C527B916458F650093B8E3 /* BetViewController.m in Sources */,
+				B5C527BC164590080093B8E3 /* CreateBetView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

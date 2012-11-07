@@ -30,6 +30,7 @@
 -(BOOL)hasBeenJudged;
 -(BOOL)isOpenForBetting;
 -(NSDate *)bettingEndedAt;
+-(NSString *)currentOddsString;
 
 @end
 

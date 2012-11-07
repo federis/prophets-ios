@@ -11,6 +11,7 @@
 #import "User.h"
 #import "League.h"
 #import "Question.h"
+#import "Bet.h"
 
 @interface FFRouter()
 
@@ -47,6 +48,8 @@
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"comments" objectClass:[League class] pathPattern:@"/leagues/:remoteId/comments" method:RKRequestMethodGET]];
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"comments" objectClass:[Question class] pathPattern:@"/questions/:remoteId/comments" method:RKRequestMethodGET]];
+    
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Bet class] pathPattern:@"/answers/:dynamicAnswerId/bets" method:RKRequestMethodPOST]];
 }
 
 @end

@@ -14,12 +14,22 @@
 @implementation Bet
 
 @dynamic leagueId;
+@dynamic answerId;
 @dynamic amount;
 @dynamic probability;
 @dynamic bonus;
 @dynamic payout;
 @dynamic user;
 @dynamic answer;
+
+-(NSNumber *)dynamicAnswerId{
+    if (self.answerId)
+        return self.answerId;
+    else if(self.answer && self.answer.remoteId)
+        return self.answer.remoteId;
+    else
+        return nil;
+}
 
 -(BOOL)hasBeenJudged{
     return self.payout != nil;
@@ -33,7 +43,7 @@
 }
 
 -(NSString *)oddsString{
-    return [NSString stringWithFormat:@"%@:1", [self payoutMultipler]];
+    return [NSString stringWithFormat:@"%.2f:1", [[self payoutMultipler] floatValue]];
 }
 
 -(NSDecimalNumber *)potentialPayout{
@@ -50,6 +60,7 @@
     [mapping addAttributeMappingsFromDictionary:@{
      @"id" : @"remoteId",
      @"league_id" : @"leagueId",
+     @"answer_id" : @"answerId",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt",
      }];
@@ -65,6 +76,12 @@
                                                                           withMapping:[Answer responseMappingWithParentRelationships]]];
     
     return mapping;    
+}
+
++(RKMapping *)requestMapping{
+    RKObjectMapping *mapping = [RKObjectMapping requestMapping];
+    [mapping addAttributeMappingsFromArray:@[@"amount"]];
+    return mapping;
 }
 
 @end

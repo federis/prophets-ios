@@ -49,6 +49,10 @@
     [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[League requestMapping]
                                                                      objectClass:[League class]
                                                                      rootKeyPath:@"league"]];
+    
+    [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[Bet requestMapping]
+                                                                     objectClass:[Bet class]
+                                                                     rootKeyPath:@"bet"]];
 }
 
 -(void)setupResponseDescriptors{

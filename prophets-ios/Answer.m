@@ -56,6 +56,17 @@
     return [sortedDates objectAtIndex:0];
 }
 
+-(NSDecimalNumber *)payoutMultipler{
+    //(1/probability - 1)
+    NSDecimalNumber *one = [NSDecimalNumber decimalNumberWithString:@"1"];
+    NSDecimalNumber *quotient = [one decimalNumberByDividingBy:self.currentProbability];
+    return [quotient decimalNumberBySubtracting:one];
+}
+
+-(NSString *)currentOddsString{
+    return [NSString stringWithFormat:@"%.2f:1", [[self payoutMultipler] floatValue]];
+}
+
 -(void)setIsCorrect:(BOOL)isCorrect{
     self.correct = [NSNumber numberWithBool:isCorrect];
 }

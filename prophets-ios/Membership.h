@@ -21,5 +21,6 @@
 @property (nonatomic, strong) League *league;
 
 -(NSDecimalNumber *)totalWorth;
+-(NSDecimalNumber *)maxBet;
 
 @end

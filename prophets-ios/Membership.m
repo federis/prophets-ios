@@ -25,6 +25,13 @@
     return [self.balance decimalNumberByAdding:self.outstandingBetsValue];
 }
 
+-(NSDecimalNumber *)maxBet{
+    if([self.balance compare:self.league.maxBet] == NSOrderedAscending)
+        return self.balance;
+    else
+        return self.league.maxBet;
+}
+
 +(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
