@@ -1,0 +1,14 @@
+{
+  "bet" : {
+    "amount" : 5,
+    "bonus" : null,
+    "payout" : null,
+    "id" : 4,
+    "created_at" : "2012-11-07T02:23:42Z",
+    "probability" : 0.25,
+    "league_id" : 3,
+    "user_id" : 2,
+    "answer_id" : 1,
+    "updated_at" : "2012-11-07T02:23:42Z"
+  }
+}

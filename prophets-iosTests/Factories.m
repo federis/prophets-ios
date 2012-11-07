@@ -14,6 +14,7 @@
 #import "Question.h"
 #import "Answer.h"
 #import "Bet.h"
+#import "Membership.h"
 
 @implementation Factories
 
@@ -46,6 +47,7 @@
     Answer *answer = [Answer object];
     answer.remoteId = [NSNumber numberWithInt:1];
     answer.content = @"Answer name";
+    answer.currentProbability = [NSDecimalNumber decimalNumberWithString:@"0.2"];
     
     return answer;
 }
@@ -57,6 +59,14 @@
     bet.probability = [NSDecimalNumber decimalNumberWithString:@"0.2"];
     
     return bet;
+}
+
++(Membership *)membershipFactory{
+    Membership *membership = [Membership object];
+    membership.remoteId = [NSNumber numberWithInt:1];
+    membership.balance = [NSDecimalNumber decimalNumberWithString:@"10000"];
+    
+    return membership;
 }
 
 

@@ -141,6 +141,7 @@
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
 		B5D33D801618C4900043A0E8 /* MembershipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7F1618C4900043A0E8 /* MembershipCell.m */; };
 		B5D33D821618C9450043A0E8 /* MembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D33D811618C9450043A0E8 /* MembershipCell.xib */; };
+		B5E6B2E8164AB0D900E96ADC /* create_bets.json in Resources */ = {isa = PBXBuildFile; fileRef = B5E6B2E7164AB0D900E96ADC /* create_bets.json */; };
 		B5EA136A161D201A00C774F3 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1369161D201A00C774F3 /* LoginTests.m */; };
 		B5EA136E161D232000C774F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
@@ -372,6 +373,7 @@
 		B5D33D7E1618C4900043A0E8 /* MembershipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MembershipCell.h; sourceTree = "<group>"; };
 		B5D33D7F1618C4900043A0E8 /* MembershipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MembershipCell.m; sourceTree = "<group>"; };
 		B5D33D811618C9450043A0E8 /* MembershipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MembershipCell.xib; sourceTree = "<group>"; };
+		B5E6B2E7164AB0D900E96ADC /* create_bets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = create_bets.json; sourceTree = "<group>"; };
 		B5EA1369161D201A00C774F3 /* LoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -492,6 +494,7 @@
 				B50654A716417FFA006DECF8 /* memberships.json */,
 				B50654A816417FFA006DECF8 /* questions.json */,
 				B50654A916417FFA006DECF8 /* user.json */,
+				B5E6B2E7164AB0D900E96ADC /* create_bets.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -1028,6 +1031,7 @@
 				B50654E01642CE69006DECF8 /* green_dot@2x.png in Resources */,
 				B50654E11642CE69006DECF8 /* red_dot.png in Resources */,
 				B50654E21642CE69006DECF8 /* red_dot@2x.png in Resources */,
+				B5E6B2E8164AB0D900E96ADC /* create_bets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

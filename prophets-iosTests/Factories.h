@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class User, League, Question, Answer, Bet;
+@class User, League, Question, Answer, Bet, Membership;
 
 @interface Factories : NSObject
 
@@ -17,5 +17,6 @@
 +(Question *)questionFactory;
 +(Answer *)answerFactory;
 +(Bet *)betFactory;
++(Membership *)membershipFactory;
 
 @end

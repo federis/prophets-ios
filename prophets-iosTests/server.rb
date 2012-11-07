@@ -13,7 +13,6 @@ def render_fixture(filename)
   send_file File.join(settings.public_folder, filename)
 end
 
-# Creates a route that will match /articles/<category name>/<article ID>
 post '/tokens' do
   render_fixture('user.json')
 end
@@ -32,4 +31,8 @@ end
 
 get '*/:resource' do
   render_fixture("#{params[:resource]}.json")
+end
+
+post '*/:resource' do
+    render_fixture("create_#{params[:resource]}.json");
 end
