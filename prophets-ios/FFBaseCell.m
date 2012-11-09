@@ -23,7 +23,7 @@
     [super awakeFromNib];
     
     self.backgroundColor = [UIColor creamColor];
-    
+    /*
     [self.layer setShadowOffset:CGSizeMake(1, 1)];
     [self.layer setShadowOpacity:0.8];
     [self.layer setShadowRadius:3];
@@ -32,6 +32,7 @@
     self.mask = [CALayer layer];
     self.mask.backgroundColor = [UIColor blackColor].CGColor;
     self.layer.mask = self.mask;
+     */
 }
 
 -(void)setShowsAccessoryView:(BOOL)val{
@@ -42,12 +43,12 @@
     else
         self.accessoryView = nil;
 }
-
+/*
 - (void) drawRect:(CGRect)initialRect {
     [super drawRect:initialRect];
     [self setShadows];
 }
-
+*/
 -(void)setShadows{
     FFCellLocationInSection location = [self locationInSection];
     
