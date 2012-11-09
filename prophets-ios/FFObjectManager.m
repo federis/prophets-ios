@@ -107,7 +107,7 @@
         
         if (match) {
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Membership"];
-            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:YES]];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
             fetchRequest.relationshipKeyPathsForPrefetching = @[@"league"];
             return fetchRequest;
         }

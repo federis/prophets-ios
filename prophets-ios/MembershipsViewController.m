@@ -45,7 +45,10 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleObjectChangedNotification:) name:NSManagedObjectContextObjectsDidChangeNotification object:self.managedObjectContext];
+    for (Membership *mem in self.fetchedResultsController.fetchedObjects) {
+        [mem addObserver:self forKeyPath:@"league.name" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+        [mem addObserver:self forKeyPath:@"league.membershipsCount" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+    }
     
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"memberships" ofObject:[User currentUser] parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
@@ -56,28 +59,31 @@
      }];
 }
 
--(void)handleObjectChangedNotification:(NSNotification *)note{
-    // This is a bit of a hack because fetchedResultsController only watches for changes to the main object
-    // which is the Membership in this case. We need to update cells when a membership's league changes as well
-    NSSet *changed = [note.userInfo objectForKey:NSUpdatedObjectsKey];
-    if(!changed) return;
-    
-    for (id obj in changed) {
-        if ([obj isKindOfClass:[League class]]) {
-            League *l = (League *)obj;
-            for (Membership *mem in self.fetchedResultsController.fetchedObjects) {
-                if(mem.leagueId == l.remoteId){
-                    [self.fetchedResultsController.delegate controller:self.fetchedResultsController
-                                                       didChangeObject:mem
-                                                           atIndexPath:[self.fetchedResultsController indexPathForObject:mem]
-                                                         forChangeType:NSFetchedResultsChangeUpdate
-                                                          newIndexPath:[self.fetchedResultsController indexPathForObject:mem]];
-                    break;
-                }
-            }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([object isKindOfClass:[Membership class]] && ([keyPath isEqual:@"league.name"] || [keyPath isEqual:@"league.membershipsCount"])) {
+        if (![[change objectForKey:NSKeyValueChangeNewKey] isEqual:[change objectForKey:NSKeyValueChangeOldKey]]) {
+            [self.tableView reloadRowsAtIndexPaths:@[[self.fetchedResultsController indexPathForObject:object]] withRowAnimation:UITableViewRowAnimationFade];
         }
     }
-    DLog(@"%@", note.userInfo);
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)object atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath{
+    Membership *membership = (Membership *)object;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [membership addObserver:self forKeyPath:@"league.name" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+            [membership addObserver:self forKeyPath:@"league.membershipsCount" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [membership.league removeObserver:self forKeyPath:@"league.name"];
+            [membership.league removeObserver:self forKeyPath:@"league.memberCount"];
+            break;
+    }
+    
+    [super controller:controller didChangeObject:object atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
 }
 
 -(void)homeTouched{
