@@ -19,6 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *rankLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rankOutOfLabel;
 
--(void)setMembership:(Membership *)membership;
+@property (nonatomic, strong) Membership *membership;
 
 @end

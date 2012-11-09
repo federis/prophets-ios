@@ -16,6 +16,7 @@
 #import "Answer.h"
 #import "Membership.h"
 #import "Question.h"
+#import "Bet.h"
 
 @interface BetViewController ()
 
@@ -48,7 +49,7 @@
 }
 
 -(void)submitBetTouched{
-    Bet *bet = self.createBetView.bet;
+    __block Bet *bet = self.createBetView.bet;
     
     [[RKObjectManager sharedManager] postObject:bet path:nil parameters:nil
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
