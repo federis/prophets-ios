@@ -16,11 +16,11 @@
     _question = question;
     self.contentLabel.text = question.content;
     self.detailsLabel.text = [NSString stringWithFormat:@"%@ %@ · %@ %@",
-                              self.question.betCount,
-                              [Utilities pluralize:self.question.betCount
+                              self.question.betsCount,
+                              [Utilities pluralize:self.question.betsCount
                                           singular:@"bet" plural:@"bets"],
-                              self.question.commentCount,
-                              [Utilities pluralize:self.question.commentCount
+                              self.question.commentsCount,
+                              [Utilities pluralize:self.question.commentsCount
                                           singular:@"comment" plural:@"comments"]];
 }
 

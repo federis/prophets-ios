@@ -92,7 +92,7 @@
     if (section == 0)
         return [self.answers count];
     else
-        return 0;
+        return [self.question.commentsCount integerValue];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -117,6 +117,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     Answer *answer = [self.answers objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"ShowBetCreation" sender:answer];
 }

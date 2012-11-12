@@ -20,7 +20,7 @@
         "updated_at" : "2012-11-09T17:53:28Z",
         "question" : {
           "id" : 2,
-          "comment_count" : 0,
+          "comments_count" : 0,
           "approved_at" : "2012-10-25T14:26:57Z",
           "created_at" : "2012-10-25T13:23:51Z",
           "user_id" : 2,
@@ -28,7 +28,7 @@
           "approver_id" : 2,
           "betting_closes_at" : "2013-12-25T00:00:00Z",
           "updated_at" : "2012-10-25T14:26:57Z",
-          "bet_count" : 6,
+          "bets_count" : 6,
           "league_id" : 3,
           "content" : "what is your question?"
         },
@@ -62,7 +62,7 @@
         "updated_at" : "2012-11-09T17:53:28Z",
         "question" : {
           "id" : 2,
-          "comment_count" : 0,
+          "comments_count" : 0,
           "approved_at" : "2012-10-25T14:26:57Z",
           "created_at" : "2012-10-25T13:23:51Z",
           "user_id" : 2,
@@ -70,7 +70,7 @@
           "approver_id" : 2,
           "betting_closes_at" : "2013-12-25T00:00:00Z",
           "updated_at" : "2012-10-25T14:26:57Z",
-          "bet_count" : 6,
+          "bets_count" : 6,
           "league_id" : 3,
           "content" : "what is your question?"
         },

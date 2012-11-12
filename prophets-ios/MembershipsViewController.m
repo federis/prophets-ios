@@ -79,7 +79,7 @@
             
         case NSFetchedResultsChangeDelete:
             [membership.league removeObserver:self forKeyPath:@"league.name"];
-            [membership.league removeObserver:self forKeyPath:@"league.memberCount"];
+            [membership.league removeObserver:self forKeyPath:@"league.membershipsCount"];
             break;
     }
     
@@ -122,7 +122,7 @@
 -(void)dealloc{
     for (Membership *membership in self.fetchedResultsController.fetchedObjects) {
         [membership.league removeObserver:self forKeyPath:@"league.name"];
-        [membership.league removeObserver:self forKeyPath:@"league.memberCount"];
+        [membership.league removeObserver:self forKeyPath:@"league.membershipsCount"];
     }
 }
 

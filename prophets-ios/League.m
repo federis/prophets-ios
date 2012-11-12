@@ -18,6 +18,7 @@
 @dynamic initialBalance;
 @dynamic membershipsCount;
 @dynamic questionsCount;
+@dynamic commentsCount;
 @dynamic user;
 @dynamic memberships;
 @dynamic questions;
@@ -41,6 +42,7 @@
          @"max_bet" : @"maxBet",
          @"memberships_count" : @"membershipsCount",
          @"questions_count" : @"questionsCount",
+         @"comments_count" : @"commentsCount",
          @"priv" : @"isPrivate",
          @"updated_at" : @"updatedAt",
          @"created_at" : @"createdAt"
