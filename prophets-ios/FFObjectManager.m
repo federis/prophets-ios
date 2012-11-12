@@ -82,7 +82,12 @@
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Bet responseMappingWithParentRelationships]
-                                                                        pathPattern:nil
+                                                                        pathPattern:@"/leagues/:remoteId/bets"
+                                                                            keyPath:@"bet"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Bet responseMappingWithChildRelationships]
+                                                                        pathPattern:@"/answers/:dynamicAnswerId/bets"
                                                                             keyPath:@"bet"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
@@ -139,7 +144,7 @@
         if (match) {
             NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Bet"];
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"membership.leagueId == %@", leagueId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:YES]];
             return fetchRequest;
         }

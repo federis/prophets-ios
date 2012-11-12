@@ -35,10 +35,7 @@
 -(void)setMembership:(Membership *)membership{
     
     if (_membership) {
-        [_membership removeObserver:self forKeyPath:@"balance"];
-        [_membership removeObserver:self forKeyPath:@"outstandingBetsValue"];
-        [_membership removeObserver:self forKeyPath:@"rank"];
-        [_membership removeObserver:self forKeyPath:@"league.membershipsCount"];
+        [self removeObserverRegistrations];
     }
     
     _membership = membership;
@@ -77,6 +74,17 @@
         }
         
     }
+}
+
+-(void)removeObserverRegistrations{
+    [_membership removeObserver:self forKeyPath:@"balance"];
+    [_membership removeObserver:self forKeyPath:@"outstandingBetsValue"];
+    [_membership removeObserver:self forKeyPath:@"rank"];
+    [_membership removeObserver:self forKeyPath:@"league.membershipsCount"];
+}
+
+-(void)dealloc{
+    [self removeObserverRegistrations];
 }
 
 @end

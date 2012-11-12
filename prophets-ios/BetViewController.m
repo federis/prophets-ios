@@ -32,7 +32,6 @@
     self.tableView.tableHeaderView = performanceView;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareForKeyboard) name:UIKeyboardWillShowNotification object:nil];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDismissed) name:UIKeyboardWillHideNotification object:nil];
     
     self.createBetView = [[CreateBetView alloc] initWithFrame:CGRectMake(1, 6, 283, [CreateBetView heightForViewWithAnswer:self.answer])];
@@ -126,6 +125,11 @@
     [self performSegueWithIdentifier:@"ShowBetCreation" sender:answer];
 }
 */
+
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 @end

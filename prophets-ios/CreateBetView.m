@@ -60,7 +60,7 @@
     if(_bet) return _bet;
     
     _bet = [Bet object];
-    _bet.user = self.membership.user;
+    _bet.membership = self.membership;
     _bet.answer = self.answer;
     _bet.probability = self.answer.currentProbability;
     _bet.amount = [NSDecimalNumber decimalNumberWithString:self.betAmountTextField.text];

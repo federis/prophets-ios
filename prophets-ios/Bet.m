@@ -8,18 +8,17 @@
 
 #import "Bet.h"
 #import "Answer.h"
-#import "User.h"
-
+#import "Membership.h"
 
 @implementation Bet
 
-@dynamic leagueId;
+@dynamic membershipId;
 @dynamic answerId;
 @dynamic amount;
 @dynamic probability;
 @dynamic bonus;
 @dynamic payout;
-@dynamic user;
+@dynamic membership;
 @dynamic answer;
 
 -(NSNumber *)dynamicAnswerId{
@@ -63,7 +62,7 @@
     [mapping addAttributeMappingsFromArray:@[@"amount", @"bonus", @"probability"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"id" : @"remoteId",
-     @"league_id" : @"leagueId",
+     @"membership_id" : @"membershipId",
      @"answer_id" : @"answerId",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt",
@@ -75,11 +74,26 @@
 +(RKEntityMapping *)responseMappingWithParentRelationships{
     RKEntityMapping *mapping = [self responseMapping];
     
+    [mapping addConnectionMappingForRelationshipForName:@"membership"
+                                      fromSourceKeyPath:@"membershipId"
+                                              toKeyPath:@"remoteId"
+                                                matcher:nil];
+    
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"answer"
                                                                             toKeyPath:@"answer"
                                                                           withMapping:[Answer responseMappingWithParentRelationships]]];
     
     return mapping;    
+}
+
++(RKEntityMapping *)responseMappingWithChildRelationships{
+    RKEntityMapping *mapping = [super responseMappingWithChildRelationships];
+    
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"membership"
+                                                                            toKeyPath:@"membership"
+                                                                          withMapping:[Membership responseMappingWithChildRelationships]]];
+    
+    return mapping;
 }
 
 +(RKMapping *)requestMapping{

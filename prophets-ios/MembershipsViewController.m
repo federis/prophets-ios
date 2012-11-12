@@ -119,4 +119,11 @@
     [self performSegueWithIdentifier:@"ShowLeague" sender:membership];
 }
 
+-(void)dealloc{
+    for (Membership *membership in self.fetchedResultsController.fetchedObjects) {
+        [membership.league removeObserver:self forKeyPath:@"league.name"];
+        [membership.league removeObserver:self forKeyPath:@"league.memberCount"];
+    }
+}
+
 @end

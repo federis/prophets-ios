@@ -8,17 +8,17 @@
 
 #import "Resource.h"
 
-@class Answer, User;
+@class Answer, Membership;
 
 @interface Bet : Resource
 
-@property (nonatomic, strong) NSNumber * leagueId;
+@property (nonatomic, strong) NSNumber * membershipId;
 @property (nonatomic, strong) NSNumber * answerId;
 @property (nonatomic, strong) NSDecimalNumber * amount;
 @property (nonatomic, strong) NSDecimalNumber * probability;
 @property (nonatomic, strong) NSDecimalNumber * bonus;
 @property (nonatomic, strong) NSDecimalNumber * payout;
-@property (nonatomic, strong) User *user;
+@property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) Answer *answer;
 
 -(NSNumber *)dynamicAnswerId;

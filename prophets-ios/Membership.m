@@ -32,6 +32,15 @@
         return self.league.maxBet;
 }
 
+-(NSNumber *)dynamicLeagueId{
+    if (self.leagueId)
+        return self.leagueId;
+    else if(self.league && self.league.remoteId)
+        return self.league.remoteId;
+    else
+        return nil;
+}
+
 +(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
@@ -49,7 +58,7 @@
 }
 
 +(RKEntityMapping *)responseMappingWithParentRelationships{
-    RKEntityMapping *mapping = [self responseMapping];
+    RKEntityMapping *mapping = [super responseMappingWithParentRelationships];
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"league"
                                                                             toKeyPath:@"league"

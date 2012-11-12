@@ -25,17 +25,11 @@
 }
 
 +(RKEntityMapping *)responseMappingWithChildRelationships{
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"Invalid method call"
-                                           "responseMappingWithChildeRelationships is not implemented in this subclass"]
-                                 userInfo:nil];
+    return [self responseMapping];
 }
 
 +(RKEntityMapping *)responseMappingWithParentRelationships{
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"Invalid method call"
-                                           "responseMappingWithParentRelationships is not implemented in this subclass"]
-                                 userInfo:nil];
+    return [self responseMapping];
 }
 
 +(RKEntityMapping *)requestMapping{
