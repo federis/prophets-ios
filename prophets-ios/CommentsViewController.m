@@ -8,6 +8,9 @@
 
 #import "CommentsViewController.h"
 #import "UIBarButtonItem+Additions.h"
+#import "Utilities.h"
+#import "FFLabel.h"
+#import "ClearButton.h"
 #import "Membership.h"
 #import "League.h"
 #import "Comment.h"
@@ -58,6 +61,49 @@
 }
 
 #pragma mark - Table view delegate
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 50;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 10, 320, 30)];
+    
+    UIImageView *bubbles = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"conversation_bubbles.png"]];
+    bubbles.frame = SameSizeRectAt(10, 10, bubbles.frame);
+    
+    FFLabel *commentLabel = [[FFLabel alloc] initWithFrame:CGRectMake(50, 10, 80, 30)];
+    commentLabel.text = @"Club Room";
+    
+    ClearButton *newCommentButton = [[ClearButton alloc] initWithFrame:CGRectMake(173, 10, 120, 30)];
+    [newCommentButton setTitle:@"New Comment" forState:UIControlStateNormal];
+    
+    [v addSubview:bubbles];
+    [v addSubview:commentLabel];
+    [v addSubview:newCommentButton];
+    
+    return v;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        return 60;
+    }
+    return 0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        
+        emptyCommentsLabel.isBold = NO;
+        emptyCommentsLabel.text = @"No one has commented yet";
+        emptyCommentsLabel.textAlignment = NSTextAlignmentCenter;
+        
+        return emptyCommentsLabel;
+    }
+    return nil;
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     Comment *comment = (Comment *)[self.fetchedResultsController objectAtIndexPath:indexPath];

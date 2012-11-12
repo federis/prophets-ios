@@ -120,10 +120,12 @@
 }
 
 -(void)dealloc{
+    /*
     for (Membership *membership in self.fetchedResultsController.fetchedObjects) {
         [membership.league removeObserver:self forKeyPath:@"league.name"];
         [membership.league removeObserver:self forKeyPath:@"league.membershipsCount"];
     }
+     */
 }
 
 @end
