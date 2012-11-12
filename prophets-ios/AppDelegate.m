@@ -68,6 +68,10 @@
                                                blue:165.0/255.0
                                               alpha:1.0];
     [[UITableView appearance] setSeparatorColor:separatorColor];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+        UITextAttributeFont : [UIFont fontWithName:@"AvenirNext-DemiBold" size:15.0]
+    }];
 }
 
 
