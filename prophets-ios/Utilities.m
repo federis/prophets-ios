@@ -12,6 +12,10 @@
 
 @implementation Utilities
 
+CGRect SameSizeRectAt(CGFloat x, CGFloat y, CGRect rect){
+    return CGRectMake(x, y, rect.size.width, rect.size.height);
+}
+
 +(void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message{
 	UIAlertView * alert = [[UIAlertView alloc]
                            initWithTitle:title

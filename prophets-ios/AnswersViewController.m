@@ -9,6 +9,8 @@
 #import "AnswersViewController.h"
 #import "BetViewController.h"
 #import "LeaguePerformanceView.h"
+#import "ClearButton.h"
+#import "FFLabel.h"
 #import "UIColor+Additions.h"
 #import "Utilities.h"
 #import "AnswerCell.h"
@@ -23,7 +25,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-	
+    
     NSString *answerCellName = NSStringFromClass([AnswerCell class]);
     [self.tableView registerNib:[UINib nibWithNibName:answerCellName bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:answerCellName];
@@ -63,25 +65,63 @@
     if (section == 0){
         return [self heightForQuestionContent] + 10;
     }
-    
-    return 0;
+    else{
+        return 50;
+    }
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if (section != 0) return nil;
-    
-    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, [self heightForQuestionContent] + 10)];
-    UILabel *questionContentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, [self heightForQuestionContent])];
-    
-    questionContentLabel.text = self.question.content;
-    questionContentLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:15];
-    questionContentLabel.backgroundColor = [UIColor clearColor];
-    questionContentLabel.textColor = [UIColor creamColor];
-    questionContentLabel.numberOfLines = 0;
-    questionContentLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    
-    [v addSubview:questionContentLabel];
-    return v;
+    if (section == 0) {
+        UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, [self heightForQuestionContent] + 10)];
+        
+        FFLabel *questionContentLabel = [[FFLabel alloc] initWithFrame:CGRectMake(10, 5, 300, [self heightForQuestionContent])];
+        questionContentLabel.text = self.question.content;
+        
+        [v addSubview:questionContentLabel];
+        return v;
+    }
+    else{
+        UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+        
+        UIImageView *diamonds = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"diamonds.png"]];
+        diamonds.center = CGPointMake(v.center.x, 8);
+        
+        UIImageView *bubbles = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"conversation_bubbles.png"]];
+        bubbles.frame = SameSizeRectAt(10, 20, bubbles.frame);
+        
+        FFLabel *commentLabel = [[FFLabel alloc] initWithFrame:CGRectMake(50, 20, 80, 30)];
+        commentLabel.text = @"Club Room";
+        
+        ClearButton *newCommentButton = [[ClearButton alloc] initWithFrame:CGRectMake(173, 20, 120, 30)];
+        [newCommentButton setTitle:@"New Comment" forState:UIControlStateNormal];
+        
+        [v addSubview:diamonds];
+        [v addSubview:bubbles];
+        [v addSubview:commentLabel];
+        [v addSubview:newCommentButton];
+        
+        return v;
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (section == 1 && [self.question.commentsCount integerValue] == 0) {
+        return 60;
+    }
+    return 0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    if (section == 1 && [self.question.commentsCount integerValue] == 0) {
+        FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        
+        emptyCommentsLabel.isBold = NO;
+        emptyCommentsLabel.text = @"No one has commented yet";
+        emptyCommentsLabel.textAlignment = NSTextAlignmentCenter;
+        
+        return emptyCommentsLabel;
+    }
+    return nil;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

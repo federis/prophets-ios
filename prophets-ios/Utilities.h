@@ -10,6 +10,8 @@
 
 @interface Utilities : NSObject
 
+CGRect SameSizeRectAt(CGFloat x, CGFloat y, CGRect rect);
+
 +(void)showOkAlertWithError:(NSError *)error;
 +(void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message;
 +(CGFloat)heightForString:(NSString *)str withFont:(UIFont *)font width:(CGFloat)width;

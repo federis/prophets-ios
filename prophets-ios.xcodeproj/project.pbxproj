@@ -165,6 +165,13 @@
 		B5F1AF271603B8BF00D28C1C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF261603B8BF00D28C1C /* libxml2.dylib */; };
 		B5F9304316515F3400755036 /* green_button_insets.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F9304116515F3400755036 /* green_button_insets.png */; };
 		B5F9304416515F3400755036 /* green_button_insets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F9304216515F3400755036 /* green_button_insets@2x.png */; };
+		B5F93048165174F900755036 /* conversation_bubbles.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F93046165174F900755036 /* conversation_bubbles.png */; };
+		B5F93049165174F900755036 /* conversation_bubbles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F93047165174F900755036 /* conversation_bubbles@2x.png */; };
+		B5F9304C1651767400755036 /* ClearButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9304B1651767400755036 /* ClearButton.m */; };
+		B5F9304E1651768500755036 /* ClearButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F9304D1651768500755036 /* ClearButton.xib */; };
+		B5F930511651803900755036 /* diamonds.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F9304F1651803900755036 /* diamonds.png */; };
+		B5F930521651803900755036 /* diamonds@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F930501651803900755036 /* diamonds@2x.png */; };
+		B5F93055165184D600755036 /* FFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F93054165184D500755036 /* FFLabel.m */; };
 		B5FB94B01636251A00471515 /* LeagueTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB94AF1636251A00471515 /* LeagueTabBarController.m */; };
 		B5FB94B41636272300471515 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FB94B21636272300471515 /* back_arrow.png */; };
 		B5FB94B51636272300471515 /* back_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FB94B31636272300471515 /* back_arrow@2x.png */; };
@@ -402,6 +409,15 @@
 		B5F1AF261603B8BF00D28C1C /* libxml2.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		B5F9304116515F3400755036 /* green_button_insets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button_insets.png; sourceTree = "<group>"; };
 		B5F9304216515F3400755036 /* green_button_insets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_button_insets@2x.png"; sourceTree = "<group>"; };
+		B5F93046165174F900755036 /* conversation_bubbles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conversation_bubbles.png; sourceTree = "<group>"; };
+		B5F93047165174F900755036 /* conversation_bubbles@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conversation_bubbles@2x.png"; sourceTree = "<group>"; };
+		B5F9304A1651767300755036 /* ClearButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearButton.h; sourceTree = "<group>"; };
+		B5F9304B1651767400755036 /* ClearButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearButton.m; sourceTree = "<group>"; };
+		B5F9304D1651768500755036 /* ClearButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClearButton.xib; sourceTree = "<group>"; };
+		B5F9304F1651803900755036 /* diamonds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamonds.png; sourceTree = "<group>"; };
+		B5F930501651803900755036 /* diamonds@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "diamonds@2x.png"; sourceTree = "<group>"; };
+		B5F93053165184D500755036 /* FFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFLabel.h; sourceTree = "<group>"; };
+		B5F93054165184D500755036 /* FFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFLabel.m; sourceTree = "<group>"; };
 		B5FB94AE1636251A00471515 /* LeagueTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueTabBarController.h; sourceTree = "<group>"; };
 		B5FB94AF1636251A00471515 /* LeagueTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueTabBarController.m; sourceTree = "<group>"; };
 		B5FB94B21636272300471515 /* back_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_arrow.png; sourceTree = "<group>"; };
@@ -521,10 +537,14 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
-				B5F9304116515F3400755036 /* green_button_insets.png */,
-				B5F9304216515F3400755036 /* green_button_insets@2x.png */,
+				B5F9304F1651803900755036 /* diamonds.png */,
+				B5F930501651803900755036 /* diamonds@2x.png */,
 				B50654D81642CE38006DECF8 /* Bet Table Cell */,
 				B5A2F3A816396F6200034319 /* tabs */,
+				B5F93046165174F900755036 /* conversation_bubbles.png */,
+				B5F93047165174F900755036 /* conversation_bubbles@2x.png */,
+				B5F9304116515F3400755036 /* green_button_insets.png */,
+				B5F9304216515F3400755036 /* green_button_insets@2x.png */,
 				B50654B51641A400006DECF8 /* clear_button_insets.png */,
 				B50654B61641A400006DECF8 /* clear_button_insets@2x.png */,
 				B5FB94B21636272300471515 /* back_arrow.png */,
@@ -780,6 +800,11 @@
 		B5D33D7D1618C4700043A0E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5F93053165184D500755036 /* FFLabel.h */,
+				B5F93054165184D500755036 /* FFLabel.m */,
+				B5F9304A1651767300755036 /* ClearButton.h */,
+				B5F9304B1651767400755036 /* ClearButton.m */,
+				B5F9304D1651768500755036 /* ClearButton.xib */,
 				B5C527BA164590080093B8E3 /* CreateBetView.h */,
 				B5C527BB164590080093B8E3 /* CreateBetView.m */,
 				B5C527BD164592F20093B8E3 /* CreateBetView.xib */,
@@ -1024,6 +1049,11 @@
 				B5C527BE164592F20093B8E3 /* CreateBetView.xib in Resources */,
 				B5F9304316515F3400755036 /* green_button_insets.png in Resources */,
 				B5F9304416515F3400755036 /* green_button_insets@2x.png in Resources */,
+				B5F93048165174F900755036 /* conversation_bubbles.png in Resources */,
+				B5F93049165174F900755036 /* conversation_bubbles@2x.png in Resources */,
+				B5F9304E1651768500755036 /* ClearButton.xib in Resources */,
+				B5F930511651803900755036 /* diamonds.png in Resources */,
+				B5F930521651803900755036 /* diamonds@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1140,6 +1170,8 @@
 				B5C527B1164574560093B8E3 /* AnswerCell.m in Sources */,
 				B5C527B916458F650093B8E3 /* BetViewController.m in Sources */,
 				B5C527BC164590080093B8E3 /* CreateBetView.m in Sources */,
+				B5F9304C1651767400755036 /* ClearButton.m in Sources */,
+				B5F93055165184D600755036 /* FFLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
