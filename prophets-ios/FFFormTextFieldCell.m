@@ -24,4 +24,8 @@
   return self.textField.text;
 }
 
+-(void)makeFirstResponder{
+    [self.textField becomeFirstResponder];
+}
+
 @end

@@ -12,6 +12,8 @@
 #import "FFTableFooterButtonView.h"
 #import "FFFormFieldCell.h"
 #import "FFFormTextFieldCell.h"
+#import "FFFormTextViewFieldCell.h"
+#import "FFFormSwitchFieldCell.h"
 #import "Utilities.h"
 
 @interface FFFormViewController ()
@@ -25,11 +27,15 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"FFFormTextFieldCell" bundle:nil]
-         forCellReuseIdentifier:@"FFFormTextFieldCell"];
+    NSArray *cellNames = @[
+        NSStringFromClass([FFFormTextFieldCell class]),
+        NSStringFromClass([FFFormTextViewFieldCell class]),
+        NSStringFromClass([FFFormSwitchFieldCell class])
+    ];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"FFFormSwitchFieldCell" bundle:nil]
-         forCellReuseIdentifier:@"FFFormSwitchFieldCell"];
+    for (NSString *name in cellNames) {
+        [self.tableView registerNib:[UINib nibWithNibName:name bundle:nil] forCellReuseIdentifier:name];
+    }
     
     if(!self.submitButtonText) self.submitButtonText = @"Submit";
     
@@ -91,6 +97,11 @@
 
 #pragma mark - UITableViewDataSource methods
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    FFFormField *field = (FFFormField *)[self.formFields objectAtIndex:indexPath.row];
+    return field.height;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -101,7 +112,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    id field = [self.formFields objectAtIndex:indexPath.row];
+    FFFormField *field = (FFFormField *)[self.formFields objectAtIndex:indexPath.row];
     
     FFFormFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:[field cellReuseIdentifier]
                                                             forIndexPath:indexPath];
@@ -110,6 +121,12 @@
     if ([cell isKindOfClass:[FFFormTextFieldCell class]]) {
         ((FFFormTextFieldCell *)cell).textField.delegate = self;
     }
+    
+    if (field.shouldBecomeFirstResponder) {
+        [cell makeFirstResponder];
+        field.shouldBecomeFirstResponder = NO;
+    }
+
     
     return cell;
 }

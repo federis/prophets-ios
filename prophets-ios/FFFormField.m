@@ -33,4 +33,8 @@
     return [NSString stringWithFormat:@"%@Cell", NSStringFromClass([self class])];
 }
 
+-(CGFloat)height{
+    return 44;
+}
+
 @end

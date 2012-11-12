@@ -17,4 +17,8 @@
                                  userInfo:nil];
 }
 
+-(void)makeFirstResponder{
+    //no-op by default
+}
+
 @end

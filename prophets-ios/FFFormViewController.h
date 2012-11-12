@@ -10,6 +10,7 @@
 #import "FFFormField.h"
 #import "FFFormTextField.h"
 #import "FFFormSwitchField.h"
+#import "FFFormTextViewField.h"
 
 @class FFTableFooterButtonView;
 

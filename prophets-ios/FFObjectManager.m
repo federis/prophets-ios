@@ -53,6 +53,10 @@
     [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[Bet requestMapping]
                                                                      objectClass:[Bet class]
                                                                      rootKeyPath:@"bet"]];
+    
+    [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[Comment requestMapping]
+                                                                     objectClass:[Comment class]
+                                                                     rootKeyPath:@"comment"]];
 }
 
 -(void)setupResponseDescriptors{

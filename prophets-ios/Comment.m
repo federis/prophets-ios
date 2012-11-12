@@ -48,4 +48,10 @@
     return mapping;
 }
 
++(RKMapping *)requestMapping{
+    RKObjectMapping *mapping = [RKObjectMapping requestMapping];
+    [mapping addAttributeMappingsFromArray:@[@"comment"]];
+    return mapping;
+}
+
 @end

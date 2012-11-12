@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *attributeName;
 @property (nonatomic, strong) NSString *labelName;
+@property (nonatomic) BOOL shouldBecomeFirstResponder;
 
 +(id)formFieldWithAttributeName:(NSString *)attributeName labelName:(NSString *)labelName;
 +(id)formFieldWithAttributeName:(NSString *)attributeName;
@@ -19,5 +20,6 @@
 -(id)initWithAttributeName:(NSString *)attributeName labelName:(NSString *)labelName;
 
 -(NSString *)cellReuseIdentifier;
+-(CGFloat)height;
 
 @end

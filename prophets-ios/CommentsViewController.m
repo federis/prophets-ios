@@ -15,6 +15,7 @@
 #import "League.h"
 #import "Comment.h"
 #import "CommentCell.h"
+#import "CommentFormViewController.h"
 
 @interface CommentsViewController ()
 
@@ -60,6 +61,19 @@
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
+-(void)newCommentTouched{
+    [self performSegueWithIdentifier:@"ShowCommentForm" sender:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"ShowCommentForm"]) {
+        CommentFormViewController *commentFormVC = (CommentFormViewController *)[segue destinationViewController];
+        if (sender == nil) { //then it is a new comment
+            commentFormVC.league = self.membership.league;
+        }
+    }
+}
+
 #pragma mark - Table view delegate
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -77,6 +91,7 @@
     
     ClearButton *newCommentButton = [[ClearButton alloc] initWithFrame:CGRectMake(173, 10, 120, 30)];
     [newCommentButton setTitle:@"New Comment" forState:UIControlStateNormal];
+    [newCommentButton addTarget:self action:@selector(newCommentTouched) forControlEvents:UIControlEventTouchUpInside];
     
     [v addSubview:bubbles];
     [v addSubview:commentLabel];
