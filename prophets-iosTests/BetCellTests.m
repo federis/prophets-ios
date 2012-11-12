@@ -33,7 +33,7 @@
     self.cell = (BetCell *)[nib objectAtIndex:0];
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
-    self.dateFormatter.dateFormat = @"HH:mma zzz MMM dd,yyyy";
+    self.dateFormatter.dateFormat = @"hh:mma zzz MMM dd,yyyy";
     self.dateFormatter.timeZone = [NSTimeZone localTimeZone];
 }
 

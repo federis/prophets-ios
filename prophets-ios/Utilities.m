@@ -16,6 +16,14 @@ CGRect SameSizeRectAt(CGFloat x, CGFloat y, CGRect rect){
     return CGRectMake(x, y, rect.size.width, rect.size.height);
 }
 
+CGRect SameOriginRectWithSize(CGFloat width, CGFloat height, CGRect rect){
+    return CGRectMake(rect.origin.x, rect.origin.y, width, height);
+}
+
+CGRect RectWithNewHeight(CGFloat height, CGRect rect){
+    return SameOriginRectWithSize(rect.size.width, height, rect);
+}
+
 +(void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message{
 	UIAlertView * alert = [[UIAlertView alloc]
                            initWithTitle:title

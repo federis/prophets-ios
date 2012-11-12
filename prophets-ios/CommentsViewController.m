@@ -86,14 +86,14 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+    if (section == 0 && self.fetchedResultsController.fetchedObjects.count == 0) {
         return 60;
     }
     return 0;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+    if (section == 0 && self.fetchedResultsController.fetchedObjects.count == 0) {
         FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         
         emptyCommentsLabel.isBold = NO;

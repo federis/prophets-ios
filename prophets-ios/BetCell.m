@@ -23,7 +23,7 @@
                               bet.amount.currencyString, bet.oddsString];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"HH:mma zzz MMM dd,yyyy";
+    dateFormatter.dateFormat = @"hh:mma zzz MMM dd,yyyy";
     dateFormatter.timeZone = [NSTimeZone localTimeZone];
     
     self.betSubmittedLabel.text = [NSString stringWithFormat:@"Bet submitted: %@",

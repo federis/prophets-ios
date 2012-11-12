@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) Comment * comment;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentContentLabel;
 
 -(CGFloat)heightForCellWithComment:(Comment *)comment;
