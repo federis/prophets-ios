@@ -38,7 +38,10 @@
     
     self = [arrayOfViews objectAtIndex:0];
     
-    self.submitBetButtonBackground.layer.cornerRadius = 3;
+    UIEdgeInsets insets = UIEdgeInsetsMake(4, 4, 4, 4);
+    UIImage *buttonImage = [[UIImage imageNamed:@"green_button_insets.png"] resizableImageWithCapInsets:insets];
+    [self.submitBetButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    
     self.betAmountTextField.delegate = self;
     self.betAmountTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
