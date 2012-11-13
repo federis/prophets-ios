@@ -21,6 +21,10 @@
 @dynamic user;
 @dynamic league;
 
+-(BOOL)isAdmin{
+    return [self.role integerValue] == 1;
+}
+
 -(NSDecimalNumber *)totalWorth{
     return [self.balance decimalNumberByAdding:self.outstandingBetsValue];
 }

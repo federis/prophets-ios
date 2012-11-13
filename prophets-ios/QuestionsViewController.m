@@ -12,6 +12,7 @@
 #import "AnswersViewController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "UIColor+Additions.h"
+#import "ClearButton.h"
 #import "QuestionCell.h"
 #import "User.h"
 #import "Membership.h"
@@ -123,16 +124,30 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 20;
+    return 35;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 108, 20)];
-    headerLabel.text = @"    OPEN QUESTIONS";
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 108, 20)];
+    headerLabel.text = @"OPEN QUESTIONS";
     headerLabel.font = [UIFont fontWithName:@"Avenir Next" size:12];
     headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textColor = [UIColor creamColor];
-    return headerLabel;
+    
+    ClearButton *addQuestionButton = [[ClearButton alloc] init];
+    if (!self.membership.isAdmin) {
+        addQuestionButton.frame = CGRectMake(170, 0, 120, 30);
+        [addQuestionButton setTitle:@"Add Question" forState:UIControlStateNormal];
+    }
+    else{
+        addQuestionButton.frame = CGRectMake(160, 0, 132, 30);
+        [addQuestionButton setTitle:@"Suggest Question" forState:UIControlStateNormal];
+    }
+    
+    [v addSubview:headerLabel];
+    [v addSubview:addQuestionButton];
+    return v;
 }
  
 

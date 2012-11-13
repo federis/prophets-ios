@@ -20,6 +20,7 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) League *league;
 
+-(BOOL)isAdmin;
 -(NSDecimalNumber *)totalWorth;
 -(NSDecimalNumber *)maxBet;
 
