@@ -180,6 +180,14 @@
 		B5FD758616519F640051C4DC /* FFFormTextViewFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FD758516519F640051C4DC /* FFFormTextViewFieldCell.xib */; };
 		B5FD75881651AD2D0051C4DC /* FFFormTextViewFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD75871651AD2C0051C4DC /* FFFormTextViewFieldCell.m */; };
 		B5FD758B1651D6730051C4DC /* CommentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD758A1651D6720051C4DC /* CommentsController.m */; };
+		B5FD758F165297AA0051C4DC /* leaguemenu_allquestions_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FD758C165297A90051C4DC /* leaguemenu_allquestions_pressed.png */; };
+		B5FD7590165297AA0051C4DC /* leaguemenu_allquestions_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FD758D165297AA0051C4DC /* leaguemenu_allquestions_pressed@2x.png */; };
+		B5FD7591165297AA0051C4DC /* leaguemenu_clubroom_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FD758E165297AA0051C4DC /* leaguemenu_clubroom_pressed.png */; };
+		B5FD7597165297BE0051C4DC /* leaguemenu_clubroom_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FD7592165297BD0051C4DC /* leaguemenu_clubroom_pressed@2x.png */; };
+		B5FD7598165297BE0051C4DC /* leaguemenu_settings_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FD7593165297BD0051C4DC /* leaguemenu_settings_pressed.png */; };
+		B5FD7599165297BE0051C4DC /* leaguemenu_settings_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FD7594165297BD0051C4DC /* leaguemenu_settings_pressed@2x.png */; };
+		B5FD759A165297BE0051C4DC /* leaguemenu_stats_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FD7595165297BD0051C4DC /* leaguemenu_stats_pressed.png */; };
+		B5FD759B165297BE0051C4DC /* leaguemenu_stats_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FD7596165297BD0051C4DC /* leaguemenu_stats_pressed@2x.png */; };
 		CCAD6CC9904141B2A8651A20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B080843E1DFF40039890AE89 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -436,6 +444,14 @@
 		B5FD75871651AD2C0051C4DC /* FFFormTextViewFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormTextViewFieldCell.m; sourceTree = "<group>"; };
 		B5FD75891651D6710051C4DC /* CommentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsController.h; sourceTree = "<group>"; };
 		B5FD758A1651D6720051C4DC /* CommentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsController.m; sourceTree = "<group>"; };
+		B5FD758C165297A90051C4DC /* leaguemenu_allquestions_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_allquestions_pressed.png; sourceTree = "<group>"; };
+		B5FD758D165297AA0051C4DC /* leaguemenu_allquestions_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaguemenu_allquestions_pressed@2x.png"; sourceTree = "<group>"; };
+		B5FD758E165297AA0051C4DC /* leaguemenu_clubroom_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_clubroom_pressed.png; sourceTree = "<group>"; };
+		B5FD7592165297BD0051C4DC /* leaguemenu_clubroom_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaguemenu_clubroom_pressed@2x.png"; sourceTree = "<group>"; };
+		B5FD7593165297BD0051C4DC /* leaguemenu_settings_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_settings_pressed.png; sourceTree = "<group>"; };
+		B5FD7594165297BD0051C4DC /* leaguemenu_settings_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaguemenu_settings_pressed@2x.png"; sourceTree = "<group>"; };
+		B5FD7595165297BD0051C4DC /* leaguemenu_stats_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_stats_pressed.png; sourceTree = "<group>"; };
+		B5FD7596165297BD0051C4DC /* leaguemenu_stats_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaguemenu_stats_pressed@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -768,6 +784,14 @@
 		B5A2F3A816396F6200034319 /* tabs */ = {
 			isa = PBXGroup;
 			children = (
+				B5FD7592165297BD0051C4DC /* leaguemenu_clubroom_pressed@2x.png */,
+				B5FD7593165297BD0051C4DC /* leaguemenu_settings_pressed.png */,
+				B5FD7594165297BD0051C4DC /* leaguemenu_settings_pressed@2x.png */,
+				B5FD7595165297BD0051C4DC /* leaguemenu_stats_pressed.png */,
+				B5FD7596165297BD0051C4DC /* leaguemenu_stats_pressed@2x.png */,
+				B5FD758C165297A90051C4DC /* leaguemenu_allquestions_pressed.png */,
+				B5FD758D165297AA0051C4DC /* leaguemenu_allquestions_pressed@2x.png */,
+				B5FD758E165297AA0051C4DC /* leaguemenu_clubroom_pressed.png */,
 				B53F586D1644582500AF2BA9 /* leaguemenu_clubroom.png */,
 				B53F586E1644582500AF2BA9 /* leaguemenu_settings.png */,
 				B53F586F1644582500AF2BA9 /* leaguemenu_stats.png */,
@@ -1078,6 +1102,14 @@
 				B5F930511651803900755036 /* diamonds.png in Resources */,
 				B5F930521651803900755036 /* diamonds@2x.png in Resources */,
 				B5FD758616519F640051C4DC /* FFFormTextViewFieldCell.xib in Resources */,
+				B5FD758F165297AA0051C4DC /* leaguemenu_allquestions_pressed.png in Resources */,
+				B5FD7590165297AA0051C4DC /* leaguemenu_allquestions_pressed@2x.png in Resources */,
+				B5FD7591165297AA0051C4DC /* leaguemenu_clubroom_pressed.png in Resources */,
+				B5FD7597165297BE0051C4DC /* leaguemenu_clubroom_pressed@2x.png in Resources */,
+				B5FD7598165297BE0051C4DC /* leaguemenu_settings_pressed.png in Resources */,
+				B5FD7599165297BE0051C4DC /* leaguemenu_settings_pressed@2x.png in Resources */,
+				B5FD759A165297BE0051C4DC /* leaguemenu_stats_pressed.png in Resources */,
+				B5FD759B165297BE0051C4DC /* leaguemenu_stats_pressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
