@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *attributeName;
 @property (nonatomic, strong) NSString *labelName;
 @property (nonatomic) BOOL shouldBecomeFirstResponder;
+@property (nonatomic, strong) id currentValue;
 
 +(id)formFieldWithAttributeName:(NSString *)attributeName labelName:(NSString *)labelName;
 +(id)formFieldWithAttributeName:(NSString *)attributeName;

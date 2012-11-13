@@ -40,6 +40,10 @@
     if(!self.submitButtonText) self.submitButtonText = @"Submit";
     
     [self prepareForm];
+    
+    for (FFFormField *field in self.formFields) {
+        field.currentValue = [self.formObject valueForKey:field.attributeName];
+    }
 }
 
 -(void)prepareForm{
@@ -59,8 +63,8 @@
 }
 
 -(void)serializeAndSubmit{
-    [self serializeFormFieldsIntoObject];
     if([self formIsValid]){
+        [self serializeFormFieldsIntoObject];
         [self submit];
     }
     else{
@@ -74,6 +78,10 @@
 }
 
 -(void)serializeFormFieldsIntoObject{
+    for (FFFormField *field in self.formFields) {
+        [self.formObject setValue:field.currentValue forKey:field.attributeName];
+    }
+    /*
     for (int section = 0; section < [self.tableView numberOfSections]; section++) {
         for (int row = 0; row < [self.tableView numberOfRowsInSection:section]; row++) {
             NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:section];
@@ -84,6 +92,7 @@
             [self.formObject setValue:value forKey:field.attributeName];
         }
     }
+    */
 }
 
 -(BOOL)formIsValid{

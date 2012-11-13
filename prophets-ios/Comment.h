@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString * userName;
 @property (nonatomic, retain) NSNumber * leagueId;
 @property (nonatomic, retain) NSNumber * questionId;
+@property (nonatomic, retain) NSNumber * userId;
 @property (nonatomic, retain) League *league;
 @property (nonatomic, retain) Question *question;
 

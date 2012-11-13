@@ -13,12 +13,17 @@
 
 -(void)setFormField:(FFFormField *)formField{
     FFFormTextViewField *field = (FFFormTextViewField *)formField;
-    
+    self.textView.text = field.currentValue;
     [super setFormField:formField];
 }
 
--(id)formFieldCurrentValue{
-    return self.textView.text;
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.textView.delegate = self;
+}
+
+-(void)textViewDidChange:(UITextView *)textView{
+    self.formField.currentValue = textView.text;
 }
 
 -(void)makeFirstResponder{

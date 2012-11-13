@@ -68,10 +68,15 @@
 
 -(BOOL)formIsValid{
     self.errors = [NSMutableArray array];
-    League *league = (League *)self.formObject;
-    if (!league.name || [league.name isEqualToString:@""]) {
-        [self.errors addObject:@"Name cannot be blank"];
+    
+    for (FFFormField *field in self.formFields) {
+        if ([field.attributeName isEqualToString:@"name"]) {
+            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                [self.errors addObject:@"Name cannot be blank"];
+            }
+        }
     }
+    
     
     return [self.errors count] == 0;
 }

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FFFormFieldCell.h"
 
-@interface FFFormTextFieldCell : FFFormFieldCell
+@interface FFFormTextFieldCell : FFFormFieldCell<UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *textField;
 

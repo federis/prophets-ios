@@ -10,13 +10,6 @@
 
 @implementation FFFormFieldCell
 
--(id)formFieldCurrentValue{
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"Invalid method call"
-                                           "formFieldCurrentValue should only be invoked on subclasses of FFFormFieldCell"]
-                                 userInfo:nil];
-}
-
 -(void)makeFirstResponder{
     //no-op by default
 }

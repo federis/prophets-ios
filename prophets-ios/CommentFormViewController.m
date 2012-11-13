@@ -66,36 +66,66 @@
     [SVProgressHUD showWithStatus:@"Submitting comment" maskType:SVProgressHUDMaskTypeGradient];
     
     Comment *comment = (Comment *)self.formObject;
-    NSString *path = nil;
-    if(comment.question){
-        path = [NSString stringWithFormat:@"/questions/%@/comments", comment.question.remoteId];
+    
+    if (comment.remoteId) {
+        NSString *path = nil;
+        if(comment.question){
+            path = [NSString stringWithFormat:@"/questions/%@/comments/%@", comment.question.remoteId, comment.remoteId];
+        }
+        else{
+            path = [NSString stringWithFormat:@"/leagues/%@/comments/%@", comment.league.remoteId, comment.remoteId];
+        }
+        
+        [[RKObjectManager sharedManager] putObject:self.formObject path:path parameters:nil
+            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+                [SVProgressHUD dismiss];
+                [SVProgressHUD showSuccessWithStatus:@"Comment updated"];
+                
+                [self dismissViewControllerAnimated:YES completion:^{}];
+            }
+            failure:^(RKObjectRequestOperation *operation, NSError *error){
+                [SVProgressHUD dismiss];
+                
+                [SVProgressHUD showErrorWithStatus:[error description]];
+                
+                DLog(@"%@", [error description]);
+            }];
     }
     else{
-        path = [NSString stringWithFormat:@"/leagues/%@/comments", comment.league.remoteId];
-    }
-    
-    [[RKObjectManager sharedManager] postObject:self.formObject path:path parameters:nil
-        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-            [SVProgressHUD dismiss];
-            [SVProgressHUD showSuccessWithStatus:@"Comment created"];
-            DLog(@"%@", mappingResult);
-            
-            [self dismissViewControllerAnimated:YES completion:^{}];
+        NSString *path = nil;
+        if(comment.question){
+            path = [NSString stringWithFormat:@"/questions/%@/comments", comment.question.remoteId];
         }
-        failure:^(RKObjectRequestOperation *operation, NSError *error){
-            [SVProgressHUD dismiss];
-            
-            [SVProgressHUD showErrorWithStatus:[error description]];
-            
-            DLog(@"%@", [error description]);
-        }];
+        else{
+            path = [NSString stringWithFormat:@"/leagues/%@/comments", comment.league.remoteId];
+        }
+        
+        [[RKObjectManager sharedManager] postObject:self.formObject path:path parameters:nil
+            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+                [SVProgressHUD dismiss];
+                [SVProgressHUD showSuccessWithStatus:@"Comment created"];
+                
+                [self dismissViewControllerAnimated:YES completion:^{}];
+            }
+            failure:^(RKObjectRequestOperation *operation, NSError *error){
+                [SVProgressHUD dismiss];
+                
+                [SVProgressHUD showErrorWithStatus:[error description]];
+                
+                DLog(@"%@", [error description]);
+            }];
+    }
 }
 
 -(BOOL)formIsValid{
     self.errors = [NSMutableArray array];
-    Comment *comment = (Comment *)self.formObject;
-    if (!comment.comment || [comment.comment isEqualToString:@""]) {
-        [self.errors addObject:@"Comment cannot be blank"];
+    
+    for (FFFormField *field in self.formFields) {
+        if ([field.attributeName isEqualToString:@"comment"]) {
+            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                [self.errors addObject:@"Comment cannot be blank"];
+            }
+        }
     }
     
     return [self.errors count] == 0;

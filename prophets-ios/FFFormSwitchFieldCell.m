@@ -14,13 +14,18 @@
 -(void)setFormField:(FFFormField *)formField{
     FFFormSwitchField *field = (FFFormSwitchField *)formField;
     self.attributeNameLabel.text = field.labelName;
-    self.switchControl.on = field.isOn;
+    self.switchControl.on = [field.currentValue boolValue];
     
     [super setFormField:formField];
 }
 
--(id)formFieldCurrentValue{
-    return [NSNumber numberWithBool:self.switchControl.isOn];
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    [self.switchControl addTarget:self action:@selector(switchChanged) forControlEvents:UIControlEventValueChanged];
+}
+
+-(void)switchChanged{
+    self.formField.currentValue = [NSNumber numberWithBool:self.switchControl.isOn];
 }
 
 @end

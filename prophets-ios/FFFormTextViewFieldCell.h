@@ -8,7 +8,7 @@
 
 #import "FFFormFieldCell.h"
 
-@interface FFFormTextViewFieldCell : FFFormFieldCell
+@interface FFFormTextViewFieldCell : FFFormFieldCell<UITextViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 

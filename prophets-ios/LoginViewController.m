@@ -57,14 +57,21 @@
 
 -(BOOL)formIsValid{
     self.errors = [NSMutableArray array];
-    User *user = (User *)self.formObject;
-    if (!user.email || [user.email isEqualToString:@""]) {
-        [self.errors addObject:@"Email cannot be blank"];
+    
+    for (FFFormField *field in self.formFields) {
+        if ([field.attributeName isEqualToString:@"email"]) {
+            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                [self.errors addObject:@"Email cannot be blank"];
+            }
+        }
+        
+        if ([field.attributeName isEqualToString:@"password"]) {
+            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                [self.errors addObject:@"password cannot be blank"];
+            }
+        }
     }
     
-    if (!user.password || [user.password isEqualToString:@""]) {
-        [self.errors addObject:@"Password cannot be blank"];
-    }
     
     return [self.errors count] == 0;
 }

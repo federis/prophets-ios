@@ -11,6 +11,16 @@
 
 @implementation FFFormTextFieldCell
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    [self.textField addTarget:self action:@selector(fieldChanged) forControlEvents:UIControlEventEditingChanged];
+}
+
+-(void)fieldChanged{
+    self.formField.currentValue = self.textField.text;
+}
+
+
 -(void)setFormField:(FFFormField *)formField{
     FFFormTextField *field = (FFFormTextField *)formField;
     self.textField.placeholder = field.labelName;
@@ -20,8 +30,11 @@
     [super setFormField:formField];
 }
 
--(id)formFieldCurrentValue{
-  return self.textField.text;
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSString *text = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    self.formField.currentValue = text;
+ 
+    return YES;
 }
 
 -(void)makeFirstResponder{

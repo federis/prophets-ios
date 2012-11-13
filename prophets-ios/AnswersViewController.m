@@ -19,6 +19,8 @@
 #import "AnswerCell.h"
 #import "Question.h"
 #import "Answer.h"
+#import "Comment.h"
+#import "User.h"
 
 @interface AnswersViewController ()
 
@@ -77,6 +79,9 @@
         CommentFormViewController *commentFormVC = (CommentFormViewController *)[segue destinationViewController];
         if (sender == nil) { //then it is a new comment
             commentFormVC.question = self.question;
+        }
+        else if([sender isKindOfClass:[Comment class]]){ //existing comment
+            commentFormVC.formObject = sender;
         }
     }
 }
@@ -195,6 +200,12 @@
     if (indexPath.section == 0) {
         Answer *answer = [self.answers objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"ShowBetCreation" sender:answer];
+    }
+    else if(indexPath.section == 1){ //comments
+        Comment *comment = [self.commentsController commentAtRow:indexPath.row];
+        if ([comment.userId isEqualToNumber:[User currentUser].remoteId]) {
+            [self performSegueWithIdentifier:@"ShowCommentForm" sender:comment];
+        }
     }
 }
 

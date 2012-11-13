@@ -13,6 +13,7 @@
 #import "ClearButton.h"
 #import "Membership.h"
 #import "League.h"
+#import "User.h"
 #import "Comment.h"
 #import "CommentCell.h"
 #import "CommentFormViewController.h"
@@ -70,6 +71,9 @@
         CommentFormViewController *commentFormVC = (CommentFormViewController *)[segue destinationViewController];
         if (sender == nil) { //then it is a new comment
             commentFormVC.league = self.membership.league;
+        }
+        else if([sender isKindOfClass:[Comment class]]){
+            commentFormVC.formObject = sender;
         }
     }
 }
@@ -133,6 +137,15 @@
     cell.comment = comment;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    Comment *comment = (Comment *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([comment.userId isEqualToNumber:[User currentUser].remoteId]) {
+        [self performSegueWithIdentifier:@"ShowCommentForm" sender:comment];
+    }
 }
 
 @end

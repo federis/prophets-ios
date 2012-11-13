@@ -15,7 +15,6 @@
 
 @property (nonatomic, strong) FFFormField *formField;
 
--(id)formFieldCurrentValue;
 -(void)makeFirstResponder;
 
 @end

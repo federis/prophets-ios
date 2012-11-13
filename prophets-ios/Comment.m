@@ -17,6 +17,7 @@
 @dynamic userName;
 @dynamic leagueId;
 @dynamic questionId;
+@dynamic userId;
 @dynamic league;
 @dynamic question;
 
@@ -30,6 +31,7 @@
      @"id" : @"remoteId",
      @"league_id" : @"leagueId",
      @"question_id" : @"questionId",
+     @"user_id" : @"userId",
      @"user_name" : @"userName",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
