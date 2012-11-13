@@ -8,6 +8,7 @@
 
 #import "AnswerCell.h"
 #import "Answer.h"
+#import "Utilities.h"
 
 @implementation AnswerCell
 
@@ -18,10 +19,16 @@
 
 -(void)setAnswer:(Answer *)answer{
     self.answerLabel.text = answer.content;
+    self.answerLabel.frame = RectWithNewHeight([Utilities heightForString:answer.content
+                                                                         withFont:self.answerLabel.font
+                                                                            width:self.answerLabel.frame.size.width],
+                                                       self.answerLabel.frame);
 }
 
 -(CGFloat)heightForCellWithAnswer:(Answer *)answer{
-    return 50;
+    return 23 + [Utilities heightForString:answer.content
+                                  withFont:self.answerLabel.font
+                                     width:self.answerLabel.frame.size.width];
 }
 
 @end
