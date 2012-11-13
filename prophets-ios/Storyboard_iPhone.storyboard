@@ -693,6 +693,7 @@
                     <connections>
                         <outlet property="tableView" destination="JV6-wk-b5Q" id="GNH-13-qLK"/>
                         <segue destination="7OQ-AK-fpc" kind="push" identifier="ShowBetCreation" id="dYT-9G-wsH"/>
+                        <segue destination="Tt9-Jb-QJJ" kind="modal" identifier="ShowCommentForm" id="pm5-AO-WBj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHx-Pr-0My" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -794,7 +795,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocK-ch-0yj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="690"/>
+            <point key="canvasLocation" x="2838" y="92"/>
         </scene>
     </scenes>
     <resources>
@@ -890,4 +891,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="pm5-AO-WBj"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,9 @@
 
 #import "AnswersViewController.h"
 #import "BetViewController.h"
+#import "CommentsController.h"
+#import "CommentFormViewController.h"
+#import "CommentCell.h"
 #import "LeaguePerformanceView.h"
 #import "ClearButton.h"
 #import "FFLabel.h"
@@ -30,7 +33,16 @@
     [self.tableView registerNib:[UINib nibWithNibName:answerCellName bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:answerCellName];
     
+    NSString *commentCellName = NSStringFromClass([CommentCell class]);
+    [self.tableView registerNib:[UINib nibWithNibName:commentCellName bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:commentCellName];
+    
     self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:answerCellName];
+    self.commentMeasuringCell = [self.tableView dequeueReusableCellWithIdentifier:commentCellName];
+    
+    self.commentsController = [[CommentsController alloc] initWithQuestion:self.question];
+    self.commentsController.tableView = self.tableView;
+    [self.commentsController fetchComments];
     
     LeaguePerformanceView *performanceView = [[LeaguePerformanceView alloc] init];
     [performanceView setMembership:self.membership];
@@ -50,12 +62,22 @@
                          width:300];
 }
 
+-(void)newCommentTouched{
+    [self performSegueWithIdentifier:@"ShowCommentForm" sender:nil];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ShowBetCreation"] && [sender isKindOfClass:[Answer class]]) {
         Answer *answer = (Answer *)sender;
         BetViewController *betVC = (BetViewController *)[segue destinationViewController];
         betVC.answer = answer;
         betVC.membership = self.membership;
+    }
+    else if ([segue.identifier isEqualToString:@"ShowCommentForm"]){
+        CommentFormViewController *commentFormVC = (CommentFormViewController *)[segue destinationViewController];
+        if (sender == nil) { //then it is a new comment
+            commentFormVC.question = self.question;
+        }
     }
 }
 
@@ -66,7 +88,7 @@
         return [self heightForQuestionContent] + 10;
     }
     else{
-        return 50;
+        return 60;
     }
 }
 
@@ -94,6 +116,7 @@
         
         ClearButton *newCommentButton = [[ClearButton alloc] initWithFrame:CGRectMake(173, 20, 120, 30)];
         [newCommentButton setTitle:@"New Comment" forState:UIControlStateNormal];
+        [newCommentButton addTarget:self action:@selector(newCommentTouched) forControlEvents:UIControlEventTouchUpInside];
         
         [v addSubview:diamonds];
         [v addSubview:bubbles];
@@ -105,14 +128,14 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section == 1 && [self.question.commentsCount integerValue] == 0) {
+    if (section == 1 && [self.commentsController numberofComments] == 0) {
         return 60;
     }
     return 0;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    if (section == 1 && [self.question.commentsCount integerValue] == 0) {
+    if (section == 1 && [self.commentsController numberofComments] == 0) {
         FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         
         emptyCommentsLabel.isBold = NO;
@@ -132,12 +155,18 @@
     if (section == 0)
         return [self.answers count];
     else
-        return [self.question.commentsCount integerValue];
+        return [self.commentsController numberofComments];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Answer *answer = [self.answers objectAtIndex:indexPath.row];
-    return [self.measuringCell heightForCellWithAnswer:answer];
+    if(indexPath.section == 0){
+        Answer *answer = [self.answers objectAtIndex:indexPath.row];
+        return [self.measuringCell heightForCellWithAnswer:answer];
+    }
+    else{
+        Comment *comment = [self.commentsController commentAtRow:indexPath.row];
+        return [self.commentMeasuringCell heightForCellWithComment:comment];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -150,7 +179,12 @@
         return cell;
     }
     else{ //comments
-        return nil;
+        CommentCell *cell = (CommentCell *)[tableView dequeueReusableCellWithIdentifier:@"CommentCell" forIndexPath:indexPath];
+        
+        Comment *comment = [self.commentsController commentAtRow:indexPath.row];
+        cell.comment = comment;
+        
+        return cell;
     }
 }
 
@@ -158,8 +192,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    Answer *answer = [self.answers objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"ShowBetCreation" sender:answer];
+    if (indexPath.section == 0) {
+        Answer *answer = [self.answers objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"ShowBetCreation" sender:answer];
+    }
 }
 
 @end

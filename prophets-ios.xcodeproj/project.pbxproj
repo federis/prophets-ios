@@ -179,6 +179,7 @@
 		B5FD758116519F0B0051C4DC /* FFFormTextViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD758016519F0B0051C4DC /* FFFormTextViewField.m */; };
 		B5FD758616519F640051C4DC /* FFFormTextViewFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FD758516519F640051C4DC /* FFFormTextViewFieldCell.xib */; };
 		B5FD75881651AD2D0051C4DC /* FFFormTextViewFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD75871651AD2C0051C4DC /* FFFormTextViewFieldCell.m */; };
+		B5FD758B1651D6730051C4DC /* CommentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD758A1651D6720051C4DC /* CommentsController.m */; };
 		CCAD6CC9904141B2A8651A20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B080843E1DFF40039890AE89 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -433,6 +434,8 @@
 		B5FD758216519F520051C4DC /* FFFormTextViewFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextViewFieldCell.h; sourceTree = "<group>"; };
 		B5FD758516519F640051C4DC /* FFFormTextViewFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFFormTextViewFieldCell.xib; sourceTree = "<group>"; };
 		B5FD75871651AD2C0051C4DC /* FFFormTextViewFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormTextViewFieldCell.m; sourceTree = "<group>"; };
+		B5FD75891651D6710051C4DC /* CommentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsController.h; sourceTree = "<group>"; };
+		B5FD758A1651D6720051C4DC /* CommentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -492,6 +495,8 @@
 				B53F586616444FE200AF2BA9 /* CommentsViewController.m */,
 				B5FD757B16519B9F0051C4DC /* CommentFormViewController.h */,
 				B5FD757C16519B9F0051C4DC /* CommentFormViewController.m */,
+				B5FD75891651D6710051C4DC /* CommentsController.h */,
+				B5FD758A1651D6720051C4DC /* CommentsController.m */,
 			);
 			name = "League Controllers";
 			sourceTree = "<group>";
@@ -1194,6 +1199,7 @@
 				B5FD757D16519B9F0051C4DC /* CommentFormViewController.m in Sources */,
 				B5FD758116519F0B0051C4DC /* FFFormTextViewField.m in Sources */,
 				B5FD75881651AD2D0051C4DC /* FFFormTextViewFieldCell.m in Sources */,
+				B5FD758B1651D6730051C4DC /* CommentsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

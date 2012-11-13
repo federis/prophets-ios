@@ -8,13 +8,16 @@
 
 #import "FFBaseTableViewController.h"
 
-@class Membership, Question, AnswerCell;
+@class Membership, Question, AnswerCell, CommentCell, CommentsController;
 
-@interface AnswersViewController : FFBaseTableViewController
+@interface AnswersViewController : FFBaseTableViewController<NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) Question *question;
 @property (nonatomic, strong) NSArray *answers;
 @property (nonatomic, strong) AnswerCell *measuringCell;
+@property (nonatomic, strong) CommentCell *commentMeasuringCell;
+
+@property (nonatomic, strong) CommentsController *commentsController;
 
 @end
