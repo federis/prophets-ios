@@ -7,6 +7,7 @@
 //
 
 #import "FFBaseTableViewController.h"
+#import "Utilities.h"
 
 @interface FFBaseTableViewController ()
 
@@ -15,6 +16,27 @@
 @end
 
 @implementation FFBaseTableViewController
+
+-(void)setFixedHeaderView:(UIView *)fixedHeaderView{
+    if(self.fixedHeaderView) [self.fixedHeaderView removeFromSuperview];
+    
+    fixedHeaderView.frame = CGRectMake(7, 10, 303, fixedHeaderView.frame.size.height);
+    _fixedHeaderView = fixedHeaderView;
+    
+    if (fixedHeaderView) {
+        self.tableView.frame = CGRectMake(self.tableView.frame.origin.x,
+                                          10 + fixedHeaderView.frame.size.height,
+                                          self.tableView.frame.size.width,
+                                          self.view.frame.size.height - 20 - fixedHeaderView.frame.size.height);
+        [self.view addSubview:fixedHeaderView];
+    }
+    else{
+        self.tableView.frame = CGRectMake(self.tableView.frame.origin.x,
+                                          10,
+                                          self.tableView.frame.size.width,
+                                          self.view.frame.size.height - 20);
+    }
+}
 
 -(void)setShowsPullToRefresh:(BOOL)showsPullToRefresh{
     if(showsPullToRefresh){

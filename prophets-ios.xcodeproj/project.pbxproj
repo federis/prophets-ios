@@ -92,6 +92,9 @@
 		B57D092D160CFB4F0060A11E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D092C160CFB4F0060A11E /* LoginViewController.m */; };
 		B57D0944160D250C0060A11E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D0943160D250B0060A11E /* KeychainItemWrapper.m */; };
 		B58B5F431636D9FD0082640B /* QuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B5F421636D9FD0082640B /* QuestionsViewController.m */; };
+		B59843EA1652B1C70074B333 /* RoundedClearBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B59843E91652B1C70074B333 /* RoundedClearBar.m */; };
+		B59843EE1652C9830074B333 /* clear_bar_rounded.png in Resources */ = {isa = PBXBuildFile; fileRef = B59843EC1652C9830074B333 /* clear_bar_rounded.png */; };
+		B59843EF1652C9830074B333 /* clear_bar_rounded@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B59843ED1652C9830074B333 /* clear_bar_rounded@2x.png */; };
 		B5A2F35316376D5700034319 /* FFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F35216376D5600034319 /* FFBaseViewController.m */; };
 		B5A2F356163776B200034319 /* UIBarButtonItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F355163776B200034319 /* UIBarButtonItem+Additions.m */; };
 		B5A2F35E163844FA00034319 /* FFFetchedResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F35D163844FA00034319 /* FFFetchedResultsViewController.m */; };
@@ -331,6 +334,10 @@
 		B57D0943160D250B0060A11E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = "prophets-ios/KeychainItemWrapper.m"; sourceTree = "<group>"; };
 		B58B5F411636D9FD0082640B /* QuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsViewController.h; sourceTree = "<group>"; };
 		B58B5F421636D9FD0082640B /* QuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsViewController.m; sourceTree = "<group>"; };
+		B59843E81652B1C70074B333 /* RoundedClearBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedClearBar.h; sourceTree = "<group>"; };
+		B59843E91652B1C70074B333 /* RoundedClearBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedClearBar.m; sourceTree = "<group>"; };
+		B59843EC1652C9830074B333 /* clear_bar_rounded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_bar_rounded.png; sourceTree = "<group>"; };
+		B59843ED1652C9830074B333 /* clear_bar_rounded@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear_bar_rounded@2x.png"; sourceTree = "<group>"; };
 		B5A2F35116376D5600034319 /* FFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseViewController.h; sourceTree = "<group>"; };
 		B5A2F35216376D5600034319 /* FFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseViewController.m; sourceTree = "<group>"; };
 		B5A2F354163776B200034319 /* UIBarButtonItem+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Additions.h"; sourceTree = "<group>"; };
@@ -571,6 +578,8 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B59843EC1652C9830074B333 /* clear_bar_rounded.png */,
+				B59843ED1652C9830074B333 /* clear_bar_rounded@2x.png */,
 				B5F9304F1651803900755036 /* diamonds.png */,
 				B5F930501651803900755036 /* diamonds@2x.png */,
 				B50654D81642CE38006DECF8 /* Bet Table Cell */,
@@ -849,6 +858,8 @@
 			children = (
 				B5F93053165184D500755036 /* FFLabel.h */,
 				B5F93054165184D500755036 /* FFLabel.m */,
+				B59843E81652B1C70074B333 /* RoundedClearBar.h */,
+				B59843E91652B1C70074B333 /* RoundedClearBar.m */,
 				B5F9304A1651767300755036 /* ClearButton.h */,
 				B5F9304B1651767400755036 /* ClearButton.m */,
 				B5F9304D1651768500755036 /* ClearButton.xib */,
@@ -1110,6 +1121,8 @@
 				B5FD7599165297BE0051C4DC /* leaguemenu_settings_pressed@2x.png in Resources */,
 				B5FD759A165297BE0051C4DC /* leaguemenu_stats_pressed.png in Resources */,
 				B5FD759B165297BE0051C4DC /* leaguemenu_stats_pressed@2x.png in Resources */,
+				B59843EE1652C9830074B333 /* clear_bar_rounded.png in Resources */,
+				B59843EF1652C9830074B333 /* clear_bar_rounded@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,6 +1245,7 @@
 				B5FD758116519F0B0051C4DC /* FFFormTextViewField.m in Sources */,
 				B5FD75881651AD2D0051C4DC /* FFFormTextViewFieldCell.m in Sources */,
 				B5FD758B1651D6730051C4DC /* CommentsController.m in Sources */,
+				B59843EA1652B1C70074B333 /* RoundedClearBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

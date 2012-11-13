@@ -16,5 +16,6 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic) BOOL showsPullToRefresh;
 @property (nonatomic, strong) FFPullToRefreshHeader *pullToRefreshHeader;
+@property (nonatomic, strong) UIView *fixedHeaderView;
 
 @end

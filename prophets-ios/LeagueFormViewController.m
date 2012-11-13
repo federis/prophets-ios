@@ -6,15 +6,28 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
+#import <SVProgressHUD.h>
+
 #import "LeagueFormViewController.h"
 #import "League.h"
-#import <SVProgressHUD.h>
+#import "RoundedClearBar.h"
 
 @interface LeagueFormViewController ()
 
 @end
 
 @implementation LeagueFormViewController
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    RoundedClearBar *bar = [[RoundedClearBar alloc] initWithTitle:@"Create a League"];
+    [bar.leftButton addTarget:self action:@selector(cancelTouched) forControlEvents:UIControlEventTouchUpInside];
+    self.fixedHeaderView = bar;
+}
+
+-(void)cancelTouched{
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
 
 
 -(void)prepareForm{

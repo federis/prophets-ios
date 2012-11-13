@@ -17,6 +17,14 @@
                            alpha:1.0];
 }
 
+
++(UIColor *)blueGrayColor{
+    return [UIColor colorWithRed:172.0/255.0
+                           green:190.0/255.0
+                            blue:194.0/255.0
+                           alpha:1.0];
+}
+
 +(UIColor *)ffGreenColor{
     return [UIColor colorWithRed:123.0/255.0
                            green:169.0/255.0
@@ -37,5 +45,6 @@
                             blue:146.0/255.0
                            alpha:1.0];
 }
+
 
 @end
