@@ -12,6 +12,7 @@
 #import "Comment.h"
 #import "Question.h"
 #import "League.h"
+#import "RoundedClearBar.h"
 
 @interface CommentFormViewController ()
 
@@ -19,6 +20,23 @@
 
 @implementation CommentFormViewController
 
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    RoundedClearBar *bar = nil;
+    if (self.formObject) { //then we were given an existing comment
+        bar = [[RoundedClearBar alloc] initWithTitle:@"Edit Comment"];
+    }
+    else{
+        bar = [[RoundedClearBar alloc] initWithTitle:@"Create Comment"];
+    }
+    
+    [bar.leftButton addTarget:self action:@selector(cancelTouched) forControlEvents:UIControlEventTouchUpInside];
+    self.fixedHeaderView = bar;
+}
+
+-(void)cancelTouched{
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
 
 -(void)prepareForm{
     if (!self.formObject) {

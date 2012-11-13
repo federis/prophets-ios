@@ -40,10 +40,13 @@
     UIImageView *shield = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_p_small.png"]];
     shield.frame = SameSizeRectAt(74, 2, shield.frame);
     
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(106, 4, 20, self.frame.size.height)];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(108, 0, 303 - 108, self.frame.size.height)];
     self.titleLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:22];
     self.titleLabel.textColor = [UIColor blueGrayColor];
     self.titleLabel.backgroundColor = [UIColor clearColor];
+    self.titleLabel.minimumScaleFactor = 0.5;
+    self.titleLabel.adjustsFontSizeToFitWidth = YES;
+    self.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
     
     self.leftButton = [[ClearButton alloc] initWithFrame:CGRectMake(8, 5, 56, 30)];
     [self.leftButton setTitle:@"Cancel" forState:UIControlStateNormal];
@@ -56,7 +59,6 @@
 
 -(void)setTitle:(NSString *)title{
     self.titleLabel.text = title;
-    [self.titleLabel sizeToFit];
 }
 
 @end
