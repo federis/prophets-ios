@@ -12,6 +12,7 @@
 #import "LeaguePerformanceView.h"
 #import "UIBarButtonItem+Additions.h"
 #import "UIColor+Additions.h"
+#import "FFLabel.h"
 #import "BetCell.h"
 #import "Bet.h"
 #import "Membership.h"
@@ -48,6 +49,14 @@
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
+    
+    FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    
+    emptyCommentsLabel.isBold = NO;
+    emptyCommentsLabel.text = @"You haven't made any bets yet";
+    emptyCommentsLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.emptyContentFooterView = emptyCommentsLabel;
     
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"bets" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){

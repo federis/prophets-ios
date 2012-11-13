@@ -12,6 +12,7 @@
 #import "AnswersViewController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "UIColor+Additions.h"
+#import "FFLabel.h"
 #import "ClearButton.h"
 #import "QuestionCell.h"
 #import "User.h"
@@ -52,6 +53,14 @@
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
+    
+    FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    
+    emptyCommentsLabel.isBold = NO;
+    emptyCommentsLabel.text = @"No questions have been created yet";
+    emptyCommentsLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.emptyContentFooterView = emptyCommentsLabel;
     
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"questions" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
