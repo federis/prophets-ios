@@ -49,9 +49,18 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
+    FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    
+    emptyCommentsLabel.isBold = NO;
+    emptyCommentsLabel.text = @"No one has commented yet";
+    emptyCommentsLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.emptyContentFooterView = emptyCommentsLabel;
+    
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"comments" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
          //Fetched Results Controller will automatically refresh after operation completes
+         DLog(@"Success");
      }
      failure:^(RKObjectRequestOperation *operation, NSError *error){
          DLog(@"Error is %@", error);
@@ -104,26 +113,6 @@
     return v;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section == 0 && self.fetchedResultsController.fetchedObjects.count == 0) {
-        return 60;
-    }
-    return 0;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    if (section == 0 && self.fetchedResultsController.fetchedObjects.count == 0) {
-        FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-        
-        emptyCommentsLabel.isBold = NO;
-        emptyCommentsLabel.text = @"No one has commented yet";
-        emptyCommentsLabel.textAlignment = NSTextAlignmentCenter;
-        
-        return emptyCommentsLabel;
-    }
-    return nil;
-}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     Comment *comment = (Comment *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     return [self.measuringCell heightForCellWithComment:comment];
@@ -143,7 +132,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     Comment *comment = (Comment *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    if ([comment.userId isEqualToNumber:[User currentUser].remoteId]) {
+    if (self.membership.isAdmin || [comment.userId isEqualToNumber:[User currentUser].remoteId]) {
         [self performSegueWithIdentifier:@"ShowCommentForm" sender:comment];
     }
 }

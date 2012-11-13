@@ -10,7 +10,7 @@
 
 @class Membership, Question, AnswerCell, CommentCell, CommentsController;
 
-@interface AnswersViewController : FFBaseTableViewController<NSFetchedResultsControllerDelegate>
+@interface AnswersViewController : FFBaseTableViewController
 
 @property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) Question *question;

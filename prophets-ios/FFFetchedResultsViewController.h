@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
 @property (nonatomic, copy) NSString *cacheName;
 @property (nonatomic, copy) NSString *sectionNameKeyPath;
+@property (nonatomic, strong) UIView *emptyContentFooterView;
 
 @end

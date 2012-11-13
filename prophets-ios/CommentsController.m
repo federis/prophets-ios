@@ -9,6 +9,7 @@
 #import "CommentsController.h"
 #import "League.h"
 #import "Question.h"
+#import "FFLabel.h"
 
 @implementation CommentsController
 
@@ -51,6 +52,19 @@
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
+    
+    if ([self numberofComments] == 0) {
+        self.tableView.tableFooterView = [self newEmptyCommentsLabel];
+    }
+}
+
+-(UILabel *)newEmptyCommentsLabel{
+    FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    
+    emptyCommentsLabel.isBold = NO;
+    emptyCommentsLabel.text = @"No one has commented yet";
+    emptyCommentsLabel.textAlignment = NSTextAlignmentCenter;
+    return emptyCommentsLabel;
 }
 
 -(NSInteger)numberofComments{
@@ -72,13 +86,17 @@
     
     UITableView *tableView = self.tableView;
     
-    indexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:1];
-    newIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:1];
+    if (indexPath && indexPath.section == 0) {
+        indexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:1];
+    }
     
+    if (newIndexPath && newIndexPath.section == 0) {
+        newIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:1];
+    }
+     
     switch(type) {
-            
         case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
@@ -101,6 +119,13 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
     [self.tableView endUpdates];
+    
+    if (self.numberofComments == 0) {
+        self.tableView.tableFooterView = [self newEmptyCommentsLabel];
+    }
+    else{
+        self.tableView.tableFooterView = nil;
+    }
 }
 
 

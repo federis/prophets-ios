@@ -92,6 +92,23 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
     [self.tableView endUpdates];
+    
+    if(self.emptyContentFooterView){
+        if (self.fetchedResultsController.fetchedObjects.count == 0) {
+            self.tableView.tableFooterView = self.emptyContentFooterView;
+        }
+        else if([self.tableView.tableFooterView isEqual:self.emptyContentFooterView]){
+            self.tableView.tableFooterView = nil;
+        }
+    }
+}
+
+-(void)setEmptyContentFooterView:(UIView *)emptyContentFooterView{
+    _emptyContentFooterView = emptyContentFooterView;
+    
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        self.tableView.tableFooterView = self.emptyContentFooterView;
+    }
 }
 
 

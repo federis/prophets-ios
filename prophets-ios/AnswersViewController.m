@@ -21,6 +21,7 @@
 #import "Answer.h"
 #import "Comment.h"
 #import "User.h"
+#import "Membership.h"
 
 @interface AnswersViewController ()
 
@@ -45,6 +46,15 @@
     self.commentsController = [[CommentsController alloc] initWithQuestion:self.question];
     self.commentsController.tableView = self.tableView;
     [self.commentsController fetchComments];
+    
+    [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"comments" ofObject:self.question parameters:nil
+     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+         //Fetched Results Controller will automatically refresh after operation completes
+         DLog(@"Success");
+     }
+     failure:^(RKObjectRequestOperation *operation, NSError *error){
+         DLog(@"Error is %@", error);
+     }];
     
     LeaguePerformanceView *performanceView = [[LeaguePerformanceView alloc] init];
     [performanceView setMembership:self.membership];
@@ -132,26 +142,6 @@
     }
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section == 1 && [self.commentsController numberofComments] == 0) {
-        return 60;
-    }
-    return 0;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    if (section == 1 && [self.commentsController numberofComments] == 0) {
-        FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-        
-        emptyCommentsLabel.isBold = NO;
-        emptyCommentsLabel.text = @"No one has commented yet";
-        emptyCommentsLabel.textAlignment = NSTextAlignmentCenter;
-        
-        return emptyCommentsLabel;
-    }
-    return nil;
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2; //answers and comments
 }
@@ -203,7 +193,7 @@
     }
     else if(indexPath.section == 1){ //comments
         Comment *comment = [self.commentsController commentAtRow:indexPath.row];
-        if ([comment.userId isEqualToNumber:[User currentUser].remoteId]) {
+        if (self.membership.isAdmin || [comment.userId isEqualToNumber:[User currentUser].remoteId]) {
             [self performSegueWithIdentifier:@"ShowCommentForm" sender:comment];
         }
     }
