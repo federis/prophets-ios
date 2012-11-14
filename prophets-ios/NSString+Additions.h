@@ -12,5 +12,6 @@
 
 -(NSString *)humanized;
 -(NSNumber *)numberValue;
+-(NSDate *)dateFromLocalStringUsingFormat:(NSString *)dateFormat;
 
 @end

@@ -11,5 +11,6 @@
 @interface FFFormTextViewFieldCell : FFFormFieldCell<UITextViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextView *textView;
+@property (nonatomic, weak) IBOutlet UILabel *placeholderLabel;
 
 @end

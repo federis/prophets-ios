@@ -14,6 +14,7 @@
 -(void)setFormField:(FFFormField *)formField{
     FFFormTextViewField *field = (FFFormTextViewField *)formField;
     self.textView.text = field.currentValue;
+    self.placeholderLabel.text = field.labelName;
     [super setFormField:formField];
 }
 
@@ -24,6 +25,18 @@
 
 -(void)textViewDidChange:(UITextView *)textView{
     self.formField.currentValue = textView.text;
+}
+
+-(void)textViewDidBeginEditing:(UITextView *)textView{
+    if (!self.placeholderLabel.hidden) {
+        self.placeholderLabel.hidden = YES;
+    }
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    if ((!textView.text || [textView.text isEqualToString:@""]) && self.placeholderLabel.hidden) {
+        self.placeholderLabel.hidden = NO;
+    }
 }
 
 -(void)makeFirstResponder{

@@ -13,6 +13,7 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
+    
     [self.textField addTarget:self action:@selector(fieldChanged) forControlEvents:UIControlEventEditingChanged];
 }
 

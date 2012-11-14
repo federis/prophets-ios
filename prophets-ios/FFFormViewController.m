@@ -14,6 +14,7 @@
 #import "FFFormTextFieldCell.h"
 #import "FFFormTextViewFieldCell.h"
 #import "FFFormSwitchFieldCell.h"
+#import "FFFormDateFieldCell.h"
 #import "Utilities.h"
 
 @interface FFFormViewController ()
@@ -30,7 +31,8 @@
     NSArray *cellNames = @[
         NSStringFromClass([FFFormTextFieldCell class]),
         NSStringFromClass([FFFormTextViewFieldCell class]),
-        NSStringFromClass([FFFormSwitchFieldCell class])
+        NSStringFromClass([FFFormSwitchFieldCell class]),
+        NSStringFromClass([FFFormDateFieldCell class])
     ];
     
     for (NSString *name in cellNames) {

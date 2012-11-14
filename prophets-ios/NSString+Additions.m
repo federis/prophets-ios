@@ -20,6 +20,16 @@
     return [f numberFromString:self];
 }
 
+-(NSDate *)dateFromLocalStringUsingFormat:(NSString *)dateFormat{
+    // Popular:
+    // @"hh:mma zzz MMM dd,yyyy"
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = dateFormat;
+    dateFormatter.timeZone = [NSTimeZone localTimeZone];
+    
+    return [dateFormatter dateFromString:self];
+}
+
 -(NSString *)replaceCapsWith:(NSString *)replacement{
     NSScanner *scanner = [[NSScanner alloc] initWithString:self];
     scanner.caseSensitive = YES;

@@ -10,6 +10,7 @@
 
 #import "QuestionsViewController.h"
 #import "AnswersViewController.h"
+#import "QuestionFormViewController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "UIColor+Additions.h"
 #import "FFLabel.h"
@@ -106,12 +107,20 @@
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
+-(void)addQuestionTouched{
+    [self performSegueWithIdentifier:@"ShowQuestionForm" sender:nil];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ShowAnswers"] && [sender isKindOfClass:[Question class]]) {
         Question *question = (Question *)sender;
         AnswersViewController *answersVC = (AnswersViewController *)[segue destinationViewController];
         answersVC.question = question;
         answersVC.membership = self.membership;
+    }
+    else if([segue.identifier isEqualToString:@"ShowQuestionForm"]){
+        QuestionFormViewController *formVC = (QuestionFormViewController *)[segue destinationViewController];
+        formVC.league = self.membership.league;
     }
 }
 
@@ -153,6 +162,7 @@
         addQuestionButton.frame = CGRectMake(160, 0, 132, 30);
         [addQuestionButton setTitle:@"Suggest Question" forState:UIControlStateNormal];
     }
+    [addQuestionButton addTarget:self action:@selector(addQuestionTouched) forControlEvents:UIControlEventTouchUpInside];
     
     [v addSubview:headerLabel];
     [v addSubview:addQuestionButton];
