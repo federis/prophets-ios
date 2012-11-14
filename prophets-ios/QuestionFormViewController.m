@@ -38,7 +38,7 @@
     
     self.formFields = @[contentField, closeOfBettingField, descField];
     
-    self.submitButtonText = @"Create";
+    self.submitButtonText = @"Submit";
 }
 
 -(void)submit{
@@ -50,6 +50,7 @@
         [SVProgressHUD showSuccessWithStatus:@"Question created"];
         
         //send them to answers
+        
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error){
         [SVProgressHUD dismiss];
@@ -76,7 +77,6 @@
             }
         }
     }
-    
     
     return [self.errors count] == 0;
 }

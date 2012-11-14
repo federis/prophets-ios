@@ -57,6 +57,10 @@
     [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[Comment requestMapping]
                                                                      objectClass:[Comment class]
                                                                      rootKeyPath:@"comment"]];
+    
+    [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[Question requestMapping]
+                                                                     objectClass:[Question class]
+                                                                     rootKeyPath:@"question"]];
 }
 
 -(void)setupResponseDescriptors{

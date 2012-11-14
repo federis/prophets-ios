@@ -24,6 +24,7 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *approver;
 
+-(NSNumber *)dynamicLeagueId;
 -(BOOL)isApproved;
 -(BOOL)isOpenForBetting;
 

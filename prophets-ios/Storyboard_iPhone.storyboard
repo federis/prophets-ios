@@ -796,10 +796,10 @@
             </objects>
             <point key="canvasLocation" x="2201" y="-1749"/>
         </scene>
-        <!--Answer Form View Controller-->
+        <!--Edit Answers View Controller-->
         <scene sceneID="J5D-ql-2CU">
             <objects>
-                <viewController id="6JF-hD-o1b" customClass="AnswerFormViewController" sceneMemberID="viewController">
+                <viewController id="6JF-hD-o1b" customClass="EditAnswersViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JDC-yw-BtF">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -846,9 +846,6 @@
         <image name="settings_button.png" width="115" height="115"/>
     </resources>
     <classes>
-        <class className="AnswerFormViewController" superclassName="FFFormViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnswerFormViewController.h"/>
-        </class>
         <class className="AnswersViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnswersViewController.h"/>
         </class>
@@ -867,6 +864,9 @@
         </class>
         <class className="CommentsViewController" superclassName="FFFetchedResultsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsViewController.h"/>
+        </class>
+        <class className="EditAnswersViewController" superclassName="FFBaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditAnswersViewController.h"/>
         </class>
         <class className="FFBaseTableViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseTableViewController.h"/>

@@ -25,6 +25,15 @@
 @dynamic user;
 @dynamic approver;
 
+-(NSNumber *)dynamicLeagueId{
+    if (self.leagueId)
+        return self.leagueId;
+    else if(self.league && self.league.remoteId)
+        return self.league.remoteId;
+    else
+        return nil;
+}
+
 -(BOOL)isOpenForBetting{
     return self.isApproved && [self.bettingClosesAt compare:[NSDate date]] == NSOrderedDescending;
 }
@@ -63,6 +72,16 @@
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"answers"
                                                                             toKeyPath:@"answers"
                                                                           withMapping:[Answer responseMapping]]];
+    return mapping;
+}
+
++(RKMapping *)requestMapping{
+    RKObjectMapping *mapping = [RKObjectMapping requestMapping];
+    
+    [mapping addAttributeMappingsFromArray:@[@"content", @"desc"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"bettingClosesAt" : @"betting_closes_at"
+     }];
     return mapping;
 }
 

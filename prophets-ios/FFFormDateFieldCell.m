@@ -27,17 +27,17 @@
 -(void)fieldChanged:(id)sender{
     UIDatePicker *datePicker = (UIDatePicker *)sender;
     self.dateField.text = [self stringForDate:datePicker.date];
-    self.formField.currentValue = datePicker.date; //[self.dateField.text dateFromLocalStringUsingFormat:@"MM/dd/yy hh:mma"];
+    self.formField.currentValue = datePicker.date;
 }
 
 
 -(void)setFormField:(FFFormField *)formField{
     FFFormDateField *field = (FFFormDateField *)formField;
     self.attributeNameLabel.text = field.labelName;
-    self.dateField.text = [self stringForDate:field.initialDate];
+    self.dateField.text = [self stringForDate:field.currentValue];
     
     UIDatePicker *datePicker = (UIDatePicker *)self.dateField.inputView;
-    datePicker.date = field.initialDate;
+    datePicker.date = field.currentValue;
     if (field.minimumDate) {
         datePicker.minimumDate = field.minimumDate;
     }

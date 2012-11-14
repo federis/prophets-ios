@@ -27,15 +27,9 @@
     self.textField.placeholder = field.labelName;
     self.textField.secureTextEntry = field.secure;
     self.textField.returnKeyType = field.returnKeyType;
+    self.textField.text = field.currentValue;
     
     [super setFormField:formField];
-}
-
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    NSString *text = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    self.formField.currentValue = text;
- 
-    return YES;
 }
 
 -(void)makeFirstResponder{

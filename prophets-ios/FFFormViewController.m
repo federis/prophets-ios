@@ -55,15 +55,6 @@
                                  userInfo:nil];
 }
 
--(NSArray *)formFields{
-    if(!_formFields){
-        //set up form fields for all attrs of formObject
-        //[Utilities classPropsFor:[self.formObject class]];
-    }
-    
-    return _formFields;
-}
-
 -(void)serializeAndSubmit{
     if([self formIsValid]){
         [self serializeFormFieldsIntoObject];
@@ -83,18 +74,6 @@
     for (FFFormField *field in self.formFields) {
         [self.formObject setValue:field.currentValue forKey:field.attributeName];
     }
-    /*
-    for (int section = 0; section < [self.tableView numberOfSections]; section++) {
-        for (int row = 0; row < [self.tableView numberOfRowsInSection:section]; row++) {
-            NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:section];
-            FFFormFieldCell* cell = (FFFormFieldCell *)[self.tableView cellForRowAtIndexPath:cellPath];
-            FFFormField *field = [self.formFields objectAtIndex:row];
-            
-            id value = [cell formFieldCurrentValue];
-            [self.formObject setValue:value forKey:field.attributeName];
-        }
-    }
-    */
 }
 
 -(BOOL)formIsValid{

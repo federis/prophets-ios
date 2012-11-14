@@ -109,10 +109,12 @@
 		B5A2F3BF163B6B7A00034319 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2F3BE163B6B7A00034319 /* QuestionCell.m */; };
 		B5A2F3C2163B6B9900034319 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A2F3C1163B6B9800034319 /* QuestionCell.xib */; };
 		B5A73FE016530C4600CA5981 /* QuestionFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A73FDF16530C4600CA5981 /* QuestionFormViewController.m */; };
-		B5A73FE316530C5200CA5981 /* AnswerFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A73FE216530C5200CA5981 /* AnswerFormViewController.m */; };
 		B5A73FE6165313BA00CA5981 /* FFFormDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A73FE5165313BA00CA5981 /* FFFormDateField.m */; };
 		B5A73FE9165313CA00CA5981 /* FFFormDateFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A73FE8165313CA00CA5981 /* FFFormDateFieldCell.m */; };
 		B5A73FEB165313D900CA5981 /* FFFormDateFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A73FEA165313D900CA5981 /* FFFormDateFieldCell.xib */; };
+		B5A73FF9165421B800CA5981 /* EditAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A73FF8165421B600CA5981 /* EditAnswerCell.m */; };
+		B5A73FFB165421D200CA5981 /* EditAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A73FFA165421D100CA5981 /* EditAnswerCell.xib */; };
+		B5A7400116542B1700CA5981 /* EditAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A7400016542B1700CA5981 /* EditAnswersViewController.m */; };
 		B5B147051631D55D005F1B5A /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B147041631D55D005F1B5A /* Resource.m */; };
 		B5B1470816320215005F1B5A /* FFFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B1470716320215005F1B5A /* FFFormTextField.m */; };
 		B5B14721163354A7005F1B5A /* chicago_flag.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B1471B163354A7005F1B5A /* chicago_flag.png */; };
@@ -362,13 +364,16 @@
 		B5A2F3C1163B6B9800034319 /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		B5A73FDE16530C4600CA5981 /* QuestionFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionFormViewController.h; sourceTree = "<group>"; };
 		B5A73FDF16530C4600CA5981 /* QuestionFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionFormViewController.m; sourceTree = "<group>"; };
-		B5A73FE116530C5200CA5981 /* AnswerFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerFormViewController.h; sourceTree = "<group>"; };
-		B5A73FE216530C5200CA5981 /* AnswerFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerFormViewController.m; sourceTree = "<group>"; };
 		B5A73FE4165313BA00CA5981 /* FFFormDateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormDateField.h; sourceTree = "<group>"; };
 		B5A73FE5165313BA00CA5981 /* FFFormDateField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormDateField.m; sourceTree = "<group>"; };
 		B5A73FE7165313CA00CA5981 /* FFFormDateFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormDateFieldCell.h; sourceTree = "<group>"; };
 		B5A73FE8165313CA00CA5981 /* FFFormDateFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormDateFieldCell.m; sourceTree = "<group>"; };
 		B5A73FEA165313D900CA5981 /* FFFormDateFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFFormDateFieldCell.xib; sourceTree = "<group>"; };
+		B5A73FF7165421B500CA5981 /* EditAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAnswerCell.h; sourceTree = "<group>"; };
+		B5A73FF8165421B600CA5981 /* EditAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAnswerCell.m; sourceTree = "<group>"; };
+		B5A73FFA165421D100CA5981 /* EditAnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAnswerCell.xib; sourceTree = "<group>"; };
+		B5A73FFF16542B1600CA5981 /* EditAnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAnswersViewController.h; sourceTree = "<group>"; };
+		B5A7400016542B1700CA5981 /* EditAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAnswersViewController.m; sourceTree = "<group>"; };
 		B5B147031631D55D005F1B5A /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = ../Resource.h; sourceTree = "<group>"; };
 		B5B147041631D55D005F1B5A /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = ../Resource.m; sourceTree = "<group>"; };
 		B5B1470616320215005F1B5A /* FFFormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextField.h; sourceTree = "<group>"; };
@@ -702,6 +707,9 @@
 		B56E8F9A162746ED006DB56B /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				B5A73FF7165421B500CA5981 /* EditAnswerCell.h */,
+				B5A73FF8165421B600CA5981 /* EditAnswerCell.m */,
+				B5A73FFA165421D100CA5981 /* EditAnswerCell.xib */,
 				B5D33D7E1618C4900043A0E8 /* MembershipCell.h */,
 				B5D33D7F1618C4900043A0E8 /* MembershipCell.m */,
 				B5D33D811618C9450043A0E8 /* MembershipCell.xib */,
@@ -840,8 +848,8 @@
 			children = (
 				B5A73FDE16530C4600CA5981 /* QuestionFormViewController.h */,
 				B5A73FDF16530C4600CA5981 /* QuestionFormViewController.m */,
-				B5A73FE116530C5200CA5981 /* AnswerFormViewController.h */,
-				B5A73FE216530C5200CA5981 /* AnswerFormViewController.m */,
+				B5A73FFF16542B1600CA5981 /* EditAnswersViewController.h */,
+				B5A7400016542B1700CA5981 /* EditAnswersViewController.m */,
 			);
 			name = "Question Management";
 			sourceTree = "<group>";
@@ -1155,6 +1163,7 @@
 				B59843EE1652C9830074B333 /* clear_bar_rounded.png in Resources */,
 				B59843EF1652C9830074B333 /* clear_bar_rounded@2x.png in Resources */,
 				B5A73FEB165313D900CA5981 /* FFFormDateFieldCell.xib in Resources */,
+				B5A73FFB165421D200CA5981 /* EditAnswerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1279,9 +1288,10 @@
 				B5FD758B1651D6730051C4DC /* CommentsController.m in Sources */,
 				B59843EA1652B1C70074B333 /* RoundedClearBar.m in Sources */,
 				B5A73FE016530C4600CA5981 /* QuestionFormViewController.m in Sources */,
-				B5A73FE316530C5200CA5981 /* AnswerFormViewController.m in Sources */,
 				B5A73FE6165313BA00CA5981 /* FFFormDateField.m in Sources */,
 				B5A73FE9165313CA00CA5981 /* FFFormDateFieldCell.m in Sources */,
+				B5A73FF9165421B800CA5981 /* EditAnswerCell.m in Sources */,
+				B5A7400116542B1700CA5981 /* EditAnswersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
