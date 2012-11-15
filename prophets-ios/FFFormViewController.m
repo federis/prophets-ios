@@ -108,6 +108,8 @@
                                                             forIndexPath:indexPath];
     cell.formField = field;
     
+    cell.showsBottomShadow = ([self.tableView numberOfRowsInSection:indexPath.section]-1 == indexPath.row);
+    
     if ([cell isKindOfClass:[FFFormTextFieldCell class]]) {
         ((FFFormTextFieldCell *)cell).textField.delegate = self;
     }
