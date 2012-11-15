@@ -16,4 +16,30 @@
     return [numberFormatter stringFromNumber:self];
 }
 
+-(NSDecimalNumber *)decimalNumberByRoundingToTwoDecimalPlaces{
+    NSDecimalNumberHandler *behavior = [NSDecimalNumberHandler
+                                        decimalNumberHandlerWithRoundingMode:NSRoundPlain
+                                        scale:2
+                                        raiseOnExactness:YES
+                                        raiseOnOverflow:YES
+                                        raiseOnUnderflow:YES
+                                        raiseOnDivideByZero:YES];
+    
+    return [self decimalNumberByRoundingAccordingToBehavior:behavior];
+}
+
++(NSDecimalNumber *)decimalNumberWithTwoDecimalPlacesFromFloat:(CGFloat)num{
+    NSDecimalNumberHandler *behavior = [NSDecimalNumberHandler
+                                        decimalNumberHandlerWithRoundingMode:NSRoundPlain
+                                                                       scale:2
+                                                            raiseOnExactness:YES
+                                                             raiseOnOverflow:YES
+                                                            raiseOnUnderflow:YES
+                                                         raiseOnDivideByZero:YES];
+    
+    NSDecimalNumber *decimalNum = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithFloat:num] decimalValue]];
+    
+    return [decimalNum decimalNumberByRoundingAccordingToBehavior:behavior];
+}
+
 @end

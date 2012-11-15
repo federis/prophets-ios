@@ -8,6 +8,11 @@
 
 #import "FFBaseTableViewController.h"
 
+@class Question;
+
 @interface EditAnswersViewController : FFBaseTableViewController
+
+@property (nonatomic, strong) NSMutableArray *answers;
+@property (nonatomic, strong) Question *question;
 
 @end

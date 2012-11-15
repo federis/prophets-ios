@@ -42,11 +42,7 @@
 }
 
 -(NSString *)oddsString{
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setMaximumFractionDigits:2];
-    [formatter setMinimumIntegerDigits:1];
-    [formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
-    return [NSString stringWithFormat:@"%@:1", [formatter stringFromNumber:[self payoutMultipler]]];
+    return [NSString stringWithFormat:@"%@:1", [[self payoutMultipler] decimalNumberByRoundingToTwoDecimalPlaces]];
 }
 
 -(NSDecimalNumber *)potentialPayout{

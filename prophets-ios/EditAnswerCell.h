@@ -8,9 +8,17 @@
 
 #import "FFBaseCell.h"
 
-@interface EditAnswerCell : FFBaseCell
+@class Answer;
+
+@interface EditAnswerCell : FFBaseCell<UITextFieldDelegate>
+
+@property (nonatomic, strong) Answer *answer;
 
 @property (weak, nonatomic) IBOutlet UITextField *primaryTextField;
 @property (weak, nonatomic) IBOutlet UITextField *secondaryTextField;
+@property (weak, nonatomic) IBOutlet UIButton *removeButton;
+
+-(IBAction)secondaryTextFieldChanged:(id)sender;
+-(IBAction)primaryTextFieldChanged:(id)sender;
 
 @end

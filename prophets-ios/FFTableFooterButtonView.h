@@ -11,9 +11,11 @@
 @interface FFTableFooterButtonView : UIView
 
 @property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) UIButton *leftButton;
 
 +(FFTableFooterButtonView *)footerButtonViewForTable:(UITableView *)tableView withText:(NSString *)text;
 
 -(id)initWithFrame:(CGRect)frame text:(NSString *)text;
+-(void)setLeftButtonText:(NSString *)text;
 
 @end

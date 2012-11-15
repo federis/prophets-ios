@@ -789,7 +789,7 @@
                     <navigationItem key="navigationItem" id="Rwf-Tx-Qcn"/>
                     <connections>
                         <outlet property="tableView" destination="hDz-Ob-zaH" id="PiC-m9-v20"/>
-                        <segue destination="6JF-hD-o1b" kind="push" identifier="ShowAnswersForm" id="QeS-U0-74X"/>
+                        <segue destination="6JF-hD-o1b" kind="push" identifier="ShowEditAnswers" id="QeS-U0-74X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6Z-GY-mdk" userLabel="First Responder" sceneMemberID="firstResponder"/>

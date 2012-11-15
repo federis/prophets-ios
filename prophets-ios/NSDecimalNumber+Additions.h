@@ -11,5 +11,7 @@
 @interface NSDecimalNumber (Additions)
 
 -(NSString *)currencyString;
+-(NSDecimalNumber *)decimalNumberByRoundingToTwoDecimalPlaces;
++(NSDecimalNumber *)decimalNumberWithTwoDecimalPlacesFromFloat:(CGFloat)num;
 
 @end

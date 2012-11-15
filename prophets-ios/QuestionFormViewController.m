@@ -9,6 +9,7 @@
 #import <SVProgressHUD.h>
 
 #import "QuestionFormViewController.h"
+#import "EditAnswersViewController.h"
 #import "Question.h"
 
 @interface QuestionFormViewController ()
@@ -50,7 +51,7 @@
         [SVProgressHUD showSuccessWithStatus:@"Question created"];
         
         //send them to answers
-        
+        [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.formObject];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error){
         [SVProgressHUD dismiss];
@@ -69,6 +70,10 @@
             if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
                 [self.errors addObject:@"Question text cannot be blank"];
             }
+            
+            if (field.currentValue && [(NSString *)field.currentValue length] < 10) {
+                [self.errors addObject:@"Question text must be at least 10 characters"];
+            }
         }
         
         if ([field.attributeName isEqualToString:@"betting_ends_at"]) {
@@ -81,5 +86,11 @@
     return [self.errors count] == 0;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"ShowEditAnswers"] && [sender isKindOfClass:[Question class]]) {
+        EditAnswersViewController *editAnswersVC = (EditAnswersViewController *)[segue destinationViewController];
+        editAnswersVC.question = (Question *)sender;
+    }
+}
 
 @end
