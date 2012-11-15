@@ -76,4 +76,11 @@
     return [self.errors count] == 0;
 }
 
+-(void)dealloc{
+    User *user = (User *)self.formObject;
+    if (!user.remoteId) {
+        [user deleteFromManagedObjectContext];
+    }
+}
+
 @end

@@ -131,4 +131,11 @@
     return [self.errors count] == 0;
 }
 
+-(void)dealloc{
+    Comment *comment = (Comment *)self.formObject;
+    if (!comment.remoteId) {
+        [comment deleteFromManagedObjectContext];
+    }
+}
+
 @end

@@ -25,6 +25,7 @@
 +(RKEntityMapping *)responseMappingWithParentRelationships;
 +(RKEntityMapping *)requestMapping;
 
+-(void)deleteFromManagedObjectContext;
 +(id)object;
 +(id)findById:(NSNumber *)remoteId;
 

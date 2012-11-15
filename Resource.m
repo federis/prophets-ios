@@ -39,6 +39,10 @@
                                  userInfo:nil];
 }
 
+-(void)deleteFromManagedObjectContext{
+    [self.managedObjectContext deleteObject:self];
+}
+
 +(id)object{
     return [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([self class])
                                          inManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext];

@@ -93,4 +93,11 @@
     }
 }
 
+-(void)dealloc{
+    Question *question = (Question *)self.formObject;
+    if (!question.remoteId) {
+        [question deleteFromManagedObjectContext];
+    }
+}
+
 @end

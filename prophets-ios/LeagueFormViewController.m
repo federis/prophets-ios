@@ -81,5 +81,12 @@
     return [self.errors count] == 0;
 }
 
+-(void)dealloc{
+    League *league = (League *)self.formObject;
+    if (!league.remoteId) {
+        [league deleteFromManagedObjectContext];
+    }
+}
+
 
 @end

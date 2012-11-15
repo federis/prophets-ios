@@ -155,4 +155,12 @@
      */
 }
 
+-(void)dealloc{
+    for(Answer *answer in self.answers){
+        if (!answer.remoteId) {
+            [answer deleteFromManagedObjectContext];
+        }
+    }
+}
+
 @end

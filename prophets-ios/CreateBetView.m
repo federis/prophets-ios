@@ -118,4 +118,10 @@
     return YES;
 }
 
+-(void)dealloc{
+    if (!self.bet.remoteId) {
+        [self.bet deleteFromManagedObjectContext];
+    }
+}
+
 @end
