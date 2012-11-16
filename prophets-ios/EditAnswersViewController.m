@@ -9,6 +9,7 @@
 #import <SVProgressHUD.h>
 
 #import "EditAnswersViewController.h"
+#import "ReviewQuestionViewController.h"
 #import "FFTableFooterButtonView.h"
 #import "EditAnswerCell.h"
 #import "Question.h"
@@ -109,7 +110,7 @@
           [SVProgressHUD showSuccessWithStatus:@"Answers saved"];
           
           //send them to review
-          //[self performSegueWithIdentifier:@"ShowQuestionReview" sender:self.formObject];
+          [self performSegueWithIdentifier:@"ShowReviewQuestion" sender:self.question];
       }];
     
 }
@@ -184,6 +185,23 @@
     return YES;
 }
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"ShowReviewQuestion"] && [sender isKindOfClass:[Question class]]) {
+        ReviewQuestionViewController *reviewVC = (ReviewQuestionViewController *)[segue destinationViewController];
+        reviewVC.question = (Question *)sender;
+    }
+}
+
+
+-(void)dealloc{
+    for(Answer *answer in self.answers){
+        if (!answer.remoteId) {
+            [answer deleteFromManagedObjectContext];
+        }
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -217,14 +235,6 @@
     return footerView;
 }
 
-#pragma mark - Table view delegate
 
--(void)dealloc{
-    for(Answer *answer in self.answers){
-        if (!answer.remoteId) {
-            [answer deleteFromManagedObjectContext];
-        }
-    }
-}
 
 @end

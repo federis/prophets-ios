@@ -10,6 +10,10 @@
 
 #import "FFBaseViewController.h"
 #import "FFPullToRefreshHeader.h"
+#import "Utilities.h"
+#import "FFLabel.h"
+#import "FFTableFooterButtonView.h"
+#import "ClearButton.h"
 
 @interface FFBaseTableViewController : FFBaseViewController<UITableViewDelegate, UITableViewDataSource>
 

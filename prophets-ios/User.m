@@ -9,6 +9,9 @@
 #import "User.h"
 #import "KeychainItemWrapper.h"
 #import "FFApplicationConstants.h"
+#import "Membership.h"
+#import "League.h"
+#import "NSManagedObjectContext+Additions.h"
 
 @implementation User
 
@@ -25,6 +28,16 @@ static User *currentUser = nil;
 @dynamic memberships;
 @dynamic questions;
 @dynamic approvedQuestions;
+
+
+-(Membership *)membershipInLeague:(NSNumber *)leagueId{
+    NSParameterAssert(leagueId);
+    
+    NSSet *objs = [self.managedObjectContext fetchObjectsForEntityName:NSStringFromClass([Membership class])
+                                                         withPredicate:@"leagueId = %@ AND userId = %@", leagueId, self.remoteId];
+    
+    return [objs anyObject]; //should only be 1
+}
 
 +(User *)currentUser{
     if(!currentUser){

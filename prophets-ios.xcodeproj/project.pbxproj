@@ -119,6 +119,7 @@
 		B5A7400516543EAC00CA5981 /* green_footer_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A7400316543EAC00CA5981 /* green_footer_button@2x.png */; };
 		B5A74008165546FF00CA5981 /* grey_x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A74006165546FF00CA5981 /* grey_x.png */; };
 		B5A74009165546FF00CA5981 /* grey_x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A74007165546FF00CA5981 /* grey_x@2x.png */; };
+		B5A740131656C30000CA5981 /* ReviewQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A740121656C2FF00CA5981 /* ReviewQuestionViewController.m */; };
 		B5B147051631D55D005F1B5A /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B147041631D55D005F1B5A /* Resource.m */; };
 		B5B1470816320215005F1B5A /* FFFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B1470716320215005F1B5A /* FFFormTextField.m */; };
 		B5B14721163354A7005F1B5A /* chicago_flag.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B1471B163354A7005F1B5A /* chicago_flag.png */; };
@@ -382,6 +383,8 @@
 		B5A7400316543EAC00CA5981 /* green_footer_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_footer_button@2x.png"; sourceTree = "<group>"; };
 		B5A74006165546FF00CA5981 /* grey_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_x.png; sourceTree = "<group>"; };
 		B5A74007165546FF00CA5981 /* grey_x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grey_x@2x.png"; sourceTree = "<group>"; };
+		B5A740111656C2FF00CA5981 /* ReviewQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewQuestionViewController.h; sourceTree = "<group>"; };
+		B5A740121656C2FF00CA5981 /* ReviewQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewQuestionViewController.m; sourceTree = "<group>"; };
 		B5B147031631D55D005F1B5A /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = ../Resource.h; sourceTree = "<group>"; };
 		B5B147041631D55D005F1B5A /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = ../Resource.m; sourceTree = "<group>"; };
 		B5B1470616320215005F1B5A /* FFFormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextField.h; sourceTree = "<group>"; };
@@ -862,6 +865,8 @@
 				B5A73FDF16530C4600CA5981 /* QuestionFormViewController.m */,
 				B5A73FFF16542B1600CA5981 /* EditAnswersViewController.h */,
 				B5A7400016542B1700CA5981 /* EditAnswersViewController.m */,
+				B5A740111656C2FF00CA5981 /* ReviewQuestionViewController.h */,
+				B5A740121656C2FF00CA5981 /* ReviewQuestionViewController.m */,
 			);
 			name = "Question Management";
 			sourceTree = "<group>";
@@ -1308,6 +1313,7 @@
 				B5A73FE9165313CA00CA5981 /* FFFormDateFieldCell.m in Sources */,
 				B5A73FF9165421B800CA5981 /* EditAnswerCell.m in Sources */,
 				B5A7400116542B1700CA5981 /* EditAnswersViewController.m in Sources */,
+				B5A740131656C30000CA5981 /* ReviewQuestionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

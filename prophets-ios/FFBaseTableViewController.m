@@ -7,7 +7,6 @@
 //
 
 #import "FFBaseTableViewController.h"
-#import "Utilities.h"
 
 @interface FFBaseTableViewController ()
 

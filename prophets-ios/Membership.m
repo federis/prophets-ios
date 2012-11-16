@@ -54,15 +54,21 @@
      @"id" : @"remoteId",
      @"outstanding_bets_value" : @"outstandingBetsValue",
      @"league_id" : @"leagueId",
+     @"user_id" : @"userId",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
      }];
+    
+    [mapping addConnectionMappingForRelationshipForName:@"user"
+                                      fromSourceKeyPath:@"userId"
+                                              toKeyPath:@"remoteId"
+                                                matcher:nil];
     
     return mapping;
 }
 
 +(RKEntityMapping *)responseMappingWithParentRelationships{
-    RKEntityMapping *mapping = [super responseMappingWithParentRelationships];
+    RKEntityMapping *mapping = [self responseMapping];
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"league"
                                                                             toKeyPath:@"league"

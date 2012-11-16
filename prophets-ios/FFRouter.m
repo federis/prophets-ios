@@ -69,8 +69,9 @@
     
     [self.routeSet addRoute:[RKRoute routeWithClass:[Question class] pathPattern:@"/leagues/:league.remoteId/questions/:remoteId" method:RKRequestMethodPUT]];
     
-    [self.routeSet addRoute:[RKRoute routeWithClass:[Answer class] pathPattern:@"/questions/:question.remoteId/answers/:remoteId" method:RKRequestMethodPUT]];
+    [self.routeSet addRoute:[RKRoute routeWithName:@"approve_question" pathPattern:@"/leagues/:league.remoteId/questions/:remoteId/approve" method:RKRequestMethodPUT]];
     
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Answer class] pathPattern:@"/questions/:question.remoteId/answers/:remoteId" method:RKRequestMethodPUT]]; 
     
     // DELETES
     // delete requests should use :relationship.remoteId instead of :relationshipId (ie. questionId) since they already exist

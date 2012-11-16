@@ -64,6 +64,7 @@
         <attribute name="outstandingBetsValue" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="rank" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <relationship name="bets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bet" inverseName="membership" inverseEntity="Bet" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="memberships" inverseEntity="League" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="memberships" inverseEntity="User" syncable="YES"/>
@@ -111,7 +112,7 @@
         <element name="Bet" positionX="234" positionY="108" width="128" height="163"/>
         <element name="Comment" positionX="-252" positionY="-486" width="128" height="150"/>
         <element name="League" positionX="-56" positionY="-315" width="128" height="210"/>
-        <element name="Membership" positionX="396" positionY="-306" width="128" height="163"/>
+        <element name="Membership" positionX="396" positionY="-306" width="128" height="180"/>
         <element name="Question" positionX="-281" positionY="-216" width="128" height="225"/>
         <element name="Resource" positionX="144" positionY="-378" width="128" height="90"/>
         <element name="User" positionX="529" positionY="-108" width="128" height="163"/>

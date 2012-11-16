@@ -8,6 +8,8 @@
 
 #import "Resource.h"
 
+@class Membership;
+
 @interface User : Resource{
     NSString *_authenticationToken;
 }
@@ -23,6 +25,8 @@
 @property (nonatomic, strong) NSSet *approvedQuestions;
 
 @property (nonatomic, strong) NSString *password;
+
+-(Membership *)membershipInLeague:(NSNumber *)leagueId;
 
 -(NSString *)authenticationToken;
 -(void)setAuthenticationToken:(NSString *)token;

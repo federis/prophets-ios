@@ -154,7 +154,7 @@
     headerLabel.textColor = [UIColor creamColor];
     
     ClearButton *addQuestionButton = [[ClearButton alloc] init];
-    if (!self.membership.isAdmin) {
+    if (self.membership.isAdmin) {
         addQuestionButton.frame = CGRectMake(170, 0, 120, 30);
         [addQuestionButton setTitle:@"Add Question" forState:UIControlStateNormal];
     }
