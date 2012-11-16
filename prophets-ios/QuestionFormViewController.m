@@ -43,12 +43,12 @@
 }
 
 -(void)submit{
-    [SVProgressHUD showWithStatus:@"Creating question" maskType:SVProgressHUDMaskTypeGradient];
+    [SVProgressHUD showWithStatus:@"Saving question" maskType:SVProgressHUDMaskTypeGradient];
     
     [[RKObjectManager sharedManager] postObject:self.formObject path:nil parameters:nil
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         [SVProgressHUD dismiss];
-        [SVProgressHUD showSuccessWithStatus:@"Question created"];
+        [SVProgressHUD showSuccessWithStatus:@"Question saved"];
         
         //send them to answers
         [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.formObject];

@@ -44,7 +44,7 @@
 }
 
 +(id)object{
-    return [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([self class])
+    return [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self)
                                          inManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext];
 }
 

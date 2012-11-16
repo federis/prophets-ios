@@ -20,6 +20,7 @@
 @dynamic correct;
 @dynamic judgedAt;
 @dynamic correctnessKnownAt;
+@dynamic questionId;
 @dynamic question;
 @dynamic user;
 @dynamic judge;
@@ -92,12 +93,18 @@
      @"current_probability" : @"currentProbability",
      @"initial_probability" : @"initialProbability",
      @"correct" : @"isCorrect",
+     @"question_id" : @"questionId",
      @"judged_at" : @"judgedAt",
      @"correctness_known_at" : @"correctnessKnownAt",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
      }];
-        
+    
+    [mapping addConnectionMappingForRelationshipForName:@"question"
+                                      fromSourceKeyPath:@"questionId"
+                                              toKeyPath:@"remoteId"
+                                                matcher:nil];
+    
     return mapping;
 }
 
@@ -108,6 +115,18 @@
                                                                             toKeyPath:@"question"
                                                                           withMapping:[Question responseMapping]]];
 
+    return mapping;
+}
+
++(RKMapping *)requestMapping{
+    RKObjectMapping *mapping = [RKObjectMapping requestMapping];
+    
+    [mapping addAttributeMappingsFromArray:@[@"content"]];
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"remoteId" : @"remote_id",
+     @"initialProbability" : @"initial_probability",
+     }];
+    
     return mapping;
 }
 

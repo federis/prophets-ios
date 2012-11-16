@@ -18,6 +18,7 @@
 #import "Question.h"
 #import "Bet.h"
 #import "Comment.h"
+#import "Answer.h"
 #import "League.h"
 
 @implementation FFObjectManager
@@ -61,6 +62,11 @@
     [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[Question requestMapping]
                                                                      objectClass:[Question class]
                                                                      rootKeyPath:@"question"]];
+    
+    [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[Answer requestMapping]
+                                                                     objectClass:[Answer class]
+                                                                     rootKeyPath:@"answer"]];
+    
 }
 
 -(void)setupResponseDescriptors{
@@ -89,11 +95,13 @@
                                                                             keyPath:@"question"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
+    // get list of user's bets in the league
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Bet responseMappingWithParentRelationships]
                                                                         pathPattern:@"/leagues/:remoteId/bets"
                                                                             keyPath:@"bet"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
+    // creating bets
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Bet responseMappingWithChildRelationships]
                                                                         pathPattern:@"/answers/:dynamicAnswerId/bets"
                                                                             keyPath:@"bet"
@@ -111,6 +119,11 @@
                                                                             keyPath:@"league"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Answer responseMapping]
+                                                                        pathPattern:nil
+                                                                            keyPath:@"answer"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
 }
 
 -(void)setupFetchRequestBlocks{

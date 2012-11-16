@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSNumber * correct;
 @property (nonatomic, strong) NSDate * judgedAt;
 @property (nonatomic, strong) NSDate * correctnessKnownAt;
+@property (nonatomic, strong) NSNumber * questionId;
 @property (nonatomic, strong) Question *question;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) User *judge;

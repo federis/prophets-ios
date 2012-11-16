@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) NSMutableArray *answers;
 @property (nonatomic, strong) Question *question;
+@property (nonatomic, strong) NSMutableArray *tempContexts;
 
 @end

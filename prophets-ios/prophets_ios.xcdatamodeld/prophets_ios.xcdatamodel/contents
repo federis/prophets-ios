@@ -8,6 +8,7 @@
         <attribute name="currentProbability" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="initialProbability" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="judgedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="questionId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <relationship name="bets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bet" inverseName="answer" inverseEntity="Bet" syncable="YES"/>
         <relationship name="judge" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="judgedAnswers" inverseEntity="User" syncable="YES"/>
         <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
@@ -78,7 +79,7 @@
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
-        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="question" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Answer" inverseName="question" inverseEntity="Answer" syncable="YES"/>
         <relationship name="approver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="approvedQuestions" inverseEntity="User" syncable="YES"/>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="question" inverseEntity="Comment" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="questions" inverseEntity="League" syncable="YES"/>
@@ -106,7 +107,7 @@
         </userInfo>
     </entity>
     <elements>
-        <element name="Answer" positionX="-63" positionY="27" width="128" height="210"/>
+        <element name="Answer" positionX="-63" positionY="27" width="128" height="225"/>
         <element name="Bet" positionX="234" positionY="108" width="128" height="163"/>
         <element name="Comment" positionX="-252" positionY="-486" width="128" height="150"/>
         <element name="League" positionX="-56" positionY="-315" width="128" height="210"/>

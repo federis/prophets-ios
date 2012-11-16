@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
+#import <SVProgressHUD.h>
+
 #import "EditAnswersViewController.h"
 #import "FFTableFooterButtonView.h"
 #import "EditAnswerCell.h"
@@ -26,10 +28,12 @@
         self.answers = [[self.question.answers allObjects] mutableCopy];
     }
     else{
-        Answer *answer1 = [Answer object];
+        Answer *answer1 = [self newAnswer];
         answer1.initialProbability = [NSDecimalNumber decimalNumberWithString:@"0.5"];
-        Answer *answer2 = [Answer object];
+        
+        Answer *answer2 = [self newAnswer];
         answer2.initialProbability = [NSDecimalNumber decimalNumberWithString:@"0.5"];
+        
         self.answers = [NSMutableArray arrayWithObjects:answer1, answer2, nil];
     }
     
@@ -38,12 +42,81 @@
     
 }
 
+-(Answer *)newAnswer{
+    NSManagedObjectContext *privateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    
+    [privateContext performBlockAndWait:^{
+        privateContext.parentContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+        privateContext.mergePolicy  = NSMergeByPropertyStoreTrumpMergePolicy;
+    }];
+    
+    [self.tempContexts addObject:privateContext];
+    
+    Answer *answer = (Answer *)[privateContext insertNewObjectForEntityForName:@"Answer"];
+    answer.questionId = self.question.remoteId;
+    return answer;
+}
+
+-(NSMutableArray *)tempContexts{
+    if (_tempContexts) return _tempContexts;
+    
+    _tempContexts = [NSMutableArray array];
+    return _tempContexts;
+}
+
 -(void)submit{
+    //delete any answers from the question that the user deleted from the screen
+    NSMutableSet *answersToDelete = [[NSMutableSet alloc] init];
+    for (Answer *answer in self.question.answers) {
+        if (![self.answers containsObject:answer]) {
+            [answersToDelete addObject:answer];
+        }
+    }
+    
+    [SVProgressHUD showWithStatus:@"Saving answers" maskType:SVProgressHUDMaskTypeGradient];
+    
+    NSMutableArray *requests = [NSMutableArray array];
+    for (Answer *answer in self.answers) {
+        RKRequestMethod method = answer.remoteId ? RKRequestMethodPUT : RKRequestMethodPOST;
+        
+        RKManagedObjectRequestOperation *request = [[RKObjectManager sharedManager] appropriateObjectRequestOperationWithObject:answer method:method path:nil parameters:nil];
+        
+        [requests addObject:request];
+    }
+    
+    for (Answer *answer in answersToDelete) {
+        RKManagedObjectRequestOperation *request = [[RKObjectManager sharedManager] appropriateObjectRequestOperationWithObject:answer method:RKRequestMethodDELETE path:nil parameters:nil];
+        
+        [requests addObject:request];
+    }
+    
+    [[RKObjectManager sharedManager] enqueueBatchOfObjectRequestOperations:requests
+      progress:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
+          
+      } completion:^ (NSArray *operations) {
+          
+          [SVProgressHUD dismiss];
+          
+          for (RKManagedObjectRequestOperation *operation in operations) {
+              if (operation.error) {
+                  DLog(@"%@", operation.error);
+                  
+                  [SVProgressHUD showErrorWithStatus:[operation.error description]];
+                  return;
+              }
+          }
+          
+          [SVProgressHUD showSuccessWithStatus:@"Answers saved"];
+          
+          //send them to review
+          //[self performSegueWithIdentifier:@"ShowQuestionReview" sender:self.formObject];
+      }];
     
 }
 
 -(void)addAnswer{
-    Answer *newAnswer = [Answer object];
+    Answer *newAnswer = [self newAnswer];
+    
     if ([self allAnswersHaveSameInitialProbability]) {
         [self.answers addObject:newAnswer];
         [self rebalanceAnswerProbabilities];
@@ -72,6 +145,8 @@
     if ([v isKindOfClass:[EditAnswerCell class]]) {
         EditAnswerCell *cell = (EditAnswerCell *)v;
         [self.answers removeObject:cell.answer];
+        [self.tempContexts removeObject:cell.answer.managedObjectContext];
+        
         NSArray *indexPaths = @[[self.tableView indexPathForCell:cell]];
         [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
         
@@ -143,17 +218,6 @@
 }
 
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 -(void)dealloc{
     for(Answer *answer in self.answers){

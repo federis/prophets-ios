@@ -82,6 +82,7 @@
     [mapping addAttributeMappingsFromDictionary:@{
      @"bettingClosesAt" : @"betting_closes_at"
      }];
+    
     return mapping;
 }
 

@@ -12,6 +12,7 @@
 #import "League.h"
 #import "Question.h"
 #import "Bet.h"
+#import "Answer.h"
 
 @interface FFRouter()
 
@@ -52,10 +53,29 @@
     
     
     // POSTS
+    // post requests should use :relationshipId (ie. questionId) instead of :relationship.remoteId since they do not exist yet
+    // The response mapping should connect the relationship upon creation - NOT before we successfully create the resource
     [self.routeSet addRoute:[RKRoute routeWithClass:[Bet class] pathPattern:@"/answers/:dynamicAnswerId/bets" method:RKRequestMethodPOST]];
     
     [self.routeSet addRoute:[RKRoute routeWithClass:[Question class] pathPattern:@"/leagues/:dynamicLeagueId/questions" method:RKRequestMethodPOST]];
     
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Answer class] pathPattern:@"/questions/:questionId/answers" method:RKRequestMethodPOST]];
+    
+    
+    // PUTS
+    // put requests should use :relationship.remoteId instead of :relationshipId (ie. questionId) since they already exist
+    
+    //comment put routes are in the form bc RKRouter can't handle two paths for the same verb on a resource, but comments need to be put to leagues and questions
+    
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Question class] pathPattern:@"/leagues/:league.remoteId/questions/:remoteId" method:RKRequestMethodPUT]];
+    
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Answer class] pathPattern:@"/questions/:question.remoteId/answers/:remoteId" method:RKRequestMethodPUT]];
+    
+    
+    // DELETES
+    // delete requests should use :relationship.remoteId instead of :relationshipId (ie. questionId) since they already exist
+    
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Answer class] pathPattern:@"/questions/:question.remoteId/answers/:remoteId" method:RKRequestMethodDELETE]];
     
 }
 
