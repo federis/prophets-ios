@@ -11,7 +11,7 @@
         <attribute name="questionId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <relationship name="bets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bet" inverseName="answer" inverseEntity="Bet" syncable="YES"/>
         <relationship name="judge" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="judgedAnswers" inverseEntity="User" syncable="YES"/>
-        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
+        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="answers" inverseEntity="User" syncable="YES"/>
         <userInfo>
             <entry key="primaryKeyAttribute" value="remoteId"/>
@@ -24,7 +24,7 @@
         <attribute name="membershipId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="payout" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="probability" optional="YES" attributeType="Decimal" syncable="YES"/>
-        <relationship name="answer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Answer" inverseName="bets" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="answer" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Answer" inverseName="bets" inverseEntity="Answer" syncable="YES"/>
         <relationship name="membership" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Membership" inverseName="bets" inverseEntity="Membership" syncable="YES"/>
         <userInfo>
             <entry key="primaryKeyAttribute" value="remoteId"/>
@@ -50,9 +50,9 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priv" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="questionsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
-        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="league" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="league" inverseEntity="Comment" syncable="YES"/>
         <relationship name="memberships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Membership" inverseName="league" inverseEntity="Membership" syncable="YES"/>
-        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="league" inverseEntity="Question" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Question" inverseName="league" inverseEntity="Question" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="createdLeagues" inverseEntity="User" syncable="YES"/>
         <userInfo>
             <entry key="primaryKeyAttribute" value="remoteId"/>
@@ -65,7 +65,7 @@
         <attribute name="rank" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 32" syncable="YES"/>
-        <relationship name="bets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bet" inverseName="membership" inverseEntity="Bet" syncable="YES"/>
+        <relationship name="bets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Bet" inverseName="membership" inverseEntity="Bet" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="memberships" inverseEntity="League" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="memberships" inverseEntity="User" syncable="YES"/>
         <userInfo>
@@ -82,7 +82,7 @@
         <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <relationship name="answers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Answer" inverseName="question" inverseEntity="Answer" syncable="YES"/>
         <relationship name="approver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="approvedQuestions" inverseEntity="User" syncable="YES"/>
-        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="question" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="question" inverseEntity="Comment" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="questions" inverseEntity="League" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="questions" inverseEntity="User" syncable="YES"/>
         <userInfo>
@@ -101,7 +101,7 @@
         <relationship name="approvedQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="approver" inverseEntity="Question" syncable="YES"/>
         <relationship name="createdLeagues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="League" inverseName="user" inverseEntity="League" syncable="YES"/>
         <relationship name="judgedAnswers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="judge" inverseEntity="Answer" syncable="YES"/>
-        <relationship name="memberships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Membership" inverseName="user" inverseEntity="Membership" syncable="YES"/>
+        <relationship name="memberships" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Membership" inverseName="user" inverseEntity="Membership" syncable="YES"/>
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="user" inverseEntity="Question" syncable="YES"/>
         <userInfo>
             <entry key="primaryKeyAttribute" value="remoteId"/>
@@ -109,12 +109,12 @@
     </entity>
     <elements>
         <element name="Answer" positionX="-63" positionY="27" width="128" height="225"/>
-        <element name="Bet" positionX="234" positionY="108" width="128" height="163"/>
+        <element name="Bet" positionX="234" positionY="108" width="128" height="165"/>
         <element name="Comment" positionX="-252" positionY="-486" width="128" height="150"/>
         <element name="League" positionX="-56" positionY="-315" width="128" height="210"/>
         <element name="Membership" positionX="396" positionY="-306" width="128" height="180"/>
         <element name="Question" positionX="-281" positionY="-216" width="128" height="225"/>
         <element name="Resource" positionX="144" positionY="-378" width="128" height="90"/>
-        <element name="User" positionX="529" positionY="-108" width="128" height="163"/>
+        <element name="User" positionX="529" positionY="-108" width="128" height="165"/>
     </elements>
 </model>
