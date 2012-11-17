@@ -78,7 +78,7 @@
 #pragma mark - Table view data source
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return [self heightForQuestionContent] + 10;
+    return [self heightForQuestionContent] + 40;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -88,7 +88,18 @@
     FFLabel *questionContentLabel = [[FFLabel alloc] initWithFrame:CGRectMake(10, 5, 290, [self heightForQuestionContent])];
     questionContentLabel.text = self.question.content;
     
+    FFLabel *closeOfBettingLabel = [[FFLabel alloc] initWithFrame:CGRectMake(10, [self heightForQuestionContent] + 10, 320, 20)];
+    closeOfBettingLabel.isBold = NO;
+    closeOfBettingLabel.fontSize = 12;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"hh:mma zzz MMM dd,yyyy";
+    dateFormatter.timeZone = [NSTimeZone localTimeZone];
+    
+    closeOfBettingLabel.text = [NSString stringWithFormat:@"Close of Betting: %@", [dateFormatter stringFromDate:self.question.bettingClosesAt]];
+    
     [v addSubview:questionContentLabel];
+    [v addSubview:closeOfBettingLabel];
     return v;
 }
 
