@@ -66,6 +66,20 @@
 }
 
 -(void)submit{
+    for (Answer *answer in self.answers) {
+        if (!answer.content || [answer.content isEqualToString:@""]) {
+            [Utilities showOkAlertWithTitle:@"Invalid Answer"
+                                    message:@"Answer text cannot be blank"];
+            return;
+        }
+    }
+    
+    if ([self currentSumOfAnswerInitialProbablities] != 1.0) {
+        [Utilities showOkAlertWithTitle:@"Invalid Probabilities"
+                                message:@"The answer probabilities must add up to 1.0"];
+        return;
+    }
+    
     //delete any answers from the question that the user deleted from the screen
     NSMutableSet *answersToDelete = [[NSMutableSet alloc] init];
     for (Answer *answer in self.question.answers) {
