@@ -149,7 +149,7 @@
         if (match) {
             NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Question"];
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@ AND approvedAt != NULL", leagueId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:YES]];
             return fetchRequest;
         }
