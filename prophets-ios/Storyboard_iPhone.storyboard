@@ -762,7 +762,7 @@
             </objects>
             <point key="canvasLocation" x="2742" y="52"/>
         </scene>
-        <!--Question Form View Controller-->
+        <!--Question Form View Controller - Question-->
         <scene sceneID="JO9-3N-8Cc">
             <objects>
                 <viewController id="nPl-LN-rRc" customClass="QuestionFormViewController" sceneMemberID="viewController">
@@ -786,7 +786,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Rwf-Tx-Qcn"/>
+                    <navigationItem key="navigationItem" title="Question" id="Rwf-Tx-Qcn"/>
                     <connections>
                         <outlet property="tableView" destination="hDz-Ob-zaH" id="PiC-m9-v20"/>
                         <segue destination="6JF-hD-o1b" kind="push" identifier="ShowEditAnswers" id="QeS-U0-74X"/>
@@ -796,7 +796,7 @@
             </objects>
             <point key="canvasLocation" x="2201" y="-1749"/>
         </scene>
-        <!--Edit Answers View Controller-->
+        <!--Edit Answers View Controller - Answers-->
         <scene sceneID="J5D-ql-2CU">
             <objects>
                 <viewController id="6JF-hD-o1b" customClass="EditAnswersViewController" sceneMemberID="viewController">
@@ -820,7 +820,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8IR-1p-ZYp"/>
+                    <navigationItem key="navigationItem" title="Answers" id="8IR-1p-ZYp"/>
                     <connections>
                         <outlet property="tableView" destination="jzD-nc-7Ho" id="efH-Pg-Ch7"/>
                         <segue destination="6dn-2N-2xI" kind="push" identifier="ShowReviewQuestion" id="W7K-gN-XaC"/>
@@ -830,7 +830,7 @@
             </objects>
             <point key="canvasLocation" x="2671" y="-1749"/>
         </scene>
-        <!--Review Question View Controller-->
+        <!--Review Question View Controller - Review-->
         <scene sceneID="ddi-v1-NsS">
             <objects>
                 <viewController id="6dn-2N-2xI" customClass="ReviewQuestionViewController" sceneMemberID="viewController">
@@ -854,7 +854,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qj3-0I-MaK"/>
+                    <navigationItem key="navigationItem" title="Review" id="qj3-0I-MaK"/>
                     <connections>
                         <outlet property="tableView" destination="s2W-XZ-zyg" id="7lC-sf-P4M"/>
                     </connections>
