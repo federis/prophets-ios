@@ -67,13 +67,33 @@
     
     for (FFFormField *field in self.formFields) {
         if ([field.attributeName isEqualToString:@"content"]) {
-            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+            NSString *content = (NSString *)field.currentValue;
+            if(content){
+                if ([content isEqualToString:@""]) {
+                    [self.errors addObject:@"Question text cannot be blank"];
+                }
+                
+                if([content length] < 10) {
+                    [self.errors addObject:@"Question text must be at least 10 characters"];
+                }
+                
+                if([content length] > 250) {
+                    [self.errors addObject:@"Question cannot be more than 250 characters"];
+                }
+            }
+            else{
                 [self.errors addObject:@"Question text cannot be blank"];
             }
             
-            if (field.currentValue && [(NSString *)field.currentValue length] < 10) {
-                [self.errors addObject:@"Question text must be at least 10 characters"];
-            }
+        }
+        
+        if ([field.attributeName isEqualToString:@"desc"]) {
+            NSString *desc = (NSString *)field.currentValue;
+            if(desc){
+                if([desc length] > 2000) {
+                    [self.errors addObject:@"Description cannot be more than 2000 characters"];
+                }
+            }            
         }
         
         if ([field.attributeName isEqualToString:@"betting_ends_at"]) {
