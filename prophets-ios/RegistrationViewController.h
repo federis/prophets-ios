@@ -6,9 +6,8 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "FFBaseTableViewController.h"
+#import "FFFormViewController.h"
 
-@interface RegistrationViewController : FFBaseTableViewController
+@interface RegistrationViewController : FFFormViewController
 
 @end

@@ -13,12 +13,25 @@
 #import "User.h"
 #import "NSManagedObject+Additions.h"
 #import "FFApplicationConstants.h"
+#import "RoundedClearBar.h"
 
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    
+    RoundedClearBar *bar = [[RoundedClearBar alloc] initWithTitle:@"Sign In"];
+    [bar.leftButton addTarget:self action:@selector(cancelTouched) forControlEvents:UIControlEventTouchUpInside];
+    self.fixedHeaderView = bar;
+}
+
+-(void)cancelTouched{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 -(void)prepareForm{
     User *user = [User object];
@@ -67,7 +80,7 @@
         
         if ([field.attributeName isEqualToString:@"password"]) {
             if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
-                [self.errors addObject:@"password cannot be blank"];
+                [self.errors addObject:@"Password cannot be blank"];
             }
         }
     }

@@ -10,6 +10,8 @@ extern NSString * const FFBaseUrl;
 extern NSString * const FFKeychainIdentifier;
 extern NSString * const FFObjectStoreName;
 
+extern NSString * const FFRegistrationSecret;
+
 //Login notifications
 extern NSString * const FFUserDidLogInNotification;
 extern NSString * const FFUserDidLogOutNotification;

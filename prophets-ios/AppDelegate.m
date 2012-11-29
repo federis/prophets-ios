@@ -43,6 +43,11 @@
                                                  name:FFUserDidLogInNotification
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userLoggedOut)
+                                                 name:FFUserDidLogOutNotification
+                                               object:nil];
+    
     return YES;
 }
 
@@ -60,6 +65,36 @@
 -(void)userLoggedIn{
     [self setupAuthTokenHeader];
     [self.window.rootViewController dismissViewControllerAnimated:YES completion:^{}];
+}
+
+-(void)userLoggedOut{
+    [self showLogin];
+    
+    NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext;
+    
+    //NSArray *entityNames = [[RKObjectManager sharedManager].managedObjectStore.managedObjectModel.entities valueForKey:@"name"];
+    
+    //for (NSString *entityName in entityNames) {
+        NSFetchRequest * allEntities = [[NSFetchRequest alloc] init];
+        [allEntities setEntity:[NSEntityDescription entityForName:@"Resource" inManagedObjectContext:context]];
+        [allEntities setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+        
+        NSError *error = nil;
+        NSArray * results = [context executeFetchRequest:allEntities error:&error];
+        
+        if(error){
+            //continue;
+        }
+        
+        //error handling goes here
+        for (NSManagedObject * obj in results) {
+            [context deleteObject:obj];
+        }
+        error = nil;
+        if(![context save:&error]){
+            DLog(@"error %@", error);
+        }    
+    //}
 }
 
 -(void)setupAppearances{

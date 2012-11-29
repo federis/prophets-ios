@@ -37,10 +37,19 @@
     UIImageView *barBackground = [[UIImageView alloc] initWithImage:image];
     barBackground.frame = self.frame;
     
-    UIImageView *shield = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_p_small.png"]];
-    shield.frame = SameSizeRectAt(74, 2, shield.frame);
+    self.leftButton = [[ClearButton alloc] initWithFrame:CGRectMake(8, 5, 56, 30)];
+    [self.leftButton setTitle:@"Cancel" forState:UIControlStateNormal];
     
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(108, 0, 303 - 108, self.frame.size.height)];
+    CGFloat left = self.leftButton.frame.origin.x + self.leftButton.frame.size.width + 8;
+    self.titleContainer = [[UIView alloc] initWithFrame:CGRectMake(left, 0,
+                                                                   self.frame.size.width - left,
+                                                                   self.frame.size.height)];
+    
+    UIImageView *shield = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_p_small.png"]];
+    shield.frame = SameSizeRectAt(0, 4, shield.frame);
+    
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(33, 4, self.titleContainer.frame.size.width - 34, 31)];
+    
     self.titleLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:22];
     self.titleLabel.textColor = [UIColor blueGrayColor];
     self.titleLabel.backgroundColor = [UIColor clearColor];
@@ -48,17 +57,35 @@
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
     self.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
     
-    self.leftButton = [[ClearButton alloc] initWithFrame:CGRectMake(8, 5, 56, 30)];
-    [self.leftButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [self.titleContainer addSubview:shield];
+    [self.titleContainer addSubview:self.titleLabel];
     
     [self addSubview:self.leftButton];
     [self addSubview:barBackground];
-    [self addSubview:self.titleLabel];
-    [self addSubview:shield];
+    [self addSubview:self.titleContainer];
 }
 
 -(void)setTitle:(NSString *)title{
+    CGFloat left = self.leftButton.frame.origin.x + self.leftButton.frame.size.width + 5;
+    
+    self.titleContainer.frame = CGRectMake(left, 0,
+                                           self.frame.size.width - left,
+                                           self.frame.size.height);
+    
+    self.titleLabel.frame = CGRectMake(33, 4, self.titleContainer.frame.size.width - 34, 31);
+    
     self.titleLabel.text = title;
+    
+    [self.titleLabel sizeToFit];
+    
+    self.titleContainer.frame = CGRectMake(left, 0,
+                                           self.titleLabel.frame.size.width + 34,
+                                           self.frame.size.height);
+    
+    if (self.titleContainer.center.x < self.center.x) {
+        self.titleContainer.center = CGPointMake(self.center.x, self.titleContainer.center.y);
+    }
+    
 }
 
 @end

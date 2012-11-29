@@ -26,6 +26,8 @@ NSString * const FFObjectStoreName = @"RKTests.sqlite";
 
 #endif
 
+NSString * const FFRegistrationSecret = @"7eaeaff73a42ececa4392fd99000d5f9cfa76b41";
+
 //Login notifications
 NSString * const FFUserDidLogInNotification = @"FFUserDidLogInNotification";
 NSString * const FFUserDidLogOutNotification = @"FFUserDidLogOutNotification";

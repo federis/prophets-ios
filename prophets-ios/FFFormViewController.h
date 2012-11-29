@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *errors;
 @property (nonatomic, strong) NSString *submitButtonText;
 @property (nonatomic, strong) FFTableFooterButtonView *footerView;
+@property (nonatomic, strong) NSManagedObjectContext *scratchContext;
 
 -(void)prepareForm;
 -(void)submit;

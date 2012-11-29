@@ -11,6 +11,7 @@
 @interface RoundedClearBar : UIView
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIView *titleContainer;
 @property (nonatomic, strong) UIButton *leftButton;
 
 -(id)initWithTitle:(NSString *)title;
