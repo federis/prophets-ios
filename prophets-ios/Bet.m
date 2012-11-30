@@ -70,10 +70,7 @@
 +(RKEntityMapping *)responseMappingWithParentRelationships{
     RKEntityMapping *mapping = [self responseMapping];
     
-    [mapping addConnectionMappingForRelationshipForName:@"membership"
-                                      fromSourceKeyPath:@"membershipId"
-                                              toKeyPath:@"remoteId"
-                                                matcher:nil];
+    [mapping addConnectionForRelationship:@"membership" connectedBy:@{@"membershipId" : @"remoteId"}];
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"answer"
                                                                             toKeyPath:@"answer"

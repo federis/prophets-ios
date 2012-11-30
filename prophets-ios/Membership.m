@@ -59,10 +59,7 @@
      @"created_at" : @"createdAt"
      }];
     
-    [mapping addConnectionMappingForRelationshipForName:@"user"
-                                      fromSourceKeyPath:@"userId"
-                                              toKeyPath:@"remoteId"
-                                                matcher:nil];
+    [mapping addConnectionForRelationship:@"user" connectedBy:@{@"userId" : @"remoteId"}];
     
     return mapping;
 }

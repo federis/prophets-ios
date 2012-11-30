@@ -48,9 +48,4 @@
                                          inManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext];
 }
 
-+(id)findById:(NSNumber *)remoteId{
-    NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
-    return [context fetchObjectForEntityForName:NSStringFromClass(self) withValueForPrimaryKeyAttribute:remoteId];
-}
-
 @end

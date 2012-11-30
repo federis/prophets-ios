@@ -58,10 +58,7 @@
      @"created_at" : @"createdAt"
      }];
     
-    [mapping addConnectionMappingForRelationshipForName:@"league"
-                                      fromSourceKeyPath:@"leagueId"
-                                              toKeyPath:@"remoteId"
-                                                matcher:nil];    
+    [mapping addConnectionForRelationship:@"league" connectedBy:@{@"leagueId" : @"remoteId"}];
     
     return mapping;
 }

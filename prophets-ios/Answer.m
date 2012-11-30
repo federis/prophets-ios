@@ -100,10 +100,7 @@
      @"created_at" : @"createdAt"
      }];
     
-    [mapping addConnectionMappingForRelationshipForName:@"question"
-                                      fromSourceKeyPath:@"questionId"
-                                              toKeyPath:@"remoteId"
-                                                matcher:nil];
+    [mapping addConnectionForRelationship:@"question" connectedBy:@{@"questionId" : @"remoteId"}];
     
     return mapping;
 }

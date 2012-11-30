@@ -11,9 +11,10 @@
 
 @implementation NSManagedObject (Additions)
 
-+(id)tempObject{
-    return [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([self class])
-                                         inManagedObjectContext:[NSManagedObjectContext tempObjectContext]];
++(id)findById:(NSNumber *)remoteId inContext:(NSManagedObjectContext *)context{
+    
+    return [[context fetchObjectsForEntityName:NSStringFromClass(self)
+                                 withPredicate:@"remoteId = %@", remoteId] anyObject];
 }
 
 @end

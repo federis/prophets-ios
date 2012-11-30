@@ -10,6 +10,6 @@
 
 @interface NSManagedObject (Additions)
 
-+(id)tempObject;
++(id)findById:(NSNumber *)remoteId inContext:(NSManagedObjectContext *)context;
 
 @end

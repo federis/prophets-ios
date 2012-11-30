@@ -43,7 +43,7 @@ static User *currentUser = nil;
     if(!currentUser){
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
         NSNumber *remoteId = [keychain objectForKey:(__bridge id)kSecAttrAccount];
-        currentUser = [User findById:remoteId];
+        currentUser = [User findById:remoteId inContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext];
     }
     
     return currentUser;
