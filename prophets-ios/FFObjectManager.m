@@ -20,6 +20,7 @@
 #import "Comment.h"
 #import "Answer.h"
 #import "League.h"
+#import "Tag.h"
 
 @implementation FFObjectManager
 
@@ -124,6 +125,11 @@
                                                                         pathPattern:nil
                                                                             keyPath:@"answer"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Tag responseMapping]
+                                                                        pathPattern:nil
+                                                                            keyPath:@"tag"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
 }
 
 -(void)setupFetchRequestBlocks{
@@ -201,6 +207,19 @@
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Comment"];
             fetchRequest.predicate = [NSPredicate predicateWithFormat:@"questionId == %@", leagueId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/tags"];
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:nil];
+        
+        if (match) {
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
             return fetchRequest;
         }
         

@@ -84,6 +84,7 @@
         <relationship name="approver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="approvedQuestions" inverseEntity="User" syncable="YES"/>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="question" inverseEntity="Comment" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="questions" inverseEntity="League" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="questions" inverseEntity="Tag" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="questions" inverseEntity="User" syncable="YES"/>
         <userInfo>
             <entry key="primaryKeyAttribute" value="remoteId"/>
@@ -96,6 +97,10 @@
         <userInfo>
             <entry key="RKEntityIdentifierAttributes" value="remoteId"/>
         </userInfo>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" parentEntity="Resource" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="tags" inverseEntity="Question" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" parentEntity="Resource" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -116,8 +121,9 @@
         <element name="Comment" positionX="-252" positionY="-486" width="128" height="150"/>
         <element name="League" positionX="-56" positionY="-315" width="128" height="210"/>
         <element name="Membership" positionX="396" positionY="-306" width="128" height="180"/>
-        <element name="Question" positionX="-281" positionY="-216" width="128" height="225"/>
+        <element name="Question" positionX="-281" positionY="-216" width="128" height="240"/>
         <element name="Resource" positionX="144" positionY="-378" width="128" height="90"/>
         <element name="User" positionX="529" positionY="-108" width="128" height="165"/>
+        <element name="Tag" positionX="160" positionY="192" width="128" height="75"/>
     </elements>
 </model>

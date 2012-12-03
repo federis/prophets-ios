@@ -13,6 +13,7 @@
 #import "Question.h"
 #import "Bet.h"
 #import "Answer.h"
+#import "Tag.h"
 
 @interface FFRouter()
 
@@ -51,6 +52,9 @@
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"comments" objectClass:[Question class] pathPattern:@"/questions/:remoteId/comments" method:RKRequestMethodGET]];
     
+    [self.routeSet addRoute:[RKRoute routeWithName:@"tags" pathPattern:@"/tags" method:RKRequestMethodGET]];
+    
+    [self.routeSet addRoute:[RKRoute routeWithName:@"leagues" pathPattern:@"/leagues" method:RKRequestMethodGET]];
     
     // POSTS
     // post requests should use :relationshipId (ie. questionId) instead of :relationship.remoteId since they do not exist yet
