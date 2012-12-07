@@ -2,7 +2,7 @@
 //  Tag.h
 //  prophets-ios
 //
-//  Created by Benjamin Roesch on 12/1/12.
+//  Created by Benjamin Roesch on 12/7/12.
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
@@ -10,19 +10,19 @@
 #import <CoreData/CoreData.h>
 #import "Resource.h"
 
-@class Question;
+@class League;
 
 @interface Tag : Resource
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *questions;
+@property (nonatomic, retain) NSSet *leagues;
 @end
 
 @interface Tag (CoreDataGeneratedAccessors)
 
-- (void)addQuestionsObject:(Question *)value;
-- (void)removeQuestionsObject:(Question *)value;
-- (void)addQuestions:(NSSet *)values;
-- (void)removeQuestions:(NSSet *)values;
+- (void)addLeaguesObject:(League *)value;
+- (void)removeLeaguesObject:(League *)value;
+- (void)addLeagues:(NSSet *)values;
+- (void)removeLeagues:(NSSet *)values;
 
 @end

@@ -11,9 +11,18 @@
 
 @implementation LeagueCell
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.showsAccessoryView = YES;
+}
+
 -(void)setLeague:(League *)league{
     _league = league;
     self.nameLabel.text = league.name;
+}
+
+-(CGFloat)heightForCellWithLeague:(League *)league{
+    return 44;
 }
 
 @end

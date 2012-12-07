@@ -2,18 +2,18 @@
 //  Tag.m
 //  prophets-ios
 //
-//  Created by Benjamin Roesch on 12/1/12.
+//  Created by Benjamin Roesch on 12/7/12.
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
 #import "Tag.h"
-#import "Question.h"
+#import "League.h"
 
 
 @implementation Tag
 
 @dynamic name;
-@dynamic questions;
+@dynamic leagues;
 
 
 +(RKEntityMapping *)responseMapping{
@@ -27,5 +27,6 @@
     
     return mapping;
 }
+
 
 @end

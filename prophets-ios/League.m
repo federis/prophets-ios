@@ -8,6 +8,7 @@
 
 #import "League.h"
 #import "User.h"
+#import "Tag.h"
 
 
 @implementation League
@@ -22,6 +23,7 @@
 @dynamic user;
 @dynamic memberships;
 @dynamic questions;
+@dynamic tags;
 
 -(BOOL)isPrivate{
     return self.priv.boolValue;
@@ -47,6 +49,8 @@
          @"updated_at" : @"updatedAt",
          @"created_at" : @"createdAt"
      }];
+    
+    [mapping addRelationshipMappingWithSourceKeyPath:@"tags" mapping:[Tag responseMapping]];
     
     return mapping;
 }

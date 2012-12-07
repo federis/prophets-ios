@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FFBaseCell.h"
 
 @class Tag;
 
-@interface TagCell : UITableViewCell
+@interface TagCell : FFBaseCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) Tag *tag;

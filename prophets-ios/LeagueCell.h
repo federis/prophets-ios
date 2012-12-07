@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FFBaseCell.h"
 
 @class League;
 
-@interface LeagueCell : UITableViewCell
+@interface LeagueCell : FFBaseCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) League *league;
+
+-(CGFloat)heightForCellWithLeague:(League *)league;
 
 @end

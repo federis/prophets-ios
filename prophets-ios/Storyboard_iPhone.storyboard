@@ -897,6 +897,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="EJR-a2-3rr" id="uUZ-fE-eBb"/>
                         <outlet property="tableView" destination="Mes-ua-bGH" id="Wb2-aM-fZN"/>
+                        <segue destination="Lbe-LL-mma" kind="push" identifier="ShowLeagueList" id="ftB-56-KnS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPR-7l-0CC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -908,6 +909,39 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="547" y="-596"/>
+        </scene>
+        <!--League List View Controller-->
+        <scene sceneID="p8X-rk-lir">
+            <objects>
+                <viewController id="Lbe-LL-mma" customClass="LeagueListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kvv-Rw-YQ5">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="Biy-0T-uRF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="QMi-hA-TXh">
+                                <rect key="frame" x="7" y="10" width="303" height="396"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lbe-LL-mma" id="XrU-ID-2Tn"/>
+                                    <outlet property="delegate" destination="Lbe-LL-mma" id="DVi-r0-cmb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wsQ-L6-R2t"/>
+                    <connections>
+                        <outlet property="tableView" destination="QMi-hA-TXh" id="ppb-xc-2X3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tY-va-Sg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="-596"/>
         </scene>
     </scenes>
     <resources>
@@ -976,6 +1010,9 @@
         </class>
         <class className="LeagueFormViewController" superclassName="FFFormViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueFormViewController.h"/>
+        </class>
+        <class className="LeagueListViewController" superclassName="FFFetchedResultsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueListViewController.h"/>
         </class>
         <class className="LeagueSearchController" superclassName="UISearchDisplayController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueSearchController.h"/>

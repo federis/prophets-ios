@@ -13,6 +13,11 @@
 
 @implementation TagCell
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.showsAccessoryView = YES;
+}
+
 -(void)setTag:(Tag *)tag{
     self.nameLabel.text = tag.name;
 }

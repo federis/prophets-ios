@@ -203,9 +203,9 @@
         NSDictionary *argsDict = nil;
         BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
         if (match) {
-            NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"questionId"] numberValue];
+            NSNumber *questionId = [(NSString *)[argsDict objectForKey:@"questionId"] numberValue];
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Comment"];
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"questionId == %@", leagueId];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"questionId == %@", questionId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
             return fetchRequest;
         }
@@ -219,6 +219,23 @@
         
         if (match) {
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/tags/:tagId/leagues"];
+        
+        NSDictionary *argsDict = nil;
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        if (match) {
+            NSNumber *tagId = [(NSString *)[argsDict objectForKey:@"tagId"] numberValue];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"League"];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.remoteId == %@", tagId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
             return fetchRequest;
         }

@@ -9,8 +9,10 @@
 #import <RestKit/RestKit.h>
 
 #import "FindLeaguesViewController.h"
+#import "LeagueListViewController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "TagCell.h"
+#import "Tag.h"
 
 @interface FindLeaguesViewController ()
 
@@ -68,6 +70,20 @@
     cell.tag = tag;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Tag *tag = (Tag *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"ShowLeagueList" sender:tag];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ShowLeagueList"] && [sender isKindOfClass:[Tag class]]) {
+        Tag *tag = (Tag *)sender;
+        LeagueListViewController *leagueListVC = (LeagueListViewController *)[segue destinationViewController];
+        leagueListVC.tag = tag;
+    }
 }
 
 
