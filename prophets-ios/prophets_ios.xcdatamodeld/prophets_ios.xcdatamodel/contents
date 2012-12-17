@@ -44,6 +44,7 @@
     </entity>
     <entity name="League" representedClassName="League" parentEntity="Resource" syncable="YES">
         <attribute name="commentsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="creatorName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="initialBalance" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="maxBet" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="membershipsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
@@ -119,7 +120,7 @@
         <element name="Answer" positionX="-63" positionY="27" width="128" height="225"/>
         <element name="Bet" positionX="234" positionY="108" width="128" height="165"/>
         <element name="Comment" positionX="-252" positionY="-486" width="128" height="150"/>
-        <element name="League" positionX="-56" positionY="-315" width="128" height="225"/>
+        <element name="League" positionX="-56" positionY="-315" width="128" height="240"/>
         <element name="Membership" positionX="396" positionY="-306" width="128" height="180"/>
         <element name="Question" positionX="-281" positionY="-216" width="128" height="225"/>
         <element name="Resource" positionX="144" positionY="-378" width="128" height="90"/>

@@ -24,6 +24,10 @@ CGRect RectWithNewHeight(CGFloat height, CGRect rect){
     return SameOriginRectWithSize(rect.size.width, height, rect);
 }
 
+CGRect RectBelowRectWithSpacingAndSize(CGRect rect, CGFloat spacing, CGSize size){
+    return CGRectMake(rect.origin.x, rect.origin.y + rect.size.height + spacing, size.width, size.height);
+}
+
 +(void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message{
 	UIAlertView * alert = [[UIAlertView alloc]
                            initWithTitle:title

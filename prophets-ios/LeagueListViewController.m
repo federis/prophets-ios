@@ -7,6 +7,7 @@
 //
 
 #import "LeagueListViewController.h"
+#import "JoinLeagueViewController.h"
 #import "League.h"
 #import "LeagueCell.h"
 #import "UIBarButtonItem+Additions.h"
@@ -55,15 +56,14 @@
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
-/*
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"ShowLeague"] && [sender isKindOfClass:[Membership class]]) {
-        Membership *membership = (Membership *)sender;
-        LeagueTabBarController *leagueTBC = (LeagueTabBarController *)[segue destinationViewController];
-        leagueTBC.membership = membership;
+    if([segue.identifier isEqualToString:@"ShowJoinLeague"] && [sender isKindOfClass:[League class]]) {
+        League *league = (League *)sender;
+        JoinLeagueViewController *joinLeagueVC = (JoinLeagueViewController *)[segue destinationViewController];
+        joinLeagueVC.league = league;
     }
 }
- */
 
 #pragma mark - Table view delegate
 
@@ -80,11 +80,12 @@
     
     return cell;
 }
-/*
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self performSegueWithIdentifier:@"ShowLeague" sender:membership];
+    League *league = (League *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"ShowJoinLeague" sender:league];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
- */
+
 
 @end

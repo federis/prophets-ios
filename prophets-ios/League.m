@@ -21,6 +21,7 @@
 @dynamic questionsCount;
 @dynamic commentsCount;
 @dynamic user;
+@dynamic creatorName;
 @dynamic memberships;
 @dynamic questions;
 @dynamic tags;
@@ -46,6 +47,7 @@
          @"questions_count" : @"questionsCount",
          @"comments_count" : @"commentsCount",
          @"priv" : @"isPrivate",
+         @"creator_name" : @"creatorName",
          @"updated_at" : @"updatedAt",
          @"created_at" : @"createdAt"
      }];

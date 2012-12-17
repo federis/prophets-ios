@@ -34,9 +34,9 @@
     self.layer.mask = self.mask;
     */
     
-    [self.layer setShadowColor:[[UIColor blackColor] CGColor]];
+    //[self.layer setShadowColor:[[UIColor blackColor] CGColor]];
 }
-
+/*
 -(void)setShowsBottomShadow:(BOOL)show{
     if (_showsBottomShadow == show) return;
     
@@ -53,7 +53,7 @@
         [self.layer setShadowRadius:0];
     }
 }
-
+*/
 -(void)setShowsAccessoryView:(BOOL)val{
     _showsAccessoryView = val;
     
@@ -68,7 +68,7 @@
     [self setShadows];
 }
 */
-
+/*
 -(void)setShadows{
     FFCellLocationInSection location = [self locationInSection];
     
@@ -105,5 +105,6 @@
         return FFCellMiddle;
     
 }
+ */
 
 @end

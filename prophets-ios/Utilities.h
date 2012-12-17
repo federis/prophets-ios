@@ -13,6 +13,7 @@
 CGRect SameSizeRectAt(CGFloat x, CGFloat y, CGRect rect);
 CGRect SameOriginRectWithSize(CGFloat width, CGFloat height, CGRect rect);
 CGRect RectWithNewHeight(CGFloat height, CGRect rect);
+CGRect RectBelowRectWithSpacingAndSize(CGRect rect, CGFloat spacing, CGSize size);
 
 +(void)showOkAlertWithError:(NSError *)error;
 +(void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message;

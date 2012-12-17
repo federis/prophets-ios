@@ -49,6 +49,9 @@
 		B50EF49C166BF5F60079D6A1 /* LeagueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50EF49B166BF5F60079D6A1 /* LeagueCell.xib */; };
 		B50EF4A2166C1EF00079D6A1 /* LeagueSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EF4A1166C1EF00079D6A1 /* LeagueSearchController.m */; };
 		B50EF4B1166C574D0079D6A1 /* LeagueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EF4B0166C574D0079D6A1 /* LeagueListViewController.m */; };
+		B513C0A81672BC8A009E4484 /* JoinLeagueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */; };
+		B513C0AC1672C194009E4484 /* LeagueDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B513C0AB1672C193009E4484 /* LeagueDetailCell.m */; };
+		B513C0AE1672C1A2009E4484 /* LeagueDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B513C0AD1672C1A2009E4484 /* LeagueDetailCell.xib */; };
 		B521AC07162B64500009A8E4 /* FFTableFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B521AC06162B64500009A8E4 /* FFTableFooterButtonView.m */; };
 		B537C96B1672AE820032685A /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = B537C96A1672AE820032685A /* Tag.m */; };
 		B53F585716433C6400AF2BA9 /* BetCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F585616433C6300AF2BA9 /* BetCellTests.m */; };
@@ -96,6 +99,8 @@
 		B56F40DD160A7939007D445F /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40DC160A7939007D445F /* Answer.m */; };
 		B56F40E0160A7949007D445F /* Bet.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40DF160A7949007D445F /* Bet.m */; };
 		B56F40E3160A795B007D445F /* Membership.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40E2160A795A007D445F /* Membership.m */; };
+		B56FC0A6167F938F001ADEB1 /* table_shadow_insets.png in Resources */ = {isa = PBXBuildFile; fileRef = B56FC0A4167F938F001ADEB1 /* table_shadow_insets.png */; };
+		B56FC0A7167F938F001ADEB1 /* table_shadow_insets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B56FC0A5167F938F001ADEB1 /* table_shadow_insets@2x.png */; };
 		B570C332162F6D7900F14C2C /* FFBaseTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B570C331162F6D7900F14C2C /* FFBaseTableViewController.xib */; };
 		B570C334162F6D8900F14C2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B570C333162F6D8900F14C2C /* Default-568h@2x.png */; };
 		B57D092D160CFB4F0060A11E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D092C160CFB4F0060A11E /* LoginViewController.m */; };
@@ -284,6 +289,11 @@
 		B50EF4A1166C1EF00079D6A1 /* LeagueSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueSearchController.m; sourceTree = "<group>"; };
 		B50EF4AF166C574D0079D6A1 /* LeagueListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueListViewController.h; sourceTree = "<group>"; };
 		B50EF4B0166C574D0079D6A1 /* LeagueListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueListViewController.m; sourceTree = "<group>"; };
+		B513C0A61672BC8A009E4484 /* JoinLeagueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinLeagueViewController.h; sourceTree = "<group>"; };
+		B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinLeagueViewController.m; sourceTree = "<group>"; };
+		B513C0AA1672C193009E4484 /* LeagueDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueDetailCell.h; sourceTree = "<group>"; };
+		B513C0AB1672C193009E4484 /* LeagueDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueDetailCell.m; sourceTree = "<group>"; };
+		B513C0AD1672C1A2009E4484 /* LeagueDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeagueDetailCell.xib; sourceTree = "<group>"; };
 		B521AC05162B64500009A8E4 /* FFTableFooterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTableFooterButtonView.h; sourceTree = "<group>"; };
 		B521AC06162B64500009A8E4 /* FFTableFooterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTableFooterButtonView.m; sourceTree = "<group>"; };
 		B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevConfig.xcconfig; sourceTree = "<group>"; };
@@ -362,6 +372,8 @@
 		B56F40DF160A7949007D445F /* Bet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bet.m; sourceTree = "<group>"; };
 		B56F40E1160A795A007D445F /* Membership.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Membership.h; sourceTree = "<group>"; };
 		B56F40E2160A795A007D445F /* Membership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Membership.m; sourceTree = "<group>"; };
+		B56FC0A4167F938F001ADEB1 /* table_shadow_insets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_shadow_insets.png; sourceTree = "<group>"; };
+		B56FC0A5167F938F001ADEB1 /* table_shadow_insets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_shadow_insets@2x.png"; sourceTree = "<group>"; };
 		B570C331162F6D7900F14C2C /* FFBaseTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FFBaseTableViewController.xib; path = "prophets-ios/FFBaseTableViewController.xib"; sourceTree = "<group>"; };
 		B570C333162F6D8900F14C2C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B57D092B160CFB4F0060A11E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -633,6 +645,8 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B56FC0A4167F938F001ADEB1 /* table_shadow_insets.png */,
+				B56FC0A5167F938F001ADEB1 /* table_shadow_insets@2x.png */,
 				B5025E2A166AD6D800F47992 /* transparent_pixel.png */,
 				B5A74006165546FF00CA5981 /* grey_x.png */,
 				B5A74007165546FF00CA5981 /* grey_x@2x.png */,
@@ -694,6 +708,8 @@
 				B50EF4A1166C1EF00079D6A1 /* LeagueSearchController.m */,
 				B50EF4AF166C574D0079D6A1 /* LeagueListViewController.h */,
 				B50EF4B0166C574D0079D6A1 /* LeagueListViewController.m */,
+				B513C0A61672BC8A009E4484 /* JoinLeagueViewController.h */,
+				B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */,
 			);
 			name = "Find a League Controllers";
 			sourceTree = "<group>";
@@ -784,6 +800,9 @@
 				B50EF495166BF5D90079D6A1 /* LeagueCell.h */,
 				B50EF496166BF5D90079D6A1 /* LeagueCell.m */,
 				B50EF49B166BF5F60079D6A1 /* LeagueCell.xib */,
+				B513C0AA1672C193009E4484 /* LeagueDetailCell.h */,
+				B513C0AB1672C193009E4484 /* LeagueDetailCell.m */,
+				B513C0AD1672C1A2009E4484 /* LeagueDetailCell.xib */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -1235,6 +1254,9 @@
 				B5025E26166ACCD500F47992 /* TagCell.xib in Resources */,
 				B5025E2B166AD6D800F47992 /* transparent_pixel.png in Resources */,
 				B50EF49C166BF5F60079D6A1 /* LeagueCell.xib in Resources */,
+				B513C0AE1672C1A2009E4484 /* LeagueDetailCell.xib in Resources */,
+				B56FC0A6167F938F001ADEB1 /* table_shadow_insets.png in Resources */,
+				B56FC0A7167F938F001ADEB1 /* table_shadow_insets@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1370,6 +1392,8 @@
 				B50EF4A2166C1EF00079D6A1 /* LeagueSearchController.m in Sources */,
 				B50EF4B1166C574D0079D6A1 /* LeagueListViewController.m in Sources */,
 				B537C96B1672AE820032685A /* Tag.m in Sources */,
+				B513C0A81672BC8A009E4484 /* JoinLeagueViewController.m in Sources */,
+				B513C0AC1672C194009E4484 /* LeagueDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,8 +25,13 @@
     if(self){
         self.button = [FFTableFooterButtonView footerButtonWithText:text color:@"red"];
         self.button.frame = SameSizeRectAt(frame.size.width - self.button.frame.size.width - 25, 0, self.button.frame);
-        
         [self addSubview:self.button];
+        
+        UIEdgeInsets insets = UIEdgeInsetsMake(0, 13, 0, 13);
+        UIImage *shadowImage = [[UIImage imageNamed:@"table_shadow_insets.png"] resizableImageWithCapInsets:insets];
+        UIImageView *shadow = [[UIImageView alloc] initWithImage:shadowImage];
+        shadow.frame = CGRectMake(15, -1, frame.size.width - 30, shadowImage.size.height);
+        [self addSubview:shadow];
     }
     return self;
 }
@@ -66,6 +71,7 @@
     self.leftButton.frame = SameSizeRectAt(25, 0, self.leftButton.frame);
     
     [self addSubview:self.leftButton];
+    [self sendSubviewToBack:self.leftButton];
 }
 
 -(void)didMoveToSuperview{

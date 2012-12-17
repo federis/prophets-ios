@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSSet *memberships;
 @property (nonatomic, strong) NSSet *questions;
 @property (nonatomic, strong) NSSet *tags;
+@property (nonatomic, strong) NSString *creatorName;
 
 -(BOOL)isPrivate;
 -(void)setIsPrivate:(BOOL)isPrivate;
