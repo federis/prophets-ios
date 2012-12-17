@@ -117,6 +117,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     [self performSegueWithIdentifier:@"ShowLeague" sender:membership];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 -(void)dealloc{
