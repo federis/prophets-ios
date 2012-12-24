@@ -120,7 +120,7 @@
     
     [mapping addAttributeMappingsFromArray:@[@"content"]];
     [mapping addAttributeMappingsFromDictionary:@{
-     @"remoteId" : @"remote_id",
+     @"remoteId" : @"id",
      @"initialProbability" : @"initial_probability",
      }];
     

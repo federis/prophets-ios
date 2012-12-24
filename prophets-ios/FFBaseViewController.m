@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
+#import <RestKit/RestKit.h>
+
 #import "FFBaseViewController.h"
 
 @interface FFBaseViewController ()
@@ -19,6 +21,20 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+-(NSManagedObjectContext *)scratchContext{
+    if(_scratchContext) return _scratchContext;
+    
+    _scratchContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    
+    [_scratchContext performBlockAndWait:^{
+        _scratchContext.parentContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+        _scratchContext.mergePolicy  = NSMergeByPropertyStoreTrumpMergePolicy;
+    }];
+    
+    return _scratchContext;
+}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

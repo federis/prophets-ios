@@ -14,6 +14,7 @@
 #import "Bet.h"
 #import "Answer.h"
 #import "Tag.h"
+#import "Membership.h"
 
 @interface FFRouter()
 
@@ -66,6 +67,8 @@
     [self.routeSet addRoute:[RKRoute routeWithClass:[Question class] pathPattern:@"/leagues/:dynamicLeagueId/questions" method:RKRequestMethodPOST]];
     
     [self.routeSet addRoute:[RKRoute routeWithClass:[Answer class] pathPattern:@"/questions/:questionId/answers" method:RKRequestMethodPOST]];
+    
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Membership class] pathPattern:@"/leagues/:leagueId/memberships" method:RKRequestMethodPOST]];
     
     
     // PUTS

@@ -6,9 +6,14 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
+#import <SVProgressHUD.h>
+#import <RestKit/RestKit.h>
+
 #import "JoinLeagueViewController.h"
+#import "LeagueTabBarController.h"
 #import "League.h"
 #import "User.h"
+#import "Membership.h"
 #import "LeagueDetailCell.h"
 
 @interface JoinLeagueViewController ()
@@ -28,17 +33,17 @@
 }
 
 -(void)join{
-    /*
-    NSURL *url = [[RKObjectManager sharedManager].router URLForRouteNamed:@"approve_question" method:nil object:self.question];
-    
     [SVProgressHUD showWithStatus:@"Joining league" maskType:SVProgressHUDMaskTypeGradient];
     
-    [[RKObjectManager sharedManager] putObject:self.question path:[url relativeString] parameters:nil
+    Membership *mem = (Membership *)[self.scratchContext insertNewObjectForEntityForName:@"Membership"];
+    mem.leagueId = self.league.remoteId;
+    
+    [[RKObjectManager sharedManager] postObject:mem path:nil parameters:nil
        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
            [SVProgressHUD dismiss];
-           [SVProgressHUD showSuccessWithStatus:@"Question published"];
+           [SVProgressHUD showSuccessWithStatus:@"League joined"];
            
-           [self returnToLeague];
+           [self showLeague];
        }
        failure:^(RKObjectRequestOperation *operation, NSError *error){
            [SVProgressHUD dismiss];
@@ -47,11 +52,17 @@
            
            DLog(@"%@", [error description]);
        }];
-     */
 }
 
--(void)goToLeague{
-    
+-(void)showLeague{
+    [self performSegueWithIdentifier:@"ShowLeague" sender:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ShowLeague"]) {
+        LeagueTabBarController *leagueVC = (LeagueTabBarController *)[segue destinationViewController];
+        leagueVC.membership = [[User currentUser] membershipInLeague:self.league.remoteId];
+    }
 }
 
 #pragma mark - Table view data source
@@ -86,7 +97,7 @@
     Membership *membership = [[User currentUser] membershipInLeague:self.league.remoteId];
     if (membership) {
         footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:@"Go to League"];
-        [footerView.button addTarget:self action:@selector(goToLeague) forControlEvents:UIControlEventTouchUpInside];
+        [footerView.button addTarget:self action:@selector(showLeague) forControlEvents:UIControlEventTouchUpInside];
     }
     else{
         footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:@"Join"];

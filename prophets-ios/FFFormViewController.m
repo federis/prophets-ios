@@ -85,19 +85,6 @@
     //Empty implementation to be overridden by subclasses
 }
 
--(NSManagedObjectContext *)scratchContext{
-    if(_scratchContext) return _scratchContext;
-    
-    _scratchContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-    
-    [_scratchContext performBlockAndWait:^{
-        _scratchContext.parentContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
-        _scratchContext.mergePolicy  = NSMergeByPropertyStoreTrumpMergePolicy;
-    }];
-    
-    return _scratchContext;
-}
-
 #pragma mark - UITableViewDataSource methods
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

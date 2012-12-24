@@ -10,4 +10,6 @@
 
 @interface FFBaseViewController : UIViewController
 
+@property (nonatomic, strong) NSManagedObjectContext *scratchContext;
+
 @end

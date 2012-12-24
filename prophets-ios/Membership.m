@@ -60,6 +60,7 @@
      }];
     
     [mapping addConnectionForRelationship:@"user" connectedBy:@{@"userId" : @"remoteId"}];
+    [mapping addConnectionForRelationship:@"league" connectedBy:@{@"leagueId" : @"remoteId"}];
     
     return mapping;
 }
@@ -70,6 +71,16 @@
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"league"
                                                                             toKeyPath:@"league"
                                                                           withMapping:[League responseMapping]]];
+    
+    return mapping;
+}
+
++(RKMapping *)requestMapping{
+    RKObjectMapping *mapping = [RKObjectMapping requestMapping];
+    
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"remoteId" : @"id"
+     }];
     
     return mapping;
 }

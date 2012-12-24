@@ -99,7 +99,7 @@
         <!--League Tab Bar Controller - League-->
         <scene sceneID="3lb-NN-hid">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="ncp-4I-Wwd" customClass="LeagueTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="LeagueTabBarController" definesPresentationContext="YES" id="ncp-4I-Wwd" customClass="LeagueTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="League" id="yXp-XK-ZNN"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="f9J-7z-bzn">
@@ -971,6 +971,7 @@
                     <navigationItem key="navigationItem" id="Whs-uR-DE1"/>
                     <connections>
                         <outlet property="tableView" destination="aLh-SW-ign" id="1QR-gB-z5G"/>
+                        <segue destination="ncp-4I-Wwd" kind="push" identifier="ShowLeague" id="ooD-7t-RkK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaY-xc-e9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -991,106 +992,13 @@
         <image name="logo_prophets.png" width="150" height="190"/>
         <image name="settings_button.png" width="115" height="115"/>
     </resources>
-    <classes>
-        <class className="AnswersViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnswersViewController.h"/>
-        </class>
-        <class className="BetListViewController" superclassName="FFFetchedResultsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="performanceSortButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timeSortButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="BetViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetViewController.h"/>
-        </class>
-        <class className="CommentFormViewController" superclassName="FFFormViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentFormViewController.h"/>
-        </class>
-        <class className="CommentsViewController" superclassName="FFFetchedResultsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsViewController.h"/>
-        </class>
-        <class className="EditAnswersViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditAnswersViewController.h"/>
-        </class>
-        <class className="FFBaseTableViewController" superclassName="FFBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="FFBaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFBaseViewController.h"/>
-        </class>
-        <class className="FFFetchedResultsViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFFetchedResultsViewController.h"/>
-        </class>
-        <class className="FFFormViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFFormViewController.h"/>
-        </class>
-        <class className="FindLeaguesViewController" superclassName="FFFetchedResultsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindLeaguesViewController.h"/>
-        </class>
-        <class className="HomeViewController" superclassName="FFBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
-        </class>
-        <class className="JoinLeagueViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinLeagueViewController.h"/>
-        </class>
-        <class className="LaunchViewController" superclassName="FFBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LaunchViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="LeagueFormViewController" superclassName="FFFormViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueFormViewController.h"/>
-        </class>
-        <class className="LeagueListViewController" superclassName="FFFetchedResultsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueListViewController.h"/>
-        </class>
-        <class className="LeagueSearchController" superclassName="UISearchDisplayController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueSearchController.h"/>
-        </class>
-        <class className="LeagueSettingsViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueSettingsViewController.h"/>
-        </class>
-        <class className="LeagueTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueTabBarController.h"/>
-        </class>
-        <class className="LoginViewController" superclassName="FFFormViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-        </class>
-        <class className="MembershipsViewController" superclassName="FFFetchedResultsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MembershipsViewController.h"/>
-        </class>
-        <class className="QuestionFormViewController" superclassName="FFFormViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionFormViewController.h"/>
-        </class>
-        <class className="QuestionsViewController" superclassName="FFFetchedResultsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="headerBackgroundView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="leagueNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="questionCountLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RegistrationViewController" superclassName="FFFormViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
-        </class>
-        <class className="ReviewQuestionViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReviewQuestionViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="ooD-7t-RkK"/>
         <segue reference="pm5-AO-WBj"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -68,6 +68,10 @@
                                                                      objectClass:[Answer class]
                                                                      rootKeyPath:@"answer"]];
     
+    [self addRequestDescriptor:[RKRequestDescriptor requestDescriptorWithMapping:[Membership requestMapping]
+                                                                     objectClass:[Membership class]
+                                                                     rootKeyPath:@"membership"]];
+    
 }
 
 -(void)setupResponseDescriptors{
