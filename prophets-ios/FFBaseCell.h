@@ -20,7 +20,4 @@ typedef enum{
 @property (nonatomic) BOOL showsAccessoryView;
 @property (nonatomic) BOOL showsBottomShadow;
 
--(FFCellLocationInSection)locationInSection;
--(void)setShadows;
-
 @end

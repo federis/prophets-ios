@@ -32,7 +32,7 @@
 
 
 -(void)prepareForm{
-    League *league = [League object];
+    League *league = (League *)[self.scratchContext insertNewObjectForEntityForName:@"League"];
     self.formObject = league;
     
     FFFormTextField *nameField = [FFFormTextField formFieldWithAttributeName:@"name"];
@@ -62,6 +62,12 @@
     [[RKObjectManager sharedManager] getObjectsAtPathForRouteNamed:@"tags" object:nil parameters:nil
        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
            DLog(@"Result is %@", mappingResult);
+           NSArray *newTags = [mappingResult array];
+           NSMutableArray *tagNames = [NSMutableArray array];
+           for (Tag *tag in newTags) {
+               [tagNames addObject:tag.name];
+           }
+           tagField.pickerOptions = tagNames;
        }
        failure:^(RKObjectRequestOperation *operation, NSError *error){
            DLog(@"Error is %@", error);
@@ -108,13 +114,5 @@
     
     return [self.errors count] == 0;
 }
-
--(void)dealloc{
-    League *league = (League *)self.formObject;
-    if (!league.remoteId) {
-        [league deleteFromManagedObjectContext];
-    }
-}
-
 
 @end

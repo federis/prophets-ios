@@ -34,7 +34,7 @@
 }
 
 -(void)prepareForm{
-    User *user = [User object];
+    User *user = (User *)[self.scratchContext insertNewObjectForEntityForName:@"User"];
     self.formObject = user;
     
     FFFormTextField *emailField = [FFFormTextField formFieldWithAttributeName:@"email"];
@@ -87,13 +87,6 @@
     
     
     return [self.errors count] == 0;
-}
-
--(void)dealloc{
-    User *user = (User *)self.formObject;
-    if (!user.remoteId) {
-        [user deleteFromManagedObjectContext];
-    }
 }
 
 @end

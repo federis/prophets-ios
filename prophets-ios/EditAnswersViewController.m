@@ -207,15 +207,6 @@
     }
 }
 
-
--(void)dealloc{
-    for(Answer *answer in self.answers){
-        if (!answer.remoteId) {
-            [answer deleteFromManagedObjectContext];
-        }
-    }
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

@@ -44,7 +44,7 @@
         NSAssert(self.question || self.league, @"You must provide a league or question for the comment");
         NSAssert(!(self.question && self.league), @"You cannot provide both a league and question for the comment");
         
-        Comment *comment = [Comment object];
+        Comment *comment = (Comment *)[self.scratchContext insertNewObjectForEntityForName:@"Comment"];
         if (self.question) {
             comment.question = self.question;
         }
@@ -129,13 +129,6 @@
     }
     
     return [self.errors count] == 0;
-}
-
--(void)dealloc{
-    Comment *comment = (Comment *)self.formObject;
-    if (!comment.remoteId) {
-        [comment deleteFromManagedObjectContext];
-    }
 }
 
 @end

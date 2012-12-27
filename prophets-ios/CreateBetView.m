@@ -59,6 +59,7 @@
     return self;
 }
 
+/*
 -(Bet *)bet{
     if(_bet) return _bet;
     
@@ -69,6 +70,12 @@
     _bet.amount = [NSDecimalNumber decimalNumberWithString:self.betAmountTextField.text];
     
     return _bet;
+}
+*/
+
+-(void)setBet:(Bet *)bet{
+    _bet = bet;
+    _bet.amount = [NSDecimalNumber decimalNumberWithString:self.betAmountTextField.text];
 }
 
 -(void)setAnswer:(Answer *)answer{
@@ -114,14 +121,7 @@
         self.betAmountSlider.value = [val floatValue];
     }
     
-    
     return YES;
-}
-
--(void)dealloc{
-    if (!self.bet.remoteId) {
-        [self.bet deleteFromManagedObjectContext];
-    }
 }
 
 @end

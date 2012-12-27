@@ -22,7 +22,7 @@
     if (!self.formObject) {
         NSAssert(self.league, @"You must provide a league to create a question");
         
-        Question *question = [Question object];
+        Question *question = (Question *)[self.scratchContext insertNewObjectForEntityForName:@"Question"];
         question.league = self.league;
         self.formObject = question;
     }
@@ -110,13 +110,6 @@
     if ([segue.identifier isEqualToString:@"ShowEditAnswers"] && [sender isKindOfClass:[Question class]]) {
         EditAnswersViewController *editAnswersVC = (EditAnswersViewController *)[segue destinationViewController];
         editAnswersVC.question = (Question *)sender;
-    }
-}
-
--(void)dealloc{
-    Question *question = (Question *)self.formObject;
-    if (!question.remoteId) {
-        [question deleteFromManagedObjectContext];
     }
 }
 

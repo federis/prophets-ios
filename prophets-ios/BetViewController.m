@@ -35,6 +35,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDismissed) name:UIKeyboardWillHideNotification object:nil];
     
     self.createBetView = [[CreateBetView alloc] initWithFrame:CGRectMake(1, 6, 283, [CreateBetView heightForViewWithAnswer:self.answer])];
+    
+    Bet *bet = (Bet *)[self.scratchContext insertNewObjectForEntityForName:@"Bet"];
+    bet.membership = self.membership;
+    bet.answer = self.answer;
+    bet.probability = self.answer.currentProbability;
+    [self.createBetView setBet:bet];
+    
     [self.createBetView setAnswer:self.answer];
     [self.createBetView setMembership:self.membership];
     [self.createBetView.submitBetButton addTarget:self action:@selector(submitBetTouched)
@@ -48,7 +55,7 @@
 }
 
 -(void)submitBetTouched{
-    __block Bet *bet = self.createBetView.bet;
+    Bet *bet = self.createBetView.bet;
     
     [[RKObjectManager sharedManager] postObject:bet path:nil parameters:nil
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
