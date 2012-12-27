@@ -165,6 +165,9 @@
 		B5C527B916458F650093B8E3 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527B816458F640093B8E3 /* BetViewController.m */; };
 		B5C527BC164590080093B8E3 /* CreateBetView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527BB164590080093B8E3 /* CreateBetView.m */; };
 		B5C527BE164592F20093B8E3 /* CreateBetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C527BD164592F20093B8E3 /* CreateBetView.xib */; };
+		B5D2A7F0168B9B6D007CD7EE /* FFFormPickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A7EF168B9B6C007CD7EE /* FFFormPickerField.m */; };
+		B5D2A7F3168B9B9D007CD7EE /* FFFormPickerFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A7F2168B9B9D007CD7EE /* FFFormPickerFieldCell.m */; };
+		B5D2A7F5168B9BBD007CD7EE /* FFFormPickerFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D2A7F4168B9BBD007CD7EE /* FFFormPickerFieldCell.xib */; };
 		B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */; };
 		B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7716163A070043A0E8 /* NSManagedObjectContext+Additions.m */; };
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
@@ -460,6 +463,11 @@
 		B5C527BA164590080093B8E3 /* CreateBetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBetView.h; sourceTree = "<group>"; };
 		B5C527BB164590080093B8E3 /* CreateBetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBetView.m; sourceTree = "<group>"; };
 		B5C527BD164592F20093B8E3 /* CreateBetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateBetView.xib; sourceTree = "<group>"; };
+		B5D2A7EE168B9B6B007CD7EE /* FFFormPickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormPickerField.h; sourceTree = "<group>"; };
+		B5D2A7EF168B9B6C007CD7EE /* FFFormPickerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormPickerField.m; sourceTree = "<group>"; };
+		B5D2A7F1168B9B9D007CD7EE /* FFFormPickerFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormPickerFieldCell.h; sourceTree = "<group>"; };
+		B5D2A7F2168B9B9D007CD7EE /* FFFormPickerFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormPickerFieldCell.m; sourceTree = "<group>"; };
+		B5D2A7F4168B9BBD007CD7EE /* FFFormPickerFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFFormPickerFieldCell.xib; sourceTree = "<group>"; };
 		B5D33D6E161613F40043A0E8 /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		B5D33D71161626470043A0E8 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
 		B5D33D72161626470043A0E8 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
@@ -740,6 +748,9 @@
 				B5A73FE7165313CA00CA5981 /* FFFormDateFieldCell.h */,
 				B5A73FE8165313CA00CA5981 /* FFFormDateFieldCell.m */,
 				B5A73FEA165313D900CA5981 /* FFFormDateFieldCell.xib */,
+				B5D2A7F1168B9B9D007CD7EE /* FFFormPickerFieldCell.h */,
+				B5D2A7F2168B9B9D007CD7EE /* FFFormPickerFieldCell.m */,
+				B5D2A7F4168B9BBD007CD7EE /* FFFormPickerFieldCell.xib */,
 			);
 			name = FormCells;
 			sourceTree = "<group>";
@@ -950,6 +961,8 @@
 				B5FD758016519F0B0051C4DC /* FFFormTextViewField.m */,
 				B5A73FE4165313BA00CA5981 /* FFFormDateField.h */,
 				B5A73FE5165313BA00CA5981 /* FFFormDateField.m */,
+				B5D2A7EE168B9B6B007CD7EE /* FFFormPickerField.h */,
+				B5D2A7EF168B9B6C007CD7EE /* FFFormPickerField.m */,
 			);
 			name = FormFields;
 			sourceTree = "<group>";
@@ -1257,6 +1270,7 @@
 				B513C0AE1672C1A2009E4484 /* LeagueDetailCell.xib in Resources */,
 				B56FC0A6167F938F001ADEB1 /* table_shadow_insets.png in Resources */,
 				B56FC0A7167F938F001ADEB1 /* table_shadow_insets@2x.png in Resources */,
+				B5D2A7F5168B9BBD007CD7EE /* FFFormPickerFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1394,6 +1408,8 @@
 				B537C96B1672AE820032685A /* Tag.m in Sources */,
 				B513C0A81672BC8A009E4484 /* JoinLeagueViewController.m in Sources */,
 				B513C0AC1672C194009E4484 /* LeagueDetailCell.m in Sources */,
+				B5D2A7F0168B9B6D007CD7EE /* FFFormPickerField.m in Sources */,
+				B5D2A7F3168B9B9D007CD7EE /* FFFormPickerFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

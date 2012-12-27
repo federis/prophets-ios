@@ -10,6 +10,7 @@
 
 #import "LeagueFormViewController.h"
 #import "League.h"
+#import "Tag.h"
 #import "RoundedClearBar.h"
 
 @interface LeagueFormViewController ()
@@ -39,7 +40,34 @@
     
     FFFormSwitchField *privateField = [FFFormSwitchField formFieldWithAttributeName:@"priv" labelName:@"Private"];
     
-    self.formFields = @[nameField, privateField];
+    FFFormPickerField *tagField = [FFFormPickerField formFieldWithAttributeName:@"tagList" labelName:@"Category"];
+    
+    NSURL *url = [[RKObjectManager sharedManager].router URLForRouteNamed:@"tags" method:nil object:nil];
+    
+    NSFetchRequest *fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
+    NSManagedObjectContext *managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+    
+    NSError *error = nil;
+    NSArray *tags = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	if(error){
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+    
+    NSMutableArray *tagNames = [NSMutableArray array];
+    for (Tag *tag in tags) {
+        [tagNames addObject:tag.name];
+    }
+    tagField.pickerOptions = tagNames;
+    
+    [[RKObjectManager sharedManager] getObjectsAtPathForRouteNamed:@"tags" object:nil parameters:nil
+       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+           DLog(@"Result is %@", mappingResult);
+       }
+       failure:^(RKObjectRequestOperation *operation, NSError *error){
+           DLog(@"Error is %@", error);
+       }];
+    
+    self.formFields = @[nameField, privateField, tagField];
     
     self.submitButtonText = @"Create";
 }

@@ -26,12 +26,32 @@
 @dynamic questions;
 @dynamic tags;
 
+@synthesize tagList = _tagList;
+
 -(BOOL)isPrivate{
     return self.priv.boolValue;
 }
 
 -(void)setIsPrivate:(BOOL)isPrivate{
     self.priv = [NSNumber numberWithBool:isPrivate];
+}
+
+-(NSString *)tagList{
+    if(_tagList) return _tagList;
+    
+    NSMutableString *str = [NSMutableString string];
+    NSArray *tags = [self.tags allObjects];
+    for (int i=0; i<tags.count; i++) {
+        Tag *tag = [tags objectAtIndex:i];
+        if (i == self.tags.count - 1) {
+            [str appendString:tag.name];
+        }
+        else{
+            [str appendFormat:@"%@, ", tag.name];
+        }
+    }
+    
+    return str;
 }
 
 +(RKEntityMapping *)responseMapping{
@@ -62,7 +82,8 @@
     
     [mapping addAttributeMappingsFromArray:@[@"name", @"priv"]];
     [mapping addAttributeMappingsFromDictionary:@{
-     @"remoteId" : @"id"
+     @"remoteId" : @"id",
+     @"tagList" : @"tag_list"
      }];
     return mapping;
 }

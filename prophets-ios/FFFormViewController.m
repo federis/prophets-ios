@@ -16,6 +16,7 @@
 #import "FFFormTextViewFieldCell.h"
 #import "FFFormSwitchFieldCell.h"
 #import "FFFormDateFieldCell.h"
+#import "FFFormPickerFieldCell.h"
 #import "Utilities.h"
 
 @interface FFFormViewController ()
@@ -33,7 +34,8 @@
         NSStringFromClass([FFFormTextFieldCell class]),
         NSStringFromClass([FFFormTextViewFieldCell class]),
         NSStringFromClass([FFFormSwitchFieldCell class]),
-        NSStringFromClass([FFFormDateFieldCell class])
+        NSStringFromClass([FFFormDateFieldCell class]),
+        NSStringFromClass([FFFormPickerFieldCell class])
     ];
     
     for (NSString *name in cellNames) {
@@ -45,7 +47,7 @@
     [self prepareForm];
     
     for (FFFormField *field in self.formFields) {
-        field.currentValue = [self.formObject valueForKey:field.attributeName];
+        field.currentValue = [self.formObject valueForKeyPath:field.attributeName];
     }
 }
 

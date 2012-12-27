@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSSet *questions;
 @property (nonatomic, strong) NSSet *tags;
 @property (nonatomic, strong) NSString *creatorName;
+@property (nonatomic, strong) NSString *tagList;
 
 -(BOOL)isPrivate;
 -(void)setIsPrivate:(BOOL)isPrivate;
