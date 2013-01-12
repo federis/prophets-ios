@@ -11,6 +11,7 @@
 #import "QuestionFormViewController.h"
 #import "EditAnswersViewController.h"
 #import "Question.h"
+#import "League.h"
 
 @interface QuestionFormViewController ()
 
@@ -23,7 +24,7 @@
         NSAssert(self.league, @"You must provide a league to create a question");
         
         Question *question = (Question *)[self.scratchContext insertNewObjectForEntityForName:@"Question"];
-        question.league = self.league;
+        question.leagueId = self.league.remoteId;
         self.formObject = question;
     }
     

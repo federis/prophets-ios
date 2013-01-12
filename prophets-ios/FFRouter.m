@@ -64,7 +64,7 @@
     // The response mapping should connect the relationship upon creation - NOT before we successfully create the resource
     [self.routeSet addRoute:[RKRoute routeWithClass:[Bet class] pathPattern:@"/answers/:dynamicAnswerId/bets" method:RKRequestMethodPOST]];
     
-    [self.routeSet addRoute:[RKRoute routeWithClass:[Question class] pathPattern:@"/leagues/:dynamicLeagueId/questions" method:RKRequestMethodPOST]];
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Question class] pathPattern:@"/leagues/:leagueId/questions" method:RKRequestMethodPOST]];
     
     [self.routeSet addRoute:[RKRoute routeWithClass:[Answer class] pathPattern:@"/questions/:questionId/answers" method:RKRequestMethodPOST]];
     
