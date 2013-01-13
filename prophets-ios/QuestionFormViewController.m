@@ -20,12 +20,12 @@
 @implementation QuestionFormViewController
 
 -(void)prepareForm{
-    if (!self.formObject) {
+    Question *question = self.existingQuestion;
+    if (!question) {
         NSAssert(self.league, @"You must provide a league to create a question");
         
-        Question *question = (Question *)[self.scratchContext insertNewObjectForEntityForName:@"Question"];
+        question = (Question *)[self.scratchContext insertNewObjectForEntityForName:@"Question"];
         question.leagueId = self.league.remoteId;
-        self.formObject = question;
     }
     
     FFFormTextField *contentField = [FFFormTextField formFieldWithAttributeName:@"content" labelName:@"Question text"];
@@ -38,7 +38,7 @@
     
     FFFormTextViewField *descField = [FFFormTextViewField formFieldWithAttributeName:@"desc" labelName:@"Extended Description"];
     
-    self.formFields = @[contentField, closeOfBettingField, descField];
+    self.form = [FFForm formForObject:question withFields:@[contentField, closeOfBettingField, descField]];
     
     self.submitButtonText = @"Submit";
 }
@@ -46,13 +46,13 @@
 -(void)submit{
     [SVProgressHUD showWithStatus:@"Saving question" maskType:SVProgressHUDMaskTypeGradient];
     
-    [[RKObjectManager sharedManager] postObject:self.formObject path:nil parameters:nil
+    [[RKObjectManager sharedManager] postObject:self.form.object path:nil parameters:nil
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Question saved"];
         
         //send them to answers
-        [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.formObject];
+        [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.form.object];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error){
         [SVProgressHUD dismiss];
@@ -66,7 +66,7 @@
 -(BOOL)formIsValid{
     self.errors = [NSMutableArray array];
     
-    for (FFFormField *field in self.formFields) {
+    for (FFFormField *field in self.form.fields) {
         if ([field.attributeName isEqualToString:@"content"]) {
             NSString *content = (NSString *)field.currentValue;
             if(content){

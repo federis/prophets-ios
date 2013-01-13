@@ -13,13 +13,13 @@
 #import "FFFormTextViewField.h"
 #import "FFFormDateField.h"
 #import "FFFormPickerField.h"
+#import "FFForm.h"
 
 @class FFTableFooterButtonView;
 
 @interface FFFormViewController : FFBaseTableViewController<UITextFieldDelegate>
 
-@property (nonatomic, strong) id formObject;
-@property (nonatomic, strong) NSArray *formFields;
+@property (nonatomic, strong) FFForm *form;
 @property (nonatomic, strong) NSMutableArray *errors;
 @property (nonatomic, strong) NSString *submitButtonText;
 @property (nonatomic, strong) FFTableFooterButtonView *footerView;

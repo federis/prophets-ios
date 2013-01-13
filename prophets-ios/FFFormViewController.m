@@ -45,10 +45,6 @@
     if(!self.submitButtonText) self.submitButtonText = @"Submit";
     
     [self prepareForm];
-    
-    for (FFFormField *field in self.formFields) {
-        field.currentValue = [self.formObject valueForKeyPath:field.attributeName];
-    }
 }
 
 -(void)prepareForm{
@@ -60,7 +56,7 @@
 
 -(void)serializeAndSubmit{
     if([self formIsValid]){
-        [self serializeFormFieldsIntoObject];
+        [self.form serializeFormFieldValuesIntoObject];
         [self submit];
     }
     else{
@@ -70,12 +66,6 @@
         }
         
         [SVProgressHUD showErrorWithStatus:errorString];
-    }
-}
-
--(void)serializeFormFieldsIntoObject{
-    for (FFFormField *field in self.formFields) {
-        [self.formObject setValue:field.currentValue forKey:field.attributeName];
     }
 }
 
@@ -90,7 +80,7 @@
 #pragma mark - UITableViewDataSource methods
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FFFormField *field = (FFFormField *)[self.formFields objectAtIndex:indexPath.row];
+    FFFormField *field = (FFFormField *)[self.form.fields objectAtIndex:indexPath.row];
     return field.height;
 }
 
@@ -99,12 +89,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSAssert(self.formObject, @"Cannot create a form table without a form object");
-    return self.formFields.count;
+    NSAssert(self.form.object, @"Cannot create a form table without a form object");
+    return self.form.fields.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FFFormField *field = (FFFormField *)[self.formFields objectAtIndex:indexPath.row];
+    FFFormField *field = (FFFormField *)[self.form.fields objectAtIndex:indexPath.row];
     
     FFFormFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:[field cellReuseIdentifier]
                                                             forIndexPath:indexPath];

@@ -33,7 +33,6 @@
 
 -(void)prepareForm{
     League *league = (League *)[self.scratchContext insertNewObjectForEntityForName:@"League"];
-    self.formObject = league;
     
     FFFormTextField *nameField = [FFFormTextField formFieldWithAttributeName:@"name"];
     nameField.returnKeyType = UIReturnKeyNext;
@@ -73,7 +72,7 @@
            DLog(@"Error is %@", error);
        }];
     
-    self.formFields = @[nameField, privateField, tagField];
+    self.form = [FFForm formForObject:league withFields:@[nameField, privateField, tagField]];
     
     self.submitButtonText = @"Create";
 }
@@ -81,7 +80,7 @@
 -(void)submit{
     [SVProgressHUD showWithStatus:@"Creating league" maskType:SVProgressHUDMaskTypeGradient];
     
-    [[RKObjectManager sharedManager] postObject:self.formObject path:@"/leagues" parameters:nil
+    [[RKObjectManager sharedManager] postObject:self.form.object path:@"/leagues" parameters:nil
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"League created"];
@@ -103,7 +102,7 @@
 -(BOOL)formIsValid{
     self.errors = [NSMutableArray array];
     
-    for (FFFormField *field in self.formFields) {
+    for (FFFormField *field in self.form.fields) {
         if ([field.attributeName isEqualToString:@"name"]) {
             if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
                 [self.errors addObject:@"Name cannot be blank"];

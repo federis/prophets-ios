@@ -35,7 +35,6 @@
 
 -(void)prepareForm{
     User *user = (User *)[self.scratchContext insertNewObjectForEntityForName:@"User"];
-    self.formObject = user;
     
     FFFormTextField *emailField = [FFFormTextField formFieldWithAttributeName:@"email"];
     emailField.returnKeyType = UIReturnKeyNext;
@@ -45,7 +44,7 @@
     passwordField.secure = YES;
     passwordField.submitsOnReturn = YES;
     
-    self.formFields = @[ emailField, passwordField ];
+    self.form = [FFForm formForObject:user withFields:@[emailField, passwordField]];
     
     self.submitButtonText = @"Sign In";
 }
@@ -53,11 +52,11 @@
 -(void)submit{
     [SVProgressHUD showWithStatus:@"Logging In" maskType:SVProgressHUDMaskTypeGradient];
     
-    [[RKObjectManager sharedManager] postObject:self.formObject path:@"/tokens" parameters:nil
+    [[RKObjectManager sharedManager] postObject:self.form.object path:@"/tokens" parameters:nil
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         [SVProgressHUD dismiss];
         
-        User *user = (User *)self.formObject;
+        User *user = (User *)self.form.object;
         [User setCurrentUser:user];
         [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogInNotification object:user];
     }
@@ -71,7 +70,7 @@
 -(BOOL)formIsValid{
     self.errors = [NSMutableArray array];
     
-    for (FFFormField *field in self.formFields) {
+    for (FFFormField *field in self.form.fields) {
         if ([field.attributeName isEqualToString:@"email"]) {
             if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
                 [self.errors addObject:@"Email cannot be blank"];

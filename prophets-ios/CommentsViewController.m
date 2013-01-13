@@ -82,7 +82,7 @@
             commentFormVC.league = self.membership.league;
         }
         else if([sender isKindOfClass:[Comment class]]){
-            commentFormVC.formObject = sender;
+            commentFormVC.existingComment = sender;
         }
     }
 }

@@ -23,7 +23,7 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     RoundedClearBar *bar = nil;
-    if (self.formObject) { //then we were given an existing comment
+    if (self.form.object) { //then we were given an existing comment
         bar = [[RoundedClearBar alloc] initWithTitle:@"Edit Comment"];
     }
     else{
@@ -39,25 +39,25 @@
 }
 
 -(void)prepareForm{
-    if (!self.formObject) {
+    Comment *comment = self.existingComment;
+    if (!comment) {
         //Comments should be in either a league or a question, but not both
         NSAssert(self.question || self.league, @"You must provide a league or question for the comment");
         NSAssert(!(self.question && self.league), @"You cannot provide both a league and question for the comment");
         
-        Comment *comment = (Comment *)[self.scratchContext insertNewObjectForEntityForName:@"Comment"];
+        comment = (Comment *)[self.scratchContext insertNewObjectForEntityForName:@"Comment"];
         if (self.question) {
             comment.question = self.question;
         }
         else if(self.league){
             comment.league = self.league;
         }
-        
-        self.formObject = comment;
     }
     
     FFFormTextViewField *commentField = [FFFormTextViewField formFieldWithAttributeName:@"comment"];
     commentField.shouldBecomeFirstResponder = YES;
-    self.formFields = @[commentField];
+    
+    self.form = [FFForm formForObject:comment withFields:@[commentField]];
     
     self.submitButtonText = @"Submit";
 }
@@ -65,7 +65,7 @@
 -(void)submit{
     [SVProgressHUD showWithStatus:@"Submitting comment" maskType:SVProgressHUDMaskTypeGradient];
     
-    Comment *comment = (Comment *)self.formObject;
+    Comment *comment = (Comment *)self.form.object;
     
     if (comment.remoteId) {
         NSString *path = nil;
@@ -76,7 +76,7 @@
             path = [NSString stringWithFormat:@"/leagues/%@/comments/%@", comment.league.remoteId, comment.remoteId];
         }
         
-        [[RKObjectManager sharedManager] putObject:self.formObject path:path parameters:nil
+        [[RKObjectManager sharedManager] putObject:comment path:path parameters:nil
             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
                 [SVProgressHUD dismiss];
                 [SVProgressHUD showSuccessWithStatus:@"Comment updated"];
@@ -100,7 +100,7 @@
             path = [NSString stringWithFormat:@"/leagues/%@/comments", comment.league.remoteId];
         }
         
-        [[RKObjectManager sharedManager] postObject:self.formObject path:path parameters:nil
+        [[RKObjectManager sharedManager] postObject:comment path:path parameters:nil
             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
                 [SVProgressHUD dismiss];
                 [SVProgressHUD showSuccessWithStatus:@"Comment created"];
@@ -120,7 +120,7 @@
 -(BOOL)formIsValid{
     self.errors = [NSMutableArray array];
     
-    for (FFFormField *field in self.formFields) {
+    for (FFFormField *field in self.form.fields) {
         if ([field.attributeName isEqualToString:@"comment"]) {
             if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
                 [self.errors addObject:@"Comment cannot be blank"];

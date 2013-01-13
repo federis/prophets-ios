@@ -80,6 +80,7 @@
 		B5544CB2162EE13300431B54 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5544CB1162EE13300431B54 /* UIColor+Additions.m */; };
 		B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */; };
 		B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F423161CC87500A33A8E /* NSNumber+Additions.m */; };
+		B55EBF5D16A21FAD0060FFAF /* FFForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B55EBF5C16A21FAD0060FFAF /* FFForm.m */; };
 		B560569D16226B82004470DC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B560569C16226B82004470DC /* RegistrationViewController.m */; };
 		B56056A016226BEA004470DC /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B560569F16226BEA004470DC /* LaunchViewController.m */; };
 		B56E8F461626526B006DB56B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F451626526B006DB56B /* SystemConfiguration.framework */; };
@@ -344,6 +345,8 @@
 		B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Additions.m"; sourceTree = "<group>"; };
 		B556F422161CC87500A33A8E /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
 		B556F423161CC87500A33A8E /* NSNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Additions.m"; sourceTree = "<group>"; };
+		B55EBF5B16A21FAD0060FFAF /* FFForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFForm.h; sourceTree = "<group>"; };
+		B55EBF5C16A21FAD0060FFAF /* FFForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFForm.m; sourceTree = "<group>"; };
 		B560569B16226B82004470DC /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		B560569C16226B82004470DC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		B560569E16226BEA004470DC /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
@@ -778,6 +781,8 @@
 			children = (
 				B56E8FF816278A43006DB56B /* FFFormViewController.h */,
 				B56E8FF916278A43006DB56B /* FFFormViewController.m */,
+				B55EBF5B16A21FAD0060FFAF /* FFForm.h */,
+				B55EBF5C16A21FAD0060FFAF /* FFForm.m */,
 				B5B147091632021A005F1B5A /* FormFields */,
 				B54AA109162F36D000F2A3CB /* FormCells */,
 			);
@@ -1410,6 +1415,7 @@
 				B513C0AC1672C194009E4484 /* LeagueDetailCell.m in Sources */,
 				B5D2A7F0168B9B6D007CD7EE /* FFFormPickerField.m in Sources */,
 				B5D2A7F3168B9B9D007CD7EE /* FFFormPickerFieldCell.m in Sources */,
+				B55EBF5D16A21FAD0060FFAF /* FFForm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

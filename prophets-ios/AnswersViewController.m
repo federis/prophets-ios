@@ -91,7 +91,7 @@
             commentFormVC.question = self.question;
         }
         else if([sender isKindOfClass:[Comment class]]){ //existing comment
-            commentFormVC.formObject = sender;
+            commentFormVC.existingComment = sender;
         }
     }
 }
