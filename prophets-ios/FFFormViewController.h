@@ -17,7 +17,7 @@
 
 @class FFTableFooterButtonView;
 
-@interface FFFormViewController : FFBaseTableViewController<UITextFieldDelegate>
+@interface FFFormViewController : FFBaseTableViewController<UITextFieldDelegate, FFFormDelegate>
 
 @property (nonatomic, strong) FFForm *form;
 @property (nonatomic, strong) NSMutableArray *errors;
@@ -26,5 +26,6 @@
 
 -(void)prepareForm;
 -(void)submit;
+-(void)tableCell:(UITableViewCell *)cell loadedField:(FFFormField *)field;
 
 @end

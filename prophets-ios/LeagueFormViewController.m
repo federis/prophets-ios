@@ -12,6 +12,7 @@
 #import "League.h"
 #import "Tag.h"
 #import "RoundedClearBar.h"
+#import "FFFormSwitchFieldCell.h"
 
 @interface LeagueFormViewController ()
 
@@ -73,8 +74,17 @@
        }];
     
     self.form = [FFForm formForObject:league withFields:@[nameField, privateField, tagField]];
+    self.form.delegate = self;
     
     self.submitButtonText = @"Create";
+}
+
+
+-(void)tableCell:(UITableViewCell *)cell loadedField:(FFFormField *)field{
+    if ([field.attributeName isEqualToString:@"priv"]) {
+        FFFormSwitchFieldCell *switchCell = (FFFormSwitchFieldCell *)cell;
+        [switchCell.switchControl addTarget:self action:@selector(privateFieldSwitched:) forControlEvents:UIControlEventValueChanged];
+    }
 }
 
 -(void)submit{
@@ -112,6 +122,19 @@
     
     
     return [self.errors count] == 0;
+}
+
+-(void)privateFieldSwitched:(id)sender{
+    UISwitch *switchControl = (UISwitch *)sender;
+    if(switchControl.isOn){
+        FFFormTextField *passwordField = [FFFormTextField formFieldWithAttributeName:@"password"];
+        passwordField.returnKeyType = UIReturnKeyNext;
+        passwordField.secure = YES;
+        [self.form insertFormField:passwordField atRow:2];
+    }
+    else{
+        [self.form removeFormFieldAtRow:2];
+    }
 }
 
 @end

@@ -100,6 +100,8 @@
                                                             forIndexPath:indexPath];
     cell.formField = field;
     
+    [self tableCell:cell loadedField:field];
+    
     if ([cell isKindOfClass:[FFFormTextFieldCell class]]) {
         ((FFFormTextFieldCell *)cell).textField.delegate = self;
     }
@@ -123,6 +125,10 @@
     self.footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:self.submitButtonText];
     [self.footerView.button addTarget:self action:@selector(serializeAndSubmit) forControlEvents:UIControlEventTouchUpInside];
     return self.footerView;
+}
+
+-(void)tableCell:(UITableViewCell *)cell loadedField:(FFFormField *)field{
+    //can be overridden by subclasses who need to attach event listeners to cells
 }
 
 
@@ -155,6 +161,16 @@
     }
     
     return YES;
+}
+
+# pragma mark - FFFormDelegate methods
+
+-(void)formAddedField:(FFFormField *)field atRow:(NSUInteger)row{
+    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+-(void)formRemovedFieldAtRow:(NSInteger)row{
+    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 @end

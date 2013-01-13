@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSSet *tags;
 @property (nonatomic, strong) NSString *creatorName;
 @property (nonatomic, strong) NSString *tagList;
+@property (nonatomic, strong) NSString *password;
 
 -(BOOL)isPrivate;
 -(void)setIsPrivate:(BOOL)isPrivate;

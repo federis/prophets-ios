@@ -80,7 +80,7 @@
 +(RKMapping *)requestMapping{
     RKObjectMapping *mapping = [RKObjectMapping requestMapping];
     
-    [mapping addAttributeMappingsFromArray:@[@"name", @"priv"]];
+    [mapping addAttributeMappingsFromArray:@[@"name", @"priv", @"password"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"remoteId" : @"id",
      @"tagList" : @"tag_list"

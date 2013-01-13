@@ -8,13 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+@class FFFormField;
+
+@protocol FFFormDelegate
+
+-(void)formAddedField:(FFFormField *)field atRow:(NSUInteger)row;
+-(void)formRemovedFieldAtRow:(NSInteger)row;
+
+@end
+
 @interface FFForm : NSObject
 
-@property (nonatomic, strong) NSArray *fields;
+@property (nonatomic, strong) NSMutableArray *fields;
 @property (nonatomic, strong) id object;
+@property (nonatomic, weak) id<FFFormDelegate> delegate;
 
 +(FFForm *)formForObject:(id)object withFields:(NSArray *)fields;
+
 -(void)initializeFieldValuesFromObject;
 -(void)serializeFormFieldValuesIntoObject;
+
+-(void)insertFormField:(FFFormField *)field atRow:(NSUInteger)row;
+-(void)removeFormFieldAtRow:(NSUInteger)row;
 
 @end

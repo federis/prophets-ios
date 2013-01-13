@@ -1,23 +1,23 @@
 
 PODS:
-- AFNetworking (1.0.1)
-- RestKit (0.20.0pre4):
-  - RestKit/Core (= 0.20.0pre4)
-- RestKit/Core (0.20.0pre4):
+- AFNetworking (1.1.0)
+- RestKit (0.20.0pre6):
+  - RestKit/Core (= 0.20.0pre6)
+- RestKit/Core (0.20.0pre6):
   - RestKit/CoreData
   - RestKit/Network
   - RestKit/ObjectMapping
-- RestKit/CoreData (0.20.0pre4)
-- RestKit/Network (0.20.0pre4):
-  - AFNetworking (= 1.0.1)
+- RestKit/CoreData (0.20.0pre6)
+- RestKit/Network (0.20.0pre6):
+  - AFNetworking (= 1.1.0)
   - RestKit/ObjectMapping
   - RestKit/Support
   - SOCKit
-- RestKit/ObjectMapping (0.20.0pre4)
-- RestKit/Support (0.20.0pre4)
-- RestKit/Testing (0.20.0pre4)
+- RestKit/ObjectMapping (0.20.0pre6)
+- RestKit/Support (0.20.0pre6)
+- RestKit/Testing (0.20.0pre6)
 - SOCKit (1.1)
-- SVProgressHUD (0.8)
+- SVProgressHUD (0.8.1)
 
 DEPENDENCIES:
 - RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
@@ -35,15 +35,15 @@ EXTERNAL SOURCES:
     :git: https://github.com/samvermette/SVProgressHUD.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 4c11f857c9a18d65f4257c90a1e74ac49f0ac422
-  RestKit: 5e3c60668a917633279bf0ed327c2a3a52250d3f
-  RestKit/Core: 5e3c60668a917633279bf0ed327c2a3a52250d3f
-  RestKit/CoreData: 5e3c60668a917633279bf0ed327c2a3a52250d3f
-  RestKit/Network: 5e3c60668a917633279bf0ed327c2a3a52250d3f
-  RestKit/ObjectMapping: 5e3c60668a917633279bf0ed327c2a3a52250d3f
-  RestKit/Support: 5e3c60668a917633279bf0ed327c2a3a52250d3f
-  RestKit/Testing: 5e3c60668a917633279bf0ed327c2a3a52250d3f
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  RestKit: 8f62889f7a186c2fd11e93413150906f6aef91d6
+  RestKit/Core: 8f62889f7a186c2fd11e93413150906f6aef91d6
+  RestKit/CoreData: 8f62889f7a186c2fd11e93413150906f6aef91d6
+  RestKit/Network: 8f62889f7a186c2fd11e93413150906f6aef91d6
+  RestKit/ObjectMapping: 8f62889f7a186c2fd11e93413150906f6aef91d6
+  RestKit/Support: 8f62889f7a186c2fd11e93413150906f6aef91d6
+  RestKit/Testing: 8f62889f7a186c2fd11e93413150906f6aef91d6
   SOCKit: 179515c1a621dd5652a60e9be02ea4adcd25bc9b
-  SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
+  SVProgressHUD: 592da548680cd3613923b5f98113add52ad30cc2
 
 COCOAPODS: 0.15.1
