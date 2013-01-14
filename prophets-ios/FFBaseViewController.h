@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ErrorCollection.h"
 
 @interface FFBaseViewController : UIViewController
 

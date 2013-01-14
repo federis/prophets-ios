@@ -21,6 +21,7 @@
 #import "Answer.h"
 #import "League.h"
 #import "Tag.h"
+#import "ErrorCollection.h"
 
 @implementation FFObjectManager
 
@@ -75,15 +76,12 @@
 }
 
 -(void)setupResponseDescriptors{
-    /*
-    RKObjectMapping *errorMapping = [RKObjectMapping mappingForClass:[RKErrorMessage class]];
-    [errorMapping addPropertyMapping:[RKAttributeMapping attributeMappingFromKeyPath:@"errors" toKeyPath:@"userInfo"]];
     
-    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:errorMapping
-                                                                        pathPattern:nil
-                                                                            keyPath:nil
-                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassClientError)]];
-     */
+    RKObjectMapping *errorMapping = [RKObjectMapping mappingForClass:[ErrorCollection class]];
+    [errorMapping addPropertyMapping:[RKAttributeMapping attributeMappingFromKeyPath:nil toKeyPath:@"messages"]];
+
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:errorMapping pathPattern:nil keyPath:@"errors" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassClientError)]];
+
     
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[User responseMapping]
                                                                         pathPattern:nil

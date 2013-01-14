@@ -27,6 +27,7 @@
 @dynamic tags;
 
 @synthesize tagList = _tagList;
+@synthesize password;
 
 -(BOOL)isPrivate{
     return self.priv.boolValue;

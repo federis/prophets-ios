@@ -81,6 +81,7 @@
 		B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */; };
 		B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F423161CC87500A33A8E /* NSNumber+Additions.m */; };
 		B55EBF5D16A21FAD0060FFAF /* FFForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B55EBF5C16A21FAD0060FFAF /* FFForm.m */; };
+		B55EBF6F16A37D150060FFAF /* ErrorCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B55EBF6E16A37D150060FFAF /* ErrorCollection.m */; };
 		B560569D16226B82004470DC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B560569C16226B82004470DC /* RegistrationViewController.m */; };
 		B56056A016226BEA004470DC /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B560569F16226BEA004470DC /* LaunchViewController.m */; };
 		B56E8F461626526B006DB56B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F451626526B006DB56B /* SystemConfiguration.framework */; };
@@ -347,6 +348,8 @@
 		B556F423161CC87500A33A8E /* NSNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Additions.m"; sourceTree = "<group>"; };
 		B55EBF5B16A21FAD0060FFAF /* FFForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFForm.h; sourceTree = "<group>"; };
 		B55EBF5C16A21FAD0060FFAF /* FFForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFForm.m; sourceTree = "<group>"; };
+		B55EBF6D16A37D150060FFAF /* ErrorCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCollection.h; sourceTree = "<group>"; };
+		B55EBF6E16A37D150060FFAF /* ErrorCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorCollection.m; sourceTree = "<group>"; };
 		B560569B16226B82004470DC /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		B560569C16226B82004470DC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		B560569E16226BEA004470DC /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
@@ -866,6 +869,8 @@
 				B53F586316444CCF00AF2BA9 /* Comment.m */,
 				B537C9691672AE820032685A /* Tag.h */,
 				B537C96A1672AE820032685A /* Tag.m */,
+				B55EBF6D16A37D150060FFAF /* ErrorCollection.h */,
+				B55EBF6E16A37D150060FFAF /* ErrorCollection.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1416,6 +1421,7 @@
 				B5D2A7F0168B9B6D007CD7EE /* FFFormPickerField.m in Sources */,
 				B5D2A7F3168B9B9D007CD7EE /* FFFormPickerFieldCell.m in Sources */,
 				B55EBF5D16A21FAD0060FFAF /* FFForm.m in Sources */,
+				B55EBF6F16A37D150060FFAF /* ErrorCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

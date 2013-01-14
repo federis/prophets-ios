@@ -48,7 +48,8 @@
        failure:^(RKObjectRequestOperation *operation, NSError *error){
            [SVProgressHUD dismiss];
            
-           [SVProgressHUD showErrorWithStatus:[error description]];
+           ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+           [SVProgressHUD showErrorWithStatus:[errors messagesString]];
            
            DLog(@"%@", [error description]);
        }];
