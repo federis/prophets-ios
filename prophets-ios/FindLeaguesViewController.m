@@ -10,9 +10,11 @@
 
 #import "FindLeaguesViewController.h"
 #import "LeagueListViewController.h"
+#import "JoinLeagueViewController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "TagCell.h"
 #import "Tag.h"
+#import "League.h"
 
 @interface FindLeaguesViewController ()
 
@@ -83,6 +85,11 @@
         Tag *tag = (Tag *)sender;
         LeagueListViewController *leagueListVC = (LeagueListViewController *)[segue destinationViewController];
         leagueListVC.tag = tag;
+    }
+    else if([segue.identifier isEqualToString:@"ShowJoinLeague"] && [sender isKindOfClass:[League class]]) {
+        League *league = (League *)sender;
+        JoinLeagueViewController *joinLeagueVC = (JoinLeagueViewController *)[segue destinationViewController];
+        joinLeagueVC.league = league;
     }
 }
 

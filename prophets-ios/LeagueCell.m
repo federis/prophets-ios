@@ -8,6 +8,7 @@
 
 #import "LeagueCell.h"
 #import "League.h"
+#import "Utilities.h"
 
 @implementation LeagueCell
 
@@ -19,10 +20,19 @@
 -(void)setLeague:(League *)league{
     _league = league;
     self.nameLabel.text = league.name;
+    self.privateLabel.hidden = !league.priv;
+    self.nameLabel.frame = RectWithNewHeight([Utilities heightForString:league.name
+                                                                 withFont:self.nameLabel.font
+                                                                    width:self.nameLabel.frame.size.width],
+                                             self.nameLabel.frame);
+
 }
 
 -(CGFloat)heightForCellWithLeague:(League *)league{
-    return 44;
+    int pad = league.priv ? 32 : 20;
+    return pad + [Utilities heightForString:league.name
+                                   withFont:self.nameLabel.font
+                                      width:self.nameLabel.frame.size.width];
 }
 
 @end

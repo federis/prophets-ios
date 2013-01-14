@@ -14,6 +14,7 @@
 @interface LeagueCell : FFBaseCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *privateLabel;
 @property (nonatomic, strong) League *league;
 
 -(CGFloat)heightForCellWithLeague:(League *)league;

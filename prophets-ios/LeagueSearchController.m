@@ -21,6 +21,7 @@
     self.delegate = self;
     self.searchResultsDataSource = self;
     self.searchResultsDelegate = self;
+    
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
@@ -40,6 +41,7 @@
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView{
     [tableView registerNib:[UINib nibWithNibName:@"LeagueCell" bundle:[NSBundle mainBundle]]
     forCellReuseIdentifier:@"LeagueCell"];
+    self.measuringCell = [tableView dequeueReusableCellWithIdentifier:@"LeagueCell"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -50,9 +52,7 @@
     return 1;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     LeagueCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeagueCell"];
     
     League *league = [self.searchResults objectAtIndex:indexPath.row];
@@ -61,28 +61,16 @@
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    League *league = (League *)[self.searchResults objectAtIndex:indexPath.row];
+    return [self.measuringCell heightForCellWithLeague:league];
+}
 
-/*
- -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
- Market *market = [self.searchResults objectAtIndex:indexPath.row];
- return [MarketCell cellHeightForMarket:market];
- }
- */
-/*
- - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
- Market *market = [self.searchResults objectAtIndex:indexPath.row];
- MarketCell *cell = (MarketCell *)[tableView cellForRowAtIndexPath:indexPath];
- [self.searchContentsController performSegueWithIdentifier:[cell segueNameForMarket] sender:market];
- }
- */
-/*
- - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope{
- self.searchResults = nil;
- 
- NSPredicate *pred = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText];
- self.searchResults = [[DataManager sharedInstance].mainObjectContext fetchObjectsForEntityName:@"Market" withSortDescriptors:nil andPredicate:pred];
- }
- */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    League *league = (League *)[self.searchResults objectAtIndex:indexPath.row];
+    [self.searchContentsController performSegueWithIdentifier:@"ShowJoinLeague" sender:league];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 
 
 @end
