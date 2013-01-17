@@ -35,6 +35,7 @@
     CGSize tagsSize = CGSizeMake(self.tagsLabel.frame.size.width, [Utilities heightForString:[self stringForCategoriesLabelInLeague:league] withFont:self.tagsLabel.font width:self.tagsLabel.frame.size.width]);
     self.tagsLabel.frame = RectBelowRectWithSpacingAndSize(self.creatorLabel.frame, 5, tagsSize);
     
+    self.privateLabel.hidden = ![league.priv boolValue];
 }
 
 -(NSString *)stringForCategoriesLabelInLeague:(League *)league{
@@ -59,7 +60,9 @@
     CGFloat nameHeight = [Utilities heightForString:league.name withFont:self.nameLabel.font width:self.nameLabel.frame.size.width];
     CGFloat tagsHeight = [Utilities heightForString:[self stringForCategoriesLabelInLeague:league] withFont:self.tagsLabel.font width:self.tagsLabel.frame.size.width];
     
-    return nameHeight + tagsHeight + 75;
+    CGFloat privPad = [league.priv boolValue] ? 24 : 0;
+    
+    return nameHeight + tagsHeight + privPad + 75;
 }
 
 @end

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *creatorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *privateLabel;
 
 -(CGFloat)heightForCellWithLeague:(League *)league;
 

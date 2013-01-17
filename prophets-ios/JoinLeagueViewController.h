@@ -10,7 +10,7 @@
 
 @class League, LeagueDetailCell;
 
-@interface JoinLeagueViewController : FFBaseTableViewController
+@interface JoinLeagueViewController : FFBaseTableViewController<UIAlertViewDelegate>
 
 @property (nonatomic, strong) League *league;
 @property LeagueDetailCell *measuringCell;

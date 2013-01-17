@@ -32,18 +32,41 @@
     self.measuringCell = (LeagueDetailCell *)[self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([LeagueDetailCell class])];
 }
 
--(void)join{
+-(void)joinOrPromptForPassword{
+    if ([self.league.priv boolValue]) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Password Required" message:@"Enter the league's password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Submit", nil];
+        alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+        [alert show];
+    }
+    else {
+        [self join:nil];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1) {
+        [self join:[[alertView textFieldAtIndex:0] text]];
+    }
+}
+
+-(void)join:(NSString *)password{
     [SVProgressHUD showWithStatus:@"Joining league" maskType:SVProgressHUDMaskTypeGradient];
     
     Membership *mem = (Membership *)[self.scratchContext insertNewObjectForEntityForName:@"Membership"];
     mem.leagueId = self.league.remoteId;
     
-    [[RKObjectManager sharedManager] postObject:mem path:nil parameters:nil
+    NSDictionary *params = nil;
+    if(password){
+        params = @{@"league_password" : password};
+    }
+    
+    [[RKObjectManager sharedManager] postObject:mem path:nil parameters:params
        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
            [SVProgressHUD dismiss];
            [SVProgressHUD showSuccessWithStatus:@"League joined"];
            
            [self showLeague];
+           [self.tableView reloadData];
        }
        failure:^(RKObjectRequestOperation *operation, NSError *error){
            [SVProgressHUD dismiss];
@@ -102,7 +125,7 @@
     }
     else{
         footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:@"Join"];
-        [footerView.button addTarget:self action:@selector(join) forControlEvents:UIControlEventTouchUpInside];
+        [footerView.button addTarget:self action:@selector(joinOrPromptForPassword) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return footerView;
