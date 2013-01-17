@@ -33,10 +33,13 @@
     
     [self.window makeKeyAndVisible];
     
-    if ([User currentUser])
+    if ([User currentUser]){
         [self setupAuthTokenHeader];
-    else
+        [self loadMemberships];
+    }
+    else{
         [self showLogin];
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(userLoggedIn)
@@ -49,6 +52,16 @@
                                                object:nil];
     
     return YES;
+}
+
+-(void)loadMemberships{
+    [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"memberships" ofObject:[User currentUser] parameters:nil
+     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+         DLog(@"Result is %@", mappingResult);
+     }
+     failure:^(RKObjectRequestOperation *operation, NSError *error){
+         DLog(@"Error is %@", error);
+     }];
 }
 
 -(void)showLogin{
@@ -64,6 +77,7 @@
 
 -(void)userLoggedIn{
     [self setupAuthTokenHeader];
+    [self loadMemberships];
     [self.window.rootViewController dismissViewControllerAnimated:YES completion:^{}];
 }
 
