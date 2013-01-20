@@ -119,9 +119,21 @@
                 [self.errors addObject:@"Name cannot be blank"];
             }
         }
+        
+        if ([field.attributeName isEqualToString:@"password"]) {
+            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                [self.errors addObject:@"Password cannot be blank"];
+            }
+        }
+        
+        if ([field.attributeName isEqualToString:@"tagList"]) {
+            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                [self.errors addObject:@"Category cannot be blank"];
+            }
+        }
     }
-    
-    
+
+
     return [self.errors count] == 0;
 }
 

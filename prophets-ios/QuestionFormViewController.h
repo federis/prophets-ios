@@ -13,6 +13,6 @@
 @interface QuestionFormViewController : FFFormViewController
 
 @property (nonatomic, strong) League *league;
-@property (nonatomic, strong) Question *existingQuestion;
+@property (nonatomic, strong) Question *question;
 
 @end

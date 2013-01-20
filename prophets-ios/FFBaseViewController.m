@@ -28,7 +28,7 @@
     _scratchContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     
     [_scratchContext performBlockAndWait:^{
-        _scratchContext.parentContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+        _scratchContext.parentContext = [RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext;
         _scratchContext.mergePolicy  = NSMergeByPropertyStoreTrumpMergePolicy;
     }];
     

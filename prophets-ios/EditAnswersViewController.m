@@ -47,7 +47,7 @@
     NSManagedObjectContext *privateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     
     [privateContext performBlockAndWait:^{
-        privateContext.parentContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+        privateContext.parentContext = [RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext;
         privateContext.mergePolicy  = NSMergeByPropertyStoreTrumpMergePolicy;
     }];
     

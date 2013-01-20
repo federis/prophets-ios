@@ -20,12 +20,11 @@
 @implementation QuestionFormViewController
 
 -(void)prepareForm{
-    Question *question = self.existingQuestion;
-    if (!question) {
+    if (!self.question) {
         NSAssert(self.league, @"You must provide a league to create a question");
         
-        question = (Question *)[self.scratchContext insertNewObjectForEntityForName:@"Question"];
-        question.leagueId = self.league.remoteId;
+        self.question = (Question *)[self.scratchContext insertNewObjectForEntityForName:@"Question"];
+        self.question.leagueId = self.league.remoteId;
     }
     
     FFFormTextField *contentField = [FFFormTextField formFieldWithAttributeName:@"content" labelName:@"Question text"];
@@ -38,7 +37,7 @@
     
     FFFormTextViewField *descField = [FFFormTextViewField formFieldWithAttributeName:@"desc" labelName:@"Extended Description"];
     
-    self.form = [FFForm formForObject:question withFields:@[contentField, closeOfBettingField, descField]];
+    self.form = [FFForm formForObject:self.question withFields:@[contentField, closeOfBettingField, descField]];
     
     self.submitButtonText = @"Submit";
 }
@@ -46,13 +45,18 @@
 -(void)submit{
     [SVProgressHUD showWithStatus:@"Saving question" maskType:SVProgressHUDMaskTypeGradient];
     
-    [[RKObjectManager sharedManager] postObject:self.form.object path:nil parameters:nil
+    [[RKObjectManager sharedManager] postObject:self.question path:nil parameters:nil
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Question saved"];
         
+        NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+        
+        //switch to the object on the main context, instead of the one from the scratch context 
+        self.question = (Question *)[context objectRegisteredForID:[self.question objectID]];
+        
         //send them to answers
-        [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.form.object];
+        [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.question];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error){
         [SVProgressHUD dismiss];
