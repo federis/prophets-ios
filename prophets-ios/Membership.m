@@ -36,15 +36,6 @@
         return self.league.maxBet;
 }
 
--(NSNumber *)dynamicLeagueId{
-    if (self.leagueId)
-        return self.leagueId;
-    else if(self.league && self.league.remoteId)
-        return self.league.remoteId;
-    else
-        return nil;
-}
-
 +(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];

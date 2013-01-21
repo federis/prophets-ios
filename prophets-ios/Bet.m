@@ -21,15 +21,6 @@
 @dynamic membership;
 @dynamic answer;
 
--(NSNumber *)dynamicAnswerId{
-    if (self.answerId)
-        return self.answerId;
-    else if(self.answer && self.answer.remoteId)
-        return self.answer.remoteId;
-    else
-        return nil;
-}
-
 -(BOOL)hasBeenJudged{
     return self.payout != nil;
 }

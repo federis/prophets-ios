@@ -23,9 +23,34 @@
                                 width:300] + 180;
 }
 
-- (id)initWithFrame:(CGRect)frame{
+-(id)initWithBet:(Bet *)bet inAnswer:(Answer *)answer forMembership:(Membership *)membership{
     self = [self init];
-    [self setFrame:frame];
+    if (self) {
+        self.bet = bet;
+        self.answer = answer;
+        self.membership = membership;
+        
+        self.bet.probability = self.answer.currentProbability;
+        self.bet.amount = [NSDecimalNumber decimalNumberWithString:@"1.0"];
+        
+        self.answerNameLabel.text = answer.content;
+        self.currentOddsLabel.text = answer.currentOddsString;
+        self.payoutLabel.text = self.bet.potentialPayout.currencyString;
+        
+        [self.answerNameLabel sizeToFit];
+        self.answerNameLabel.frame = SameOriginRectWithSize(self.answerNameLabel.frame.size.width + 5, self.answerNameLabel.frame.size.height, self.answerNameLabel.frame);
+        
+        self.containerView.frame = SameSizeRectAt(self.containerView.frame.origin.x,
+                                                  self.answerNameLabel.frame.origin.y + self.answerNameLabel.frame.size.height,
+                                                  self.containerView.frame);
+        
+        [self sizeToFit];
+        
+        self.maxBetLabel.text = membership.maxBet.currencyString;
+        
+        self.betAmountSlider.maximumValue = [membership.maxBet floatValue];
+    }
+    
     return self;
 }
 
@@ -57,44 +82,6 @@
     self.betAmountTextField.inputAccessoryView = toolbar;
     
     return self;
-}
-
-/*
--(Bet *)bet{
-    if(_bet) return _bet;
-    
-    _bet = [Bet object];
-    _bet.membership = self.membership;
-    _bet.answer = self.answer;
-    _bet.probability = self.answer.currentProbability;
-    _bet.amount = [NSDecimalNumber decimalNumberWithString:self.betAmountTextField.text];
-    
-    return _bet;
-}
-*/
-
--(void)setBet:(Bet *)bet{
-    _bet = bet;
-    _bet.amount = [NSDecimalNumber decimalNumberWithString:self.betAmountTextField.text];
-}
-
--(void)setAnswer:(Answer *)answer{
-    _answer = answer;
-    
-    self.answerNameLabel.text = answer.content;
-    self.currentOddsLabel.text = answer.currentOddsString;
-    self.payoutLabel.text = self.bet.potentialPayout.currencyString;
-    
-    [self.answerNameLabel sizeToFit];
-    [self sizeToFit];
-}
-
--(void)setMembership:(Membership *)membership{
-    _membership = membership;
-    
-    self.maxBetLabel.text = membership.maxBet.currencyString;
-    
-    self.betAmountSlider.maximumValue = [membership.maxBet floatValue];
 }
 
 -(IBAction)sliderChanged:(id)sender{

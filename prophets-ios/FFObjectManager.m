@@ -106,7 +106,7 @@
     
     // creating bets
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Bet responseMappingWithChildRelationships]
-                                                                        pathPattern:@"/answers/:dynamicAnswerId/bets"
+                                                                        pathPattern:@"/answers/:answerId/bets"
                                                                             keyPath:@"bet"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     

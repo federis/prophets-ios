@@ -62,7 +62,7 @@
     // POSTS
     // post requests should use :relationshipId (ie. questionId) instead of :relationship.remoteId since they do not exist yet
     // The response mapping should connect the relationship upon creation - NOT before we successfully create the resource
-    [self.routeSet addRoute:[RKRoute routeWithClass:[Bet class] pathPattern:@"/answers/:dynamicAnswerId/bets" method:RKRequestMethodPOST]];
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Bet class] pathPattern:@"/answers/:answerId/bets" method:RKRequestMethodPOST]];
     
     [self.routeSet addRoute:[RKRoute routeWithClass:[Question class] pathPattern:@"/leagues/:leagueId/questions" method:RKRequestMethodPOST]];
     

@@ -34,16 +34,19 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareForKeyboard) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDismissed) name:UIKeyboardWillHideNotification object:nil];
     
-    self.createBetView = [[CreateBetView alloc] initWithFrame:CGRectMake(1, 6, 283, [CreateBetView heightForViewWithAnswer:self.answer])];
-    
     Bet *bet = (Bet *)[self.scratchContext insertNewObjectForEntityForName:@"Bet"];
-    bet.membership = self.membership;
-    bet.answer = self.answer;
-    bet.probability = self.answer.currentProbability;
-    [self.createBetView setBet:bet];
+    bet.answerId = self.answer.remoteId;
+    bet.membershipId = self.membership.remoteId;
     
-    [self.createBetView setAnswer:self.answer];
-    [self.createBetView setMembership:self.membership];
+    self.createBetView = [[CreateBetView alloc] initWithBet:bet inAnswer:self.answer forMembership:self.membership];
+    self.createBetView.frame = SameSizeRectAt(1, 6, self.createBetView.frame);
+    
+    //CGRectMake(1, 6, 283, [CreateBetView heightForViewWithAnswer:self.answer])
+
+    //bet.membership = self.membership;
+    //bet.answer = self.answer;
+
+    
     [self.createBetView.submitBetButton addTarget:self action:@selector(submitBetTouched)
                                  forControlEvents:UIControlEventTouchUpInside];
 }
@@ -61,6 +64,7 @@
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Bet created!"];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error){
         [SVProgressHUD dismiss];

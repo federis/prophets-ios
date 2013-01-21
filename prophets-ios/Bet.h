@@ -21,7 +21,6 @@
 @property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) Answer *answer;
 
--(NSNumber *)dynamicAnswerId;
 -(BOOL)hasBeenJudged;
 -(NSString *)oddsString;
 -(NSDecimalNumber *)potentialPayout;

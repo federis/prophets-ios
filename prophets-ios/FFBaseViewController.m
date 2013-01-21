@@ -29,7 +29,7 @@
     
     [_scratchContext performBlockAndWait:^{
         _scratchContext.parentContext = [RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext;
-        _scratchContext.mergePolicy  = NSMergeByPropertyStoreTrumpMergePolicy;
+        _scratchContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy;
     }];
     
     return _scratchContext;

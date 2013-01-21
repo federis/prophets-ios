@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *payoutLabel;
 @property (weak, nonatomic) IBOutlet UIButton *submitBetButton;
 @property (weak, nonatomic) IBOutlet UIView *submitBetButtonBackground;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+
+-(id)initWithBet:(Bet *)bet inAnswer:(Answer *)answer forMembership:(Membership *)membership;
 
 +(CGFloat)heightForViewWithAnswer:(Answer *)answer;
 
