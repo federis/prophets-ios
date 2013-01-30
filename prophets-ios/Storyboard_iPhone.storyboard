@@ -1095,7 +1095,7 @@
         <class className="LeagueSearchController" superclassName="UISearchDisplayController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueSearchController.h"/>
         </class>
-        <class className="LeagueSettingsViewController" superclassName="FFBaseTableViewController">
+        <class className="LeagueSettingsViewController" superclassName="FFFormViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueSettingsViewController.h"/>
         </class>
         <class className="LeagueTabBarController" superclassName="UITabBarController">

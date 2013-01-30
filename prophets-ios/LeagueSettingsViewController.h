@@ -6,8 +6,12 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFBaseTableViewController.h"
+#import "FFFormViewController.h"
 
-@interface LeagueSettingsViewController : FFBaseTableViewController
+@class Membership;
+
+@interface LeagueSettingsViewController : FFFormViewController
+
+@property (nonatomic, strong) Membership *membership;
 
 @end
