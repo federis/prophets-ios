@@ -40,7 +40,7 @@
             selected = [UIImage imageNamed:@"leaguemenu_mybets.png"];
             unselected = [UIImage imageNamed:@"leaguemenu_mybets.png"];
         }
-        else if ([item.title isEqualToString:@"League Stats"]) {
+        else if ([item.title isEqualToString:@"Leaderboard"]) {
             selected = [UIImage imageNamed:@"leaguemenu_stats_pressed.png"];
             unselected = [UIImage imageNamed:@"leaguemenu_stats.png"];
         }

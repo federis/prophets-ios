@@ -491,10 +491,10 @@
             </objects>
             <point key="canvasLocation" x="2064" y="336"/>
         </scene>
-        <!--League Settings View Controller - League Stats-->
+        <!--Leaderboard View Controller - Leaderboard-->
         <scene sceneID="SMy-Y4-E27">
             <objects>
-                <viewController id="wR1-iK-SHo" customClass="LeagueSettingsViewController" sceneMemberID="viewController">
+                <viewController id="wR1-iK-SHo" customClass="LeaderboardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uy0-KY-CqM">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -515,7 +515,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="League Stats" image="leaguemenu_stats.png" id="eeC-pa-Ymd"/>
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="leaguemenu_stats.png" id="eeC-pa-Ymd"/>
                     <connections>
                         <outlet property="tableView" destination="BCt-Cg-3oy" id="Bv3-11-SXF"/>
                     </connections>
@@ -1046,6 +1046,9 @@
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
             </relationships>
+        </class>
+        <class className="LeaderboardViewController" superclassName="FFFetchedResultsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeaderboardViewController.h"/>
         </class>
         <class className="LeagueFormViewController" superclassName="FFFormViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeagueFormViewController.h"/>

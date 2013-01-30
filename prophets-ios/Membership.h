@@ -17,8 +17,10 @@
 @property (nonatomic, strong) NSNumber * rank;
 @property (nonatomic, strong) NSDecimalNumber * balance;
 @property (nonatomic, strong) NSDecimalNumber * outstandingBetsValue;
+@property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) League *league;
+@property (nonatomic, strong) NSDecimalNumber *leaderboardRank;
 
 -(BOOL)isAdmin;
 -(NSDecimalNumber *)totalWorth;

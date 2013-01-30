@@ -56,7 +56,7 @@
 		B537C96B1672AE820032685A /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = B537C96A1672AE820032685A /* Tag.m */; };
 		B53F585716433C6400AF2BA9 /* BetCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F585616433C6300AF2BA9 /* BetCellTests.m */; };
 		B53F585B1644167300AF2BA9 /* LeagueSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F585A1644167300AF2BA9 /* LeagueSettingsViewController.m */; };
-		B53F5861164417B000AF2BA9 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F5860164417AF00AF2BA9 /* StatsViewController.m */; };
+		B53F5861164417B000AF2BA9 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F5860164417AF00AF2BA9 /* LeaderboardViewController.m */; };
 		B53F586416444CCF00AF2BA9 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F586316444CCF00AF2BA9 /* Comment.m */; };
 		B53F586716444FE300AF2BA9 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F586616444FE200AF2BA9 /* CommentsViewController.m */; };
 		B53F586A164450C000AF2BA9 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F5869164450BF00AF2BA9 /* CommentCell.m */; };
@@ -179,6 +179,8 @@
 		B5E6B2EC164AB7B500E96ADC /* CreateBetViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E6B2EB164AB7B500E96ADC /* CreateBetViewTests.m */; };
 		B5EA136A161D201A00C774F3 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1369161D201A00C774F3 /* LoginTests.m */; };
 		B5EA136E161D232000C774F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
+		B5EE57BC16B496B2003166FE /* LeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE57BB16B496B1003166FE /* LeaderCell.m */; };
+		B5EE57BF16B496C3003166FE /* LeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EE57BE16B496C3003166FE /* LeaderCell.xib */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
 		B5F1AECF160388C600D28C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECE160388C600D28C1C /* Foundation.framework */; };
 		B5F1AED1160388C600D28C1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AED0160388C600D28C1C /* CoreGraphics.framework */; };
@@ -308,8 +310,8 @@
 		B53F585616433C6300AF2BA9 /* BetCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetCellTests.m; sourceTree = "<group>"; };
 		B53F58591644167300AF2BA9 /* LeagueSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueSettingsViewController.h; sourceTree = "<group>"; };
 		B53F585A1644167300AF2BA9 /* LeagueSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueSettingsViewController.m; sourceTree = "<group>"; };
-		B53F585F164417AF00AF2BA9 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
-		B53F5860164417AF00AF2BA9 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
+		B53F585F164417AF00AF2BA9 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
+		B53F5860164417AF00AF2BA9 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
 		B53F586216444CCF00AF2BA9 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		B53F586316444CCF00AF2BA9 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		B53F586516444FE200AF2BA9 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
@@ -486,6 +488,9 @@
 		B5E6B2E7164AB0D900E96ADC /* create_bets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = create_bets.json; sourceTree = "<group>"; };
 		B5E6B2EB164AB7B500E96ADC /* CreateBetViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBetViewTests.m; sourceTree = "<group>"; };
 		B5EA1369161D201A00C774F3 /* LoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
+		B5EE57BA16B496B1003166FE /* LeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderCell.h; sourceTree = "<group>"; };
+		B5EE57BB16B496B1003166FE /* LeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderCell.m; sourceTree = "<group>"; };
+		B5EE57BE16B496C3003166FE /* LeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderCell.xib; sourceTree = "<group>"; };
 		B5F1AEC8160388C600D28C1C /* prophets-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prophets-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1AECC160388C600D28C1C /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5F1AECE160388C600D28C1C /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -589,8 +594,8 @@
 				B50653F5163EEDC1006DECF8 /* BetListViewController.m */,
 				B53F58591644167300AF2BA9 /* LeagueSettingsViewController.h */,
 				B53F585A1644167300AF2BA9 /* LeagueSettingsViewController.m */,
-				B53F585F164417AF00AF2BA9 /* StatsViewController.h */,
-				B53F5860164417AF00AF2BA9 /* StatsViewController.m */,
+				B53F585F164417AF00AF2BA9 /* LeaderboardViewController.h */,
+				B53F5860164417AF00AF2BA9 /* LeaderboardViewController.m */,
 				B5C527AC1645722F0093B8E3 /* AnswersViewController.h */,
 				B5C527AD1645722F0093B8E3 /* AnswersViewController.m */,
 				B5C527B716458F640093B8E3 /* BetViewController.h */,
@@ -822,6 +827,9 @@
 				B513C0AA1672C193009E4484 /* LeagueDetailCell.h */,
 				B513C0AB1672C193009E4484 /* LeagueDetailCell.m */,
 				B513C0AD1672C1A2009E4484 /* LeagueDetailCell.xib */,
+				B5EE57BA16B496B1003166FE /* LeaderCell.h */,
+				B5EE57BB16B496B1003166FE /* LeaderCell.m */,
+				B5EE57BE16B496C3003166FE /* LeaderCell.xib */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -1281,6 +1289,7 @@
 				B56FC0A6167F938F001ADEB1 /* table_shadow_insets.png in Resources */,
 				B56FC0A7167F938F001ADEB1 /* table_shadow_insets@2x.png in Resources */,
 				B5D2A7F5168B9BBD007CD7EE /* FFFormPickerFieldCell.xib in Resources */,
+				B5EE57BF16B496C3003166FE /* LeaderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1384,7 +1393,7 @@
 				B50653F6163EEDC1006DECF8 /* BetListViewController.m in Sources */,
 				B50653F9163EF59C006DECF8 /* BetCell.m in Sources */,
 				B53F585B1644167300AF2BA9 /* LeagueSettingsViewController.m in Sources */,
-				B53F5861164417B000AF2BA9 /* StatsViewController.m in Sources */,
+				B53F5861164417B000AF2BA9 /* LeaderboardViewController.m in Sources */,
 				B53F586416444CCF00AF2BA9 /* Comment.m in Sources */,
 				B53F586716444FE300AF2BA9 /* CommentsViewController.m in Sources */,
 				B53F586A164450C000AF2BA9 /* CommentCell.m in Sources */,
@@ -1422,6 +1431,7 @@
 				B5D2A7F3168B9B9D007CD7EE /* FFFormPickerFieldCell.m in Sources */,
 				B55EBF5D16A21FAD0060FFAF /* FFForm.m in Sources */,
 				B55EBF6F16A37D150060FFAF /* ErrorCollection.m in Sources */,
+				B5EE57BC16B496B2003166FE /* LeaderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

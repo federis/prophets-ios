@@ -45,10 +45,12 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
+    /*
     for (Membership *mem in self.fetchedResultsController.fetchedObjects) {
         [mem addObserver:self forKeyPath:@"league.name" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
         [mem addObserver:self forKeyPath:@"league.membershipsCount" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     }
+    */
     
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"memberships" ofObject:[User currentUser] parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
@@ -59,15 +61,18 @@
      }];
 }
 
-
+/*
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     if ([object isKindOfClass:[Membership class]] && ([keyPath isEqual:@"league.name"] || [keyPath isEqual:@"league.membershipsCount"])) {
-        if (![[change objectForKey:NSKeyValueChangeNewKey] isEqual:[change objectForKey:NSKeyValueChangeOldKey]]) {
+        if (![[change objectForKey:NSKeyValueChangeNewKey] isEqual:[change objectForKey:NSKeyValueChangeOldKey]] &&
+            [[change objectForKey:NSKeyValueChangeKindKey] intValue] == NSKeyValueChangeReplacement) {
             [self.tableView reloadRowsAtIndexPaths:@[[self.fetchedResultsController indexPathForObject:object]] withRowAnimation:UITableViewRowAnimationFade];
         }
     }
 }
+*/
 
+/*
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)object atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath{
     Membership *membership = (Membership *)object;
     
@@ -85,6 +90,7 @@
     
     [super controller:controller didChangeObject:object atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
 }
+*/
 
 -(void)homeTouched{
     [self dismissViewControllerAnimated:YES completion:^{}];
@@ -120,11 +126,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
+/*
 -(void)dealloc{
     for (Membership *membership in self.fetchedResultsController.fetchedObjects) {
         [membership removeObserver:self forKeyPath:@"league.name"];
         [membership removeObserver:self forKeyPath:@"league.membershipsCount"];
     }
 }
+*/
 
 @end

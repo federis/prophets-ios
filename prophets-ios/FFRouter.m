@@ -51,6 +51,8 @@
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"comments" objectClass:[League class] pathPattern:@"/leagues/:remoteId/comments" method:RKRequestMethodGET]];
     
+    [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"leaderboard" objectClass:[League class] pathPattern:@"/leagues/:remoteId/leaderboard" method:RKRequestMethodGET]];
+    
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"comments" objectClass:[Question class] pathPattern:@"/questions/:remoteId/comments" method:RKRequestMethodGET]];
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"leagues" objectClass:[Tag class] pathPattern:@"/tags/:remoteId/leagues" method:RKRequestMethodGET]];

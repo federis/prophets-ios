@@ -53,7 +53,7 @@
         NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
         
         //switch to the object on the main context, instead of the one from the scratch context
-        self.question = (Question *)[context objectWithID:[self.question objectID]];;
+        self.question = (Question *)[context objectWithID:[self.question objectID]];
         
         //send them to answers
         [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.question];

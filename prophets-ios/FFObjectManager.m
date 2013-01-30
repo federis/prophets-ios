@@ -141,6 +141,9 @@
         
         if (match) {
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Membership"];
+            User *user = [User currentUser];
+            NSNumber *userId = user.remoteId;
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %@", userId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
             fetchRequest.relationshipKeyPathsForPrefetching = @[@"league"];
             return fetchRequest;
@@ -192,6 +195,24 @@
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Comment"];
             fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/leagues/:leagueId/leaderboard"];
+        
+        NSDictionary *argsDict = nil;
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        if (match) {
+            NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Membership"];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"leaderboardRank" ascending:YES]];
+            
             return fetchRequest;
         }
         

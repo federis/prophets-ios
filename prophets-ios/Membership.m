@@ -20,6 +20,8 @@
 @dynamic outstandingBetsValue;
 @dynamic user;
 @dynamic league;
+@dynamic userName;
+@dynamic leaderboardRank;
 
 -(BOOL)isAdmin{
     return [self.role integerValue] == 1;
@@ -46,6 +48,8 @@
      @"outstanding_bets_value" : @"outstandingBetsValue",
      @"league_id" : @"leagueId",
      @"user_id" : @"userId",
+     @"user_name" : @"userName",
+     @"leaderboard_rank" : @"leaderboardRank",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt"
      }];
