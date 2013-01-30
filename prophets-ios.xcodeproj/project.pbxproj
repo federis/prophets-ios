@@ -49,6 +49,7 @@
 		B50EF49C166BF5F60079D6A1 /* LeagueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50EF49B166BF5F60079D6A1 /* LeagueCell.xib */; };
 		B50EF4A2166C1EF00079D6A1 /* LeagueSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EF4A1166C1EF00079D6A1 /* LeagueSearchController.m */; };
 		B50EF4B1166C574D0079D6A1 /* LeagueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EF4B0166C574D0079D6A1 /* LeagueListViewController.m */; };
+		B513185616B9AC1400E50BCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513185516B9AC1400E50BCF /* SettingsViewController.m */; };
 		B513C0A81672BC8A009E4484 /* JoinLeagueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */; };
 		B513C0AC1672C194009E4484 /* LeagueDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B513C0AB1672C193009E4484 /* LeagueDetailCell.m */; };
 		B513C0AE1672C1A2009E4484 /* LeagueDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B513C0AD1672C1A2009E4484 /* LeagueDetailCell.xib */; };
@@ -296,6 +297,8 @@
 		B50EF4A1166C1EF00079D6A1 /* LeagueSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueSearchController.m; sourceTree = "<group>"; };
 		B50EF4AF166C574D0079D6A1 /* LeagueListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueListViewController.h; sourceTree = "<group>"; };
 		B50EF4B0166C574D0079D6A1 /* LeagueListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueListViewController.m; sourceTree = "<group>"; };
+		B513185416B9AC1400E50BCF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		B513185516B9AC1400E50BCF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B513C0A61672BC8A009E4484 /* JoinLeagueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinLeagueViewController.h; sourceTree = "<group>"; };
 		B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinLeagueViewController.m; sourceTree = "<group>"; };
 		B513C0AA1672C193009E4484 /* LeagueDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueDetailCell.h; sourceTree = "<group>"; };
@@ -909,6 +912,8 @@
 				B5D33D7A161652590043A0E8 /* MembershipsViewController.m */,
 				B53F587316445F5D00AF2BA9 /* LeagueFormViewController.h */,
 				B53F587416445F5E00AF2BA9 /* LeagueFormViewController.m */,
+				B513185416B9AC1400E50BCF /* SettingsViewController.h */,
+				B513185516B9AC1400E50BCF /* SettingsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1432,6 +1437,7 @@
 				B55EBF5D16A21FAD0060FFAF /* FFForm.m in Sources */,
 				B55EBF6F16A37D150060FFAF /* ErrorCollection.m in Sources */,
 				B5EE57BC16B496B2003166FE /* LeaderCell.m in Sources */,
+				B513185616B9AC1400E50BCF /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1508,7 +1514,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1583,7 +1589,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1656,7 +1662,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1682,7 +1688,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

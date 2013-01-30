@@ -298,6 +298,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <segue destination="oyZ-Cy-2wQ" kind="modal" id="QJJ-Vl-lBi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -979,6 +982,39 @@
             </objects>
             <point key="canvasLocation" x="1221" y="-487"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="I2Y-Th-0Nw">
+            <objects>
+                <viewController id="oyZ-Cy-2wQ" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zmp-ec-gUO">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="V9O-Uq-5Mr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="kSA-dm-ruP">
+                                <rect key="frame" x="7" y="10" width="303" height="440"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oyZ-Cy-2wQ" id="Yg4-ZU-jf3"/>
+                                    <outlet property="delegate" destination="oyZ-Cy-2wQ" id="kAK-ts-ipH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0ON-d8-xpf"/>
+                    <connections>
+                        <outlet property="tableView" destination="kSA-dm-ruP" id="u2q-oe-fUA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K67-pw-9nj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-199" y="1351"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background.png" width="320" height="480"/>
@@ -1088,6 +1124,9 @@
         </class>
         <class className="ReviewQuestionViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReviewQuestionViewController.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="FFFormViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

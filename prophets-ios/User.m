@@ -18,6 +18,7 @@
 static User *currentUser = nil;
 
 @synthesize password = _password;
+@synthesize currentPassword = _currentPassword;
 
 @dynamic email;
 @dynamic name;
@@ -92,7 +93,8 @@ static User *currentUser = nil;
     
     [mapping addAttributeMappingsFromArray:@[@"email", @"name", @"password"]];
     [mapping addAttributeMappingsFromDictionary:@{
-     @"remoteId" : @"id"
+     @"remoteId" : @"id",
+     @"currentPassword" : @"current_password"
      }];
     return mapping;
 }

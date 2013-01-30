@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSSet *approvedQuestions;
 
 @property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *currentPassword; //for updating user info
 
 -(Membership *)membershipInLeague:(NSNumber *)leagueId;
 

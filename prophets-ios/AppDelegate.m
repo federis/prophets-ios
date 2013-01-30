@@ -7,6 +7,8 @@
 //
 
 #import <RestKit/RestKit.h>
+#import <PonyDebugger/PonyDebugger.h>
+#import <PonyDebugger.h>
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
@@ -18,14 +20,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-#ifdef DEBUG
-    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    
-    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
-    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
-    RKLogConfigureByName("RestKit/Testing", RKLogLevelTrace);
-    RKLogConfigureByName("RestKit/CoreData", RKLogLevelTrace);
-#endif
     
     [FFObjectManager setupObjectManager];
     
@@ -50,6 +44,24 @@
                                              selector:@selector(userLoggedOut)
                                                  name:FFUserDidLogOutNotification
                                                object:nil];
+    
+#ifdef DEBUG
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
+    PDDebugger *debugger = [PDDebugger defaultInstance];
+    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
+    [debugger enableNetworkTrafficDebugging];
+    [debugger forwardAllNetworkTraffic];
+    [debugger enableCoreDataDebugging];
+    
+    [debugger addManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext withName:@"Persistent Store Context"];
+    [debugger addManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext withName:@"Main Queue Context"];
+    
+    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/Testing", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/CoreData", RKLogLevelTrace);
+#endif
     
     return YES;
 }
@@ -83,6 +95,8 @@
 
 -(void)userLoggedOut{
     [self showLogin];
+    
+    [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization" value:nil];
     
     NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext;
     
