@@ -16,6 +16,7 @@
 @dynamic content;
 @dynamic desc;
 @dynamic approvedAt;
+@dynamic completedAt;
 @dynamic bettingClosesAt;
 @dynamic betsCount;
 @dynamic commentsCount;
@@ -42,6 +43,7 @@
      @"id" : @"remoteId",
      @"league_id" : @"leagueId",
      @"approved_at" : @"approvedAt",
+     @"completed_at" : @"completedAt",
      @"betting_closes_at" : @"bettingClosesAt",
      @"bets_count" : @"betsCount",
      @"comments_count" : @"commentsCount",

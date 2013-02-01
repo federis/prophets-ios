@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString * content;
 @property (nonatomic, strong) NSString * desc;
 @property (nonatomic, strong) NSDate * approvedAt;
+@property (nonatomic, strong) NSDate * completedAt;
 @property (nonatomic, strong) NSDate * bettingClosesAt;
 @property (nonatomic, strong) NSSet *answers;
 @property (nonatomic, strong) NSNumber * betsCount;

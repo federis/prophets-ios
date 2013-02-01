@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="r6L-FH-HXH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="r6L-FH-HXH">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVX-9N-lKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-372" y="-1848"/>
+            <point key="canvasLocation" x="-1028" y="-2100"/>
         </scene>
         <!--Launch View Controller-->
         <scene sceneID="iKZ-dH-ozc">
@@ -94,13 +94,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoD-65-W0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="-1848"/>
+            <point key="canvasLocation" x="-521" y="-2100"/>
         </scene>
         <!--League Tab Bar Controller - League-->
         <scene sceneID="3lb-NN-hid">
             <objects>
                 <tabBarController storyboardIdentifier="LeagueTabBarController" definesPresentationContext="YES" id="ncp-4I-Wwd" customClass="LeagueTabBarController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="League" id="yXp-XK-ZNN"/>
+                    <navigationItem key="navigationItem" title="League" id="yXp-XK-ZNN">
+                        <barButtonItem key="rightBarButtonItem" title="Admin" id="VFH-JU-5I3">
+                            <connections>
+                                <segue destination="8Hw-RS-whU" kind="push" identifier="ShowAdmin" id="gsj-dc-PbV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="f9J-7z-bzn">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -117,7 +123,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hux-6X-sRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="97"/>
+            <point key="canvasLocation" x="1739" y="97"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VSR-AC-GPm">
@@ -173,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21J-XH-DQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="-2113"/>
+            <point key="canvasLocation" x="59" y="-2365"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="yCX-n2-CBg">
@@ -208,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJg-IQ-Nxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="-1531"/>
+            <point key="canvasLocation" x="59" y="-1783"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="8it-di-Het">
@@ -310,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHA-n0-kfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-805" y="303"/>
+            <point key="canvasLocation" x="-923" y="362"/>
         </scene>
         <!--Memberships View Controller-->
         <scene sceneID="zte-aW-O8Y">
@@ -419,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWC-Lm-dSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064" y="-270"/>
+            <point key="canvasLocation" x="2672" y="106"/>
         </scene>
         <!--Bet List View Controller - My Bets-->
         <scene sceneID="Yfn-jb-CAK">
@@ -492,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwT-2K-Slx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064" y="336"/>
+            <point key="canvasLocation" x="2672" y="712"/>
         </scene>
         <!--Leaderboard View Controller - Leaderboard-->
         <scene sceneID="SMy-Y4-E27">
@@ -525,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrs-u2-JVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064" y="932"/>
+            <point key="canvasLocation" x="2672" y="1308"/>
         </scene>
         <!--Comments View Controller - Club Room-->
         <scene sceneID="cuR-bI-9pz">
@@ -559,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Okk-DW-12p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064" y="1530"/>
+            <point key="canvasLocation" x="2672" y="1906"/>
         </scene>
         <!--League Settings View Controller - League Settings-->
         <scene sceneID="eSU-en-Zi0">
@@ -592,7 +598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyS-Um-HtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064" y="2142"/>
+            <point key="canvasLocation" x="2672" y="2518"/>
         </scene>
         <!--League Form View Controller-->
         <scene sceneID="fnX-Jd-WUZ">
@@ -660,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHx-Pr-0My" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553" y="-270"/>
+            <point key="canvasLocation" x="3161" y="106"/>
         </scene>
         <!--Bet View Controller-->
         <scene sceneID="4fW-pK-dwW">
@@ -706,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiq-9G-aBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3023" y="-270"/>
+            <point key="canvasLocation" x="3631" y="106"/>
         </scene>
         <!--Comment Form View Controller-->
         <scene sceneID="KCV-4p-IXM">
@@ -739,7 +745,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocK-ch-0yj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3094" y="892"/>
+            <point key="canvasLocation" x="3702" y="1268"/>
         </scene>
         <!--Question Form View Controller - Question-->
         <scene sceneID="JO9-3N-8Cc">
@@ -773,7 +779,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6Z-GY-mdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553" y="-909"/>
+            <point key="canvasLocation" x="3161" y="-533"/>
         </scene>
         <!--Edit Answers View Controller - Answers-->
         <scene sceneID="J5D-ql-2CU">
@@ -807,7 +813,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPP-cd-wgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3023" y="-909"/>
+            <point key="canvasLocation" x="3631" y="-533"/>
         </scene>
         <!--Review Question View Controller - Review-->
         <scene sceneID="ddi-v1-NsS">
@@ -840,7 +846,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbt-Rp-g4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3511" y="-909"/>
+            <point key="canvasLocation" x="4119" y="-533"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h5h-m0-QWQ">
@@ -946,7 +952,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tY-va-Sg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="-909"/>
+            <point key="canvasLocation" x="715" y="-1229"/>
         </scene>
         <!--Join League View Controller-->
         <scene sceneID="Vux-q9-wPb">
@@ -980,7 +986,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaY-xc-e9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1221" y="-487"/>
+            <point key="canvasLocation" x="1217" y="-591"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="I2Y-Th-0Nw">
@@ -1015,6 +1021,144 @@
             </objects>
             <point key="canvasLocation" x="-199" y="1351"/>
         </scene>
+        <!--Admin View Controller-->
+        <scene sceneID="8hl-yh-qef">
+            <objects>
+                <viewController id="8Hw-RS-whU" customClass="AdminViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nO0-e6-8uR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="Rcm-Ia-BDq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="57o-yS-YaL">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Hw-RS-whU" id="9Np-jp-kYe"/>
+                                    <outlet property="delegate" destination="8Hw-RS-whU" id="iP2-Dn-1Wa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6iq-Ml-xVD"/>
+                    <connections>
+                        <outlet property="tableView" destination="57o-yS-YaL" id="1Va-U5-2A8"/>
+                        <segue destination="Tcf-Vg-RIF" kind="push" identifier="ShowManageQuestions" id="IYM-m1-8qh"/>
+                        <segue destination="YFM-KU-7GQ" kind="push" identifier="ShowManageUsers" id="Nmi-Ya-Yih"/>
+                        <segue destination="Ikq-QK-kCl" kind="push" identifier="ShowManageLeague" id="xrk-Hs-uJv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gbc-l7-rFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2255" y="-1307"/>
+        </scene>
+        <!--Manage League View Controller - Leaderboard-->
+        <scene sceneID="3Sb-Vd-b1T">
+            <objects>
+                <viewController id="Ikq-QK-kCl" customClass="ManageLeagueViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nde-KU-Yco">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="Ff6-QL-nhd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OL6-f9-sLY">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ikq-QK-kCl" id="qcl-0A-LX0"/>
+                                    <outlet property="delegate" destination="Ikq-QK-kCl" id="bPh-QT-sfQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="leaguemenu_stats.png" id="koJ-rZ-ZvA"/>
+                    <navigationItem key="navigationItem" id="fHH-UF-Ie1"/>
+                    <connections>
+                        <outlet property="tableView" destination="OL6-f9-sLY" id="ez1-2T-8w6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdy-WV-rn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3004" y="-1307"/>
+        </scene>
+        <!--Manage Users View Controller - Leaderboard-->
+        <scene sceneID="JMD-cz-VvC">
+            <objects>
+                <viewController id="YFM-KU-7GQ" customClass="ManageUsersViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8x5-AA-Bu6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="6X2-cZ-Gfc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qno-2M-IPV">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="YFM-KU-7GQ" id="uWQ-4e-ByN"/>
+                                    <outlet property="delegate" destination="YFM-KU-7GQ" id="SD3-0l-0IM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="leaguemenu_stats.png" id="TMU-9n-UfM"/>
+                    <navigationItem key="navigationItem" id="DEz-SW-Eaw"/>
+                    <connections>
+                        <outlet property="tableView" destination="qno-2M-IPV" id="lId-76-2mY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ngj-TI-Mdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3004" y="-1907"/>
+        </scene>
+        <!--Manage Questions View Controller - Leaderboard-->
+        <scene sceneID="zgB-qf-vAH">
+            <objects>
+                <viewController id="Tcf-Vg-RIF" customClass="ManageQuestionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W83-h8-NrL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="vIr-tN-48Z">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zO6-cU-xAF">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tcf-Vg-RIF" id="QD7-Hm-UVf"/>
+                                    <outlet property="delegate" destination="Tcf-Vg-RIF" id="8qa-gn-qMM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="leaguemenu_stats.png" id="x8B-KN-Ofs"/>
+                    <navigationItem key="navigationItem" id="MVT-3G-Qmm"/>
+                    <connections>
+                        <outlet property="tableView" destination="zO6-cU-xAF" id="TDU-Vi-Xih"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSP-pz-RDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3004" y="-2499"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background.png" width="320" height="480"/>
@@ -1030,6 +1174,9 @@
         <image name="settings_button.png" width="115" height="115"/>
     </resources>
     <classes>
+        <class className="AdminViewController" superclassName="FFBaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminViewController.h"/>
+        </class>
         <class className="AnswersViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnswersViewController.h"/>
         </class>
@@ -1104,6 +1251,15 @@
         <class className="LoginViewController" superclassName="FFFormViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
         </class>
+        <class className="ManageLeagueViewController" superclassName="FFFetchedResultsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ManageLeagueViewController.h"/>
+        </class>
+        <class className="ManageQuestionsViewController" superclassName="FFFetchedResultsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ManageQuestionsViewController.h"/>
+        </class>
+        <class className="ManageUsersViewController" superclassName="FFFetchedResultsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ManageUsersViewController.h"/>
+        </class>
         <class className="MembershipsViewController" superclassName="FFFetchedResultsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MembershipsViewController.h"/>
         </class>
@@ -1135,8 +1291,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Pnm-1V-IBU"/>
         <segue reference="ooD-7t-RkK"/>
-        <segue reference="US1-cn-BHX"/>
         <segue reference="pm5-AO-WBj"/>
     </inferredMetricsTieBreakers>
 </document>

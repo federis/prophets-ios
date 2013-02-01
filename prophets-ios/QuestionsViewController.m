@@ -55,13 +55,13 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
-    FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    FFLabel *emptyQuestionsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     
-    emptyCommentsLabel.isBold = NO;
-    emptyCommentsLabel.text = @"No questions have been created yet";
-    emptyCommentsLabel.textAlignment = NSTextAlignmentCenter;
+    emptyQuestionsLabel.isBold = NO;
+    emptyQuestionsLabel.text = @"No questions have been created yet";
+    emptyQuestionsLabel.textAlignment = NSTextAlignmentCenter;
     
-    self.emptyContentFooterView = emptyCommentsLabel;
+    self.emptyContentFooterView = emptyQuestionsLabel;
     
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"questions" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){

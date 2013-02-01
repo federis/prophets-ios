@@ -68,11 +68,11 @@
 }
 
 -(void)prepareHeaderView{
-    UIEdgeInsets insets = UIEdgeInsetsMake(4, 5, 4, 5);
-    UIImage *buttonImage = [[UIImage imageNamed:@"clear_button_insets.png"] resizableImageWithCapInsets:insets];
+    //UIEdgeInsets insets = UIEdgeInsetsMake(4, 5, 4, 5);
+    //UIImage *buttonImage = [[UIImage imageNamed:@"clear_button_insets.png"] resizableImageWithCapInsets:insets];
     
-    [self.timeSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.performanceSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    //[self.timeSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    //[self.performanceSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     
     LeaguePerformanceView *performanceView = [[LeaguePerformanceView alloc] init];
     [performanceView setMembership:self.membership];

@@ -28,6 +28,40 @@ CGRect RectBelowRectWithSpacingAndSize(CGRect rect, CGFloat spacing, CGSize size
     return CGRectMake(rect.origin.x, rect.origin.y + rect.size.height + spacing, size.width, size.height);
 }
 
+CGRect RectToRightOfRectWithSpacingAndSize(CGRect rect, CGFloat spacing, CGSize size){
+    return CGRectMake(rect.origin.x + rect.size.width + spacing, rect.origin.y, size.width, size.height);
+}
+
+CGRect RectToLeftOfRectWithSpacingAndSize(CGRect rect, CGFloat spacing, CGSize size){
+    return CGRectMake(rect.origin.x - size.width - spacing, rect.origin.y, size.width, size.height);
+}
+
++(void)layoutViewsHorizantally:(NSArray *)views atOrigin:(CGPoint)origin{
+    UIView *previousView = nil;
+    for (UIView *view in views) {
+        if(previousView == nil){
+            view.frame = SameSizeRectAt(origin.x, origin.y, view.frame);
+        }
+        else{
+            view.frame = RectToRightOfRectWithSpacingAndSize(previousView.frame, 5, view.frame.size);
+        }
+        previousView = view;
+    }
+}
+
++(void)layoutViewsHorizantally:(NSArray *)views endingAtPoint:(CGPoint)point{
+    UIView *previousView = nil;
+    for (UIView *view in views) {
+        if(previousView == nil){
+            view.frame = SameSizeRectAt(point.x - view.frame.size.width, point.y, view.frame);
+        }
+        else{
+            view.frame = RectToLeftOfRectWithSpacingAndSize(previousView.frame, 8, view.frame.size);
+        }
+        previousView = view;
+    }
+}
+
 +(void)showOkAlertWithTitle:(NSString *)title message:(NSString *)message{
 	UIAlertView * alert = [[UIAlertView alloc]
                            initWithTitle:title

@@ -7,6 +7,7 @@
 //
 
 #import "LeagueTabBarController.h"
+#import "AdminViewController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "League.h"
 #import "Membership.h"
@@ -20,6 +21,10 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    if(!self.membership.isAdmin){
+        self.navigationItem.rightBarButtonItem = nil;
+    }
     
     self.navigationItem.title = self.membership.league.name;
     self.navigationItem.leftItemsSupplementBackButton = YES;
@@ -68,6 +73,13 @@
 
 -(void)homeTouched{
     [self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ShowAdmin"]) {
+        AdminViewController *adminVC = (AdminViewController *)[segue destinationViewController];
+        adminVC.league = self.membership.league;
+    }
 }
 
 @end

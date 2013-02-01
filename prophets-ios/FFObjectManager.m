@@ -22,6 +22,7 @@
 #import "League.h"
 #import "Tag.h"
 #import "ErrorCollection.h"
+#import "NSURL+Additions.h"
 
 @implementation FFObjectManager
 
@@ -160,8 +161,22 @@
         if (match) {
             NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Question"];
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@ AND approvedAt != NULL", leagueId];
-            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:YES]];
+            
+            NSString *type = [[url queryDictionary] objectForKey:@"type"];
+            if ([type isEqualToString:@"unapproved"]) {
+                fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@ AND approvedAt == NULL", leagueId];
+            }
+            else if ([type isEqualToString:@"pending_judgement"]){
+                fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@ AND approvedAt != NULL AND completedAt == NULL AND bettingClosesAt < %@", leagueId, [NSDate date]];
+            }
+            else if ([type isEqualToString:@"complete"]){
+                fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@ AND completedAt != NULL", leagueId];
+            }
+            else{
+                fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@ AND approvedAt != NULL AND completedAt == NULL AND bettingClosesAt > %@", leagueId, [NSDate date]];
+            }
+            
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
             return fetchRequest;
         }
         

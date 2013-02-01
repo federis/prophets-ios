@@ -50,6 +50,7 @@
 		B50EF4A2166C1EF00079D6A1 /* LeagueSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EF4A1166C1EF00079D6A1 /* LeagueSearchController.m */; };
 		B50EF4B1166C574D0079D6A1 /* LeagueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EF4B0166C574D0079D6A1 /* LeagueListViewController.m */; };
 		B513185616B9AC1400E50BCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513185516B9AC1400E50BCF /* SettingsViewController.m */; };
+		B513189016B9EEF800E50BCF /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513188F16B9EEF800E50BCF /* AdminViewController.m */; };
 		B513C0A81672BC8A009E4484 /* JoinLeagueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */; };
 		B513C0AC1672C194009E4484 /* LeagueDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B513C0AB1672C193009E4484 /* LeagueDetailCell.m */; };
 		B513C0AE1672C1A2009E4484 /* LeagueDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B513C0AD1672C1A2009E4484 /* LeagueDetailCell.xib */; };
@@ -180,6 +181,16 @@
 		B5E6B2EC164AB7B500E96ADC /* CreateBetViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E6B2EB164AB7B500E96ADC /* CreateBetViewTests.m */; };
 		B5EA136A161D201A00C774F3 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1369161D201A00C774F3 /* LoginTests.m */; };
 		B5EA136E161D232000C774F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
+		B5EBD4DF16BA15B900E174BC /* ManageQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4DE16BA15B900E174BC /* ManageQuestionsViewController.m */; };
+		B5EBD4E216BA15C600E174BC /* ManageUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4E116BA15C600E174BC /* ManageUsersViewController.m */; };
+		B5EBD4E516BA15D800E174BC /* ManageLeagueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4E416BA15D800E174BC /* ManageLeagueViewController.m */; };
+		B5EBD4E816BAFBA200E174BC /* AdminQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4E716BAFBA200E174BC /* AdminQuestionCell.m */; };
+		B5EBD4EA16BAFBB300E174BC /* AdminQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4E916BAFBB300E174BC /* AdminQuestionCell.xib */; };
+		B5EBD4ED16BB232300E174BC /* NSURL+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4EC16BB232300E174BC /* NSURL+Additions.m */; };
+		B5EBD4F016BB385100E174BC /* red_button_insets.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4EE16BB385100E174BC /* red_button_insets.png */; };
+		B5EBD4F116BB385100E174BC /* red_button_insets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4EF16BB385100E174BC /* red_button_insets@2x.png */; };
+		B5EBD4F416BB39AA00E174BC /* blue_button_insets.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4F216BB39AA00E174BC /* blue_button_insets.png */; };
+		B5EBD4F516BB39AA00E174BC /* blue_button_insets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4F316BB39AA00E174BC /* blue_button_insets@2x.png */; };
 		B5EE57BC16B496B2003166FE /* LeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE57BB16B496B1003166FE /* LeaderCell.m */; };
 		B5EE57BF16B496C3003166FE /* LeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EE57BE16B496C3003166FE /* LeaderCell.xib */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
@@ -299,6 +310,8 @@
 		B50EF4B0166C574D0079D6A1 /* LeagueListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueListViewController.m; sourceTree = "<group>"; };
 		B513185416B9AC1400E50BCF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B513185516B9AC1400E50BCF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		B513188E16B9EEF800E50BCF /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
+		B513188F16B9EEF800E50BCF /* AdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminViewController.m; sourceTree = "<group>"; };
 		B513C0A61672BC8A009E4484 /* JoinLeagueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinLeagueViewController.h; sourceTree = "<group>"; };
 		B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinLeagueViewController.m; sourceTree = "<group>"; };
 		B513C0AA1672C193009E4484 /* LeagueDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueDetailCell.h; sourceTree = "<group>"; };
@@ -491,6 +504,21 @@
 		B5E6B2E7164AB0D900E96ADC /* create_bets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = create_bets.json; sourceTree = "<group>"; };
 		B5E6B2EB164AB7B500E96ADC /* CreateBetViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBetViewTests.m; sourceTree = "<group>"; };
 		B5EA1369161D201A00C774F3 /* LoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
+		B5EBD4DD16BA15B900E174BC /* ManageQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageQuestionsViewController.h; sourceTree = "<group>"; };
+		B5EBD4DE16BA15B900E174BC /* ManageQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageQuestionsViewController.m; sourceTree = "<group>"; };
+		B5EBD4E016BA15C500E174BC /* ManageUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageUsersViewController.h; sourceTree = "<group>"; };
+		B5EBD4E116BA15C600E174BC /* ManageUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageUsersViewController.m; sourceTree = "<group>"; };
+		B5EBD4E316BA15D800E174BC /* ManageLeagueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageLeagueViewController.h; sourceTree = "<group>"; };
+		B5EBD4E416BA15D800E174BC /* ManageLeagueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageLeagueViewController.m; sourceTree = "<group>"; };
+		B5EBD4E616BAFBA200E174BC /* AdminQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminQuestionCell.h; sourceTree = "<group>"; };
+		B5EBD4E716BAFBA200E174BC /* AdminQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminQuestionCell.m; sourceTree = "<group>"; };
+		B5EBD4E916BAFBB300E174BC /* AdminQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminQuestionCell.xib; sourceTree = "<group>"; };
+		B5EBD4EB16BB232300E174BC /* NSURL+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Additions.h"; sourceTree = "<group>"; };
+		B5EBD4EC16BB232300E174BC /* NSURL+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Additions.m"; sourceTree = "<group>"; };
+		B5EBD4EE16BB385100E174BC /* red_button_insets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_button_insets.png; sourceTree = "<group>"; };
+		B5EBD4EF16BB385100E174BC /* red_button_insets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_button_insets@2x.png"; sourceTree = "<group>"; };
+		B5EBD4F216BB39AA00E174BC /* blue_button_insets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_button_insets.png; sourceTree = "<group>"; };
+		B5EBD4F316BB39AA00E174BC /* blue_button_insets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue_button_insets@2x.png"; sourceTree = "<group>"; };
 		B5EE57BA16B496B1003166FE /* LeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderCell.h; sourceTree = "<group>"; };
 		B5EE57BB16B496B1003166FE /* LeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderCell.m; sourceTree = "<group>"; };
 		B5EE57BE16B496C3003166FE /* LeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderCell.xib; sourceTree = "<group>"; };
@@ -588,9 +616,14 @@
 		B50653F2163EED4E006DECF8 /* League Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B5EBD4DC16BA159800E174BC /* Admin */,
+				B513188D16B9EAA300E50BCF /* Betting */,
+				B513188B16B9E9E900E50BCF /* Comments */,
 				B5A73FDC16530C2B00CA5981 /* Question Management */,
 				B5FB94AE1636251A00471515 /* LeagueTabBarController.h */,
 				B5FB94AF1636251A00471515 /* LeagueTabBarController.m */,
+				B513188E16B9EEF800E50BCF /* AdminViewController.h */,
+				B513188F16B9EEF800E50BCF /* AdminViewController.m */,
 				B58B5F411636D9FD0082640B /* QuestionsViewController.h */,
 				B58B5F421636D9FD0082640B /* QuestionsViewController.m */,
 				B50653F4163EEDC1006DECF8 /* BetListViewController.h */,
@@ -599,16 +632,6 @@
 				B53F585A1644167300AF2BA9 /* LeagueSettingsViewController.m */,
 				B53F585F164417AF00AF2BA9 /* LeaderboardViewController.h */,
 				B53F5860164417AF00AF2BA9 /* LeaderboardViewController.m */,
-				B5C527AC1645722F0093B8E3 /* AnswersViewController.h */,
-				B5C527AD1645722F0093B8E3 /* AnswersViewController.m */,
-				B5C527B716458F640093B8E3 /* BetViewController.h */,
-				B5C527B816458F640093B8E3 /* BetViewController.m */,
-				B53F586516444FE200AF2BA9 /* CommentsViewController.h */,
-				B53F586616444FE200AF2BA9 /* CommentsViewController.m */,
-				B5FD757B16519B9F0051C4DC /* CommentFormViewController.h */,
-				B5FD757C16519B9F0051C4DC /* CommentFormViewController.m */,
-				B5FD75891651D6710051C4DC /* CommentsController.h */,
-				B5FD758A1651D6720051C4DC /* CommentsController.m */,
 			);
 			name = "League Controllers";
 			sourceTree = "<group>";
@@ -667,6 +690,10 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B5EBD4F216BB39AA00E174BC /* blue_button_insets.png */,
+				B5EBD4F316BB39AA00E174BC /* blue_button_insets@2x.png */,
+				B5EBD4EE16BB385100E174BC /* red_button_insets.png */,
+				B5EBD4EF16BB385100E174BC /* red_button_insets@2x.png */,
 				B56FC0A4167F938F001ADEB1 /* table_shadow_insets.png */,
 				B56FC0A5167F938F001ADEB1 /* table_shadow_insets@2x.png */,
 				B5025E2A166AD6D800F47992 /* transparent_pixel.png */,
@@ -721,7 +748,7 @@
 			path = "prophets-ios/images";
 			sourceTree = "<group>";
 		};
-		B50EF4AD166C56270079D6A1 /* Find a League Controllers */ = {
+		B50EF4AD166C56270079D6A1 /* League Finding */ = {
 			isa = PBXGroup;
 			children = (
 				B5025E19166ABC8800F47992 /* FindLeaguesViewController.h */,
@@ -733,7 +760,31 @@
 				B513C0A61672BC8A009E4484 /* JoinLeagueViewController.h */,
 				B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */,
 			);
-			name = "Find a League Controllers";
+			name = "League Finding";
+			sourceTree = "<group>";
+		};
+		B513188B16B9E9E900E50BCF /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				B53F586516444FE200AF2BA9 /* CommentsViewController.h */,
+				B53F586616444FE200AF2BA9 /* CommentsViewController.m */,
+				B5FD757B16519B9F0051C4DC /* CommentFormViewController.h */,
+				B5FD757C16519B9F0051C4DC /* CommentFormViewController.m */,
+				B5FD75891651D6710051C4DC /* CommentsController.h */,
+				B5FD758A1651D6720051C4DC /* CommentsController.m */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
+		B513188D16B9EAA300E50BCF /* Betting */ = {
+			isa = PBXGroup;
+			children = (
+				B5C527AC1645722F0093B8E3 /* AnswersViewController.h */,
+				B5C527AD1645722F0093B8E3 /* AnswersViewController.m */,
+				B5C527B716458F640093B8E3 /* BetViewController.h */,
+				B5C527B816458F640093B8E3 /* BetViewController.m */,
+			);
+			name = Betting;
 			sourceTree = "<group>";
 		};
 		B54AA0FB162F1E7700F2A3CB /* Utilities */ = {
@@ -833,6 +884,9 @@
 				B5EE57BA16B496B1003166FE /* LeaderCell.h */,
 				B5EE57BB16B496B1003166FE /* LeaderCell.m */,
 				B5EE57BE16B496C3003166FE /* LeaderCell.xib */,
+				B5EBD4E616BAFBA200E174BC /* AdminQuestionCell.h */,
+				B5EBD4E716BAFBA200E174BC /* AdminQuestionCell.m */,
+				B5EBD4E916BAFBB300E174BC /* AdminQuestionCell.xib */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -903,7 +957,7 @@
 			children = (
 				B5A2F35716377E5B00034319 /* Login and Registration Controllers */,
 				B50653F2163EED4E006DECF8 /* League Controllers */,
-				B50EF4AD166C56270079D6A1 /* Find a League Controllers */,
+				B50EF4AD166C56270079D6A1 /* League Finding */,
 				B5A2F35116376D5600034319 /* FFBaseViewController.h */,
 				B5A2F35216376D5600034319 /* FFBaseViewController.m */,
 				B5B1472C1634DE08005F1B5A /* HomeViewController.h */,
@@ -1007,6 +1061,8 @@
 				B54AA104162F34A600F2A3CB /* NSString+Additions.m */,
 				B5A2F354163776B200034319 /* UIBarButtonItem+Additions.h */,
 				B5A2F355163776B200034319 /* UIBarButtonItem+Additions.m */,
+				B5EBD4EB16BB232300E174BC /* NSURL+Additions.h */,
+				B5EBD4EC16BB232300E174BC /* NSURL+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1030,6 +1086,19 @@
 				B56E8F9A162746ED006DB56B /* TableCells */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		B5EBD4DC16BA159800E174BC /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				B5EBD4DD16BA15B900E174BC /* ManageQuestionsViewController.h */,
+				B5EBD4DE16BA15B900E174BC /* ManageQuestionsViewController.m */,
+				B5EBD4E016BA15C500E174BC /* ManageUsersViewController.h */,
+				B5EBD4E116BA15C600E174BC /* ManageUsersViewController.m */,
+				B5EBD4E316BA15D800E174BC /* ManageLeagueViewController.h */,
+				B5EBD4E416BA15D800E174BC /* ManageLeagueViewController.m */,
+			);
+			name = Admin;
 			sourceTree = "<group>";
 		};
 		B5F1AEBD160388C600D28C1C = {
@@ -1295,6 +1364,11 @@
 				B56FC0A7167F938F001ADEB1 /* table_shadow_insets@2x.png in Resources */,
 				B5D2A7F5168B9BBD007CD7EE /* FFFormPickerFieldCell.xib in Resources */,
 				B5EE57BF16B496C3003166FE /* LeaderCell.xib in Resources */,
+				B5EBD4EA16BAFBB300E174BC /* AdminQuestionCell.xib in Resources */,
+				B5EBD4F016BB385100E174BC /* red_button_insets.png in Resources */,
+				B5EBD4F116BB385100E174BC /* red_button_insets@2x.png in Resources */,
+				B5EBD4F416BB39AA00E174BC /* blue_button_insets.png in Resources */,
+				B5EBD4F516BB39AA00E174BC /* blue_button_insets@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1438,6 +1512,12 @@
 				B55EBF6F16A37D150060FFAF /* ErrorCollection.m in Sources */,
 				B5EE57BC16B496B2003166FE /* LeaderCell.m in Sources */,
 				B513185616B9AC1400E50BCF /* SettingsViewController.m in Sources */,
+				B513189016B9EEF800E50BCF /* AdminViewController.m in Sources */,
+				B5EBD4DF16BA15B900E174BC /* ManageQuestionsViewController.m in Sources */,
+				B5EBD4E216BA15C600E174BC /* ManageUsersViewController.m in Sources */,
+				B5EBD4E516BA15D800E174BC /* ManageLeagueViewController.m in Sources */,
+				B5EBD4E816BAFBA200E174BC /* AdminQuestionCell.m in Sources */,
+				B5EBD4ED16BB232300E174BC /* NSURL+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
