@@ -183,7 +183,6 @@
 		B5EA136E161D232000C774F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
 		B5EBD4DF16BA15B900E174BC /* ManageQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4DE16BA15B900E174BC /* ManageQuestionsViewController.m */; };
 		B5EBD4E216BA15C600E174BC /* ManageUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4E116BA15C600E174BC /* ManageUsersViewController.m */; };
-		B5EBD4E516BA15D800E174BC /* ManageLeagueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4E416BA15D800E174BC /* ManageLeagueViewController.m */; };
 		B5EBD4E816BAFBA200E174BC /* AdminQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4E716BAFBA200E174BC /* AdminQuestionCell.m */; };
 		B5EBD4EA16BAFBB300E174BC /* AdminQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4E916BAFBB300E174BC /* AdminQuestionCell.xib */; };
 		B5EBD4ED16BB232300E174BC /* NSURL+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD4EC16BB232300E174BC /* NSURL+Additions.m */; };
@@ -508,8 +507,6 @@
 		B5EBD4DE16BA15B900E174BC /* ManageQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageQuestionsViewController.m; sourceTree = "<group>"; };
 		B5EBD4E016BA15C500E174BC /* ManageUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageUsersViewController.h; sourceTree = "<group>"; };
 		B5EBD4E116BA15C600E174BC /* ManageUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageUsersViewController.m; sourceTree = "<group>"; };
-		B5EBD4E316BA15D800E174BC /* ManageLeagueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageLeagueViewController.h; sourceTree = "<group>"; };
-		B5EBD4E416BA15D800E174BC /* ManageLeagueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageLeagueViewController.m; sourceTree = "<group>"; };
 		B5EBD4E616BAFBA200E174BC /* AdminQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminQuestionCell.h; sourceTree = "<group>"; };
 		B5EBD4E716BAFBA200E174BC /* AdminQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminQuestionCell.m; sourceTree = "<group>"; };
 		B5EBD4E916BAFBB300E174BC /* AdminQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminQuestionCell.xib; sourceTree = "<group>"; };
@@ -622,8 +619,6 @@
 				B5A73FDC16530C2B00CA5981 /* Question Management */,
 				B5FB94AE1636251A00471515 /* LeagueTabBarController.h */,
 				B5FB94AF1636251A00471515 /* LeagueTabBarController.m */,
-				B513188E16B9EEF800E50BCF /* AdminViewController.h */,
-				B513188F16B9EEF800E50BCF /* AdminViewController.m */,
 				B58B5F411636D9FD0082640B /* QuestionsViewController.h */,
 				B58B5F421636D9FD0082640B /* QuestionsViewController.m */,
 				B50653F4163EEDC1006DECF8 /* BetListViewController.h */,
@@ -1091,12 +1086,12 @@
 		B5EBD4DC16BA159800E174BC /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				B513188E16B9EEF800E50BCF /* AdminViewController.h */,
+				B513188F16B9EEF800E50BCF /* AdminViewController.m */,
 				B5EBD4DD16BA15B900E174BC /* ManageQuestionsViewController.h */,
 				B5EBD4DE16BA15B900E174BC /* ManageQuestionsViewController.m */,
 				B5EBD4E016BA15C500E174BC /* ManageUsersViewController.h */,
 				B5EBD4E116BA15C600E174BC /* ManageUsersViewController.m */,
-				B5EBD4E316BA15D800E174BC /* ManageLeagueViewController.h */,
-				B5EBD4E416BA15D800E174BC /* ManageLeagueViewController.m */,
 			);
 			name = Admin;
 			sourceTree = "<group>";
@@ -1515,7 +1510,6 @@
 				B513189016B9EEF800E50BCF /* AdminViewController.m in Sources */,
 				B5EBD4DF16BA15B900E174BC /* ManageQuestionsViewController.m in Sources */,
 				B5EBD4E216BA15C600E174BC /* ManageUsersViewController.m in Sources */,
-				B5EBD4E516BA15D800E174BC /* ManageLeagueViewController.m in Sources */,
 				B5EBD4E816BAFBA200E174BC /* AdminQuestionCell.m in Sources */,
 				B5EBD4ED16BB232300E174BC /* NSURL+Additions.m in Sources */,
 			);

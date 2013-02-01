@@ -7,6 +7,7 @@
 //
 
 #import "AdminViewController.h"
+#import "LeagueFormViewController.h"
 #import "FFBaseCell.h"
 #import "UIColor+Additions.h"
 #import "ManageQuestionsViewController.h"
@@ -84,7 +85,11 @@
         [self performSegueWithIdentifier:@"ShowManageUsers" sender:nil];
     }
     else{
-        [self performSegueWithIdentifier:@"ShowManageLeague" sender:nil];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle: nil];
+        LeagueFormViewController *leagueVC = [storyboard instantiateViewControllerWithIdentifier:@"LeagueFormViewController"];
+        
+        leagueVC.league = self.league;
+        [self.navigationController pushViewController:leagueVC animated:YES];
     }
 }
 

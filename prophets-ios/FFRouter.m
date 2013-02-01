@@ -84,6 +84,9 @@
     
     //comment put routes are in the form bc RKRouter can't handle two paths for the same verb on a resource, but comments need to be put to leagues and questions
     
+    
+    [self.routeSet addRoute:[RKRoute routeWithClass:[League class] pathPattern:@"/leagues/:remoteId" method:RKRequestMethodPUT]];
+    
     [self.routeSet addRoute:[RKRoute routeWithClass:[Question class] pathPattern:@"/leagues/:league.remoteId/questions/:remoteId" method:RKRequestMethodPUT]];
     
     [self.routeSet addRoute:[RKRoute routeWithName:@"approve_question" pathPattern:@"/leagues/:league.remoteId/questions/:remoteId/approve" method:RKRequestMethodPUT]];

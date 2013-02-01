@@ -603,7 +603,7 @@
         <!--League Form View Controller-->
         <scene sceneID="fnX-Jd-WUZ">
             <objects>
-                <viewController id="aGh-1e-xyw" customClass="LeagueFormViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeagueFormViewController" id="aGh-1e-xyw" customClass="LeagueFormViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hYp-Eg-6He">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1050,46 +1050,11 @@
                         <outlet property="tableView" destination="57o-yS-YaL" id="1Va-U5-2A8"/>
                         <segue destination="Tcf-Vg-RIF" kind="push" identifier="ShowManageQuestions" id="IYM-m1-8qh"/>
                         <segue destination="YFM-KU-7GQ" kind="push" identifier="ShowManageUsers" id="Nmi-Ya-Yih"/>
-                        <segue destination="Ikq-QK-kCl" kind="push" identifier="ShowManageLeague" id="xrk-Hs-uJv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbc-l7-rFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2255" y="-1307"/>
-        </scene>
-        <!--Manage League View Controller - Leaderboard-->
-        <scene sceneID="3Sb-Vd-b1T">
-            <objects>
-                <viewController id="Ikq-QK-kCl" customClass="ManageLeagueViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Nde-KU-Yco">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="Ff6-QL-nhd">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OL6-f9-sLY">
-                                <rect key="frame" x="7" y="10" width="303" height="347"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Ikq-QK-kCl" id="qcl-0A-LX0"/>
-                                    <outlet property="delegate" destination="Ikq-QK-kCl" id="bPh-QT-sfQ"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Leaderboard" image="leaguemenu_stats.png" id="koJ-rZ-ZvA"/>
-                    <navigationItem key="navigationItem" id="fHH-UF-Ie1"/>
-                    <connections>
-                        <outlet property="tableView" destination="OL6-f9-sLY" id="ez1-2T-8w6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fdy-WV-rn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3004" y="-1307"/>
         </scene>
         <!--Manage Users View Controller - Leaderboard-->
         <scene sceneID="JMD-cz-VvC">
@@ -1123,7 +1088,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngj-TI-Mdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="-1907"/>
+            <point key="canvasLocation" x="3024" y="-1307"/>
         </scene>
         <!--Manage Questions View Controller - Leaderboard-->
         <scene sceneID="zgB-qf-vAH">
@@ -1157,7 +1122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSP-pz-RDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="-2499"/>
+            <point key="canvasLocation" x="3024" y="-1899"/>
         </scene>
     </scenes>
     <resources>
@@ -1250,9 +1215,6 @@
         </class>
         <class className="LoginViewController" superclassName="FFFormViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-        </class>
-        <class className="ManageLeagueViewController" superclassName="FFFetchedResultsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ManageLeagueViewController.h"/>
         </class>
         <class className="ManageQuestionsViewController" superclassName="FFFetchedResultsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ManageQuestionsViewController.h"/>

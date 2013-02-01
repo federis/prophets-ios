@@ -83,16 +83,4 @@
     return cell;
 }
 
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    /*
-    if([segue.identifier isEqualToString:@"ShowBetCreation"] && [sender isKindOfClass:[Answer class]]) {
-        Answer *answer = (Answer *)sender;
-        BetViewController *betVC = (BetViewController *)[segue destinationViewController];
-        betVC.answer = answer;
-        betVC.membership = self.membership;
-    }
-    */
-}
-
 @end

@@ -22,9 +22,12 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    RoundedClearBar *bar = [[RoundedClearBar alloc] initWithTitle:@"Create a League"];
-    [bar.leftButton addTarget:self action:@selector(cancelTouched) forControlEvents:UIControlEventTouchUpInside];
-    self.fixedHeaderView = bar;
+    
+    if(self.league.isNew){
+        RoundedClearBar *bar = [[RoundedClearBar alloc] initWithTitle:@"Create a League"];
+        [bar.leftButton addTarget:self action:@selector(cancelTouched) forControlEvents:UIControlEventTouchUpInside];
+        self.fixedHeaderView = bar;
+    }
 }
 
 -(void)cancelTouched{
@@ -33,7 +36,9 @@
 
 
 -(void)prepareForm{
-    League *league = (League *)[self.scratchContext insertNewObjectForEntityForName:@"League"];
+    if (!self.league) {
+        self.league = (League *)[self.scratchContext insertNewObjectForEntityForName:@"League"];
+    }
     
     FFFormTextField *nameField = [FFFormTextField formFieldWithAttributeName:@"name"];
     nameField.returnKeyType = UIReturnKeyNext;
@@ -73,10 +78,10 @@
            DLog(@"Error is %@", error);
        }];
     
-    self.form = [FFForm formForObject:league withFields:@[nameField, privateField, tagField]];
+    self.form = [FFForm formForObject:self.league withFields:@[nameField, privateField, tagField]];
     self.form.delegate = self;
     
-    self.submitButtonText = @"Create";
+    self.submitButtonText = self.league.isNew ? @"Create" : @"Save";
 }
 
 
@@ -90,24 +95,44 @@
 -(void)submit{
     [SVProgressHUD showWithStatus:@"Creating league" maskType:SVProgressHUDMaskTypeGradient];
     
-    [[RKObjectManager sharedManager] postObject:self.form.object path:@"/leagues" parameters:nil
-    success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-        [SVProgressHUD dismiss];
-        [SVProgressHUD showSuccessWithStatus:@"League created"];
-        DLog(@"%@", mappingResult);
-        //League *league = (League *)self.formObject;
-        // Take them to the league?
-        
-        [self dismissViewControllerAnimated:YES completion:^{}];
+    if (self.league.isNew) {
+        [[RKObjectManager sharedManager] postObject:self.form.object path:@"/leagues" parameters:nil
+            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+                [SVProgressHUD dismiss];
+                [SVProgressHUD showSuccessWithStatus:@"League created"];
+                DLog(@"%@", mappingResult);
+                //League *league = (League *)self.formObject;
+                // Take them to the league?
+                
+                [self dismissViewControllerAnimated:YES completion:^{}];
+            }
+            failure:^(RKObjectRequestOperation *operation, NSError *error){
+                [SVProgressHUD dismiss];
+                
+                ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+                [SVProgressHUD showErrorWithStatus:[errors messagesString]];
+                
+                DLog(@"%@", [error description]);
+            }];
     }
-    failure:^(RKObjectRequestOperation *operation, NSError *error){
-        [SVProgressHUD dismiss];
-        
-        ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
-        [SVProgressHUD showErrorWithStatus:[errors messagesString]];
-        
-        DLog(@"%@", [error description]);
-    }];
+    else{
+        [[RKObjectManager sharedManager] putObject:self.form.object path:nil parameters:nil
+            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+                [SVProgressHUD dismiss];
+                [SVProgressHUD showSuccessWithStatus:@"League updated"];
+                DLog(@"%@", mappingResult);
+                
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+            failure:^(RKObjectRequestOperation *operation, NSError *error){
+                [SVProgressHUD dismiss];
+                
+                ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+                [SVProgressHUD showErrorWithStatus:[errors messagesString]];
+                
+                DLog(@"%@", [error description]);
+            }];
+    }
 }
 
 -(BOOL)formIsValid{

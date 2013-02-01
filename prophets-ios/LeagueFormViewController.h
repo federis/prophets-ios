@@ -8,6 +8,10 @@
 
 #import "FFFormViewController.h"
 
+@class League;
+
 @interface LeagueFormViewController : FFFormViewController
+
+@property (nonatomic, strong) League *league;
 
 @end
