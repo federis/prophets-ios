@@ -39,33 +39,53 @@
     
     self.form = [FFForm formForObject:self.question withFields:@[contentField, closeOfBettingField, descField]];
     
-    self.submitButtonText = @"Submit";
+    self.submitButtonText = self.question.isNew ? @"Submit" : @"Save";
 }
 
 -(void)submit{
     [SVProgressHUD showWithStatus:@"Saving question" maskType:SVProgressHUDMaskTypeGradient];
     
-    [[RKObjectManager sharedManager] postObject:self.question path:nil parameters:nil
-    success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-        [SVProgressHUD dismiss];
-        [SVProgressHUD showSuccessWithStatus:@"Question saved"];
-        
-        NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
-        
-        //switch to the object on the main context, instead of the one from the scratch context
-        self.question = (Question *)[context objectWithID:[self.question objectID]];
-        
-        //send them to answers
-        [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.question];
+    if (self.question.isNew) {
+        [[RKObjectManager sharedManager] postObject:self.question path:nil parameters:nil
+        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showSuccessWithStatus:@"Question saved"];
+            
+            NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+            
+            //switch to the object on the main context, instead of the one from the scratch context
+            self.question = (Question *)[context objectWithID:[self.question objectID]];
+            
+            //send them to answers
+            [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.question];
+        }
+        failure:^(RKObjectRequestOperation *operation, NSError *error){
+            [SVProgressHUD dismiss];
+            
+            ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+            [SVProgressHUD showErrorWithStatus:[errors messagesString]];
+            
+            DLog(@"%@", [error description]);
+        }];
+
     }
-    failure:^(RKObjectRequestOperation *operation, NSError *error){
-        [SVProgressHUD dismiss];
-        
-        ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
-        [SVProgressHUD showErrorWithStatus:[errors messagesString]];
-        
-        DLog(@"%@", [error description]);
-    }];
+    else{
+        [[RKObjectManager sharedManager] putObject:self.question path:nil parameters:nil
+        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showSuccessWithStatus:@"Question saved"];
+            
+            [self performSegueWithIdentifier:@"ShowEditAnswers" sender:self.question];
+        }
+        failure:^(RKObjectRequestOperation *operation, NSError *error){
+            [SVProgressHUD dismiss];
+            
+            ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+            [SVProgressHUD showErrorWithStatus:[errors messagesString]];
+            
+            DLog(@"%@", [error description]);
+        }];
+    }
 }
 
 -(BOOL)formIsValid{

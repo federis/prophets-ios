@@ -190,6 +190,7 @@
 		B5EBD4F116BB385100E174BC /* red_button_insets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4EF16BB385100E174BC /* red_button_insets@2x.png */; };
 		B5EBD4F416BB39AA00E174BC /* blue_button_insets.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4F216BB39AA00E174BC /* blue_button_insets.png */; };
 		B5EBD4F516BB39AA00E174BC /* blue_button_insets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4F316BB39AA00E174BC /* blue_button_insets@2x.png */; };
+		B5EBD50316BB76FE00E174BC /* UIAlertView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD50216BB76FD00E174BC /* UIAlertView+Additions.m */; };
 		B5EE57BC16B496B2003166FE /* LeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE57BB16B496B1003166FE /* LeaderCell.m */; };
 		B5EE57BF16B496C3003166FE /* LeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EE57BE16B496C3003166FE /* LeaderCell.xib */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
@@ -516,6 +517,8 @@
 		B5EBD4EF16BB385100E174BC /* red_button_insets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_button_insets@2x.png"; sourceTree = "<group>"; };
 		B5EBD4F216BB39AA00E174BC /* blue_button_insets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_button_insets.png; sourceTree = "<group>"; };
 		B5EBD4F316BB39AA00E174BC /* blue_button_insets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue_button_insets@2x.png"; sourceTree = "<group>"; };
+		B5EBD50116BB76FD00E174BC /* UIAlertView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Additions.h"; sourceTree = "<group>"; };
+		B5EBD50216BB76FD00E174BC /* UIAlertView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Additions.m"; sourceTree = "<group>"; };
 		B5EE57BA16B496B1003166FE /* LeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderCell.h; sourceTree = "<group>"; };
 		B5EE57BB16B496B1003166FE /* LeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderCell.m; sourceTree = "<group>"; };
 		B5EE57BE16B496C3003166FE /* LeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderCell.xib; sourceTree = "<group>"; };
@@ -1058,6 +1061,8 @@
 				B5A2F355163776B200034319 /* UIBarButtonItem+Additions.m */,
 				B5EBD4EB16BB232300E174BC /* NSURL+Additions.h */,
 				B5EBD4EC16BB232300E174BC /* NSURL+Additions.m */,
+				B5EBD50116BB76FD00E174BC /* UIAlertView+Additions.h */,
+				B5EBD50216BB76FD00E174BC /* UIAlertView+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1512,6 +1517,7 @@
 				B5EBD4E216BA15C600E174BC /* ManageUsersViewController.m in Sources */,
 				B5EBD4E816BAFBA200E174BC /* AdminQuestionCell.m in Sources */,
 				B5EBD4ED16BB232300E174BC /* NSURL+Additions.m in Sources */,
+				B5EBD50316BB76FE00E174BC /* UIAlertView+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

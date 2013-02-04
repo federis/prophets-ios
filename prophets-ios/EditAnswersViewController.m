@@ -233,7 +233,7 @@
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    FFTableFooterButtonView *footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:@"Submit"];
+    FFTableFooterButtonView *footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:@"Save"];
     [footerView setLeftButtonText:@"Add Another"];
     [footerView.button addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
     [footerView.leftButton addTarget:self action:@selector(addAnswer) forControlEvents:UIControlEventTouchUpInside];

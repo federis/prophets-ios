@@ -88,27 +88,4 @@
 }
 
 
-
--(IBAction)publishTouched:(id)sender{
-    
-}
-
--(IBAction)editTouched:(id)sender{
-    
-}
-
--(IBAction)deleteTouched:(id)sender{
-    
-}
-
--(IBAction)judgeTouched:(id)sender{
-    
-}
-
--(IBAction)viewTouched:(id)sender{
-    
-}
-
-
-
 @end
