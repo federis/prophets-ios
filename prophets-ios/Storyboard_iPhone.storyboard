@@ -1118,11 +1118,45 @@
                     <navigationItem key="navigationItem" id="MVT-3G-Qmm"/>
                     <connections>
                         <outlet property="tableView" destination="zO6-cU-xAF" id="TDU-Vi-Xih"/>
+                        <segue destination="RyR-in-Ss2" kind="push" identifier="ShowJudge" id="qe4-7L-4iZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSP-pz-RDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3024" y="-1899"/>
+        </scene>
+        <!--Judge View Controller-->
+        <scene sceneID="eLw-DL-xRU">
+            <objects>
+                <viewController id="RyR-in-Ss2" customClass="JudgeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jse-wi-Tab">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="KAW-IQ-7EX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="43i-Rp-SgG">
+                                <rect key="frame" x="7" y="10" width="303" height="347"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RyR-in-Ss2" id="Iyu-nQ-scs"/>
+                                    <outlet property="delegate" destination="RyR-in-Ss2" id="oaV-0d-QiJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uJu-7q-fjB"/>
+                    <connections>
+                        <outlet property="tableView" destination="43i-Rp-SgG" id="84F-k3-GLG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tul-rb-KTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3551" y="-1899"/>
         </scene>
     </scenes>
     <resources>
@@ -1187,6 +1221,9 @@
         </class>
         <class className="JoinLeagueViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinLeagueViewController.h"/>
+        </class>
+        <class className="JudgeViewController" superclassName="FFFetchedResultsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JudgeViewController.h"/>
         </class>
         <class className="LaunchViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LaunchViewController.h"/>

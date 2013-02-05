@@ -27,6 +27,7 @@
 
 -(BOOL)isApproved;
 -(BOOL)isOpenForBetting;
+-(BOOL)allAnswersJudged;
 
 @end
 

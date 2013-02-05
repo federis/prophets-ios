@@ -191,6 +191,9 @@
 		B5EBD4F416BB39AA00E174BC /* blue_button_insets.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4F216BB39AA00E174BC /* blue_button_insets.png */; };
 		B5EBD4F516BB39AA00E174BC /* blue_button_insets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD4F316BB39AA00E174BC /* blue_button_insets@2x.png */; };
 		B5EBD50316BB76FE00E174BC /* UIAlertView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD50216BB76FD00E174BC /* UIAlertView+Additions.m */; };
+		B5EBD50616C0397300E174BC /* JudgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD50516C0397300E174BC /* JudgeViewController.m */; };
+		B5EBD50916C039AE00E174BC /* JudgeAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD50816C039AC00E174BC /* JudgeAnswerCell.m */; };
+		B5EBD50B16C039C300E174BC /* JudgeAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD50A16C039C300E174BC /* JudgeAnswerCell.xib */; };
 		B5EE57BC16B496B2003166FE /* LeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE57BB16B496B1003166FE /* LeaderCell.m */; };
 		B5EE57BF16B496C3003166FE /* LeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EE57BE16B496C3003166FE /* LeaderCell.xib */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
@@ -519,6 +522,11 @@
 		B5EBD4F316BB39AA00E174BC /* blue_button_insets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue_button_insets@2x.png"; sourceTree = "<group>"; };
 		B5EBD50116BB76FD00E174BC /* UIAlertView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Additions.h"; sourceTree = "<group>"; };
 		B5EBD50216BB76FD00E174BC /* UIAlertView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Additions.m"; sourceTree = "<group>"; };
+		B5EBD50416C0397200E174BC /* JudgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JudgeViewController.h; sourceTree = "<group>"; };
+		B5EBD50516C0397300E174BC /* JudgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JudgeViewController.m; sourceTree = "<group>"; };
+		B5EBD50716C039AB00E174BC /* JudgeAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JudgeAnswerCell.h; sourceTree = "<group>"; };
+		B5EBD50816C039AC00E174BC /* JudgeAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JudgeAnswerCell.m; sourceTree = "<group>"; };
+		B5EBD50A16C039C300E174BC /* JudgeAnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JudgeAnswerCell.xib; sourceTree = "<group>"; };
 		B5EE57BA16B496B1003166FE /* LeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderCell.h; sourceTree = "<group>"; };
 		B5EE57BB16B496B1003166FE /* LeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderCell.m; sourceTree = "<group>"; };
 		B5EE57BE16B496C3003166FE /* LeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderCell.xib; sourceTree = "<group>"; };
@@ -885,6 +893,9 @@
 				B5EBD4E616BAFBA200E174BC /* AdminQuestionCell.h */,
 				B5EBD4E716BAFBA200E174BC /* AdminQuestionCell.m */,
 				B5EBD4E916BAFBB300E174BC /* AdminQuestionCell.xib */,
+				B5EBD50716C039AB00E174BC /* JudgeAnswerCell.h */,
+				B5EBD50816C039AC00E174BC /* JudgeAnswerCell.m */,
+				B5EBD50A16C039C300E174BC /* JudgeAnswerCell.xib */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -1097,6 +1108,8 @@
 				B5EBD4DE16BA15B900E174BC /* ManageQuestionsViewController.m */,
 				B5EBD4E016BA15C500E174BC /* ManageUsersViewController.h */,
 				B5EBD4E116BA15C600E174BC /* ManageUsersViewController.m */,
+				B5EBD50416C0397200E174BC /* JudgeViewController.h */,
+				B5EBD50516C0397300E174BC /* JudgeViewController.m */,
 			);
 			name = Admin;
 			sourceTree = "<group>";
@@ -1369,6 +1382,7 @@
 				B5EBD4F116BB385100E174BC /* red_button_insets@2x.png in Resources */,
 				B5EBD4F416BB39AA00E174BC /* blue_button_insets.png in Resources */,
 				B5EBD4F516BB39AA00E174BC /* blue_button_insets@2x.png in Resources */,
+				B5EBD50B16C039C300E174BC /* JudgeAnswerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1518,6 +1532,8 @@
 				B5EBD4E816BAFBA200E174BC /* AdminQuestionCell.m in Sources */,
 				B5EBD4ED16BB232300E174BC /* NSURL+Additions.m in Sources */,
 				B5EBD50316BB76FE00E174BC /* UIAlertView+Additions.m in Sources */,
+				B5EBD50616C0397300E174BC /* JudgeViewController.m in Sources */,
+				B5EBD50916C039AE00E174BC /* JudgeAnswerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

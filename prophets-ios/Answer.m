@@ -121,7 +121,7 @@
     [mapping addAttributeMappingsFromArray:@[@"content"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"remoteId" : @"id",
-     @"initialProbability" : @"initial_probability",
+     @"initialProbability" : @"initial_probability"
      }];
     
     return mapping;

@@ -10,6 +10,7 @@
 
 #import "ManageQuestionsViewController.h"
 #import "QuestionFormViewController.h"
+#import "JudgeViewController.h"
 #import "League.h"
 #import "AdminQuestionCell.h"
 #import "UIAlertView+Additions.h"
@@ -153,10 +154,19 @@
 
 -(IBAction)judgeTouched:(id)sender{
     Question *question = ((AdminQuestionCell *)[[sender superview] superview]).question;
+    [self performSegueWithIdentifier:@"ShowJudge" sender:question];
 }
 
 -(IBAction)viewTouched:(id)sender{
     Question *question = ((AdminQuestionCell *)[[sender superview] superview]).question;
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ShowJudge"]) {
+        JudgeViewController *judgeVC = (JudgeViewController *)[segue destinationViewController];
+        judgeVC.question = sender;
+    }
 }
 
 

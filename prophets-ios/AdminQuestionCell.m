@@ -70,11 +70,10 @@
         self.publishButton.hidden = YES;
         self.editButton.hidden = YES;
     }
-    else{
-        [Utilities layoutViewsHorizantally:@[ self.editButton, self.judgeButton ]
+    else{ //currently running
+        [Utilities layoutViewsHorizantally:@[ self.editButton, self.deleteButton, self.judgeButton ]
                              endingAtPoint:CGPointMake(275, y)];
         
-        self.deleteButton.hidden = YES;
         self.viewButton.hidden = YES;
         self.publishButton.hidden = YES;
     }

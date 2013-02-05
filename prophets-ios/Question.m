@@ -34,6 +34,16 @@
     return self.approvedAt != nil;
 }
 
+-(BOOL)allAnswersJudged{
+    for (Answer *a in self.answers) {
+        if (!a.hasBeenJudged) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
 +(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
