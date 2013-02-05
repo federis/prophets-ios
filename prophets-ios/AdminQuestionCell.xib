@@ -42,11 +42,11 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUILabel" id="399683953">
 								<reference key="NSNextResponder" ref="681811572"/>
-								<int key="NSvFlags">290</int>
-								<string key="NSFrame">{{10, 8}, {280, 24}}</string>
+								<int key="NSvFlags">288</int>
+								<string key="NSFrame">{{10, 8}, {270, 24}}</string>
 								<reference key="NSSuperview" ref="681811572"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="770774289"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -78,7 +78,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-								<double key="preferredMaxLayoutWidth">280</double>
+								<double key="preferredMaxLayoutWidth">270</double>
 							</object>
 							<object class="IBUIButton" id="311675063">
 								<reference key="NSNextResponder" ref="681811572"/>
@@ -86,6 +86,7 @@
 								<string key="NSFrame">{{245, 25}, {65, 32}}</string>
 								<reference key="NSSuperview" ref="681811572"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -360,7 +361,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">29</int>
+			<int key="maxID">30</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

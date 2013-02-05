@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) Answer *answer;
 @property (weak, nonatomic) IBOutlet UILabel *answerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *correctnessLabel;
 
 -(CGFloat)heightForCellWithAnswer:(Answer *)answer;
 

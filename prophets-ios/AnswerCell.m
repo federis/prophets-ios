@@ -14,7 +14,6 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    self.showsAccessoryView = YES;
 }
 
 -(void)setAnswer:(Answer *)answer{
@@ -23,6 +22,16 @@
                                                                          withFont:self.answerLabel.font
                                                                             width:self.answerLabel.frame.size.width],
                                                        self.answerLabel.frame);
+    
+    if(answer.hasBeenJudged){
+        self.showsAccessoryView = NO;
+        self.correctnessLabel.hidden = NO;
+        self.correctnessLabel.text = answer.isCorrect ? @"Correct" : @"Incorrect";
+    }
+    else{
+        self.showsAccessoryView = YES;
+        self.correctnessLabel.hidden = YES;
+    }
 }
 
 -(CGFloat)heightForCellWithAnswer:(Answer *)answer{

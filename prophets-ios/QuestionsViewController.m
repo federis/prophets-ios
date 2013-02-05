@@ -173,6 +173,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     [self performSegueWithIdentifier:@"ShowAnswers" sender:question];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 @end

@@ -189,7 +189,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 0) {
         Answer *answer = [self.answers objectAtIndex:indexPath.row];
-        [self performSegueWithIdentifier:@"ShowBetCreation" sender:answer];
+        if (answer.isOpenForBetting) {
+            [self performSegueWithIdentifier:@"ShowBetCreation" sender:answer];
+        }
     }
     else if(indexPath.section == 1){ //comments
         Comment *comment = [self.commentsController commentAtRow:indexPath.row];
