@@ -131,21 +131,26 @@
     Question *question = ((AdminQuestionCell *)[[sender superview] superview]).question;
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Question" message:@"Are you sure you want to delete this question?"
        completionBlock:^(NSUInteger buttonIndex, UIAlertView *alert){
-           [SVProgressHUD showWithStatus:@"Deleting question" maskType:SVProgressHUDMaskTypeGradient];
-           
-           [[RKObjectManager sharedManager] deleteObject:question path:nil parameters:nil
-             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-                 [SVProgressHUD dismiss];
-                 [SVProgressHUD showSuccessWithStatus:@"Question deleted"];
-             }
-             failure:^(RKObjectRequestOperation *operation, NSError *error){
-                 [SVProgressHUD dismiss];
-                 
-                 ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
-                 [SVProgressHUD showErrorWithStatus:[errors messagesString]];
-                 
-                 DLog(@"%@", [error description]);
-             }];
+           if (buttonIndex == 1) {
+               [SVProgressHUD showWithStatus:@"Deleting question" maskType:SVProgressHUDMaskTypeGradient];
+               
+               [[RKObjectManager sharedManager] deleteObject:question path:nil parameters:nil
+                 success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+                     [SVProgressHUD dismiss];
+                     [SVProgressHUD showSuccessWithStatus:@"Question deleted"];
+                 }
+                 failure:^(RKObjectRequestOperation *operation, NSError *error){
+                     [SVProgressHUD dismiss];
+                     
+                     ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+                     [SVProgressHUD showErrorWithStatus:[errors messagesString]];
+                     
+                     DLog(@"%@", [error description]);
+                 }];
+           }
+           else{
+               [SVProgressHUD dismiss];
+           }
        }
      cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
     

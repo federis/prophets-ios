@@ -89,8 +89,18 @@
                                                                             keyPath:@"user"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
-    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Membership responseMappingWithParentRelationships]
-                                                                        pathPattern:nil
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Membership responseMappingWithLeague]
+                                                                        pathPattern:@"/memberships"
+                                                                            keyPath:@"membership"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Membership responseMapping]
+                                                                        pathPattern:@"/leagues/:remoteId/leaderboard"
+                                                                            keyPath:@"membership"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Membership responseMappingWithUser]
+                                                                        pathPattern:@"/leagues/:remoteId/memberships"
                                                                             keyPath:@"membership"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
@@ -154,6 +164,40 @@
     }];
     
     [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/leagues/:leagueId/leaderboard"];
+        
+        NSDictionary *argsDict = nil;
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        if (match) {
+            NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Membership"];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"leaderboardRank" ascending:YES]];
+            
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/leagues/:leagueId/memberships"];
+        
+        NSDictionary *argsDict = nil;
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        if (match) {
+            NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Membership"];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"user.email" ascending:YES]];
+            
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
         RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/leagues/:leagueId/questions"];
         
         NSDictionary *argsDict = nil;
@@ -210,24 +254,6 @@
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Comment"];
             fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
-            return fetchRequest;
-        }
-        
-        return nil;
-    }];
-    
-    
-    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
-        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/leagues/:leagueId/leaderboard"];
-        
-        NSDictionary *argsDict = nil;
-        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
-        if (match) {
-            NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
-            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Membership"];
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
-            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"leaderboardRank" ascending:YES]];
-            
             return fetchRequest;
         }
         

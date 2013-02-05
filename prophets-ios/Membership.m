@@ -38,6 +38,12 @@
         return self.league.maxBet;
 }
 
+-(void)prepareForDeletion{
+    if(self.user && self.user.remoteId != [User currentUser].remoteId && !self.user.hasBeenDeleted){
+        [self.managedObjectContext deleteObject:self.user];
+    }
+}
+
 +(RKEntityMapping *)responseMapping{
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
@@ -60,12 +66,22 @@
     return mapping;
 }
 
-+(RKEntityMapping *)responseMappingWithParentRelationships{
++(RKEntityMapping *)responseMappingWithLeague{
     RKEntityMapping *mapping = [self responseMapping];
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"league"
                                                                             toKeyPath:@"league"
                                                                           withMapping:[League responseMapping]]];
+    
+    return mapping;
+}
+
++(RKEntityMapping *)responseMappingWithUser{
+    RKEntityMapping *mapping = [self responseMapping];
+    
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user"
+                                                                            toKeyPath:@"user"
+                                                                          withMapping:[User responseMapping]]];
     
     return mapping;
 }

@@ -26,4 +26,7 @@
 -(NSDecimalNumber *)totalWorth;
 -(NSDecimalNumber *)maxBet;
 
++(RKEntityMapping *)responseMappingWithUser;
++(RKEntityMapping *)responseMappingWithLeague;
+
 @end

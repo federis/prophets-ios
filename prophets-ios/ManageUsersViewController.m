@@ -6,7 +6,12 @@
 //  Copyright (c) 2013 Benjamin Roesch. All rights reserved.
 //
 
+#import <SVProgressHUD.h>
+
 #import "ManageUsersViewController.h"
+#import "AdminMembershipCell.h"
+#import "Membership.h"
+#import "UIAlertView+Additions.h"
 
 @interface ManageUsersViewController ()
 
@@ -14,25 +19,89 @@
 
 @implementation ManageUsersViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"AdminMembershipCell" bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:@"AdminMembershipCell"];
+    
+    self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:@"AdminMembershipCell"];
+    
+    NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"memberships" ofObject:self.league method:RKRequestMethodGET];
+    
+    self.fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
+    self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+    
+    NSError *error;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+    
+    FFLabel *emptyQuestionsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    
+    emptyQuestionsLabel.isBold = NO;
+    emptyQuestionsLabel.text = @"No questions found";
+    emptyQuestionsLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.emptyContentFooterView = emptyQuestionsLabel;
+    
+    [[RKObjectManager sharedManager] getObjectsAtPath:[url relativeString] parameters:nil
+                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+                                                  DLog(@"Result is %@", mappingResult);
+                                              }
+                                              failure:^(RKObjectRequestOperation *operation, NSError *error){
+                                                  DLog(@"Error is %@", error);
+                                              }];
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Table view delegate
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 65;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    AdminMembershipCell *cell = (AdminMembershipCell *)[tableView dequeueReusableCellWithIdentifier:@"AdminMembershipCell" forIndexPath:indexPath];
+        
+    Membership *membership = (Membership *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.membership = membership;
+    
+    [cell.deleteButton addTarget:self action:@selector(deleteTouched:) forControlEvents:UIControlEventTouchUpInside];
+    
+    return cell;
+}
+
+-(IBAction)deleteTouched:(id)sender{
+    Membership *membership = ((AdminMembershipCell *)[[sender superview] superview]).membership;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Member" message:@"Are you sure you want to remove this user from the league?"
+        completionBlock:^(NSUInteger buttonIndex, UIAlertView *alert){
+            if (buttonIndex == 1) {
+                [SVProgressHUD showWithStatus:@"Deleting question" maskType:SVProgressHUDMaskTypeGradient];
+                
+                [[RKObjectManager sharedManager] deleteObject:membership path:nil parameters:nil
+                  success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+                      [SVProgressHUD dismiss];
+                      [SVProgressHUD showSuccessWithStatus:@"Question deleted"];
+                  }
+                  failure:^(RKObjectRequestOperation *operation, NSError *error){
+                      [SVProgressHUD dismiss];
+                      
+                      ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+                      [SVProgressHUD showErrorWithStatus:[errors messagesString]];
+                      
+                      DLog(@"%@", [error description]);
+                  }];
+            }
+            else{
+                [SVProgressHUD dismiss];
+            }
+            
+        }
+      cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+    
+    [alert show];
 }
 
 @end

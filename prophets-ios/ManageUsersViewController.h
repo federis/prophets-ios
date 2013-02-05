@@ -8,6 +8,12 @@
 
 #import "FFFetchedResultsViewController.h"
 
+@class AdminMembershipCell, League;
+
 @interface ManageUsersViewController : FFFetchedResultsViewController
+
+@property (nonatomic, strong) AdminMembershipCell *measuringCell;
+@property (nonatomic, strong) League *league;
+
 
 @end
