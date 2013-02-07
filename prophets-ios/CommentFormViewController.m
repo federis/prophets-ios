@@ -47,10 +47,10 @@
         
         comment = (Comment *)[self.scratchContext insertNewObjectForEntityForName:@"Comment"];
         if (self.question) {
-            comment.question = self.question;
+            comment.questionId = self.question.remoteId;
         }
         else if(self.league){
-            comment.league = self.league;
+            comment.leagueId = self.league.remoteId;
         }
     }
     
@@ -69,11 +69,11 @@
     
     if (comment.remoteId) {
         NSString *path = nil;
-        if(comment.question){
-            path = [NSString stringWithFormat:@"/questions/%@/comments/%@", comment.question.remoteId, comment.remoteId];
+        if(comment.questionId){
+            path = [NSString stringWithFormat:@"/questions/%@/comments/%@", comment.questionId, comment.remoteId];
         }
         else{
-            path = [NSString stringWithFormat:@"/leagues/%@/comments/%@", comment.league.remoteId, comment.remoteId];
+            path = [NSString stringWithFormat:@"/leagues/%@/comments/%@", comment.leagueId, comment.remoteId];
         }
         
         [[RKObjectManager sharedManager] putObject:comment path:path parameters:nil
@@ -94,11 +94,11 @@
     }
     else{
         NSString *path = nil;
-        if(comment.question){
-            path = [NSString stringWithFormat:@"/questions/%@/comments", comment.question.remoteId];
+        if(comment.questionId){
+            path = [NSString stringWithFormat:@"/questions/%@/comments", comment.questionId];
         }
         else{
-            path = [NSString stringWithFormat:@"/leagues/%@/comments", comment.league.remoteId];
+            path = [NSString stringWithFormat:@"/leagues/%@/comments", comment.leagueId];
         }
         
         [[RKObjectManager sharedManager] postObject:comment path:path parameters:nil
