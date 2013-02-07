@@ -10,7 +10,7 @@
 
 #if APP_ENV == DEV
 NSString * const FFBaseUrl = @"http://55prophets.dev:3000";
-NSString * const FFKeychainIdentifier = @"prophets-ios";
+NSString * const FFKeychainIdentifier = @"prophets-ios-dev";
 NSString * const FFObjectStoreName = @"prophets-ios.sqlite";
 
 #elif APP_ENV == TEST
@@ -23,6 +23,9 @@ NSString * const FFObjectStoreName = @"RKTests.sqlite";
 
 #elif APP_ENV == PROD
 //prod
+NSString * const FFBaseUrl = @"http://55prophets.com";
+NSString * const FFKeychainIdentifier = @"prophets-ios";
+NSString * const FFObjectStoreName = @"prophets-ios.sqlite";
 
 #endif
 
