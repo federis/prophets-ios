@@ -12,9 +12,15 @@
 
 @property (nonatomic) BOOL reloading;
 
+-(void)reloadData;
+
 @end
 
 @implementation FFBaseTableViewController
+
+-(void)viewDidLoad{
+    self.showsPullToRefresh = YES;
+}
 
 -(void)setFixedHeaderView:(UIView *)fixedHeaderView{
     if(self.fixedHeaderView) [self.fixedHeaderView removeFromSuperview];
@@ -51,8 +57,6 @@
 -(void)addPullToRefreshHeader{
     self.pullToRefreshHeader = [FFPullToRefreshHeader pullToRefreshHeaderForTableView:self.tableView];
     
-    self.pullToRefreshHeader.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
-    //self.pullToRefreshHeader.bottomBorderThickness = 1.0;
     [self.tableView addSubview:self.pullToRefreshHeader];
     self.tableView.showsVerticalScrollIndicator = YES;
 }
@@ -84,14 +88,33 @@
 	if (!self.showsPullToRefresh) return;
     
 	if (scrollView.contentOffset.y <= -_pullToRefreshHeader.height && !_reloading) {
-		_reloading = YES;
-		//[self reloadTableViewDataSource];
+        self.reloading = YES;
+        [self reloadData];
+	}
+}
+
+-(void)setReloading:(BOOL)reloading{
+    if (reloading) {
 		[_pullToRefreshHeader setState:FFPullToRefreshLoading];
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.2];
 		self.tableView.contentInset = UIEdgeInsetsMake(_pullToRefreshHeader.height, 0.0f, 0.0f, 0.0f);
 		[UIView commitAnimations];
-	}
+    }
+    else{
+        [_pullToRefreshHeader setState:FFPullToRefreshNormal];
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.2];
+		self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
+		[UIView commitAnimations];
+    }
+    _reloading = reloading;
+}
+
+-(void)reloadData{
+    // called by pull to refresh header
+    // can be overridden by subclasses to load data
+    self.reloading = NO;
 }
 
 @end

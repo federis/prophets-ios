@@ -98,6 +98,8 @@
 		B56E8FE9162778BE006DB56B /* FFPullToRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8FE8162778BE006DB56B /* FFPullToRefreshHeader.m */; };
 		B56E8FFA16278A43006DB56B /* FFFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B56E8FF916278A43006DB56B /* FFFormViewController.m */; };
 		B56E8FFC1627BB5C006DB56B /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E8FFB1627BB5C006DB56B /* blueArrow.png */; };
+		B56E97D516C457E9000EC7E7 /* arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E97D316C457E8000EC7E7 /* arrow-down.png */; };
+		B56E97D616C457E9000EC7E7 /* arrow-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E97D416C457E8000EC7E7 /* arrow-down@2x.png */; };
 		B56F40C1160A52AD007D445F /* FFApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* FFApplicationConstants.m */; };
 		B56F40D3160A7829007D445F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D2160A7828007D445F /* User.m */; };
 		B56F40D7160A78F3007D445F /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D6160A78F3007D445F /* League.m */; };
@@ -393,6 +395,8 @@
 		B56E8FF816278A43006DB56B /* FFFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormViewController.h; sourceTree = "<group>"; };
 		B56E8FF916278A43006DB56B /* FFFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormViewController.m; sourceTree = "<group>"; };
 		B56E8FFB1627BB5C006DB56B /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		B56E97D316C457E8000EC7E7 /* arrow-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down.png"; sourceTree = "<group>"; };
+		B56E97D416C457E8000EC7E7 /* arrow-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down@2x.png"; sourceTree = "<group>"; };
 		B56F40BF160A52AC007D445F /* FFApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFApplicationConstants.h; sourceTree = "<group>"; };
 		B56F40C0160A52AC007D445F /* FFApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFApplicationConstants.m; sourceTree = "<group>"; };
 		B56F40D1160A7828007D445F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -701,6 +705,8 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B56E97D316C457E8000EC7E7 /* arrow-down.png */,
+				B56E97D416C457E8000EC7E7 /* arrow-down@2x.png */,
 				B5EBD4F216BB39AA00E174BC /* blue_button_insets.png */,
 				B5EBD4F316BB39AA00E174BC /* blue_button_insets@2x.png */,
 				B5EBD4EE16BB385100E174BC /* red_button_insets.png */,
@@ -1392,6 +1398,8 @@
 				B5EBD4F516BB39AA00E174BC /* blue_button_insets@2x.png in Resources */,
 				B5EBD50B16C039C300E174BC /* JudgeAnswerCell.xib in Resources */,
 				B55975DF16C199D100A4F510 /* AdminMembershipCell.xib in Resources */,
+				B56E97D516C457E9000EC7E7 /* arrow-down.png in Resources */,
+				B56E97D616C457E9000EC7E7 /* arrow-down@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

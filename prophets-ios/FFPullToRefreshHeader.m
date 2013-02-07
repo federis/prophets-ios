@@ -7,6 +7,8 @@
 //
 
 #import "FFPullToRefreshHeader.h"
+#import "FFLabel.h"
+#import "UIColor+Additions.h"
 
 @implementation FFPullToRefreshHeader
 
@@ -15,39 +17,43 @@
 }
 
 -(id)initWithTableView:(UITableView *)tableView{
-    float height = 65.0f;
+    float height = 43.0f;
     CGRect frame = CGRectMake(0, -height, tableView.frame.size.width, height);
     
-    self = [super initWithFrame:frame];
+    self = [self initWithFrame:frame];
     if (self) {
         _height = height;
         
-        _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f)];
-        _textLabel.backgroundColor = [UIColor clearColor];
-        _textLabel.font = [UIFont boldSystemFontOfSize:12.0];
+        self.backgroundColor = [UIColor clearColor];
+        
+        _textLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 13.0f, self.frame.size.width, 13.0f)];
+        _textLabel.fontSize = 11.0f;
         _textLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_textLabel];
         
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         
-		_lastRefreshAtLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
+        /*
+		_lastRefreshAtLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 		_lastRefreshAtLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		_lastRefreshAtLabel.font = [UIFont systemFontOfSize:12.0f];
-		_lastRefreshAtLabel.textColor = [UIColor grayColor];
-		_lastRefreshAtLabel.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
-		_lastRefreshAtLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
+        _lastRefreshAtLabel.fontSize = 10.0f;
+		//_lastRefreshAtLabel.font = [UIFont systemFontOfSize:12.0f];
+		//_lastRefreshAtLabel.textColor = [UIColor grayColor];
+		//_lastRefreshAtLabel.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
+		//_lastRefreshAtLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		_lastRefreshAtLabel.backgroundColor = [UIColor clearColor];
 		_lastRefreshAtLabel.textAlignment = NSTextAlignmentCenter;
 		[self addSubview:_lastRefreshAtLabel];
-        
+        */
         _arrow = [[CALayer alloc] init];
-		_arrow.frame = CGRectMake(25.0f, frame.size.height - height, 30.0f, 55.0f);
+		_arrow.frame = CGRectMake(frame.size.width/2 - 15, frame.size.height - 35, 17.0f, 35.0f);
 		_arrow.contentsGravity = kCAGravityResizeAspect;
-		_arrow.contents = (id)[UIImage imageNamed:@"blueArrow.png"].CGImage;
+		_arrow.contents = (id)[UIImage imageNamed:@"arrow-down.png"].CGImage;
 		[[self layer] addSublayer:_arrow];
         
-        _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        _spinner.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
+        _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        _spinner.frame = CGRectMake(frame.size.width/2 - 10, 5.0f, 20.0f, 20.0f);
+        _spinner.color = [UIColor creamColor];
         _spinner.hidesWhenStopped = YES;
         [self addSubview:_spinner];
     }
@@ -58,7 +64,7 @@
 -(void)setState:(FFPullToRefreshState)state{
 	switch (state) {
 		case FFPullToRefreshPulling:
-			_textLabel.text = @"Release to refresh";
+			_textLabel.text = @"";
 			[CATransaction begin];
 			[CATransaction setAnimationDuration:.18];
 			_arrow.transform = CATransform3DMakeRotation((M_PI / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
@@ -73,7 +79,7 @@
 				[CATransaction commit];
 			}
 			
-			_textLabel.text = @"Pull to refresh";
+			_textLabel.text = @"";
 			[_spinner stopAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
@@ -84,18 +90,8 @@
 			break;
 		case FFPullToRefreshLoading:
 			
-			_textLabel.text = @"Loading...";
+			_textLabel.text = @"Loading";
 			[_spinner startAnimating];
-			[CATransaction begin];
-			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
-			_arrow.hidden = YES;
-			[CATransaction commit];
-			
-			break;
-		case FFPullToRefreshUpToDate:
-            
-			_textLabel.text = @"Up to date";
-			[_spinner stopAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
 			_arrow.hidden = YES;

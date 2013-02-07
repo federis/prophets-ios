@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+@class FFLabel;
+
 typedef enum{
     FFPullToRefreshPulling = 0,
     FFPullToRefreshNormal,
@@ -18,8 +20,8 @@ typedef enum{
 
 @interface FFPullToRefreshHeader : UIView
 
-@property (nonatomic, strong) UILabel *textLabel;
-@property (nonatomic, strong) UILabel *lastRefreshAtLabel;
+@property (nonatomic, strong) FFLabel *textLabel;
+//@property (nonatomic, strong) FFLabel *lastRefreshAtLabel;
 @property (nonatomic, strong) CALayer *arrow;
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @property (nonatomic) float height;
