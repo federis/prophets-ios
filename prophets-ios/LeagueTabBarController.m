@@ -42,7 +42,7 @@
             unselected = [UIImage imageNamed:@"leaguemenu_allquestions.png"];
         }
         else if ([item.title isEqualToString:@"My Bets"]) {
-            selected = [UIImage imageNamed:@"leaguemenu_mybets.png"];
+            selected = [UIImage imageNamed:@"leaguemenu_mybets_pressed.png"];
             unselected = [UIImage imageNamed:@"leaguemenu_mybets.png"];
         }
         else if ([item.title isEqualToString:@"Leaderboard"]) {
