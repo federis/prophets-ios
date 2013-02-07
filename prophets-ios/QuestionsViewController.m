@@ -31,14 +31,9 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    //self.showsPullToRefresh = YES;
+    self.showsPullToRefresh = YES;
     
     [self setupHeaderView];
-    
-    self.navigationItem.leftItemsSupplementBackButton = YES;
-    UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
-    
-    self.navigationItem.leftBarButtonItems = @[item];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"QuestionCell"];
@@ -63,12 +58,19 @@
     
     self.emptyContentFooterView = emptyQuestionsLabel;
     
+    self.reloading = YES;
+    [self loadData];
+}
+
+-(void)loadData{
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"questions" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
          DLog(@"Result is %@", mappingResult);
+         self.reloading = NO;
      }
      failure:^(RKObjectRequestOperation *operation, NSError *error){
          DLog(@"Error is %@", error);
+         self.reloading = NO;
      }];
 }
 

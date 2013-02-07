@@ -27,7 +27,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    //self.showsPullToRefresh = YES;
+    self.showsPullToRefresh = YES;
     
     self.navigationItem.leftItemsSupplementBackButton = YES;
     UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
@@ -57,12 +57,19 @@
     
     self.emptyContentFooterView = emptyCommentsLabel;
     
+    self.reloading = YES;
+    [self loadData];
+}
+
+-(void)loadData{
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"comments" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
          //Fetched Results Controller will automatically refresh after operation completes
+         self.reloading = NO;
          DLog(@"Success");
      }
      failure:^(RKObjectRequestOperation *operation, NSError *error){
+         self.reloading = NO;
          DLog(@"Error is %@", error);
      }];
 }

@@ -100,6 +100,9 @@
 		B56E8FFC1627BB5C006DB56B /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E8FFB1627BB5C006DB56B /* blueArrow.png */; };
 		B56E97D516C457E9000EC7E7 /* arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E97D316C457E8000EC7E7 /* arrow-down.png */; };
 		B56E97D616C457E9000EC7E7 /* arrow-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E97D416C457E8000EC7E7 /* arrow-down@2x.png */; };
+		B56E97DA16C468B0000EC7E7 /* leaguemenu_mybets_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E97D716C468B0000EC7E7 /* leaguemenu_mybets_pressed.png */; };
+		B56E97DB16C468B0000EC7E7 /* leaguemenu_mybets_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E97D816C468B0000EC7E7 /* leaguemenu_mybets_pressed@2x.png */; };
+		B56E97DC16C468B0000EC7E7 /* leaguemenu_mybets.png in Resources */ = {isa = PBXBuildFile; fileRef = B56E97D916C468B0000EC7E7 /* leaguemenu_mybets.png */; };
 		B56F40C1160A52AD007D445F /* FFApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40C0160A52AC007D445F /* FFApplicationConstants.m */; };
 		B56F40D3160A7829007D445F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D2160A7828007D445F /* User.m */; };
 		B56F40D7160A78F3007D445F /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = B56F40D6160A78F3007D445F /* League.m */; };
@@ -397,6 +400,9 @@
 		B56E8FFB1627BB5C006DB56B /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
 		B56E97D316C457E8000EC7E7 /* arrow-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down.png"; sourceTree = "<group>"; };
 		B56E97D416C457E8000EC7E7 /* arrow-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down@2x.png"; sourceTree = "<group>"; };
+		B56E97D716C468B0000EC7E7 /* leaguemenu_mybets_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_mybets_pressed.png; sourceTree = "<group>"; };
+		B56E97D816C468B0000EC7E7 /* leaguemenu_mybets_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaguemenu_mybets_pressed@2x.png"; sourceTree = "<group>"; };
+		B56E97D916C468B0000EC7E7 /* leaguemenu_mybets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaguemenu_mybets.png; sourceTree = "<group>"; };
 		B56F40BF160A52AC007D445F /* FFApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFApplicationConstants.h; sourceTree = "<group>"; };
 		B56F40C0160A52AC007D445F /* FFApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFApplicationConstants.m; sourceTree = "<group>"; };
 		B56F40D1160A7828007D445F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -1011,6 +1017,9 @@
 		B5A2F3A816396F6200034319 /* tabs */ = {
 			isa = PBXGroup;
 			children = (
+				B56E97D716C468B0000EC7E7 /* leaguemenu_mybets_pressed.png */,
+				B56E97D816C468B0000EC7E7 /* leaguemenu_mybets_pressed@2x.png */,
+				B56E97D916C468B0000EC7E7 /* leaguemenu_mybets.png */,
 				B5FD7592165297BD0051C4DC /* leaguemenu_clubroom_pressed@2x.png */,
 				B5FD7593165297BD0051C4DC /* leaguemenu_settings_pressed.png */,
 				B5FD7594165297BD0051C4DC /* leaguemenu_settings_pressed@2x.png */,
@@ -1400,6 +1409,9 @@
 				B55975DF16C199D100A4F510 /* AdminMembershipCell.xib in Resources */,
 				B56E97D516C457E9000EC7E7 /* arrow-down.png in Resources */,
 				B56E97D616C457E9000EC7E7 /* arrow-down@2x.png in Resources */,
+				B56E97DA16C468B0000EC7E7 /* leaguemenu_mybets_pressed.png in Resources */,
+				B56E97DB16C468B0000EC7E7 /* leaguemenu_mybets_pressed@2x.png in Resources */,
+				B56E97DC16C468B0000EC7E7 /* leaguemenu_mybets.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

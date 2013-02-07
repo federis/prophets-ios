@@ -21,9 +21,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    self.navigationItem.leftItemsSupplementBackButton = YES;
-    UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
-    self.navigationItem.leftBarButtonItems = @[item];
+    self.showsPullToRefresh = YES;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"LeaderCell" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"LeaderCell"];
@@ -39,11 +37,18 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
+    self.reloading = YES;
+    [self loadData];
+}
+
+-(void)loadData{
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"leaderboard" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+         self.reloading = NO;
          DLog(@"Result is %@", mappingResult);
      }
      failure:^(RKObjectRequestOperation *operation, NSError *error){
+         self.reloading = NO;
          DLog(@"Error is %@", error);
      }];
 }

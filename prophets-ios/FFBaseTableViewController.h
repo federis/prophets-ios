@@ -21,5 +21,8 @@
 @property (nonatomic) BOOL showsPullToRefresh;
 @property (nonatomic, strong) FFPullToRefreshHeader *pullToRefreshHeader;
 @property (nonatomic, strong) UIView *fixedHeaderView;
+@property (nonatomic) BOOL reloading;
+
+-(void)loadData;
 
 @end

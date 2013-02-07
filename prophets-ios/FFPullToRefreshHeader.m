@@ -17,7 +17,7 @@
 }
 
 -(id)initWithTableView:(UITableView *)tableView{
-    float height = 43.0f;
+    float height = 45.0f;
     CGRect frame = CGRectMake(0, -height, tableView.frame.size.width, height);
     
     self = [self initWithFrame:frame];
@@ -26,7 +26,7 @@
         
         self.backgroundColor = [UIColor clearColor];
         
-        _textLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 13.0f, self.frame.size.width, 13.0f)];
+        _textLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 12.0f, self.frame.size.width, 12.0f)];
         _textLabel.fontSize = 11.0f;
         _textLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_textLabel];
@@ -52,7 +52,7 @@
 		[[self layer] addSublayer:_arrow];
         
         _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-        _spinner.frame = CGRectMake(frame.size.width/2 - 10, 5.0f, 20.0f, 20.0f);
+        _spinner.frame = CGRectMake(frame.size.width/2 - 10, 8.0f, 20.0f, 20.0f);
         _spinner.color = [UIColor creamColor];
         _spinner.hidesWhenStopped = YES;
         [self addSubview:_spinner];

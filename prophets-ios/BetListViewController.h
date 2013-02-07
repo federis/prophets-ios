@@ -15,7 +15,4 @@
 @property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) BetCell *measuringCell;
 
-@property (weak, nonatomic) IBOutlet UIButton *timeSortButton;
-@property (weak, nonatomic) IBOutlet UIButton *performanceSortButton;
-
 @end

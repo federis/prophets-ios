@@ -24,7 +24,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    //self.showsPullToRefresh = YES;
+    self.showsPullToRefresh = YES;
     
     self.navigationItem.leftItemsSupplementBackButton = YES;
     UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
@@ -52,11 +52,18 @@
     }
     */
     
+    self.reloading = YES;
+    [self loadData];
+}
+
+-(void)loadData{
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"memberships" ofObject:[User currentUser] parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+         self.reloading = NO;
          DLog(@"Result is %@", mappingResult);
      }
      failure:^(RKObjectRequestOperation *operation, NSError *error){
+         self.reloading = NO;
          DLog(@"Error is %@", error);
      }];
 }

@@ -27,13 +27,9 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    //self.showsPullToRefresh = YES;
+    self.showsPullToRefresh = YES;
     
     [self prepareHeaderView];
-    
-    self.navigationItem.leftItemsSupplementBackButton = YES;
-    UIBarButtonItem * item = [UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)];
-    self.navigationItem.leftBarButtonItems = @[item];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"BetCell" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"BetCell"];
@@ -58,22 +54,23 @@
     
     self.emptyContentFooterView = emptyCommentsLabel;
     
+    self.reloading = YES;
+    [self loadData];
+}
+
+-(void)loadData{
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"bets" ofObject:self.membership.league parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+         self.reloading = NO;
          DLog(@"Result is %@", mappingResult);
      }
      failure:^(RKObjectRequestOperation *operation, NSError *error){
+         self.reloading = NO;
          DLog(@"Error is %@", error);
      }];
 }
 
--(void)prepareHeaderView{
-    //UIEdgeInsets insets = UIEdgeInsetsMake(4, 5, 4, 5);
-    //UIImage *buttonImage = [[UIImage imageNamed:@"clear_button_insets.png"] resizableImageWithCapInsets:insets];
-    
-    //[self.timeSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    //[self.performanceSortButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    
+-(void)prepareHeaderView{    
     LeaguePerformanceView *performanceView = [[LeaguePerformanceView alloc] init];
     [performanceView setMembership:self.membership];
     [self.tableView.tableHeaderView addSubview:performanceView];

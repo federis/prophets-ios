@@ -8,19 +8,7 @@
 
 #import "FFBaseTableViewController.h"
 
-@interface FFBaseTableViewController ()
-
-@property (nonatomic) BOOL reloading;
-
--(void)reloadData;
-
-@end
-
 @implementation FFBaseTableViewController
-
--(void)viewDidLoad{
-    self.showsPullToRefresh = YES;
-}
 
 -(void)setFixedHeaderView:(UIView *)fixedHeaderView{
     if(self.fixedHeaderView) [self.fixedHeaderView removeFromSuperview];
@@ -89,7 +77,7 @@
     
 	if (scrollView.contentOffset.y <= -_pullToRefreshHeader.height && !_reloading) {
         self.reloading = YES;
-        [self reloadData];
+        [self loadData];
 	}
 }
 
@@ -111,7 +99,7 @@
     _reloading = reloading;
 }
 
--(void)reloadData{
+-(void)loadData{
     // called by pull to refresh header
     // can be overridden by subclasses to load data
     self.reloading = NO;
