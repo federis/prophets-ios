@@ -113,6 +113,21 @@
     [self performSegueWithIdentifier:@"ShowQuestionForm" sender:nil];
 }
 
+-(void)inviteMemberTouched{
+    MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
+    mailVC.mailComposeDelegate = self;
+    [mailVC setSubject:@"Join this league on 55Prophets"];
+    NSString *body = [NSString stringWithFormat:@"Hey there,\n\nI joined the league \"%@\" on 55Prophets, and I think you should join too. You can join by opening the app, touching the Find a League button, and searching for the league title.\n\nIf you don't have the 55Prophets app yet, you can download it on the app store.\n\nCheers.", self.membership.league.name];
+    [mailVC setMessageBody:body isHTML:NO];
+    
+    [self presentModalViewController:mailVC animated:YES];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ShowAnswers"] && [sender isKindOfClass:[Question class]]) {
         Question *question = (Question *)sender;
@@ -132,7 +147,6 @@
     Question *question = (Question *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     return [self.measuringCell heightForCellWithQuestion:question];
 }
- 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     QuestionCell *cell = (QuestionCell *)[tableView dequeueReusableCellWithIdentifier:@"QuestionCell" forIndexPath:indexPath];
@@ -149,25 +163,24 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 108, 20)];
-    headerLabel.text = @"OPEN QUESTIONS";
-    headerLabel.font = [UIFont fontWithName:@"Avenir Next" size:12];
-    headerLabel.backgroundColor = [UIColor clearColor];
-    headerLabel.textColor = [UIColor creamColor];
     
     ClearButton *addQuestionButton = [[ClearButton alloc] init];
     if (self.membership.isAdmin) {
-        addQuestionButton.frame = CGRectMake(170, 0, 120, 30);
+        addQuestionButton.frame = CGRectMake(175, 0, 120, 30);
         [addQuestionButton setTitle:@"Add Question" forState:UIControlStateNormal];
     }
     else{
-        addQuestionButton.frame = CGRectMake(160, 0, 132, 30);
+        addQuestionButton.frame = CGRectMake(165, 0, 132, 30);
         [addQuestionButton setTitle:@"Suggest Question" forState:UIControlStateNormal];
     }
     [addQuestionButton addTarget:self action:@selector(addQuestionTouched) forControlEvents:UIControlEventTouchUpInside];
     
-    [v addSubview:headerLabel];
+    ClearButton *inviteMemberButton = [[ClearButton alloc] initWithFrame:CGRectMake(10, 0, 145, 30)];
+    [inviteMemberButton setTitle:@"Invite New Member" forState:UIControlStateNormal];
+    [inviteMemberButton addTarget:self action:@selector(inviteMemberTouched) forControlEvents:UIControlEventTouchUpInside];
+    
     [v addSubview:addQuestionButton];
+    [v addSubview:inviteMemberButton];
     return v;
 }
  

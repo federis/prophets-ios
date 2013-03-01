@@ -6,11 +6,13 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
+#import <MessageUI/MessageUI.h>
+
 #import "FFFetchedResultsViewController.h"
 
 @class Membership, QuestionCell;
 
-@interface QuestionsViewController : FFFetchedResultsViewController
+@interface QuestionsViewController : FFFetchedResultsViewController<MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) QuestionCell *measuringCell;
