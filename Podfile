@@ -6,6 +6,7 @@ pod 'PonyDebugger', '~>0.1.0'
 # Testing and Search are optional components
 pod 'RestKit/Testing',  :git => 'https://github.com/RestKit/RestKit.git', :branch => 'development'
 
+# For PonyDebugger
 post_install do |installer|
     dTarget = target_definitions[:default]
     macro = "#if (defined __IPHONE_6_0 && TARGET_OS_IPHONE && (__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_6_0)) || (defined MAC_OS_X_VERSION_10_8 && TARGET_OS_MAC && (MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_8))
