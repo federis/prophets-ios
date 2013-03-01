@@ -30,9 +30,18 @@ static User *currentUser = nil;
 @dynamic questions;
 @dynamic approvedQuestions;
 
-
--(Membership *)membershipInLeague:(NSNumber *)leagueId{
-    NSParameterAssert(leagueId);
+-(Membership *)membershipInLeague:(id)leagueOrId;{
+    NSParameterAssert(leagueOrId);
+    
+    NSNumber *leagueId = nil;
+    if ([leagueOrId isKindOfClass:[League class]]) {
+        leagueId = ((League *)leagueOrId).remoteId;
+    }
+    else if([leagueOrId isKindOfClass:[NSNumber class]]){
+        leagueId = (NSNumber *)leagueOrId;
+    }
+    
+    NSAssert(leagueId != nil, @"You must pass a League object or a NSNumber representing the league's ID");
     
     NSSet *objs = [self.managedObjectContext fetchObjectsForEntityName:NSStringFromClass([Membership class])
                                                          withPredicate:@"leagueId = %@ AND userId = %@", leagueId, self.remoteId];
