@@ -115,7 +115,6 @@
 		B570C332162F6D7900F14C2C /* FFBaseTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B570C331162F6D7900F14C2C /* FFBaseTableViewController.xib */; };
 		B570C334162F6D8900F14C2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B570C333162F6D8900F14C2C /* Default-568h@2x.png */; };
 		B57D092D160CFB4F0060A11E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D092C160CFB4F0060A11E /* LoginViewController.m */; };
-		B57D0944160D250C0060A11E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B57D0943160D250B0060A11E /* KeychainItemWrapper.m */; };
 		B58B5F431636D9FD0082640B /* QuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B5F421636D9FD0082640B /* QuestionsViewController.m */; };
 		B59843EA1652B1C70074B333 /* RoundedClearBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B59843E91652B1C70074B333 /* RoundedClearBar.m */; };
 		B59843EE1652C9830074B333 /* clear_bar_rounded.png in Resources */ = {isa = PBXBuildFile; fileRef = B59843EC1652C9830074B333 /* clear_bar_rounded.png */; };
@@ -424,8 +423,6 @@
 		B570C333162F6D8900F14C2C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B57D092B160CFB4F0060A11E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B57D092C160CFB4F0060A11E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		B57D0942160D250B0060A11E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = "prophets-ios/KeychainItemWrapper.h"; sourceTree = "<group>"; };
-		B57D0943160D250B0060A11E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = "prophets-ios/KeychainItemWrapper.m"; sourceTree = "<group>"; };
 		B58B5F411636D9FD0082640B /* QuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsViewController.h; sourceTree = "<group>"; };
 		B58B5F421636D9FD0082640B /* QuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsViewController.m; sourceTree = "<group>"; };
 		B59843E81652B1C70074B333 /* RoundedClearBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedClearBar.h; sourceTree = "<group>"; };
@@ -934,16 +931,6 @@
 			name = "Restkit Subclasses";
 			sourceTree = "<group>";
 		};
-		B56F40B2160A3B5C007D445F /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				B57D0942160D250B0060A11E /* KeychainItemWrapper.h */,
-				B57D0943160D250B0060A11E /* KeychainItemWrapper.m */,
-			);
-			name = Libraries;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		B56F40B6160A4D4C007D445F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1195,7 +1182,6 @@
 		B5F1AED4160388C600D28C1C /* prophets-ios */ = {
 			isa = PBXGroup;
 			children = (
-				B56F40B2160A3B5C007D445F /* Libraries */,
 				B54AA10A162F3FCD00F2A3CB /* FFTable */,
 				B54AA0FB162F1E7700F2A3CB /* Utilities */,
 				B5D33D6D161613990043A0E8 /* Categories */,
@@ -1494,7 +1480,6 @@
 				B56F40E0160A7949007D445F /* Bet.m in Sources */,
 				B56F40E3160A795B007D445F /* Membership.m in Sources */,
 				B57D092D160CFB4F0060A11E /* LoginViewController.m in Sources */,
-				B57D0944160D250C0060A11E /* KeychainItemWrapper.m in Sources */,
 				B5D33D73161626470043A0E8 /* NSManagedObject+Additions.m in Sources */,
 				B5D33D7816163A070043A0E8 /* NSManagedObjectContext+Additions.m in Sources */,
 				B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */,

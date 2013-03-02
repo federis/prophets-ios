@@ -2,6 +2,7 @@ platform :ios, '6.0'
 pod 'RestKit', :git => 'https://github.com/RestKit/RestKit.git', :branch => 'development'
 pod 'SVProgressHUD', :git => 'https://github.com/samvermette/SVProgressHUD.git'
 pod 'PonyDebugger', '~>0.1.0'
+pod 'Lockbox'
 
 # Testing and Search are optional components
 pod 'RestKit/Testing',  :git => 'https://github.com/RestKit/RestKit.git', :branch => 'development'

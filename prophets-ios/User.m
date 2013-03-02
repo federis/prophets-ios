@@ -6,8 +6,9 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
+#import <Lockbox.h>
+
 #import "User.h"
-#import "KeychainItemWrapper.h"
 #import "FFApplicationConstants.h"
 #import "Membership.h"
 #import "League.h"
@@ -51,8 +52,7 @@ static User *currentUser = nil;
 
 +(User *)currentUser{
     if(!currentUser){
-        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
-        NSNumber *remoteId = [keychain objectForKey:(__bridge id)kSecAttrAccount];
+        NSNumber *remoteId = [NSDecimalNumber decimalNumberWithString:[Lockbox stringForKey:@"currentUserId"]];
         currentUser = [User findById:remoteId inContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext];
     }
     
@@ -61,24 +61,21 @@ static User *currentUser = nil;
 
 +(void)setCurrentUser:(User *)user{
     currentUser = user;
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
     if(!user)
-        [keychain resetKeychainItem];
+        [Lockbox setString:@"" forKey:@"currentUserId"];
     else
-        [keychain setObject:user.remoteId forKey:(__bridge id)kSecAttrAccount];
+        [Lockbox setString:user.remoteId.stringValue forKey:@"currentUserId"];
 }
 
 -(NSString *)authenticationToken{
     if(!_authenticationToken){
-        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
-        _authenticationToken = [keychain objectForKey:(__bridge id)kSecValueData];
+        _authenticationToken = [Lockbox stringForKey:@"authToken"];
     }
     return _authenticationToken;
 }
 
 -(void)setAuthenticationToken:(NSString *)token{
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:FFKeychainIdentifier accessGroup:nil];
-    [keychain setObject:token forKey:(__bridge id)kSecValueData];
+    [Lockbox setString:token forKey:@"authToken"];
     _authenticationToken = token;
 }
 
