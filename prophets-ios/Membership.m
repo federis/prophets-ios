@@ -39,8 +39,10 @@
 }
 
 -(void)prepareForDeletion{
-    if(self.user && self.user.remoteId != [User currentUser].remoteId && !self.user.hasBeenDeleted){
-        [self.managedObjectContext deleteObject:self.user];
+    if(self.user != nil && self.user.remoteId != [User currentUser].remoteId && !self.user.hasBeenDeleted){
+        if (self.user != nil) { //WTF? why doesn't the first instance of this catch this?
+            [self.managedObjectContext deleteObject:self.user];
+        }
     }
 }
 
