@@ -22,13 +22,25 @@
                               self.question.commentsCount,
                               [Utilities pluralize:self.question.commentsCount
                                           singular:@"comment" plural:@"comments"]];
+    
+    [self layoutLabels];
+}
+
+-(void)layoutLabels{
+    CGFloat contentHeight = [Utilities heightForString:self.contentLabel.text
+                                              withFont:self.contentLabel.font
+                                                 width:self.contentLabel.frame.size.width];
+    
+    self.contentLabel.frame = SameOriginRectWithSize(self.contentLabel.frame.size.width, contentHeight, self.contentLabel.frame);
+    
+    self.detailsLabel.frame = RectBelowRectWithSpacingAndSize(self.contentLabel.frame, 5, self.detailsLabel.frame.size);
 }
 
 -(CGFloat)heightForCellWithQuestion:(Question *)question{
     CGFloat contentHeight = [Utilities heightForString:question.content
                                                  withFont:self.contentLabel.font
                                                     width:self.contentLabel.frame.size.width];
-    return contentHeight + 45;
+    return contentHeight + 40;
 }
 
 @end
