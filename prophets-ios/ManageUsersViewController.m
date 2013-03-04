@@ -22,6 +22,8 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    self.showsPullToRefresh = YES;
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"AdminMembershipCell" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"AdminMembershipCell"];
     
@@ -45,14 +47,22 @@
     
     self.emptyContentFooterView = emptyQuestionsLabel;
     
-    [[RKObjectManager sharedManager] getObjectsAtPath:[url relativeString] parameters:nil
-                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-                                                  DLog(@"Result is %@", mappingResult);
-                                              }
-                                              failure:^(RKObjectRequestOperation *operation, NSError *error){
-                                                  DLog(@"Error is %@", error);
-                                              }];
+    self.reloading = YES;
+    [self loadData];
+}
+
+-(void)loadData{
+    NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"memberships" ofObject:self.league method:RKRequestMethodGET];
     
+    [[RKObjectManager sharedManager] getObjectsAtPath:[url relativeString] parameters:nil
+      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+          DLog(@"Result is %@", mappingResult);
+          self.reloading = NO;
+      }
+      failure:^(RKObjectRequestOperation *operation, NSError *error){
+          DLog(@"Error is %@", error);
+          self.reloading = NO;
+      }];
 }
 
 #pragma mark - Table view delegate

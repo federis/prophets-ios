@@ -185,7 +185,7 @@
 								<double key="preferredMaxLayoutWidth">263</double>
 							</object>
 						</array>
-						<string key="NSFrameSize">{303, 134}</string>
+						<string key="NSFrameSize">{285, 134}</string>
 						<reference key="NSSuperview" ref="540281841"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="202919994"/>
@@ -201,7 +201,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{303, 135}</string>
+				<string key="NSFrameSize">{285, 135}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="758374874"/>

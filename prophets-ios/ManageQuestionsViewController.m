@@ -24,25 +24,14 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    self.showsPullToRefresh = YES;
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"AdminQuestionCell" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"AdminQuestionCell"];
     
     self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:@"AdminQuestionCell"];
     
-    NSURL *url = nil;
-    
-    if (self.scope == FFQuestionUnapproved) {
-        url = [[RKObjectManager sharedManager].router URLForRouteNamed:@"unapproved_questions" method:nil object:self.league];
-    }
-    else if (self.scope == FFQuestionPendingJudgement){
-        url = [[RKObjectManager sharedManager].router URLForRouteNamed:@"pending_judgement_questions" method:nil object:self.league];
-    }
-    else if (self.scope == FFQuestionComplete){
-        url = [[RKObjectManager sharedManager].router URLForRouteNamed:@"complete_questions" method:nil object:self.league];
-    }
-    else{
-        url = [[RKObjectManager sharedManager].router URLForRelationship:@"questions" ofObject:self.league method:RKRequestMethodGET];
-    }
+    NSURL *url = [self currentURL];
     
     self.fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
@@ -60,14 +49,39 @@
     
     self.emptyContentFooterView = emptyQuestionsLabel;
     
-    [[RKObjectManager sharedManager] getObjectsAtPath:[url relativeString] parameters:nil
-     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-         DLog(@"Result is %@", mappingResult);
-     }
-     failure:^(RKObjectRequestOperation *operation, NSError *error){
-         DLog(@"Error is %@", error);
-     }];
+    self.reloading = YES;
+    [self loadData];
+}
 
+-(NSURL *)currentURL{
+    NSURL *url = nil;
+    
+    if (self.scope == FFQuestionUnapproved) {
+        url = [[RKObjectManager sharedManager].router URLForRouteNamed:@"unapproved_questions" method:nil object:self.league];
+    }
+    else if (self.scope == FFQuestionPendingJudgement){
+        url = [[RKObjectManager sharedManager].router URLForRouteNamed:@"pending_judgement_questions" method:nil object:self.league];
+    }
+    else if (self.scope == FFQuestionComplete){
+        url = [[RKObjectManager sharedManager].router URLForRouteNamed:@"complete_questions" method:nil object:self.league];
+    }
+    else{
+        url = [[RKObjectManager sharedManager].router URLForRelationship:@"questions" ofObject:self.league method:RKRequestMethodGET];
+    }
+    
+    return url;
+}
+
+-(void)loadData{
+    [[RKObjectManager sharedManager] getObjectsAtPath:[[self currentURL] relativeString] parameters:nil
+      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+          DLog(@"Result is %@", mappingResult);
+          self.reloading = NO;
+      }
+      failure:^(RKObjectRequestOperation *operation, NSError *error){
+          DLog(@"Error is %@", error);
+          self.reloading = NO;
+      }];
 }
 
 #pragma mark - Table view delegate
