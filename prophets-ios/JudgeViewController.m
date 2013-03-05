@@ -13,6 +13,7 @@
 #import "Question.h"
 #import "Answer.h"
 #import "UIAlertView+Additions.h"
+#import "CorrectnessDateViewController.h"
 
 @interface JudgeViewController ()
 
@@ -73,68 +74,22 @@
 
 -(IBAction)incorrectTouched:(id)sender{
     Answer *answer = ((JudgeAnswerCell *)[[sender superview] superview]).answer;
-    [self judgeAnswer:answer correct:NO];
+    answer.correct = [NSNumber numberWithBool:NO];
+    [self performSegueWithIdentifier:@"ShowCorrectnessDate" sender:answer];
 }
 
 -(IBAction)correctTouched:(id)sender{
     Answer *answer = ((JudgeAnswerCell *)[[sender superview] superview]).answer;
-    
-    [self judgeAnswer:answer correct:YES];
+    answer.correct = [NSNumber numberWithBool:YES];
+    [self performSegueWithIdentifier:@"ShowCorrectnessDate" sender:answer];
 }
 
--(void)judgeAnswer:(Answer *)answer correct:(BOOL)correct{
-    NSString *msg = correct ? @"Are you sure you want to mark this answer correct?" : @"Are you sure you want to mark this answer incorrect?";
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Judge Answer" message:msg
-        completionBlock:^(NSUInteger buttonIndex, UIAlertView *alert){
-            if (buttonIndex == 1) {
-                NSURL *url = [[RKObjectManager sharedManager].router URLForRouteNamed:@"judge_answer" method:nil object:answer];
-                
-                [SVProgressHUD showWithStatus:@"Judging answer" maskType:SVProgressHUDMaskTypeGradient];
-                
-                answer.correct = [NSNumber numberWithBool:correct];
-                answer.correctnessKnownAt = [NSDate date];
-                
-                NSDictionary *params = @{@"answer[correct]": [NSNumber numberWithBool:correct], @"answer[correctness_known_at]" : answer.correctnessKnownAt};
-                [[RKObjectManager sharedManager] putObject:nil path:[url relativePath] parameters:params
-                   success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-                       [SVProgressHUD dismiss];
-                       [SVProgressHUD showSuccessWithStatus:@"Answer judged"];
-                       
-                       if (correct) {
-                           for (Answer *otherAnswer in answer.question.answers) {
-                               if ([answer.remoteId integerValue] != [otherAnswer.remoteId integerValue]) {
-                                   otherAnswer.isCorrect = NO;
-                                   otherAnswer.correctnessKnownAt = answer.correctnessKnownAt;
-                                   otherAnswer.judgedAt = answer.judgedAt;
-                               }
-                           }
-                       }
-                       
-                       if (answer.question.allAnswersJudged) {
-                           answer.question.completedAt = answer.judgedAt;
-                       }
-                       
-                       if(self.managedObjectContext.hasChanges){
-                           [self.managedObjectContext save:nil];
-                       }
-                   }
-                   failure:^(RKObjectRequestOperation *operation, NSError *error){
-                       [SVProgressHUD dismiss];
-                       
-                       ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
-                       [SVProgressHUD showErrorWithStatus:[errors messagesString]];
-                       
-                       DLog(@"%@", [error description]);
-                   }];
-                
-            }
-            else{
-                [SVProgressHUD dismiss];
-            }
-        }
-      cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
-    
-    [alert show];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"ShowCorrectnessDate"]) {
+        Answer *answer = (Answer *)sender;
+        CorrectnessDateViewController *correctnessVC = (CorrectnessDateViewController *)[segue destinationViewController];
+        correctnessVC.answer = answer;
+    }
 }
 
 @end
