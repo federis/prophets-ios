@@ -30,6 +30,8 @@ static User *currentUser = nil;
 @dynamic memberships;
 @dynamic questions;
 @dynamic approvedQuestions;
+@dynamic wantsNewQuestionNotifications;
+@dynamic wantsNotifications;
 
 -(Membership *)membershipInLeague:(id)leagueOrId;{
     NSParameterAssert(leagueOrId);
@@ -87,6 +89,8 @@ static User *currentUser = nil;
     [mapping addAttributeMappingsFromDictionary:@{
         @"id" : @"remoteId",
         @"authentication_token" : @"authenticationToken",
+        @"wants_notifications" : @"wantsNotifications",     
+        @"wants_new_question_notifications" : @"wantsNewQuestionNotifications",
         @"updated_at" : @"updatedAt",
         @"created_at" : @"createdAt"
      }];
@@ -100,7 +104,9 @@ static User *currentUser = nil;
     [mapping addAttributeMappingsFromArray:@[@"email", @"name", @"password"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"remoteId" : @"id",
-     @"currentPassword" : @"current_password"
+     @"currentPassword" : @"current_password",
+     @"wantsNotifications" : @"wants_notifications",
+     @"wantsNewQuestionNotifications" : @"wants_new_question_notifications",
      }];
     return mapping;
 }

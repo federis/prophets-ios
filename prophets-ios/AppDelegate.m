@@ -28,7 +28,9 @@
     [self.window makeKeyAndVisible];
     
     if ([User currentUser]){
+        [self registerForPushNotifications];
         [self setupAuthTokenHeader];
+        [self refreshCurrentUser];
         [self loadMemberships];
     }
     else{
@@ -76,6 +78,16 @@
      }];
 }
 
+-(void)refreshCurrentUser{
+    [[RKObjectManager sharedManager] getObject:[User currentUser] path:nil parameters:nil
+     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+         DLog(@"Result is %@", mappingResult);
+     }
+     failure:^(RKObjectRequestOperation *operation, NSError *error){
+         DLog(@"Error is %@", error);
+     }];
+}
+
 -(void)showLogin{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle: nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LaunchNavController"];
@@ -87,7 +99,30 @@
                                                            value:[NSString stringWithFormat:@"Token token=\"%@\"", [User currentUser].authenticationToken]];
 }
 
+-(void)registerForPushNotifications{
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert)];
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    
+    const char *data = [deviceToken bytes];
+    NSMutableString* token = [NSMutableString string];
+    for (int i = 0; i < [deviceToken length]; i++) {
+        [token appendFormat:@"%02.2hhX", data[i]];
+    }
+    
+    NSLog(@"deviceToken: %@", token);
+    
+    [[RKObjectManager sharedManager].HTTPClient postPath:@"/devices_tokens.json" parameters:@{@"device_token[value]" : token }
+     success:^(AFHTTPRequestOperation *operation, id responseObject){
+         NSLog(@"Device token creation succeeded");
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+         NSLog(@"Device token creation failed");
+     }];
+}
+
 -(void)userLoggedIn{
+    [self registerForPushNotifications];
     [self setupAuthTokenHeader];
     [self loadMemberships];
     [self.window.rootViewController dismissViewControllerAnimated:YES completion:^{}];

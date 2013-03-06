@@ -13,6 +13,7 @@
 #import "SettingsViewController.h"
 #import "RoundedClearBar.h"
 #import "User.h"
+#import "FFFormSwitchFieldCell.h"
 
 @interface SettingsViewController ()
 
@@ -40,6 +41,10 @@
     FFFormTextField *nameField = [FFFormTextField formFieldWithAttributeName:@"name"];
     nameField.returnKeyType = UIReturnKeyNext;
     
+    FFFormSwitchField *notificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNotifications" labelName:@"Send Push Notifications"];
+    
+    FFFormSwitchField *newQuestionNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewQuestionNotifications" labelName:@"Notifications for New Questions"];
+    
     FFFormTextField *newPasswordField = [FFFormTextField formFieldWithAttributeName:@"password" labelName:@"New Password (blank to keep the same)"];
     newPasswordField.returnKeyType = UIReturnKeyNext;
     newPasswordField.secure = YES;
@@ -49,7 +54,20 @@
     passwordField.secure = YES;
     passwordField.submitsOnReturn = YES;
     
-    self.form = [FFForm formForObject:[User currentUser] withFields:@[ emailField, nameField, newPasswordField, passwordField ]];
+    NSMutableArray *fields = [NSMutableArray arrayWithArray:@[
+                                  emailField,
+                                  nameField,
+                                  notificationsField,
+                                  newPasswordField,
+                                  passwordField
+                              ]];
+    
+    if ([[User currentUser].wantsNotifications boolValue]) {
+        [fields insertObject:newQuestionNotificationsField atIndex:3];
+    }
+    
+    self.form = [FFForm formForObject:[User currentUser] withFields:fields];
+    self.form.delegate = self;
     
     self.submitButtonText = @"Save";
 }
@@ -100,6 +118,25 @@
     
     
     return [self.errors count] == 0;
+}
+
+-(void)tableCell:(UITableViewCell *)cell loadedField:(FFFormField *)field{
+    if ([field.attributeName isEqualToString:@"wantsNotifications"]) {
+        FFFormSwitchFieldCell *switchCell = (FFFormSwitchFieldCell *)cell;
+        [switchCell.switchControl addTarget:self action:@selector(wantsNotificationsSwitched:) forControlEvents:UIControlEventValueChanged];
+    }
+}
+
+-(void)wantsNotificationsSwitched:(id)sender{
+    UISwitch *switchControl = (UISwitch *)sender;
+    if(switchControl.isOn){
+        FFFormSwitchField *newQuestionNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewQuestionNotifications" labelName:@"Notifications for New Questions"];
+        
+        [self.form insertFormField:newQuestionNotificationsField atRow:3];
+    }
+    else{
+        [self.form removeFormFieldAtRow:3];
+    }
 }
 
 

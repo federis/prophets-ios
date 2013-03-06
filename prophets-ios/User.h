@@ -23,6 +23,8 @@
 @property (nonatomic, strong) NSSet *memberships;
 @property (nonatomic, strong) NSSet *questions;
 @property (nonatomic, strong) NSSet *approvedQuestions;
+@property (nonatomic, strong) NSNumber * wantsNotifications;
+@property (nonatomic, strong) NSNumber * wantsNewQuestionNotifications;
 
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *currentPassword; //for updating user info

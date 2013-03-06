@@ -43,6 +43,8 @@
 
 -(void)setupRoutes{
     // GETS
+    [self.routeSet addRoute:[RKRoute routeWithClass:[User class] pathPattern:@"/users/:remoteId" method:RKRequestMethodGET]];
+    
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"memberships" objectClass:[User class] pathPattern:@"/memberships" method:RKRequestMethodGET]];
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"questions" objectClass:[League class] pathPattern:@"/leagues/:remoteId/questions" method:RKRequestMethodGET]];
