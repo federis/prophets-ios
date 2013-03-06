@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *scratchContext;
 
+-(UIView *)currentFirstResponder;
+
 @end

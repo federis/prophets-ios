@@ -10,6 +10,21 @@
 
 #import "FFBaseViewController.h"
 
+@implementation UIView (CurrentFirstResponder)
+
+-(UIView *)findFirstResponder{
+    if (self.isFirstResponder) return self;
+    
+    for (UIView *subView in self.subviews) {
+        UIView *firstResponder = [subView findFirstResponder];
+        if (firstResponder != nil) return firstResponder;
+    }
+    
+    return nil;
+}
+
+@end
+
 @interface FFBaseViewController ()
 
 @end
@@ -35,6 +50,9 @@
     return _scratchContext;
 }
 
+-(UIView *)currentFirstResponder{
+    return [self.view findFirstResponder];
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

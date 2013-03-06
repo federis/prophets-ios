@@ -31,9 +31,6 @@
     [performanceView setMembership:self.membership];
     self.tableView.tableHeaderView = performanceView;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareForKeyboard) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDismissed) name:UIKeyboardWillHideNotification object:nil];
-    
     Bet *bet = (Bet *)[self.scratchContext insertNewObjectForEntityForName:@"Bet"];
     bet.answerId = self.answer.remoteId;
     bet.membershipId = self.membership.remoteId;
@@ -72,17 +69,6 @@
         [SVProgressHUD showErrorWithStatus:[errors messagesString]];
     }];
 }
-
-
--(void)keyboardDismissed{
-    [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
-}
-
--(void)prepareForKeyboard{
-    CGFloat height = self.tableView.tableHeaderView.frame.size.height + [self heightForQuestionContent] + 10;
-    [self.tableView setContentOffset:CGPointMake(0, height) animated:YES];
-}
-
 
 #pragma mark - Table view data source
 
@@ -129,19 +115,5 @@
     
     return cell;
 }
-
-#pragma mark - Table view delegate
-/*
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Answer *answer = [self.answers objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"ShowBetCreation" sender:answer];
-}
-*/
-
-
--(void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 
 @end

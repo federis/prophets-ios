@@ -10,6 +10,29 @@
 
 @implementation FFBaseTableViewController
 
+-(void)viewDidLoad{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)keyboardDidShow:(NSNotification *)note{
+    CGRect keyboardFrame = [[[note userInfo] valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    float offset = (keyboardFrame.size.height - 10); //have to change this a bit, since our tableview doesn't normally go all the way to the bottom of the VC's view
+    self.tableView.frame = RectWithNewHeight(self.tableView.frame.size.height - offset, self.tableView.frame);
+    
+    UIView *firstResponder = [self currentFirstResponder];
+    if (firstResponder != nil) {
+        CGRect rectInTableViewCoordinates = [self.tableView convertRect:firstResponder.frame fromView:firstResponder];
+        [self.tableView scrollRectToVisible:rectInTableViewCoordinates animated:YES];
+    }
+}
+
+-(void)keyboardWillHide:(NSNotification *)note{
+    CGRect keyboardFrame = [[[note userInfo] valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    float offset = (keyboardFrame.size.height - 10);
+    self.tableView.frame = RectWithNewHeight(self.tableView.frame.size.height + offset, self.tableView.frame);
+}
+
 -(void)setFixedHeaderView:(UIView *)fixedHeaderView{
     if(self.fixedHeaderView) [self.fixedHeaderView removeFromSuperview];
     
@@ -86,14 +109,14 @@
 		[_pullToRefreshHeader setState:FFPullToRefreshLoading];
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.2];
-		self.tableView.contentInset = UIEdgeInsetsMake(_pullToRefreshHeader.height, 0.0f, 0.0f, 0.0f);
+        [self setTopContentInset:_pullToRefreshHeader.height];
 		[UIView commitAnimations];
     }
     else{
         [_pullToRefreshHeader setState:FFPullToRefreshNormal];
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.2];
-		self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
+        [self setTopContentInset:0];
 		[UIView commitAnimations];
     }
     _reloading = reloading;
@@ -103,6 +126,18 @@
     // called by pull to refresh header
     // can be overridden by subclasses to load data
     self.reloading = NO;
+}
+
+-(void)setTopContentInset:(float)value{
+    self.tableView.contentInset = UIEdgeInsetsMake(value, self.tableView.contentInset.left, self.tableView.contentInset.bottom, self.tableView.contentInset.right);
+}
+
+-(void)setBottomContentInset:(float)value{
+    self.tableView.contentInset = UIEdgeInsetsMake(self.tableView.contentInset.top, self.tableView.contentInset.left, value, self.tableView.contentInset.right);
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

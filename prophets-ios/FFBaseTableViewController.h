@@ -23,6 +23,8 @@
 @property (nonatomic, strong) UIView *fixedHeaderView;
 @property (nonatomic) BOOL reloading;
 
+@property (nonatomic) CGFloat contentBottom;
+
 -(void)loadData;
 
 @end
