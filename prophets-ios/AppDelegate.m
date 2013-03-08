@@ -8,7 +8,6 @@
 
 #import <RestKit/RestKit.h>
 #import <PonyDebugger/PonyDebugger.h>
-#import <PonyDebugger.h>
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
@@ -134,33 +133,31 @@
 -(void)userLoggedOut{
     [self showLogin];
     
+    [[RKObjectManager sharedManager].operationQueue cancelAllOperations];
     [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization" value:nil];
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     
     NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext;
     
-    //NSArray *entityNames = [[RKObjectManager sharedManager].managedObjectStore.managedObjectModel.entities valueForKey:@"name"];
+    NSFetchRequest * allEntities = [[NSFetchRequest alloc] init];
+    [allEntities setEntity:[NSEntityDescription entityForName:@"Resource" inManagedObjectContext:context]];
+    [allEntities setIncludesPropertyValues:NO]; //only fetch the managedObjectID
     
-    //for (NSString *entityName in entityNames) {
-        NSFetchRequest * allEntities = [[NSFetchRequest alloc] init];
-        [allEntities setEntity:[NSEntityDescription entityForName:@"Resource" inManagedObjectContext:context]];
-        [allEntities setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-        
-        NSError *error = nil;
-        NSArray * results = [context executeFetchRequest:allEntities error:&error];
-        
-        if(error){
-            //continue;
-        }
-        
-        //error handling goes here
-        for (NSManagedObject * obj in results) {
-            [context deleteObject:obj];
-        }
-        error = nil;
-        if(![context save:&error]){
-            DLog(@"error %@", error);
-        }    
-    //}
+    NSError *error = nil;
+    NSArray * results = [context executeFetchRequest:allEntities error:&error];
+    
+    if(error){
+        //continue;
+    }
+    
+    //error handling goes here
+    for (NSManagedObject * obj in results) {
+        [context deleteObject:obj];
+    }
+    error = nil;
+    if(![context save:&error]){
+        DLog(@"error %@", error);
+    }
 }
 
 -(void)setupAppearances{
