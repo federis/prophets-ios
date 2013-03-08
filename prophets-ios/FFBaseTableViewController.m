@@ -16,9 +16,20 @@
 }
 
 -(void)keyboardDidShow:(NSNotification *)note{
+    if (!self.isViewLoaded || !self.view.window) return;
+    
     CGRect keyboardFrame = [[[note userInfo] valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    float offset = (keyboardFrame.size.height - 10); //have to change this a bit, since our tableview doesn't normally go all the way to the bottom of the VC's view
-    self.tableView.frame = RectWithNewHeight(self.tableView.frame.size.height - offset, self.tableView.frame);
+    CGRect beginFrame = [[[note userInfo] valueForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    
+    if (CGRectEqualToRect(keyboardFrame, beginFrame)) return;
+    
+    //tableBottom = y + height
+    //keyboardTop = view.height - keyboard.height
+    CGFloat tableBottom = self.tableView.frame.origin.y + self.tableView.frame.size.height;
+    CGFloat keyboardTop = self.view.frame.size.height - keyboardFrame.size.height;
+    if(tableBottom != keyboardTop){
+        self.tableView.frame = RectWithNewHeight(keyboardTop - self.tableView.frame.origin.y, self.tableView.frame);
+    }
     
     UIView *firstResponder = [self currentFirstResponder];
     if (firstResponder != nil) {

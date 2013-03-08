@@ -28,7 +28,7 @@ DEPENDENCIES:
 - PonyDebugger (~> 0.1.0)
 - RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
 - RestKit/Testing (from `https://github.com/RestKit/RestKit.git', branch `development')
-- SVProgressHUD (from `https://github.com/samvermette/SVProgressHUD.git')
+- SVProgressHUD (from `https://github.com/bcroesch/SVProgressHUD.git')
 
 EXTERNAL SOURCES:
   RestKit:
@@ -38,7 +38,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/RestKit/RestKit.git
     :branch: development
   SVProgressHUD:
-    :git: https://github.com/samvermette/SVProgressHUD.git
+    :git: https://github.com/bcroesch/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
@@ -52,7 +52,7 @@ SPEC CHECKSUMS:
   RestKit/Support: 0382132969d823a872b377c1ab2e383f3c74a339
   RestKit/Testing: 0382132969d823a872b377c1ab2e383f3c74a339
   SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
-  SVProgressHUD: 98935fbafaf0031df4a9cafca3c66eaf3da06967
+  SVProgressHUD: e9eaa08f4fe7a15e735d0e45678bf1cc5a4d929d
   SocketRocket: a0529878e3c4c200196fa3a7e2ac1ef34aa33ffe
 
-COCOAPODS: 0.16.2
+COCOAPODS: 0.16.4

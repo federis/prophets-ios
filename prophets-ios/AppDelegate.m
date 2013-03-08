@@ -16,6 +16,7 @@
 #import "FFObjectManager.h"
 #import "FFRouter.h"
 #import "FFApplicationConstants.h"
+#import "FFDeepLinker.h"
 
 @implementation AppDelegate
 
@@ -28,10 +29,8 @@
     [self.window makeKeyAndVisible];
     
     if ([User currentUser]){
-        [self registerForPushNotifications];
-        [self setupAuthTokenHeader];
         [self refreshCurrentUser];
-        [self loadMemberships];
+        [self prepareForLoggedInUser];
     }
     else{
         [self showLogin];
@@ -122,10 +121,14 @@
 }
 
 -(void)userLoggedIn{
+    [self prepareForLoggedInUser];
+    [self.window.rootViewController dismissViewControllerAnimated:YES completion:^{}];
+}
+
+-(void)prepareForLoggedInUser{
     [self registerForPushNotifications];
     [self setupAuthTokenHeader];
     [self loadMemberships];
-    [self.window.rootViewController dismissViewControllerAnimated:YES completion:^{}];
 }
 
 -(void)userLoggedOut{
@@ -170,6 +173,17 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{
         UITextAttributeFont : [UIFont fontWithName:@"AvenirNext-DemiBold" size:15.0]
     }];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+}
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    DLog(@"Opened with url %@", url);
+    FFDeepLinker *deepLinker = [[FFDeepLinker alloc] init];
+    deepLinker.rootViewController = self.window.rootViewController;
+    deepLinker.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+    [deepLinker handleUrl:url];
+    return YES;
 }
 
 

@@ -15,6 +15,7 @@
 #import "User.h"
 #import "Membership.h"
 #import "LeagueDetailCell.h"
+#import "UIBarButtonItem+Additions.h"
 
 @interface JoinLeagueViewController ()
 
@@ -25,11 +26,18 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    self.navigationItem.leftItemsSupplementBackButton = YES;    
+    self.navigationItem.leftBarButtonItems = @[[UIBarButtonItem homeButtonItemWithTarget:self action:@selector(homeTouched)]];
+    
     NSString *cellName = NSStringFromClass([LeagueDetailCell class]);
     [self.tableView registerNib:[UINib nibWithNibName:cellName bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:cellName];
     
     self.measuringCell = (LeagueDetailCell *)[self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([LeagueDetailCell class])];
+}
+
+-(void)homeTouched{
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 -(void)joinOrPromptForPassword{

@@ -202,6 +202,7 @@
 		B5EBD50916C039AE00E174BC /* JudgeAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EBD50816C039AC00E174BC /* JudgeAnswerCell.m */; };
 		B5EBD50B16C039C300E174BC /* JudgeAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EBD50A16C039C300E174BC /* JudgeAnswerCell.xib */; };
 		B5EC632416E54F77007BCD61 /* CorrectnessDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC632316E54F77007BCD61 /* CorrectnessDateViewController.m */; };
+		B5EC632716E83A00007BCD61 /* FFDeepLinker.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC632616E839F7007BCD61 /* FFDeepLinker.m */; };
 		B5EE57BC16B496B2003166FE /* LeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE57BB16B496B1003166FE /* LeaderCell.m */; };
 		B5EE57BF16B496C3003166FE /* LeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EE57BE16B496C3003166FE /* LeaderCell.xib */; };
 		B5F1AECD160388C600D28C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AECC160388C600D28C1C /* UIKit.framework */; };
@@ -544,6 +545,8 @@
 		B5EBD50A16C039C300E174BC /* JudgeAnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JudgeAnswerCell.xib; sourceTree = "<group>"; };
 		B5EC632216E54F76007BCD61 /* CorrectnessDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorrectnessDateViewController.h; sourceTree = "<group>"; };
 		B5EC632316E54F77007BCD61 /* CorrectnessDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorrectnessDateViewController.m; sourceTree = "<group>"; };
+		B5EC632516E839F0007BCD61 /* FFDeepLinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDeepLinker.h; sourceTree = "<group>"; };
+		B5EC632616E839F7007BCD61 /* FFDeepLinker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDeepLinker.m; sourceTree = "<group>"; };
 		B5EE57BA16B496B1003166FE /* LeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderCell.h; sourceTree = "<group>"; };
 		B5EE57BB16B496B1003166FE /* LeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderCell.m; sourceTree = "<group>"; };
 		B5EE57BE16B496C3003166FE /* LeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderCell.xib; sourceTree = "<group>"; };
@@ -1197,6 +1200,8 @@
 				B56F40C0160A52AC007D445F /* FFApplicationConstants.m */,
 				B5F1AEDD160388C600D28C1C /* AppDelegate.h */,
 				B5F1AEDE160388C600D28C1C /* AppDelegate.m */,
+				B5EC632516E839F0007BCD61 /* FFDeepLinker.h */,
+				B5EC632616E839F7007BCD61 /* FFDeepLinker.m */,
 				B5F1AEDC160388C600D28C1C /* prophets-ios-Prefix.pch */,
 				B56E97DD16C5A3C9000EC7E7 /* Restkit Subclasses */,
 			);
@@ -1567,6 +1572,7 @@
 				B5EBD50916C039AE00E174BC /* JudgeAnswerCell.m in Sources */,
 				B55975DD16C199BE00A4F510 /* AdminMembershipCell.m in Sources */,
 				B5EC632416E54F77007BCD61 /* CorrectnessDateViewController.m in Sources */,
+				B5EC632716E83A00007BCD61 /* FFDeepLinker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
