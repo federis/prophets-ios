@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSManagedObjectContext *scratchContext;
 
++(instancetype)sharedLinker;
++(void)setSharedLinker:(FFDeepLinker *)linker;
 -(void)handleUrl:(NSURL *)url;
 
 @end

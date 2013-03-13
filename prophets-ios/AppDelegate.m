@@ -16,12 +16,19 @@
 #import "FFRouter.h"
 #import "FFApplicationConstants.h"
 #import "FFDeepLinker.h"
+#import "FFNotificationHandler.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    application.applicationIconBadgeNumber = 0;
     
     [FFObjectManager setupObjectManager];
+    
+    FFDeepLinker *deepLinker = [[FFDeepLinker alloc] init];
+    deepLinker.rootViewController = self.window.rootViewController;
+    deepLinker.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+    [FFDeepLinker setSharedLinker:deepLinker];
     
     [self setupAppearances];
     
@@ -30,6 +37,11 @@
     if ([User currentUser]){
         [self refreshCurrentUser];
         [self prepareForLoggedInUser];
+        
+        NSDictionary *noteInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (noteInfo) {
+            [[FFNotificationHandler sharedHandler] handleNotification:noteInfo];
+        }
     }
     else{
         [self showLogin];
@@ -95,34 +107,6 @@
 -(void)setupAuthTokenHeader{
     [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization"
                                                            value:[NSString stringWithFormat:@"Token token=\"%@\"", [User currentUser].authenticationToken]];
-}
-
--(void)registerForPushNotifications{
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert)];
-}
-
--(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-    
-    const char *data = [deviceToken bytes];
-    NSMutableString* token = [NSMutableString string];
-    for (int i = 0; i < [deviceToken length]; i++) {
-        [token appendFormat:@"%02.2hhX", data[i]];
-    }
-    
-    NSLog(@"deviceToken: %@", token);
-    [User currentUser].deviceToken = token;
-    
-    [[RKObjectManager sharedManager].HTTPClient postPath:@"/device_tokens.json" parameters:@{@"device_token[value]" : token }
-     success:^(AFHTTPRequestOperation *operation, id responseObject){
-         NSLog(@"Device token creation succeeded");
-     } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-         NSLog(@"Device token creation failed");
-     }];
-}
-
-- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err{
-    NSString *str = [NSString stringWithFormat: @"Error: %@", err];
-    DLog(str);
 }
 
 -(void)userLoggedIn{
@@ -191,13 +175,42 @@
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     DLog(@"Opened with url %@", url);
-    FFDeepLinker *deepLinker = [[FFDeepLinker alloc] init];
-    deepLinker.rootViewController = self.window.rootViewController;
-    deepLinker.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
-    [deepLinker handleUrl:url];
+    [[FFDeepLinker sharedLinker] handleUrl:url];
     return YES;
 }
 
+
+-(void)registerForPushNotifications{
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert)];
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    
+    const char *data = [deviceToken bytes];
+    NSMutableString* token = [NSMutableString string];
+    for (int i = 0; i < [deviceToken length]; i++) {
+        [token appendFormat:@"%02.2hhX", data[i]];
+    }
+    
+    NSLog(@"deviceToken: %@", token);
+    [User currentUser].deviceToken = token;
+    
+    [[RKObjectManager sharedManager].HTTPClient postPath:@"/device_tokens.json" parameters:@{@"device_token[value]" : token }
+                                                 success:^(AFHTTPRequestOperation *operation, id responseObject){
+                                                     NSLog(@"Device token creation succeeded");
+                                                 } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+                                                     NSLog(@"Device token creation failed");
+                                                 }];
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err{
+    NSString *str = [NSString stringWithFormat: @"Error: %@", err];
+    DLog(str);
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    [[FFNotificationHandler sharedHandler] handleNotification:userInfo];
+}
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {

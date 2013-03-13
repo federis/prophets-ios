@@ -88,6 +88,7 @@
 		B55EBF6F16A37D150060FFAF /* ErrorCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B55EBF6E16A37D150060FFAF /* ErrorCollection.m */; };
 		B560569D16226B82004470DC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B560569C16226B82004470DC /* RegistrationViewController.m */; };
 		B56056A016226BEA004470DC /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B560569F16226BEA004470DC /* LaunchViewController.m */; };
+		B566CDB916F0E15C00489678 /* FFNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B566CDB816F0E15C00489678 /* FFNotificationHandler.m */; };
 		B56E8F461626526B006DB56B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F451626526B006DB56B /* SystemConfiguration.framework */; };
 		B56E8F4816265271006DB56B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F4716265271006DB56B /* MobileCoreServices.framework */; };
 		B56E8F49162652CA006DB56B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56E8F4716265271006DB56B /* MobileCoreServices.framework */; };
@@ -387,6 +388,8 @@
 		B560569C16226B82004470DC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		B560569E16226BEA004470DC /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
 		B560569F16226BEA004470DC /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		B566CDB716F0E15C00489678 /* FFNotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFNotificationHandler.h; sourceTree = "<group>"; };
+		B566CDB816F0E15C00489678 /* FFNotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFNotificationHandler.m; sourceTree = "<group>"; };
 		B56E8F451626526B006DB56B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B56E8F4716265271006DB56B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B56E8F8A16272551006DB56B /* FFObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFObjectManager.h; sourceTree = "<group>"; };
@@ -1200,6 +1203,8 @@
 				B56F40C0160A52AC007D445F /* FFApplicationConstants.m */,
 				B5F1AEDD160388C600D28C1C /* AppDelegate.h */,
 				B5F1AEDE160388C600D28C1C /* AppDelegate.m */,
+				B566CDB716F0E15C00489678 /* FFNotificationHandler.h */,
+				B566CDB816F0E15C00489678 /* FFNotificationHandler.m */,
 				B5EC632516E839F0007BCD61 /* FFDeepLinker.h */,
 				B5EC632616E839F7007BCD61 /* FFDeepLinker.m */,
 				B5F1AEDC160388C600D28C1C /* prophets-ios-Prefix.pch */,
@@ -1573,6 +1578,7 @@
 				B55975DD16C199BE00A4F510 /* AdminMembershipCell.m in Sources */,
 				B5EC632416E54F77007BCD61 /* CorrectnessDateViewController.m in Sources */,
 				B5EC632716E83A00007BCD61 /* FFDeepLinker.m in Sources */,
+				B566CDB916F0E15C00489678 /* FFNotificationHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,17 @@
 #import "QuestionsViewController.h"
 #import "AnswersViewController.h"
 
+static FFDeepLinker *sharedLinker = nil;
+
 @implementation FFDeepLinker
+
++(instancetype)sharedLinker{
+    return sharedLinker;
+}
+
++(void)setSharedLinker:(FFDeepLinker *)linker{
+    sharedLinker = linker;
+}
 
 +(NSDictionary *)deepLinkPatterns{
     return @{
