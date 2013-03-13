@@ -20,6 +20,7 @@ static User *currentUser = nil;
 
 @synthesize password = _password;
 @synthesize currentPassword = _currentPassword;
+@synthesize deviceToken;
 
 @dynamic email;
 @dynamic name;

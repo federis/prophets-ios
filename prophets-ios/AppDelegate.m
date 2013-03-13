@@ -41,7 +41,7 @@
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(userLoggedOut)
+                                             selector:@selector(userLoggedOut:)
                                                  name:FFUserDidLogOutNotification
                                                object:nil];
     
@@ -110,6 +110,7 @@
     }
     
     NSLog(@"deviceToken: %@", token);
+    [User currentUser].deviceToken = token;
     
     [[RKObjectManager sharedManager].HTTPClient postPath:@"/device_tokens.json" parameters:@{@"device_token[value]" : token }
      success:^(AFHTTPRequestOperation *operation, id responseObject){
@@ -135,8 +136,17 @@
     [self loadMemberships];
 }
 
--(void)userLoggedOut{
+-(void)userLoggedOut:(NSNotification *)note{
     [self showLogin];
+    
+    User *user = [[note userInfo] objectForKey:@"user"];
+    
+    [[RKObjectManager sharedManager].HTTPClient deletePath:@"/device_tokens.json" parameters:@{@"device_token[value]" : user.deviceToken }
+       success:^(AFHTTPRequestOperation *operation, id responseObject){
+           NSLog(@"Device token deletion succeeded");
+       } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+           NSLog(@"Device token deletion failed");
+       }];
     
     [[RKObjectManager sharedManager].operationQueue cancelAllOperations];
     [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization" value:nil];

@@ -28,8 +28,9 @@
 }
 
 -(void)logoutTouched{
+    User *user = [User currentUser];
     [User setCurrentUser:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogOutNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogOutNotification object:nil userInfo:@{@"user":user}];
 }
 
 @end

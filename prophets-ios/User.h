@@ -29,6 +29,8 @@
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *currentPassword; //for updating user info
 
+@property (nonatomic, strong) NSString *deviceToken;
+
 -(Membership *)membershipInLeague:(id)leagueOrId;
 
 -(NSString *)authenticationToken;
