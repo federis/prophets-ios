@@ -111,12 +111,17 @@
     
     NSLog(@"deviceToken: %@", token);
     
-    [[RKObjectManager sharedManager].HTTPClient postPath:@"/devices_tokens.json" parameters:@{@"device_token[value]" : token }
+    [[RKObjectManager sharedManager].HTTPClient postPath:@"/device_tokens.json" parameters:@{@"device_token[value]" : token }
      success:^(AFHTTPRequestOperation *operation, id responseObject){
          NSLog(@"Device token creation succeeded");
      } failure:^(AFHTTPRequestOperation *operation, NSError *error){
          NSLog(@"Device token creation failed");
      }];
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err{
+    NSString *str = [NSString stringWithFormat: @"Error: %@", err];
+    DLog(str);
 }
 
 -(void)userLoggedIn{
@@ -146,7 +151,7 @@
     NSError *error = nil;
     NSArray * results = [context executeFetchRequest:allEntities error:&error];
     
-    if(error){
+    if(error){ 
         //continue;
     }
     
