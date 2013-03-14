@@ -5,4 +5,5 @@
 //  Created by Benjamin Roesch on 10/5/12.
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
-BUNDLE_ID=com.federisgroup.prophets-ios-dev
+BUNDLE_ID=com.federisgroup.55prophets-dev
+BUNDLE_DISPLAY_NAME=55Dev
