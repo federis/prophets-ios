@@ -7,7 +7,6 @@
 //
 
 #import <RestKit/RestKit.h>
-#import <PonyDebugger/PonyDebugger.h>
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
@@ -59,15 +58,6 @@
     
 #ifdef DEBUG
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    
-    PDDebugger *debugger = [PDDebugger defaultInstance];
-    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
-    [debugger enableNetworkTrafficDebugging];
-    [debugger forwardAllNetworkTraffic];
-    [debugger enableCoreDataDebugging];
-    
-    [debugger addManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext withName:@"Persistent Store Context"];
-    [debugger addManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext withName:@"Main Queue Context"];
     
     RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
