@@ -7,3 +7,4 @@
 //
 BUNDLE_ID=com.federisgroup.55prophets-dev
 BUNDLE_DISPLAY_NAME=55Dev
+URL_SCHEME=ffprophetsdev

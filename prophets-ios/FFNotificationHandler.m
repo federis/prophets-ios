@@ -9,6 +9,7 @@
 #import "FFNotificationHandler.h"
 #import "Utilities.h"
 #import "FFDeepLinker.h"
+#import "FFApplicationConstants.h"
 
 static FFNotificationHandler *sharedHandler = nil;
 
@@ -26,6 +27,8 @@ static FFNotificationHandler *sharedHandler = nil;
     [Utilities showOkAlertWithTitle:@"note" message:[notification description]];
 #endif
     
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
     if([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive) return;
     
     NSString *type = [notification objectForKey:@"notificationType"];
@@ -38,7 +41,7 @@ static FFNotificationHandler *sharedHandler = nil;
     NSString *leagueId = [notification objectForKey:@"leagueId"];
     NSString *questionId = [notification objectForKey:@"questionId"];
     
-    [[FFDeepLinker sharedLinker] handleUrl:[NSURL URLWithString:[NSString stringWithFormat:@"ffprophets://leagues/%@/questions/%@", leagueId, questionId]]];
+    [[FFDeepLinker sharedLinker] handleUrl:[NSURL URLWithString:[NSString stringWithFormat:@"%@://leagues/%@/questions/%@", FFURLScheme, leagueId, questionId]]];
 }
 
 @end

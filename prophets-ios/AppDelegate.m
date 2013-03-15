@@ -115,12 +115,14 @@
     
     User *user = [[note userInfo] objectForKey:@"user"];
     
-    [[RKObjectManager sharedManager].HTTPClient deletePath:@"/device_tokens.json" parameters:@{@"device_token[value]" : user.deviceToken }
-       success:^(AFHTTPRequestOperation *operation, id responseObject){
-           NSLog(@"Device token deletion succeeded");
-       } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-           NSLog(@"Device token deletion failed");
-       }];
+    if (user && user.deviceToken) {
+        [[RKObjectManager sharedManager].HTTPClient deletePath:@"/device_tokens.json" parameters:@{@"device_token[value]" : user.deviceToken }
+           success:^(AFHTTPRequestOperation *operation, id responseObject){
+               NSLog(@"Device token deletion succeeded");
+           } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+               NSLog(@"Device token deletion failed");
+           }];
+    }
     
     [[RKObjectManager sharedManager].operationQueue cancelAllOperations];
     [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization" value:nil];
@@ -186,11 +188,11 @@
     [User currentUser].deviceToken = token;
     
     [[RKObjectManager sharedManager].HTTPClient postPath:@"/device_tokens.json" parameters:@{@"device_token[value]" : token }
-                                                 success:^(AFHTTPRequestOperation *operation, id responseObject){
-                                                     NSLog(@"Device token creation succeeded");
-                                                 } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-                                                     NSLog(@"Device token creation failed");
-                                                 }];
+         success:^(AFHTTPRequestOperation *operation, id responseObject){
+             NSLog(@"Device token creation succeeded");
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+             NSLog(@"Device token creation failed");
+         }];
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err{
@@ -200,6 +202,10 @@
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     [[FFNotificationHandler sharedHandler] handleNotification:userInfo];
+}
+
+-(void)applicationWillEnterForeground:(UIApplication *)application{
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

@@ -9,6 +9,7 @@
 extern NSString * const FFBaseUrl;
 extern NSString * const FFKeychainIdentifier;
 extern NSString * const FFObjectStoreName;
+extern NSString * const FFURLScheme;
 
 extern NSString * const FFRegistrationSecret;
 

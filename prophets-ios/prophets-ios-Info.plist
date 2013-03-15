@@ -38,11 +38,13 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.55prophets</string>
+			<string>${BUNDLE_ID}</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>ffprophets</string>
+				<string>${URL_SCHEME}</string>
 			</array>
 		</dict>
 	</array>

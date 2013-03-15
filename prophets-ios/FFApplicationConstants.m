@@ -9,14 +9,18 @@
 #import "FFApplicationConstants.h"
 
 #if APP_ENV == DEV
-NSString * const FFBaseUrl = @"http://55prophets.dev:3000";
+//NSString * const FFBaseUrl = @"http://55prophets.dev:3000";
+//NSString * const FFBaseUrl = @"http://55prophets.com";
+NSString * const FFBaseUrl = @"http://10.1.10.13:3000";
 NSString * const FFKeychainIdentifier = @"prophets-ios-dev";
 NSString * const FFObjectStoreName = @"prophets-ios.sqlite";
+NSString * const FFURLScheme = @"ffprophetsdev";
 
 #elif APP_ENV == TEST
 NSString * const FFBaseUrl = @"http://0.0.0.0:4567";
 NSString * const FFKeychainIdentifier = @"prophets-test";
 NSString * const FFObjectStoreName = @"RKTests.sqlite";
+NSString * const FFURLScheme = @"ffprophetsdev";
 
 #elif APP_ENV == STAGING
 //staging
@@ -26,6 +30,7 @@ NSString * const FFObjectStoreName = @"RKTests.sqlite";
 NSString * const FFBaseUrl = @"http://55prophets.com";
 NSString * const FFKeychainIdentifier = @"prophets-ios";
 NSString * const FFObjectStoreName = @"prophets-ios.sqlite";
+NSString * const FFURLScheme = @"ffprophets";
 
 #endif
 
