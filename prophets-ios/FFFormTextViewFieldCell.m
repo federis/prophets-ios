@@ -8,14 +8,27 @@
 
 #import "FFFormTextViewFieldCell.h"
 #import "FFFormTextViewField.h"
+#import "UIToolbar+Additions.h"
 
 @implementation FFFormTextViewFieldCell
 
 -(void)setFormField:(FFFormField *)formField{
     FFFormTextViewField *field = (FFFormTextViewField *)formField;
     self.textView.text = field.currentValue;
+    self.textView.returnKeyType = field.returnKeyType;
     self.placeholderLabel.text = field.labelName;
+    
+    self.textView.inputAccessoryView = [UIToolbar toolbarWithDoneButtonForResponder:self.textView];
+    
     [super setFormField:formField];
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    if(self.formField.shouldBecomeFirstResponder){
+        self.formField.shouldBecomeFirstResponder = NO;
+        [self makeFirstResponder];
+    }
 }
 
 -(void)awakeFromNib{

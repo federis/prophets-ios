@@ -10,4 +10,8 @@
 
 @implementation FFFormTextField
 
+-(BOOL)canBecomeFirstResponder{
+    return YES;
+}
+
 @end

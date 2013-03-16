@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rankLabel;
 
-@property Membership *membership;
+@property (nonatomic, strong) Membership *membership;
 
 @end

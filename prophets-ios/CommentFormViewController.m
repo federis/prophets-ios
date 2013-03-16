@@ -55,7 +55,6 @@
     }
     
     FFFormTextViewField *commentField = [FFFormTextViewField formFieldWithAttributeName:@"comment"];
-    commentField.shouldBecomeFirstResponder = YES;
     
     self.form = [FFForm formForObject:comment withFields:@[commentField]];
     

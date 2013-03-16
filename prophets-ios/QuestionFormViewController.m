@@ -29,7 +29,6 @@
     
     FFFormTextField *contentField = [FFFormTextField formFieldWithAttributeName:@"content" labelName:@"Question text"];
     contentField.returnKeyType = UIReturnKeyNext;
-    contentField.shouldBecomeFirstResponder = YES;
     
     FFFormDateField *closeOfBettingField = [FFFormDateField formFieldWithAttributeName:@"bettingClosesAt" labelName:@"Close of Betting"];
     closeOfBettingField.initialDate = [NSDate dateWithTimeIntervalSinceNow:86400*7]; //7 days from now

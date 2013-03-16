@@ -24,14 +24,13 @@
 }
 
 -(void)setFormField:(FFFormField *)formField{
+    [super setFormField:formField];
+    
     FFFormPickerField *field = (FFFormPickerField *)formField;
     self.attributeNameLabel.text = field.labelName;
-    self.textField.text = field.currentValue;
     
     UIPickerView *tagPicker = (UIPickerView *)self.textField.inputView;
     tagPicker.dataSource = field;
-    
-    [super setFormField:formField];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
@@ -43,10 +42,6 @@
     FFFormPickerField *field = (FFFormPickerField *)self.formField;
     self.textField.text = [[field pickerOptions] objectAtIndex:row];
     self.formField.currentValue = [[field pickerOptions] objectAtIndex:row];
-}
-
--(void)makeFirstResponder{
-    [self.textField becomeFirstResponder];
 }
 
 @end

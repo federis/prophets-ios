@@ -11,7 +11,5 @@
 @interface FFFormTextField : FFFormField
 
 @property (nonatomic) BOOL secure;
-@property (nonatomic) BOOL submitsOnReturn;
-@property (nonatomic) UIReturnKeyType returnKeyType;
 
 @end

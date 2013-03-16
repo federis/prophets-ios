@@ -19,24 +19,25 @@
     
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
     datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-    self.dateField.inputView = datePicker;
+    self.textField.inputView = datePicker;
     
     [datePicker addTarget:self action:@selector(fieldChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void)fieldChanged:(id)sender{
     UIDatePicker *datePicker = (UIDatePicker *)sender;
-    self.dateField.text = [self stringForDate:datePicker.date];
+    self.textField.text = [self stringForDate:datePicker.date];
     self.formField.currentValue = datePicker.date;
 }
 
-
 -(void)setFormField:(FFFormField *)formField{
+    [super setFormField:formField];
+    
     FFFormDateField *field = (FFFormDateField *)formField;
     self.attributeNameLabel.text = field.labelName;
-    self.dateField.text = [self stringForDate:field.currentValue];
+    self.textField.text = [self stringForDate:field.currentValue];
     
-    UIDatePicker *datePicker = (UIDatePicker *)self.dateField.inputView;
+    UIDatePicker *datePicker = (UIDatePicker *)self.textField.inputView;
     datePicker.date = field.currentValue;
     if (field.minimumDate) {
         datePicker.minimumDate = field.minimumDate;
@@ -45,8 +46,6 @@
     if (field.maximumDate) {
         datePicker.maximumDate = field.maximumDate;
     }
-    
-    [super setFormField:formField];
 }
 
 -(NSString *)stringForDate:(NSDate *)date{
@@ -62,10 +61,6 @@
     self.formField.currentValue = text;
     
     return YES;
-}
-
--(void)makeFirstResponder{
-    [self.dateField becomeFirstResponder];
 }
 
 

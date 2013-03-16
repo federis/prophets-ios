@@ -10,4 +10,8 @@
 
 @implementation FFFormSwitchField
 
+-(BOOL)canBecomeFirstResponder{
+    return NO;
+}
+
 @end

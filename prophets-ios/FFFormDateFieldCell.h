@@ -6,11 +6,10 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFFormFieldCell.h"
+#import "FFFormTextFieldCell.h"
 
-@interface FFFormDateFieldCell : FFFormFieldCell
+@interface FFFormDateFieldCell : FFFormTextFieldCell
 
-@property (weak, nonatomic) IBOutlet UITextField *dateField;
 @property (weak, nonatomic) IBOutlet UILabel *attributeNameLabel;
 
 @end

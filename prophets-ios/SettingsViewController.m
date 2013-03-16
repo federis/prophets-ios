@@ -45,21 +45,22 @@
     
     FFFormSwitchField *newQuestionNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewQuestionNotifications" labelName:@"Notifications for New Questions"];
     
-    FFFormTextField *newPasswordField = [FFFormTextField formFieldWithAttributeName:@"password" labelName:@"New Password (blank to keep the same)"];
-    newPasswordField.returnKeyType = UIReturnKeyNext;
-    newPasswordField.secure = YES;
-    
     FFFormTextField *passwordField = [FFFormTextField formFieldWithAttributeName:@"currentPassword" labelName:@"Current Password"];
     passwordField.returnKeyType = UIReturnKeySend;
     passwordField.secure = YES;
     passwordField.submitsOnReturn = YES;
     
+    FFFormTextField *newPasswordField = [FFFormTextField formFieldWithAttributeName:@"password" labelName:@"New Password (blank to keep the same)"];
+    newPasswordField.returnKeyType = UIReturnKeySend;
+    newPasswordField.secure = YES;
+    newPasswordField.submitsOnReturn = YES;
+    
     NSMutableArray *fields = [NSMutableArray arrayWithArray:@[
                                   emailField,
                                   nameField,
                                   notificationsField,
-                                  newPasswordField,
-                                  passwordField
+                                  passwordField,
+                                  newPasswordField
                               ]];
     
     if ([[User currentUser].wantsNotifications boolValue]) {

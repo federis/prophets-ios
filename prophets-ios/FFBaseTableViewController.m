@@ -39,9 +39,14 @@
 }
 
 -(void)keyboardWillHide:(NSNotification *)note{
+    if (!self.isViewLoaded || !self.view.window) return;
+    
     CGRect keyboardFrame = [[[note userInfo] valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    float offset = (keyboardFrame.size.height - 10);
-    self.tableView.frame = RectWithNewHeight(self.tableView.frame.size.height + offset, self.tableView.frame);
+    CGRect beginFrame = [[[note userInfo] valueForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    
+    if (CGRectEqualToRect(keyboardFrame, beginFrame)) return;
+    
+    self.tableView.frame = RectWithNewHeight(self.view.frame.size.height - 20, self.tableView.frame);
 }
 
 -(void)setFixedHeaderView:(UIView *)fixedHeaderView{

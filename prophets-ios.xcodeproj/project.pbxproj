@@ -191,6 +191,8 @@
 		B5D33D7B161652590043A0E8 /* MembershipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7A161652590043A0E8 /* MembershipsViewController.m */; };
 		B5D33D801618C4900043A0E8 /* MembershipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D33D7F1618C4900043A0E8 /* MembershipCell.m */; };
 		B5D33D821618C9450043A0E8 /* MembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D33D811618C9450043A0E8 /* MembershipCell.xib */; };
+		B5DCEE0116F3A80800AF2965 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DCEE0016F3A80800AF2965 /* UIView+Additions.m */; };
+		B5DCEE0416F3B22400AF2965 /* UIToolbar+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DCEE0316F3B22300AF2965 /* UIToolbar+Additions.m */; };
 		B5E6B2E8164AB0D900E96ADC /* create_bets.json in Resources */ = {isa = PBXBuildFile; fileRef = B5E6B2E7164AB0D900E96ADC /* create_bets.json */; };
 		B5E6B2EC164AB7B500E96ADC /* CreateBetViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E6B2EB164AB7B500E96ADC /* CreateBetViewTests.m */; };
 		B5EA136A161D201A00C774F3 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA1369161D201A00C774F3 /* LoginTests.m */; };
@@ -535,6 +537,10 @@
 		B5D33D7E1618C4900043A0E8 /* MembershipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MembershipCell.h; sourceTree = "<group>"; };
 		B5D33D7F1618C4900043A0E8 /* MembershipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MembershipCell.m; sourceTree = "<group>"; };
 		B5D33D811618C9450043A0E8 /* MembershipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MembershipCell.xib; sourceTree = "<group>"; };
+		B5DCEDFF16F3A80800AF2965 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		B5DCEE0016F3A80800AF2965 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		B5DCEE0216F3B22300AF2965 /* UIToolbar+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+Additions.h"; sourceTree = "<group>"; };
+		B5DCEE0316F3B22300AF2965 /* UIToolbar+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+Additions.m"; sourceTree = "<group>"; };
 		B5E6B2E7164AB0D900E96ADC /* create_bets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = create_bets.json; sourceTree = "<group>"; };
 		B5E6B2EB164AB7B500E96ADC /* CreateBetViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBetViewTests.m; sourceTree = "<group>"; };
 		B5EA1369161D201A00C774F3 /* LoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
@@ -1133,6 +1139,10 @@
 				B5EBD4EC16BB232300E174BC /* NSURL+Additions.m */,
 				B5EBD50116BB76FD00E174BC /* UIAlertView+Additions.h */,
 				B5EBD50216BB76FD00E174BC /* UIAlertView+Additions.m */,
+				B5DCEDFF16F3A80800AF2965 /* UIView+Additions.h */,
+				B5DCEE0016F3A80800AF2965 /* UIView+Additions.m */,
+				B5DCEE0216F3B22300AF2965 /* UIToolbar+Additions.h */,
+				B5DCEE0316F3B22300AF2965 /* UIToolbar+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1611,6 +1621,8 @@
 				B5EC632416E54F77007BCD61 /* CorrectnessDateViewController.m in Sources */,
 				B5EC632716E83A00007BCD61 /* FFDeepLinker.m in Sources */,
 				B566CDB916F0E15C00489678 /* FFNotificationHandler.m in Sources */,
+				B5DCEE0116F3A80800AF2965 /* UIView+Additions.m in Sources */,
+				B5DCEE0416F3B22400AF2965 /* UIToolbar+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

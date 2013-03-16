@@ -6,11 +6,10 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFFormFieldCell.h"
+#import "FFFormTextFieldCell.h"
 
-@interface FFFormPickerFieldCell : FFFormFieldCell<UIPickerViewDelegate>
+@interface FFFormPickerFieldCell : FFFormTextFieldCell<UIPickerViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UILabel *attributeNameLabel;
 
 @end

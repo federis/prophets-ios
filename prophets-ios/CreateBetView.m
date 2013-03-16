@@ -14,6 +14,7 @@
 #import "Question.h"
 #import "Membership.h"
 #import "Bet.h"
+#import "UIToolbar+Additions.h"
 
 @implementation CreateBetView
 
@@ -70,16 +71,7 @@
     self.betAmountTextField.delegate = self;
     self.betAmountTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    toolbar.tintColor = [UIColor blackColor];
-    toolbar.barStyle = UIBarStyleBlackTranslucent;
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-                                                                   style:UIBarButtonItemStyleBordered target:self.betAmountTextField action:@selector(resignFirstResponder)];
-    
-    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                            target:nil action:nil];
-    [toolbar setItems:@[spacer, doneButton]];
-    self.betAmountTextField.inputAccessoryView = toolbar;
+    self.betAmountTextField.inputAccessoryView = [UIToolbar toolbarWithDoneButtonForResponder:self.betAmountTextField];
     
     return self;
 }

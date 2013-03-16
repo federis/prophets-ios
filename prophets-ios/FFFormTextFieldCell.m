@@ -8,6 +8,7 @@
 
 #import "FFFormTextFieldCell.h"
 #import "FFFormTextField.h"
+#import "UIToolbar+Additions.h"
 
 @implementation FFFormTextFieldCell
 
@@ -15,6 +16,15 @@
     [super awakeFromNib];
     
     [self.textField addTarget:self action:@selector(fieldChanged) forControlEvents:UIControlEventEditingChanged];
+    self.textField.inputAccessoryView = [UIToolbar toolbarWithDoneButtonForResponder:self.textField];
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    if(self.formField.shouldBecomeFirstResponder){
+        self.formField.shouldBecomeFirstResponder = NO;
+        [self makeFirstResponder];
+    }
 }
 
 -(void)fieldChanged{
@@ -27,7 +37,7 @@
     self.textField.placeholder = field.labelName;
     self.textField.secureTextEntry = field.secure;
     self.textField.returnKeyType = field.returnKeyType;
-    self.textField.text = field.currentValue;
+    self.textField.text = field.currentValue ? [NSString stringWithFormat:@"%@", field.currentValue] : nil;
     
     [super setFormField:formField];
 }

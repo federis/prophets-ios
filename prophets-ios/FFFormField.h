@@ -13,6 +13,8 @@
 @property (nonatomic, strong) NSString *attributeName;
 @property (nonatomic, strong) NSString *labelName;
 @property (nonatomic) BOOL shouldBecomeFirstResponder;
+@property (nonatomic) BOOL submitsOnReturn;
+@property (nonatomic) UIReturnKeyType returnKeyType;
 @property (nonatomic, strong) id currentValue;
 
 +(id)formFieldWithAttributeName:(NSString *)attributeName labelName:(NSString *)labelName;
@@ -22,5 +24,6 @@
 
 -(NSString *)cellReuseIdentifier;
 -(CGFloat)height;
+-(BOOL)canBecomeFirstResponder;
 
 @end

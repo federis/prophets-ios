@@ -8,22 +8,15 @@
 
 #import "EditAnswerCell.h"
 #import "Answer.h"
+#import "UIToolbar+Additions.h"
 
 @implementation EditAnswerCell
 
 -(void)awakeFromNib{
     [super awakeFromNib];
     
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    toolbar.tintColor = [UIColor blackColor];
-    toolbar.barStyle = UIBarStyleBlackTranslucent;
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-                                                                   style:UIBarButtonItemStyleBordered target:self.secondaryTextField action:@selector(resignFirstResponder)];
-    
-    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                            target:nil action:nil];
-    [toolbar setItems:@[spacer, doneButton]];
-    self.secondaryTextField.inputAccessoryView = toolbar;
+    self.primaryTextField.inputAccessoryView = [UIToolbar toolbarWithDoneButtonForResponder:self.primaryTextField];
+    self.secondaryTextField.inputAccessoryView = [UIToolbar toolbarWithDoneButtonForResponder:self.secondaryTextField];
 }
 
 -(void)setAnswer:(Answer *)answer{

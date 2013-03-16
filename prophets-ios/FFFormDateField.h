@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFFormField.h"
+#import "FFFormTextField.h"
 
-@interface FFFormDateField : FFFormField
+@interface FFFormDateField : FFFormTextField
 
 @property (nonatomic, strong) NSDate *initialDate;
 @property (nonatomic, strong) NSDate *minimumDate;

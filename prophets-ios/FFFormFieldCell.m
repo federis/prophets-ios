@@ -11,7 +11,10 @@
 @implementation FFFormFieldCell
 
 -(void)makeFirstResponder{
-    //no-op by default
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"Invalid method call"
+                                           "makeFirstResponder cannot be called on %@ cells", [self class]]
+                                 userInfo:nil];
 }
 
 @end

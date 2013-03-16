@@ -16,6 +16,23 @@
     form.object = object;
     form.fields = [fields mutableCopy];
     
+    BOOL hasInitialFirstResponder = NO;
+    FFFormField *initalFirstResponderCandidate = nil;
+    for (FFFormField *field in form.fields) {
+        if(field.shouldBecomeFirstResponder){
+            hasInitialFirstResponder = YES;
+            break;
+        }
+        
+        if (!initalFirstResponderCandidate && field.canBecomeFirstResponder) {
+            initalFirstResponderCandidate = field;
+        }
+    }
+    
+    if (!hasInitialFirstResponder && initalFirstResponderCandidate) {
+        initalFirstResponderCandidate.shouldBecomeFirstResponder = YES;
+    }
+    
     [form initializeFieldValuesFromObject];
     
     return form;

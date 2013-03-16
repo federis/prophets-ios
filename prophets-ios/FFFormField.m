@@ -37,4 +37,11 @@
     return 44;
 }
 
+-(BOOL)canBecomeFirstResponder{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"Invalid method call"
+                                           "canBecomeFirstResponder must be implemented by subclasses of FFFormField"]
+                                 userInfo:nil];
+}
+
 @end

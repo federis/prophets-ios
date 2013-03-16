@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
-#import "FFFormField.h"
+#import "FFFormTextField.h"
 
-@interface FFFormPickerField : FFFormField<UIPickerViewDataSource>
+@interface FFFormPickerField : FFFormTextField<UIPickerViewDataSource>
 
 @property (nonatomic, strong) NSArray *pickerOptions;
 

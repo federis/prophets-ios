@@ -18,6 +18,7 @@
 #import "FFFormDateFieldCell.h"
 #import "FFFormPickerFieldCell.h"
 #import "Utilities.h"
+#import "UIView+Additions.h"
 
 @interface FFFormViewController ()
 
@@ -106,12 +107,6 @@
         ((FFFormTextFieldCell *)cell).textField.delegate = self;
     }
     
-    if (field.shouldBecomeFirstResponder) {
-        [cell makeFirstResponder];
-        field.shouldBecomeFirstResponder = NO;
-    }
-
-    
     return cell;
 }
 
@@ -135,28 +130,28 @@
 # pragma mark - UITextFieldDelegate methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if([[[textField superview] superview] isKindOfClass:[FFFormTextFieldCell class]]){
-        FFFormTextFieldCell *cell = (FFFormTextFieldCell *)[[textField superview] superview];
-        
-        if(((FFFormTextField *)cell.formField).submitsOnReturn) {
-            [self serializeAndSubmit];
-        }
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        NSInteger numRows = [self.tableView numberOfRowsInSection:0];
-        
-        NSInteger i = indexPath.row + 1;
-        FFFormTextFieldCell *nextTextFieldCell = nil;
-        while (!nextTextFieldCell && i < numRows) {
-            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            if ([cell isKindOfClass:[FFFormTextFieldCell class]]) {
-                nextTextFieldCell = (FFFormTextFieldCell *)cell;
+    FFFormFieldCell *cell = (FFFormFieldCell *)[textField findParentTableViewCell];
+    
+    if(cell.formField.submitsOnReturn) {
+        [self serializeAndSubmit];
+        return YES;
+    }
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    for (int i=indexPath.row+1; i<self.form.fields.count; i++) {
+        FFFormField *field = [self.form.fields objectAtIndex:i];
+        if (field.canBecomeFirstResponder) {
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+            FFFormFieldCell *nextCell = (FFFormFieldCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            if (!nextCell) {
+                field.shouldBecomeFirstResponder = YES;
             }
-            i++;
-        }
-        
-        if (nextTextFieldCell) {
-            [nextTextFieldCell.textField becomeFirstResponder];
+            else{
+                [nextCell makeFirstResponder];
+            }
+            
+            return YES;
         }
     }
     
