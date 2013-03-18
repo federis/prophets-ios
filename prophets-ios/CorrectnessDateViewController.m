@@ -41,7 +41,7 @@
 
 -(NSString *)stringForDate:(NSDate *)date{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"hh:mma MM/dd/yyyy";
+    dateFormatter.dateFormat = @"MM/dd/yyyy   hh:mma";
     dateFormatter.timeZone = [NSTimeZone localTimeZone];
     
     return [dateFormatter stringFromDate:date];
