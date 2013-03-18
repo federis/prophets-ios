@@ -85,7 +85,7 @@
 										</object>
 									</object>
 								</array>
-								<string key="NSFrame">{{29, 6}, {175, 31}}</string>
+								<string key="NSFrame">{{33, 6}, {175, 31}}</string>
 								<reference key="NSSuperview" ref="174590407"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="867641362"/>
@@ -144,7 +144,7 @@
 							<object class="IBUIButton" id="428978457">
 								<reference key="NSNextResponder" ref="174590407"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{5, 12}, {20, 19}}</string>
+								<string key="NSFrame">{{2, 8}, {28, 28}}</string>
 								<reference key="NSSuperview" ref="174590407"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1002534059"/>
