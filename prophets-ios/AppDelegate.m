@@ -16,6 +16,7 @@
 #import "FFApplicationConstants.h"
 #import "FFDeepLinker.h"
 #import "FFNotificationHandler.h"
+#import "Flurry.h"
 
 @implementation AppDelegate
 
@@ -64,6 +65,8 @@
     RKLogConfigureByName("RestKit/Testing", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/CoreData", RKLogLevelTrace);
 #endif
+    
+    [Flurry startSession:@"MQF63N949RPBVQJRFPPM"];
     
     return YES;
 }
