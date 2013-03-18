@@ -20,6 +20,7 @@
 @dynamic payout;
 @dynamic membership;
 @dynamic answer;
+@dynamic invalidatedAt;
 
 -(BOOL)hasBeenJudged{
     return self.payout != nil;
@@ -46,11 +47,12 @@
     RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([self class])
                                                    inManagedObjectStore:[RKObjectManager sharedManager].managedObjectStore];
     
-    [mapping addAttributeMappingsFromArray:@[@"amount", @"bonus", @"probability"]];
+    [mapping addAttributeMappingsFromArray:@[@"amount", @"bonus", @"payout", @"probability"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"id" : @"remoteId",
      @"membership_id" : @"membershipId",
      @"answer_id" : @"answerId",
+     @"invalidated_at" : @"invalidatedAt",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt",
      }];

@@ -21,6 +21,7 @@
         <attribute name="amount" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="answerId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="bonus" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="invalidatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="membershipId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="payout" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="probability" optional="YES" attributeType="Decimal" syncable="YES"/>
@@ -124,7 +125,7 @@
     </entity>
     <elements>
         <element name="Answer" positionX="-63" positionY="27" width="128" height="225"/>
-        <element name="Bet" positionX="234" positionY="108" width="128" height="165"/>
+        <element name="Bet" positionX="234" positionY="108" width="128" height="180"/>
         <element name="Comment" positionX="-252" positionY="-486" width="128" height="150"/>
         <element name="League" positionX="-56" positionY="-315" width="128" height="255"/>
         <element name="Membership" positionX="396" positionY="-306" width="128" height="210"/>

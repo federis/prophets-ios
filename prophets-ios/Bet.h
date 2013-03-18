@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSDecimalNumber * probability;
 @property (nonatomic, strong) NSDecimalNumber * bonus;
 @property (nonatomic, strong) NSDecimalNumber * payout;
+@property (nonatomic, strong) NSDate * invalidatedAt;
 @property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) Answer *answer;
 
