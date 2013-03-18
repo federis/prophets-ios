@@ -21,6 +21,7 @@
 #import "League.h"
 #import "Question.h"
 #import "Utilities.h"
+#import "FFApplicationConstants.h"
 
 @interface QuestionsViewController ()
 
@@ -117,8 +118,12 @@
     MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
     mailVC.mailComposeDelegate = self;
     [mailVC setSubject:@"Join this league on 55Prophets"];
-    NSString *body = [NSString stringWithFormat:@"Hey there,\n\nI joined the league \"%@\" on 55Prophets, and I think you should join too. You can join by opening the app, touching the Find a League button, and searching for the league title.\n\nIf you don't have the 55Prophets app yet, you can download it on the app store.\n\nCheers.", self.membership.league.name];
-    [mailVC setMessageBody:body isHTML:NO];
+    NSString *body = [NSString stringWithFormat:@"<p>Hey there,</p> \
+                      <p>I joined the league \"%@\" on 55Prophets, and I think you should join too. You can join by opening this email on your phone and touching \
+                         <a href='%@://leagues/%@/join'>here</a>.</p> \
+                      <p>If you don't have the 55Prophets app yet, you can download it on the <a href='https://itunes.apple.com/us/app/55prophets/id622424094?ls=1&mt=8'>app store</a>.</p> \
+                      <p>Cheers.</p>", self.membership.league.name, FFURLScheme, self.membership.league.remoteId];
+    [mailVC setMessageBody:body isHTML:YES];
     
     [self presentModalViewController:mailVC animated:YES];
 }
