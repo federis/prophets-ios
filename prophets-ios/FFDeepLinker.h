@@ -10,7 +10,7 @@
 
 @interface FFDeepLinker : NSObject
 
-@property (nonatomic, strong) UIViewController *rootViewController;
+@property (nonatomic, strong) UIWindow *appWindow;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSManagedObjectContext *scratchContext;
 

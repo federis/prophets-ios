@@ -25,14 +25,14 @@
     
     [FFObjectManager setupObjectManager];
     
-    FFDeepLinker *deepLinker = [[FFDeepLinker alloc] init];
-    deepLinker.rootViewController = self.window.rootViewController;
-    deepLinker.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
-    [FFDeepLinker setSharedLinker:deepLinker];
-    
     [self setupAppearances];
     
     [self.window makeKeyAndVisible];
+    
+    FFDeepLinker *deepLinker = [[FFDeepLinker alloc] init];
+    deepLinker.appWindow = self.window;
+    deepLinker.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+    [FFDeepLinker setSharedLinker:deepLinker];
     
     if ([User currentUser]){
         [self refreshCurrentUser];

@@ -107,11 +107,12 @@ static FFDeepLinker *sharedLinker = nil;
 }
 
 -(void)showJoinLeague:(League *)league{
-    JoinLeagueViewController *joinLeagueVC = [self.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"JoinLeagueViewController"];
+    JoinLeagueViewController *joinLeagueVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"JoinLeagueViewController"];
     joinLeagueVC.league = league;
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:joinLeagueVC];
-    [self.rootViewController presentViewController:navController animated:NO completion:^{}];
+    
+    [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
 }
 
 
@@ -173,22 +174,22 @@ static FFDeepLinker *sharedLinker = nil;
 }
 
 -(void)showQuestion:(Question *)question withMembership:(Membership *)membership{
-    MembershipsViewController *membershipsVC = [self.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"MembershipsViewController"];
+    MembershipsViewController *membershipsVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"MembershipsViewController"];
     
-    LeagueTabBarController *leagueVC = [self.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"LeagueTabBarController"];
+    LeagueTabBarController *leagueVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"LeagueTabBarController"];
     leagueVC.membership = membership;
     
-    QuestionsViewController *questionsVC = [self.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"QuestionsViewController"];
+    QuestionsViewController *questionsVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"QuestionsViewController"];
     questionsVC.membership = membership;
     
-    AnswersViewController *answersVC = [self.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"AnswersViewController"];
+    AnswersViewController *answersVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"AnswersViewController"];
     answersVC.question = question;
     answersVC.membership = membership;
     
     UINavigationController *navController = [[UINavigationController alloc] init];
     [navController setViewControllers:@[membershipsVC, leagueVC, questionsVC, answersVC] animated:NO];
     
-    [self.rootViewController presentViewController:navController animated:NO completion:^{}];
+    [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
 }
 
 
