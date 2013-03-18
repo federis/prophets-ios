@@ -43,7 +43,7 @@
     FFFormTextField *nameField = [FFFormTextField formFieldWithAttributeName:@"name"];
     nameField.returnKeyType = UIReturnKeyNext;
     
-    FFFormSwitchField *privateField = [FFFormSwitchField formFieldWithAttributeName:@"priv" labelName:@"Private"];
+    //FFFormSwitchField *privateField = [FFFormSwitchField formFieldWithAttributeName:@"priv" labelName:@"Private"];
     
     FFFormPickerField *tagField = [FFFormPickerField formFieldWithAttributeName:@"tagList" labelName:@"Category"];
     
@@ -78,7 +78,7 @@
            DLog(@"Error is %@", error);
        }];
     
-    self.form = [FFForm formForObject:self.league withFields:@[nameField, privateField, tagField]];
+    self.form = [FFForm formForObject:self.league withFields:@[nameField, tagField]];
     self.form.delegate = self;
     
     self.submitButtonText = self.league.isNew ? @"Create" : @"Save";
