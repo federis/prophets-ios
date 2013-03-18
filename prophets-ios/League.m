@@ -9,6 +9,7 @@
 #import "League.h"
 #import "User.h"
 #import "Tag.h"
+#import "Membership.h"
 
 
 @implementation League
@@ -74,6 +75,8 @@
      }];
     
     [mapping addRelationshipMappingWithSourceKeyPath:@"tags" mapping:[Tag responseMapping]];
+    
+    [mapping addRelationshipMappingWithSourceKeyPath:@"memberships" mapping:[Membership responseMapping]];
     
     return mapping;
 }

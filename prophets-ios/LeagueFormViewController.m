@@ -13,6 +13,7 @@
 #import "Tag.h"
 #import "RoundedClearBar.h"
 #import "FFFormSwitchFieldCell.h"
+#import "FFDeepLinker.h"
 
 @interface LeagueFormViewController ()
 
@@ -101,10 +102,13 @@
                 [SVProgressHUD dismiss];
                 [SVProgressHUD showSuccessWithStatus:@"League created"];
                 DLog(@"%@", mappingResult);
-                //League *league = (League *)self.formObject;
-                // Take them to the league?
                 
-                [self dismissViewControllerAnimated:YES completion:^{}];
+                NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+                League *l = (League *)[context objectWithID:self.league.objectID];
+                
+                [self dismissViewControllerAnimated:YES completion:^{
+                    [[FFDeepLinker sharedLinker] showLeague:l];
+                }];
             }
             failure:^(RKObjectRequestOperation *operation, NSError *error){
                 [SVProgressHUD dismiss];

@@ -77,6 +77,21 @@ static FFDeepLinker *sharedLinker = nil;
     return _scratchContext;
 }
 
+-(void)showLeague:(League *)league{
+    Membership *membership = [[User currentUser] membershipInLeague:league];
+    if(!membership) return;
+    
+    MembershipsViewController *membershipsVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"MembershipsViewController"];
+    
+    LeagueTabBarController *leagueVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"LeagueTabBarController"];
+    leagueVC.membership = membership;
+    
+    UINavigationController *navController = [[UINavigationController alloc] init];
+    [navController setViewControllers:@[membershipsVC, leagueVC] animated:NO];
+    
+    [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
+}
+
 
 -(void)handleJoinLeagueURL:(NSArray *)capturedComponents{
     NSInteger leagueId = [(NSString *)[capturedComponents objectAtIndex:0] integerValue];
@@ -114,7 +129,6 @@ static FFDeepLinker *sharedLinker = nil;
     
     [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
 }
-
 
 -(void)handleShowQuestionURL:(NSArray *)capturedComponents{
     NSInteger leagueId = [(NSString *)[capturedComponents objectAtIndex:0] integerValue];

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class League, Question, Membership;
+
 @interface FFDeepLinker : NSObject
 
 @property (nonatomic, strong) UIWindow *appWindow;
@@ -17,5 +19,9 @@
 +(instancetype)sharedLinker;
 +(void)setSharedLinker:(FFDeepLinker *)linker;
 -(void)handleUrl:(NSURL *)url;
+
+-(void)showLeague:(League *)league;
+-(void)showJoinLeague:(League *)league;
+-(void)showQuestion:(Question *)question withMembership:(Membership *)membership;
 
 @end
