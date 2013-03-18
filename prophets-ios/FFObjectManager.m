@@ -236,7 +236,7 @@
             NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Bet"];
             fetchRequest.predicate = [NSPredicate predicateWithFormat:@"membership.leagueId == %@", leagueId];
-            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:YES]];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
             return fetchRequest;
         }
         
