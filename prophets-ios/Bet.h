@@ -26,4 +26,7 @@
 -(NSString *)oddsString;
 -(NSDecimalNumber *)potentialPayout;
 
++(RKEntityMapping *)responseMappingWithAnswer;
++(RKEntityMapping *)responseMappingWithMembership;
+
 @end

@@ -57,13 +57,15 @@
      @"created_at" : @"createdAt",
      }];
     
+    [mapping addConnectionForRelationship:@"membership" connectedBy:@{@"membershipId" : @"remoteId"}];
+    [mapping addConnectionForRelationship:@"answer" connectedBy:@{@"answerId" : @"remoteId"}];
+    
     return mapping;
 }
 
-+(RKEntityMapping *)responseMappingWithParentRelationships{
+//for use when getting list of user's bets
++(RKEntityMapping *)responseMappingWithAnswer{
     RKEntityMapping *mapping = [self responseMapping];
-    
-    [mapping addConnectionForRelationship:@"membership" connectedBy:@{@"membershipId" : @"remoteId"}];
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"answer"
                                                                             toKeyPath:@"answer"
@@ -72,8 +74,9 @@
     return mapping;    
 }
 
-+(RKEntityMapping *)responseMappingWithChildRelationships{
-    RKEntityMapping *mapping = [super responseMappingWithChildRelationships];
+//for use when creating bet
++(RKEntityMapping *)responseMappingWithMembership{
+    RKEntityMapping *mapping = [self responseMapping];
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"membership"
                                                                             toKeyPath:@"membership"
