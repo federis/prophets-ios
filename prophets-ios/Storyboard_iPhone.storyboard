@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="r6L-FH-HXH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="r6L-FH-HXH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -1302,10 +1302,6 @@
         </class>
         <class className="JudgeViewController" superclassName="FFFetchedResultsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JudgeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="correctTouched:"/>
-                <relationship kind="action" name="incorrectTouched:"/>
-            </relationships>
         </class>
         <class className="LaunchViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LaunchViewController.h"/>
