@@ -29,6 +29,8 @@
 -(BOOL)isOpenForBetting;
 -(BOOL)allAnswersJudged;
 
++(RKEntityMapping *)responseMappingWithAnswers;
+
 @end
 
 @interface Question (CoreDataGeneratedAccessors)

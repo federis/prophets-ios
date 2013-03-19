@@ -24,14 +24,6 @@
                                  userInfo:nil];
 }
 
-+(RKEntityMapping *)responseMappingWithChildRelationships{
-    return [self responseMapping];
-}
-
-+(RKEntityMapping *)responseMappingWithParentRelationships{
-    return [self responseMapping];
-}
-
 +(RKEntityMapping *)requestMapping{
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"Invalid method call"

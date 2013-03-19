@@ -69,7 +69,7 @@
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"answer"
                                                                             toKeyPath:@"answer"
-                                                                          withMapping:[Answer responseMappingWithParentRelationships]]];
+                                                                          withMapping:[Answer responseMappingWithQuestion]]];
     
     return mapping;    
 }
@@ -80,7 +80,7 @@
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"membership"
                                                                             toKeyPath:@"membership"
-                                                                          withMapping:[Membership responseMappingWithChildRelationships]]];
+                                                                          withMapping:[Membership responseMapping]]];
     
     return mapping;
 }

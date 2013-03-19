@@ -33,5 +33,7 @@
 -(NSDate *)bettingEndedAt;
 -(NSString *)currentOddsString;
 
++(RKEntityMapping *)responseMappingWithQuestion;
+
 @end
 

@@ -22,8 +22,6 @@
 @property (nonatomic, strong) NSDate * updatedAt;
 
 +(RKEntityMapping *)responseMapping;
-+(RKEntityMapping *)responseMappingWithChildRelationships;
-+(RKEntityMapping *)responseMappingWithParentRelationships;
 +(RKEntityMapping *)requestMapping;
 
 @end

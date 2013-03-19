@@ -104,7 +104,7 @@
                                                                             keyPath:@"membership"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
-    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Question responseMappingWithChildRelationships]
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Question responseMappingWithAnswers]
                                                                         pathPattern:nil
                                                                             keyPath:@"question"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];

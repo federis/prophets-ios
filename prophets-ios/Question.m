@@ -66,7 +66,7 @@
     return mapping;
 }
 
-+(RKEntityMapping *)responseMappingWithChildRelationships{
++(RKEntityMapping *)responseMappingWithAnswers{
     RKEntityMapping *mapping = [self responseMapping];
     
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"answers"
