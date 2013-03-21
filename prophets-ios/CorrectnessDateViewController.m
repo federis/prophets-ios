@@ -78,7 +78,7 @@
            [SVProgressHUD dismiss];
            [SVProgressHUD showSuccessWithStatus:@"Answer judged"];
            
-           if (self.answer.correct) {
+           if (self.answer.isCorrect) {
                for (Answer *otherAnswer in self.answer.question.answers) {
                    if ([self.answer.remoteId integerValue] != [otherAnswer.remoteId integerValue]) {
                        otherAnswer.isCorrect = NO;
