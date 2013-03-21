@@ -38,13 +38,9 @@
     
     NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"bets" ofObject:self.membership.league method:RKRequestMethodGET];
     self.fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
+    //self.fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"answerId" ascending:NO]];
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
-    self.sectionNameKeyPath = @"remoteId";
-    
-    NSError *error;
-	if (![[self fetchedResultsController] performFetch:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	}
+    //self.sectionNameKeyPath = @"answerId";
     
     FFLabel *emptyCommentsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     

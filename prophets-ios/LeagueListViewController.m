@@ -38,11 +38,6 @@
     self.fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
     
-    NSError *error;
-	if (![[self fetchedResultsController] performFetch:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	}
-    
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"leagues" ofObject:self.tag parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
          DLog(@"Result is %@", mappingResult);

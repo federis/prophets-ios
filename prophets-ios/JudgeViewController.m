@@ -37,11 +37,6 @@
     self.fetchRequest = request;
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
     
-    NSError *error;
-	if (![[self fetchedResultsController] performFetch:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	}
-    
     FFLabel *emptyAnswersLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     
     emptyAnswersLabel.isBold = NO;

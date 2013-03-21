@@ -40,11 +40,6 @@
     self.fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
     
-    NSError *error;
-	if (![[self fetchedResultsController] performFetch:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	}
-    
     /*
     for (Membership *mem in self.fetchedResultsController.fetchedObjects) {
         [mem addObserver:self forKeyPath:@"league.name" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];

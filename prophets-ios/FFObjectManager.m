@@ -237,8 +237,9 @@
         BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
         if (match) {
             NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
+            Membership *membership = [[User currentUser] membershipInLeague:leagueId];
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Bet"];
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"membership.leagueId == %@", leagueId];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"membershipId == %@", membership.remoteId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
             return fetchRequest;
         }
