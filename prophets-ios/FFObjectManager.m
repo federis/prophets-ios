@@ -23,6 +23,7 @@
 #import "Tag.h"
 #import "ErrorCollection.h"
 #import "NSURL+Additions.h"
+#import "FFManagedObjectRequestOperation.h"
 
 @implementation FFObjectManager
 
@@ -43,6 +44,8 @@
     [objectManager setupRequestDescriptors];
     [objectManager setupResponseDescriptors];
     [objectManager setupFetchRequestBlocks];
+    
+    [objectManager registerRequestOperationClass:[FFManagedObjectRequestOperation class]];
 }
 
 -(void)setupRequestDescriptors{
