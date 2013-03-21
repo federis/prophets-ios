@@ -50,7 +50,7 @@
     NSString *infoStr = [NSString stringWithFormat:@"You bet %@ on %@ odds", self.bet.amount.currencyString, self.bet.oddsString];
     STAssertEqualObjects(self.cell.betInfoLabel.text, infoStr, nil);
     
-    NSString *submittedStr = [NSString stringWithFormat:@"Bet submitted: %@",[self.dateFormatter stringFromDate:self.bet.createdAt]];
+    NSString *submittedStr = [NSString stringWithFormat:@"Submitted: %@",[self.dateFormatter stringFromDate:self.bet.createdAt]];
     STAssertEqualObjects(self.cell.betSubmittedLabel.text, submittedStr, nil);
 }
 

@@ -26,7 +26,7 @@
     dateFormatter.dateFormat = @"hh:mma zzz MMM dd,yyyy";
     dateFormatter.timeZone = [NSTimeZone localTimeZone];
     
-    self.betSubmittedLabel.text = [NSString stringWithFormat:@"Bet submitted: %@",
+    self.betSubmittedLabel.text = [NSString stringWithFormat:@"Submitted: %@",
                                    [dateFormatter stringFromDate:bet.createdAt]];
     
     if (bet.hasBeenJudged) { //judged bet

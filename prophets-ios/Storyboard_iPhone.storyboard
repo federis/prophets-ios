@@ -1188,17 +1188,6 @@
                                     <action selector="saveTouched:" destination="fLL-Jk-rhR" eventType="touchUpInside" id="VWc-Sc-B82"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="chicago_flag.png" id="hTZ-Ua-YC3">
-                                <rect key="frame" x="148" y="396" width="25" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Designed and Built in Chicago, Illinois USA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iTG-eG-VDa">
-                                <rect key="frame" x="55" y="369" width="210" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="11"/>
-                                <color key="textColor" red="0.91372549020000005" green="0.8980392157" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Date Answer Correctness Was Known" textAlignment="center" minimumFontSize="17" id="vwP-2X-aH3">
                                 <rect key="frame" x="25" y="118" width="270" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
