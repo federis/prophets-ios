@@ -38,7 +38,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    _fetchedResultsController.delegate = nil;
+    //_fetchedResultsController.delegate = nil;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -50,7 +50,7 @@
 	}
     
     [self updateEmptyContentFooterView];
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
