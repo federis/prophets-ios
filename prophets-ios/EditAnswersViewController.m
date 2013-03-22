@@ -16,6 +16,7 @@
 #import "Answer.h"
 #import "NSDecimalNumber+Additions.h"
 #import "Utilities.h"
+#import "UIView+Additions.h"
 
 @interface EditAnswersViewController ()
 
@@ -156,11 +157,13 @@
         return;
     }
     
-    UIView *v = [[(UIButton *)sender superview] superview];
-    if ([v isKindOfClass:[EditAnswerCell class]]) {
-        EditAnswerCell *cell = (EditAnswerCell *)v;
+    UITableViewCell *parentCell = [(UIButton *)sender findParentTableViewCell];
+    if ([parentCell isKindOfClass:[EditAnswerCell class]]) {
+        EditAnswerCell *cell = (EditAnswerCell *)parentCell;
         [self.answers removeObject:cell.answer];
         [self.tempContexts removeObject:cell.answer.managedObjectContext];
+        
+        [cell.removeButton removeTarget:self action:@selector(removeAnswer:) forControlEvents:UIControlEventTouchUpInside];
         
         NSArray *indexPaths = @[[self.tableView indexPathForCell:cell]];
         [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -223,6 +226,7 @@
     EditAnswerCell *cell = (EditAnswerCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EditAnswerCell class]) forIndexPath:indexPath];
     
     cell.answer = [self.answers objectAtIndex:indexPath.row];
+    
     [cell.removeButton addTarget:self action:@selector(removeAnswer:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
@@ -240,6 +244,11 @@
     return footerView;
 }
 
+-(void)dealloc{
+    for (EditAnswerCell *cell in [self.tableView visibleCells]) {
+        [cell.removeButton removeTarget:self action:@selector(removeAnswer:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
 
 
 @end

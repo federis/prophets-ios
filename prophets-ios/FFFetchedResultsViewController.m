@@ -39,7 +39,6 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     _fetchedResultsController.delegate = nil;
-    self.fetchedResultsController = nil;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
