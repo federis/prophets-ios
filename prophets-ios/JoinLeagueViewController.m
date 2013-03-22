@@ -73,7 +73,9 @@
            [SVProgressHUD dismiss];
            [SVProgressHUD showSuccessWithStatus:@"League joined"];
            
-           [self showLeague];
+           NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+           Membership *newMem = (Membership *)[context objectWithID:[mem objectID]];
+           [self showLeague:newMem];
            [self.tableView reloadData];
        }
        failure:^(RKObjectRequestOperation *operation, NSError *error){
@@ -86,14 +88,19 @@
        }];
 }
 
--(void)showLeague{
-    [self performSegueWithIdentifier:@"ShowLeague" sender:nil];
+-(void)showLeague:(Membership *)membership{
+    [self performSegueWithIdentifier:@"ShowLeague" sender:membership];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ShowLeague"]) {
         LeagueTabBarController *leagueVC = (LeagueTabBarController *)[segue destinationViewController];
-        leagueVC.membership = [[User currentUser] membershipInLeague:self.league.remoteId];
+        if (sender && [sender isKindOfClass:[Membership class]]) {
+            leagueVC.membership = (Membership *)sender;
+        }
+        else{
+            leagueVC.membership = [[User currentUser] membershipInLeague:self.league.remoteId];
+        }
     }
 }
 
