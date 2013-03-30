@@ -59,7 +59,8 @@
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         [SVProgressHUD dismiss];
         
-        User *user = (User *)self.form.object;
+        NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+        User *user = (User *)[context objectWithID:[self.form.object objectID]];
         [User setCurrentUser:user];
         [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogInNotification object:user];
     }
