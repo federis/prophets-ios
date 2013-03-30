@@ -136,7 +136,7 @@
     Membership *membership = [[User currentUser] membershipInLeague:self.league.remoteId];
     if (membership) {
         footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:@"Go to League"];
-        [footerView.button addTarget:self action:@selector(showLeague) forControlEvents:UIControlEventTouchUpInside];
+        [footerView.button addTarget:self action:@selector(showLeague:) forControlEvents:UIControlEventTouchUpInside];
     }
     else{
         footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:@"Join"];
