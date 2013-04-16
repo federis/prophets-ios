@@ -57,9 +57,9 @@
                                                  name:FFUserDidLogOutNotification
                                                object:nil];
     
-#ifdef DEBUG
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
+#ifdef DEBUG
     RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/Testing", RKLogLevelTrace);
@@ -220,9 +220,14 @@
 }
 
 void uncaughtExceptionHandler(NSException *exception) {
+#ifdef DEBUG
     NSLog(@"CRASH: %@", exception);
     NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
     // Internal error reporting
+#endif
+#if APP_ENV == PROD
+    [Flurry logError:@"Uncaught" message:[exception description] exception:exception];
+#endif
 }
 
 @end
