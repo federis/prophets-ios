@@ -111,8 +111,10 @@
     <entity name="User" representedClassName="User" parentEntity="Resource" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wantsNewCommentNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="wantsNewQuestionNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="wantsNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wantsQuestionCreatedNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="user" inverseEntity="Answer" syncable="YES"/>
         <relationship name="approvedQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="approver" inverseEntity="Question" syncable="YES"/>
         <relationship name="createdLeagues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="League" inverseName="user" inverseEntity="League" syncable="YES"/>
@@ -132,6 +134,6 @@
         <element name="Question" positionX="-281" positionY="-216" width="128" height="240"/>
         <element name="Resource" positionX="144" positionY="-378" width="128" height="90"/>
         <element name="Tag" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="User" positionX="529" positionY="-108" width="128" height="195"/>
+        <element name="User" positionX="529" positionY="-108" width="128" height="225"/>
     </elements>
 </model>

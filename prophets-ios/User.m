@@ -32,6 +32,8 @@ static User *currentUser = nil;
 @dynamic questions;
 @dynamic approvedQuestions;
 @dynamic wantsNewQuestionNotifications;
+@dynamic wantsNewCommentNotifications;
+@dynamic wantsQuestionCreatedNotifications;
 @dynamic wantsNotifications;
 
 -(Membership *)membershipInLeague:(id)leagueOrId;{
@@ -90,8 +92,10 @@ static User *currentUser = nil;
     [mapping addAttributeMappingsFromDictionary:@{
         @"id" : @"remoteId",
         @"authentication_token" : @"authenticationToken",
-        @"wants_notifications" : @"wantsNotifications",     
+        @"wants_notifications" : @"wantsNotifications",
         @"wants_new_question_notifications" : @"wantsNewQuestionNotifications",
+        @"wants_new_comment_notifications" : @"wantsNewCommentNotifications",
+        @"wants_question_created_notifications" : @"wantsQuestionCreatedNotifications",
         @"updated_at" : @"updatedAt",
         @"created_at" : @"createdAt"
      }];
@@ -108,6 +112,8 @@ static User *currentUser = nil;
      @"currentPassword" : @"current_password",
      @"wantsNotifications" : @"wants_notifications",
      @"wantsNewQuestionNotifications" : @"wants_new_question_notifications",
+     @"wantsNewCommentNotifications" : @"wants_new_comment_notifications",
+     @"wantsQuestionCreatedNotifications" : @"wants_question_created_notifications",
      }];
     return mapping;
 }

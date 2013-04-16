@@ -45,6 +45,10 @@
     
     FFFormSwitchField *newQuestionNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewQuestionNotifications" labelName:@"Notifications for New Questions"];
     
+    FFFormSwitchField *newCommentNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewCommentNotifications" labelName:@"Notifications for New Comments"];
+    
+    FFFormSwitchField *questionCreatedNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsQuestionCreatedNotifications" labelName:@"Notifications for Questions Waiting for Admin Review"];
+    
     FFFormTextField *passwordField = [FFFormTextField formFieldWithAttributeName:@"currentPassword" labelName:@"Current Password"];
     passwordField.returnKeyType = UIReturnKeySend;
     passwordField.secure = YES;
@@ -65,6 +69,8 @@
     
     if ([[User currentUser].wantsNotifications boolValue]) {
         [fields insertObject:newQuestionNotificationsField atIndex:3];
+        [fields insertObject:newCommentNotificationsField atIndex:4];
+        [fields insertObject:questionCreatedNotificationsField atIndex:5];
     }
     
     self.form = [FFForm formForObject:[User currentUser] withFields:fields];
@@ -133,7 +139,13 @@
     if(switchControl.isOn){
         FFFormSwitchField *newQuestionNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewQuestionNotifications" labelName:@"Notifications for New Questions"];
         
+        FFFormSwitchField *newCommentNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewCommentNotifications" labelName:@"Notifications for New Comments"];
+        
+        FFFormSwitchField *questionCreatedNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsQuestionCreatedNotifications" labelName:@"Notifications for Questions Waiting for Admin Review"];
+        
         [self.form insertFormField:newQuestionNotificationsField atRow:3];
+        [self.form insertFormField:newCommentNotificationsField atRow:4];
+        [self.form insertFormField:questionCreatedNotificationsField atRow:5];
     }
     else{
         [self.form removeFormFieldAtRow:3];

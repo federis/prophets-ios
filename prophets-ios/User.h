@@ -25,6 +25,8 @@
 @property (nonatomic, strong) NSSet *approvedQuestions;
 @property (nonatomic, strong) NSNumber * wantsNotifications;
 @property (nonatomic, strong) NSNumber * wantsNewQuestionNotifications;
+@property (nonatomic, strong) NSNumber * wantsNewCommentNotifications;
+@property (nonatomic, strong) NSNumber * wantsQuestionCreatedNotifications;
 
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *currentPassword; //for updating user info

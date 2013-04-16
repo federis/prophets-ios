@@ -369,6 +369,7 @@
 		B53F58831644652300AF2BA9 /* FFFormSwitchFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormSwitchFieldCell.h; sourceTree = "<group>"; };
 		B53F58841644652400AF2BA9 /* FFFormSwitchFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormSwitchFieldCell.m; sourceTree = "<group>"; };
 		B53F58861644653700AF2BA9 /* FFFormSwitchFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFFormSwitchFieldCell.xib; sourceTree = "<group>"; };
+		B545C07B171DA52100C407EB /* prophets_ios 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "prophets_ios 2.xcdatamodel"; sourceTree = "<group>"; };
 		B54A918E16F76C68008B3391 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		B54A918F16F76C68008B3391 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		B54AA0F3162EFDE100F2A3CB /* logo_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_p.png; sourceTree = "<group>"; };
@@ -2055,9 +2056,10 @@
 		B5F1AEE0160388C600D28C1C /* prophets_ios.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B545C07B171DA52100C407EB /* prophets_ios 2.xcdatamodel */,
 				B5F1AEE1160388C600D28C1C /* prophets_ios.xcdatamodel */,
 			);
-			currentVersion = B5F1AEE1160388C600D28C1C /* prophets_ios.xcdatamodel */;
+			currentVersion = B545C07B171DA52100C407EB /* prophets_ios 2.xcdatamodel */;
 			name = prophets_ios.xcdatamodeld;
 			path = "prophets-ios/prophets_ios.xcdatamodeld";
 			sourceTree = "<group>";
