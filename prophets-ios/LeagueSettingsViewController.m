@@ -20,7 +20,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     FFLabel *l = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 40)];
     l.text = @"Nothing to see here yet. Move along.";
-    l.textAlignment = UITextAlignmentCenter;
+    l.textAlignment = NSTextAlignmentCenter;
     return l;
 }
 

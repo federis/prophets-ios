@@ -13,6 +13,7 @@
 #import "FFFormTextViewField.h"
 #import "FFFormDateField.h"
 #import "FFFormPickerField.h"
+#import "FFFormSection.h"
 #import "FFForm.h"
 
 @class FFTableFooterButtonView;

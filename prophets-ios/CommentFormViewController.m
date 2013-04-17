@@ -120,11 +120,12 @@
 
 -(BOOL)formIsValid{
     self.errors = [NSMutableArray array];
-    
-    for (FFFormField *field in self.form.fields) {
-        if ([field.attributeName isEqualToString:@"comment"]) {
-            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
-                [self.errors addObject:@"Comment cannot be blank"];
+    for (FFFormSection *section in self.form.sections) {
+        for (FFFormField *field in section.fields) {
+            if ([field.attributeName isEqualToString:@"comment"]) {
+                if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                    [self.errors addObject:@"Comment cannot be blank"];
+                }
             }
         }
     }

@@ -120,7 +120,7 @@
                       <p>Cheers.</p>", self.membership.league.name, FFURLScheme, self.membership.league.remoteId];
     [mailVC setMessageBody:body isHTML:YES];
     
-    [self presentModalViewController:mailVC animated:YES];
+    [self presentViewController:mailVC animated:YES completion:^{}];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{

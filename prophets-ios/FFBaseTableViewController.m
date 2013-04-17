@@ -11,6 +11,8 @@
 @implementation FFBaseTableViewController
 
 -(void)viewDidLoad{
+    self.fullTableViewFrame = self.tableView.frame;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -46,7 +48,8 @@
     
     if (CGRectEqualToRect(keyboardFrame, beginFrame)) return;
     
-    self.tableView.frame = RectWithNewHeight(self.view.frame.size.height - 20, self.tableView.frame);
+    //self.tableView.frame = RectWithNewHeight(self.view.frame.size.height - 20, self.tableView.frame);
+    self.tableView.frame = self.fullTableViewFrame;
 }
 
 -(void)setFixedHeaderView:(UIView *)fixedHeaderView{
@@ -68,6 +71,8 @@
                                           self.tableView.frame.size.width,
                                           self.view.frame.size.height - 20);
     }
+
+    self.fullTableViewFrame = self.tableView.frame;
 }
 
 -(void)setShowsPullToRefresh:(BOOL)showsPullToRefresh{

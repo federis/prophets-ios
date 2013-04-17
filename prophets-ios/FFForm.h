@@ -12,23 +12,29 @@
 
 @protocol FFFormDelegate
 
--(void)formAddedField:(FFFormField *)field atRow:(NSUInteger)row;
--(void)formRemovedFieldAtRow:(NSInteger)row;
+-(void)formAddedField:(FFFormField *)field inSection:(NSUInteger)section atRow:(NSUInteger)row;
+-(void)formRemovedFieldFromSection:(NSUInteger)section atRow:(NSInteger)row;
 
 @end
 
 @interface FFForm : NSObject
 
-@property (nonatomic, strong) NSMutableArray *fields;
+@property (nonatomic, strong) NSMutableArray *sections;
 @property (nonatomic, strong) id object;
 @property (nonatomic, weak) id<FFFormDelegate> delegate;
+
+-(id)initWithObject:(id)object sections:(NSArray *)sections;
+-(id)initWithObject:(id)object fields:(NSArray *)fields;
 
 +(FFForm *)formForObject:(id)object withFields:(NSArray *)fields;
 
 -(void)initializeFieldValuesFromObject;
 -(void)serializeFormFieldValuesIntoObject;
 
--(void)insertFormField:(FFFormField *)field atRow:(NSUInteger)row;
--(void)removeFormFieldAtRow:(NSUInteger)row;
+-(void)insertFormField:(FFFormField *)field inSection:(NSUInteger)sectionIndex atRow:(NSUInteger)rowIndex;
+-(void)removeFormFieldFromSection:(NSUInteger)sectionIndex atRow:(NSUInteger)rowIndex;
+
+-(void)insertFormField:(FFFormField *)field atRow:(NSUInteger)rowIndex;
+-(void)removeFormFieldAtRow:(NSUInteger)rowIndex;
 
 @end

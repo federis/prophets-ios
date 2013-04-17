@@ -43,11 +43,11 @@
     
     FFFormSwitchField *notificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNotifications" labelName:@"Send Push Notifications"];
     
-    FFFormSwitchField *newQuestionNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewQuestionNotifications" labelName:@"Notifications for New Questions"];
+    FFFormSwitchField *newQuestionNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewQuestionNotifications" labelName:@"New Questions Published"];
     
-    FFFormSwitchField *newCommentNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewCommentNotifications" labelName:@"Notifications for New Comments"];
+    FFFormSwitchField *newCommentNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewCommentNotifications" labelName:@"New Comments"];
     
-    FFFormSwitchField *questionCreatedNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsQuestionCreatedNotifications" labelName:@"Notifications for Questions Waiting for Admin Review"];
+    FFFormSwitchField *questionCreatedNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsQuestionCreatedNotifications" labelName:@"Questions Awaiting Admin Review"];
     
     FFFormTextField *passwordField = [FFFormTextField formFieldWithAttributeName:@"currentPassword" labelName:@"Current Password"];
     passwordField.returnKeyType = UIReturnKeySend;
@@ -59,21 +59,26 @@
     newPasswordField.secure = YES;
     newPasswordField.submitsOnReturn = YES;
     
-    NSMutableArray *fields = [NSMutableArray arrayWithArray:@[
-                                  emailField,
-                                  nameField,
-                                  notificationsField,
-                                  passwordField,
-                                  newPasswordField
-                              ]];
+    NSArray *contentFields = @[
+                                emailField,
+                                nameField,
+                                passwordField,
+                                newPasswordField
+                              ];
+    
+    FFFormSection *contentSection = [[FFFormSection alloc] initWithFields:contentFields title:nil];
+    
+    NSMutableArray *notificationFields = [NSMutableArray arrayWithObject:notificationsField];
     
     if ([[User currentUser].wantsNotifications boolValue]) {
-        [fields insertObject:newQuestionNotificationsField atIndex:3];
-        [fields insertObject:newCommentNotificationsField atIndex:4];
-        [fields insertObject:questionCreatedNotificationsField atIndex:5];
+        [notificationFields insertObject:newQuestionNotificationsField atIndex:1];
+        [notificationFields insertObject:newCommentNotificationsField atIndex:2];
+        [notificationFields insertObject:questionCreatedNotificationsField atIndex:3];
     }
     
-    self.form = [FFForm formForObject:[User currentUser] withFields:fields];
+    FFFormSection *notificationsSection = [[FFFormSection alloc] initWithFields:notificationFields title:@"Notifications"];
+    
+    self.form = [[FFForm alloc] initWithObject:[User currentUser] sections:@[contentSection, notificationsSection]];
     self.form.delegate = self;
     
     self.submitButtonText = @"Save";
@@ -103,52 +108,61 @@
 -(BOOL)formIsValid{
     self.errors = [NSMutableArray array];
     
-    for (FFFormField *field in self.form.fields) {
-        if ([field.attributeName isEqualToString:@"email"]) {
-            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
-                [self.errors addObject:@"Email cannot be blank"];
+    for (FFFormSection *section in self.form.sections) {
+        for (FFFormField *field in section.fields) {
+            if ([field.attributeName isEqualToString:@"email"]) {
+                if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                    [self.errors addObject:@"Email cannot be blank"];
+                }
             }
-        }
-        
-        if ([field.attributeName isEqualToString:@"name"]) {
-            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
-                [self.errors addObject:@"Name cannot be blank"];
+            
+            if ([field.attributeName isEqualToString:@"name"]) {
+                if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                    [self.errors addObject:@"Name cannot be blank"];
+                }
             }
-        }
-        
-        if ([field.attributeName isEqualToString:@"currentPassword"]) {
-            if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
-                [self.errors addObject:@"Current password cannot be blank"];
+            
+            if ([field.attributeName isEqualToString:@"currentPassword"]) {
+                if (!field.currentValue || [field.currentValue isEqualToString:@""]) {
+                    [self.errors addObject:@"Current password cannot be blank"];
+                }
             }
         }
     }
-    
     
     return [self.errors count] == 0;
 }
 
 -(void)tableCell:(UITableViewCell *)cell loadedField:(FFFormField *)field{
-    if ([field.attributeName isEqualToString:@"wantsNotifications"]) {
+    if ([cell isKindOfClass:[FFFormSwitchFieldCell class]]){
         FFFormSwitchFieldCell *switchCell = (FFFormSwitchFieldCell *)cell;
-        [switchCell.switchControl addTarget:self action:@selector(wantsNotificationsSwitched:) forControlEvents:UIControlEventValueChanged];
+        
+        if ([field.attributeName isEqualToString:@"wantsNotifications"]) {
+            [switchCell.switchControl addTarget:self action:@selector(wantsNotificationsSwitched:) forControlEvents:UIControlEventValueChanged];
+        }
+        else{
+            [switchCell.switchControl removeTarget:self action:@selector(wantsNotificationsSwitched:) forControlEvents:UIControlEventValueChanged];
+        }
     }
 }
 
 -(void)wantsNotificationsSwitched:(id)sender{
     UISwitch *switchControl = (UISwitch *)sender;
     if(switchControl.isOn){
-        FFFormSwitchField *newQuestionNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewQuestionNotifications" labelName:@"Notifications for New Questions"];
+        FFFormSwitchField *newQuestionNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewQuestionNotifications" labelName:@"New Questions Published"];
         
-        FFFormSwitchField *newCommentNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewCommentNotifications" labelName:@"Notifications for New Comments"];
+        FFFormSwitchField *newCommentNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsNewCommentNotifications" labelName:@"New Comments"];
         
-        FFFormSwitchField *questionCreatedNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsQuestionCreatedNotifications" labelName:@"Notifications for Questions Waiting for Admin Review"];
+        FFFormSwitchField *questionCreatedNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsQuestionCreatedNotifications" labelName:@"Questions Awaiting Admin Review"];
         
-        [self.form insertFormField:newQuestionNotificationsField atRow:3];
-        [self.form insertFormField:newCommentNotificationsField atRow:4];
-        [self.form insertFormField:questionCreatedNotificationsField atRow:5];
+        [self.form insertFormField:newQuestionNotificationsField inSection:1 atRow:1];
+        [self.form insertFormField:newCommentNotificationsField inSection:1 atRow:2];
+        [self.form insertFormField:questionCreatedNotificationsField inSection:1 atRow:3];
     }
     else{
-        [self.form removeFormFieldAtRow:3];
+        [self.form removeFormFieldFromSection:1 atRow:3];
+        [self.form removeFormFieldFromSection:1 atRow:2];
+        [self.form removeFormFieldFromSection:1 atRow:1];
     }
 }
 

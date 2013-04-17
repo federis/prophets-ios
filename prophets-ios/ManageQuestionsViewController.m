@@ -172,7 +172,7 @@
 }
 
 -(IBAction)viewTouched:(id)sender{
-    Question *question = ((AdminQuestionCell *)[[sender superview] superview]).question;
+    //Question *question = ((AdminQuestionCell *)[[sender superview] superview]).question;
 }
 
 

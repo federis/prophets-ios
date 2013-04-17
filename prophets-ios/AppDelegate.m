@@ -35,8 +35,8 @@
     [FFDeepLinker setSharedLinker:deepLinker];
     
     if ([User currentUser]){
-        [self refreshCurrentUser];
         [self prepareForLoggedInUser];
+        [self refreshCurrentUser];
         
         NSDictionary *noteInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
         if (noteInfo) {

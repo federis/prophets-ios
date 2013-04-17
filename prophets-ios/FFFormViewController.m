@@ -81,21 +81,24 @@
 #pragma mark - UITableViewDataSource methods
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FFFormField *field = (FFFormField *)[self.form.fields objectAtIndex:indexPath.row];
+    FFFormSection *section = self.form.sections[indexPath.section];
+    FFFormField *field = (FFFormField *)section.fields[indexPath.row];
     return field.height;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return self.form.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSAssert(self.form.object, @"Cannot create a form table without a form object");
-    return self.form.fields.count;
+    FFFormSection *sect = self.form.sections[section];
+    return sect.fields.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FFFormField *field = (FFFormField *)[self.form.fields objectAtIndex:indexPath.row];
+    FFFormSection *section = self.form.sections[indexPath.section];
+    FFFormField *field = (FFFormField *)section.fields[indexPath.row];
     
     FFFormFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:[field cellReuseIdentifier]
                                                             forIndexPath:indexPath];
@@ -111,15 +114,41 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (section != self.form.sections.count - 1) return 0;
     return 50;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    if (section != self.form.sections.count - 1) return nil;
+    
     if(self.footerView) return self.footerView;
     
     self.footerView = [FFTableFooterButtonView footerButtonViewForTable:self.tableView withText:self.submitButtonText];
     [self.footerView.button addTarget:self action:@selector(serializeAndSubmit) forControlEvents:UIControlEventTouchUpInside];
     return self.footerView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    FFFormSection *formSection = self.form.sections[section];
+    if (!formSection.title) return 0;
+    
+    FFLabel *headerLabel = [[FFLabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
+    headerLabel.text = formSection.title;
+    [headerLabel sizeToFit];
+    return headerLabel.frame.size.height + 20;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    FFFormSection *formSection = self.form.sections[section];
+    if (!formSection.title) return nil;
+    
+    FFLabel *headerLabel = [[FFLabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
+    headerLabel.text = formSection.title;
+    [headerLabel sizeToFit];
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 10, 320, headerLabel.frame.size.height + 20)];
+    [v addSubview:headerLabel];
+    return v;
 }
 
 -(void)tableCell:(UITableViewCell *)cell loadedField:(FFFormField *)field{
@@ -139,19 +168,22 @@
     
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
-    for (int i=indexPath.row+1; i<self.form.fields.count; i++) {
-        FFFormField *field = [self.form.fields objectAtIndex:i];
-        if (field.canBecomeFirstResponder) {
-            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-            FFFormFieldCell *nextCell = (FFFormFieldCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            if (!nextCell) {
-                field.shouldBecomeFirstResponder = YES;
+    for (int s=indexPath.section; s<self.form.sections.count; s++) {
+        FFFormSection *section = self.form.sections[s];
+        for (int i=indexPath.row+1; i<section.fields.count; i++) {
+            FFFormField *field = section.fields[i];
+            if (field.canBecomeFirstResponder) {
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:s] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+                FFFormFieldCell *nextCell = (FFFormFieldCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:s]];
+                if (!nextCell) {
+                    field.shouldBecomeFirstResponder = YES;
+                }
+                else{
+                    [nextCell makeFirstResponder];
+                }
+                
+                return YES;
             }
-            else{
-                [nextCell makeFirstResponder];
-            }
-            
-            return YES;
         }
     }
     
@@ -160,12 +192,12 @@
 
 # pragma mark - FFFormDelegate methods
 
--(void)formAddedField:(FFFormField *)field atRow:(NSUInteger)row{
-    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+-(void)formAddedField:(FFFormField *)field inSection:(NSUInteger)section atRow:(NSUInteger)row{
+    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:section]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
--(void)formRemovedFieldAtRow:(NSInteger)row{
-    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+-(void)formRemovedFieldFromSection:(NSUInteger)section atRow:(NSInteger)row{
+    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:section]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 @end
