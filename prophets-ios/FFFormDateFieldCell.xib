@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -45,13 +45,27 @@
 								<reference key="NSNextResponder" ref="96172491"/>
 								<int key="NSvFlags">274</int>
 								<array class="NSMutableArray" key="NSSubviews">
-									<object class="IBUITextField" id="101569489">
+									<object class="IBUIView" id="935797458">
 										<reference key="NSNextResponder" ref="497500916"/>
-										<int key="NSvFlags">274</int>
-										<string key="NSFrame">{{1, 1}, {172, 30}}</string>
+										<int key="NSvFlags">289</int>
+										<string key="NSFrame">{{170, 1}, {3, 30}}</string>
 										<reference key="NSSuperview" ref="497500916"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<object class="NSColor" key="IBUIBackgroundColor">
+											<int key="NSColorSpace">1</int>
+											<bytes key="NSRGB">MC44OTkwNTUzMDIxIDAuODk1ODMzOTA5NSAwLjgwMjY3MjY4NDIAA</bytes>
+										</object>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+									</object>
+									<object class="IBUITextField" id="101569489">
+										<reference key="NSNextResponder" ref="497500916"/>
+										<int key="NSvFlags">274</int>
+										<string key="NSFrame">{{1, 1}, {169, 30}}</string>
+										<reference key="NSSuperview" ref="497500916"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="935797458"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<object class="NSColor" key="IBUIBackgroundColor">
 											<int key="NSColorSpace">1</int>
@@ -214,12 +228,18 @@
 						<reference key="object" ref="497500916"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="101569489"/>
+							<reference ref="935797458"/>
 						</array>
 						<reference key="parent" ref="662025063"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">3</int>
 						<reference key="object" ref="101569489"/>
+						<reference key="parent" ref="497500916"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">17</int>
+						<reference key="object" ref="935797458"/>
 						<reference key="parent" ref="497500916"/>
 					</object>
 				</array>
@@ -230,6 +250,7 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="2.CustomClassName">FFFormDateFieldCell</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -238,7 +259,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">16</int>
+			<int key="maxID">17</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -252,7 +273,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">FFFormDateFieldCell</string>
-					<string key="superclassName">FFFormFieldCell</string>
+					<string key="superclassName">FFFormTextFieldCell</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">attributeNameLabel</string>
 						<string key="NS.object.0">UILabel</string>
@@ -275,6 +296,25 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/FFFormFieldCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">FFFormTextFieldCell</string>
+					<string key="superclassName">FFFormFieldCell</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">textField</string>
+						<string key="NS.object.0">UITextField</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">textField</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">textField</string>
+							<string key="candidateClassName">UITextField</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/FFFormTextFieldCell.h</string>
 					</object>
 				</object>
 			</array>
