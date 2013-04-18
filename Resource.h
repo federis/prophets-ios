@@ -24,4 +24,6 @@
 +(RKEntityMapping *)responseMapping;
 +(RKEntityMapping *)requestMapping;
 
++(void)fetchOrLoadById:(NSNumber *)resourceId fromManagedObjectContext:(NSManagedObjectContext *)context loaded:(void (^)(Resource *))loadedBlock failure:(void (^)(NSError *))failureBlock;
+
 @end

@@ -107,7 +107,7 @@
                 League *l = (League *)[context objectWithID:self.league.objectID];
                 
                 [self dismissViewControllerAnimated:YES completion:^{
-                    [[FFDeepLinker sharedLinker] showLeague:l];
+                    [[FFDeepLinker sharedLinker] showLeague:l selectedTabIndex:0];
                 }];
             }
             failure:^(RKObjectRequestOperation *operation, NSError *error){

@@ -13,6 +13,7 @@
 #import "League.h"
 #import "Question.h"
 #import "User.h"
+#import "Membership.h"
 #import "NSManagedObjectContext+Additions.h"
 
 #import "JoinLeagueViewController.h"
@@ -20,6 +21,9 @@
 #import "LeagueTabBarController.h"
 #import "QuestionsViewController.h"
 #import "AnswersViewController.h"
+#import "AdminViewController.h"
+#import "ManageQuestionsViewController.h"
+#import "QuestionFormViewController.h"
 
 static FFDeepLinker *sharedLinker = nil;
 
@@ -36,7 +40,9 @@ static FFDeepLinker *sharedLinker = nil;
 +(NSDictionary *)deepLinkPatterns{
     return @{
              @"//leagues/(\\d+)/join" : @"handleJoinLeagueURL:",
-             @"//leagues/(\\d+)/questions/(\\d+)" : @"handleShowQuestionURL:"
+             @"//leagues/(\\d+)/questions/(\\d+)" : @"handleShowQuestionURL:",
+             @"//leagues/(\\d+)/comments" : @"handleShowLeagueCommentsURL:",
+             @"//leagues/(\\d+)/questions/(\\d+)/review" : @"handleShowReviewQuestionURL:"
              };
 }
 
@@ -77,58 +83,28 @@ static FFDeepLinker *sharedLinker = nil;
     return _scratchContext;
 }
 
--(void)showLeague:(League *)league{
-    Membership *membership = [[User currentUser] membershipInLeague:league];
-    if(!membership) return;
-    
-    MembershipsViewController *membershipsVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"MembershipsViewController"];
-    
-    LeagueTabBarController *leagueVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"LeagueTabBarController"];
-    leagueVC.membership = membership;
-    
-    UINavigationController *navController = [[UINavigationController alloc] init];
-    [navController setViewControllers:@[membershipsVC, leagueVC] animated:NO];
-    
-    [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
-}
 
+//
+// URL Handlers
+//
 
 -(void)handleJoinLeagueURL:(NSArray *)capturedComponents{
     NSInteger leagueId = [(NSString *)[capturedComponents objectAtIndex:0] integerValue];
     
     if (leagueId){
-        League *league = [[self.managedObjectContext fetchObjectsForEntityName:@"League" withPredicate:@"remoteId = %i", leagueId] anyObject];
-        if(league){
-            [self showJoinLeague:league];
-        }
-        else{
-            league = [self.scratchContext insertNewObjectForEntityForName:@"League"];
-            league.remoteId = [NSNumber numberWithInteger:leagueId];
-            [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
-            [[RKObjectManager sharedManager] getObject:league path:nil parameters:nil
-               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-                   [SVProgressHUD dismiss];
-                   DLog(@"Result is %@", mappingResult);
-                   League *l = (League *)[self.managedObjectContext objectWithID:[league objectID]];
-                   [self showJoinLeague:l];
-               }
-               failure:^(RKObjectRequestOperation *operation, NSError *error){
-                   [SVProgressHUD dismiss];
-                   [SVProgressHUD showErrorWithStatus:@"Error loading league"];
-                   DLog(@"Error is %@", error);
-               }];
-        }
+        [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
+        [League fetchOrLoadById:@(leagueId) fromManagedObjectContext:self.managedObjectContext
+            loaded:^(Resource * resource){
+                [SVProgressHUD dismiss];
+                [self showJoinLeague:(League *)resource];
+            }
+            failure:^(NSError * err){
+                [SVProgressHUD dismiss];
+                [SVProgressHUD showErrorWithStatus:@"Error loading league"];
+            }];
     }
 }
 
--(void)showJoinLeague:(League *)league{
-    JoinLeagueViewController *joinLeagueVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"JoinLeagueViewController"];
-    joinLeagueVC.league = league;
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:joinLeagueVC];
-    
-    [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
-}
 
 -(void)handleShowQuestionURL:(NSArray *)capturedComponents{
     NSInteger leagueId = [(NSString *)[capturedComponents objectAtIndex:0] integerValue];
@@ -187,6 +163,120 @@ static FFDeepLinker *sharedLinker = nil;
     
 }
 
+-(void)handleShowLeagueCommentsURL:(NSArray *)capturedComponents{
+    NSInteger leagueId = [(NSString *)[capturedComponents objectAtIndex:0] integerValue];
+    
+    if (leagueId){
+        [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
+        [League fetchOrLoadById:@(leagueId) fromManagedObjectContext:self.managedObjectContext
+            loaded:^(Resource * resource){
+                [SVProgressHUD dismiss];
+                [self showLeague:(League *)resource selectedTabIndex:3];
+            }
+            failure:^(NSError * err){
+                [SVProgressHUD dismiss];
+                [SVProgressHUD showErrorWithStatus:@"Error loading league"];
+            }];
+    }
+}
+
+
+-(void)handleShowReviewQuestionURL:(NSArray *)capturedComponents{
+    NSInteger leagueId = [(NSString *)[capturedComponents objectAtIndex:0] integerValue];
+    NSInteger questionId = [(NSString *)[capturedComponents objectAtIndex:1] integerValue];
+    
+    if (!leagueId || !questionId || ![User currentUser]) return;
+    
+    Question *question = [[self.managedObjectContext fetchObjectsForEntityName:@"Question" withPredicate:@"remoteId = %i", questionId] anyObject];
+    
+    Membership *membership = [[User currentUser] membershipInLeague:[NSNumber numberWithInteger:leagueId]];
+    
+    if(question && membership){
+        if([question.league.remoteId integerValue] == leagueId){
+            [self showReviewQuestion:question withMembership:membership];
+        }
+    }
+    else{
+        NSMutableArray *requests = [NSMutableArray array];
+        if (!question) {
+            question = [self.scratchContext insertNewObjectForEntityForName:@"Question"];
+            question.remoteId = [NSNumber numberWithInteger:questionId];
+            question.leagueId = [NSNumber numberWithInteger:leagueId];
+            RKManagedObjectRequestOperation *request = [[RKObjectManager sharedManager] appropriateObjectRequestOperationWithObject:question method:RKRequestMethodGET path:nil parameters:nil];
+            
+            [requests addObject:request];
+        }
+        
+        if (!membership) {
+            RKObjectRequestOperation *request = [[RKObjectManager sharedManager] appropriateObjectRequestOperationWithObject:[User currentUser] method:RKRequestMethodGET path:@"/memberships" parameters:nil];
+            [requests addObject:request];
+        }
+        
+        [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
+        [[RKObjectManager sharedManager] enqueueBatchOfObjectRequestOperations:requests
+              progress:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
+                  
+              } completion:^ (NSArray *operations) {
+                  
+                  [SVProgressHUD dismiss];
+                  
+                  for (RKManagedObjectRequestOperation *operation in operations) {
+                      if (operation.error) {
+                          DLog(@"%@", operation.error);
+                          
+                          [SVProgressHUD showErrorWithStatus:[operation.error description]];
+                          return;
+                      }
+                  }
+                  
+                  Question *q = (Question *)[self.managedObjectContext objectWithID:question.objectID];
+                  Membership *m = [[User currentUser] membershipInLeague:[NSNumber numberWithInteger:leagueId]];
+                  
+                  [self showReviewQuestion:q withMembership:m];
+              }];
+        
+    }
+    
+}
+
+
+//
+// View Controller Creation Methods
+//
+
+-(void)showJoinLeague:(League *)league{
+    JoinLeagueViewController *joinLeagueVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"JoinLeagueViewController"];
+    joinLeagueVC.league = league;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:joinLeagueVC];
+    
+    if(self.appWindow.rootViewController.presentedViewController != nil){
+        [self.appWindow.rootViewController dismissViewControllerAnimated:NO completion:^{}];
+    }
+    
+    [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
+}
+
+-(void)showLeague:(League *)league selectedTabIndex:(NSUInteger)index{
+    Membership *membership = [[User currentUser] membershipInLeague:league];
+    if(!membership) return;
+    
+    MembershipsViewController *membershipsVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"MembershipsViewController"];
+    
+    LeagueTabBarController *leagueVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"LeagueTabBarController"];
+    leagueVC.membership = membership;
+    leagueVC.selectedIndex = index;
+    
+    UINavigationController *navController = [[UINavigationController alloc] init];
+    [navController setViewControllers:@[membershipsVC, leagueVC] animated:NO];
+    
+    if(self.appWindow.rootViewController.presentedViewController != nil){
+        [self.appWindow.rootViewController dismissViewControllerAnimated:NO completion:^{}];
+    }
+    
+    [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
+}
+
 -(void)showQuestion:(Question *)question withMembership:(Membership *)membership{
     MembershipsViewController *membershipsVC = [self.appWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"MembershipsViewController"];
     
@@ -203,8 +293,41 @@ static FFDeepLinker *sharedLinker = nil;
     UINavigationController *navController = [[UINavigationController alloc] init];
     [navController setViewControllers:@[membershipsVC, leagueVC, questionsVC, answersVC] animated:NO];
     
+    if(self.appWindow.rootViewController.presentedViewController != nil){
+        [self.appWindow.rootViewController dismissViewControllerAnimated:NO completion:^{}];
+    }
+    
     [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
 }
+
+-(void)showReviewQuestion:(Question *)question withMembership:(Membership *)membership{
+    if(!membership.isAdmin) return;
+    
+    UIStoryboard *storyboard = self.appWindow.rootViewController.storyboard;
+    MembershipsViewController *membershipsVC = [storyboard instantiateViewControllerWithIdentifier:@"MembershipsViewController"];
+    
+    LeagueTabBarController *leagueVC = [storyboard instantiateViewControllerWithIdentifier:@"LeagueTabBarController"];
+    leagueVC.membership = membership;
+    
+    AdminViewController *adminVC = [storyboard instantiateViewControllerWithIdentifier:@"AdminViewController"];
+    adminVC.league = membership.league;
+    
+    ManageQuestionsViewController *questionsVC = [storyboard instantiateViewControllerWithIdentifier:@"ManageQuestionsViewController"];
+    questionsVC.scope = FFQuestionUnapproved;
+    
+    QuestionFormViewController *questionVC = [storyboard instantiateViewControllerWithIdentifier:@"QuestionFormViewController"];
+    questionVC.question = question;
+    
+    UINavigationController *navController = [[UINavigationController alloc] init];
+    [navController setViewControllers:@[membershipsVC, leagueVC, adminVC, questionsVC, questionVC] animated:NO];
+    
+    if(self.appWindow.rootViewController.presentedViewController != nil){
+        [self.appWindow.rootViewController dismissViewControllerAnimated:NO completion:^{}];
+    }
+    
+    [self.appWindow.rootViewController presentViewController:navController animated:NO completion:^{}];
+}
+
 
 
 @end

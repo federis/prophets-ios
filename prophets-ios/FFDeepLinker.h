@@ -20,8 +20,9 @@
 +(void)setSharedLinker:(FFDeepLinker *)linker;
 -(void)handleUrl:(NSURL *)url;
 
--(void)showLeague:(League *)league;
+-(void)showLeague:(League *)league selectedTabIndex:(NSUInteger)index;
 -(void)showJoinLeague:(League *)league;
 -(void)showQuestion:(Question *)question withMembership:(Membership *)membership;
+-(void)showReviewQuestion:(Question *)question withMembership:(Membership *)membership;
 
 @end

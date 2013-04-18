@@ -1019,7 +1019,7 @@
         <!--Admin View Controller-->
         <scene sceneID="8hl-yh-qef">
             <objects>
-                <viewController id="8Hw-RS-whU" customClass="AdminViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdminViewController" id="8Hw-RS-whU" customClass="AdminViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nO0-e6-8uR">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1088,7 +1088,7 @@
         <!--Manage Questions View Controller - Leaderboard-->
         <scene sceneID="zgB-qf-vAH">
             <objects>
-                <viewController id="Tcf-Vg-RIF" customClass="ManageQuestionsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManageQuestionsViewController" id="Tcf-Vg-RIF" customClass="ManageQuestionsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W83-h8-NrL">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

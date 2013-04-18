@@ -24,7 +24,7 @@ static FFNotificationHandler *sharedHandler = nil;
 -(void)handleNotification:(NSDictionary *)notification{
 
 #ifdef DEBUG
-    [Utilities showOkAlertWithTitle:@"note" message:[notification description]];
+    //[Utilities showOkAlertWithTitle:@"note" message:[notification description]];
 #endif
     
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
@@ -35,6 +35,12 @@ static FFNotificationHandler *sharedHandler = nil;
     if ([type isEqualToString:@"newQuestion"]){
         [self handleNewQuestionNotification:notification];
     }
+    else if ([type isEqualToString:@"questionCreated"]){
+        [self handleQuestionCreatedNotification:notification];
+    }
+    else if ([type isEqualToString:@"newComment"]){
+        [self handleNewCommentNotification:notification];
+    }
 }
 
 -(void)handleNewQuestionNotification:(NSDictionary *)notification{
@@ -42,6 +48,26 @@ static FFNotificationHandler *sharedHandler = nil;
     NSString *questionId = [notification objectForKey:@"questionId"];
     
     [[FFDeepLinker sharedLinker] handleUrl:[NSURL URLWithString:[NSString stringWithFormat:@"%@://leagues/%@/questions/%@", FFURLScheme, leagueId, questionId]]];
+}
+
+-(void)handleQuestionCreatedNotification:(NSDictionary *)notification{
+    NSString *leagueId = [notification objectForKey:@"leagueId"];
+    NSString *questionId = [notification objectForKey:@"questionId"];
+    
+    [[FFDeepLinker sharedLinker] handleUrl:[NSURL URLWithString:[NSString stringWithFormat:@"%@://leagues/%@/questions/%@/review", FFURLScheme, leagueId, questionId]]];
+}
+
+-(void)handleNewCommentNotification:(NSDictionary *)notification{
+    NSString *leagueId = [notification objectForKey:@"leagueId"];
+    NSString *commentableId = [notification objectForKey:@"commentableId"];
+    NSString *commentableType = [notification objectForKey:@"commentableType"];
+    
+    if ([commentableType isEqualToString:@"League"]) {
+        [[FFDeepLinker sharedLinker] handleUrl:[NSURL URLWithString:[NSString stringWithFormat:@"%@://leagues/%@/comments", FFURLScheme, leagueId]]];
+    }
+    else if ([commentableType isEqualToString:@"Question"]) {
+        [[FFDeepLinker sharedLinker] handleUrl:[NSURL URLWithString:[NSString stringWithFormat:@"%@://leagues/%@/questions/%@", FFURLScheme, leagueId, commentableId]]];
+    }
 }
 
 @end

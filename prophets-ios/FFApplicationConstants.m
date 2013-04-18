@@ -9,9 +9,9 @@
 #import "FFApplicationConstants.h"
 
 #if APP_ENV == DEV
-NSString * const FFBaseUrl = @"http://55prophets.dev:3000";
+//NSString * const FFBaseUrl = @"http://55prophets.dev:3000";
 //NSString * const FFBaseUrl = @"http://55prophets.com";
-//NSString * const FFBaseUrl = @"http://192.168.1.4:3000";
+NSString * const FFBaseUrl = @"http://10.0.1.3:3000";
 NSString * const FFKeychainIdentifier = @"prophets-ios-dev";
 NSString * const FFObjectStoreName = @"prophets-ios.sqlite";
 NSString * const FFURLScheme = @"ffprophetsdev";
