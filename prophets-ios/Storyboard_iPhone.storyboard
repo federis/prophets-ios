@@ -541,7 +541,7 @@
             </objects>
             <point key="canvasLocation" x="2672" y="1906"/>
         </scene>
-        <!--League Settings View Controller - League Settings-->
+        <!--League Settings View Controller - Settings-->
         <scene sceneID="eSU-en-Zi0">
             <objects>
                 <viewController id="vNA-fz-jKn" customClass="LeagueSettingsViewController" sceneMemberID="viewController">
@@ -565,7 +565,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="League Settings" image="leaguemenu_settings.png" id="NuU-Ez-sDL"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="leaguemenu_settings.png" id="NuU-Ez-sDL"/>
                     <connections>
                         <outlet property="tableView" destination="Wvp-yS-shv" id="x7i-lc-nT0"/>
                     </connections>
