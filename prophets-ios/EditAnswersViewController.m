@@ -244,11 +244,4 @@
     return footerView;
 }
 
--(void)dealloc{
-    for (EditAnswerCell *cell in [self.tableView visibleCells]) {
-        [cell.removeButton removeTarget:self action:@selector(removeAnswer:) forControlEvents:UIControlEventTouchUpInside];
-    }
-}
-
-
 @end

@@ -20,13 +20,17 @@
 }
 
 -(void)setAnswer:(Answer *)answer{
+    if (_answer) { //if this cell is being reused, we need to remove the old observer
+        [_answer removeObserver:self forKeyPath:@"initialProbability"];
+    }
+    
     _answer = answer;
     
     self.primaryTextField.text = answer.content;
     
     self.secondaryTextField.text = [[answer.initialProbability decimalNumberByRoundingToTwoDecimalPlaces] stringValue];
     
-    [answer addObserver:self forKeyPath:@"initialProbability" options:NSKeyValueObservingOptionNew context:nil];
+    [_answer addObserver:self forKeyPath:@"initialProbability" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 -(IBAction)secondaryTextFieldChanged:(id)sender{
@@ -61,7 +65,8 @@
 }
 
 -(void)dealloc{
-    [self.answer removeObserver:self forKeyPath:@"initialProbability"];
+    [_answer removeObserver:self forKeyPath:@"initialProbability"];
+    [self.removeButton removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
 }
 
 @end
