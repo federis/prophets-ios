@@ -174,7 +174,7 @@
         if (match) {
             NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Membership"];
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@ AND userName != nil", leagueId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"leaderboardRank" ascending:YES]];
             
             return fetchRequest;
