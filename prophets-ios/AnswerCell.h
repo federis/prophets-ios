@@ -15,6 +15,8 @@
 @property (nonatomic, strong) Answer *answer;
 @property (weak, nonatomic) IBOutlet UILabel *answerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *correctnessLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *payoutLabel;
 
 -(CGFloat)heightForCellWithAnswer:(Answer *)answer;
 

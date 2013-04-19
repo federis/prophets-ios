@@ -9,6 +9,7 @@
 #import "Answer.h"
 #import "Question.h"
 #import "User.h"
+#import "NSDecimalNumber+Additions.h"
 
 
 @implementation Answer
@@ -17,6 +18,7 @@
 @dynamic initialProbability;
 @dynamic currentProbability;
 @dynamic betTotal;
+@dynamic betsCount;
 @dynamic correct;
 @dynamic judgedAt;
 @dynamic correctnessKnownAt;
@@ -57,7 +59,7 @@
     return [sortedDates objectAtIndex:0];
 }
 
--(NSDecimalNumber *)payoutMultipler{
+-(NSDecimalNumber *)payoutMultiplier{
     //(1/probability - 1)
     NSDecimalNumber *one = [NSDecimalNumber decimalNumberWithString:@"1"];
     NSDecimalNumber *quotient = [one decimalNumberByDividingBy:self.currentProbability];
@@ -65,7 +67,14 @@
 }
 
 -(NSString *)currentOddsString{
-    return [NSString stringWithFormat:@"%@:1", [[self payoutMultipler] decimalNumberByRoundingToTwoDecimalPlaces]];
+    return [NSString stringWithFormat:@"%@:1", [[self payoutMultiplier] decimalNumberByRoundingToTwoDecimalPlaces]];
+}
+
+-(NSString *)dollarBetPayoutString{
+    //amount + amount * (1/probability - 1)
+    NSDecimalNumber *oneDollarBet = [NSDecimalNumber decimalNumberWithString:@"1.0"];
+    NSDecimalNumber *payout = [oneDollarBet decimalNumberByAdding:[self payoutMultiplier]];
+    return [NSString stringWithFormat:@"$1 bet pays %@", payout.currencyString];
 }
 
 -(void)setIsCorrect:(BOOL)isCorrect{
@@ -90,6 +99,7 @@
     [mapping addAttributeMappingsFromDictionary:@{
      @"id" : @"remoteId",
      @"bet_total" : @"betTotal",
+     @"bets_count" : @"betsCount",
      @"current_probability" : @"currentProbability",
      @"initial_probability" : @"initialProbability",
      @"correct" : @"isCorrect",

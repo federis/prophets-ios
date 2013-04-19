@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSDecimalNumber * initialProbability;
 @property (nonatomic, strong) NSDecimalNumber * currentProbability;
 @property (nonatomic, strong) NSDecimalNumber * betTotal;
+@property (nonatomic, strong) NSNumber * betsCount;
 @property (nonatomic, strong) NSNumber * correct;
 @property (nonatomic, strong) NSDate * judgedAt;
 @property (nonatomic, strong) NSDate * correctnessKnownAt;
@@ -32,6 +33,7 @@
 -(BOOL)isOpenForBetting;
 -(NSDate *)bettingEndedAt;
 -(NSString *)currentOddsString;
+-(NSString *)dollarBetPayoutString;
 
 +(RKEntityMapping *)responseMappingWithQuestion;
 
