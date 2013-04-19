@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -41,8 +41,8 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUILabel" id="968663955">
 								<reference key="NSNextResponder" ref="949206739"/>
-								<int key="NSvFlags">290</int>
-								<string key="NSFrame">{{10, 5}, {265, 20}}</string>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{10, 5}, {232, 20}}</string>
 								<reference key="NSSuperview" ref="949206739"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="441513311"/>
@@ -77,12 +77,12 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-								<double key="preferredMaxLayoutWidth">265</double>
+								<double key="preferredMaxLayoutWidth">232</double>
 							</object>
 							<object class="IBUILabel" id="441513311">
 								<reference key="NSNextResponder" ref="949206739"/>
-								<int key="NSvFlags">290</int>
-								<string key="NSFrame">{{10, 26}, {265, 21}}</string>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{10, 26}, {232, 21}}</string>
 								<reference key="NSSuperview" ref="949206739"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
@@ -113,7 +113,7 @@
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
-						<string key="NSFrameSize">{285, 64}</string>
+						<string key="NSFrameSize">{285, 52}</string>
 						<reference key="NSSuperview" ref="501340494"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="968663955"/>
@@ -129,7 +129,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{285, 65}</string>
+				<string key="NSFrameSize">{285, 53}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="949206739"/>
@@ -137,7 +137,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<reference key="IBUIContentView" ref="949206739"/>
 				<string key="IBUIReuseIdentifier">MembershipCell</string>
-				<real value="65" key="IBUIRowHeight"/>
+				<real value="53" key="IBUIRowHeight"/>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">

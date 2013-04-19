@@ -44,7 +44,7 @@
     CGFloat leagueNameHeight = [Utilities heightForString:membership.league.name
                                                  withFont:self.leagueNameLabel.font
                                                     width:self.leagueNameLabel.frame.size.width];
-    return leagueNameHeight + 45;
+    return leagueNameHeight + 35;
 }
 
 -(void)awakeFromNib{
