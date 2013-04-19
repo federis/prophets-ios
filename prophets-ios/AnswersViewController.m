@@ -69,9 +69,16 @@
 }
 
 -(CGFloat)heightForQuestionContent{
-    return [Utilities heightForString:self.question.content
-                      withFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:15]
-                         width:300];
+    CGFloat descHeight = 0;
+    if(self.question.desc.length > 0){
+        descHeight = [Utilities heightForString:self.question.desc
+                                       withFont:[UIFont fontWithName:@"AvenirNext-Regular" size:13]
+                                          width:300] + 3;
+    }
+    
+    return descHeight + [Utilities heightForString:self.question.content
+                                          withFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:15]
+                                             width:300];
 }
 
 -(void)newCommentTouched{
@@ -111,8 +118,22 @@
     if (section == 0) {
         UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, [self heightForQuestionContent] + 10)];
         
-        FFLabel *questionContentLabel = [[FFLabel alloc] initWithFrame:CGRectMake(10, 5, 300, [self heightForQuestionContent])];
+        CGFloat questionHeight = [Utilities heightForString:self.question.content
+                                                   withFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:15]
+                                                      width:300];
+        FFLabel *questionContentLabel = [[FFLabel alloc] initWithFrame:CGRectMake(10, 5, 300, questionHeight)];
         questionContentLabel.text = self.question.content;
+        
+        if (self.question.desc.length > 0) {
+            UIFont *descFont = [UIFont fontWithName:@"AvenirNext-Regular" size:13];
+            CGFloat descHeight = [Utilities heightForString:self.question.desc withFont:descFont width:300];
+            CGRect descFrame = RectBelowRectWithSpacingAndSize(questionContentLabel.frame, 3, CGSizeMake(300, descHeight));
+            FFLabel *descLabel = [[FFLabel alloc] initWithFrame:descFrame];
+            
+            descLabel.font = descFont;
+            descLabel.text = self.question.desc;
+            [v addSubview:descLabel];
+        }
         
         [v addSubview:questionContentLabel];
         return v;
