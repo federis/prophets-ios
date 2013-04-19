@@ -24,6 +24,13 @@
     application.applicationIconBadgeNumber = 0;
     
     [FFObjectManager setupObjectManager];
+    [[FFObjectManager sharedManager].HTTPClient getPath:@"/" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
+        // do nothing, we're not in maintenance mode
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+        if(operation.response.statusCode == 503){
+            [Utilities showOkAlertWithTitle:@"Down for Maintenance" message:@"55Prophets is currently down for maintenance. We'll be back shortly"];
+        }
+    }];
     
     [self setupAppearances];
     
