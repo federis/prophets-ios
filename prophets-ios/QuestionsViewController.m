@@ -71,15 +71,12 @@
 }
 
 -(void)setupHeaderView{
-    self.memberCountLabel.text = [NSString stringWithFormat:@"%@ %@", self.membership.league.membershipsCount,
-                                  [Utilities pluralize:self.membership.league.membershipsCount
-                                              singular:@"member"
-                                                plural:@"members"]];
-    
-    self.questionCountLabel.text = [NSString stringWithFormat:@"%@ %@", self.membership.league.questionsCount,
-                                    [Utilities pluralize:self.membership.league.questionsCount
-                                                singular:@"question"
-                                                  plural:@"questions"]];
+    self.detailLabel.text = [NSString stringWithFormat:@"%@ %@ · %@ %@",
+                                self.membership.league.membershipsCount,
+                                [Utilities pluralize:self.membership.league.membershipsCount singular:@"member" plural:@"members"],
+                                self.membership.league.questionsCount,
+                                [Utilities pluralize:self.membership.league.questionsCount singular:@"question" plural:@"questions"]
+                             ];
     
     self.headerBackgroundView.layer.cornerRadius = 5.0;
     
@@ -90,7 +87,7 @@
     self.headerBackgroundView.frame = CGRectMake(self.headerBackgroundView.frame.origin.x,
                                                  self.headerBackgroundView.frame.origin.y,
                                                  self.headerBackgroundView.frame.size.width,
-                                                 leagueNameHeight + 50);
+                                                 leagueNameHeight + 30);
     
     self.leagueNameLabel.frame = CGRectMake(self.leagueNameLabel.frame.origin.x,
                                             self.leagueNameLabel.frame.origin.y,
@@ -98,6 +95,8 @@
                                             leagueNameHeight);
     
     self.leagueNameLabel.text = self.membership.league.name;
+    
+    self.tableView.tableHeaderView.frame = RectWithNewHeight(leagueNameHeight + 45, self.tableView.tableHeaderView.frame);
 }
 
 
