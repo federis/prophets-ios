@@ -10,6 +10,7 @@
 #import "RoundedClearBar.h"
 #import "User.h"
 #import "FFApplicationConstants.h"
+#import "UIAlertView+Additions.h"
 
 @interface HomeViewController ()
 
@@ -28,9 +29,17 @@
 }
 
 -(void)logoutTouched{
-    User *user = [User currentUser];
-    [User setCurrentUser:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogOutNotification object:nil userInfo:@{@"user":user}];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log Out" message:@"Are you sure you want to log out?"
+        completionBlock:^(NSUInteger buttonIndex, UIAlertView *alert){
+            if (buttonIndex == 1) {
+                User *user = [User currentUser];
+                [User setCurrentUser:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogOutNotification object:nil userInfo:@{@"user":user}];
+            }
+        }
+      cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+    
+    [alert show];
 }
 
 @end
