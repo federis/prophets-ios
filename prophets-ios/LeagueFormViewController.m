@@ -60,6 +60,7 @@
 	}
     
     NSMutableArray *tagNames = [NSMutableArray array];
+    [tagNames addObject:@""];
     for (Tag *tag in tags) {
         [tagNames addObject:tag.name];
     }
@@ -70,6 +71,7 @@
            DLog(@"Result is %@", mappingResult);
            NSArray *newTags = [mappingResult array];
            NSMutableArray *tagNames = [NSMutableArray array];
+           [tagNames addObject:@""];
            for (Tag *tag in newTags) {
                [tagNames addObject:tag.name];
            }
