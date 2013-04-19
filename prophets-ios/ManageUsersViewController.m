@@ -34,13 +34,13 @@
     self.fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
     self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
     
-    FFLabel *emptyQuestionsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    FFLabel *emptyMembershipsLabel = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     
-    emptyQuestionsLabel.isBold = NO;
-    emptyQuestionsLabel.text = @"No questions found";
-    emptyQuestionsLabel.textAlignment = NSTextAlignmentCenter;
+    emptyMembershipsLabel.isBold = NO;
+    emptyMembershipsLabel.text = @"No members found";
+    emptyMembershipsLabel.textAlignment = NSTextAlignmentCenter;
     
-    self.emptyContentFooterView = emptyQuestionsLabel;
+    self.emptyContentFooterView = emptyMembershipsLabel;
     
     self.reloading = YES;
     [self loadData];
@@ -83,12 +83,12 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Member" message:@"Are you sure you want to remove this user from the league?"
         completionBlock:^(NSUInteger buttonIndex, UIAlertView *alert){
             if (buttonIndex == 1) {
-                [SVProgressHUD showWithStatus:@"Deleting question" maskType:SVProgressHUDMaskTypeGradient];
+                [SVProgressHUD showWithStatus:@"Deleting user" maskType:SVProgressHUDMaskTypeGradient];
                 
                 [[RKObjectManager sharedManager] deleteObject:membership path:nil parameters:nil
                   success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
                       [SVProgressHUD dismiss];
-                      [SVProgressHUD showSuccessWithStatus:@"Question deleted"];
+                      [SVProgressHUD showSuccessWithStatus:@"User deleted"];
                   }
                   failure:^(RKObjectRequestOperation *operation, NSError *error){
                       [SVProgressHUD dismiss];
