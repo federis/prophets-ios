@@ -8,7 +8,7 @@
 
 #import <SVProgressHUD.h>
 
-#import "BetViewController.h"
+#import "CreateBetViewController.h"
 #import "CreateBetView.h"
 #import "LeaguePerformanceView.h"
 #import "UIColor+Additions.h"
@@ -18,11 +18,11 @@
 #import "Question.h"
 #import "Bet.h"
 
-@interface BetViewController ()
+@interface CreateBetViewController ()
 
 @end
 
-@implementation BetViewController
+@implementation CreateBetViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];

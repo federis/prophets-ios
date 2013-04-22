@@ -7,7 +7,7 @@
 //
 
 #import "AnswersViewController.h"
-#import "BetViewController.h"
+#import "CreateBetViewController.h"
 #import "CommentsController.h"
 #import "CommentFormViewController.h"
 #import "CommentCell.h"
@@ -88,7 +88,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ShowBetCreation"] && [sender isKindOfClass:[Answer class]]) {
         Answer *answer = (Answer *)sender;
-        BetViewController *betVC = (BetViewController *)[segue destinationViewController];
+        CreateBetViewController *betVC = (CreateBetViewController *)[segue destinationViewController];
         betVC.answer = answer;
         betVC.membership = self.membership;
     }

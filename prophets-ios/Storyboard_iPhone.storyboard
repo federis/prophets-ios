@@ -647,10 +647,10 @@
             </objects>
             <point key="canvasLocation" x="3289" y="833"/>
         </scene>
-        <!--Bet View Controller-->
+        <!--Create Bet View Controller-->
         <scene sceneID="4fW-pK-dwW">
             <objects>
-                <viewController id="7OQ-AK-fpc" customClass="BetViewController" sceneMemberID="viewController">
+                <viewController id="7OQ-AK-fpc" customClass="CreateBetViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DbP-3e-TzH">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1251,9 +1251,6 @@
         </class>
         <class className="BetListViewController" superclassName="FFFetchedResultsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BetListViewController.h"/>
-        </class>
-        <class className="BetViewController" superclassName="FFBaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetViewController.h"/>
         </class>
         <class className="CommentFormViewController" superclassName="FFFormViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentFormViewController.h"/>

@@ -10,7 +10,7 @@
 
 @class Answer, Membership, CreateBetView;
 
-@interface BetViewController : FFBaseTableViewController
+@interface CreateBetViewController : FFBaseTableViewController
 
 @property (nonatomic, strong) CreateBetView *createBetView;
 @property (nonatomic, strong) Answer *answer;
