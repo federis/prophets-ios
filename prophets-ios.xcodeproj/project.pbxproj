@@ -55,6 +55,10 @@
 		B513C0A81672BC8A009E4484 /* JoinLeagueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */; };
 		B513C0AC1672C194009E4484 /* LeagueDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B513C0AB1672C193009E4484 /* LeagueDetailCell.m */; };
 		B513C0AE1672C1A2009E4484 /* LeagueDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B513C0AD1672C1A2009E4484 /* LeagueDetailCell.xib */; };
+		B515EF0E1725D29E003EA932 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B515EF0D1725D29E003EA932 /* ActivityViewController.m */; };
+		B515EF111725D55F003EA932 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B515EF101725D55F003EA932 /* ActivityCell.m */; };
+		B515EF131725D570003EA932 /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B515EF121725D570003EA932 /* ActivityCell.xib */; };
+		B515EF1A1725D86B003EA932 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = B515EF191725D86B003EA932 /* Activity.m */; };
 		B521AC07162B64500009A8E4 /* FFTableFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B521AC06162B64500009A8E4 /* FFTableFooterButtonView.m */; };
 		B537C96B1672AE820032685A /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = B537C96A1672AE820032685A /* Tag.m */; };
 		B53F585716433C6400AF2BA9 /* BetCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F585616433C6300AF2BA9 /* BetCellTests.m */; };
@@ -343,6 +347,14 @@
 		B513C0AA1672C193009E4484 /* LeagueDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueDetailCell.h; sourceTree = "<group>"; };
 		B513C0AB1672C193009E4484 /* LeagueDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueDetailCell.m; sourceTree = "<group>"; };
 		B513C0AD1672C1A2009E4484 /* LeagueDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeagueDetailCell.xib; sourceTree = "<group>"; };
+		B515EF0C1725D29E003EA932 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		B515EF0D1725D29E003EA932 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		B515EF0F1725D55F003EA932 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
+		B515EF101725D55F003EA932 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
+		B515EF121725D570003EA932 /* ActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
+		B515EF141725D6DA003EA932 /* prophets_ios 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "prophets_ios 3.xcdatamodel"; sourceTree = "<group>"; };
+		B515EF181725D86B003EA932 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		B515EF191725D86B003EA932 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		B521AC05162B64500009A8E4 /* FFTableFooterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTableFooterButtonView.h; sourceTree = "<group>"; };
 		B521AC06162B64500009A8E4 /* FFTableFooterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTableFooterButtonView.m; sourceTree = "<group>"; };
 		B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevConfig.xcconfig; sourceTree = "<group>"; };
@@ -691,6 +703,8 @@
 				B53F585A1644167300AF2BA9 /* LeagueSettingsViewController.m */,
 				B53F585F164417AF00AF2BA9 /* LeaderboardViewController.h */,
 				B53F5860164417AF00AF2BA9 /* LeaderboardViewController.m */,
+				B515EF0C1725D29E003EA932 /* ActivityViewController.h */,
+				B515EF0D1725D29E003EA932 /* ActivityViewController.m */,
 			);
 			name = "League Controllers";
 			sourceTree = "<group>";
@@ -979,6 +993,9 @@
 				B55975DB16C199BB00A4F510 /* AdminMembershipCell.h */,
 				B55975DC16C199BC00A4F510 /* AdminMembershipCell.m */,
 				B55975DE16C199D100A4F510 /* AdminMembershipCell.xib */,
+				B515EF0F1725D55F003EA932 /* ActivityCell.h */,
+				B515EF101725D55F003EA932 /* ActivityCell.m */,
+				B515EF121725D570003EA932 /* ActivityCell.xib */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -1031,6 +1048,8 @@
 				B537C96A1672AE820032685A /* Tag.m */,
 				B55EBF6D16A37D150060FFAF /* ErrorCollection.h */,
 				B55EBF6E16A37D150060FFAF /* ErrorCollection.m */,
+				B515EF181725D86B003EA932 /* Activity.h */,
+				B515EF191725D86B003EA932 /* Activity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1492,6 +1511,7 @@
 				B54CF5F916F23CA2003C48FF /* Default-568h@2x.png in Resources */,
 				B54CF5FB16F23CC3003C48FF /* icon72x72.png in Resources */,
 				B54CF5FD16F23CCA003C48FF /* icon144x144.png in Resources */,
+				B515EF131725D570003EA932 /* ActivityCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1650,6 +1670,9 @@
 				B5DCEE0416F3B22400AF2965 /* UIToolbar+Additions.m in Sources */,
 				B56AA76416FAB17800DB3190 /* FFManagedObjectRequestOperation.m in Sources */,
 				B508B492171DB12A002E2408 /* FFFormSection.m in Sources */,
+				B515EF0E1725D29E003EA932 /* ActivityViewController.m in Sources */,
+				B515EF111725D55F003EA932 /* ActivityCell.m in Sources */,
+				B515EF1A1725D86B003EA932 /* Activity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2062,10 +2085,11 @@
 		B5F1AEE0160388C600D28C1C /* prophets_ios.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B515EF141725D6DA003EA932 /* prophets_ios 3.xcdatamodel */,
 				B545C07B171DA52100C407EB /* prophets_ios 2.xcdatamodel */,
 				B5F1AEE1160388C600D28C1C /* prophets_ios.xcdatamodel */,
 			);
-			currentVersion = B545C07B171DA52100C407EB /* prophets_ios 2.xcdatamodel */;
+			currentVersion = B515EF141725D6DA003EA932 /* prophets_ios 3.xcdatamodel */;
 			name = prophets_ios.xcdatamodeld;
 			path = "prophets-ios/prophets_ios.xcdatamodeld";
 			sourceTree = "<group>";

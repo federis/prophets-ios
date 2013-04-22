@@ -171,7 +171,7 @@ static FFDeepLinker *sharedLinker = nil;
         [League fetchOrLoadById:@(leagueId) fromManagedObjectContext:self.managedObjectContext
             loaded:^(Resource * resource){
                 [SVProgressHUD dismiss];
-                [self showLeague:(League *)resource selectedTabIndex:3];
+                [self showLeague:(League *)resource selectedTabIndex:0];
             }
             failure:^(NSError * err){
                 [SVProgressHUD dismiss];

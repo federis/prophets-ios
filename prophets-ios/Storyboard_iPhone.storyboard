@@ -114,11 +114,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xOH-Rw-2TB" kind="relationship" relationship="viewControllers" id="6qI-gm-kNo"/>
-                        <segue destination="ggc-wD-Esb" kind="relationship" relationship="viewControllers" id="K8J-RB-tKM"/>
-                        <segue destination="wR1-iK-SHo" kind="relationship" relationship="viewControllers" id="ORe-CP-AGm"/>
-                        <segue destination="XxI-mA-fNR" kind="relationship" relationship="viewControllers" id="zaj-dt-Qoa"/>
-                        <segue destination="vNA-fz-jKn" kind="relationship" relationship="viewControllers" id="kVh-tV-pI4"/>
+                        <segue destination="XxI-mA-fNR" kind="relationship" relationship="viewControllers" id="2q3-1T-3En"/>
+                        <segue destination="xOH-Rw-2TB" kind="relationship" relationship="viewControllers" id="B4F-cx-CSe"/>
+                        <segue destination="ggc-wD-Esb" kind="relationship" relationship="viewControllers" id="CCN-ea-8jW"/>
+                        <segue destination="wR1-iK-SHo" kind="relationship" relationship="viewControllers" id="9he-0J-DEj"/>
+                        <segue destination="vNA-fz-jKn" kind="relationship" relationship="viewControllers" id="deN-YI-6is"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hux-6X-sRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWC-Lm-dSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2672" y="106"/>
+            <point key="canvasLocation" x="2648" y="169"/>
         </scene>
         <!--Bet List View Controller - My Bets-->
         <scene sceneID="Yfn-jb-CAK">
@@ -464,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwT-2K-Slx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2672" y="712"/>
+            <point key="canvasLocation" x="2648" y="775"/>
         </scene>
         <!--Leaderboard View Controller - Leaderboard-->
         <scene sceneID="SMy-Y4-E27">
@@ -497,12 +497,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrs-u2-JVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2672" y="1308"/>
+            <point key="canvasLocation" x="2648" y="1371"/>
         </scene>
-        <!--Comments View Controller - Club Room-->
+        <!--Activity View Controller - Activity-->
         <scene sceneID="cuR-bI-9pz">
             <objects>
-                <viewController id="XxI-mA-fNR" customClass="CommentsViewController" sceneMemberID="viewController">
+                <viewController id="XxI-mA-fNR" customClass="ActivityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wjb-zV-OTy">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -515,6 +515,20 @@
                                 <rect key="frame" x="7" y="10" width="303" height="347"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="4JJ-3V-Mgp">
+                                    <rect key="frame" x="0.0" y="0.0" width="303" height="115"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="League Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="POo-62-qBd">
+                                            <rect key="frame" x="11" y="96" width="150" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                            <color key="textColor" red="0.98823529409999999" green="0.97647058819999999" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="XxI-mA-fNR" id="J78-S0-6eF"/>
                                     <outlet property="delegate" destination="XxI-mA-fNR" id="WxS-pU-3sX"/>
@@ -523,15 +537,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Club Room" image="leaguemenu_clubroom.png" id="bJi-UF-dAF"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="leaguemenu_clubroom.png" id="bJi-UF-dAF"/>
                     <connections>
                         <outlet property="tableView" destination="Kvx-C6-jXL" id="qtk-2A-1q6"/>
-                        <segue destination="Tt9-Jb-QJJ" kind="modal" identifier="ShowCommentForm" id="GnY-zX-QZH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Okk-DW-12p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2672" y="1906"/>
+            <point key="canvasLocation" x="2640" y="-478"/>
         </scene>
         <!--League Settings View Controller - Settings-->
         <scene sceneID="eSU-en-Zi0">
@@ -564,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyS-Um-HtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2672" y="2518"/>
+            <point key="canvasLocation" x="2648" y="2005"/>
         </scene>
         <!--League Form View Controller-->
         <scene sceneID="fnX-Jd-WUZ">
@@ -632,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHx-Pr-0My" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3161" y="106"/>
+            <point key="canvasLocation" x="3289" y="833"/>
         </scene>
         <!--Bet View Controller-->
         <scene sceneID="4fW-pK-dwW">
@@ -678,7 +691,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiq-9G-aBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3631" y="106"/>
+            <point key="canvasLocation" x="3759" y="833"/>
         </scene>
         <!--Comment Form View Controller-->
         <scene sceneID="KCV-4p-IXM">
@@ -711,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocK-ch-0yj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3702" y="1268"/>
+            <point key="canvasLocation" x="3758" y="1467"/>
         </scene>
         <!--Question Form View Controller - Question-->
         <scene sceneID="JO9-3N-8Cc">
@@ -745,7 +758,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6Z-GY-mdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3161" y="-533"/>
+            <point key="canvasLocation" x="3289" y="194"/>
         </scene>
         <!--Edit Answers View Controller - Answers-->
         <scene sceneID="J5D-ql-2CU">
@@ -800,7 +813,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPP-cd-wgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3631" y="-533"/>
+            <point key="canvasLocation" x="3759" y="194"/>
         </scene>
         <!--Review Question View Controller - Review-->
         <scene sceneID="ddi-v1-NsS">
@@ -833,7 +846,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbt-Rp-g4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4119" y="-533"/>
+            <point key="canvasLocation" x="4247" y="194"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h5h-m0-QWQ">
@@ -1227,6 +1240,9 @@
         <image name="settings_button.png" width="115" height="115"/>
     </resources>
     <classes>
+        <class className="ActivityViewController" superclassName="FFFetchedResultsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityViewController.h"/>
+        </class>
         <class className="AdminViewController" superclassName="FFBaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminViewController.h"/>
         </class>
@@ -1241,9 +1257,6 @@
         </class>
         <class className="CommentFormViewController" superclassName="FFFormViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentFormViewController.h"/>
-        </class>
-        <class className="CommentsViewController" superclassName="FFFetchedResultsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsViewController.h"/>
         </class>
         <class className="CorrectnessDateViewController" superclassName="FFBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CorrectnessDateViewController.h"/>
@@ -1348,8 +1361,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pm5-AO-WBj"/>
-        <segue reference="D7O-gh-bQe"/>
         <segue reference="US1-cn-BHX"/>
+        <segue reference="D7O-gh-bQe"/>
     </inferredMetricsTieBreakers>
 </document>

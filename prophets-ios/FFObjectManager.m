@@ -21,6 +21,7 @@
 #import "Answer.h"
 #import "League.h"
 #import "Tag.h"
+#import "Activity.h"
 #import "ErrorCollection.h"
 #import "NSURL+Additions.h"
 #import "FFManagedObjectRequestOperation.h"
@@ -145,6 +146,11 @@
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Tag responseMapping]
                                                                         pathPattern:nil
                                                                             keyPath:@"tag"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Activity responseMapping]
+                                                                        pathPattern:nil
+                                                                            keyPath:@"activity"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
 }
 
@@ -305,6 +311,23 @@
             NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"League"];
             fetchRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.remoteId == %@", tagId];
             fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/leagues/:leagueId/activities"];
+        
+        NSDictionary *argsDict = nil;
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        if (match) {
+            NSNumber *leagueId = [(NSString *)[argsDict objectForKey:@"leagueId"] numberValue];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Activity"];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"leagueId == %@", leagueId];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
             return fetchRequest;
         }
         

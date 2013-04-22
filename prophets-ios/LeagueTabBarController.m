@@ -49,7 +49,7 @@
             selected = [UIImage imageNamed:@"leaguemenu_stats_pressed.png"];
             unselected = [UIImage imageNamed:@"leaguemenu_stats.png"];
         }
-        else if ([item.title isEqualToString:@"Club Room"]) {
+        else if ([item.title isEqualToString:@"Activity"]) {
             selected = [UIImage imageNamed:@"leaguemenu_clubroom_pressed.png"];
             unselected = [UIImage imageNamed:@"leaguemenu_clubroom.png"];
         }

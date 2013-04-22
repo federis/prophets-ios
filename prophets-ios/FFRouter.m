@@ -75,6 +75,8 @@
     
     [self.routeSet addRoute:[RKRoute routeWithName:@"leagues" pathPattern:@"/leagues" method:RKRequestMethodGET]];
     
+    [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"activities" objectClass:[League class] pathPattern:@"/leagues/:remoteId/activities" method:RKRequestMethodGET]];
+    
     // POSTS
     // post requests should use :relationshipId (ie. questionId) instead of :relationship.remoteId since they do not exist yet
     // The response mapping should connect the relationship upon creation - NOT before we successfully create the resource

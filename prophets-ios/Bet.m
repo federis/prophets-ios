@@ -21,6 +21,7 @@
 @dynamic membership;
 @dynamic answer;
 @dynamic invalidatedAt;
+@dynamic commentsCount;
 
 -(BOOL)hasBeenJudged{
     return self.payout != nil;
@@ -52,6 +53,7 @@
      @"id" : @"remoteId",
      @"membership_id" : @"membershipId",
      @"answer_id" : @"answerId",
+     @"comments_count" : @"commentsCount",
      @"invalidated_at" : @"invalidatedAt",
      @"updated_at" : @"updatedAt",
      @"created_at" : @"createdAt",
