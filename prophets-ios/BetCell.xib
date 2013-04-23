@@ -54,7 +54,7 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">Answer</string>
-								<object class="NSColor" key="IBUITextColor">
+								<object class="NSColor" key="IBUITextColor" id="842079081">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
 									<string key="IBUIColorCocoaTouchKeyPath">darkTextColor</string>
@@ -66,13 +66,13 @@
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUINumberOfLines">0</int>
 								<int key="IBUILineBreakMode">0</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="14520848">
 									<string key="name">AvenirNext-DemiBold</string>
 									<string key="family">Avenir Next</string>
 									<int key="traits">2</int>
 									<double key="pointSize">17</double>
 								</object>
-								<object class="NSFont" key="IBUIFont">
+								<object class="NSFont" key="IBUIFont" id="58295741">
 									<string key="NSName">AvenirNext-Heavy</string>
 									<double key="NSSize">17</double>
 									<int key="NSfFlags">16</int>
@@ -80,10 +80,10 @@
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 								<double key="preferredMaxLayoutWidth">192</double>
 							</object>
-							<object class="IBUILabel" id="150277817">
+							<object class="IBUILabel" id="771285240">
 								<reference key="NSNextResponder" ref="863066041"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{5, 56}, {192, 20}}</string>
+								<string key="NSFrame">{{46, 40}, {192, 19}}</string>
 								<reference key="NSSuperview" ref="863066041"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="728150707"/>
@@ -93,7 +93,32 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">You bet $600 on 6 to 1 odds</string>
+								<string key="IBUIText">Loading Bet...</string>
+								<reference key="IBUITextColor" ref="842079081"/>
+								<reference key="IBUIHighlightedColor" ref="255690677"/>
+								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUINumberOfLines">0</int>
+								<int key="IBUITextAlignment">1</int>
+								<int key="IBUILineBreakMode">0</int>
+								<reference key="IBUIFontDescription" ref="14520848"/>
+								<reference key="IBUIFont" ref="58295741"/>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+								<double key="preferredMaxLayoutWidth">192</double>
+							</object>
+							<object class="IBUILabel" id="150277817">
+								<reference key="NSNextResponder" ref="863066041"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{5, 56}, {192, 20}}</string>
+								<reference key="NSSuperview" ref="863066041"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="771285240"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUIContentMode">7</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<string key="IBUIText">$600 bet on 6 to 1 odds</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC42MDAwMDAwMjM4IDAuNjAwMDAwMDIzOCAwLjYwMDAwMDAyMzgAA</bytes>
@@ -437,6 +462,14 @@
 					</object>
 					<int key="connectionID">25</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">loadingBetLabel</string>
+						<reference key="source" ref="233761418"/>
+						<reference key="destination" ref="771285240"/>
+					</object>
+					<int key="connectionID">38</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -470,6 +503,7 @@
 							<reference ref="1043320826"/>
 							<reference ref="19668715"/>
 							<reference ref="728150707"/>
+							<reference ref="771285240"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -526,6 +560,11 @@
 						<reference key="object" ref="516908216"/>
 						<reference key="parent" ref="728150707"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">37</int>
+						<reference key="object" ref="771285240"/>
+						<reference key="parent" ref="233761418"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -542,6 +581,7 @@
 				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="37.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -549,7 +589,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">35</int>
+			<int key="maxID">38</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -561,6 +601,7 @@
 						<string key="betInfoLabel">UILabel</string>
 						<string key="betSubmittedLabel">UILabel</string>
 						<string key="bettingEndLabel">UILabel</string>
+						<string key="loadingBetLabel">UILabel</string>
 						<string key="payoutLabel">UILabel</string>
 						<string key="payoutLabelBackground">UIView</string>
 						<string key="payoutSubtextLabel">UILabel</string>
@@ -583,6 +624,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="bettingEndLabel">
 							<string key="name">bettingEndLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="loadingBetLabel">
+							<string key="name">loadingBetLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="payoutLabel">

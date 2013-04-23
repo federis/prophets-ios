@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) Membership *membership;
 @property (nonatomic, strong) Question *question;
+@property (nonatomic, strong) NSNumber *questionId;
 @property (nonatomic, strong) NSArray *answers;
 @property (nonatomic, strong) AnswerCell *measuringCell;
 @property (nonatomic, strong) CommentCell *commentMeasuringCell;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class League, Question, Comment;
+@class League, Question, Comment, Bet;
 
 @interface CommentsController : NSObject<NSFetchedResultsControllerDelegate>
 
@@ -20,10 +20,12 @@
 
 @property (nonatomic, strong) League *league;
 @property (nonatomic, strong) Question *question;
+@property (nonatomic, strong) Bet *bet;
 
 @property (nonatomic, weak) UITableView *tableView;
 
 -(id)initWithQuestion:(Question *)question;
+-(id)initWithBet:(Bet *)bet;
 -(void)fetchComments;
 -(NSInteger)numberofComments;
 -(Comment *)commentAtRow:(NSInteger)row;

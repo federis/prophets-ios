@@ -92,8 +92,10 @@ static FFDeepLinker *sharedLinker = nil;
     NSInteger leagueId = [(NSString *)[capturedComponents objectAtIndex:0] integerValue];
     
     if (leagueId){
-        [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
         [League fetchOrLoadById:@(leagueId) fromManagedObjectContext:self.managedObjectContext
+            beforeRemoteLoad:^(Resource *resource){
+               [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
+            }
             loaded:^(Resource * resource){
                 [SVProgressHUD dismiss];
                 [self showJoinLeague:(League *)resource];
@@ -167,8 +169,10 @@ static FFDeepLinker *sharedLinker = nil;
     NSInteger leagueId = [(NSString *)[capturedComponents objectAtIndex:0] integerValue];
     
     if (leagueId){
-        [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
         [League fetchOrLoadById:@(leagueId) fromManagedObjectContext:self.managedObjectContext
+            beforeRemoteLoad:^(Resource *resource){
+                [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
+            }
             loaded:^(Resource * resource){
                 [SVProgressHUD dismiss];
                 [self showLeague:(League *)resource selectedTabIndex:0];

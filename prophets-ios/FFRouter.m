@@ -47,6 +47,8 @@
     
     [self.routeSet addRoute:[RKRoute routeWithClass:[League class] pathPattern:@"/leagues/:remoteId" method:RKRequestMethodGET]];
     
+    [self.routeSet addRoute:[RKRoute routeWithClass:[Bet class] pathPattern:@"/bets/:remoteId" method:RKRequestMethodGET]];
+    
     [self.routeSet addRoute:[RKRoute routeWithClass:[Question class] pathPattern:@"/leagues/:leagueId/questions/:remoteId" method:RKRequestMethodGET]];
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"memberships" objectClass:[User class] pathPattern:@"/memberships" method:RKRequestMethodGET]];
@@ -68,6 +70,8 @@
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"memberships" objectClass:[League class] pathPattern:@"/leagues/:remoteId/memberships" method:RKRequestMethodGET]];
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"comments" objectClass:[Question class] pathPattern:@"/questions/:remoteId/comments" method:RKRequestMethodGET]];
+    
+    [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"comments" objectClass:[Bet class] pathPattern:@"/bets/:remoteId/comments" method:RKRequestMethodGET]];
     
     [self.routeSet addRoute:[RKRoute routeWithRelationshipName:@"leagues" objectClass:[Tag class] pathPattern:@"/tags/:remoteId/leagues" method:RKRequestMethodGET]];
     

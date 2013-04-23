@@ -40,17 +40,20 @@
         <attribute name="payout" optional="YES" attributeType="Decimal" syncable="YES"/>
         <attribute name="probability" optional="YES" attributeType="Decimal" syncable="YES"/>
         <relationship name="answer" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Answer" inverseName="bets" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="comments" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Comment" inverseName="bet" inverseEntity="Comment" syncable="YES"/>
         <relationship name="membership" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Membership" inverseName="bets" inverseEntity="Membership" syncable="YES"/>
         <userInfo>
             <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
         </userInfo>
     </entity>
     <entity name="Comment" representedClassName="Comment" parentEntity="Resource" syncable="YES">
+        <attribute name="betId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="questionId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bet" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Bet" inverseName="comments" inverseEntity="Bet" syncable="YES"/>
         <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="comments" inverseEntity="League" syncable="YES"/>
         <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="comments" inverseEntity="Question" syncable="YES"/>
         <userInfo>
@@ -142,8 +145,8 @@
     </entity>
     <elements>
         <element name="Answer" positionX="-63" positionY="27" width="128" height="240"/>
-        <element name="Bet" positionX="234" positionY="108" width="128" height="195"/>
-        <element name="Comment" positionX="-252" positionY="-486" width="128" height="150"/>
+        <element name="Bet" positionX="234" positionY="108" width="128" height="210"/>
+        <element name="Comment" positionX="-252" positionY="-486" width="128" height="180"/>
         <element name="League" positionX="-56" positionY="-315" width="128" height="270"/>
         <element name="Membership" positionX="396" positionY="-306" width="128" height="210"/>
         <element name="Question" positionX="-281" positionY="-216" width="128" height="240"/>

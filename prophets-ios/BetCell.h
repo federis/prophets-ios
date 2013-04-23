@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *betSubmittedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bettingEndLabel;
+@property (weak, nonatomic) IBOutlet UILabel *loadingBetLabel;
 
 
 -(CGFloat)heightForCellWithBet:(Bet *)bet;

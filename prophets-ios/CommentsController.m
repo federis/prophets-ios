@@ -24,6 +24,17 @@
     return self;
 }
 
+-(id)initWithBet:(Bet *)bet{
+    self = [self init];
+    if (self) {
+        self.bet = bet;
+        NSURL *url = [[RKObjectManager sharedManager].router URLForRelationship:@"comments" ofObject:self.bet method:RKRequestMethodGET];
+        [self setupWithUrl:url];
+    }
+    
+    return self;
+}
+
 -(void)setupWithUrl:(NSURL *)url{
     self.fetchRequest = [RKArrayOfFetchRequestFromBlocksWithURL([RKObjectManager sharedManager].fetchRequestBlocks, url) lastObject];
     

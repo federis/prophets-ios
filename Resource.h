@@ -24,6 +24,8 @@
 +(RKEntityMapping *)responseMapping;
 +(RKEntityMapping *)requestMapping;
 
-+(void)fetchOrLoadById:(NSNumber *)resourceId fromManagedObjectContext:(NSManagedObjectContext *)context loaded:(void (^)(Resource *))loadedBlock failure:(void (^)(NSError *))failureBlock;
++(void)fetchOrLoadById:(NSNumber *)resourceId fromManagedObjectContext:(NSManagedObjectContext *)context beforeRemoteLoad:(void (^)(Resource *))beforeRemoteLoadBlock loaded:(void (^)(Resource *))loadedBlock failure:(void (^)(NSError *))failureBlock;
+
++(void)fetchAndLoadById:(NSNumber *)resourceId fromManagedObjectContext:(NSManagedObjectContext *)context beforeRemoteLoad:(void (^)(Resource *))beforeRemoteLoadBlock loaded:(void (^)(Resource *))loadedBlock loadedRemote:(void (^)(Resource *))loadedRemoteBlock failure:(void (^)(NSError *))failureBlock;
 
 @end

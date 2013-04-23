@@ -12,6 +12,7 @@
 #import "LeaguePerformanceView.h"
 #import "ActivityCell.h"
 #import "AnswersViewController.h"
+#import "BetViewController.h"
 #import "NSManagedObjectContext+Additions.h"
 
 @interface ActivityViewController ()
@@ -94,12 +95,16 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone" bundle: nil];
     
     if ([activity.feedableType isEqualToString:@"Bet"]) {
+        BetViewController *betVC = [storyboard instantiateViewControllerWithIdentifier:@"BetViewController"];
+        betVC.membership = self.membership;
+        betVC.betId = activity.feedableId;
         
+        [self.navigationController pushViewController:betVC animated:YES];
     }
     else if ([activity.feedableType isEqualToString:@"Question"]){
         AnswersViewController *answersVC = [storyboard instantiateViewControllerWithIdentifier:@"AnswersViewController"];
         answersVC.membership = self.membership;
-        answersVC.question = [[self.managedObjectContext fetchObjectsForEntityName:@"Question" withPredicate:@"remoteId == %@", activity.feedableId] anyObject];
+        answersVC.questionId = activity.feedableId;
         
         [self.navigationController pushViewController:answersVC animated:YES];
     }

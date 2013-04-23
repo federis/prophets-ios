@@ -12,6 +12,7 @@
 #import "Comment.h"
 #import "Question.h"
 #import "League.h"
+#import "Bet.h"
 #import "RoundedClearBar.h"
 
 @interface CommentFormViewController ()
@@ -42,12 +43,15 @@
     Comment *comment = self.existingComment;
     if (!comment) {
         //Comments should be in either a league or a question, but not both
-        NSAssert(self.question || self.league, @"You must provide a league or question for the comment");
+        NSAssert(self.question || self.league || self.bet, @"You must provide a league, bet, or question for the comment");
         NSAssert(!(self.question && self.league), @"You cannot provide both a league and question for the comment");
         
         comment = (Comment *)[self.scratchContext insertNewObjectForEntityForName:@"Comment"];
         if (self.question) {
             comment.questionId = self.question.remoteId;
+        }
+        else if(self.bet){
+            comment.betId = self.bet.remoteId;
         }
         else if(self.league){
             comment.leagueId = self.league.remoteId;
@@ -67,15 +71,7 @@
     Comment *comment = (Comment *)self.form.object;
     
     if (comment.remoteId) {
-        NSString *path = nil;
-        if(comment.questionId){
-            path = [NSString stringWithFormat:@"/questions/%@/comments/%@", comment.questionId, comment.remoteId];
-        }
-        else{
-            path = [NSString stringWithFormat:@"/leagues/%@/comments/%@", comment.leagueId, comment.remoteId];
-        }
-        
-        [[RKObjectManager sharedManager] putObject:comment path:path parameters:nil
+        [[RKObjectManager sharedManager] putObject:comment path:[comment urlPath] parameters:nil
             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
                 [SVProgressHUD dismiss];
                 [SVProgressHUD showSuccessWithStatus:@"Comment updated"];
@@ -92,15 +88,7 @@
             }];
     }
     else{
-        NSString *path = nil;
-        if(comment.questionId){
-            path = [NSString stringWithFormat:@"/questions/%@/comments", comment.questionId];
-        }
-        else{
-            path = [NSString stringWithFormat:@"/leagues/%@/comments", comment.leagueId];
-        }
-        
-        [[RKObjectManager sharedManager] postObject:comment path:path parameters:nil
+        [[RKObjectManager sharedManager] postObject:comment path:[comment urlPath] parameters:nil
             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
                 [SVProgressHUD dismiss];
                 [SVProgressHUD showSuccessWithStatus:@"Comment created"];

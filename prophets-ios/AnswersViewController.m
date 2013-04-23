@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Benjamin Roesch. All rights reserved.
 //
 
+#import <SVProgressHUD.h>
+
 #import "AnswersViewController.h"
 #import "CreateBetViewController.h"
 #import "CommentsController.h"
@@ -42,11 +44,52 @@
     
     self.measuringCell = [self.tableView dequeueReusableCellWithIdentifier:answerCellName];
     self.commentMeasuringCell = [self.tableView dequeueReusableCellWithIdentifier:commentCellName];
+        
+    LeaguePerformanceView *performanceView = [[LeaguePerformanceView alloc] init];
+    [performanceView setMembership:self.membership];
+    self.tableView.tableHeaderView = performanceView;
     
+    NSNumber *qId = self.questionId ?: self.question.remoteId;
+    [Question fetchAndLoadById:qId fromManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext
+      beforeRemoteLoad:^(Resource *resource){
+          if (!self.question) {
+              [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
+          }
+          [resource setValue:self.membership.leagueId forKey:@"leagueId"];
+      }
+      loaded:^(Resource * resource){
+          self.question = (Question *)resource;
+          [self setupCommentsController];
+      }
+      loadedRemote:^(Resource * resource){
+          if (!self.question) {
+              [SVProgressHUD dismiss];
+              self.question = (Question *)resource;
+              [self setupCommentsController];
+              [self.tableView reloadData];
+          }
+          else{
+              [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+          }
+      }
+     failure:^(NSError *error){
+         [SVProgressHUD dismiss];
+         
+         ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+         [SVProgressHUD showErrorWithStatus:[errors messagesString]];
+         
+         DLog(@"Error loading bet: %@", [error description]);
+     }];
+}
+
+-(void)setupCommentsController{
     self.commentsController = [[CommentsController alloc] initWithQuestion:self.question];
     self.commentsController.tableView = self.tableView;
     [self.commentsController fetchComments];
-    
+    [self loadCommentsFromRemote];
+}
+
+-(void)loadCommentsFromRemote{
     [[RKObjectManager sharedManager] getObjectsAtPathForRelationship:@"comments" ofObject:self.question parameters:nil
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
          //Fetched Results Controller will automatically refresh after operation completes
@@ -55,10 +98,6 @@
      failure:^(RKObjectRequestOperation *operation, NSError *error){
          DLog(@"Error is %@", error);
      }];
-    
-    LeaguePerformanceView *performanceView = [[LeaguePerformanceView alloc] init];
-    [performanceView setMembership:self.membership];
-    self.tableView.tableHeaderView = performanceView;
 }
 
 -(NSArray *)answers{

@@ -119,6 +119,11 @@
                                                                             keyPath:@"bet"
                                                                         statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
     
+    [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Bet responseMappingWithAnswer]
+                                                                        pathPattern:@"/bets/:remoteId"
+                                                                            keyPath:@"bet"
+                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+    
     // creating bets
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[Bet responseMappingWithMembership]
                                                                         pathPattern:@"/answers/:answerId/bets"
@@ -286,6 +291,24 @@
         
         return nil;
     }];
+    
+    
+    [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/bets/:betId/comments"];
+        
+        NSDictionary *argsDict = nil;
+        BOOL match = [pathMatcher matchesPath:[url relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        if (match) {
+            NSNumber *betId = [(NSString *)[argsDict objectForKey:@"betId"] numberValue];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Comment"];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"betId == %@", betId];
+            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+    
     
     [self addFetchRequestBlock:^NSFetchRequest *(NSURL *url){
         RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:@"/tags"];

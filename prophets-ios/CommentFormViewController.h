@@ -8,11 +8,12 @@
 
 #import "FFFormViewController.h"
 
-@class League, Question, Membership, Comment;
+@class League, Question, Membership, Comment, Bet;
 
 @interface CommentFormViewController : FFFormViewController
 
 @property (nonatomic, strong) Question *question;
+@property (nonatomic, strong) Bet *bet;
 @property (nonatomic, strong) League *league;
 @property (nonatomic, strong) Comment *existingComment;
 

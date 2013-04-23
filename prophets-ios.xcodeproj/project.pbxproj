@@ -59,6 +59,7 @@
 		B515EF111725D55F003EA932 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B515EF101725D55F003EA932 /* ActivityCell.m */; };
 		B515EF131725D570003EA932 /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B515EF121725D570003EA932 /* ActivityCell.xib */; };
 		B515EF1A1725D86B003EA932 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = B515EF191725D86B003EA932 /* Activity.m */; };
+		B515EF1D1725EA0F003EA932 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B515EF1C1725EA0F003EA932 /* BetViewController.m */; };
 		B521AC07162B64500009A8E4 /* FFTableFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B521AC06162B64500009A8E4 /* FFTableFooterButtonView.m */; };
 		B537C96B1672AE820032685A /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = B537C96A1672AE820032685A /* Tag.m */; };
 		B53F585716433C6400AF2BA9 /* BetCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F585616433C6300AF2BA9 /* BetCellTests.m */; };
@@ -355,6 +356,8 @@
 		B515EF141725D6DA003EA932 /* prophets_ios 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "prophets_ios 3.xcdatamodel"; sourceTree = "<group>"; };
 		B515EF181725D86B003EA932 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		B515EF191725D86B003EA932 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		B515EF1B1725EA0F003EA932 /* BetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetViewController.h; sourceTree = "<group>"; };
+		B515EF1C1725EA0F003EA932 /* BetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetViewController.m; sourceTree = "<group>"; };
 		B521AC05162B64500009A8E4 /* FFTableFooterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTableFooterButtonView.h; sourceTree = "<group>"; };
 		B521AC06162B64500009A8E4 /* FFTableFooterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTableFooterButtonView.m; sourceTree = "<group>"; };
 		B5332392161F5ACA0094D2DF /* DevConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevConfig.xcconfig; sourceTree = "<group>"; };
@@ -858,6 +861,8 @@
 				B5C527AD1645722F0093B8E3 /* AnswersViewController.m */,
 				B5C527B716458F640093B8E3 /* CreateBetViewController.h */,
 				B5C527B816458F640093B8E3 /* CreateBetViewController.m */,
+				B515EF1B1725EA0F003EA932 /* BetViewController.h */,
+				B515EF1C1725EA0F003EA932 /* BetViewController.m */,
 			);
 			name = Betting;
 			sourceTree = "<group>";
@@ -1673,6 +1678,7 @@
 				B515EF0E1725D29E003EA932 /* ActivityViewController.m in Sources */,
 				B515EF111725D55F003EA932 /* ActivityCell.m in Sources */,
 				B515EF1A1725D86B003EA932 /* Activity.m in Sources */,
+				B515EF1D1725EA0F003EA932 /* BetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

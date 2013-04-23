@@ -17,62 +17,99 @@
 @implementation BetCell
 
 -(void)setBet:(Bet *)bet{
-    self.answerLabel.text = bet.answer.content;
-    self.questionLabel.text = bet.answer.question.content;
-    self.betInfoLabel.text = [NSString stringWithFormat:@"You bet %@ on %@ odds",
-                              bet.amount.currencyString, bet.oddsString];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"hh:mma zzz MMM dd,yyyy";
-    dateFormatter.timeZone = [NSTimeZone localTimeZone];
-    
-    self.betSubmittedLabel.text = [NSString stringWithFormat:@"Submitted: %@",
-                                   [dateFormatter stringFromDate:bet.createdAt]];
-    
-    if (bet.hasBeenJudged) { //judged bet
-        self.statusLabel.text = @"Closed";
-        self.statusLabel.textColor = [UIColor blackColor];
-        self.statusDot.backgroundColor = [UIColor blackColor];
-        
-        if ([bet.payout compare:[NSNumber numberWithInt:0]] == NSOrderedSame) { // incorrect bet
-            self.payoutLabelBackground.backgroundColor = [UIColor ffRedColor];
-            self.payoutLabel.text = bet.amount.currencyString;
-            self.payoutSubtextLabel.text = @"you lost";
-        }
-        else{ //correct bet
-            self.payoutLabelBackground.backgroundColor = [UIColor ffGreenColor];
-            self.payoutLabel.text = bet.payout.currencyString;
-            self.payoutSubtextLabel.text = @"you won";
-        }
-        
-        self.bettingEndLabel.text = [NSString stringWithFormat:@"Betting ended: %@",
-                                       [dateFormatter stringFromDate:bet.answer.bettingEndedAt]];
-        
+    if(!bet || !bet.answer || !bet.answer.question){
+        [self prepForLoadingBet];
     }
     else{
-        self.payoutLabelBackground.backgroundColor = [UIColor ffGrayColor];
-        self.payoutLabel.text = bet.potentialPayout.currencyString;
-        self.payoutSubtextLabel.text = @"potential payout";
+        [self prepForBet];
         
-        if (bet.answer.isOpenForBetting) { //bet in an answer that is still open for betting
-            self.bettingEndLabel.text = [NSString stringWithFormat:@"Betting ends: %@",
-                                         [dateFormatter stringFromDate:bet.answer.question.bettingClosesAt]];
+        self.answerLabel.text = bet.answer.content;
+        self.questionLabel.text = bet.answer.question.content;
+        self.betInfoLabel.text = [NSString stringWithFormat:@"%@ bet on %@ odds",
+                                  bet.amount.currencyString, bet.oddsString];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"hh:mma zzz MMM dd,yyyy";
+        dateFormatter.timeZone = [NSTimeZone localTimeZone];
+        
+        self.betSubmittedLabel.text = [NSString stringWithFormat:@"Submitted: %@",
+                                       [dateFormatter stringFromDate:bet.createdAt]];
+        
+        if (bet.hasBeenJudged) { //judged bet
+            self.statusLabel.text = @"Closed";
+            self.statusLabel.textColor = [UIColor blackColor];
+            self.statusDot.backgroundColor = [UIColor blackColor];
             
-            self.statusLabel.text = @"Open";
-            self.statusLabel.textColor = [UIColor ffGreenColor];
-            self.statusDot.backgroundColor = [UIColor ffGreenColor];
+            if ([bet.payout compare:[NSNumber numberWithInt:0]] == NSOrderedSame) { // incorrect bet
+                self.payoutLabelBackground.backgroundColor = [UIColor ffRedColor];
+                self.payoutLabel.text = bet.amount.currencyString;
+                self.payoutSubtextLabel.text = @"lost";
+            }
+            else{ //correct bet
+                self.payoutLabelBackground.backgroundColor = [UIColor ffGreenColor];
+                self.payoutLabel.text = bet.payout.currencyString;
+                self.payoutSubtextLabel.text = @"won";
+            }
+            
+            self.bettingEndLabel.text = [NSString stringWithFormat:@"Betting ended: %@",
+                                           [dateFormatter stringFromDate:bet.answer.bettingEndedAt]];
             
         }
-        else{ //bet in a question where answer has closed, but answer has not yet been judged
-            self.bettingEndLabel.text = [NSString stringWithFormat:@"Betting ended: %@",
-                                         [dateFormatter stringFromDate:bet.answer.question.bettingClosesAt]];
+        else{
+            self.payoutLabelBackground.backgroundColor = [UIColor ffGrayColor];
+            self.payoutLabel.text = bet.potentialPayout.currencyString;
+            self.payoutSubtextLabel.text = @"potential payout";
             
-            self.statusLabel.text = @"Closed, Waiting to be judged";
-            self.statusLabel.textColor = [UIColor ffRedColor];
-            self.statusDot.backgroundColor = [UIColor ffRedColor];
-            
+            if (bet.answer.isOpenForBetting) { //bet in an answer that is still open for betting
+                self.bettingEndLabel.text = [NSString stringWithFormat:@"Betting ends: %@",
+                                             [dateFormatter stringFromDate:bet.answer.question.bettingClosesAt]];
+                
+                self.statusLabel.text = @"Open";
+                self.statusLabel.textColor = [UIColor ffGreenColor];
+                self.statusDot.backgroundColor = [UIColor ffGreenColor];
+                
+            }
+            else{ //bet in a question where answer has closed, but answer has not yet been judged
+                self.bettingEndLabel.text = [NSString stringWithFormat:@"Betting ended: %@",
+                                             [dateFormatter stringFromDate:bet.answer.question.bettingClosesAt]];
+                
+                self.statusLabel.text = @"Closed, Waiting to be judged";
+                self.statusLabel.textColor = [UIColor ffRedColor];
+                self.statusDot.backgroundColor = [UIColor ffRedColor];
+                
+            }
         }
     }
+}
+
+-(void)prepForLoadingBet{
+    self.statusLabel.hidden = YES;
+    self.statusDot.hidden = YES;
+    self.questionLabel.hidden = YES;
+    self.answerLabel.hidden = YES;
+    self.betInfoLabel.hidden = YES;
+    self.payoutLabelBackground.hidden = YES;
+    self.payoutLabel.hidden = YES;
+    self.payoutSubtextLabel.hidden = YES;
+    self.betSubmittedLabel.hidden = YES;
+    self.bettingEndLabel.hidden = YES;
+    
+    self.loadingBetLabel.hidden = NO;
+}
+
+-(void)prepForBet{
+    self.statusLabel.hidden = NO;
+    self.statusDot.hidden = NO;
+    self.questionLabel.hidden = NO;
+    self.answerLabel.hidden = NO;
+    self.betInfoLabel.hidden = NO;
+    self.payoutLabelBackground.hidden = NO;
+    self.payoutLabel.hidden = NO;
+    self.payoutSubtextLabel.hidden = NO;
+    self.betSubmittedLabel.hidden = NO;
+    self.bettingEndLabel.hidden = NO;
+    
+    self.loadingBetLabel.hidden = YES;
 }
 
 -(void)awakeFromNib{
