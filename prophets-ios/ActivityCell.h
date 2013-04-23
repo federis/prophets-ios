@@ -10,12 +10,14 @@
 
 @class Activity;
 
-@interface ActivityCell : FFBaseCell
+@interface ActivityCell : UITableViewCell
 
 @property (nonatomic, strong) Activity *activity;
 
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
+@property (weak, nonatomic) IBOutlet UIImageView *commentsImageView;
 
 -(CGFloat)heightForCellWithActivity:(Activity *)activity;
 

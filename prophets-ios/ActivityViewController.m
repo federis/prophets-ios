@@ -84,6 +84,7 @@
     
     Activity *activity = (Activity *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.activity = activity;
+    cell.bgView.hidden = indexPath.row % 2 == 1;
     
     return cell;
 }
