@@ -13,6 +13,7 @@
 #import "Bet.h"
 #import "Answer.h"
 #import "Question.h"
+#import "Utilities.h"
 
 @implementation BetCell
 
@@ -79,6 +80,8 @@
                 
             }
         }
+        
+        [self layoutLabels];
     }
 }
 
@@ -112,13 +115,41 @@
     self.loadingBetLabel.hidden = YES;
 }
 
+-(void)layoutLabels{
+    CGFloat questionHeight = [Utilities heightForString:self.questionLabel.text
+                                              withFont:self.questionLabel.font
+                                                 width:self.questionLabel.frame.size.width];
+
+    self.questionLabel.frame = RectWithNewHeight(questionHeight, self.questionLabel.frame);
+    
+    CGFloat answerHeight = [Utilities heightForString:self.answerLabel.text
+                                               withFont:self.answerLabel.font
+                                                  width:self.answerLabel.frame.size.width];
+    
+    CGSize answerSize = CGSizeMake(self.answerLabel.frame.size.width, answerHeight);
+    self.answerLabel.frame = RectBelowRectWithSpacingAndSize(self.questionLabel.frame, 0, answerSize);
+}
+
 -(void)awakeFromNib{
     self.statusDot.layer.cornerRadius = 5;
     self.payoutLabelBackground.layer.cornerRadius = 5;
 }
 
 -(CGFloat)heightForCellWithBet:(Bet *)bet{
-    return 100;
+    if(!bet || !bet.answer || !bet.answer.question){
+        return 95;
+    }
+    else{
+        CGFloat questionHeight = [Utilities heightForString:bet.answer.question.content
+                                                   withFont:self.questionLabel.font
+                                                      width:self.questionLabel.frame.size.width];
+        
+        CGFloat answerHeight = [Utilities heightForString:bet.answer.content
+                                                 withFont:self.answerLabel.font
+                                                    width:self.answerLabel.frame.size.width];
+
+        return questionHeight + answerHeight + 54;
+    }
 }
 
 @end

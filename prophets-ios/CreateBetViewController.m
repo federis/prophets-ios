@@ -57,10 +57,12 @@
 -(void)submitBetTouched{
     Bet *bet = self.createBetView.bet;
     
+    [SVProgressHUD showWithStatus:@"Placing bet..." maskType:SVProgressHUDMaskTypeGradient];
+    
     [[RKObjectManager sharedManager] postObject:bet path:nil parameters:nil
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         [SVProgressHUD dismiss];
-        [SVProgressHUD showSuccessWithStatus:@"Bet created!"];
+        [SVProgressHUD showSuccessWithStatus:@"Bet placed!"];
         [self.navigationController popViewControllerAnimated:YES];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error){
