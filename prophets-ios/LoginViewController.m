@@ -15,6 +15,7 @@
 #import "NSManagedObjectContext+Additions.h"
 #import "FFApplicationConstants.h"
 #import "RoundedClearBar.h"
+#import "FFFacebook.h"
 
 @interface LoginViewController ()
 
@@ -91,6 +92,18 @@
     
     
     return [self.errors count] == 0;
+}
+
+- (IBAction)facebookButtonTouched:(id)sender {
+    if ([FBSession activeSession].isOpen) {
+        [FFFacebook logInWithFacebookSession:[FBSession activeSession] success:^{} failure:^(NSError *err){}];
+    }
+    else{
+        [FBSession openActiveSessionWithReadPermissions:@[] allowLoginUI:YES
+          completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
+              [FFFacebook logInWithFacebookSession:session success:^{} failure:^(NSError *err){}];
+          }];
+    }
 }
 
 @end

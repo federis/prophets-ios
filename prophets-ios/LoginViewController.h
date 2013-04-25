@@ -10,4 +10,6 @@
 
 @interface LoginViewController : FFFormViewController
 
+- (IBAction)facebookButtonTouched:(id)sender;
+
 @end
