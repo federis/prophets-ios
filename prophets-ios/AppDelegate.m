@@ -17,6 +17,7 @@
 #import "FFDeepLinker.h"
 #import "FFNotificationHandler.h"
 #import "Flurry.h"
+#import "FFFacebook.h"
 
 @implementation AppDelegate
 
@@ -118,6 +119,10 @@
     [self registerForPushNotifications];
     [self setupAuthTokenHeader];
     [self loadMemberships];
+    
+    if ([User currentUser].fbUid) {
+        //[FFFacebook currentSession]
+    }
 }
 
 -(void)userLoggedOut:(NSNotification *)note{

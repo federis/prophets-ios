@@ -1,6 +1,7 @@
 
 PODS:
 - AFNetworking (1.1.0)
+- Facebook-iOS-SDK (3.5.0)
 - Lockbox (1.2.0)
 - RestKit (0.20.0rc1):
   - RestKit/Core (= 0.20.0rc1)
@@ -21,6 +22,7 @@ PODS:
 - SVProgressHUD (0.9)
 
 DEPENDENCIES:
+- Facebook-iOS-SDK (= 3.5.0)
 - Lockbox
 - RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
 - RestKit/Testing (from `https://github.com/RestKit/RestKit.git', branch `development')
@@ -38,6 +40,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  Facebook-iOS-SDK: df5c04b1927e1a535733192857f8e5b9774407d1
   Lockbox: e237a944f2040d4f27e8077726b7bbe0489febdb
   RestKit: 0382132969d823a872b377c1ab2e383f3c74a339
   RestKit/Core: 0382132969d823a872b377c1ab2e383f3c74a339

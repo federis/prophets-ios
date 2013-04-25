@@ -10,4 +10,6 @@
 
 @interface RegistrationViewController : FFFormViewController
 
+-(IBAction)facebookButtonTouched:(id)sender;
+
 @end

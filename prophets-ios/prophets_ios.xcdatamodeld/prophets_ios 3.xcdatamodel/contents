@@ -128,6 +128,9 @@
     </entity>
     <entity name="User" representedClassName="User" parentEntity="Resource" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fbToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fbTokenExpiresAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fbUid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wantsNewCommentNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="wantsNewQuestionNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -144,6 +147,7 @@
         </userInfo>
     </entity>
     <elements>
+        <element name="Activity" positionX="160" positionY="192" width="128" height="150"/>
         <element name="Answer" positionX="-63" positionY="27" width="128" height="240"/>
         <element name="Bet" positionX="234" positionY="108" width="128" height="210"/>
         <element name="Comment" positionX="-252" positionY="-486" width="128" height="180"/>
@@ -152,7 +156,6 @@
         <element name="Question" positionX="-281" positionY="-216" width="128" height="240"/>
         <element name="Resource" positionX="144" positionY="-378" width="128" height="90"/>
         <element name="Tag" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="User" positionX="529" positionY="-108" width="128" height="225"/>
-        <element name="Activity" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="User" positionX="529" positionY="-108" width="128" height="270"/>
     </elements>
 </model>

@@ -24,6 +24,9 @@ static User *currentUser = nil;
 
 @dynamic email;
 @dynamic name;
+@dynamic fbUid;
+@dynamic fbToken;
+@dynamic fbTokenExpiresAt;
 @dynamic answers;
 @dynamic judgedAnswers;
 @dynamic bets;
@@ -92,6 +95,9 @@ static User *currentUser = nil;
     [mapping addAttributeMappingsFromDictionary:@{
         @"id" : @"remoteId",
         @"authentication_token" : @"authenticationToken",
+        @"fb_uid" : @"fbUid",
+        @"fb_token" : @"fbToken",
+        @"fb_token_expires_at" : @"fbTokenExpiresAt",
         @"wants_notifications" : @"wantsNotifications",
         @"wants_new_question_notifications" : @"wantsNewQuestionNotifications",
         @"wants_new_comment_notifications" : @"wantsNewCommentNotifications",
@@ -109,6 +115,9 @@ static User *currentUser = nil;
     [mapping addAttributeMappingsFromArray:@[@"email", @"name", @"password"]];
     [mapping addAttributeMappingsFromDictionary:@{
      @"remoteId" : @"id",
+     @"fbUid" : @"fb_uid",
+     @"fbToken" : @"fb_token",
+     @"fbTokenExpiresAt" : @"fb_token_expires_at",
      @"currentPassword" : @"current_password",
      @"wantsNotifications" : @"wants_notifications",
      @"wantsNewQuestionNotifications" : @"wants_new_question_notifications",

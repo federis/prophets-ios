@@ -16,6 +16,9 @@
 
 @property (nonatomic, strong) NSString * email;
 @property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSString * fbUid;
+@property (nonatomic, strong) NSString * fbToken;
+@property (nonatomic, strong) NSDate * fbTokenExpiresAt;
 @property (nonatomic, strong) NSSet *answers;
 @property (nonatomic, strong) NSSet *judgedAnswers;
 @property (nonatomic, strong) NSSet *bets;
@@ -39,6 +42,8 @@
 -(void)setAuthenticationToken:(NSString *)token;
 +(User *)currentUser;
 +(void)setCurrentUser:(User *)user;
+
+-(void)loadTokenFromRemoteWithLoadedHandler:(void (^)(User *))loadedBlock failure:(void (^)(NSError *))failureBlock;
 
 @end
 

@@ -51,6 +51,17 @@ NSString * const kModelName = @"prophets_ios";
     return [NSSet setWithArray:results];
 }
 
+-(NSManagedObjectContext *)childContext{
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    
+    [context performBlockAndWait:^{
+        context.parentContext = self;
+        context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy;
+    }];
+    
+    return context;
+}
+
 
 
 @end

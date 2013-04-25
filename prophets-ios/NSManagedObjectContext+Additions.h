@@ -11,5 +11,6 @@
 @interface NSManagedObjectContext (Additions)
 
 -(NSSet *)fetchObjectsForEntityName:(NSString *)newEntityName withPredicate:(id)stringOrPredicate, ...;
+-(NSManagedObjectContext *)childContext;
 
 @end

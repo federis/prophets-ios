@@ -52,6 +52,9 @@
 		B50EF4B1166C574D0079D6A1 /* LeagueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EF4B0166C574D0079D6A1 /* LeagueListViewController.m */; };
 		B510D46F1727197E00DCC4BB /* comments_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B510D46E1727197E00DCC4BB /* comments_icon.png */; };
 		B510D47117271ECE00DCC4BB /* comments_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B510D47017271ECE00DCC4BB /* comments_icon@2x.png */; };
+		B510D4741728527300DCC4BB /* FFFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = B510D4731728527300DCC4BB /* FFFacebook.m */; };
+		B510D47817285EAE00DCC4BB /* facebook_login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B510D47617285EAE00DCC4BB /* facebook_login_button.png */; };
+		B510D47917285EAE00DCC4BB /* facebook_login_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B510D47717285EAE00DCC4BB /* facebook_login_button@2x.png */; };
 		B513185616B9AC1400E50BCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513185516B9AC1400E50BCF /* SettingsViewController.m */; };
 		B513189016B9EEF800E50BCF /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513188F16B9EEF800E50BCF /* AdminViewController.m */; };
 		B513C0A81672BC8A009E4484 /* JoinLeagueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B513C0A71672BC8A009E4484 /* JoinLeagueViewController.m */; };
@@ -343,6 +346,10 @@
 		B50EF4B0166C574D0079D6A1 /* LeagueListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueListViewController.m; sourceTree = "<group>"; };
 		B510D46E1727197E00DCC4BB /* comments_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments_icon.png; sourceTree = "<group>"; };
 		B510D47017271ECE00DCC4BB /* comments_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comments_icon@2x.png"; sourceTree = "<group>"; };
+		B510D4721728527300DCC4BB /* FFFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFacebook.h; sourceTree = "<group>"; };
+		B510D4731728527300DCC4BB /* FFFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFacebook.m; sourceTree = "<group>"; };
+		B510D47617285EAE00DCC4BB /* facebook_login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_login_button.png; sourceTree = "<group>"; };
+		B510D47717285EAE00DCC4BB /* facebook_login_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook_login_button@2x.png"; sourceTree = "<group>"; };
 		B513185416B9AC1400E50BCF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B513185516B9AC1400E50BCF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B513188E16B9EEF800E50BCF /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
@@ -770,6 +777,8 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B510D47617285EAE00DCC4BB /* facebook_login_button.png */,
+				B510D47717285EAE00DCC4BB /* facebook_login_button@2x.png */,
 				B510D47017271ECE00DCC4BB /* comments_icon@2x.png */,
 				B510D46E1727197E00DCC4BB /* comments_icon.png */,
 				B54CF5E016F22ED8003C48FF /* icons */,
@@ -885,6 +894,14 @@
 		B54AA0FB162F1E7700F2A3CB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B566CDB716F0E15C00489678 /* FFNotificationHandler.h */,
+				B566CDB816F0E15C00489678 /* FFNotificationHandler.m */,
+				B5EC632516E839F0007BCD61 /* FFDeepLinker.h */,
+				B5EC632616E839F7007BCD61 /* FFDeepLinker.m */,
+				B56F40BF160A52AC007D445F /* FFApplicationConstants.h */,
+				B56F40C0160A52AC007D445F /* FFApplicationConstants.m */,
+				B510D4721728527300DCC4BB /* FFFacebook.h */,
+				B510D4731728527300DCC4BB /* FFFacebook.m */,
 				B54AA0FC162F1E8C00F2A3CB /* Utilities.h */,
 				B54AA0FD162F1E8C00F2A3CB /* Utilities.m */,
 			);
@@ -1285,21 +1302,15 @@
 			children = (
 				B54A918D16F76C53008B3391 /* Flurry */,
 				B54AA10A162F3FCD00F2A3CB /* FFTable */,
-				B54AA0FB162F1E7700F2A3CB /* Utilities */,
 				B5D33D6D161613990043A0E8 /* Categories */,
 				B5D33D7D1618C4700043A0E8 /* Views */,
 				B57D0925160BE4AB0060A11E /* Controllers */,
 				B56F40D4160A7833007D445F /* Models */,
-				B56F40BF160A52AC007D445F /* FFApplicationConstants.h */,
-				B56F40C0160A52AC007D445F /* FFApplicationConstants.m */,
+				B54AA0FB162F1E7700F2A3CB /* Utilities */,
+				B56E97DD16C5A3C9000EC7E7 /* Restkit Subclasses */,
 				B5F1AEDD160388C600D28C1C /* AppDelegate.h */,
 				B5F1AEDE160388C600D28C1C /* AppDelegate.m */,
-				B566CDB716F0E15C00489678 /* FFNotificationHandler.h */,
-				B566CDB816F0E15C00489678 /* FFNotificationHandler.m */,
-				B5EC632516E839F0007BCD61 /* FFDeepLinker.h */,
-				B5EC632616E839F7007BCD61 /* FFDeepLinker.m */,
 				B5F1AEDC160388C600D28C1C /* prophets-ios-Prefix.pch */,
-				B56E97DD16C5A3C9000EC7E7 /* Restkit Subclasses */,
 			);
 			path = "prophets-ios";
 			sourceTree = "<group>";
@@ -1525,6 +1536,8 @@
 				B515EF131725D570003EA932 /* ActivityCell.xib in Resources */,
 				B510D46F1727197E00DCC4BB /* comments_icon.png in Resources */,
 				B510D47117271ECE00DCC4BB /* comments_icon@2x.png in Resources */,
+				B510D47817285EAE00DCC4BB /* facebook_login_button.png in Resources */,
+				B510D47917285EAE00DCC4BB /* facebook_login_button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1687,6 +1700,7 @@
 				B515EF111725D55F003EA932 /* ActivityCell.m in Sources */,
 				B515EF1A1725D86B003EA932 /* Activity.m in Sources */,
 				B515EF1D1725EA0F003EA932 /* BetViewController.m in Sources */,
+				B510D4741728527300DCC4BB /* FFFacebook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
