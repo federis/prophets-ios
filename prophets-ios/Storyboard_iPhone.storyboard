@@ -411,7 +411,7 @@
             </objects>
             <point key="canvasLocation" x="-923" y="362"/>
         </scene>
-        <!--Memberships View Controller-->
+        <!--Memberships View Controller - My Current Leagues-->
         <scene sceneID="zte-aW-O8Y">
             <objects>
                 <viewController storyboardIdentifier="MembershipsViewController" id="Pog-5J-M72" customClass="MembershipsViewController" sceneMemberID="viewController">
@@ -435,7 +435,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="50g-x9-8pP"/>
+                    <navigationItem key="navigationItem" title="My Current Leagues" id="50g-x9-8pP"/>
                     <connections>
                         <outlet property="tableView" destination="OYr-9b-BQ7" id="BUK-W1-eRQ"/>
                         <segue destination="ncp-4I-Wwd" kind="push" identifier="ShowLeague" id="D7O-gh-bQe"/>
@@ -964,7 +964,7 @@
             </objects>
             <point key="canvasLocation" x="-199" y="-591"/>
         </scene>
-        <!--Find Leagues View Controller-->
+        <!--Find Leagues View Controller - Find Leagues-->
         <scene sceneID="KLb-ia-G62">
             <objects>
                 <viewController id="dAn-Uc-uNh" customClass="FindLeaguesViewController" sceneMemberID="viewController">
@@ -996,7 +996,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xlX-LM-te4"/>
+                    <navigationItem key="navigationItem" title="Find Leagues" id="xlX-LM-te4"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="EJR-a2-3rr" id="uUZ-fE-eBb"/>
                         <outlet property="tableView" destination="Mes-ua-bGH" id="Wb2-aM-fZN"/>
