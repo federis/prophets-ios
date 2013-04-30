@@ -130,6 +130,7 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fbToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fbTokenExpiresAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fbTokenRefreshedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="fbUid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wantsNewCommentNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -156,6 +157,6 @@
         <element name="Question" positionX="-281" positionY="-216" width="128" height="240"/>
         <element name="Resource" positionX="144" positionY="-378" width="128" height="90"/>
         <element name="Tag" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="User" positionX="529" positionY="-108" width="128" height="270"/>
+        <element name="User" positionX="529" positionY="-108" width="128" height="285"/>
     </elements>
 </model>

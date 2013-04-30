@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "FFFacebookSessionTokenCachingStrategy.h"
+
+@class User;
 
 @interface FFFacebook : NSObject
 
-+(FBSession *)sharedSession;
-+(void)setSharedSession:(FBSession *)session;
++(void)openSessionForLoggedInUser;
 
-+(void)logInWithFacebookSession:(FBSession *)session success:(void (^)(void))successBlock failure:(void (^)(NSError *))failureBlock;
++(void)logInViaFacebookWithSuccessHandler:(void (^)(User *))successBlock failure:(void (^)(NSError *))failureBlock;
+
++(void)saveTokenDataToRemoteForUser:(User *)user withSuccessHandler:(void (^)(void))successBlock failure:(void (^)(NSError *))failureBlock;
 
 @end

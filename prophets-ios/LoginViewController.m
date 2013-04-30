@@ -95,15 +95,13 @@
 }
 
 - (IBAction)facebookButtonTouched:(id)sender {
-    if ([FBSession activeSession].isOpen) {
-        [FFFacebook logInWithFacebookSession:[FBSession activeSession] success:^{} failure:^(NSError *err){}];
-    }
-    else{
-        [FBSession openActiveSessionWithReadPermissions:@[] allowLoginUI:YES
-          completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
-              [FFFacebook logInWithFacebookSession:session success:^{} failure:^(NSError *err){}];
-          }];
-    }
+    [FFFacebook logInViaFacebookWithSuccessHandler:^(User *user){
+        [User setCurrentUser:user];
+        [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogInNotification object:user];
+    } failure:^(NSError *error){
+        ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+        [SVProgressHUD showErrorWithStatus:[errors messagesString]];
+    }];
 }
 
 @end

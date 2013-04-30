@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString * fbUid;
 @property (nonatomic, strong) NSString * fbToken;
 @property (nonatomic, strong) NSDate * fbTokenExpiresAt;
+@property (nonatomic, strong) NSDate * fbTokenRefreshedAt;
 @property (nonatomic, strong) NSSet *answers;
 @property (nonatomic, strong) NSSet *judgedAnswers;
 @property (nonatomic, strong) NSSet *bets;

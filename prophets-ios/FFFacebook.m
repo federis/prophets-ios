@@ -10,6 +10,7 @@
 #import <SVProgressHUD.h>
 
 #import "FFFacebook.h"
+#import "FFFacebookSession.h"
 #import "NSManagedObjectContext+Additions.h"
 #import "User.h"
 #import "FFApplicationConstants.h"
@@ -17,45 +18,76 @@
 
 @implementation FFFacebook
 
-static FBSession *sharedSession = nil;
-
-+(FBSession *)sharedSession{
-    if (!sharedSession) {
-        [self setSharedSession:[[FBSession alloc] init]];
-    }
++(FBSession *)fbSession{
+    FFFacebookSessionTokenCachingStrategy *fbTokenCache = [[FFFacebookSessionTokenCachingStrategy alloc] init];
     
-    return sharedSession;
+    FFFacebookSession *session = [[FFFacebookSession alloc] initWithAppID:nil
+                                                              permissions:nil
+                                                          defaultAudience:nil
+                                                          urlSchemeSuffix:nil
+                                                       tokenCacheStrategy:fbTokenCache];
+    
+    [FBSession setActiveSession:session];
+    
+    return session;
 }
 
-+(void)setSharedSession:(FBSession *)session{
-    sharedSession = session;
++(void)openSessionForLoggedInUser{
+    FBSession *session = [self fbSession];
+    
+    [session openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
+            completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
+                DLog(@"here");
+                if (session.isOpen) {
+                    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *conn, id result, NSError *err){
+                        DLog(@"here");
+                    }];
+                }
+            }];
 }
 
-+(void)logInWithFacebookSession:(FBSession *)session success:(void (^)(void))successBlock failure:(void (^)(NSError *))failureBlock{
++(void)logInViaFacebookWithSuccessHandler:(void (^)(User *))successBlock failure:(void (^)(NSError *))failureBlock{
     
     NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
     NSManagedObjectContext *scratch = [context childContext];
-    
     User *tmpUser = (User *)[scratch insertNewObjectForEntityForName:@"User"];
-    //tmpUser.fbToken = session.accessTokenData.accessToken;
     
+    FBSession *session = [self fbSession];
+    
+    [session openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
+            completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
+                DLog(@"here");
+                if (session.isOpen) {
+                    tmpUser.fbToken = session.accessTokenData.accessToken;
+                    tmpUser.fbTokenExpiresAt = session.accessTokenData.expirationDate;
+                    tmpUser.fbTokenRefreshedAt = session.accessTokenData.refreshDate;
+                    
+                    [self saveTokenDataToRemoteForUser:tmpUser withSuccessHandler:^{
+                        [scratch description]; //access this here so that the block retains it, keeping the tmpUser around
+                        User *user = (User *)[context objectWithID:[tmpUser objectID]];
+                        successBlock(user);
+                    } failure:^(NSError *error){
+                        failureBlock(error);
+                    }];
+                }
+            }];
+}
+
++(void)saveTokenDataToRemoteForUser:(User *)user withSuccessHandler:(void (^)(void))successBlock failure:(void (^)(NSError *))failureBlock{
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
     
-    [[RKObjectManager sharedManager] postObject:tmpUser path:@"/tokens/facebook"
-        parameters:@{ @"fb_token": session.accessTokenData.accessToken, @"fb_token_expires_at" : session.accessTokenData.expirationDate }
-        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-            [SVProgressHUD dismiss];
-            
-            User *user = (User *)[context objectWithID:[tmpUser objectID]];
-            [User setCurrentUser:user];
-            [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogInNotification object:user];
-        }
-        failure:^(RKObjectRequestOperation *operation, NSError *error){
-            [SVProgressHUD dismiss];
-            
-            ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
-            [SVProgressHUD showErrorWithStatus:[errors messagesString]];
-        }];
+    [[RKObjectManager sharedManager] postObject:user path:@"/tokens/facebook"
+                                     parameters:@{ @"fb_token": user.fbToken, @"fb_token_expires_at" : user.fbTokenExpiresAt, @"fb_token_refreshed_at" : user.fbTokenRefreshedAt }
+            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+                [SVProgressHUD dismiss];
+                
+                successBlock();
+            }
+            failure:^(RKObjectRequestOperation *operation, NSError *error){
+                [SVProgressHUD dismiss];
+                
+                failureBlock(error);
+            }];
 }
 
 @end

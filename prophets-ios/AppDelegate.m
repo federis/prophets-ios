@@ -119,9 +119,15 @@
     [self registerForPushNotifications];
     [self setupAuthTokenHeader];
     [self loadMemberships];
-    
-    if ([User currentUser].fbUid) {
-        //[FFFacebook currentSession]
+    /*
+    if (![FBSession activeSession].isOpen) {
+        [FBSession openActiveSessionWithReadPermissions:@[] allowLoginUI:NO completionHandler:^(FBSession *session, FBSessionState state, NSError *error){
+            DLog(@"here");
+        }];
+    }
+    */
+    if ([User currentUser].fbToken && ![FBSession activeSession].isOpen) {
+        [FFFacebook openSessionForLoggedInUser];
     }
 }
 

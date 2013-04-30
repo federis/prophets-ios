@@ -11,6 +11,7 @@
 #import "User.h"
 #import "FFApplicationConstants.h"
 #import "UIAlertView+Additions.h"
+#import "FFFacebook.h"
 
 @interface HomeViewController ()
 
@@ -34,6 +35,7 @@
             if (buttonIndex == 1) {
                 User *user = [User currentUser];
                 [User setCurrentUser:nil];
+                [FBSession.activeSession closeAndClearTokenInformation];
                 [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogOutNotification object:nil userInfo:@{@"user":user}];
             }
         }
