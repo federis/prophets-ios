@@ -98,7 +98,7 @@
     [FFFacebook logInViaFacebookWithSuccessHandler:^(User *user){
         [User setCurrentUser:user];
         [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogInNotification object:user];
-    } failure:^(NSError *error){
+    } failure:^(NSError *error, NSHTTPURLResponse *response){
         ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
         [SVProgressHUD showErrorWithStatus:[errors messagesString]];
     }];

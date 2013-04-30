@@ -22,7 +22,7 @@
     FFFacebookSessionTokenCachingStrategy *fbTokenCache = [[FFFacebookSessionTokenCachingStrategy alloc] init];
     
     FFFacebookSession *session = [[FFFacebookSession alloc] initWithAppID:nil
-                                                              permissions:nil
+                                                              permissions:@[@"email"]
                                                           defaultAudience:nil
                                                           urlSchemeSuffix:nil
                                                        tokenCacheStrategy:fbTokenCache];
@@ -46,7 +46,7 @@
             }];
 }
 
-+(void)logInViaFacebookWithSuccessHandler:(void (^)(User *))successBlock failure:(void (^)(NSError *))failureBlock{
++(void)logInViaFacebookWithSuccessHandler:(void (^)(User *))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock{
     
     NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
     NSManagedObjectContext *scratch = [context childContext];
@@ -56,7 +56,6 @@
     
     [session openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
             completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
-                DLog(@"here");
                 if (session.isOpen) {
                     tmpUser.fbToken = session.accessTokenData.accessToken;
                     tmpUser.fbTokenExpiresAt = session.accessTokenData.expirationDate;
@@ -66,14 +65,14 @@
                         [scratch description]; //access this here so that the block retains it, keeping the tmpUser around
                         User *user = (User *)[context objectWithID:[tmpUser objectID]];
                         successBlock(user);
-                    } failure:^(NSError *error){
-                        failureBlock(error);
+                    } failure:^(NSError *error, NSHTTPURLResponse *httpResponse){
+                        failureBlock(error, httpResponse);
                     }];
                 }
             }];
 }
 
-+(void)saveTokenDataToRemoteForUser:(User *)user withSuccessHandler:(void (^)(void))successBlock failure:(void (^)(NSError *))failureBlock{
++(void)saveTokenDataToRemoteForUser:(User *)user withSuccessHandler:(void (^)(void))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock{
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
     
     [[RKObjectManager sharedManager] postObject:user path:@"/tokens/facebook"
@@ -86,7 +85,7 @@
             failure:^(RKObjectRequestOperation *operation, NSError *error){
                 [SVProgressHUD dismiss];
                 
-                failureBlock(error);
+                failureBlock(error, operation.HTTPRequestOperation.response);
             }];
 }
 

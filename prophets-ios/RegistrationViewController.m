@@ -36,7 +36,11 @@
 
 -(void)prepareForm{
     User *user = (User *)[self.scratchContext insertNewObjectForEntityForName:@"User"];
-    
+    self.form = [FFForm formForObject:user withFields:[self formFields]];
+    self.submitButtonText = @"Register";
+}
+
+-(NSArray *)formFields{
     FFFormTextField *emailField = [FFFormTextField formFieldWithAttributeName:@"email"];
     emailField.returnKeyType = UIReturnKeyNext;
     
@@ -48,9 +52,7 @@
     passwordField.secure = YES;
     passwordField.submitsOnReturn = YES;
     
-    self.form = [FFForm formForObject:user withFields:@[ emailField, nameField, passwordField ]];
-    
-    self.submitButtonText = @"Register";
+    return @[ emailField, nameField, passwordField ];
 }
 
 -(void)submit{
@@ -106,8 +108,28 @@
     [FFFacebook logInViaFacebookWithSuccessHandler:^(User *user){
         [User setCurrentUser:user];
         [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogInNotification object:user];
-    } failure:^(NSError *error){
+    } failure:^(NSError *error, NSHTTPURLResponse *response){
         // Finish registering them
+        if (response.statusCode == 404) {
+            [SVProgressHUD showWithStatus:@"Loading Facebook Data" maskType:SVProgressHUDMaskTypeGradient];
+            
+            [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *conn, id result, NSError *err){
+                User *user = (User *)self.form.object;
+                user.email = result[@"email"];
+                user.name = result[@"name"];
+                user.fbToken = [FBSession activeSession].accessTokenData.accessToken;
+                user.fbTokenExpiresAt = [FBSession activeSession].accessTokenData.expirationDate;
+                user.fbTokenRefreshedAt = [FBSession activeSession].accessTokenData.refreshDate;
+                
+                self.form = [FFForm formForObject:user withFields:[self formFields]];
+                
+                self.tableView.tableHeaderView = nil;
+                
+                [self.tableView reloadData];
+                
+                [SVProgressHUD dismiss];
+            }];
+        }
     }];
 }
 

@@ -910,10 +910,10 @@
 				B510D4731728527300DCC4BB /* FFFacebook.m */,
 				B558A568172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.h */,
 				B558A569172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.m */,
-				B54AA0FC162F1E8C00F2A3CB /* Utilities.h */,
-				B54AA0FD162F1E8C00F2A3CB /* Utilities.m */,
 				B5BD2A5E17301622007F72BA /* FFFacebookSession.h */,
 				B5BD2A5F17301622007F72BA /* FFFacebookSession.m */,
+				B54AA0FC162F1E8C00F2A3CB /* Utilities.h */,
+				B54AA0FD162F1E8C00F2A3CB /* Utilities.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
