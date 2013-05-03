@@ -30,6 +30,10 @@
 }
 
 -(NSString *)cellReuseIdentifier{
+    if (self.customCellReuseIdentifier) {
+        return self.customCellReuseIdentifier;
+    }
+    
     return [NSString stringWithFormat:@"%@Cell", NSStringFromClass([self class])];
 }
 
@@ -38,10 +42,13 @@
 }
 
 -(BOOL)canBecomeFirstResponder{
+    return NO;
+    /*
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"Invalid method call"
                                            "canBecomeFirstResponder must be implemented by subclasses of FFFormField"]
                                  userInfo:nil];
+     */
 }
 
 @end

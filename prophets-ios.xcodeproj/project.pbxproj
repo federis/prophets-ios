@@ -189,6 +189,8 @@
 		B5B147421634E046005F1B5A /* settings_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147381634E045005F1B5A /* settings_button@2x.png */; };
 		B5B147451634EF4D005F1B5A /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147431634EF4D005F1B5A /* home.png */; };
 		B5B147461634EF4D005F1B5A /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147441634EF4D005F1B5A /* home@2x.png */; };
+		B5BBCB8F17306169006C5120 /* FacebookConnectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBCB8E17306169006C5120 /* FacebookConnectCell.m */; };
+		B5BBCB911730617A006C5120 /* FacebookConnectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5BBCB901730617A006C5120 /* FacebookConnectCell.xib */; };
 		B5BD2A6017301623007F72BA /* FFFacebookSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BD2A5F17301622007F72BA /* FFFacebookSession.m */; };
 		B5C527A616455BCA0093B8E3 /* LeaguePerformanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527A516455BCA0093B8E3 /* LeaguePerformanceView.m */; };
 		B5C527AB16455BFC0093B8E3 /* LeaguePerformanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C527AA16455BFC0093B8E3 /* LeaguePerformanceView.xib */; };
@@ -550,6 +552,9 @@
 		B5B147381634E045005F1B5A /* settings_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_button@2x.png"; sourceTree = "<group>"; };
 		B5B147431634EF4D005F1B5A /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		B5B147441634EF4D005F1B5A /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		B5BBCB8D17306169006C5120 /* FacebookConnectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookConnectCell.h; sourceTree = "<group>"; };
+		B5BBCB8E17306169006C5120 /* FacebookConnectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookConnectCell.m; sourceTree = "<group>"; };
+		B5BBCB901730617A006C5120 /* FacebookConnectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookConnectCell.xib; sourceTree = "<group>"; };
 		B5BD2A5E17301622007F72BA /* FFFacebookSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFacebookSession.h; sourceTree = "<group>"; };
 		B5BD2A5F17301622007F72BA /* FFFacebookSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFacebookSession.m; sourceTree = "<group>"; };
 		B5C527A416455BCA0093B8E3 /* LeaguePerformanceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaguePerformanceView.h; sourceTree = "<group>"; };
@@ -1034,6 +1039,9 @@
 				B515EF0F1725D55F003EA932 /* ActivityCell.h */,
 				B515EF101725D55F003EA932 /* ActivityCell.m */,
 				B515EF121725D570003EA932 /* ActivityCell.xib */,
+				B5BBCB8D17306169006C5120 /* FacebookConnectCell.h */,
+				B5BBCB8E17306169006C5120 /* FacebookConnectCell.m */,
+				B5BBCB901730617A006C5120 /* FacebookConnectCell.xib */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -1548,6 +1556,7 @@
 				B510D47117271ECE00DCC4BB /* comments_icon@2x.png in Resources */,
 				B510D47817285EAE00DCC4BB /* facebook_login_button.png in Resources */,
 				B510D47917285EAE00DCC4BB /* facebook_login_button@2x.png in Resources */,
+				B5BBCB911730617A006C5120 /* FacebookConnectCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1713,6 +1722,7 @@
 				B510D4741728527300DCC4BB /* FFFacebook.m in Sources */,
 				B558A56A172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.m in Sources */,
 				B5BD2A6017301623007F72BA /* FFFacebookSession.m in Sources */,
+				B5BBCB8F17306169006C5120 /* FacebookConnectCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

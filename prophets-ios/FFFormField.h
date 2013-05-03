@@ -16,6 +16,7 @@
 @property (nonatomic) BOOL submitsOnReturn;
 @property (nonatomic) UIReturnKeyType returnKeyType;
 @property (nonatomic, strong) id currentValue;
+@property (nonatomic, strong) NSString *customCellReuseIdentifier;
 
 +(id)formFieldWithAttributeName:(NSString *)attributeName labelName:(NSString *)labelName;
 +(id)formFieldWithAttributeName:(NSString *)attributeName;

@@ -26,6 +26,9 @@
     RoundedClearBar *bar = [[RoundedClearBar alloc] initWithTitle:@"Settings"];
     [bar.leftButton addTarget:self action:@selector(cancelTouched) forControlEvents:UIControlEventTouchUpInside];
     self.fixedHeaderView = bar;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FacebookConnectCell" bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:@"FacebookConnectCell"];
 }
 
 -(void)cancelTouched{
@@ -78,7 +81,18 @@
     
     FFFormSection *notificationsSection = [[FFFormSection alloc] initWithFields:notificationFields title:@"Notifications"];
     
-    self.form = [[FFForm alloc] initWithObject:[User currentUser] sections:@[contentSection, notificationsSection]];
+    FFFormField *connectField = [FFFormField formFieldWithAttributeName:@"fbUid"];
+    connectField.customCellReuseIdentifier = @"FacebookConnectCell";
+    NSMutableArray *socialFields = [NSMutableArray arrayWithObject:connectField];
+    
+    if ([User currentUser].fbUid) {
+        FFFormSwitchField *publishBetsField = [FFFormSwitchField formFieldWithAttributeName:@"publishBetsToFB" labelName:@"Publish Bets to FB"];
+        [socialFields addObject:publishBetsField];
+    }
+    
+    FFFormSection *socialSection = [[FFFormSection alloc] initWithFields:socialFields title:@"Social"];
+    
+    self.form = [[FFForm alloc] initWithObject:[User currentUser] sections:@[contentSection, notificationsSection, socialSection]];
     self.form.delegate = self;
     
     self.submitButtonText = @"Save";

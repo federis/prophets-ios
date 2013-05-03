@@ -84,6 +84,7 @@
     
     RKObjectMapping *errorMapping = [RKObjectMapping mappingForClass:[ErrorCollection class]];
     [errorMapping addPropertyMapping:[RKAttributeMapping attributeMappingFromKeyPath:@"errors" toKeyPath:@"messages"]];
+    [errorMapping addPropertyMapping:[RKAttributeMapping attributeMappingFromKeyPath:@"error" toKeyPath:@"message"]];
 
     [self addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:errorMapping pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassClientError)]];
 

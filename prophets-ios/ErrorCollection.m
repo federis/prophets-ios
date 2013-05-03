@@ -11,16 +11,21 @@
 @implementation ErrorCollection
 
 -(NSString *)messagesString{
-    NSMutableString *str = [[NSMutableString alloc] init];
-    for (int i=0; i<self.messages.count; i++) {
-        NSString *msg = [self.messages objectAtIndex:i];
-        if (i==self.messages.count-1) {
-            [str appendFormat:@"%@", msg];
-        } else {
-            [str appendFormat:@"%@\n", msg];
-        }
+    if (self.message) {
+        return self.message;
     }
-    return str;
+    else{
+        NSMutableString *str = [[NSMutableString alloc] init];
+        for (int i=0; i<self.messages.count; i++) {
+            NSString *msg = [self.messages objectAtIndex:i];
+            if (i==self.messages.count-1) {
+                [str appendFormat:@"%@", msg];
+            } else {
+                [str appendFormat:@"%@\n", msg];
+            }
+        }
+        return str;
+    }
 }
 
 @end

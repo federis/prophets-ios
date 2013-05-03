@@ -11,6 +11,7 @@
 @interface ErrorCollection : NSObject
 
 @property (nonatomic, strong) NSArray *messages;
+@property (nonatomic, strong) NSString *message;
 
 -(NSString *)messagesString;
 

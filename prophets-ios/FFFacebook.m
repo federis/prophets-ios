@@ -32,12 +32,26 @@
     return session;
 }
 
-+(void)openSessionForLoggedInUser{
++(void)connectAccountForCurrentUser:(void (^)(void))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock{
     FBSession *session = [self fbSession];
     
     [session openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
             completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
-                DLog(@"here");
+                if (session.isOpen) {
+                    [self saveTokenDataToRemotePath:@"/users/facebook" forUser:[User currentUser] withSuccessHandler:^{
+                        successBlock();
+                    } failure:^(NSError *error, NSHTTPURLResponse *httpResponse){
+                        failureBlock(error, httpResponse);
+                    }];
+                }
+            }];
+}
+
++(void)openSessionForAlreadyConnectedUser{
+    FBSession *session = [self fbSession];
+    
+    [session openWithBehavior:FBSessionLoginBehaviorWithNoFallbackToWebView
+            completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
                 if (session.isOpen) {
                     [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *conn, id result, NSError *err){
                         DLog(@"here");
@@ -73,9 +87,13 @@
 }
 
 +(void)saveTokenDataToRemoteForUser:(User *)user withSuccessHandler:(void (^)(void))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock{
+    [self saveTokenDataToRemotePath:@"/tokens/facebook" forUser:user withSuccessHandler:successBlock failure:failureBlock];
+}
+
++(void)saveTokenDataToRemotePath:(NSString *)path forUser:(User *)user withSuccessHandler:(void (^)(void))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock{
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
     
-    [[RKObjectManager sharedManager] postObject:user path:@"/tokens/facebook"
+    [[RKObjectManager sharedManager] postObject:user path:path
                                      parameters:@{ @"fb_token": user.fbToken, @"fb_token_expires_at" : user.fbTokenExpiresAt, @"fb_token_refreshed_at" : user.fbTokenRefreshedAt }
             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
                 [SVProgressHUD dismiss];

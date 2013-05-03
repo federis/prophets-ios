@@ -28,11 +28,20 @@
 -(NSDictionary *)fetchTokenInformation{
     if (![User currentUser]) return nil;
     
-    NSDictionary *tokenDict = @{
-                                FBTokenInformationTokenKey : [User currentUser].fbToken,
-                                FBTokenInformationExpirationDateKey : [User currentUser].fbTokenExpiresAt,
-                                FBTokenInformationRefreshDateKey : [User currentUser].fbTokenRefreshedAt
-                                };
+    NSMutableDictionary *tokenDict = [NSMutableDictionary dictionary];
+    
+    if ([User currentUser].fbToken) {
+        tokenDict[FBTokenInformationTokenKey] = [User currentUser].fbToken;
+    }
+    
+    if ([User currentUser].fbTokenExpiresAt) {
+        tokenDict[FBTokenInformationExpirationDateKey] = [User currentUser].fbTokenExpiresAt;
+    }
+    
+    if ([User currentUser].fbTokenRefreshedAt) {
+        tokenDict[FBTokenInformationRefreshDateKey] = [User currentUser].fbTokenRefreshedAt;
+    }
+    
     return tokenDict;
 }
 /*
