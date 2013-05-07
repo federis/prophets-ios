@@ -14,9 +14,17 @@
 #import "Question.h"
 #import "Membership.h"
 #import "Bet.h"
+#import "User.h"
 #import "UIToolbar+Additions.h"
 
 @implementation CreateBetView
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    
+    self.facebookSwitch.onImage = [UIImage imageNamed:@"facebook-switch-on.png"];
+    self.facebookSwitch.offImage = [UIImage imageNamed:@"facebook-switch-off.png"];
+}
 
 +(CGFloat)heightForViewWithAnswer:(Answer *)answer{
     return [Utilities heightForString:answer.content
@@ -50,6 +58,8 @@
         self.maxBetLabel.text = membership.maxBet.currencyString;
         
         self.betAmountSlider.maximumValue = [membership.maxBet floatValue];
+        
+        self.facebookSwitch.on = [self.membership.user.publishBetsToFB boolValue];
     }
     
     return self;

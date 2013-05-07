@@ -82,6 +82,8 @@
 		B53F58821644650700AF2BA9 /* FFFormSwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F58811644650700AF2BA9 /* FFFormSwitchField.m */; };
 		B53F58851644652500AF2BA9 /* FFFormSwitchFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F58841644652400AF2BA9 /* FFFormSwitchFieldCell.m */; };
 		B53F58871644653900AF2BA9 /* FFFormSwitchFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53F58861644653700AF2BA9 /* FFFormSwitchFieldCell.xib */; };
+		B5451B9317344012004E6694 /* facebook-switch-on.png in Resources */ = {isa = PBXBuildFile; fileRef = B5451B9217344012004E6694 /* facebook-switch-on.png */; };
+		B5451B9517344229004E6694 /* facebook-switch-off.png in Resources */ = {isa = PBXBuildFile; fileRef = B5451B9417344229004E6694 /* facebook-switch-off.png */; };
 		B54A919016F76C68008B3391 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B54A918F16F76C68008B3391 /* libFlurry.a */; };
 		B54AA0F5162EFDE100F2A3CB /* logo_p.png in Resources */ = {isa = PBXBuildFile; fileRef = B54AA0F3162EFDE100F2A3CB /* logo_p.png */; };
 		B54AA0F6162EFDE100F2A3CB /* logo_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B54AA0F4162EFDE100F2A3CB /* logo_p@2x.png */; };
@@ -402,6 +404,8 @@
 		B53F58831644652300AF2BA9 /* FFFormSwitchFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormSwitchFieldCell.h; sourceTree = "<group>"; };
 		B53F58841644652400AF2BA9 /* FFFormSwitchFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFormSwitchFieldCell.m; sourceTree = "<group>"; };
 		B53F58861644653700AF2BA9 /* FFFormSwitchFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFFormSwitchFieldCell.xib; sourceTree = "<group>"; };
+		B5451B9217344012004E6694 /* facebook-switch-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-switch-on.png"; sourceTree = "<group>"; };
+		B5451B9417344229004E6694 /* facebook-switch-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-switch-off.png"; sourceTree = "<group>"; };
 		B545C07B171DA52100C407EB /* prophets_ios 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "prophets_ios 2.xcdatamodel"; sourceTree = "<group>"; };
 		B54A918E16F76C68008B3391 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		B54A918F16F76C68008B3391 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
@@ -788,8 +792,7 @@
 		B5094EE91625C11400947FAC /* images */ = {
 			isa = PBXGroup;
 			children = (
-				B510D47617285EAE00DCC4BB /* facebook_login_button.png */,
-				B510D47717285EAE00DCC4BB /* facebook_login_button@2x.png */,
+				B5451B9117343FFE004E6694 /* social */,
 				B510D47017271ECE00DCC4BB /* comments_icon@2x.png */,
 				B510D46E1727197E00DCC4BB /* comments_icon.png */,
 				B54CF5E016F22ED8003C48FF /* icons */,
@@ -891,6 +894,17 @@
 				B515EF1C1725EA0F003EA932 /* BetViewController.m */,
 			);
 			name = Betting;
+			sourceTree = "<group>";
+		};
+		B5451B9117343FFE004E6694 /* social */ = {
+			isa = PBXGroup;
+			children = (
+				B5451B9417344229004E6694 /* facebook-switch-off.png */,
+				B5451B9217344012004E6694 /* facebook-switch-on.png */,
+				B510D47617285EAE00DCC4BB /* facebook_login_button.png */,
+				B510D47717285EAE00DCC4BB /* facebook_login_button@2x.png */,
+			);
+			name = social;
 			sourceTree = "<group>";
 		};
 		B54A918D16F76C53008B3391 /* Flurry */ = {
@@ -1557,6 +1571,8 @@
 				B510D47817285EAE00DCC4BB /* facebook_login_button.png in Resources */,
 				B510D47917285EAE00DCC4BB /* facebook_login_button@2x.png in Resources */,
 				B5BBCB911730617A006C5120 /* FacebookConnectCell.xib in Resources */,
+				B5451B9317344012004E6694 /* facebook-switch-on.png in Resources */,
+				B5451B9517344229004E6694 /* facebook-switch-off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

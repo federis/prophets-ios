@@ -7,6 +7,7 @@
 //
 
 #import <SVProgressHUD.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 #import "CreateBetViewController.h"
 #import "CreateBetView.h"
@@ -17,6 +18,8 @@
 #import "Membership.h"
 #import "Question.h"
 #import "Bet.h"
+#import "User.h"
+#import "FFFacebook.h"
 
 @interface CreateBetViewController ()
 
@@ -37,13 +40,7 @@
     
     self.createBetView = [[CreateBetView alloc] initWithBet:bet inAnswer:self.answer forMembership:self.membership];
     self.createBetView.frame = SameSizeRectAt(1, 6, self.createBetView.frame);
-    
-    //CGRectMake(1, 6, 283, [CreateBetView heightForViewWithAnswer:self.answer])
-
-    //bet.membership = self.membership;
-    //bet.answer = self.answer;
-
-    
+        
     [self.createBetView.submitBetButton addTarget:self action:@selector(submitBetTouched)
                                  forControlEvents:UIControlEventTouchUpInside];
 }
@@ -63,6 +60,11 @@
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Bet placed!"];
+        
+        if (self.createBetView.facebookSwitch.isOn) {
+            [self publishBetToFacebook:bet];
+        }
+        
         [self.navigationController popViewControllerAnimated:YES];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error){
@@ -71,6 +73,25 @@
         [SVProgressHUD showErrorWithStatus:[errors messagesString]];
     }];
 }
+
+
+-(void)publishBetToFacebook:(Bet *)bet{
+    NSString *text = [NSString stringWithFormat:@"I bet %@ on \"%@\" in the question \"%@\" on 55Prophets", bet.amount.currencyString, bet.answer.content, bet.answer.question.content];
+    
+    NSDictionary *params = @{
+                             @"name" : text,
+                             @"picture" : @"http://55prophets.com/images/55_logo_for_facebook_stories.png",
+                             @"ref" : @"Bet",
+                             @"link" : @"http://55prophets.com",
+                             @"app_id" : [FBSettings defaultAppID]
+         };
+    
+    [FBWebDialogs presentFeedDialogModallyWithSession:nil parameters:params handler:
+     ^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+         
+     }];
+}
+
 
 #pragma mark - Table view data source
 

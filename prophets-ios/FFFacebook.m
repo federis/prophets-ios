@@ -15,8 +15,25 @@
 #import "User.h"
 #import "FFApplicationConstants.h"
 #import "ErrorCollection.h"
+#import "Bet.h"
+#import "Answer.h"
+#import "Question.h"
 
 @implementation FFFacebook
+
+static FBSession *currentSession = nil;
+
++(FBSession *)currentSession{
+    if(!currentSession){
+        currentSession = [self fbSession];
+    }
+    
+    return currentSession;
+}
+
++(void)setCurrentSession:(FBSession *)session{
+    currentSession = session;
+}
 
 +(FBSession *)fbSession{
     FFFacebookSessionTokenCachingStrategy *fbTokenCache = [[FFFacebookSessionTokenCachingStrategy alloc] init];
@@ -33,7 +50,7 @@
 }
 
 +(void)connectAccountForCurrentUser:(void (^)(void))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock{
-    FBSession *session = [self fbSession];
+    FBSession *session = [self currentSession];
     
     [session openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
             completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
@@ -47,26 +64,13 @@
             }];
 }
 
-+(void)openSessionForAlreadyConnectedUser{
-    FBSession *session = [self fbSession];
-    
-    [session openWithBehavior:FBSessionLoginBehaviorWithNoFallbackToWebView
-            completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
-                if (session.isOpen) {
-                    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *conn, id result, NSError *err){
-                        DLog(@"here");
-                    }];
-                }
-            }];
-}
-
 +(void)logInViaFacebookWithSuccessHandler:(void (^)(User *))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock{
     
     NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
     NSManagedObjectContext *scratch = [context childContext];
     User *tmpUser = (User *)[scratch insertNewObjectForEntityForName:@"User"];
     
-    FBSession *session = [self fbSession];
+    FBSession *session = [self currentSession];
     
     [session openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
             completionHandler:^(FBSession *session, FBSessionState state, NSError *err){

@@ -35,7 +35,6 @@
 
 - (IBAction)buttonTouched:(id)sender {
     if(!self.formField.currentValue || [self.formField.currentValue isEqualToString:@""]){
-        
         [FFFacebook connectAccountForCurrentUser:^{
             self.profilePicture.profileID = [User currentUser].fbUid;
             self.formField.currentValue = [User currentUser].fbUid;

@@ -10,15 +10,15 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "FFFacebookSessionTokenCachingStrategy.h"
 
-@class User;
+@class User, Bet;
 
 @interface FFFacebook : NSObject
 
++(FBSession *)currentSession;
++(void)setCurrentSession:(FBSession *)session;
+
 // FFP Logged-in user with no fbUID wants to connect their FB account to FFP
 +(void)connectAccountForCurrentUser:(void (^)(void))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock;
-
-// FFP Logged-in user has fbUID but no active fb session. Should also extend their token if necessary.
-+(void)openSessionForAlreadyConnectedUser;
 
 // Used for login and we also attempt this first when they hit it for registration
 +(void)logInViaFacebookWithSuccessHandler:(void (^)(User *))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock;

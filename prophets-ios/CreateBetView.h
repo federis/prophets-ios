@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *submitBetButton;
 @property (weak, nonatomic) IBOutlet UIView *submitBetButtonBackground;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UISwitch *facebookSwitch;
 
 -(id)initWithBet:(Bet *)bet inAnswer:(Answer *)answer forMembership:(Membership *)membership;
 
