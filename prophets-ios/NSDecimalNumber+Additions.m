@@ -11,9 +11,7 @@
 @implementation NSDecimalNumber (Additions)
 
 -(NSString *)currencyString{
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    return [numberFormatter stringFromNumber:self];
+    return [NSString stringWithFormat:@"%@\u01A4", [self decimalNumberByRoundingToTwoDecimalPlaces]];
 }
 
 -(NSDecimalNumber *)decimalNumberByRoundingToTwoDecimalPlaces{

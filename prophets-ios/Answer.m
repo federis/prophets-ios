@@ -74,7 +74,7 @@
     //amount + amount * (1/probability - 1)
     NSDecimalNumber *oneDollarBet = [NSDecimalNumber decimalNumberWithString:@"1.0"];
     NSDecimalNumber *payout = [oneDollarBet decimalNumberByAdding:[self payoutMultiplier]];
-    return [NSString stringWithFormat:@"$1 bet pays %@", payout.currencyString];
+    return [NSString stringWithFormat:@"%@ bet pays %@", @(1).currencyString, payout.currencyString];
 }
 
 -(void)setIsCorrect:(BOOL)isCorrect{

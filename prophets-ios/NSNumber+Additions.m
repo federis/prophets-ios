@@ -11,7 +11,7 @@
 @implementation NSNumber (Additions)
 
 -(NSString *)currencyString{
-    return [NSString stringWithFormat:@"$%@", self];
+    return [NSString stringWithFormat:@"%@\u01A4", self];
 }
 
 @end
