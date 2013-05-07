@@ -52,7 +52,7 @@
     CGSize buttonSize = [text sizeWithFont:button.titleLabel.font];
     buttonSize.width += 50; // add padding
     
-    button.frame = CGRectMake(0, 0, buttonSize.width, 28);
+    button.frame = CGRectMake(0, 0, buttonSize.width, 31);
     
     [button.layer setShadowOffset:CGSizeMake(1, 1)];
     [button.layer setShadowOpacity:0.5];

@@ -14,6 +14,7 @@
 #import "RoundedClearBar.h"
 #import "FFFormSwitchFieldCell.h"
 #import "FFDeepLinker.h"
+#import "FFFacebook.h"
 
 @interface LeagueFormViewController ()
 
@@ -23,6 +24,10 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    self.facebookSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(20, 3, 0, 0)];
+    self.facebookSwitch.onImage = [UIImage imageNamed:@"facebook-switch-on.png"];
+    self.facebookSwitch.offImage = [UIImage imageNamed:@"facebook-switch-off.png"];
     
     if(self.league.isNew){
         RoundedClearBar *bar = [[RoundedClearBar alloc] initWithTitle:@"Create a League"];
@@ -111,6 +116,10 @@
                 [self dismissViewControllerAnimated:YES completion:^{
                     [[FFDeepLinker sharedLinker] showLeague:l selectedTabIndex:0];
                 }];
+                
+                if (self.facebookSwitch.isOn) {
+                    [self publishLeagueToFacebook:l];
+                }
             }
             failure:^(RKObjectRequestOperation *operation, NSError *error){
                 [SVProgressHUD dismiss];
@@ -139,6 +148,23 @@
                 DLog(@"%@", [error description]);
             }];
     }
+}
+
+-(void)publishLeagueToFacebook:(League *)league{
+    NSString *text = [NSString stringWithFormat:@"I created the league \"%@\" on 55Prophets", league.name];
+    
+    NSDictionary *params = @{
+                             @"name" : text,
+                             @"picture" : @"http://55prophets.com/images/55_logo_for_facebook_stories.png",
+                             @"ref" : @"CreateLeague",
+                             @"link" : @"http://55prophets.com",
+                             @"app_id" : [FBSettings defaultAppID]
+                             };
+    
+    [FBWebDialogs presentFeedDialogModallyWithSession:nil parameters:params handler:
+     ^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+         
+     }];
 }
 
 -(BOOL)formIsValid{
@@ -182,5 +208,18 @@
         [self.form removeFormFieldAtRow:2];
     }
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 50;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *footerView = [super tableView:tableView viewForFooterInSection:section];
+    
+    [footerView addSubview:self.facebookSwitch];
+    
+    return footerView;
+}
+
 
 @end

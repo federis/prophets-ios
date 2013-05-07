@@ -29,6 +29,7 @@ static User *currentUser = nil;
 @dynamic fbTokenExpiresAt;
 @dynamic fbTokenRefreshedAt;
 @dynamic publishBetsToFB;
+@dynamic publishCreatedLeaguesToFB;
 @dynamic answers;
 @dynamic judgedAnswers;
 @dynamic bets;
@@ -102,6 +103,7 @@ static User *currentUser = nil;
         @"fb_token_expires_at" : @"fbTokenExpiresAt",
         @"fb_token_refreshed_at" : @"fbTokenRefreshedAt",
         @"publish_bets_to_fb" : @"publishBetsToFB",
+        @"publish_created_leagues_to_fb" : @"publishCreatedLeaguesToFB",
         @"wants_notifications" : @"wantsNotifications",
         @"wants_new_question_notifications" : @"wantsNewQuestionNotifications",
         @"wants_new_comment_notifications" : @"wantsNewCommentNotifications",
@@ -124,6 +126,7 @@ static User *currentUser = nil;
      @"fbTokenExpiresAt" : @"fb_token_expires_at",
      @"fbTokenRefreshedAt" : @"fb_token_refreshed_at",
      @"publishBetsToFB" : @"publish_bets_to_fb",
+     @"publishCreatedLeaguesToFB" : @"publish_created_leagues_to_fb",
      @"currentPassword" : @"current_password",
      @"wantsNotifications" : @"wants_notifications",
      @"wantsNewQuestionNotifications" : @"wants_new_question_notifications",

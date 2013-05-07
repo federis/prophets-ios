@@ -88,6 +88,9 @@
     if ([User currentUser].fbUid) {
         FFFormSwitchField *publishBetsField = [FFFormSwitchField formFieldWithAttributeName:@"publishBetsToFB" labelName:@"Publish Bets to FB"];
         [socialFields addObject:publishBetsField];
+        
+        FFFormSwitchField *publishCreatedLeaguesField = [FFFormSwitchField formFieldWithAttributeName:@"publishCreatedLeaguesToFB" labelName:@"Publish Created Leagues to FB"];
+        [socialFields addObject:publishCreatedLeaguesField];
     }
     
     FFFormSection *socialSection = [[FFFormSection alloc] initWithFields:socialFields title:@"Social"];

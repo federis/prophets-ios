@@ -14,4 +14,8 @@
 
 @property (nonatomic, strong) League *league;
 
+@property (nonatomic, strong) UISwitch *facebookSwitch;
+
+-(void)publishLeagueToFacebook:(League *)league;
+
 @end

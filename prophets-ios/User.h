@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSDate * fbTokenExpiresAt;
 @property (nonatomic, strong) NSDate * fbTokenRefreshedAt;
 @property (nonatomic, strong) NSNumber * publishBetsToFB;
+@property (nonatomic, strong) NSNumber * publishCreatedLeaguesToFB;
 @property (nonatomic, strong) NSSet *answers;
 @property (nonatomic, strong) NSSet *judgedAnswers;
 @property (nonatomic, strong) NSSet *bets;

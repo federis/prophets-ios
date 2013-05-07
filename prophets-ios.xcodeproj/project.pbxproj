@@ -251,6 +251,8 @@
 		B5F1AF211603B89D00D28C1C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF201603B89D00D28C1C /* Security.framework */; };
 		B5F1AF251603B8B000D28C1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF241603B8B000D28C1C /* QuartzCore.framework */; };
 		B5F1AF271603B8BF00D28C1C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F1AF261603B8BF00D28C1C /* libxml2.dylib */; };
+		B5F4C8D9173991C900C005BC /* facebook-switch-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F4C8D7173991C900C005BC /* facebook-switch-off@2x.png */; };
+		B5F4C8DA173991C900C005BC /* facebook-switch-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F4C8D8173991C900C005BC /* facebook-switch-on@2x.png */; };
 		B5F9304316515F3400755036 /* green_button_insets.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F9304116515F3400755036 /* green_button_insets.png */; };
 		B5F9304416515F3400755036 /* green_button_insets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F9304216515F3400755036 /* green_button_insets@2x.png */; };
 		B5F93048165174F900755036 /* conversation_bubbles.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F93046165174F900755036 /* conversation_bubbles.png */; };
@@ -643,6 +645,8 @@
 		B5F1AF201603B89D00D28C1C /* Security.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B5F1AF241603B8B000D28C1C /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B5F1AF261603B8BF00D28C1C /* libxml2.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B5F4C8D7173991C900C005BC /* facebook-switch-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-switch-off@2x.png"; sourceTree = "<group>"; };
+		B5F4C8D8173991C900C005BC /* facebook-switch-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-switch-on@2x.png"; sourceTree = "<group>"; };
 		B5F9304116515F3400755036 /* green_button_insets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button_insets.png; sourceTree = "<group>"; };
 		B5F9304216515F3400755036 /* green_button_insets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_button_insets@2x.png"; sourceTree = "<group>"; };
 		B5F93046165174F900755036 /* conversation_bubbles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conversation_bubbles.png; sourceTree = "<group>"; };
@@ -899,6 +903,8 @@
 		B5451B9117343FFE004E6694 /* social */ = {
 			isa = PBXGroup;
 			children = (
+				B5F4C8D7173991C900C005BC /* facebook-switch-off@2x.png */,
+				B5F4C8D8173991C900C005BC /* facebook-switch-on@2x.png */,
 				B5451B9417344229004E6694 /* facebook-switch-off.png */,
 				B5451B9217344012004E6694 /* facebook-switch-on.png */,
 				B510D47617285EAE00DCC4BB /* facebook_login_button.png */,
@@ -1573,6 +1579,8 @@
 				B5BBCB911730617A006C5120 /* FacebookConnectCell.xib in Resources */,
 				B5451B9317344012004E6694 /* facebook-switch-on.png in Resources */,
 				B5451B9517344229004E6694 /* facebook-switch-off.png in Resources */,
+				B5F4C8D9173991C900C005BC /* facebook-switch-off@2x.png in Resources */,
+				B5F4C8DA173991C900C005BC /* facebook-switch-on@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
