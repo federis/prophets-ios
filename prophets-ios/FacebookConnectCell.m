@@ -7,10 +7,12 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import <SVProgressHUD.h>
 
 #import "FacebookConnectCell.h"
 #import "FFFacebook.h"
 #import "User.h"
+#import "ErrorCollection.h"
 
 @implementation FacebookConnectCell
 
@@ -41,6 +43,9 @@
             self.profilePicture.hidden = NO;
             self.connectLabel.text = @"Disconnect Account";
         } failure:^(NSError *error, NSHTTPURLResponse *response){
+            ErrorCollection *errors = [[[error userInfo] objectForKey:RKObjectMapperErrorObjectsKey] lastObject];
+            [SVProgressHUD showErrorWithStatus:[errors messagesString]];
+            
             DLog(@"failed to connect account");
         }];
     }

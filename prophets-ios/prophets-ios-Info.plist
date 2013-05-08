@@ -46,6 +46,7 @@
 			<string>${BUNDLE_ID}</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>fb${FB_APP_ID}</string>
 				<string>${URL_SCHEME}</string>
 			</array>
 		</dict>

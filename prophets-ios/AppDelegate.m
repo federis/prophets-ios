@@ -182,7 +182,13 @@
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     DLog(@"Opened with url %@", url);
-    [[FFDeepLinker sharedLinker] handleUrl:url];
+    if([url.scheme hasPrefix:@"fb"]){
+        [FBSession.activeSession handleOpenURL:url];
+    }
+    else{
+        [[FFDeepLinker sharedLinker] handleUrl:url];
+    }
+    
     return YES;
 }
 

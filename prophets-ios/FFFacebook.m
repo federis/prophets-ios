@@ -50,7 +50,8 @@ static FBSession *currentSession = nil;
 }
 
 +(void)connectAccountForCurrentUser:(void (^)(void))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock{
-    FBSession *session = [self currentSession];
+    FBSession *session = [self fbSession];
+    [self setCurrentSession:session];
     
     [session openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
             completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
@@ -70,7 +71,8 @@ static FBSession *currentSession = nil;
     NSManagedObjectContext *scratch = [context childContext];
     User *tmpUser = (User *)[scratch insertNewObjectForEntityForName:@"User"];
     
-    FBSession *session = [self currentSession];
+    FBSession *session = [self fbSession];
+    [self setCurrentSession:session];
     
     [session openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
             completionHandler:^(FBSession *session, FBSessionState state, NSError *err){
