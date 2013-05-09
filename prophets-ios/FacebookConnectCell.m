@@ -47,7 +47,7 @@
             [SVProgressHUD showErrorWithStatus:[errors messagesString]];
             
             DLog(@"failed to connect account");
-        }];
+        } isRetry:NO];
     }
     else{
         self.formField.currentValue = @"";

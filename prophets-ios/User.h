@@ -46,7 +46,5 @@
 +(User *)currentUser;
 +(void)setCurrentUser:(User *)user;
 
--(void)loadTokenFromRemoteWithLoadedHandler:(void (^)(User *))loadedBlock failure:(void (^)(NSError *))failureBlock;
-
 @end
 

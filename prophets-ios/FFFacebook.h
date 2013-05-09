@@ -14,11 +14,8 @@
 
 @interface FFFacebook : NSObject
 
-+(FBSession *)currentSession;
-+(void)setCurrentSession:(FBSession *)session;
-
 // FFP Logged-in user with no fbUID wants to connect their FB account to FFP
-+(void)connectAccountForCurrentUser:(void (^)(void))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock;
++(void)connectAccountForCurrentUser:(void (^)(void))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock isRetry:(BOOL)isRetry;
 
 // Used for login and we also attempt this first when they hit it for registration
 +(void)logInViaFacebookWithSuccessHandler:(void (^)(User *))successBlock failure:(void (^)(NSError *, NSHTTPURLResponse *))failureBlock;

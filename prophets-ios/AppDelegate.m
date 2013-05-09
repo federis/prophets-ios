@@ -119,10 +119,6 @@
     [self registerForPushNotifications];
     [self setupAuthTokenHeader];
     [self loadMemberships];
-    
-    if ([User currentUser].fbToken) {
-        [FFFacebook currentSession]; //ensure it is created
-    }
 }
 
 -(void)userLoggedOut:(NSNotification *)note{

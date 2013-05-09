@@ -103,7 +103,6 @@
 		B5544CB2162EE13300431B54 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5544CB1162EE13300431B54 /* UIColor+Additions.m */; };
 		B556F421161CC83300A33A8E /* NSDecimalNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */; };
 		B556F424161CC87500A33A8E /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B556F423161CC87500A33A8E /* NSNumber+Additions.m */; };
-		B558A56A172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = B558A569172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.m */; };
 		B55975DD16C199BE00A4F510 /* AdminMembershipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B55975DC16C199BC00A4F510 /* AdminMembershipCell.m */; };
 		B55975DF16C199D100A4F510 /* AdminMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55975DE16C199D100A4F510 /* AdminMembershipCell.xib */; };
 		B55EBF5D16A21FAD0060FFAF /* FFForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B55EBF5C16A21FAD0060FFAF /* FFForm.m */; };
@@ -193,7 +192,6 @@
 		B5B147461634EF4D005F1B5A /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B147441634EF4D005F1B5A /* home@2x.png */; };
 		B5BBCB8F17306169006C5120 /* FacebookConnectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBCB8E17306169006C5120 /* FacebookConnectCell.m */; };
 		B5BBCB911730617A006C5120 /* FacebookConnectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5BBCB901730617A006C5120 /* FacebookConnectCell.xib */; };
-		B5BD2A6017301623007F72BA /* FFFacebookSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BD2A5F17301622007F72BA /* FFFacebookSession.m */; };
 		B5C527A616455BCA0093B8E3 /* LeaguePerformanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527A516455BCA0093B8E3 /* LeaguePerformanceView.m */; };
 		B5C527AB16455BFC0093B8E3 /* LeaguePerformanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C527AA16455BFC0093B8E3 /* LeaguePerformanceView.xib */; };
 		B5C527AE1645722F0093B8E3 /* AnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C527AD1645722F0093B8E3 /* AnswersViewController.m */; };
@@ -436,8 +434,6 @@
 		B556F420161CC83300A33A8E /* NSDecimalNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Additions.m"; sourceTree = "<group>"; };
 		B556F422161CC87500A33A8E /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
 		B556F423161CC87500A33A8E /* NSNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Additions.m"; sourceTree = "<group>"; };
-		B558A568172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFacebookSessionTokenCachingStrategy.h; sourceTree = "<group>"; };
-		B558A569172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFacebookSessionTokenCachingStrategy.m; sourceTree = "<group>"; };
 		B55975DB16C199BB00A4F510 /* AdminMembershipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminMembershipCell.h; sourceTree = "<group>"; };
 		B55975DC16C199BC00A4F510 /* AdminMembershipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminMembershipCell.m; sourceTree = "<group>"; };
 		B55975DE16C199D100A4F510 /* AdminMembershipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminMembershipCell.xib; sourceTree = "<group>"; };
@@ -561,8 +557,6 @@
 		B5BBCB8D17306169006C5120 /* FacebookConnectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookConnectCell.h; sourceTree = "<group>"; };
 		B5BBCB8E17306169006C5120 /* FacebookConnectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookConnectCell.m; sourceTree = "<group>"; };
 		B5BBCB901730617A006C5120 /* FacebookConnectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookConnectCell.xib; sourceTree = "<group>"; };
-		B5BD2A5E17301622007F72BA /* FFFacebookSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFacebookSession.h; sourceTree = "<group>"; };
-		B5BD2A5F17301622007F72BA /* FFFacebookSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFacebookSession.m; sourceTree = "<group>"; };
 		B5C527A416455BCA0093B8E3 /* LeaguePerformanceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaguePerformanceView.h; sourceTree = "<group>"; };
 		B5C527A516455BCA0093B8E3 /* LeaguePerformanceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaguePerformanceView.m; sourceTree = "<group>"; };
 		B5C527AA16455BFC0093B8E3 /* LeaguePerformanceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaguePerformanceView.xib; sourceTree = "<group>"; };
@@ -933,10 +927,6 @@
 				B56F40C0160A52AC007D445F /* FFApplicationConstants.m */,
 				B510D4721728527300DCC4BB /* FFFacebook.h */,
 				B510D4731728527300DCC4BB /* FFFacebook.m */,
-				B558A568172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.h */,
-				B558A569172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.m */,
-				B5BD2A5E17301622007F72BA /* FFFacebookSession.h */,
-				B5BD2A5F17301622007F72BA /* FFFacebookSession.m */,
 				B54AA0FC162F1E8C00F2A3CB /* Utilities.h */,
 				B54AA0FD162F1E8C00F2A3CB /* Utilities.m */,
 			);
@@ -1744,8 +1734,6 @@
 				B515EF1A1725D86B003EA932 /* Activity.m in Sources */,
 				B515EF1D1725EA0F003EA932 /* BetViewController.m in Sources */,
 				B510D4741728527300DCC4BB /* FFFacebook.m in Sources */,
-				B558A56A172EE72A005F31D7 /* FFFacebookSessionTokenCachingStrategy.m in Sources */,
-				B5BD2A6017301623007F72BA /* FFFacebookSession.m in Sources */,
 				B5BBCB8F17306169006C5120 /* FacebookConnectCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
