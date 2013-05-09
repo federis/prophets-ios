@@ -12,4 +12,6 @@
 
 @interface HomeViewController : FFBaseViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+
 @end

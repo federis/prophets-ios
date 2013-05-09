@@ -27,6 +27,8 @@
     bar.frame = CGRectMake(7, 10, 303, bar.frame.size.height);
     
     [self.view addSubview:bar];
+    
+    self.versionLabel.text = [NSString stringWithFormat:@"v%@", [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]];
 }
 
 -(void)logoutTouched{
