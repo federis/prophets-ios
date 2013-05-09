@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "FFFacebookSessionTokenCachingStrategy.h"
 
 @class User, Bet;
 
