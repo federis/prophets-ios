@@ -24,7 +24,7 @@
         <attribute name="questionId" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <relationship name="bets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bet" inverseName="answer" inverseEntity="Bet" syncable="YES"/>
         <relationship name="judge" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="judgedAnswers" inverseEntity="User" syncable="YES"/>
-        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
+        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="answers" inverseEntity="User" syncable="YES"/>
         <userInfo>
             <entry key="RKEntityIdentificationAttributes" value="remoteId"/>

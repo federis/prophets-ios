@@ -17,6 +17,7 @@
 #import "NSDecimalNumber+Additions.h"
 #import "Utilities.h"
 #import "UIView+Additions.h"
+#import "UIColor+Additions.h"
 
 @interface EditAnswersViewController ()
 
@@ -28,6 +29,10 @@
     [super viewDidLoad];
     if ([self.question.answers count] > 0) {
         self.answers = [[self.question.answers allObjects] mutableCopy];
+        
+        for (Answer *answer in self.answers) {
+            [answer addObserver:self forKeyPath:@"initialProbability" options:NSKeyValueObservingOptionNew context:nil];
+        }
     }
     else{
         Answer *answer1 = [self newAnswer];
@@ -42,6 +47,31 @@
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([EditAnswerCell class]) bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:NSStringFromClass([EditAnswerCell class])];
     
+    self.probabilitiesSum = [[FFLabel alloc] initWithFrame:CGRectMake(0, 0, 55, 40)];
+    self.probabilitiesSum.fontSize = 18.0f;
+    self.probabilitiesSum.textAlignment = NSTextAlignmentRight;
+    [self updateProbabilitiesSumLabel];
+    
+    UIBarButtonItem *probSumItem = [[UIBarButtonItem alloc] initWithCustomView:self.probabilitiesSum];
+    self.navigationItem.rightBarButtonItem = probSumItem;
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"initialProbability"]) {
+        [self updateProbabilitiesSumLabel];
+    }
+}
+
+
+-(void)updateProbabilitiesSumLabel{
+    CGFloat sum = [self currentSumOfAnswerInitialProbablities] * 100;
+    self.probabilitiesSum.text = [NSString stringWithFormat:@"%.0f%%", sum];
+    if (sum == 100.0) {
+        self.probabilitiesSum.textColor = [UIColor ffGreenColor];
+    }
+    else{
+        self.probabilitiesSum.textColor = [UIColor ffRedColor];
+    }
 }
 
 -(Answer *)newAnswer{
@@ -56,6 +86,9 @@
     
     Answer *answer = (Answer *)[privateContext insertNewObjectForEntityForName:@"Answer"];
     answer.questionId = self.question.remoteId;
+    
+    [answer addObserver:self forKeyPath:@"initialProbability" options:NSKeyValueObservingOptionNew context:nil];
+    
     return answer;
 }
 
@@ -132,19 +165,17 @@
 
 -(void)addAnswer{
     Answer *newAnswer = [self newAnswer];
+    [self.answers addObject:newAnswer];
     
     if ([self allAnswersHaveSameInitialProbability]) {
-        [self.answers addObject:newAnswer];
         [self rebalanceAnswerProbabilities];
     }
     else if([self currentSumOfAnswerInitialProbablities] < 1.0){
         CGFloat val = 1.0 - [self currentSumOfAnswerInitialProbablities];
         newAnswer.initialProbability = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithFloat:val] decimalValue]];
-        
-        [self.answers addObject:newAnswer];
     }
     else{
-        [self.answers addObject:newAnswer];
+        newAnswer.initialProbability = [NSDecimalNumber decimalNumberWithString:@"0"];
     }
     
     [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.answers.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -160,6 +191,9 @@
     UITableViewCell *parentCell = [(UIButton *)sender findParentTableViewCell];
     if ([parentCell isKindOfClass:[EditAnswerCell class]]) {
         EditAnswerCell *cell = (EditAnswerCell *)parentCell;
+        
+        [cell.answer removeObserver:self forKeyPath:@"initialProbability"];
+        
         [self.answers removeObject:cell.answer];
         [self.tempContexts removeObject:cell.answer.managedObjectContext];
         
@@ -171,6 +205,8 @@
         if ([self allAnswersHaveSameInitialProbability]) {
             [self rebalanceAnswerProbabilities];
         }
+        
+        [self updateProbabilitiesSumLabel];
     }
 }
 
@@ -185,7 +221,9 @@
 -(CGFloat)currentSumOfAnswerInitialProbablities{
     NSDecimalNumber *sum = [NSDecimalNumber decimalNumberWithString:@"0"];
     for (Answer *answer in self.answers) {
-        sum = [sum decimalNumberByAdding:answer.initialProbability];
+        if (answer.initialProbability) {
+            sum = [sum decimalNumberByAdding:answer.initialProbability];
+        }
     }
     return [sum floatValue];
 }
@@ -201,7 +239,6 @@
     
     return YES;
 }
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"ShowReviewQuestion"] && [sender isKindOfClass:[Question class]]) {
@@ -242,6 +279,12 @@
     [footerView.button addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
     [footerView.leftButton addTarget:self action:@selector(addAnswer) forControlEvents:UIControlEventTouchUpInside];
     return footerView;
+}
+
+-(void)dealloc{
+    for (Answer *answer in self.answers) {
+        [answer removeObserver:self forKeyPath:@"initialProbability"];
+    }
 }
 
 @end

@@ -16,4 +16,6 @@
 @property (nonatomic, strong) Question *question;
 @property (nonatomic, strong) NSMutableArray *tempContexts;
 
+@property (nonatomic, strong) FFLabel *probabilitiesSum;
+
 @end
