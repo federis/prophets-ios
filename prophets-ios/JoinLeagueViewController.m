@@ -71,10 +71,12 @@
     [[RKObjectManager sharedManager] postObject:mem path:nil parameters:params
        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
            [SVProgressHUD dismiss];
-           [SVProgressHUD showSuccessWithStatus:@"League joined"];
            
            NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
            Membership *newMem = (Membership *)[context objectWithID:[mem objectID]];
+           
+           [Utilities showOkAlertWithTitle:@"League Joined" message:[NSString stringWithFormat:@"You start this league with %@ prophits (\u01A4), our virtual currency. You can use this currency to place bets on questions in the league.", newMem.league.initialBalance]];
+           
            [self showLeague:newMem];
            [self.tableView reloadData];
        }
