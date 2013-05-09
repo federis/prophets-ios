@@ -65,6 +65,9 @@
         NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
         User *user = (User *)[context objectWithID:[self.form.object objectID]];
         [User setCurrentUser:user];
+        
+        [Utilities showOkAlertWithTitle:@"Welcome to 55Prophets!" message:@"55Prophets is a fantasy betting app. Find a league that interests you and join, or you can create your own league. In each league, you start with some of our virtual currency, prophits (\u01A4), that you can use to place bets. Enjoy!"];
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:FFUserDidLogInNotification object:user];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error){
