@@ -84,7 +84,6 @@
 		B53F58871644653900AF2BA9 /* FFFormSwitchFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53F58861644653700AF2BA9 /* FFFormSwitchFieldCell.xib */; };
 		B5451B9317344012004E6694 /* facebook-switch-on.png in Resources */ = {isa = PBXBuildFile; fileRef = B5451B9217344012004E6694 /* facebook-switch-on.png */; };
 		B5451B9517344229004E6694 /* facebook-switch-off.png in Resources */ = {isa = PBXBuildFile; fileRef = B5451B9417344229004E6694 /* facebook-switch-off.png */; };
-		B54A919016F76C68008B3391 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B54A918F16F76C68008B3391 /* libFlurry.a */; };
 		B54AA0F5162EFDE100F2A3CB /* logo_p.png in Resources */ = {isa = PBXBuildFile; fileRef = B54AA0F3162EFDE100F2A3CB /* logo_p.png */; };
 		B54AA0F6162EFDE100F2A3CB /* logo_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B54AA0F4162EFDE100F2A3CB /* logo_p@2x.png */; };
 		B54AA0FE162F1E8C00F2A3CB /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B54AA0FD162F1E8C00F2A3CB /* Utilities.m */; };
@@ -263,6 +262,7 @@
 		B5FB94B01636251A00471515 /* LeagueTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB94AF1636251A00471515 /* LeagueTabBarController.m */; };
 		B5FB94B41636272300471515 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FB94B21636272300471515 /* back_arrow.png */; };
 		B5FB94B51636272300471515 /* back_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FB94B31636272300471515 /* back_arrow@2x.png */; };
+		B5FC6CAF173C766D00153CDA /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5FC6CAE173C766D00153CDA /* libFlurry.a */; };
 		B5FD757D16519B9F0051C4DC /* CommentFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD757C16519B9F0051C4DC /* CommentFormViewController.m */; };
 		B5FD758116519F0B0051C4DC /* FFFormTextViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD758016519F0B0051C4DC /* FFFormTextViewField.m */; };
 		B5FD758616519F640051C4DC /* FFFormTextViewFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FD758516519F640051C4DC /* FFFormTextViewFieldCell.xib */; };
@@ -407,8 +407,6 @@
 		B5451B9217344012004E6694 /* facebook-switch-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-switch-on.png"; sourceTree = "<group>"; };
 		B5451B9417344229004E6694 /* facebook-switch-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-switch-off.png"; sourceTree = "<group>"; };
 		B545C07B171DA52100C407EB /* prophets_ios 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "prophets_ios 2.xcdatamodel"; sourceTree = "<group>"; };
-		B54A918E16F76C68008B3391 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		B54A918F16F76C68008B3391 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		B54AA0F3162EFDE100F2A3CB /* logo_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_p.png; sourceTree = "<group>"; };
 		B54AA0F4162EFDE100F2A3CB /* logo_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_p@2x.png"; sourceTree = "<group>"; };
 		B54AA0FC162F1E8C00F2A3CB /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -656,6 +654,8 @@
 		B5FB94AF1636251A00471515 /* LeagueTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueTabBarController.m; sourceTree = "<group>"; };
 		B5FB94B21636272300471515 /* back_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_arrow.png; sourceTree = "<group>"; };
 		B5FB94B31636272300471515 /* back_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_arrow@2x.png"; sourceTree = "<group>"; };
+		B5FC6CAD173C766D00153CDA /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		B5FC6CAE173C766D00153CDA /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		B5FD757B16519B9F0051C4DC /* CommentFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentFormViewController.h; sourceTree = "<group>"; };
 		B5FD757C16519B9F0051C4DC /* CommentFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentFormViewController.m; sourceTree = "<group>"; };
 		B5FD757F16519F0B0051C4DC /* FFFormTextViewField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFormTextViewField.h; sourceTree = "<group>"; };
@@ -692,7 +692,7 @@
 				B5F1AED1160388C600D28C1C /* CoreGraphics.framework in Frameworks */,
 				B5F1AED3160388C600D28C1C /* CoreData.framework in Frameworks */,
 				CCAD6CC9904141B2A8651A20 /* libPods.a in Frameworks */,
-				B54A919016F76C68008B3391 /* libFlurry.a in Frameworks */,
+				B5FC6CAF173C766D00153CDA /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,8 +910,8 @@
 		B54A918D16F76C53008B3391 /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
-				B54A918E16F76C68008B3391 /* Flurry.h */,
-				B54A918F16F76C68008B3391 /* libFlurry.a */,
+				B5FC6CAD173C766D00153CDA /* Flurry.h */,
+				B5FC6CAE173C766D00153CDA /* libFlurry.a */,
 			);
 			name = Flurry;
 			sourceTree = "<group>";
