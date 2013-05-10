@@ -139,26 +139,31 @@
     [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization" value:nil];
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
     
-    NSManagedObjectContext *context = [RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext;
+    NSArray *contexts = @[
+                          [RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext,
+                          [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext
+                          ];
     
-    NSFetchRequest * allEntities = [[NSFetchRequest alloc] init];
-    [allEntities setEntity:[NSEntityDescription entityForName:@"Resource" inManagedObjectContext:context]];
-    [allEntities setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-    
-    NSError *error = nil;
-    NSArray * results = [context executeFetchRequest:allEntities error:&error];
-    
-    if(error){ 
-        //continue;
-    }
-    
-    //error handling goes here
-    for (NSManagedObject * obj in results) {
-        [context deleteObject:obj];
-    }
-    error = nil;
-    if(![context save:&error]){
-        DLog(@"error %@", error);
+    for(NSManagedObjectContext *context in contexts){
+        NSFetchRequest * allEntities = [[NSFetchRequest alloc] init];
+        [allEntities setEntity:[NSEntityDescription entityForName:@"Resource" inManagedObjectContext:context]];
+        [allEntities setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+        
+        NSError *error = nil;
+        NSArray * results = [context executeFetchRequest:allEntities error:&error];
+        
+        if(error){ 
+            //continue;
+        }
+        
+        //error handling goes here
+        for (NSManagedObject * obj in results) {
+            [context deleteObject:obj];
+        }
+        error = nil;
+        if(![context save:&error]){
+            DLog(@"error %@", error);
+        }
     }
 }
 
