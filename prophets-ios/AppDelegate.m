@@ -7,6 +7,7 @@
 //
 
 #import <RestKit/RestKit.h>
+#import <PonyDebugger.h>
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
@@ -25,6 +26,18 @@
     application.applicationIconBadgeNumber = 0;
     
     [FFObjectManager setupObjectManager];
+    
+#if DEBUG
+    PDDebugger *debugger = [PDDebugger defaultInstance];
+    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
+    [debugger enableNetworkTrafficDebugging];
+    [debugger forwardAllNetworkTraffic];
+    [debugger enableCoreDataDebugging];
+    [debugger addManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext withName:@"Main Queue MOC"];
+    [debugger addManagedObjectContext:[RKObjectManager sharedManager].managedObjectStore.persistentStoreManagedObjectContext withName:@"Persistent Store MOC"];
+    [debugger enableViewHierarchyDebugging];
+#endif
+    
     [[FFObjectManager sharedManager].HTTPClient getPath:@"/" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
         // do nothing, we're not in maintenance mode
     } failure:^(AFHTTPRequestOperation *operation, NSError *error){

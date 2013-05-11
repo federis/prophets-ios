@@ -1,40 +1,37 @@
-
 PODS:
-- AFNetworking (1.1.0)
-- Facebook-iOS-SDK (3.5.0)
-- Lockbox (1.4.2)
-- RestKit (0.20.0):
-  - RestKit/Core (= 0.20.0)
-- RestKit/Core (0.20.0):
-  - RestKit/CoreData
-  - RestKit/Network
-  - RestKit/ObjectMapping
-- RestKit/CoreData (0.20.0)
-- RestKit/Network (0.20.0):
-  - AFNetworking (= 1.1.0)
-  - RestKit/ObjectMapping
-  - RestKit/Support
-  - SOCKit
-- RestKit/ObjectMapping (0.20.0)
-- RestKit/Support (0.20.0)
-- RestKit/Testing (0.20.0)
-- SOCKit (1.1)
-- SVProgressHUD (0.9)
+  - AFNetworking (1.1.0)
+  - Facebook-iOS-SDK (3.5.0)
+  - Lockbox (1.4.2)
+  - PonyDebugger (0.3.0):
+    - SocketRocket
+  - RestKit (0.20.0):
+    - RestKit/Core
+  - RestKit/Core (0.20.0):
+    - RestKit/CoreData
+    - RestKit/Network
+    - RestKit/ObjectMapping
+  - RestKit/CoreData (0.20.0)
+  - RestKit/Network (0.20.0):
+    - AFNetworking (= 1.1.0)
+    - RestKit/ObjectMapping
+    - RestKit/Support
+    - SOCKit
+  - RestKit/ObjectMapping (0.20.0)
+  - RestKit/Support (0.20.0)
+  - RestKit/Testing (0.20.0)
+  - SocketRocket (0.2.0)
+  - SOCKit (1.1)
+  - SVProgressHUD (0.9)
 
 DEPENDENCIES:
-- Facebook-iOS-SDK (= 3.5.0)
-- Lockbox
-- RestKit (from `https://github.com/RestKit/RestKit.git', tag `v0.20.0')
-- RestKit/Testing (from `https://github.com/RestKit/RestKit.git', branch `development')
-- SVProgressHUD (from `https://github.com/bcroesch/SVProgressHUD.git')
+  - Facebook-iOS-SDK (= 3.5.0)
+  - Lockbox
+  - PonyDebugger (= 0.3.0)
+  - RestKit (= 0.20.0)
+  - RestKit/Testing (= 0.20.0)
+  - SVProgressHUD (from `https://github.com/bcroesch/SVProgressHUD.git`)
 
 EXTERNAL SOURCES:
-  RestKit:
-    :git: https://github.com/RestKit/RestKit.git
-    :tag: v0.20.0
-  RestKit/Testing:
-    :git: https://github.com/RestKit/RestKit.git
-    :branch: development
   SVProgressHUD:
     :git: https://github.com/bcroesch/SVProgressHUD.git
 
@@ -42,14 +39,10 @@ SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
   Facebook-iOS-SDK: df5c04b1927e1a535733192857f8e5b9774407d1
   Lockbox: d1be948dcf7ef9e584ee9d56787728f99336e87f
-  RestKit: 453f0a957f681ae382dd1f88a049963a95f6500f
-  RestKit/Core: 453f0a957f681ae382dd1f88a049963a95f6500f
-  RestKit/CoreData: 453f0a957f681ae382dd1f88a049963a95f6500f
-  RestKit/Network: 453f0a957f681ae382dd1f88a049963a95f6500f
-  RestKit/ObjectMapping: 453f0a957f681ae382dd1f88a049963a95f6500f
-  RestKit/Support: 453f0a957f681ae382dd1f88a049963a95f6500f
-  RestKit/Testing: 453f0a957f681ae382dd1f88a049963a95f6500f
+  PonyDebugger: 72c2277c30f247390116ae328fe24082e0ed558e
+  RestKit: 580771664a14eaaa40bf53cf83584f12fc141930
+  SocketRocket: bca43a94bd9aac3a629df42c06843402399ee67b
   SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
   SVProgressHUD: e9eaa08f4fe7a15e735d0e45678bf1cc5a4d929d
 
-COCOAPODS: 0.15.1
+COCOAPODS: 0.19.1
