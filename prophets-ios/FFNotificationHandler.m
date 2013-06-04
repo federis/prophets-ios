@@ -41,6 +41,9 @@ static FFNotificationHandler *sharedHandler = nil;
     else if ([type isEqualToString:@"newComment"]){
         [self handleNewCommentNotification:notification];
     }
+    else if ([type isEqualToString:@"judgement"]){
+        [self handlePayoutNotification:notification];
+    }
 }
 
 -(void)handleNewQuestionNotification:(NSDictionary *)notification{
@@ -68,6 +71,13 @@ static FFNotificationHandler *sharedHandler = nil;
     else if ([commentableType isEqualToString:@"Question"]) {
         [[FFDeepLinker sharedLinker] handleUrl:[NSURL URLWithString:[NSString stringWithFormat:@"%@://leagues/%@/questions/%@", FFURLScheme, leagueId, commentableId]]];
     }
+}
+
+-(void)handlePayoutNotification:(NSDictionary *)notification{
+    NSString *leagueId = [notification objectForKey:@"leagueId"];
+    NSString *questionId = [notification objectForKey:@"questionId"];
+    
+    [[FFDeepLinker sharedLinker] handleUrl:[NSURL URLWithString:[NSString stringWithFormat:@"%@://leagues/%@/questions/%@", FFURLScheme, leagueId, questionId]]];
 }
 
 @end

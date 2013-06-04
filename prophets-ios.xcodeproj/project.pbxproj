@@ -407,6 +407,7 @@
 		B5451B9217344012004E6694 /* facebook-switch-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-switch-on.png"; sourceTree = "<group>"; };
 		B5451B9417344229004E6694 /* facebook-switch-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-switch-off.png"; sourceTree = "<group>"; };
 		B545C07B171DA52100C407EB /* prophets_ios 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "prophets_ios 2.xcdatamodel"; sourceTree = "<group>"; };
+		B548ADF5175E835800C28C7D /* prophets_ios 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "prophets_ios 4.xcdatamodel"; sourceTree = "<group>"; };
 		B54AA0F3162EFDE100F2A3CB /* logo_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_p.png; sourceTree = "<group>"; };
 		B54AA0F4162EFDE100F2A3CB /* logo_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_p@2x.png"; sourceTree = "<group>"; };
 		B54AA0FC162F1E8C00F2A3CB /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -2149,11 +2150,12 @@
 		B5F1AEE0160388C600D28C1C /* prophets_ios.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B548ADF5175E835800C28C7D /* prophets_ios 4.xcdatamodel */,
 				B515EF141725D6DA003EA932 /* prophets_ios 3.xcdatamodel */,
 				B545C07B171DA52100C407EB /* prophets_ios 2.xcdatamodel */,
 				B5F1AEE1160388C600D28C1C /* prophets_ios.xcdatamodel */,
 			);
-			currentVersion = B515EF141725D6DA003EA932 /* prophets_ios 3.xcdatamodel */;
+			currentVersion = B548ADF5175E835800C28C7D /* prophets_ios 4.xcdatamodel */;
 			name = prophets_ios.xcdatamodeld;
 			path = "prophets-ios/prophets_ios.xcdatamodeld";
 			sourceTree = "<group>";

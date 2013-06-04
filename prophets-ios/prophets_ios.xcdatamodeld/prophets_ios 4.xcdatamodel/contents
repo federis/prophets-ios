@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Activity" representedClassName="Activity" parentEntity="Resource" syncable="YES">
+        <attribute name="activityType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="commentsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedableId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="feedableType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leagueId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="activities" inverseEntity="League" syncable="YES"/>
+        <userInfo>
+            <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
+        </userInfo>
+    </entity>
+    <entity name="Answer" representedClassName="Answer" parentEntity="Resource" syncable="YES">
+        <attribute name="betsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="betTotal" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="correct" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="correctnessKnownAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="currentProbability" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="initialProbability" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="judgedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="questionId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <relationship name="bets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bet" inverseName="answer" inverseEntity="Bet" syncable="YES"/>
+        <relationship name="judge" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="judgedAnswers" inverseEntity="User" syncable="YES"/>
+        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="answers" inverseEntity="User" syncable="YES"/>
+        <userInfo>
+            <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
+        </userInfo>
+    </entity>
+    <entity name="Bet" representedClassName="Bet" parentEntity="Resource" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="answerId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="bonus" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="commentsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="invalidatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="membershipId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="payout" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="probability" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <relationship name="answer" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Answer" inverseName="bets" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="comments" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Comment" inverseName="bet" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="membership" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Membership" inverseName="bets" inverseEntity="Membership" syncable="YES"/>
+        <userInfo>
+            <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
+        </userInfo>
+    </entity>
+    <entity name="Comment" representedClassName="Comment" parentEntity="Resource" syncable="YES">
+        <attribute name="betId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="questionId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bet" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Bet" inverseName="comments" inverseEntity="Bet" syncable="YES"/>
+        <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="comments" inverseEntity="League" syncable="YES"/>
+        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="comments" inverseEntity="Question" syncable="YES"/>
+        <userInfo>
+            <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
+        </userInfo>
+    </entity>
+    <entity name="League" representedClassName="League" parentEntity="Resource" syncable="YES">
+        <attribute name="commentsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="creatorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="initialBalance" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="maxBet" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="membershipsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priv" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="questionsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <relationship name="activities" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="league" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="league" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="memberships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Membership" inverseName="league" inverseEntity="Membership" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Question" inverseName="league" inverseEntity="Question" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="leagues" inverseEntity="Tag" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="createdLeagues" inverseEntity="User" syncable="YES"/>
+        <userInfo>
+            <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
+        </userInfo>
+    </entity>
+    <entity name="Membership" representedClassName="Membership" parentEntity="Resource" syncable="YES">
+        <attribute name="balance" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="leaderboardRank" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="outstandingBetsValue" optional="YES" attributeType="Decimal" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Bet" inverseName="membership" inverseEntity="Bet" syncable="YES"/>
+        <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="memberships" inverseEntity="League" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="memberships" inverseEntity="User" syncable="YES"/>
+        <userInfo>
+            <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
+        </userInfo>
+    </entity>
+    <entity name="Question" representedClassName="Question" parentEntity="Resource" syncable="YES">
+        <attribute name="approvedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="betsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="bettingClosesAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="commentsCount" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="completedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leagueId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Answer" inverseName="question" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="approver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="approvedQuestions" inverseEntity="User" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="question" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="league" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="League" inverseName="questions" inverseEntity="League" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="questions" inverseEntity="User" syncable="YES"/>
+        <userInfo>
+            <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
+        </userInfo>
+    </entity>
+    <entity name="Resource" representedClassName="Resource" isAbstract="YES" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="remoteId" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" parentEntity="Resource" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="leagues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="League" inverseName="tags" inverseEntity="League" syncable="YES"/>
+        <userInfo>
+            <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
+        </userInfo>
+    </entity>
+    <entity name="User" representedClassName="User" parentEntity="Resource" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fbToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fbTokenExpiresAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fbTokenRefreshedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fbUid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishBetsToFB" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="publishCreatedLeaguesToFB" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wantsJudgementNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wantsNewCommentNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wantsNewQuestionNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wantsNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wantsQuestionCreatedNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="user" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="approvedQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="approver" inverseEntity="Question" syncable="YES"/>
+        <relationship name="createdLeagues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="League" inverseName="user" inverseEntity="League" syncable="YES"/>
+        <relationship name="judgedAnswers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="judge" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="memberships" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Membership" inverseName="user" inverseEntity="Membership" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="user" inverseEntity="Question" syncable="YES"/>
+        <userInfo>
+            <entry key="RKEntityIdentificationAttributes" value="remoteId"/>
+        </userInfo>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Answer" positionX="-63" positionY="27" width="128" height="240"/>
+        <element name="Bet" positionX="234" positionY="108" width="128" height="210"/>
+        <element name="Comment" positionX="-252" positionY="-486" width="128" height="180"/>
+        <element name="League" positionX="-56" positionY="-315" width="128" height="270"/>
+        <element name="Membership" positionX="396" positionY="-306" width="128" height="210"/>
+        <element name="Question" positionX="-281" positionY="-216" width="128" height="240"/>
+        <element name="Resource" positionX="144" positionY="-378" width="128" height="90"/>
+        <element name="Tag" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="User" positionX="529" positionY="-108" width="128" height="330"/>
+    </elements>
+</model>

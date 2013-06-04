@@ -40,6 +40,7 @@ static User *currentUser = nil;
 @dynamic wantsNewQuestionNotifications;
 @dynamic wantsNewCommentNotifications;
 @dynamic wantsQuestionCreatedNotifications;
+@dynamic wantsJudgementNotifications;
 @dynamic wantsNotifications;
 
 -(Membership *)membershipInLeague:(id)leagueOrId;{
@@ -108,6 +109,7 @@ static User *currentUser = nil;
         @"wants_new_question_notifications" : @"wantsNewQuestionNotifications",
         @"wants_new_comment_notifications" : @"wantsNewCommentNotifications",
         @"wants_question_created_notifications" : @"wantsQuestionCreatedNotifications",
+        @"wants_judgement_notifications" : @"wantsJudgementNotifications",
         @"updated_at" : @"updatedAt",
         @"created_at" : @"createdAt"
      }];
@@ -132,6 +134,7 @@ static User *currentUser = nil;
      @"wantsNewQuestionNotifications" : @"wants_new_question_notifications",
      @"wantsNewCommentNotifications" : @"wants_new_comment_notifications",
      @"wantsQuestionCreatedNotifications" : @"wants_question_created_notifications",
+     @"wantsJudgementNotifications" : @"wants_judgement_notifications"
      }];
     return mapping;
 }

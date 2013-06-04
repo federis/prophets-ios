@@ -52,6 +52,8 @@
     
     FFFormSwitchField *questionCreatedNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsQuestionCreatedNotifications" labelName:@"Questions Awaiting Admin Review"];
     
+    FFFormSwitchField *judgementNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsJudgementNotifications" labelName:@"Bet Payouts"];
+    
     FFFormTextField *passwordField = [FFFormTextField formFieldWithAttributeName:@"currentPassword" labelName:@"Current Password"];
     passwordField.returnKeyType = UIReturnKeySend;
     passwordField.secure = YES;
@@ -77,6 +79,7 @@
         [notificationFields insertObject:newQuestionNotificationsField atIndex:1];
         [notificationFields insertObject:newCommentNotificationsField atIndex:2];
         [notificationFields insertObject:questionCreatedNotificationsField atIndex:3];
+        [notificationFields insertObject:judgementNotificationsField atIndex:4];
     }
     
     FFFormSection *notificationsSection = [[FFFormSection alloc] initWithFields:notificationFields title:@"Notifications"];
@@ -172,11 +175,15 @@
         
         FFFormSwitchField *questionCreatedNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsQuestionCreatedNotifications" labelName:@"Questions Awaiting Admin Review"];
         
+        FFFormSwitchField *judgementNotificationsField = [FFFormSwitchField formFieldWithAttributeName:@"wantsJudgementNotifications" labelName:@"Bet Payouts"];
+        
         [self.form insertFormField:newQuestionNotificationsField inSection:1 atRow:1];
         [self.form insertFormField:newCommentNotificationsField inSection:1 atRow:2];
         [self.form insertFormField:questionCreatedNotificationsField inSection:1 atRow:3];
+        [self.form insertFormField:judgementNotificationsField inSection:1 atRow:4];
     }
     else{
+        [self.form removeFormFieldFromSection:1 atRow:4];
         [self.form removeFormFieldFromSection:1 atRow:3];
         [self.form removeFormFieldFromSection:1 atRow:2];
         [self.form removeFormFieldFromSection:1 atRow:1];
